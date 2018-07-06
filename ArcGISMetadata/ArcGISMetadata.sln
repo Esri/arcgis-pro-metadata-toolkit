@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcGIS.Desktop.Metadata", "ArcGIS.Desktop.Metadata\ArcGIS.Desktop.Metadata.csproj", "{7D4CA083-99B9-4FB2-BD08-ECB050202479}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetadataToolkit", "MetadataToolkit\MetadataToolkit.csproj", "{E0AD09F3-DD5D-42E2-BD24-946CD7415C84}"
 EndProject
 Global
