@@ -1,0 +1,30 @@
+﻿<p:EditorPage x:Class="MetadataToolkit.MTK_UCUM_Length" x:ClassModifier="internal" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
+             mc:Ignorable="d">
+
+  <UserControl.Resources>
+    <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter" />
+    <e:Codelists x:Key="UCUM_LENGTH" CodelistName="UCUM_LENGTH"/>
+  </UserControl.Resources>
+
+  <DockPanel LastChildFill="True">
+    <!-- uom chooser -->
+    <ComboBox Loaded="PostProcessComboBoxValues"  p:EditorPage.SourceXPath="@uom" DockPanel.Dock="Right" SelectionChanged="ComboBoxSyncSelectionChanged" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+        ItemsSource="{Binding Source={StaticResource UCUM_LENGTH}, Path=List}"
+        DisplayMemberPath="."
+        v:Nav.AnchorName="uom,@uom"
+        SelectedValuePath="@value"
+              AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=UCUM_Length_Unit}">
+      <ComboBox.SelectedValue>
+        <e:MetadataBinding XPath="@uom"/>
+      </ComboBox.SelectedValue>
+    </ComboBox>
+  </DockPanel>
+</p:EditorPage>

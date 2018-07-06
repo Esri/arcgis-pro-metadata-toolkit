@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="ArcGIS.Desktop.Metadata.Editor.Controls.DateTimePicker"
+    Name="DateTimePickerControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages"
+    xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation"
+    xmlns:controls="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Controls"
+    Height="Auto" Width="Auto">
+
+  <UserControl.Resources>
+    <p:VisibleBoolConverter x:Key="VisibleBoolConverter"/>
+    <p:VisibleNullConverter x:Key="VisibleNullConverter"/>
+  </UserControl.Resources>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    <!-- date -->
+    <DatePicker Name="DatePicker" Template="{DynamicResource DateTimePickerTemplate}" Grid.Column="0" Grid.Row="0" 
+        SelectedDate="{Binding ElementName=DateTimePickerControl, Path=CalendarDate, Mode=TwoWay}"
+        v:MetadataRules.Rules="{x:Static v:MetadataRules.CheckRules}"/>
+    <!-- time -->
+    <Grid Grid.Column="1" Grid.Row="0"
+        Visibility="{Binding ElementName=DateTimePickerControl, Path=DisplayTime, Converter={StaticResource VisibleBoolConverter}}">
+      <controls:TimePicker 
+        Visibility="{Binding ElementName=DateTimePickerControl, Path=SelectedDate, Converter={StaticResource VisibleNullConverter}}" 
+        Padding="2" Display="TimeOnly" VerticalAlignment="Center"
+        Value="{Binding ElementName=DateTimePickerControl, Path=CalendarTime, Mode=TwoWay}"/>
+    </Grid>
+  </Grid>
+</UserControl>

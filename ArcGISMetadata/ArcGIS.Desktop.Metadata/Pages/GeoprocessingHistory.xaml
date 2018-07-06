@@ -1,0 +1,151 @@
+﻿<p:EditorPage x:Class="ArcGIS.Desktop.Metadata.Editor.Pages.GeoprocessingHistory" x:ClassModifier="internal" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor"
+             xmlns:r="clr-namespace:ArcGIS.Desktop.Internal.Metadata.Properties"
+             xmlns:controls="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Controls"
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters"
+             mc:Ignorable="d" 
+             Loaded="FillXml">
+  <UserControl.Resources>
+    <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter"/>
+    <!--
+    
+      For each lineage process, show a checkbox, setting a flag that indicates if the entry should be exported.
+
+      The checkbox is bound to: /metadata/Esri/DataProperties/lineage/Process/@export
+
+      <!ENTITY % DataProperties '(topoinfo?, Terrain?, lineage, copyHistory?, itemProps?, coordRef?, RasterProperties?)'>
+      <!ENTITY % lineage '(Process*)'>
+      <!ELEMENT lineage %lineage;>
+      <!ELEMENT Process (#PCDATA)>
+      <!ATTLIST Process
+	      Name CDATA #REQUIRED
+	      ToolSource CDATA #REQUIRED
+	      Date CDATA #REQUIRED
+	      Time CDATA #REQUIRED
+	      export CDATA #IMPLIED
+      >
+
+      <lineage>
+      <Process Name="Metadata Importer FGDC" 
+      ToolSource="C:\ArcGIS\Desktop9.4\ArcToolbox\Toolboxes\Conversion Tools.tbx\MetadataImporter" 
+      Date="20091012" Time="133518">MetadataImporter c:\ArcGIS\ArcTutor\Metadata\yellowstone\states_xsltt1.xml c:\arcgis\arctutor\metadata\yellowstone\states c:\arcgis\arctutor\metadata\yellowstone\states</Process>
+
+    -->
+
+    <XmlDataProvider x:Key="XmlRecord" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <metadata>
+            <Esri>
+              <DataProperties>
+                <lineage editorFillOnly="True">
+                  <Process export="False" editorExpand="False"></Process>
+                </lineage>
+              </DataProperties>
+            </Esri>
+          </metadata>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+  </UserControl.Resources>
+
+  <Grid Style="{DynamicResource EditorFrontPageStyle}">
+    <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata}">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <StackPanel>
+
+            <!-- heading -->
+            <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_PROCESSHISTORY}"/>
+            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=Esri[not(DataProperties/lineage/Process)]}">
+              <ListBox.ItemTemplate>
+                <DataTemplate>
+                  <Label Style="{DynamicResource EditorHMessageLabel}"  Content="{x:Static r:Resources.LBL_NO_GEO_PROCESS}"/>
+                </DataTemplate>
+              </ListBox.ItemTemplate>
+            </ListBox>
+            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=Esri/DataProperties/lineage/Process}">
+              <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                  <StackPanel/>
+                </ItemsPanelTemplate>
+              </ListBox.ItemsPanel>
+              <ListBox.ItemTemplate>
+                <DataTemplate>
+                  <Expander Style="{DynamicResource EditorExpander2Style}"
+                            AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=GeoprocessingHistory_ProcessItemGroup}">
+                    <Expander.Header>
+                      <StackPanel Orientation="Horizontal">
+                        <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_PROCESS}"/>
+                        <Label Content="{Binding XPath=@Name}"/>
+                      </StackPanel>
+                    </Expander.Header>
+                    <!-- process -->
+                    <StackPanel>
+                      <Grid>
+                        <Grid.RowDefinitions>
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                          <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                          <ColumnDefinition Width="Auto"/>
+                          <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- export -->
+                        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0"
+                            Content="{x:Static r:Resources.LBL_GEOPROCESSING_EXPORT}"/>
+                        <CheckBox Style="{DynamicResource EditorCheckBoxStyle}"
+                            ToolTip="{x:Static r:Definitions.ESRI_geoprocessingHistory_export}"
+                            Grid.Row="0" Grid.Column="1" Content=""
+                            IsChecked="{Binding XPath=@export}"
+                            Name="ESRI_geoprocessingHistory_export"/>
+
+                        <!-- tool source -->
+                        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0"
+                           Content="{x:Static r:Resources.LBL_TOOLSOURCE}"/>
+                        <TextBox IsReadOnly="True" Grid.Row="1" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}"
+                            Text="{e:MetadataBinding XPath=@ToolSource}"
+                            Name="ESRI_geoprocessingHistory_toolSource"/>
+
+                        <!-- date -->
+                        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0"
+                            Content="{x:Static r:Resources.LBL_TOOLDATE}"/>
+                        <TextBox IsReadOnly="True" Grid.Row="2" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}"
+                            Text="{e:MetadataBinding XPath=@Date}"
+                            Name="ESRI_geoprocessingHistory_date"/>
+
+                        <!-- time -->
+                        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="3" Grid.Column="0"
+                            Content="{x:Static r:Resources.LBL_TOOLTIME}"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" IsReadOnly="True" Style="{DynamicResource EditorTextBoxStyle}"
+                            Text="{e:MetadataBinding XPath=@Time}"
+                            Name="ESRI_geoprocessingHistory_time"/>
+                      </Grid>
+
+                      <Label Style="{DynamicResource EditorVLabelStyle}" Content="{x:Static r:Resources.LBL_GEOPROCESSING_CMD}"/>
+                      <controls:Resizer>
+                        <TextBox IsReadOnly="True" Style="{DynamicResource EditorTextAreaShortResizeStyle}" 
+                            Text="{e:MetadataBinding XPath=.}"
+                            Name="ESRI_geoprocessingHistory_toolExecution"/>
+                      </controls:Resizer>
+
+                    </StackPanel>
+                  </Expander>
+                </DataTemplate>
+              </ListBox.ItemTemplate>
+            </ListBox>
+          </StackPanel>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+  </Grid>
+</p:EditorPage>

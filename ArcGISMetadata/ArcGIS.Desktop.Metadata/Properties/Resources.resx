@@ -1,0 +1,2384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BTN_ADD_CONTACT" xml:space="preserve">
+    <value>New Contact</value>
+  </data>
+  <data name="BTN_CANCEL" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="BTN_COV_NEW_COVDESC" xml:space="preserve">
+    <value>New Coverage Description</value>
+  </data>
+  <data name="BTN_COV_NEW_IMGDESC" xml:space="preserve">
+    <value>New Image Description</value>
+  </data>
+  <data name="BTN_EDIT" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="BTN_Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="BTN_EXTENTS_ADD_TEMP" xml:space="preserve">
+    <value>New Temporal Period Extent</value>
+  </data>
+  <data name="BTN_EXTENTS_ADD_TEMPSPAT" xml:space="preserve">
+    <value>New Temporal-Spatial Extent</value>
+  </data>
+  <data name="BTN_EXTENTS_NEW_BBOX" xml:space="preserve">
+    <value>New Bounding Box</value>
+  </data>
+  <data name="BTN_EXTENTS_NEW_GEODESC" xml:space="preserve">
+    <value>New Geographic Description</value>
+  </data>
+  <data name="BTN_Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="BTN_KEY_NEW_DIS" xml:space="preserve">
+    <value>New Discipline Keywords</value>
+  </data>
+  <data name="BTN_KEY_NEW_PLACE" xml:space="preserve">
+    <value>New Place Keywords</value>
+  </data>
+  <data name="BTN_KEY_NEW_STRAT" xml:space="preserve">
+    <value>New Stratum Keywords</value>
+  </data>
+  <data name="BTN_KEY_NEW_TEMP" xml:space="preserve">
+    <value>New Temporal Keywords</value>
+  </data>
+  <data name="BTN_KEY_NEW_THEME" xml:space="preserve">
+    <value>New Theme Keywords</value>
+  </data>
+  <data name="BTN_NEW" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="BTN_PRINT" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="BTN_RES_EXTENTS_NEW" xml:space="preserve">
+    <value>New Extent</value>
+  </data>
+  <data name="BTN_SAVE" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="BTN_VALIDATE" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="LBL_ALTERNATE_TITLE" xml:space="preserve">
+    <value>Alternate Title</value>
+  </data>
+  <data name="LBL_CITATION_DETAILS" xml:space="preserve">
+    <value>Other Details</value>
+  </data>
+  <data name="LBL_CITATION_TITLES" xml:space="preserve">
+    <value>Titles:</value>
+  </data>
+  <data name="LBL_COLLECTIVE_TITLE" xml:space="preserve">
+    <value>Collective Title</value>
+  </data>
+  <data name="LBL_COV_ATTRDESC" xml:space="preserve">
+    <value>Attribute Description</value>
+  </data>
+  <data name="LBL_COV_CONTTYPE" xml:space="preserve">
+    <value>Content Type</value>
+  </data>
+  <data name="LBL_COV_DESC" xml:space="preserve">
+    <value>Coverage Description</value>
+  </data>
+  <data name="LBL_COV_ILLAZIANG" xml:space="preserve">
+    <value>Illumination Azimuth Angle</value>
+  </data>
+  <data name="LBL_COV_ILLELEVANG" xml:space="preserve">
+    <value>Illumination Elevation Angle</value>
+  </data>
+  <data name="LBL_COV_IMAGCOND" xml:space="preserve">
+    <value>Imaging Condition</value>
+  </data>
+  <data name="LBL_COV_IMAGQUCODE" xml:space="preserve">
+    <value>Image Quality Code</value>
+  </data>
+  <data name="LBL_COV_IMGDESC" xml:space="preserve">
+    <value>Image Description</value>
+  </data>
+  <data name="LBL_CREATED_DATE" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="LBL_DATES" xml:space="preserve">
+    <value>Dates</value>
+  </data>
+  <data name="LBL_DESC_ABSTRACT" xml:space="preserve">
+    <value>Abstract</value>
+  </data>
+  <data name="LBL_DESC_CREDIT" xml:space="preserve">
+    <value>Credit</value>
+  </data>
+  <data name="LBL_DESC_DISKEY" xml:space="preserve">
+    <value>Discipline Keywords</value>
+  </data>
+  <data name="LBL_DESC_PLACEKEY" xml:space="preserve">
+    <value>Place Keywords</value>
+  </data>
+  <data name="LBL_DESC_PURPOSE" xml:space="preserve">
+    <value>Purpose</value>
+  </data>
+  <data name="LBL_DESC_STATUS" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="LBL_DESC_STRATKEY" xml:space="preserve">
+    <value>Stratum Keywords</value>
+  </data>
+  <data name="LBL_DESC_TEMPKEY" xml:space="preserve">
+    <value>Temporal Keywords</value>
+  </data>
+  <data name="LBL_DESC_THEMEKEY" xml:space="preserve">
+    <value>Theme Keywords</value>
+  </data>
+  <data name="LBL_DESC_TITLE" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="LBL_DESC_TOPICS" xml:space="preserve">
+    <value>Topic Categories</value>
+  </data>
+  <data name="LBL_DQ_LEVELDESC" xml:space="preserve">
+    <value>Level Description</value>
+  </data>
+  <data name="LBL_DQ_LEVELSCOPE" xml:space="preserve">
+    <value>Scope Level</value>
+  </data>
+  <data name="LBL_DQ_QUALITYREPORTS" xml:space="preserve">
+    <value>Data Quality Reports</value>
+  </data>
+  <data name="LBL_EDITION" xml:space="preserve">
+    <value>Edition</value>
+  </data>
+  <data name="LBL_EDITION_DATE" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="LBL_EXTENT" xml:space="preserve">
+    <value>Extent</value>
+  </data>
+  <data name="LBL_EXTENTS_BBOX" xml:space="preserve">
+    <value>Box: </value>
+  </data>
+  <data name="LBL_EXTENTS_GEODESC" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="LBL_EXTENTS_TEMP" xml:space="preserve">
+    <value>Temporal</value>
+  </data>
+  <data name="LBL_EXTENTS_TEMPSPAT" xml:space="preserve">
+    <value>Temporal-Spatial</value>
+  </data>
+  <data name="LBL_EXT_EAST" xml:space="preserve">
+    <value>East</value>
+  </data>
+  <data name="LBL_EXT_GEOID_CODE" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="LBL_EXT_NORTH" xml:space="preserve">
+    <value>North</value>
+  </data>
+  <data name="LBL_EXT_SOUTH" xml:space="preserve">
+    <value>South</value>
+  </data>
+  <data name="LBL_EXT_WEST" xml:space="preserve">
+    <value>West</value>
+  </data>
+  <data name="LBL_IDENTIFIER" xml:space="preserve">
+    <value>Identifier</value>
+  </data>
+  <data name="LBL_IDENTIFIERS" xml:space="preserve">
+    <value>Identifier</value>
+  </data>
+  <data name="LBL_ISBN" xml:space="preserve">
+    <value>ISBN</value>
+  </data>
+  <data name="LBL_ISSN" xml:space="preserve">
+    <value>ISSN</value>
+  </data>
+  <data name="LBL_LN_STATEMENT" xml:space="preserve">
+    <value>Statement</value>
+  </data>
+  <data name="LBL_MAINT_CUSTOMFREQ" xml:space="preserve">
+    <value>Custom Frequency</value>
+  </data>
+  <data name="LBL_MAINT_NEXTUPDATE" xml:space="preserve">
+    <value>Next Update</value>
+  </data>
+  <data name="LBL_MAINT_NOTE" xml:space="preserve">
+    <value>Maintenance Note</value>
+  </data>
+  <data name="LBL_MAINT_UPDATEDESC" xml:space="preserve">
+    <value>Scope Description</value>
+  </data>
+  <data name="LBL_MAINT_UPDATEFREQ" xml:space="preserve">
+    <value>Update Frequency</value>
+  </data>
+  <data name="LBL_MAINT_UPDATESCOPE" xml:space="preserve">
+    <value>Update Scope</value>
+  </data>
+  <data name="LBL_MAINT_UPDATESCOPEDESC" xml:space="preserve">
+    <value>Update Scope Description</value>
+  </data>
+  <data name="LBL_MD_IDENTAUTH" xml:space="preserve">
+    <value>Authority Citation</value>
+  </data>
+  <data name="LBL_MD_IDENTCODE" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="LBL_META_MAINT" xml:space="preserve">
+    <value>Metadata Maintenance</value>
+  </data>
+  <data name="LBL_META_MAINT_CONTACTS" xml:space="preserve">
+    <value>Metadata Maintenance Contacts</value>
+  </data>
+  <data name="LBL_PRESENTATIONCODE_DIGITALDOCUMENT" xml:space="preserve">
+    <value>Digital Document</value>
+  </data>
+  <data name="LBL_PRESENTATIONCODE_HARDCOPYDOCUMENT" xml:space="preserve">
+    <value>Hardcopy Document</value>
+  </data>
+  <data name="LBL_PRESENTATION_FORM" xml:space="preserve">
+    <value>Presentation Form</value>
+  </data>
+  <data name="LBL_PUBLISHED_DATE" xml:space="preserve">
+    <value>Published</value>
+  </data>
+  <data name="LBL_RES_CITATION_CONTACTS" xml:space="preserve">
+    <value>Resource Citation Contacts</value>
+  </data>
+  <data name="LBL_RES_EXTENTS" xml:space="preserve">
+    <value>Resource Extents</value>
+  </data>
+  <data name="LBL_RES_MAINT" xml:space="preserve">
+    <value>Resource Maintenance</value>
+  </data>
+  <data name="LBL_RES_MAINT_CONTACTS" xml:space="preserve">
+    <value>Resource Maintenance Contacts</value>
+  </data>
+  <data name="LBL_RES_POCS" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="LBL_REVISED_DATE" xml:space="preserve">
+    <value>Revised</value>
+  </data>
+  <data name="LBL_SCOPEDESC_ATTRIBUTEINSTANCES" xml:space="preserve">
+    <value>Attribute Instances</value>
+  </data>
+  <data name="LBL_SCOPEDESC_ATTRIBUTES" xml:space="preserve">
+    <value>Attributes</value>
+  </data>
+  <data name="LBL_SCOPEDESC_DATASET" xml:space="preserve">
+    <value>Dataset</value>
+  </data>
+  <data name="LBL_SCOPEDESC_FEATUREINSTANCES" xml:space="preserve">
+    <value>Feature Instances</value>
+  </data>
+  <data name="LBL_SCOPEDESC_FEATURES" xml:space="preserve">
+    <value>Features</value>
+  </data>
+  <data name="LBL_SCOPEDESC_OTHERINSTANCES" xml:space="preserve">
+    <value>Other Instances</value>
+  </data>
+  <data name="LBL_SERIES" xml:space="preserve">
+    <value>Series</value>
+  </data>
+  <data name="LBL_SERIES_ISSUE_ID" xml:space="preserve">
+    <value>Issue</value>
+  </data>
+  <data name="LBL_SERIES_NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="LBL_SERIES_PAGE" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="LBL_TITLE" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="LBL_TOPICS_001" xml:space="preserve">
+    <value>Farming</value>
+  </data>
+  <data name="LBL_TOPICS_002" xml:space="preserve">
+    <value>Biota</value>
+  </data>
+  <data name="LBL_TOPICS_003" xml:space="preserve">
+    <value>Boundaries</value>
+  </data>
+  <data name="LBL_TOPICS_004" xml:space="preserve">
+    <value>Atmospheric Sciences</value>
+  </data>
+  <data name="LBL_TOPICS_005" xml:space="preserve">
+    <value>Economy</value>
+  </data>
+  <data name="LBL_TOPICS_006" xml:space="preserve">
+    <value>Elevation</value>
+  </data>
+  <data name="LBL_TOPICS_007" xml:space="preserve">
+    <value>Environment</value>
+  </data>
+  <data name="LBL_TOPICS_008" xml:space="preserve">
+    <value>Geoscientific</value>
+  </data>
+  <data name="LBL_TOPICS_009" xml:space="preserve">
+    <value>Health</value>
+  </data>
+  <data name="LBL_TOPICS_010" xml:space="preserve">
+    <value>Imagery &amp; Base Maps</value>
+  </data>
+  <data name="LBL_TOPICS_011" xml:space="preserve">
+    <value>Military &amp; Intelligence</value>
+  </data>
+  <data name="LBL_TOPICS_012" xml:space="preserve">
+    <value>Inland Waters</value>
+  </data>
+  <data name="LBL_TOPICS_013" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="LBL_TOPICS_014" xml:space="preserve">
+    <value>Oceans</value>
+  </data>
+  <data name="LBL_TOPICS_015" xml:space="preserve">
+    <value>Planning &amp; Cadastral</value>
+  </data>
+  <data name="LBL_TOPICS_016" xml:space="preserve">
+    <value>Society</value>
+  </data>
+  <data name="LBL_TOPICS_017" xml:space="preserve">
+    <value>Structure</value>
+  </data>
+  <data name="LBL_TOPICS_018" xml:space="preserve">
+    <value>Transportation</value>
+  </data>
+  <data name="LBL_TOPICS_019" xml:space="preserve">
+    <value>Utilities &amp; Communication</value>
+  </data>
+  <data name="SB_DATAQUAL" xml:space="preserve">
+    <value>Data Quality</value>
+  </data>
+  <data name="SB_METADATA" xml:space="preserve">
+    <value>Metadata</value>
+  </data>
+  <data name="SB_METADATA_CONTACTS" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="SB_METADATA_MAINT" xml:space="preserve">
+    <value>Maintenance Information</value>
+  </data>
+  <data name="SB_METADATA_MAINTCONT" xml:space="preserve">
+    <value>Maintenance Contacts</value>
+  </data>
+  <data name="SB_OVERVIEW" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="SB_OVERVIEW_DESC" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="SB_RASTER" xml:space="preserve">
+    <value>Raster</value>
+  </data>
+  <data name="SB_RESOURCE" xml:space="preserve">
+    <value>Resource</value>
+  </data>
+  <data name="SB_RESOURCE_CITATION" xml:space="preserve">
+    <value>Citation</value>
+  </data>
+  <data name="SB_RESOURCE_CITECONT" xml:space="preserve">
+    <value>Citation Contacts</value>
+  </data>
+  <data name="SB_RESOURCE_EXTENTS" xml:space="preserve">
+    <value>Extents</value>
+  </data>
+  <data name="SB_RESOURCE_MAINT" xml:space="preserve">
+    <value>Maintenance Information</value>
+  </data>
+  <data name="SB_RESOURCE_MAINTCONT" xml:space="preserve">
+    <value>Maintenance Contacts</value>
+  </data>
+  <data name="SB_VECTOR" xml:space="preserve">
+    <value>Vector</value>
+  </data>
+  <data name="SEC_CONTENT_INFO" xml:space="preserve">
+    <value>Content Information</value>
+  </data>
+  <data name="SEC_DESCRIPTION" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="SEC_KEYWORDS" xml:space="preserve">
+    <value>Topics and Keywords</value>
+  </data>
+  <data name="SEC_METADATA_CONTACTS" xml:space="preserve">
+    <value>Metadata Contacts</value>
+  </data>
+  <data name="SEC_RES_CITE" xml:space="preserve">
+    <value>Resource Citation</value>
+  </data>
+  <data name="BTN_KEY_NEW_OTHER" xml:space="preserve">
+    <value>New Other Keywords</value>
+  </data>
+  <data name="LBL_DESC_OTHERKEY" xml:space="preserve">
+    <value>Other Keywords</value>
+  </data>
+  <data name="BTN_Upgrade" xml:space="preserve">
+    <value>Upgrade</value>
+  </data>
+  <data name="BTN_DELETE" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="BTN_ABSTRACT_NEW_CREDIT" xml:space="preserve">
+    <value>New Credit</value>
+  </data>
+  <data name="BTN_ABSTRACT_NEW_LOCAL" xml:space="preserve">
+    <value>New Abstact</value>
+  </data>
+  <data name="BTN_ABSTRACT_NEW_STATUS" xml:space="preserve">
+    <value>New Status</value>
+  </data>
+  <data name="BTN_TITLE_NEW_lOCAL" xml:space="preserve">
+    <value>New Title</value>
+  </data>
+  <data name="SEC_DATAQUAL" xml:space="preserve">
+    <value>Data Quality</value>
+  </data>
+  <data name="BTN_DATAQUAL_NEW_EXT" xml:space="preserve">
+    <value>New Extent</value>
+  </data>
+  <data name="BTN_DQ_NEW_MEASDATETIME" xml:space="preserve">
+    <value>New Measure Date</value>
+  </data>
+  <data name="BTN_DQ_NEW_MEASNAME" xml:space="preserve">
+    <value>New Measure Name</value>
+  </data>
+  <data name="BTN_DQ_NEW_REPORT" xml:space="preserve">
+    <value>New Report</value>
+  </data>
+  <data name="BTN_KEY_NEW_SEARCH" xml:space="preserve">
+    <value>New Search Keywords</value>
+  </data>
+  <data name="BTN_LI_NEW_PROCESS_STEP" xml:space="preserve">
+    <value>New Process Step</value>
+  </data>
+  <data name="BTN_LI_NEW_SOURCE" xml:space="preserve">
+    <value>New Data Source</value>
+  </data>
+  <data name="BTN_LI_PROCESS_STEP_NEW_PROC" xml:space="preserve">
+    <value>New Processor</value>
+  </data>
+  <data name="BTN_LI_SOURCE_NEW_EXT" xml:space="preserve">
+    <value>New Source Extent</value>
+  </data>
+  <data name="BTN_MAIN_NEW_CONTACT" xml:space="preserve">
+    <value>New Maintenance Contact</value>
+  </data>
+  <data name="BTN_MAIN_NEW_NOTE" xml:space="preserve">
+    <value>New Maintenance Note</value>
+  </data>
+  <data name="BTN_MAIN_NEW_SCOPEDESC" xml:space="preserve">
+    <value>New Scope Description</value>
+  </data>
+  <data name="BTN_MAIN_NEW_UPDATE_SCOPE" xml:space="preserve">
+    <value>New Update Scope</value>
+  </data>
+  <data name="BTN_MD_RS_NEW_RS" xml:space="preserve">
+    <value>New Reference System</value>
+  </data>
+  <data name="BTN_NEW_LEVELDESC" xml:space="preserve">
+    <value>New Level Description</value>
+  </data>
+  <data name="LBL_DESC_SEARCHKEY" xml:space="preserve">
+    <value>Search Keywords</value>
+  </data>
+  <data name="LBL_DQ_EVALDESC" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="LBL_DQ_EVALMETHTYPE" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="LBL_DQ_EVALPROC" xml:space="preserve">
+    <value>Procedure Citation</value>
+  </data>
+  <data name="LBL_DQ_LEVELEXT" xml:space="preserve">
+    <value>Extent</value>
+  </data>
+  <data name="LBL_DQ_MEASDATE" xml:space="preserve">
+    <value>Measure Date</value>
+  </data>
+  <data name="LBL_DQ_MEASDESC" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="LBL_DQ_MEASID" xml:space="preserve">
+    <value>Identifier</value>
+  </data>
+  <data name="LBL_DQ_MEASNAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="LBL_DQ_REPORT" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="LBL_DQ_REPORTTYPE" xml:space="preserve">
+    <value>Report Type</value>
+  </data>
+  <data name="LBL_ITEMINFO_ABST" xml:space="preserve">
+    <value>Summary (Purpose)</value>
+  </data>
+  <data name="LBL_ITEMINFO_ACCESS" xml:space="preserve">
+    <value>Credits</value>
+  </data>
+  <data name="LBL_ITEMINFO_KEY" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="LBL_ITEMINFO_SNIP" xml:space="preserve">
+    <value>Description (Abstract)</value>
+  </data>
+  <data name="LBL_ITEMINFO_TITLE" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="LBL_LI_PROCESS_PROCESSOR" xml:space="preserve">
+    <value>Processor:</value>
+  </data>
+  <data name="LBL_LI_PROCESS_STEP" xml:space="preserve">
+    <value>Process Step</value>
+  </data>
+  <data name="LBL_LI_PROCESS_STEP_DATE" xml:space="preserve">
+    <value>Process Step Date</value>
+  </data>
+  <data name="LBL_LI_PROCESS_STEP_DESC" xml:space="preserve">
+    <value>Process Description</value>
+  </data>
+  <data name="LBL_LI_PROCESS_STEP_RATIONALE" xml:space="preserve">
+    <value>Rationale</value>
+  </data>
+  <data name="LBL_LI_SOURCE" xml:space="preserve">
+    <value>Data Source</value>
+  </data>
+  <data name="LBL_LI_SOURCE_CITATION" xml:space="preserve">
+    <value>Source Citation: </value>
+  </data>
+  <data name="LBL_LI_SOURCE_DESC" xml:space="preserve">
+    <value>Source Description</value>
+  </data>
+  <data name="LBL_LI_SOURCE_EXTENT" xml:space="preserve">
+    <value>Source Extent</value>
+  </data>
+  <data name="LBL_LI_SOURCE_REFDENOM" xml:space="preserve">
+    <value>Scale Denominator</value>
+  </data>
+  <data name="LBL_LI_SOURCE_REFSYS" xml:space="preserve">
+    <value>Reference System</value>
+  </data>
+  <data name="LBL_LI_STATEMENT" xml:space="preserve">
+    <value>Statement</value>
+  </data>
+  <data name="LBL_MAIN_CONTACT" xml:space="preserve">
+    <value>Contact:</value>
+  </data>
+  <data name="LBL_MD_RS" xml:space="preserve">
+    <value>Reference System</value>
+  </data>
+  <data name="LBL_RS_IDENTAUTH" xml:space="preserve">
+    <value>Authority Citation</value>
+  </data>
+  <data name="LBL_RS_IDENTCODE" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="LBL_RS_IDENTCODESPACE" xml:space="preserve">
+    <value>Code Space</value>
+  </data>
+  <data name="LBL_RS_IDENTVERSION" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="SEC_ITEMINFO" xml:space="preserve">
+    <value>Item Description</value>
+  </data>
+  <data name="SEC_LINEAGE" xml:space="preserve">
+    <value>Lineage</value>
+  </data>
+  <data name="SEC_REFSYSINFO" xml:space="preserve">
+    <value>Reference Systems</value>
+  </data>
+  <data name="BTN_CI_NEW_PRESFORM" xml:space="preserve">
+    <value>New Presentation Form</value>
+  </data>
+  <data name="BTN_DIGOPT_NEW_ONLINE" xml:space="preserve">
+    <value>New Online Resource</value>
+  </data>
+  <data name="BTN_DIST_NEW_CONT" xml:space="preserve">
+    <value>New Contact</value>
+  </data>
+  <data name="BTN_DIST_NEW_DISTOR" xml:space="preserve">
+    <value>New Distributor</value>
+  </data>
+  <data name="BTN_DIST_NEW_FORMAT" xml:space="preserve">
+    <value>New Distribution Format</value>
+  </data>
+  <data name="BTN_DIST_NEW_ORDER" xml:space="preserve">
+    <value>New Ordering Process</value>
+  </data>
+  <data name="BTN_DIST_NEW_TRANS" xml:space="preserve">
+    <value>New Digital Transfer Options</value>
+  </data>
+  <data name="BTN_MED_NEW_FORMAT" xml:space="preserve">
+    <value>New Format Code</value>
+  </data>
+  <data name="LBL_DIGOPT_OFFLINE" xml:space="preserve">
+    <value>Offline Medium</value>
+  </data>
+  <data name="LBL_DIGOPT_ONLINE" xml:space="preserve">
+    <value>Online Resource</value>
+  </data>
+  <data name="LBL_DIGOPT_SIZE" xml:space="preserve">
+    <value>Transfer Size</value>
+  </data>
+  <data name="LBL_DIGOPT_UNITS" xml:space="preserve">
+    <value>Units of Distribution</value>
+  </data>
+  <data name="LBL_DIST_CONT" xml:space="preserve">
+    <value>Contact:</value>
+  </data>
+  <data name="LBL_DIST_DISTOR" xml:space="preserve">
+    <value>Distributor</value>
+  </data>
+  <data name="LBL_DIST_FORMAT" xml:space="preserve">
+    <value>Distribution Format</value>
+  </data>
+  <data name="LBL_DIST_ORDER" xml:space="preserve">
+    <value>Ordering Process (Available Time Period)</value>
+  </data>
+  <data name="LBL_DIST_TRANS" xml:space="preserve">
+    <value>Digital Transfer Options</value>
+  </data>
+  <data name="LBL_FMT_AMD" xml:space="preserve">
+    <value>Amendment Number</value>
+  </data>
+  <data name="LBL_FMT_DECOM" xml:space="preserve">
+    <value>Decompression Technique</value>
+  </data>
+  <data name="LBL_FMT_NAME" xml:space="preserve">
+    <value>Format Name</value>
+  </data>
+  <data name="LBL_FMT_SPEC" xml:space="preserve">
+    <value>Specification</value>
+  </data>
+  <data name="LBL_FMT_VER" xml:space="preserve">
+    <value>Format Version</value>
+  </data>
+  <data name="LBL_MED_DENUNITS" xml:space="preserve">
+    <value>Density Units</value>
+  </data>
+  <data name="LBL_MED_FORMAT" xml:space="preserve">
+    <value>Format Code</value>
+  </data>
+  <data name="LBL_MED_NAME" xml:space="preserve">
+    <value>Medium Name</value>
+  </data>
+  <data name="LBL_MED_VOLUMES" xml:space="preserve">
+    <value>Volumes</value>
+  </data>
+  <data name="LBL_ONLINE_DESC" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="LBL_ONLINE_FUNCTION" xml:space="preserve">
+    <value>Function</value>
+  </data>
+  <data name="LBL_ONLINE_LINKAGE" xml:space="preserve">
+    <value>Linkage</value>
+  </data>
+  <data name="LBL_ONLINE_NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="LBL_ONLINE_PROFILE" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="LBL_ONLINE_PROTOCOL" xml:space="preserve">
+    <value>Protocol</value>
+  </data>
+  <data name="LBL_STD_AVAILDATE" xml:space="preserve">
+    <value>Available Date</value>
+  </data>
+  <data name="LBL_STD_FEES" xml:space="preserve">
+    <value>Fees</value>
+  </data>
+  <data name="LBL_STD_ORDER" xml:space="preserve">
+    <value>Ordering Instructions</value>
+  </data>
+  <data name="LBL_STD_TURNAROUND" xml:space="preserve">
+    <value>Turnaround</value>
+  </data>
+  <data name="SEC_DISTRIBUTION" xml:space="preserve">
+    <value>Distribution Information</value>
+  </data>
+  <data name="BTN_META_NEW_HIER" xml:space="preserve">
+    <value>New Hierarchy Level</value>
+  </data>
+  <data name="LBL_CONT_ADDRESS" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="LBL_CONT_CITY" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="LBL_CONT_CONTACT" xml:space="preserve">
+    <value>Contact Information</value>
+  </data>
+  <data name="LBL_CONT_COUNTRY" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="LBL_CONT_EMAIL" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="LBL_CONT_FAX" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="LBL_CONT_HOURS" xml:space="preserve">
+    <value>Hours</value>
+  </data>
+  <data name="LBL_CONT_INSTR" xml:space="preserve">
+    <value>Instructions</value>
+  </data>
+  <data name="LBL_CONT_ONRES" xml:space="preserve">
+    <value>Online Resource</value>
+  </data>
+  <data name="LBL_CONT_PHONE" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="LBL_CONT_POSTAL" xml:space="preserve">
+    <value>Postal Code</value>
+  </data>
+  <data name="LBL_CONT_STATE" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="LBL_DESC_OTHERTITLE" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="LBL_META_FILEID" xml:space="preserve">
+    <value>File Identifier</value>
+  </data>
+  <data name="LBL_META_HIER" xml:space="preserve">
+    <value>Hierarchy Level</value>
+  </data>
+  <data name="LBL_META_LANG" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LBL_META_PARENTFILEID" xml:space="preserve">
+    <value>Parent Identifier</value>
+  </data>
+  <data name="SEC_METADETAILS" xml:space="preserve">
+    <value>Metadata Details</value>
+  </data>
+  <data name="BTN_CONSTS_NEW_GENERAL" xml:space="preserve">
+    <value>New General Constraints</value>
+  </data>
+  <data name="BTN_CONSTS_NEW_LEGAL" xml:space="preserve">
+    <value>New Legal Constraints</value>
+  </data>
+  <data name="BTN_CONSTS_NEW_OTHER" xml:space="preserve">
+    <value>New Other Constraints</value>
+  </data>
+  <data name="BTN_CONSTS_NEW_SECURITY" xml:space="preserve">
+    <value>New Security Constraints</value>
+  </data>
+  <data name="BTN_CONSTS_NEW_USELIMIT" xml:space="preserve">
+    <value>New Use Limitation</value>
+  </data>
+  <data name="BTN_COV_NEW_BAND" xml:space="preserve">
+    <value>New Band</value>
+  </data>
+  <data name="BTN_COV_NEW_FEATCAT" xml:space="preserve">
+    <value>New Feature Catalogue</value>
+  </data>
+  <data name="BTN_COV_NEW_RANGEDIM" xml:space="preserve">
+    <value>New Range Dimension</value>
+  </data>
+  <data name="BTN_META_NEW_HIERNAME" xml:space="preserve">
+    <value>New Hierarchy Level Name</value>
+  </data>
+  <data name="LBL_BAND_BITS" xml:space="preserve">
+    <value>Bits per Value</value>
+  </data>
+  <data name="LBL_BAND_MAXVAL" xml:space="preserve">
+    <value>Max Value</value>
+  </data>
+  <data name="LBL_BAND_MINVAL" xml:space="preserve">
+    <value>Min Value</value>
+  </data>
+  <data name="LBL_BAND_OFFSET" xml:space="preserve">
+    <value>Offset</value>
+  </data>
+  <data name="LBL_BAND_PEAK" xml:space="preserve">
+    <value>Peak Response</value>
+  </data>
+  <data name="LBL_BAND_SCALE" xml:space="preserve">
+    <value>Scale Factor</value>
+  </data>
+  <data name="LBL_BAND_TONE" xml:space="preserve">
+    <value>Tone Gradation</value>
+  </data>
+  <data name="LBL_BAND_UNITS" xml:space="preserve">
+    <value>Units</value>
+  </data>
+  <data name="LBL_CONSTS_ACCESS" xml:space="preserve">
+    <value>Access Constraints</value>
+  </data>
+  <data name="LBL_CONSTS_CLASS" xml:space="preserve">
+    <value>Classification</value>
+  </data>
+  <data name="LBL_CONSTS_GENERAL" xml:space="preserve">
+    <value>General Constraints</value>
+  </data>
+  <data name="LBL_CONSTS_HANDLING" xml:space="preserve">
+    <value>Handling Description</value>
+  </data>
+  <data name="LBL_CONSTS_LEGAL" xml:space="preserve">
+    <value>Legal Constraints</value>
+  </data>
+  <data name="LBL_CONSTS_METADATA" xml:space="preserve">
+    <value>Metadata Constraints</value>
+  </data>
+  <data name="LBL_CONSTS_OTHER" xml:space="preserve">
+    <value>Other Constraints</value>
+  </data>
+  <data name="LBL_CONSTS_RESOURCE" xml:space="preserve">
+    <value>Resource Constraints</value>
+  </data>
+  <data name="LBL_CONSTS_SECURITY" xml:space="preserve">
+    <value>Security Constraints</value>
+  </data>
+  <data name="LBL_CONSTS_SYSTEM" xml:space="preserve">
+    <value>Classification System</value>
+  </data>
+  <data name="LBL_CONSTS_USE" xml:space="preserve">
+    <value>Use Constraints</value>
+  </data>
+  <data name="LBL_CONSTS_USELIMIT" xml:space="preserve">
+    <value>Use Limitation</value>
+  </data>
+  <data name="LBL_CONSTS_USERNOTE" xml:space="preserve">
+    <value>User Note</value>
+  </data>
+  <data name="LBL_COV_ATTTYPE" xml:space="preserve">
+    <value>Identifier Type</value>
+  </data>
+  <data name="LBL_COV_BAND" xml:space="preserve">
+    <value>Band</value>
+  </data>
+  <data name="LBL_COV_DESCRIPTOR" xml:space="preserve">
+    <value>Descriptor</value>
+  </data>
+  <data name="LBL_COV_FEATCAT" xml:space="preserve">
+    <value>Feature Catalogue</value>
+  </data>
+  <data name="LBL_COV_RANGEDIM" xml:space="preserve">
+    <value>Range Dimension</value>
+  </data>
+  <data name="LBL_COV_SEQID" xml:space="preserve">
+    <value>Sequence Identifier / Type</value>
+  </data>
+  <data name="LBL_EXT_BOX" xml:space="preserve">
+    <value>Bounding Box</value>
+  </data>
+  <data name="LBL_EXT_GEODESC" xml:space="preserve">
+    <value>Geographic Description</value>
+  </data>
+  <data name="LBL_IMG_QUALCODE" xml:space="preserve">
+    <value>Quality Code</value>
+  </data>
+  <data name="LBL_META_CHAR" xml:space="preserve">
+    <value>Character Set</value>
+  </data>
+  <data name="LBL_META_DATE" xml:space="preserve">
+    <value>Date Stamp</value>
+  </data>
+  <data name="LBL_META_HIERNAME" xml:space="preserve">
+    <value>Hierarchy Level Name</value>
+  </data>
+  <data name="LBL_META_STDNAME" xml:space="preserve">
+    <value>Metadata Standard Name</value>
+  </data>
+  <data name="LBL_META_STDVER" xml:space="preserve">
+    <value>Metadata Standard Version</value>
+  </data>
+  <data name="LBL_META_URI" xml:space="preserve">
+    <value>Dataset URI</value>
+  </data>
+  <data name="TT_RTB_ALIGNCENTER" xml:space="preserve">
+    <value>Align Center</value>
+  </data>
+  <data name="TT_RTB_ALIGNJUSTIFY" xml:space="preserve">
+    <value>Align Justify</value>
+  </data>
+  <data name="TT_RTB_ALIGNLEFT" xml:space="preserve">
+    <value>Align Left</value>
+  </data>
+  <data name="TT_RTB_ALIGNRIGHT" xml:space="preserve">
+    <value>Align Right</value>
+  </data>
+  <data name="TT_RTB_BOLD" xml:space="preserve">
+    <value>Bold</value>
+  </data>
+  <data name="TT_RTB_BULLETS" xml:space="preserve">
+    <value>Bullets</value>
+  </data>
+  <data name="TT_RTB_COPY" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="TT_RTB_CUT" xml:space="preserve">
+    <value>Cut</value>
+  </data>
+  <data name="TT_RTB_DECINDENT" xml:space="preserve">
+    <value>Decrease Indent</value>
+  </data>
+  <data name="TT_RTB_GROWFONT" xml:space="preserve">
+    <value>Grow Font</value>
+  </data>
+  <data name="TT_RTB_INCINDENT" xml:space="preserve">
+    <value>Increase Indent</value>
+  </data>
+  <data name="TT_RTB_ITALIC" xml:space="preserve">
+    <value>Italic</value>
+  </data>
+  <data name="TT_RTB_NUMBERING" xml:space="preserve">
+    <value>Numbering</value>
+  </data>
+  <data name="TT_RTB_PASTE" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="TT_RTB_REDO" xml:space="preserve">
+    <value>Redo</value>
+  </data>
+  <data name="TT_RTB_SHRINKFONT" xml:space="preserve">
+    <value>Shrink Font</value>
+  </data>
+  <data name="TT_RTB_UNDERLINE" xml:space="preserve">
+    <value>Underline</value>
+  </data>
+  <data name="TT_RTB_UNDO" xml:space="preserve">
+    <value>Undo</value>
+  </data>
+  <data name="BTN_FEAT_NEW_CITATION" xml:space="preserve">
+    <value>New Feature Catalogue Citation</value>
+  </data>
+  <data name="BTN_RESOL_NEW_SCALE" xml:space="preserve">
+    <value>New Scale Resolution</value>
+  </data>
+  <data name="LBL_FEAT_CITATION" xml:space="preserve">
+    <value>Feature Catalogue Citation: </value>
+  </data>
+  <data name="LBL_FEAT_COMP" xml:space="preserve">
+    <value>Compliance Code</value>
+  </data>
+  <data name="LBL_FEAT_FEATURE" xml:space="preserve">
+    <value>Feature Type</value>
+  </data>
+  <data name="LBL_FEAT_INCDATASET" xml:space="preserve">
+    <value>Include With Dataset</value>
+  </data>
+  <data name="LBL_FEAT_LANG" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LBL_IMG_CAMERA" xml:space="preserve">
+    <value>Camera Calibration Information Availability</value>
+  </data>
+  <data name="LBL_IMG_CLOUDPER" xml:space="preserve">
+    <value>Cloud Cover Percentage</value>
+  </data>
+  <data name="LBL_IMG_COMPRESS" xml:space="preserve">
+    <value>Compression Quantity</value>
+  </data>
+  <data name="LBL_IMG_FILM" xml:space="preserve">
+    <value>Film Distortion Information Availability</value>
+  </data>
+  <data name="LBL_IMG_LENS" xml:space="preserve">
+    <value>Lens Distortion Information Availability</value>
+  </data>
+  <data name="LBL_IMG_PROCCODE" xml:space="preserve">
+    <value>Processing Level Code</value>
+  </data>
+  <data name="LBL_IMG_RADIO" xml:space="preserve">
+    <value>Radiometric Calibration Data Availability</value>
+  </data>
+  <data name="LBL_IMG_TRIANG" xml:space="preserve">
+    <value>Triangulation Indicator</value>
+  </data>
+  <data name="LBL_RESOL_SCALE" xml:space="preserve">
+    <value>Scale Resolution</value>
+  </data>
+  <data name="LBL_RES_CHAR" xml:space="preserve">
+    <value>Character Set</value>
+  </data>
+  <data name="LBL_RES_LANG" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LBL_RES_SPATTYPE" xml:space="preserve">
+    <value>Spatial Representation Type</value>
+  </data>
+  <data name="SEC_RES_DETAILS" xml:space="preserve">
+    <value>Resource Details</value>
+  </data>
+  <data name="BTN_EAINFO_NEW_ATT" xml:space="preserve">
+    <value>New Attribute</value>
+  </data>
+  <data name="BTN_EAINFO_NEW_CODESET" xml:space="preserve">
+    <value>New Codeset Domain</value>
+  </data>
+  <data name="BTN_EAINFO_NEW_DETAILS" xml:space="preserve">
+    <value>New Entity and Attributes Details</value>
+  </data>
+  <data name="BTN_EAINFO_NEW_ENUM_DOMAIN" xml:space="preserve">
+    <value>New Enumerated Domain</value>
+  </data>
+  <data name="BTN_EAINFO_NEW_RANGE" xml:space="preserve">
+    <value>New Range Domain</value>
+  </data>
+  <data name="BTN_EAINFO_NEW_UDOM" xml:space="preserve">
+    <value>New Unrepresentable Domain</value>
+  </data>
+  <data name="BTN_NEW_BROWSE" xml:space="preserve">
+    <value>New Browse Graphic</value>
+  </data>
+  <data name="BTN_RESOL_NEW_DIST" xml:space="preserve">
+    <value>New Distance Resolution</value>
+  </data>
+  <data name="BTN_SPATREF_NEW_GEOOBJ" xml:space="preserve">
+    <value>New Geometric Objects</value>
+  </data>
+  <data name="BTN_SPATREF_NEW_GEOREC" xml:space="preserve">
+    <value>New Georectified Representation</value>
+  </data>
+  <data name="BTN_SPATREF_NEW_GEOREF" xml:space="preserve">
+    <value>New Georeferenceable Representation</value>
+  </data>
+  <data name="BTN_SPATREF_NEW_GRID" xml:space="preserve">
+    <value>New Grid Spatial Representation</value>
+  </data>
+  <data name="BTN_SPATREF_NEW_VEC" xml:space="preserve">
+    <value>New Vector Representation</value>
+  </data>
+  <data name="LBL_BROWSE_DESC" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="LBL_BROWSE_FILE" xml:space="preserve">
+    <value>File name</value>
+  </data>
+  <data name="LBL_BROWSE_GRAPHIC" xml:space="preserve">
+    <value>Browse Graphic</value>
+  </data>
+  <data name="LBL_BROWSE_TYPE" xml:space="preserve">
+    <value>File type</value>
+  </data>
+  <data name="LBL_DESC_THECOUNTRY" xml:space="preserve">
+    <value>Thesaurus Country Code</value>
+  </data>
+  <data name="LBL_DESC_THELANG" xml:space="preserve">
+    <value>Thesaurus Language</value>
+  </data>
+  <data name="LBL_DESC_THESCITE" xml:space="preserve">
+    <value>Thesaurus Citation</value>
+  </data>
+  <data name="LBL_EAINFO_ATINDEX" xml:space="preserve">
+    <value>Indexed</value>
+  </data>
+  <data name="LBL_EAINFO_ATNUMDEC" xml:space="preserve">
+    <value>Number of Decimals</value>
+  </data>
+  <data name="LBL_EAINFO_ATOUTWID" xml:space="preserve">
+    <value>Output Width</value>
+  </data>
+  <data name="LBL_EAINFO_ATPRECIS" xml:space="preserve">
+    <value>Precision</value>
+  </data>
+  <data name="LBL_EAINFO_ATT" xml:space="preserve">
+    <value>Attribute:</value>
+  </data>
+  <data name="LBL_EAINFO_ATTALIAS" xml:space="preserve">
+    <value>Alias</value>
+  </data>
+  <data name="LBL_EAINFO_ATTRDEF" xml:space="preserve">
+    <value>Definition</value>
+  </data>
+  <data name="LBL_EAINFO_ATTRDEFS" xml:space="preserve">
+    <value>Definition Source</value>
+  </data>
+  <data name="LBL_EAINFO_ATTRLABL" xml:space="preserve">
+    <value>Label</value>
+  </data>
+  <data name="LBL_EAINFO_ATTRMFRQ" xml:space="preserve">
+    <value>Value Measurement Frequency</value>
+  </data>
+  <data name="LBL_EAINFO_ATTRMRES" xml:space="preserve">
+    <value>Measurement Resolution</value>
+  </data>
+  <data name="LBL_EAINFO_ATTRTYPE" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="LBL_EAINFO_ATTRUNIT" xml:space="preserve">
+    <value>Units</value>
+  </data>
+  <data name="LBL_EAINFO_ATTRVA" xml:space="preserve">
+    <value>Value Accuracy</value>
+  </data>
+  <data name="LBL_EAINFO_ATTRVAE" xml:space="preserve">
+    <value>Value Explanation</value>
+  </data>
+  <data name="LBL_EAINFO_ATTSCALE" xml:space="preserve">
+    <value>Scale</value>
+  </data>
+  <data name="LBL_EAINFO_ATTWIDTH" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="LBL_EAINFO_BEGDATEA" xml:space="preserve">
+    <value>Beginning Date of Values</value>
+  </data>
+  <data name="LBL_EAINFO_CODESET" xml:space="preserve">
+    <value>Codeset Domain</value>
+  </data>
+  <data name="LBL_EAINFO_CODESETN" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="LBL_EAINFO_CODESETS" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="LBL_EAINFO_DETAILS" xml:space="preserve">
+    <value>Details:</value>
+  </data>
+  <data name="LBL_EAINFO_ENDDATEA" xml:space="preserve">
+    <value>Ending Date of Values</value>
+  </data>
+  <data name="LBL_EAINFO_ENTTYPC" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="LBL_EAINFO_ENTTYPD" xml:space="preserve">
+    <value>Definition</value>
+  </data>
+  <data name="LBL_EAINFO_ENTTYPDS" xml:space="preserve">
+    <value>Definition Source</value>
+  </data>
+  <data name="LBL_EAINFO_ENTTYPL" xml:space="preserve">
+    <value>Label</value>
+  </data>
+  <data name="LBL_EAINFO_ENTTYPT" xml:space="preserve">
+    <value>Object</value>
+  </data>
+  <data name="LBL_EAINFO_ENUM_DEF" xml:space="preserve">
+    <value>Definition</value>
+  </data>
+  <data name="LBL_EAINFO_ENUM_DOMAIN" xml:space="preserve">
+    <value>Enumerated Domain</value>
+  </data>
+  <data name="LBL_EAINFO_ENUM_SOURCE" xml:space="preserve">
+    <value>Definition Source</value>
+  </data>
+  <data name="LBL_EAINFO_ENUM_VALUE" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="LBL_EAINFO_RANGE_DOMAIN" xml:space="preserve">
+    <value>Range Domain</value>
+  </data>
+  <data name="LBL_EAINFO_RDOMMAX" xml:space="preserve">
+    <value>Maximum</value>
+  </data>
+  <data name="LBL_EAINFO_RDOMMEAN" xml:space="preserve">
+    <value>Mean</value>
+  </data>
+  <data name="LBL_EAINFO_RDOMMIN" xml:space="preserve">
+    <value>Minimum</value>
+  </data>
+  <data name="LBL_EAINFO_RDOMSTDV" xml:space="preserve">
+    <value>Standard Deviation</value>
+  </data>
+  <data name="LBL_EAINFO_UDOM" xml:space="preserve">
+    <value>Unrepresentable Domain</value>
+  </data>
+  <data name="LBL_RESOL_DIST" xml:space="preserve">
+    <value>Distance Resolution</value>
+  </data>
+  <data name="LBL_SPATREF_CELLGEOM" xml:space="preserve">
+    <value>Cell Geometry</value>
+  </data>
+  <data name="LBL_SPATREF_CHKDESC" xml:space="preserve">
+    <value>Check Point Description</value>
+  </data>
+  <data name="LBL_SPATREF_CHKPT" xml:space="preserve">
+    <value>Check Point Availability</value>
+  </data>
+  <data name="LBL_SPATREF_CONPT" xml:space="preserve">
+    <value>Control Point Availability</value>
+  </data>
+  <data name="LBL_SPATREF_DIMNAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="LBL_SPATREF_DIMRES" xml:space="preserve">
+    <value>Resolution</value>
+  </data>
+  <data name="LBL_SPATREF_DIMSIZE" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="LBL_SPATREF_GEOOBJ" xml:space="preserve">
+    <value>Geometric Objects</value>
+  </data>
+  <data name="LBL_SPATREF_GEOREC" xml:space="preserve">
+    <value>Georectified Representation</value>
+  </data>
+  <data name="LBL_SPATREF_GEOREF" xml:space="preserve">
+    <value>Georeferenceable Representation</value>
+  </data>
+  <data name="LBL_SPATREF_GEOREFPARAMS" xml:space="preserve">
+    <value>Georeferenced Parameters</value>
+  </data>
+  <data name="LBL_SPATREF_GRID" xml:space="preserve">
+    <value>Grid Spatial Representation</value>
+  </data>
+  <data name="LBL_SPATREF_NUMDIM" xml:space="preserve">
+    <value>Number of Dimensions</value>
+  </data>
+  <data name="LBL_SPATREF_ORAVAIL" xml:space="preserve">
+    <value>Orientation Parameter Availability</value>
+  </data>
+  <data name="LBL_SPATREF_ORDESC" xml:space="preserve">
+    <value>Orientation Parameter Description</value>
+  </data>
+  <data name="LBL_SPATREF_POINTPIXEL" xml:space="preserve">
+    <value>Point In Pixel</value>
+  </data>
+  <data name="LBL_SPATREF_TOPLEVEL" xml:space="preserve">
+    <value>Topology Level</value>
+  </data>
+  <data name="LBL_SPATREF_TRANS" xml:space="preserve">
+    <value>Transformation Parameter Availability</value>
+  </data>
+  <data name="LBL_SPATREF_TRANSDIMDESC" xml:space="preserve">
+    <value>Transformation Dimension Description</value>
+  </data>
+  <data name="LBL_SPATREF_TRANSDIMMAP" xml:space="preserve">
+    <value>Transformation Dimension Mapping</value>
+  </data>
+  <data name="LBL_SPATREF_VEC" xml:space="preserve">
+    <value>Vector Representation</value>
+  </data>
+  <data name="SEC_EAINFO" xml:space="preserve">
+    <value>Entity and Attribute Information</value>
+  </data>
+  <data name="SEC_SPATREF" xml:space="preserve">
+    <value>Spatial Representation Information</value>
+  </data>
+  <data name="LBL_TOOL_SUMMARY" xml:space="preserve">
+    <value>Summary (Abstract)</value>
+  </data>
+  <data name="SEC_TOOL" xml:space="preserve">
+    <value>Geoprocessing Tool</value>
+  </data>
+  <data name="TT_NAP_fileIdentifier" xml:space="preserve">
+    <value>A unique phrase or string which uniquely identifies the metadata file.</value>
+  </data>
+  <data name="TT_NAP_parentIdentifier" xml:space="preserve">
+    <value>The unique name of the file or associated fileIdentifier, related in higher hierarchy to the file.</value>
+  </data>
+  <data name="LBL_PRHIST_CMD" xml:space="preserve">
+    <value>Command</value>
+  </data>
+  <data name="LBL_PRHIST_EXPORT" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="LBL_PRHIST_NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="LBL_PRHIST_SOURCE" xml:space="preserve">
+    <value>Tool Source</value>
+  </data>
+  <data name="LBL_TOOL_EXPL" xml:space="preserve">
+    <value>Explanation</value>
+  </data>
+  <data name="LBL_TOOL_EXPR" xml:space="preserve">
+    <value>Expression</value>
+  </data>
+  <data name="LBL_TOOL_SCRIPTREF" xml:space="preserve">
+    <value>Scripting Explanation</value>
+  </data>
+  <data name="SEC_PROCESSHISTORY" xml:space="preserve">
+    <value>Geoprocessing History</value>
+  </data>
+  <data name="MSGBOX_SAVE_CAPTION" xml:space="preserve">
+    <value>Metadata</value>
+  </data>
+  <data name="MSGBOX_SAVE_MSG" xml:space="preserve">
+    <value>Save changes to metadata describing {0}?</value>
+  </data>
+  <data name="MSG_CONFIGFILE_ERROR" xml:space="preserve">
+    <value>There is an error in the metadata editor configuration file.</value>
+  </data>
+  <data name="MSG_BAD_SOURCE_XML" xml:space="preserve">
+    <value>The item's XML contains errors.</value>
+  </data>
+  <data name="MSG_UNSUPPORTED_OBJECT" xml:space="preserve">
+    <value>This item cannot have metadata.</value>
+  </data>
+  <data name="MSG_XSLT_ERROR" xml:space="preserve">
+    <value>XSLT processing error.</value>
+  </data>
+  <data name="MSG_XSLT_TRANSFORM_ERROR" xml:space="preserve">
+    <value>There was an error during XSLT transformation.</value>
+  </data>
+  <data name="LBL_TOOL_DIALOGREF" xml:space="preserve">
+    <value>Dialog Explanation</value>
+  </data>
+  <data name="TT_NAP_abstract" xml:space="preserve">
+    <value>brief narrative summary of the content of the resource(s)</value>
+  </data>
+  <data name="TT_NAP_credit" xml:space="preserve">
+    <value>recognition of those who contributed to the resource(s)</value>
+  </data>
+  <data name="TT_NAP_purpose" xml:space="preserve">
+    <value>summary of the intentions with which the resource(s) was developed</value>
+  </data>
+  <data name="TT_NAP_theme" xml:space="preserve">
+    <value>tags identify a particular subject or topic</value>
+  </data>
+  <data name="TT_NAP_title" xml:space="preserve">
+    <value>name by which the cited resource is known</value>
+  </data>
+  <data name="MSGBOX_SAVE_ERR_MSG" xml:space="preserve">
+    <value>An error has occured attempting to save the item description.</value>
+  </data>
+  <data name="MSGBOX_SYNC_ERR_MSG" xml:space="preserve">
+    <value>An error has occured while attempting to synchronize the item.</value>
+  </data>
+  <data name="TT_RTB_HYPERLINK" xml:space="preserve">
+    <value>Hyperlink</value>
+  </data>
+  <data name="LBL_TOOL_SYNTAX" xml:space="preserve">
+    <value>Syntax</value>
+  </data>
+  <data name="LBL_TOOL_USAGE" xml:space="preserve">
+    <value>Usage</value>
+  </data>
+  <data name="BTN_ADD_TOOL_EXAMPLE" xml:space="preserve">
+    <value>New Code Sample</value>
+  </data>
+  <data name="LBL_TOOL_CODE" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="LBL_TOOL_EXAMPLE" xml:space="preserve">
+    <value>Example</value>
+  </data>
+  <data name="LBL_TOOL_EXAMPLES" xml:space="preserve">
+    <value>Code Samples</value>
+  </data>
+  <data name="LBL_TOOL_TITLE" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="BTN_GP_NEW_DIALOGREF" xml:space="preserve">
+    <value>New Dialog Explanation</value>
+  </data>
+  <data name="BTN_GP_NEW_PYREF" xml:space="preserve">
+    <value>New Python Explanation</value>
+  </data>
+  <data name="MSGBOX_DELETE_CAPTION" xml:space="preserve">
+    <value>Delete Information</value>
+  </data>
+  <data name="MSGBOX_DELETE_MSG" xml:space="preserve">
+    <value>Do you want to delete this information?</value>
+  </data>
+  <data name="BTN_THUMB_REPLACE" xml:space="preserve">
+    <value>Update...</value>
+  </data>
+  <data name="SBAR_ITEMINFO" xml:space="preserve">
+    <value>Item Description</value>
+  </data>
+  <data name="BTN_THUMB_DELETE" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="MSG_METADATA_MISSING" xml:space="preserve">
+    <value>Metadata Is Missing</value>
+  </data>
+  <data name="XSLT_RES_NOTFOUND" xml:space="preserve">
+    <value>Error - String Not Found</value>
+  </data>
+  <data name="CFG_LBL_CONTENTINFORMATION" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="CFG_LBL_DATAQUALITY" xml:space="preserve">
+    <value>Quality</value>
+  </data>
+  <data name="CFG_LBL_DATASETCITATION" xml:space="preserve">
+    <value>Citation</value>
+  </data>
+  <data name="CFG_LBL_DISTRIBUTIONINFO" xml:space="preserve">
+    <value>Distribution</value>
+  </data>
+  <data name="CFG_LBL_ENTITYATTRIBUTEINFO" xml:space="preserve">
+    <value>Fields</value>
+  </data>
+  <data name="CFG_LBL_ITEMINFO" xml:space="preserve">
+    <value>Item Description</value>
+  </data>
+  <data name="CFG_LBL_KEYWORDS" xml:space="preserve">
+    <value>Topics &amp; Keywords</value>
+  </data>
+  <data name="CFG_LBL_LILINEAGE" xml:space="preserve">
+    <value>Lineage</value>
+  </data>
+  <data name="CFG_LBL_METADATA" xml:space="preserve">
+    <value>Metadata</value>
+  </data>
+  <data name="CFG_LBL_METADATACONSTRAINTS" xml:space="preserve">
+    <value>Constraints</value>
+  </data>
+  <data name="CFG_LBL_METADATACONTACTS" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="CFG_LBL_METADATADETAILS" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="CFG_LBL_METADATAMAINTENANCE" xml:space="preserve">
+    <value>Maintenance</value>
+  </data>
+  <data name="CFG_LBL_OVERVIEW" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="CFG_LBL_REFERENCESYSTEM" xml:space="preserve">
+    <value>Spatial Reference</value>
+  </data>
+  <data name="CFG_LBL_RESOUCEDETAILS" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="CFG_LBL_RESOURCE" xml:space="preserve">
+    <value>Resource</value>
+  </data>
+  <data name="CFG_LBL_RESOURCECITATIONCONTACTS" xml:space="preserve">
+    <value>Citation Contacts</value>
+  </data>
+  <data name="CFG_LBL_RESOURCECONSTRAINTS" xml:space="preserve">
+    <value>Constraints</value>
+  </data>
+  <data name="CFG_LBL_RESOURCEEXTENT" xml:space="preserve">
+    <value>Extents</value>
+  </data>
+  <data name="CFG_LBL_RESOURCEMAINTENANCE" xml:space="preserve">
+    <value>Maintenance</value>
+  </data>
+  <data name="CFG_LBL_RESOURCEPOC" xml:space="preserve">
+    <value>Points of Contact</value>
+  </data>
+  <data name="CFG_LBL_SPATIALREPRESENTATION" xml:space="preserve">
+    <value>Spatial Data Representation</value>
+  </data>
+  <data name="BTN_NEW_LOCALE" xml:space="preserve">
+    <value>New Locale</value>
+  </data>
+  <data name="CFG_LBL_LOCALES" xml:space="preserve">
+    <value>Locales</value>
+  </data>
+  <data name="LBL_LOCALE_LOCALE" xml:space="preserve">
+    <value>Locale</value>
+  </data>
+  <data name="SEC_LOCALES" xml:space="preserve">
+    <value>Locales</value>
+  </data>
+  <data name="BTN_CONSTS_NEW_DIM" xml:space="preserve">
+    <value>New Dimension</value>
+  </data>
+  <data name="LBL_DIMENSION" xml:space="preserve">
+    <value>Dimension</value>
+  </data>
+  <data name="CFG_LBL_GEOPROCESSING" xml:space="preserve">
+    <value>Geoprocessing History</value>
+  </data>
+  <data name="LBL_PROCESS" xml:space="preserve">
+    <value>Process: </value>
+  </data>
+  <data name="LBL_TOOLDATE" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="LBL_TOOLSOURCE" xml:space="preserve">
+    <value>Tool Source</value>
+  </data>
+  <data name="LBL_TOOLTIME" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="LBL_GEOPROCESSING_CMD" xml:space="preserve">
+    <value>Tool Execution</value>
+  </data>
+  <data name="LBL_GEOPROCESSING_EXPORT" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="LBL_ENVDESC" xml:space="preserve">
+    <value>Processing environment</value>
+  </data>
+  <data name="LBL_DQ_CONFORMREPORT" xml:space="preserve">
+    <value>Conformance Result</value>
+  </data>
+  <data name="LBL_DQ_SPEC" xml:space="preserve">
+    <value>Specification</value>
+  </data>
+  <data name="BTN_ADD_CITATION" xml:space="preserve">
+    <value>New Citation</value>
+  </data>
+  <data name="LBL_CI_CITATION" xml:space="preserve">
+    <value>Source Citation: </value>
+  </data>
+  <data name="LBL_CI_PARTIES" xml:space="preserve">
+    <value>Responsible Parties</value>
+  </data>
+  <data name="LBL_CI_PARTY" xml:space="preserve">
+    <value>Contact:</value>
+  </data>
+  <data name="LBL_DQ_CNFRMEXPLAIN" xml:space="preserve">
+    <value>Explanation</value>
+  </data>
+  <data name="LBL_DQ_ERRORSTAT" xml:space="preserve">
+    <value>Error Statistic</value>
+  </data>
+  <data name="LBL_DQ_PASS" xml:space="preserve">
+    <value>Pass</value>
+  </data>
+  <data name="LBL_DQ_QUANRESULT" xml:space="preserve">
+    <value>Quantitative Result</value>
+  </data>
+  <data name="LBL_DQ_VALTYPE" xml:space="preserve">
+    <value>Value Type</value>
+  </data>
+  <data name="LBL_DQ_VALUNIT" xml:space="preserve">
+    <value>Value Unit</value>
+  </data>
+  <data name="LBL_DQ_VALUE" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="LBL_MED_NOTE" xml:space="preserve">
+    <value>Medium Note</value>
+  </data>
+  <data name="BTN_NEW_USAGE" xml:space="preserve">
+    <value>New Usage</value>
+  </data>
+  <data name="LBL_GML_POINT_DESC" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="LBL_GML_POINT_DESCREF" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="LBL_GML_POINT_ID" xml:space="preserve">
+    <value>Identifier</value>
+  </data>
+  <data name="LBL_GML_POINT_ID_CODESPACE" xml:space="preserve">
+    <value>Identifier Codespace</value>
+  </data>
+  <data name="LBL_GML_POINT_POS" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="LBL_SPATREF_CENTER" xml:space="preserve">
+    <value>Center Point</value>
+  </data>
+  <data name="LBL_USAGE" xml:space="preserve">
+    <value>Usage</value>
+  </data>
+  <data name="LBL_USAGE_DATE" xml:space="preserve">
+    <value>Usage Date</value>
+  </data>
+  <data name="LBL_USAGE_LIM" xml:space="preserve">
+    <value>Limitations</value>
+  </data>
+  <data name="LBL_USAGE_SPEC" xml:space="preserve">
+    <value>Specific Usage</value>
+  </data>
+  <data name="LBL_SPATREF_PARAMCIT" xml:space="preserve">
+    <value>Parameter Citation: </value>
+  </data>
+  <data name="SEC_SV_DETAILS" xml:space="preserve">
+    <value>Service Details</value>
+  </data>
+  <data name="BTN_NEW_FEATURE_TYPE" xml:space="preserve">
+    <value>New Feature Type</value>
+  </data>
+  <data name="BTN_NEW_SERVICE_TYPEVERSION" xml:space="preserve">
+    <value>New Service Type Version</value>
+  </data>
+  <data name="BTN_SERVICE_NEW_EXT" xml:space="preserve">
+    <value>New Service Extent</value>
+  </data>
+  <data name="CFG_LBL_SERVICES" xml:space="preserve">
+    <value>Service Details</value>
+  </data>
+  <data name="LBL_GENERICNAME_CODESPACE" xml:space="preserve">
+    <value>Codespace</value>
+  </data>
+  <data name="LBL_GENERICNAME_NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="LBL_SERVICE_ACCESSPROPS" xml:space="preserve">
+    <value>Access Properties</value>
+  </data>
+  <data name="LBL_SERVICE_EXTENT" xml:space="preserve">
+    <value>Service Extent</value>
+  </data>
+  <data name="LBL_SERVICE_SERVICETYPE" xml:space="preserve">
+    <value>Service Type</value>
+  </data>
+  <data name="LBL_SERVICE_SERVICETYPEVER" xml:space="preserve">
+    <value>Service Type Version</value>
+  </data>
+  <data name="BTN_SERVICE_NEW_COUPLEDRES" xml:space="preserve">
+    <value>New Coupled Resource</value>
+  </data>
+  <data name="LBL_SERVICE_COUPLEDRES" xml:space="preserve">
+    <value>Coupled Resource</value>
+  </data>
+  <data name="LBL_SERVICE_COUPLEDRES_CODE" xml:space="preserve">
+    <value>Resource Identifier</value>
+  </data>
+  <data name="LBL_SERVICE_COUPLEDRES_NAME" xml:space="preserve">
+    <value>Operation Name</value>
+  </data>
+  <data name="LBL_SERVICE_COUPLINGTYPE" xml:space="preserve">
+    <value>Coupling Type</value>
+  </data>
+  <data name="LBL_NO_GEO_PROCESS" xml:space="preserve">
+    <value>There are no entries in the geoprocessing history.</value>
+  </data>
+  <data name="BTN_LI_NEW_CITATION" xml:space="preserve">
+    <value>New Source Citation</value>
+  </data>
+  <data name="BTN_NEW_PARAM_CITATION" xml:space="preserve">
+    <value>New Parameter Citation</value>
+  </data>
+  <data name="LBL_DQ_EVALMETH" xml:space="preserve">
+    <value>Evaluation Method</value>
+  </data>
+  <data name="LBL_DQ_MEASURE" xml:space="preserve">
+    <value>Measure</value>
+  </data>
+  <data name="CMB_UNRECOGNIZED_VALUE" xml:space="preserve">
+    <value>Unrecognized Value:</value>
+  </data>
+  <data name="LBL_BTN_CREATE_GUID" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="BTN_KEY_NEW_PRODUCT" xml:space="preserve">
+    <value>New Product Keywords</value>
+  </data>
+  <data name="BTN_KEY_NEW_SUBTOPIC" xml:space="preserve">
+    <value>New Subtopic Keywords</value>
+  </data>
+  <data name="LBL_DATE_NAP_ADOPTED" xml:space="preserve">
+    <value>Adopted</value>
+  </data>
+  <data name="LBL_DATE_NAP_DEPRECATED" xml:space="preserve">
+    <value>Deprecated</value>
+  </data>
+  <data name="LBL_DATE_NAP_INFORCE" xml:space="preserve">
+    <value>In Force</value>
+  </data>
+  <data name="LBL_DATE_NAP_NOT_AVAIL" xml:space="preserve">
+    <value>Not Available</value>
+  </data>
+  <data name="LBL_DATE_NAP_SUPERSEDED" xml:space="preserve">
+    <value>Superseded</value>
+  </data>
+  <data name="LBL_DESC_PRODUCTKEY" xml:space="preserve">
+    <value>Product Keywords</value>
+  </data>
+  <data name="LBL_DESC_SUBTOPICKEY" xml:space="preserve">
+    <value>Subtopic Keywords</value>
+  </data>
+  <data name="LBL_META_NAP_COUNTRY" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="LBL_RES_LANGS" xml:space="preserve">
+    <value>Languages</value>
+  </data>
+  <data name="BTN_RICHTEXT_APPLY" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="BTN_RICHTEXT_URL" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="LBL_EXT_DESC" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="LBL_SPATREF_EXTYPECODE" xml:space="preserve">
+    <value>Polygon contains the resource</value>
+  </data>
+  <data name="LBL_SPATREF_EXTYPECODE1" xml:space="preserve">
+    <value>Extent contains the resource</value>
+  </data>
+  <data name="LBL_SPATREF_EXTYPECODE2" xml:space="preserve">
+    <value>Description contains the resource</value>
+  </data>
+  <data name="BTN_EXIT" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="LBL_EAINFO_ENTITY_TYPE" xml:space="preserve">
+    <value>Entity Type</value>
+  </data>
+  <data name="LBL_ISS_LOCALONLY" xml:space="preserve">
+    <value>Only This Page's Issues</value>
+  </data>
+  <data name="LBL_ISS_NO_INFO" xml:space="preserve">
+    <value>No more information available</value>
+  </data>
+  <data name="BTN_VALIDATE_PAGE" xml:space="preserve">
+    <value>Check Page</value>
+  </data>
+  <data name="LBL_VALIDATE_NO_ERRORS" xml:space="preserve">
+    <value>No Errors Found</value>
+  </data>
+  <data name="MSG_BAD_CONFIGDOC" xml:space="preserve">
+    <value>Error in the metadata style document</value>
+  </data>
+  <data name="CFG_LBL_CONTACT_MGR" xml:space="preserve">
+    <value>Contacts Manager</value>
+  </data>
+  <data name="BTN_NEW_AGG_INFO" xml:space="preserve">
+    <value>New Aggregate Information</value>
+  </data>
+  <data name="SEC_CONTACT_MGR" xml:space="preserve">
+    <value>Contacts Manager</value>
+  </data>
+  <data name="BTN_NEW_PORTRAYAL_CIT" xml:space="preserve">
+    <value>New Portrayal Citation</value>
+  </data>
+  <data name="CFG_LBL_RES_REF" xml:space="preserve">
+    <value>References</value>
+  </data>
+  <data name="LBL_AGG_ID" xml:space="preserve">
+    <value>Identifier:</value>
+  </data>
+  <data name="LBL_AGG_INFO" xml:space="preserve">
+    <value>Aggregate Information:</value>
+  </data>
+  <data name="LBL_AGG_NAME" xml:space="preserve">
+    <value>Dataset Citation: </value>
+  </data>
+  <data name="LBL_AGG_TYPE" xml:space="preserve">
+    <value>Association Type</value>
+  </data>
+  <data name="LBL_DIGOPT_DENSITY" xml:space="preserve">
+    <value>Density</value>
+  </data>
+  <data name="LBL_MD_PORTRAYAL" xml:space="preserve">
+    <value>Portrayal Citation</value>
+  </data>
+  <data name="LBL_PORTRAYAL_CIT" xml:space="preserve">
+    <value>Portrayal Citation:</value>
+  </data>
+  <data name="LBL_SPATREF_CORNER" xml:space="preserve">
+    <value>Corner Point</value>
+  </data>
+  <data name="LBL_SUPPINFO" xml:space="preserve">
+    <value>Supplemental Information</value>
+  </data>
+  <data name="SEC_RES_REF" xml:space="preserve">
+    <value>References</value>
+  </data>
+  <data name="BTN_EXTENTS_NEW_TEMP" xml:space="preserve">
+    <value>New Temporal Period Extent</value>
+  </data>
+  <data name="LBL_EXT_SING_DATE" xml:space="preserve">
+    <value>Date/Time:</value>
+  </data>
+  <data name="LBL_EXT_TEMP" xml:space="preserve">
+    <value>Temporal Period Extent</value>
+  </data>
+  <data name="LBL_EXT_TEMP_BEG" xml:space="preserve">
+    <value>Begin Date/Time:</value>
+  </data>
+  <data name="LBL_EXT_TEMP_END" xml:space="preserve">
+    <value>End Date/Time:</value>
+  </data>
+  <data name="LBL_EXT_TEMP_PERIOD" xml:space="preserve">
+    <value>Time Period?</value>
+  </data>
+  <data name="LBL_SCALE_SCALE" xml:space="preserve">
+    <value>Appropriate Scale Range</value>
+  </data>
+  <data name="SCALE_BUILDINGS_LABEL" xml:space="preserve">
+    <value>Buildings</value>
+  </data>
+  <data name="SCALE_BUILDINGS_NUM" xml:space="preserve">
+    <value>5,000</value>
+  </data>
+  <data name="SCALE_BUILDING_LABEL" xml:space="preserve">
+    <value>Building</value>
+  </data>
+  <data name="SCALE_BUILDING_NUM" xml:space="preserve">
+    <value>152</value>
+  </data>
+  <data name="SCALE_CITIES_LABEL" xml:space="preserve">
+    <value>Cities</value>
+  </data>
+  <data name="SCALE_CITIES_NUM" xml:space="preserve">
+    <value>19,531</value>
+  </data>
+  <data name="SCALE_CITY_BLOCKS_LABEL" xml:space="preserve">
+    <value>City Blocks</value>
+  </data>
+  <data name="SCALE_CITY_BLOCKS_NUM" xml:space="preserve">
+    <value>1,220</value>
+  </data>
+  <data name="SCALE_CITY_BLOCK_LABEL" xml:space="preserve">
+    <value>City Block</value>
+  </data>
+  <data name="SCALE_CITY_BLOCK_NUM" xml:space="preserve">
+    <value>610</value>
+  </data>
+  <data name="SCALE_CITY_LABEL" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="SCALE_CITY_NUM" xml:space="preserve">
+    <value>50,000</value>
+  </data>
+  <data name="SCALE_CONTINENT_LABEL" xml:space="preserve">
+    <value>Continent</value>
+  </data>
+  <data name="SCALE_CONTINENT_NUM" xml:space="preserve">
+    <value>50,000,000</value>
+  </data>
+  <data name="SCALE_COUNTIES_LABEL" xml:space="preserve">
+    <value>Counties</value>
+  </data>
+  <data name="SCALE_COUNTIES_NUM" xml:space="preserve">
+    <value>156,250</value>
+  </data>
+  <data name="SCALE_COUNTRIES_LABEL" xml:space="preserve">
+    <value>Countries</value>
+  </data>
+  <data name="SCALE_COUNTRIES_NUM" xml:space="preserve">
+    <value>2,500,000</value>
+  </data>
+  <data name="SCALE_COUNTRY_LABEL" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="SCALE_COUNTRY_NUM" xml:space="preserve">
+    <value>20,000,000</value>
+  </data>
+  <data name="SCALE_COUNTY_LABEL" xml:space="preserve">
+    <value>County</value>
+  </data>
+  <data name="SCALE_COUNTY_NUM" xml:space="preserve">
+    <value>500,000</value>
+  </data>
+  <data name="SCALE_GLOBE_LABEL" xml:space="preserve">
+    <value>Globe</value>
+  </data>
+  <data name="SCALE_GLOBE_NUM" xml:space="preserve">
+    <value>150,000,000</value>
+  </data>
+  <data name="SCALE_HOUSES_LABEL" xml:space="preserve">
+    <value>Houses</value>
+  </data>
+  <data name="SCALE_HOUSES_NUM" xml:space="preserve">
+    <value>76</value>
+  </data>
+  <data name="SCALE_HOUSE_LABEL" xml:space="preserve">
+    <value>House</value>
+  </data>
+  <data name="SCALE_HOUSE_NUM" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="SCALE_HOUSE_PROPERTY_LABEL" xml:space="preserve">
+    <value>House Property</value>
+  </data>
+  <data name="SCALE_HOUSE_PROPERTY_NUM" xml:space="preserve">
+    <value>38</value>
+  </data>
+  <data name="SCALE_METRO_AREA_LABEL" xml:space="preserve">
+    <value>Metro Area</value>
+  </data>
+  <data name="SCALE_METRO_AREA_NUM" xml:space="preserve">
+    <value>39,062</value>
+  </data>
+  <data name="SCALE_NEIGHBORHOOD_LABEL" xml:space="preserve">
+    <value>Neighborhood</value>
+  </data>
+  <data name="SCALE_NEIGHBORHOOD_NUM" xml:space="preserve">
+    <value>2,441</value>
+  </data>
+  <data name="SCALE_PREFIX" xml:space="preserve">
+    <value>1:</value>
+  </data>
+  <data name="SCALE_ROOMS_LABEL" xml:space="preserve">
+    <value>Rooms</value>
+  </data>
+  <data name="SCALE_ROOMS_NUM" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="SCALE_ROOM_LABEL" xml:space="preserve">
+    <value>Room</value>
+  </data>
+  <data name="SCALE_ROOM_NUM" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="SCALE_STATES_LABEL" xml:space="preserve">
+    <value>States</value>
+  </data>
+  <data name="SCALE_STATES_NUM" xml:space="preserve">
+    <value>625,000</value>
+  </data>
+  <data name="SCALE_STATE_LABEL" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="SCALE_STATE_NUM" xml:space="preserve">
+    <value>5,000,000</value>
+  </data>
+  <data name="SCALE_TOWN_LABEL" xml:space="preserve">
+    <value>Town</value>
+  </data>
+  <data name="SCALE_TOWN_NUM" xml:space="preserve">
+    <value>4,882</value>
+  </data>
+  <data name="BTN_MAINT_NEW_SCOPE" xml:space="preserve">
+    <value>New Scope</value>
+  </data>
+  <data name="BTN_SPATREF_GEOOBJECTS" xml:space="preserve">
+    <value>New Geometric Objects</value>
+  </data>
+  <data name="BTN_LOAD_CONTACT" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="LBL_TOOL_SIDEBARHELPIMAGE" xml:space="preserve">
+    <value>Tool Sidebar Help Image</value>
+  </data>
+  <data name="LBL_CI_PARTY_PICK" xml:space="preserve">
+    <value>Load a contact:</value>
+  </data>
+  <data name="BTN_EXTENTS_NEW_VERT" xml:space="preserve">
+    <value>New Vertical Extent</value>
+  </data>
+  <data name="BTN_NEW_APP_SCHEMA" xml:space="preserve">
+    <value>New Application Schema Information</value>
+  </data>
+  <data name="LBL_APP_SCHEMA" xml:space="preserve">
+    <value>Application Schema Information</value>
+  </data>
+  <data name="LBL_APP_SCHEMA_ASCII" xml:space="preserve">
+    <value>ASCII</value>
+  </data>
+  <data name="LBL_APP_SCHEMA_CONSTRAINT_LANG" xml:space="preserve">
+    <value>Constraint Language</value>
+  </data>
+  <data name="LBL_APP_SCHEMA_GRAPHICS" xml:space="preserve">
+    <value>Graphics File</value>
+  </data>
+  <data name="LBL_APP_SCHEMA_LANG" xml:space="preserve">
+    <value>Schema Language</value>
+  </data>
+  <data name="LBL_APP_SCHEMA_NAME" xml:space="preserve">
+    <value>Citation</value>
+  </data>
+  <data name="LBL_APP_SCHEMA_SOFTWARE" xml:space="preserve">
+    <value>Software Development File</value>
+  </data>
+  <data name="LBL_APP_SCHEMA_SOFTWARE_FORMAT" xml:space="preserve">
+    <value>Software Development File Format</value>
+  </data>
+  <data name="LBL_CI_LOAD_DISTRIBUTOR" xml:space="preserve">
+    <value>Load a contact:</value>
+  </data>
+  <data name="LBL_CI_LOAD_MAINT_CONTACT" xml:space="preserve">
+    <value>Load a contact:</value>
+  </data>
+  <data name="LBL_CI_LOAD_META_CONTACT" xml:space="preserve">
+    <value>Load a contact:</value>
+  </data>
+  <data name="LBL_CI_LOAD_POC_CONTACT" xml:space="preserve">
+    <value>Load a contact:</value>
+  </data>
+  <data name="LBL_CI_LOAD_PROCESSOR" xml:space="preserve">
+    <value>Load a processor:</value>
+  </data>
+  <data name="LBL_CI_LOAD_USAGE_CONTACT" xml:space="preserve">
+    <value>Load a contact:</value>
+  </data>
+  <data name="LBL_EXT_VERT" xml:space="preserve">
+    <value>Vertical Extent</value>
+  </data>
+  <data name="LBL_EXT_VERT_MAX" xml:space="preserve">
+    <value>Maximum Value</value>
+  </data>
+  <data name="LBL_EXT_VERT_MIN" xml:space="preserve">
+    <value>Minimum Value</value>
+  </data>
+  <data name="BTN_EXTENTS_NEW_TEMP_INSTANT" xml:space="preserve">
+    <value>New Temporal Instant Extent</value>
+  </data>
+  <data name="LBL_EXT_TEMPINSTANT" xml:space="preserve">
+    <value>Temporal Instant Extent</value>
+  </data>
+  <data name="LBL_EXT_TEMP_INSTANT" xml:space="preserve">
+    <value>Instant Date</value>
+  </data>
+  <data name="LBL_ADDRESS_TYPE" xml:space="preserve">
+    <value>Address Type</value>
+  </data>
+  <data name="LBL_FGDC_GEOFORM" xml:space="preserve">
+    <value>FGDC Geospatial Data Presentation Form</value>
+  </data>
+  <data name="BTN_NEW_OVERVIEW" xml:space="preserve">
+    <value>New Overview</value>
+  </data>
+  <data name="LBL_EAINFO_OVERVIEW" xml:space="preserve">
+    <value>Overview Description</value>
+  </data>
+  <data name="LBL_FMT_INFO" xml:space="preserve">
+    <value>Information Content</value>
+  </data>
+  <data name="BTN_SPATREF_NEW_IND" xml:space="preserve">
+    <value>New Indirect Representation</value>
+  </data>
+  <data name="LBL_CONT_TDDTTY" xml:space="preserve">
+    <value>TDD/TTY</value>
+  </data>
+  <data name="LBL_EAINFO_OVERCIT" xml:space="preserve">
+    <value>Citation</value>
+  </data>
+  <data name="LBL_EAINFO_SUMMARY" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="LBL_SPATREF_IND" xml:space="preserve">
+    <value>Indirect Spatial Representation</value>
+  </data>
+  <data name="LBL_DATES_OTHER" xml:space="preserve">
+    <value>Other Dates</value>
+  </data>
+  <data name="LBL_DQ_REPORTDIM" xml:space="preserve">
+    <value>Dimension</value>
+  </data>
+  <data name="LBL_LI_SOURCE_TYPE" xml:space="preserve">
+    <value>Source Type</value>
+  </data>
+  <data name="LBL_STD_AVAILDATEPERIOD" xml:space="preserve">
+    <value>Available Date Period</value>
+  </data>
+  <data name="LBL_AGG_INIT_TYPE" xml:space="preserve">
+    <value>Initiative Type</value>
+  </data>
+  <data name="BTN_EAINFO_NEW_CIT" xml:space="preserve">
+    <value>New Citation</value>
+  </data>
+  <data name="MSGBOX_UPGRADE" xml:space="preserve">
+    <value>The internal storage format for metadata has changed. You can see FGDC-formatted metadata in the display as read-only information, but this content must be upgraded before it is available for editing. 
+
+Do you want to upgrade the FGDC metadata content to the ArcGIS metadata format?</value>
+  </data>
+  <data name="MSGBOX_UPGRADE_CAPTION" xml:space="preserve">
+    <value>Upgrade Metadata</value>
+  </data>
+  <data name="MSGBOX_UPGRADE_LINK" xml:space="preserve">
+    <value>About managing FGDC metadata</value>
+  </data>
+  <data name="MSGBOX_UPGRADE_OPTION" xml:space="preserve">
+    <value>Do not show this message in the future</value>
+  </data>
+  <data name="LBL_LOCALE_ABSTRACT" xml:space="preserve">
+    <value>Abstract</value>
+  </data>
+  <data name="LBL_RS_DIMENSION" xml:space="preserve">
+    <value>Dimension</value>
+  </data>
+  <data name="BTN_ADD_CONTACT_INFO" xml:space="preserve">
+    <value>New Contact Information</value>
+  </data>
+  <data name="BTN_ADD_DQ_CONF_RESULTS" xml:space="preserve">
+    <value>New Conformance Result</value>
+  </data>
+  <data name="BTN_ADD_DQ_QUAN_RESULTS" xml:space="preserve">
+    <value>New Quantitative Result</value>
+  </data>
+  <data name="BTN_ADD_ONLINE_RES" xml:space="preserve">
+    <value>New Online Resource</value>
+  </data>
+  <data name="LBL_ITEMINFO_THUMB" xml:space="preserve">
+    <value>Thumbnail</value>
+  </data>
+  <data name="LBL_IMS_CONTENT_TYPE" xml:space="preserve">
+    <value>Content Type</value>
+  </data>
+  <data name="LBL_IMS_CONTENT_TYPE_EXPORT" xml:space="preserve">
+    <value>Export as Resource Description</value>
+  </data>
+  <data name="LBL_ITEMINFO_EXTENT" xml:space="preserve">
+    <value>Bounding Box</value>
+  </data>
+  <data name="LBL_APP_SCHEMA_GRAPHICS_SRC" xml:space="preserve">
+    <value>Graphics File Source</value>
+  </data>
+  <data name="LBL_APP_SCHEMA_SOFTWARE_SRC" xml:space="preserve">
+    <value>Software Development File Source</value>
+  </data>
+  <data name="MSGBOX_SAVEUPGRADE_CAPTION" xml:space="preserve">
+    <value>Upgrade Metadata</value>
+  </data>
+  <data name="MSGBOX_SAVEUPGRADE_MSG" xml:space="preserve">
+    <value>Do you wish to upgrade the metadata to the ArcGIS format now?</value>
+  </data>
+  <data name="BTN_ADD_AGG_CIT" xml:space="preserve">
+    <value>New Citation</value>
+  </data>
+  <data name="BTN_ADD_AGG_ID" xml:space="preserve">
+    <value>New Identifier</value>
+  </data>
+  <data name="BTN_ADD_AUTH_CIT" xml:space="preserve">
+    <value>New Authority Citation</value>
+  </data>
+  <data name="BTN_ADD_ID" xml:space="preserve">
+    <value>New Identifier</value>
+  </data>
+  <data name="BTN_ADD_THESAURUS" xml:space="preserve">
+    <value>Add Thesaurus Citation</value>
+  </data>
+  <data name="BTN_RES_NEW_FORMAT" xml:space="preserve">
+    <value>New Resource Format</value>
+  </data>
+  <data name="BTN_NEW_CORNER" xml:space="preserve">
+    <value>New Corner Point</value>
+  </data>
+  <data name="LBL_CI_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="LBL_CI_Organization" xml:space="preserve">
+    <value>Organization</value>
+  </data>
+  <data name="LBL_CI_Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="LBL_CI_Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="LBL_CM_Confirm" xml:space="preserve">
+    <value>Remove this contact from your contacts list?</value>
+  </data>
+  <data name="LBL_CM_ConfirmTitle" xml:space="preserve">
+    <value>Confirm Removal</value>
+  </data>
+  <data name="LBL_CM_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="LBL_CI_PARTY_ADD_FORMAT" xml:space="preserve">
+    <value>%LABEL%</value>
+  </data>
+  <data name="LBL_CI_PARTY_FORMAT" xml:space="preserve">
+    <value>%LABEL% (%ROLE%)</value>
+  </data>
+  <data name="LBL_CI_PARTY_READONLY_FORMAT" xml:space="preserve">
+    <value>%LABEL%</value>
+  </data>
+  <data name="LBL_CI_PARTY_ROLE_UNKNOWN" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="BTN_DQ_NEW_EVALPROC" xml:space="preserve">
+    <value>New Evaluation Procedure Citation</value>
+  </data>
+  <data name="BTN_DQ_NEW_MEASID" xml:space="preserve">
+    <value>New Measure Identifier</value>
+  </data>
+  <data name="BTN_DQ_NEW_SRCREFSYS" xml:space="preserve">
+    <value>New Source Reference System</value>
+  </data>
+  <data name="BTN_IMG_NEW_IMGQUAL" xml:space="preserve">
+    <value>New Image Quality Code</value>
+  </data>
+  <data name="BTN_IMG_NEW_PROCLEVEL" xml:space="preserve">
+    <value>New Processing Level Code</value>
+  </data>
+  <data name="ProjectItemNoMetadata" xml:space="preserve">
+    <value>Metadata is unavailable for this item</value>
+  </data>
+  <data name="Save_Button_Enabled_ToolTip" xml:space="preserve">
+    <value>Save all edits made since the last save. After saving, you cannot undo previous metadata edits.</value>
+  </data>
+  <data name="Save_Button_Disabled_ToolTip" xml:space="preserve">
+    <value>Available only when editing metadata for items stored outside the project such as feature classes and tools.</value>
+  </data>
+  <data name="CategoryMetadata" xml:space="preserve">
+    <value>Metadata</value>
+  </data>
+  <data name="SaveMetadataOperationName" xml:space="preserve">
+    <value>Save metadata: {0}</value>
+  </data>
+  <data name="MSGBOX_APPLY_MSG" xml:space="preserve">
+    <value>Apply changes to metadata describing {0}?</value>
+  </data>
+  <data name="ITEM_INFO_LOCATION" xml:space="preserve">
+    <value>Location:</value>
+  </data>
+  <data name="ITEM_INFO_TYPE" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="MD_SOURCE_NOT_EXIST_MSG" xml:space="preserve">
+    <value>Cannot edit metadata for "{0}"</value>
+  </data>
+  <data name="MD_SOURCE_NOT_EXIST_TITLE" xml:space="preserve">
+    <value>Network Error</value>
+  </data>
+  <data name="UNQUALIFIED_MD_HTML" xml:space="preserve">
+    <value>This item has metadata in HTML format. It can't be displayed or edited in ArcGIS Pro.</value>
+  </data>
+  <data name="UNQUALIFIED_MD_ISO_19139" xml:space="preserve">
+    <value>This item has metadata in the ISO 19139 format. It can't be displayed or edited in ArcGIS Pro.</value>
+  </data>
+  <data name="UNQUALIFIED_MD_ISO_19139_2" xml:space="preserve">
+    <value>This item has metadata in the ISO 19139-2 format. It can't be displayed or edited in ArcGIS Pro.</value>
+  </data>
+  <data name="UNQUALIFIED_MD_OUTDATED_ESRI" xml:space="preserve">
+    <value>This item has authored FGDC metadata and authored ESRI-ISO metadata. One set of content must be upgraded to ArcGIS metadata format before it can be used in ArcGIS Pro.</value>
+  </data>
+  <data name="UNQUALIFIED_MD_OUTDATED_ESRI2" xml:space="preserve">
+    <value>This item has authored ESRI-ISO metadata that must be upgraded to ArcGIS metadata format before it can be used in ArcGIS Pro.</value>
+  </data>
+  <data name="UNQUALIFIED_MD_OUTDATED_FGDC" xml:space="preserve">
+    <value>This item has authored FGDC metadata that must be upgraded to ArcGIS metadata format before it can be used in ArcGIS Pro.</value>
+  </data>
+  <data name="UNQUALIFIED_MD_UNREC_MD" xml:space="preserve">
+    <value>This item does not have metadata in a recognized format. It can't be displayed or edited in ArcGIS Pro.</value>
+  </data>
+  <data name="Apply_Button_Disabled_ToolTip" xml:space="preserve">
+    <value>Available only when editing metadata for items stored within the project such as maps and layouts.</value>
+  </data>
+  <data name="Apply_Button_Enabled_ToolTip" xml:space="preserve">
+    <value>Apply all metadata edits to the item stored within the project. Metadata edits aren’t saved until changes made to the project are saved.</value>
+  </data>
+  <data name="Browse_Item_MD_Not_Supported" xml:space="preserve">
+    <value>This item cannot have metadata.</value>
+  </data>
+  <data name="ERROR_INVALID_XML" xml:space="preserve">
+    <value>Invalid XML document.</value>
+  </data>
+  <data name="UNQUALIFIED_MD_ROOT_ONLY" xml:space="preserve">
+    <value>This item has empty metadata. </value>
+  </data>
+  <data name="MD_View_Content_Label" xml:space="preserve">
+    <value>View Content</value>
+  </data>
+  <data name="BROWSER_TITLE_DESTINATION" xml:space="preserve">
+    <value>Select Destination Folder</value>
+  </data>
+  <data name="BROWSER_SAVEAS_TITLE" xml:space="preserve">
+    <value>Save Metadata</value>
+  </data>
+  <data name="EXPORT_MD_TITLE" xml:space="preserve">
+    <value>Export Metadata</value>
+  </data>
+  <data name="IMPORT_MD_TITLE" xml:space="preserve">
+    <value>Import Metadata</value>
+  </data>
+  <data name="MDExportMetadataFailureTitle" xml:space="preserve">
+    <value>Export Metadata Failure</value>
+  </data>
+  <data name="MDImportMetadataFailureTitle" xml:space="preserve">
+    <value>Import Metadata Failure</value>
+  </data>
+  <data name="MDSaveAsFailureTitle" xml:space="preserve">
+    <value>Save Metadata As Failure</value>
+  </data>
+</root>

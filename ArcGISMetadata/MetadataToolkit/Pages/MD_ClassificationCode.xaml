@@ -1,0 +1,36 @@
+﻿<p:EditorPage x:Class="MetadataToolkit.MTK_MD_ClassificationCode" x:ClassModifier="internal" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:r="clr-namespace:MetadataToolkit.Properties"
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"              
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
+             mc:Ignorable="d" >
+  <UserControl.Resources>
+    <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter" />  
+    <e:Codelists x:Key="MD_ClassificationCode" CodelistName="MD_ClassificationCode"/>
+  </UserControl.Resources>
+
+  <Grid>
+    <StackPanel>
+      <ComboBox Loaded="PostProcessComboBoxValues" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+          ToolTip="{x:Static r:Definitions.MD_SecurityConstraints_classification}"
+          ItemsSource="{Binding Source={StaticResource MD_ClassificationCode}, Path=List}"
+          DisplayMemberPath="."
+          v:Nav.AnchorName="ClasscationCd,ClasscationCd"
+          SelectedValuePath="@value"
+          Name="MD_ClassificationCode_Code">
+        <ComboBox.SelectedValue>
+          <e:MetadataBinding XPath="ClasscationCd/@value"/>
+        </ComboBox.SelectedValue>
+      </ComboBox>
+
+      <!-- validate after all anchors are loaded -->
+      <v:PageValidateControl/>
+
+    </StackPanel>
+  </Grid>
+</p:EditorPage>

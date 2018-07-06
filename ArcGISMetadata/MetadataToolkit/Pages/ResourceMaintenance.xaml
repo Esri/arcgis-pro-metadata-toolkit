@@ -1,0 +1,71 @@
+﻿<p:EditorPage x:Class="MetadataToolkit.MTK_ResourceMaintenance" x:ClassModifier="internal" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:t="clr-namespace:MetadataToolkit"
+             xmlns:r="clr-namespace:MetadataToolkit.Properties"
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"
+             mc:Ignorable="d" 
+             Loaded="FillXml">
+  <UserControl.Resources>
+    <!-- 
+    <!ENTITY % MaintInfo '(maintFreq, dateNext?, usrDefFreq?, maintScp*, upScpDesc*, maintNote*)'>
+    -->
+    <XmlDataProvider x:Key="XmlRecord" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <metadata>
+            <dataIdInfo>
+              <resMaint/>
+            </dataIdInfo>
+          </metadata>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <!-- validation issues -->
+    <v:MetadataIssueInfo x:Key="maintFreq" Message="{x:Static r:Issues.maintFreq_REQ}" />
+    <v:MetadataIssueInfo x:Key="scopeCd" Message="{x:Static r:Issues.maintScp_REQ}" />
+
+    <!-- validation issues -->
+    <v:MetadataIssueInfo x:Key="party" Message="{x:Static r:Issues.party_REQ}" />
+    <v:MetadataIssueInfo x:Key="partyFgdc" Message="{x:Static r:Issues.partyFgdc_FGDC_REQ}" />
+    <v:MetadataIssueInfo x:Key="role" Message="{x:Static r:Issues.role_REQ}" />
+    <v:MetadataIssueInfo x:Key="linkage" Message="{x:Static r:Issues.linkage_REQ}" />
+    <v:MetadataIssueInfo x:Key="protocol" Message="{x:Static r:Issues.protocol_REQ}" />
+    <v:MetadataIssueInfo x:Key="rpCntInfo_NAP_REQ" Message="{x:Static r:Issues.rpCntInfo_NAP_REQ}" />
+    <v:MetadataIssueInfo x:Key="voiceNum" Message="{x:Static r:Issues.voiceNum_FGDC_REQ}" />
+
+    <v:MetadataIssueInfo x:Key="cntAddress" Message="{x:Static r:Issues.cntAddress_FGDC_REQ}" />
+    <v:MetadataIssueInfo x:Key="addressType" Message="{x:Static r:Issues.addressType_REQ}" />
+    <v:MetadataIssueInfo x:Key="adminArea" Message="{x:Static r:Issues.adminArea_REQ}" />
+    <v:MetadataIssueInfo x:Key="adminArea_FGDC" Name="adminArea_FGDC" Message="{x:Static r:Issues.adminArea_FGDC_REQ}" />
+    <v:MetadataIssueInfo x:Key="city" Message="{x:Static r:Issues.city_REQ}" />
+    <v:MetadataIssueInfo x:Key="postCode" Message="{x:Static r:Issues.postCode_REQ}" />
+
+  </UserControl.Resources>
+
+  <Grid Style="{DynamicResource EditorFrontPageStyle}">
+    <StackPanel>
+      <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.LBL_RES_MAINT}"/>
+      <!-- maintenance info -->
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=//dataIdInfo[1]/resMaint[1]}">
+        <ListBox.ItemsPanel>
+          <ItemsPanelTemplate>
+            <StackPanel/>
+          </ItemsPanelTemplate>
+        </ListBox.ItemsPanel>
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <!-- maintenance info -->
+            <t:MTK_MD_MaintenanceInformation/>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+    </StackPanel>
+  </Grid>
+
+</p:EditorPage>

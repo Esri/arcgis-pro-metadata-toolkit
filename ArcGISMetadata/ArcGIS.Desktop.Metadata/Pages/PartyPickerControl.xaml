@@ -1,0 +1,42 @@
+﻿<p:EditorPage x:Name="control" x:Class="ArcGIS.Desktop.Metadata.Editor.Pages.PartyPickerControl" x:ClassModifier="internal" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor"
+             xmlns:r="clr-namespace:ArcGIS.Desktop.Internal.Metadata.Properties"   
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters" 
+             mc:Ignorable="d" 
+             Loaded="FillXml">
+
+    <UserControl.Resources>
+        <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter" />
+    </UserControl.Resources>
+
+    <Grid>
+    <!--<StackPanel VerticalAlignment="Center" Width="{Binding ElementName=control, Path=ActualWidth}" Orientation="Horizontal">-->
+
+    <DockPanel LastChildFill="True">
+
+      <!-- load button -->
+      <Button Click="LoadParty" DockPanel.Dock="Right" Style="{DynamicResource AddButton}"
+              Name="PartyPickerControl_Load">
+        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_LOAD_CONTACT}"/>
+        </StackPanel>
+      </Button>
+
+      <!-- Width="{Binding ElementName=control, Path=ActualWidth}" -->
+      <!-- list of responsible parties -->
+      <ComboBox DockPanel.Dock="Left" VerticalAlignment="Center" x:Name="PartyList" Loaded="LoadList"
+        DisplayMemberPath="displayName"
+        SelectedValuePath="editorDigest"
+        SelectedValue="{Binding XPath=editorDigest}"/>
+
+    </DockPanel>
+
+  </Grid>
+</p:EditorPage>

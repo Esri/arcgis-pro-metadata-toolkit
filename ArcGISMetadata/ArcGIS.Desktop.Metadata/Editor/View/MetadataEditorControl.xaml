@@ -1,0 +1,53 @@
+﻿<UserControl x:Name="MetadataEditorApp" x:Class="ArcGIS.Desktop.Metadata.Editor.MetadataEditorControl" x:ClassModifier="internal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:editor="clr-namespace:ArcGIS.Desktop.Metadata.Editor"
+    xmlns:pages="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages"
+    xmlns:prop="clr-namespace:ArcGIS.Desktop.Internal.Metadata.Properties"
+    xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation"
+    xmlns:actiPro="http://schemas.actiprosoftware.com/winfx/xaml/shared">
+
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="./MetadataEditorControlTemplates.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+
+  <ScrollViewer x:Name="editorGrid"  Height="Auto" 
+                VerticalScrollBarVisibility="Auto" 
+                HorizontalScrollBarVisibility="Auto">
+    <Grid Background="Transparent"  RequestBringIntoView="editorGrid_RequestBringIntoView">
+      <Grid.RowDefinitions>
+        <!-- Validation Issues -->
+        <RowDefinition Height="Auto" />
+        <!-- Content -->
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <!-- issues, bind runtime with an ItemSource in backing code -->
+      <ListBox Grid.Row="0" x:Name="issuesListBox" 
+               MaxHeight="100"
+               Style="{StaticResource EditorIssuesListBoxStyle}" 
+               ItemsSource="{Binding ErrorIssues}">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <DockPanel LastChildFill="True">
+                <Image Margin="1" DockPanel.Dock="Left" Style="{StaticResource TopButtonImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericErrorStop16.png"/>
+                <!--<TextBlock Margin="5,0,0,0">-->
+                <!--<Hyperlink v:MetadataRules.MetadataIssue="{Binding}">-->
+                  <!--TODO: add back Hyperlink.Click="OnIssueClick"-->
+                  <!--<TextBlock Text="{Binding Message}"/>-->
+                <!--</Hyperlink>-->
+              <!--</TextBlock>-->              
+              <TextBlock Margin="5,0,0,0" Text="{Binding Message}" Foreground="{DynamicResource Esri_Green4}"/>
+            </DockPanel>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+
+      <ContentControl Grid.Row="1" Content="{Binding CurrentPage}"  Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type ScrollViewer}}, Path=ViewportWidth}" MinWidth="350"/>
+      
+    </Grid>
+  </ScrollViewer>
+</UserControl>

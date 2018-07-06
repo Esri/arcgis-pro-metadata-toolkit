@@ -1,0 +1,328 @@
+﻿<p:EditorPage x:Class="ArcGIS.Desktop.Metadata.Editor.Pages.MetadataDetails" x:ClassModifier="internal" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor"
+             xmlns:r="clr-namespace:ArcGIS.Desktop.Internal.Metadata.Properties"
+             xmlns:controls="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Controls"
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters"
+             mc:Ignorable="d" 
+             Loaded="FillXml">
+  <UserControl.Resources>
+    <!--
+    <!ENTITY % Metadata '(Esri?, ESRI_ItemInformation?, mdFileID?, mdLang?, mdChar?, mdParentID?, mdHrLv*, 
+    mdHrLvName*, mdContact+, mdDateSt, mdStanName?, mdStanVer?, dataSetURI?, dataSetFn?, loc*, 
+    spatRepInfo*, refSysInfo*, mdExtInfo*, (dataIdInfo+ | svIdInfo+), contInfo*, distInfo?, dqInfo*, 
+    porCatInfo*, mdConst*, appSchInfo*, mdMaint?, series*, describes*, propType*, featType*, featAttr*, 
+    spdoinfo?, eainfo?, Binary?, (tool? | toolbox?), taxSys?, miAcquInfo*)'> 
+    
+    <!ELEMENT mdFileID (#PCDATA)>
+    
+    <!ELEMENT mdLang (languageCode, countryCode)>  added countryCode for NAP  
+    <!ELEMENT languageCode EMPTY>
+      <!ATTLIST languageCode
+	      Sync CDATA #IMPLIED
+	      value (aa | ab | ae | af | ak | am | ar | an | as | av | ay | az | ba | be | bg | bh | bi | bm | bn | bo | br | bs | ca | ce | ch | co | cr | cs | cu | cv | cy | da | de | dv | dz | ee | el | en | eo | es | et | eu | fa | ff | fi | fj | fo | fr | fy | ga | gd | gl | gn | gu | gv | ha | he | hi | ho | hr | ht | hu | hy | hz | ia | id | ie | ig | ii | ik | io | is | it | iu | ja | jv | ka | kg | ki | kj | kk | kl | km | kn | ko | kr | ks | ku | kv | kw | ky | la | lb | lg | li | ln | lo | lt | lu | lv | mg | mh | mi | mk | ml | mn | mo | mr | ms | mt | my | na | nb | nd | ne | ng | nl | nn | no | nr | nv | ny | oc | oj | om | or | os | pa | pi | pl | ps | pt | qu | rm | rn | ro | ru | rw | sa | sc | sd | se | sg | si | sk | sl | sm | sn | so | sq | sr | ss | st | su | sv | sw | ta | te | tg | th | ti | tk | tl | tn | to | tr | ts | tt | tw | ty | ug | uk | ur | uz | ve | vi | vo | wa | wo | xh | yi | yo | za | zh | zu) "en"
+       >
+    <!ELEMENT countryCode EMPTY>
+      <!ATTLIST countryCode
+	      value (AF | AX | AL | DZ | AS | AD | AO | AI | AQ | AG | AR | AM | AW | AU | AT | AZ | BS | BH | BD | BB | BY | BE | BZ | BJ | BM | BT | BO | BA | BW | BV | BR | IO | BN | BG | BF | BI | KH | CM | CA | CV | KY | CF | TD | CL | CN | CX | CC | CO | KM | CG | CD | CK | CR | CI | HR | CU | CY | CZ | DK | DJ | DM | DO | EC | EG | SV | GQ | ER | EE | ET | FK | FO | FJ | FI | FR | GF | PF | TF | GA | GM | GE | DE | GH | GI | GR | GL | GD | GP | GU | GT | GG | GN | GW | GY | HT | HM | VA | HN | HK | HU | IS | IN | ID | IR | IQ | IE | IM | IL | IT | JM | JP | JE | JO | KZ | KE | KI | KP | KR | KW | KG | LA | LV | LB | LS | LR | LY | LI | LT | LU | MO | MK | MG | MW | MY | MV | ML | MT | MH | MQ | MR | MU | YT | MX | FM | MD | MC | MN | ME | MS | MA | MZ | MM | NA | NR | NP | NL | AN | NC | NZ | NI | NE | NG | NU | NF | MP | NO | OM | PK | PW | PS | PA | PG | PY | PE | PH | PN | PL | PT | PR | QA | RE | RO | RU | RW | BL | SH | KN | LC | MF | PM | VC | WS | SM | ST | SA | SN | RS | SC | SL | SG | SK | SI | SB | SO | ZA | GS | ES | LK | SD | SR | SJ | SZ | SE | CH | SY | TW | TJ | TZ | TH | TL | TG | TK | TO | TT | TN | TR | TM | TC | TV | UG | UA | AE | GB | US | UM | UY | UZ | VU | VE | VN | VG | VI | WF | EH | YE | ZM | ZW ) "US"
+      >
+   
+   <!ELEMENT mdHrLv (ScopeCd)>
+  
+   -->
+    <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter" />
+    <XmlDataProvider x:Key="XmlRecord" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <metadata>
+            <mdFileID/>
+            <mdParentID/>
+            <mdLang>
+              <languageCode value=""/>
+              <countryCode value=""/>
+            </mdLang>
+            <mdChar>
+              <CharSetCd value="004"/>
+            </mdChar>
+            <mdHrLv>
+              <ScopeCd value="005"/>
+            </mdHrLv>
+            <mdDateSt></mdDateSt>
+            <mdStanName></mdStanName>
+            <mdStanVer></mdStanVer>
+            <dataSetURI></dataSetURI>
+            <dataSetFn>
+              <OnFunctCd value=""/>
+            </dataSetFn>
+          </metadata>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <!-- hierarchy level -->
+    <XmlDataProvider x:Key="XmlRecord_HierarchyLevel" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <mdHrLv editorAppend="True">
+            <ScopeCd value=""/>
+          </mdHrLv>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <!-- hierarchy level name -->
+    <XmlDataProvider x:Key="XmlRecord_HierarchyLevelName" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <mdHrLvName editorAppend="True" />
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <p:XPathTextBoolConverter x:Key="XPathTextBoolConverter"/>
+    <e:Codelists x:Key="CI_OnLineFunctionCode" CodelistName="CI_OnLineFunctionCode"/>
+    <p:DateConverter x:Key="DateConverter" Format="yyyyMMdd"/>
+    <p:VisibleEmptyConverter x:Key="VisibleEmptyConverter"/>
+
+
+    <v:MetadataIssueInfo x:Key="scopeCd" Message="{x:Static r:Issues.mdHrLv_REQ}" />
+    <v:MetadataIssueInfo x:Key="mdHrLvName" Message="{x:Static r:Issues.mdHrLvName_REQ}" />
+    <v:MetadataIssueInfo x:Key="languageCode" Message="{x:Static r:Issues.languageCode_REQ}" />
+    <v:MetadataIssueInfo x:Key="countryCode" Message="{x:Static r:Issues.countryCode_REQ}" />
+    <v:MetadataIssueInfo x:Key="mdFileID" Message="{x:Static r:Issues.mdFileID_REQ}" />
+    <v:MetadataIssueInfo x:Key="mdChar" Name="mdChar_utf8" Message="{x:Static r:Issues.mdChar_REQ}" />
+    <v:MetadataIssueInfo x:Key="mdDateSt" Message="{x:Static r:Issues.mdDateSt_REQ}" />
+    <v:MetadataIssueInfo x:Key="languageCode_EU" Name="languageCode_EU" Message="{x:Static r:Issues.languageCode_EU_REQ}" />
+
+  </UserControl.Resources>
+
+  <Grid Style="{DynamicResource EditorFrontPageStyle}">
+    <StackPanel>
+      <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_METADETAILS}"/>
+      <ListBox Name="rootListBox" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata}">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <StackPanel>
+              <Border Style="{DynamicResource EditorBorder2Style}">
+                <Grid>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                  </Grid.RowDefinitions>
+
+                  <!-- file id -->
+                  <Label Grid.Row="0" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_META_FILEID}"/>
+                  <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" Grid.Row="0" Grid.Column="1" ItemsSource="{Binding XPath=mdFileID}">
+                    <ListBox.ItemTemplate>
+                      <DataTemplate>
+                        <p:MD_FileIdentifier/>
+                      </DataTemplate>
+                    </ListBox.ItemTemplate>
+                  </ListBox>
+
+                  <!-- parent file id -->
+                  <Label Grid.Row="1" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_META_PARENTFILEID}"/>
+                  <TextBox Grid.Row="1" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" ToolTip="{x:Static r:Definitions.MD_Metadata_parentIdentifier}"
+                      Text="{e:MetadataBinding XPath=mdParentID}"
+                      Name="MD_Metadata_parentIdentifier"/>
+
+                  <!-- dataset URI -->
+                  <Label Grid.Row="2" Grid.Column="0" DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_META_URI}"/>
+                  <TextBox Grid.Row="2" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" ToolTip="{x:Static r:Definitions.MD_Metadata_dataSetURI}"
+                      Text="{e:MetadataBinding XPath=dataSetURI}" 
+                      Name="MD_Metadata_dataSetURI"/>
+
+                  <!-- NAP: dataset URI function -->
+                  <Label e:MetadataStyle.OnlyProfiles="NAP" Style="{DynamicResource EditorHLabelNoIdentStyle}" Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_FUNCTION}"/>
+                  <ComboBox e:MetadataStyle.OnlyProfiles="NAP" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="dataSetFn/OnFunctCd/@value" Grid.Row="3" Grid.Column="1"  Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+                      ToolTip="{x:Static r:Definitions.NAP_Metadata_DatasetURI_Function}"
+                      ItemsSource="{Binding Source={StaticResource CI_OnLineFunctionCode}, Path=List}"
+                      DisplayMemberPath="."
+                      SelectedValuePath="@value"
+                      SelectedValue="{Binding XPath=dataSetFn/OnFunctCd/@value}"
+                      Name="NAP_Metadata_DatasetURI_Function">
+                  </ComboBox>
+
+                  <!-- date stamp -->
+                  <Label Grid.Row="4" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_META_DATE}" ToolTip="{x:Static r:Definitions.MD_Metadata_dateStamp}"/>
+                  <ListBox Grid.Row="4" Grid.Column="1" Style="{DynamicResource EditorNoScrollListBoxStyle}"
+                      v:Nav.AnchorName="mdDateSt,mdDateSt"
+                      ItemsSource="{Binding XPath=mdDateSt}">
+                    <ListBox.ItemTemplate>
+                      <DataTemplate>
+                        <DockPanel LastChildFill="True">
+                          <Button Visibility="{Binding XPath=., Converter={StaticResource VisibleEmptyConverter}}" DockPanel.Dock="Right" Click="ClearItem" Style="{DynamicResource DeleteButton}"
+                                  Name="MD_Metadata_dateStampDelete">
+                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            </Button>
+                          <controls:DateTimePicker
+                              DisplayTime="False"
+                              ToolTip="{x:Static r:Definitions.MD_Metadata_dateStamp}"
+                              Name="MD_Metadata_dateStamp">
+                            <controls:DateTimePicker.SelectedDate>
+                              <e:MetadataElementSync XPath="." Converter="{StaticResource DateConverter}"/>
+                            </controls:DateTimePicker.SelectedDate>
+                          </controls:DateTimePicker>
+                        </DockPanel>
+                      </DataTemplate>
+                    </ListBox.ItemTemplate>
+                  </ListBox>
+
+                </Grid>
+              </Border>
+
+              <Border Style="{DynamicResource EditorBorder2Style}">
+                <Grid>
+                  <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+
+                  <!-- language -->
+                  <Label Grid.Row="0" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_META_LANG}"/>
+                  <ListBox Grid.Row="0" Grid.Column="1" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=mdLang}">
+                    <ListBox.ItemTemplate>
+                      <DataTemplate>
+                        <p:LanguageCode ToolTip="{x:Static r:Definitions.MD_Metadata_language}"/>
+                      </DataTemplate>
+                    </ListBox.ItemTemplate>
+                  </ListBox>
+
+                  <!-- country code -->
+                  <Label e:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_META_NAP_COUNTRY}"/>
+                  <ListBox e:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="1" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=mdLang}">
+                    <ListBox.ItemTemplate>
+                      <DataTemplate>
+                        <p:CountryCode/>
+                      </DataTemplate>
+                    </ListBox.ItemTemplate>
+                  </ListBox>
+
+                  <!-- character set -->
+                  <Label Grid.Row="2" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_META_CHAR}"/>
+                  <ListBox Grid.Row="2" Grid.Column="1" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=mdChar}">
+                    <ListBox.ItemTemplate>
+                      <DataTemplate>
+                        <p:MD_CharacterSetCode ToolTip="{x:Static r:Definitions.MD_Metadata_characterSet}"/>
+                      </DataTemplate>
+                    </ListBox.ItemTemplate>
+                  </ListBox>
+                </Grid>
+              </Border>
+
+              <Border Style="{DynamicResource EditorBorder2Style}">
+                <StackPanel>
+                  <!-- hierarchy level -->
+                  <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=mdHrLv}">
+                    <ListBox.ItemTemplate>
+                      <DataTemplate>
+                        <DockPanel LastChildFill="True">
+                          <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_META_HIER}"/>
+
+                          <!-- add if the last sibling -->
+                          <ListBox DockPanel.Dock="Right" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(following-sibling::mdHrLv)]}">
+                            <ListBox.ItemTemplate>
+                              <DataTemplate>
+                                <Button Tag="HierarchyLevel_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
+                                        Name="MD_Metadata_hierarchyLevelAdd">
+                                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                                </Button>
+                              </DataTemplate>
+                            </ListBox.ItemTemplate>
+                          </ListBox>
+                          <!-- delete -->
+                          <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
+                                  AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Metadata_hierarchyLevelDelete}">
+                            <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                          </Button>
+                          <!-- scope code -->
+                          <p:MD_ScopeCode_MD_Metadata/>
+                        </DockPanel>
+                      </DataTemplate>
+                    </ListBox.ItemTemplate>
+                  </ListBox>
+
+                  <!-- hierarchy level name -->
+                  <e:MetadataStyle Except="NAP">
+                    <StackPanel>
+
+                      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=mdHrLvName}">
+                        <ListBox.ItemTemplate>
+                          <DataTemplate>
+                            <DockPanel LastChildFill="True">
+                              <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_META_HIERNAME}"/>
+
+                              <!-- add if the last sibling -->
+                              <ListBox DockPanel.Dock="Right" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(following-sibling::mdHrLvName)]}">
+                                <ListBox.ItemTemplate>
+                                  <DataTemplate>
+                                    <Button Tag="HierarchyLevelName_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
+                                            Name="MD_Metadata_hierarchyLevelNameAdd">
+                                      <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                                    </Button>
+                                  </DataTemplate>
+                                </ListBox.ItemTemplate>
+                              </ListBox>
+                              <!-- delete -->
+                              <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
+                                      AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Metadata_hierarchyLevelNameDelete}">
+                                <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                              </Button>
+                              <!-- hierarchy level name -->
+                              <TextBox Style="{DynamicResource EditorTextBoxStyle}"
+                                  v:Nav.AnchorName="mdHrLvName"
+                                  ToolTip="{x:Static r:Definitions.MD_Metadata_hierarchyLevelName}"
+                                  Text="{e:MetadataElementSync XPath=.}"
+                                  AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Metadata_hierarchyLevelName}"/>
+                            </DockPanel>
+                          </DataTemplate>
+                        </ListBox.ItemTemplate>
+                      </ListBox>
+
+                      <!-- ADD hierarchy level name -->
+                      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(mdHrLvName)]}">
+                        <ListBox.ItemTemplate>
+                          <DataTemplate>
+                            <Button Tag="HierarchyLevelName" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                                    Name="MD_Metadata_hierarchyLevelNameAdd">
+                              <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                                <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_META_NEW_HIERNAME}"/>
+                              </StackPanel>
+                            </Button>
+                          </DataTemplate>
+                        </ListBox.ItemTemplate>
+                      </ListBox>
+                    </StackPanel>
+                  </e:MetadataStyle>
+
+                </StackPanel>
+              </Border>
+            </StackPanel>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+
+      <!-- validate after all anchors are loaded -->
+      <v:PageValidateControl/>
+
+    </StackPanel>
+  </Grid>
+</p:EditorPage>

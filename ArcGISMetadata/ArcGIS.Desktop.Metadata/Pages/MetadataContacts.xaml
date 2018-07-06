@@ -1,0 +1,127 @@
+﻿<p:EditorPage x:Class="ArcGIS.Desktop.Metadata.Editor.Pages.MetadataContacts" x:ClassModifier="internal" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor"
+             xmlns:r="clr-namespace:ArcGIS.Desktop.Internal.Metadata.Properties"       
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters"
+             mc:Ignorable="d" 
+             Loaded="FillXml">
+  <UserControl.Resources>
+    <!-- <!ENTITY % MaintInfo '(maintFreq, dateNext?, usrDefFreq?, maintScp*, upScpDesc*, maintNote*)'> -->
+    <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter"/>
+    <XmlDataProvider x:Key="XmlRecord" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <metadata>
+            <mdContact editorExpand="False" editorFillOnly="True"/>
+          </metadata>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <XmlDataProvider x:Key="XmlRecord_Contact" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <mdContact editorExpand="True"/>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <!-- validation issues -->
+    <v:MetadataIssueInfo x:Key="mdContact" Message="{x:Static r:Issues.metadataContact_REQ}" />
+    <v:MetadataIssueInfo x:Key="party" Message="{x:Static r:Issues.party_REQ}" />
+    <v:MetadataIssueInfo x:Key="partyFgdc" Message="{x:Static r:Issues.partyFgdc_FGDC_REQ}" />
+    <v:MetadataIssueInfo x:Key="role" Message="{x:Static r:Issues.role_REQ}" />
+    <v:MetadataIssueInfo x:Key="linkage" Message="{x:Static r:Issues.linkage_REQ}" />
+    <v:MetadataIssueInfo x:Key="protocol" Message="{x:Static r:Issues.protocol_REQ}" />
+    <v:MetadataIssueInfo x:Key="rpCntInfo_NAP_REQ" Message="{x:Static r:Issues.rpCntInfo_NAP_REQ}" />
+    <v:MetadataIssueInfo x:Key="OrgName" Message="{x:Static r:Issues.rpOrgName_REQ}" />
+    <v:MetadataIssueInfo x:Key="eMailAdd" Message="{x:Static r:Issues.eMailAdd_REQ}" />
+    <v:MetadataIssueInfo x:Key="voiceNum" Message="{x:Static r:Issues.voiceNum_FGDC_REQ}" />
+
+    <v:MetadataIssueInfo x:Key="cntAddress" Message="{x:Static r:Issues.cntAddress_FGDC_REQ}" />
+    <v:MetadataIssueInfo x:Key="addressType" Message="{x:Static r:Issues.addressType_REQ}" />
+    <v:MetadataIssueInfo x:Key="adminArea" Message="{x:Static r:Issues.adminArea_REQ}" />
+    <v:MetadataIssueInfo x:Key="adminArea_FGDC" Name="adminArea_FGDC" Message="{x:Static r:Issues.adminArea_FGDC_REQ}" />
+    <v:MetadataIssueInfo x:Key="city" Message="{x:Static r:Issues.city_REQ}" />
+    <v:MetadataIssueInfo x:Key="postCode" Message="{x:Static r:Issues.postCode_REQ}" />
+
+    <v:MetadataIssueInfo x:Key="role_POC" Name="role_POC" Message="{x:Static r:Issues.role_POC_REQ}" />
+
+  </UserControl.Resources>
+
+  <Grid Style="{DynamicResource EditorFrontPageStyle}">
+    <StackPanel>
+      <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_METADATA_CONTACTS}"/>
+      <ListBox ItemsSource="{Binding XPath=/metadata}"
+			    v:Nav.AnchorName="mdContact"
+      >
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <StackPanel>
+              <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=mdContact}">
+                <ListBox.ItemsPanel>
+                  <ItemsPanelTemplate>
+                    <StackPanel/>
+                  </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                  <DataTemplate>
+                    <Border Style="{DynamicResource EditorBorder2Style}" >
+                      <Expander Style="{DynamicResource EditorExpander2Style}" 
+                                AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MetadataContact_ContactGroup}">
+                        <Expander.Header>
+                          <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
+                              RelativeSource={RelativeSource FindAncestor,
+                              AncestorType={x:Type ContentPresenter}},
+                              Mode=OneWayToSource}" LastChildFill="True">
+                            <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                                    AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MetadataContact_ContactDelete}">
+                              <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            </Button>
+                            <Label Style="{DynamicResource EditorHExpanderSimpleLabel}" Content="{x:Static r:Resources.LBL_CI_PARTY}"/>
+                            <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding ElementName=responsibleParty, Path=DefaultValue, Mode=TwoWay}"/>
+                          </DockPanel>
+                        </Expander.Header>
+                        <!-- party -->
+                        <p:CI_ResponsibleParty
+                            v:Nav.AnchorName="party"
+                            x:Name="responsibleParty"/>
+                      </Expander>
+                    </Border>
+                  </DataTemplate>
+                </ListBox.ItemTemplate>
+              </ListBox>
+
+              <Border Style="{DynamicResource EditorBorder2Style}">
+                <!-- LOAD SAVED CONTACT -->
+                <DockPanel LastChildFill="True">
+                  <Label DockPanel.Dock="Left" VerticalAlignment="Center" Content="{x:Static r:Resources.LBL_CI_LOAD_META_CONTACT}"/>
+                  <p:PartyPickerControl ContainerElement="mdContact" DockPanel.Dock="Right"/>
+                </DockPanel>
+              </Border>
+
+              <!-- ADD contact -->
+              <Button Tag="Contact" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                      AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MetadataContact_ContactAdd}">
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                  <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                  <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_CONTACT}"/>
+                </StackPanel>
+              </Button>
+
+            </StackPanel>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+
+      <!-- validate after all anchors are loaded -->
+      <v:PageValidateControl/>
+
+    </StackPanel>
+  </Grid>
+</p:EditorPage>

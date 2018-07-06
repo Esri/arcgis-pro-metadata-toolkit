@@ -1,0 +1,34 @@
+﻿<p:EditorPage x:Class="ArcGIS.Desktop.Metadata.Editor.Pages.MD_ScopeCode" x:ClassModifier="internal" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor"
+             xmlns:r="clr-namespace:ArcGIS.Desktop.Internal.Metadata.Properties" 
+             mc:Ignorable="d">
+  <UserControl.Resources>
+    <e:Codelists x:Key="MD_ScopeCode" CodelistName="MD_ScopeCode"/>
+  </UserControl.Resources>
+
+  <Grid>
+    <StackPanel>
+      <ComboBox Loaded="PostProcessComboBoxValues" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+          ItemsSource="{Binding Source={StaticResource MD_ScopeCode}, Path=List}"
+          p:EditorPage.SourceXPath="ScopeCd/@value"
+          v:Nav.AnchorName="scopeCd,ScopeCd"
+          DisplayMemberPath="."
+          SelectedValuePath="@value"
+          Name="MD_ScopecodeCode">
+        <ComboBox.SelectedValue>
+          <e:MetadataBinding XPath="ScopeCd/@value"/>
+        </ComboBox.SelectedValue>
+      </ComboBox>
+
+      <!-- validate after all anchors are loaded -->
+      <v:PageValidateControl/>
+
+    </StackPanel>
+  </Grid>
+  </p:EditorPage>

@@ -1,0 +1,35 @@
+﻿<pages:EditorPage x:Name="Page" x:Class="ArcGIS.Desktop.Metadata.Editor.Pages.BooleanValueSync" x:ClassModifier="internal"    
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation"
+    xmlns:pages="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages"
+    xmlns:prop="clr-namespace:ArcGIS.Desktop.Internal.Metadata.Properties"
+    xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters"
+    xmlns:editor="http://www.esri.com/metadata/editor/"
+    Loaded="ControlLoaded">
+
+    <UserControl.Resources>
+        <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter" />
+    </UserControl.Resources>
+    
+    <Grid>
+    <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=.}">
+      <ListBox.ItemsPanel>
+        <ItemsPanelTemplate>
+          <StackPanel/>
+        </ItemsPanelTemplate>
+      </ListBox.ItemsPanel>
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <CheckBox Style="{DynamicResource EditorCheckBoxStyle}"
+              Content="{Binding ElementName=Page, Path=Label}"
+              SourceUpdated="DefaultValueChanged"
+              IsChecked="{Binding UpdateSourceTrigger=PropertyChanged,NotifyOnValidationError=True,NotifyOnSourceUpdated=True,ElementName=Page,Path=DefaultValue,Mode=TwoWay}" 
+              Name="BooleanValueSyncCheckbox"/>
+              <!-- AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=BooleanValueSyncCheckbox}" -->
+
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+  </Grid>
+</pages:EditorPage>

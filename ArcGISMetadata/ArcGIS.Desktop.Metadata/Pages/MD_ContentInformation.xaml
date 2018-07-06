@@ -1,0 +1,105 @@
+﻿<pages:EditorPage x:Class="ArcGIS.Desktop.Metadata.Editor.Pages.MD_ContentInformation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:editor="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Controls"
+     xmlns:toolkit="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit"
+    xmlns:pages="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages">
+  <Grid Loaded="FillXml" Margin="10" Width="{Binding ElementName=Container,Path=ActualWidth}">
+    <Grid.Resources>
+
+
+
+    </Grid.Resources>
+    
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <!-- 
+    <!ENTITY % ContInfoTypes '(CovDesc | ImgDesc | FetCatDesc )'> 
+    <!ENTITY % CovDesc '(attDesc, contentTyp, covDim*)'>
+    <!ENTITY % ImgDesc '(attDesc, contentTyp, covDim*, illElevAng?, illAziAng?, imagCond?, imagQuCode?, cloudCovPer?, prcTypCde?, cmpGenQuan?, trianInd?, radCalDatAv?, camCalInAv?, filmDistInAv?, lensDistInAv?)'>
+    <!ENTITY % FetCatDesc '(compCode?, catLang*, incWithDS, catFetTyps*, catCitation+)'>
+    
+    -->
+    
+    <!-- MD_CoverageDescription -->
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Attribute Description"/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Content Type"/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <!-- MD_ImageDescription -->
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Illumination Elevation Angel"/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Illumination Azimuth Angel"/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Imaging Condition"/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Image Quality"/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Cloud Cover %"/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Processing Level"/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Compression Quality"/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Triangulation Indicator"/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Radiometric Calibration Data Avail."/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Camera Calibration Info Avail."/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Film Distortion Info Avail."/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Lens Distortion Info Avail."/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <!-- MD_FeatureCatalogueDescription -->
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Compliance Code"/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Language"/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Include With Dataset"/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Feature Types"/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+    <editor:HLabel Grid.Row="0" Grid.Column="0" Content="Citation"/>
+    <editor:TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" Text="{Binding XPath=cntAddress/delPoint, Mode=TwoWay}" />
+
+
+  </Grid>
+</pages:EditorPage>

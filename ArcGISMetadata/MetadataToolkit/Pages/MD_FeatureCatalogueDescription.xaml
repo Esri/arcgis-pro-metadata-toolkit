@@ -1,0 +1,245 @@
+﻿<p:EditorPage x:Class="MetadataToolkit.MTK_MD_FeatureCatalogueDescription" x:ClassModifier="internal" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:t="clr-namespace:MetadataToolkit"
+             xmlns:r="clr-namespace:MetadataToolkit.Properties"
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"             
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
+             mc:Ignorable="d"
+             Loaded="FillXml">
+
+  <UserControl.Resources>
+    <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter" />
+    <!--     
+    <!ENTITY % ContInfoTypes '(ContInfo | CovDesc | FetCatDesc | ImgDesc )'>
+    <!ELEMENT FetCatDesc %FetCatDesc;>
+    <!ENTITY % FetCatDesc '(compCode?, catLang*, incWithDS, catFetTyps*, catCitation+)'>
+    
+    <!ELEMENT compCode %Boolean;>
+    <!ELEMENT catLang (languageCode, countryCode?, CharSetCd?)>  added countryCode and CharSetCd for NAP
+    <!ELEMENT incWithDS %Boolean;>
+    <!ELEMENT catFetTyps (genericName)>
+    <!ELEMENT genericName (#PCDATA)>
+    <!ATTLIST genericName
+	    codeSpace CDATA #IMPLIED
+	    nilReason (inapplicable | missing | template | unknown | withheld) #IMPLIED
+    >  codeSpace is type anyURI; it is optional 
+    <!ELEMENT catCitation %Citation;>
+    -->
+
+    <XmlDataProvider x:Key="XmlRecord" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <compCode>False</compCode>
+          <catLang>
+            <languageCode value=""/>
+            <countryCode value=""/>
+            <CharSetCd value=""/>
+          </catLang>
+          <incWithDS>False</incWithDS>
+          <!-- <catFetTyps/> -->
+          <catCitation editorExpand="False"/>
+          <!-- ONE IS REQUIRED -->
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <!-- language -->
+    <XmlDataProvider x:Key="XmlRecord_Lang" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <catLang editorAppend="True">
+            <languageCode value=""></languageCode>
+            <countryCode value=""></countryCode>
+          </catLang>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <!-- feature type -->
+    <XmlDataProvider x:Key="XmlRecord_FeatureType" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <catFetTyps editorAppend="True" />
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <!-- citation -->
+    <XmlDataProvider x:Key="XmlRecord_Citation" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <catCitation editorExpand="False"/>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <p:StringToBoolConverter x:Key="StringToBoolConverter1"/>
+    <p:StringToBoolConverter x:Key="StringToBoolConverter2"/>
+
+    <e:Codelists x:Key="LanguageCode" CodelistName="LanguageCode"/>
+    <e:Codelists x:Key="CountryCodes" CodelistName="CountryCodes"/>
+
+  </UserControl.Resources>
+
+  <Grid Style="{DynamicResource EditorSubPageStyle}">
+    <StackPanel>
+
+      <StackPanel Style="{DynamicResource EditorCheckboxPanel}">
+        <!-- compliance code -->
+        <CheckBox Style="{DynamicResource EditorCheckBoxStyle}" Content="{x:Static r:Resources.LBL_FEAT_COMP}"
+            ToolTip="{x:Static r:Definitions.MD_FeatureCatalogueDescription_complianceCode}" 
+            IsChecked="{Binding XPath=compCode, Converter={StaticResource StringToBoolConverter1}}"
+            Name="MD_FeatureCatalogueDescription_complianceCode"/>
+        <!-- included with dataset -->
+        <CheckBox Style="{DynamicResource EditorCheckBoxStyle}" Content="{x:Static r:Resources.LBL_FEAT_INCDATASET}" 
+            ToolTip="{x:Static r:Definitions.MD_FeatureCatalogueDescription_includedWithDataset}"
+            v:Nav.AnchorName="incWithDS,incWithDS"
+            IsChecked="{Binding XPath=incWithDS, Converter={StaticResource StringToBoolConverter2}}"
+            Name="MD_FeatureCatalogueDescription_includedWithDataset"/>
+      </StackPanel>
+
+      <!-- language -->
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" 
+          ToolTip="{x:Static r:Definitions.MD_FeatureCatalogueDescription_language}"               
+          ItemsSource="{Binding XPath=catLang}">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <DockPanel LastChildFill="True">
+              <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_FEAT_LANG}"/>
+
+              <!-- add if the last sibling -->
+              <ListBox DockPanel.Dock="Right" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(following-sibling::catLang)]}">
+                <ListBox.ItemTemplate>
+                  <DataTemplate>
+                    <Button Tag="Lang_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                            Name="MD_FeatureCatalogueDescription_LanguageAdd">
+                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                    </Button>
+                  </DataTemplate>
+                </ListBox.ItemTemplate>
+              </ListBox>
+              <!-- delete -->
+              <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                      AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_FeatureCatalogueDescription_LanguageDelete}">
+                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+              </Button>
+
+              <t:MTK_MD_CharacterSetCode DockPanel.Dock="Right" t:MetadataStyle.OnlyProfiles="NAP" 
+                  ToolTip="{x:Static r:Definitions.MD_DataIdentification_characterSet}"/>
+
+              <ComboBox DockPanel.Dock="Right" Loaded="PostProcessComboBoxValues" t:MetadataStyle.OnlyProfiles="NAP" p:EditorPage.SourceXPath="countryCode/@value" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+                  ItemsSource="{Binding Source={StaticResource CountryCodes}, Path=List}"
+                  ToolTip="{x:Static r:Definitions.PT_Locale_country}"
+                  DisplayMemberPath="."
+                  SelectedValuePath="@value"
+                  AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=PT_Locale_country}">
+                <ComboBox.SelectedValue>
+                  <e:MetadataBinding XPath="countryCode/@value"/>
+                </ComboBox.SelectedValue>
+              </ComboBox>
+
+
+              <ComboBox DockPanel.Dock="Left" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="languageCode/@value" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+                  ItemsSource="{Binding Source={StaticResource LanguageCode}, Path=List}"
+                  DisplayMemberPath="."
+                  SelectedValuePath="@value"
+                  AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_FeatureCatalogueDescription_Language}">
+                <ComboBox.SelectedValue>
+                  <e:MetadataBinding XPath="languageCode/@value"/>
+                </ComboBox.SelectedValue>
+              </ComboBox>
+
+
+            </DockPanel>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+
+      <!-- feature types -->
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=catFetTyps}">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <StackPanel>
+              <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
+                  RelativeSource={RelativeSource FindAncestor,
+                  AncestorType={x:Type ContentPresenter}},
+                  Mode=OneWayToSource}" LastChildFill="True">
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                  <!-- delete -->
+                  <Button Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                          AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_FeatureCatalogueDescription_FeaturetypeDelete}">
+                    <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                  </Button>
+                </StackPanel>
+                <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_FEAT_FEATURE}"/>
+              </DockPanel>
+              <!-- feature type -->
+              <Border Style="{DynamicResource EditorBorderSubStyle}">
+                <t:MTK_GenericName ToolTip="{x:Static r:Definitions.MD_FeatureCatalogueDescription_featureTypes}"/>
+              </Border>
+            </StackPanel>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+
+      <!-- ADD feature type -->
+      <Button Tag="FeatureType" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+              Name="MD_FeatureCatalogueDescription_FeaturetypeAdd">
+        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_NEW_FEATURE_TYPE}"/>
+        </StackPanel>
+      </Button>
+
+      <!-- feature catalog citations -->
+      <StackPanel>
+        <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=catCitation}">
+          <ListBox.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel/>
+            </ItemsPanelTemplate>
+          </ListBox.ItemsPanel>
+          <ListBox.ItemTemplate>
+            <DataTemplate>
+              <Expander Style="{DynamicResource EditorExpander2Style}"
+                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_FeatureCatalogueDescription_FeatureCatalogCitationGroup}">
+                <Expander.Header>
+                  <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
+                      RelativeSource={RelativeSource FindAncestor,
+                      AncestorType={x:Type ContentPresenter}},
+                      Mode=OneWayToSource}" LastChildFill="True">
+                    <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                            Name="MD_FeatureCatalogueDescription_FeatureCatalogCitationDelete">
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                    </Button>
+                    <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_FEAT_CITATION}"/>
+                    <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding XPath=resTitle, Mode=TwoWay}"/>
+                  </DockPanel>
+                </Expander.Header>
+                <!-- citation -->
+                <Border Style="{DynamicResource EditorBorderSubStyle}">
+                  <t:MTK_CI_Citation/>
+                </Border>
+              </Expander>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- ADD citation -->
+        <Button Tag="Citation" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                Name="MD_FeatureCatalogueDescription_FeatureCatalogCitationAdd">
+          <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+            <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+            <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_FEAT_NEW_CITATION}"/>
+          </StackPanel>
+        </Button>
+      </StackPanel>
+    </StackPanel>
+  </Grid>
+
+</p:EditorPage>

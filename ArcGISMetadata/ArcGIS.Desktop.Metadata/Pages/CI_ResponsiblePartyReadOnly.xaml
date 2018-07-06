@@ -1,0 +1,89 @@
+﻿<p:EditorPage x:Class="ArcGIS.Desktop.Metadata.Editor.Pages.CI_ResponsiblePartyReadOnly" x:ClassModifier="internal" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor"
+             xmlns:r="clr-namespace:ArcGIS.Desktop.Internal.Metadata.Properties" 
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters"
+             mc:Ignorable="d"
+             Loaded="FillXml">
+  <UserControl.Resources>
+    <!-- <!ENTITY % RespParty '(rpIndName?, rpOrgName?, rpPosName?, rpCntInfo?, role)'> -->
+    <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter" />
+    <XmlDataProvider x:Key="XmlRecord" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <rpIndName></rpIndName>
+          <rpOrgName></rpOrgName>
+          <rpPosName></rpPosName>
+          <rpCntInfo editorExpand="False"/>
+          <role>
+            <RoleCd value="" />
+          </role>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <e:Codelists x:Key="CI_RoleCode" CodelistName="CI_RoleCode"/>
+
+  </UserControl.Resources>
+
+  <Grid>
+    <StackPanel>
+      <Grid Style="{DynamicResource EditorSubPageStyle}">
+        <Grid.RowDefinitions>
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- individual name -->
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Name}"/>
+        <TextBox IsEnabled="False" Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_individualName}"
+            Text="{e:MetadataBinding XPath=rpIndName}" 
+            Name="CI_ResponsibleParty_individualName"/>
+
+        <!-- organization -->
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Organization}"/>
+        <TextBox IsEnabled="False" Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="1" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_organisationName}"
+            Text="{e:MetadataBinding XPath=rpOrgName}"
+            Name="CI_ResponsibleParty_organisationName"/>
+
+        <!-- position -->
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Position}"/>
+        <TextBox IsEnabled="False" Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="2" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_positionName}"
+            Text="{e:MetadataBinding XPath=rpPosName}" 
+            Name="CI_ResponsibleParty_positionName"/>
+
+        <!-- role 
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Role}"/>
+        <ComboBox IsEnabled="False" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="role/RoleCd/@value" Grid.Row="3" Grid.Column="1" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+            v:Nav.AnchorName="role,role"
+            ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_role}"
+            ItemsSource="{Binding Source={StaticResource CI_RoleCode}, Path=List}"
+            DisplayMemberPath="."
+            SelectedValuePath="@value">
+          <ComboBox.SelectedValue>
+            <e:MetadataBinding XPath="role/RoleCd/@value"/>
+          </ComboBox.SelectedValue>
+        </ComboBox>
+        -->
+      </Grid>
+
+      <!-- validate after all anchors are loaded -->
+      <v:PageValidateControl/>
+
+    </StackPanel>
+  </Grid>
+</p:EditorPage>
