@@ -121,7 +121,7 @@
 
   <Grid>
     <StackPanel>
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=.}">
+      <ListBox ItemsSource="{Binding XPath=.}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel/>
@@ -132,8 +132,8 @@
             <StackPanel>
 
               <!-- Title, Alt Title, Collective Title -->
-              <Border Style="{DynamicResource EditorBorder2Style}">
-                <Expander Style="{DynamicResource EditorExpander2Style}" IsExpanded="{Binding XPath=resTitle/@editorExpand, Mode=TwoWay}"
+              <Border>
+                <Expander IsExpanded="{Binding XPath=resTitle/@editorExpand, Mode=TwoWay}"
                           Name="CI_Citaton_TitleGroup">
                   <Expander.Header>
 
@@ -142,12 +142,12 @@
                       RelativeSource={RelativeSource FindAncestor,
                       AncestorType={x:Type ContentPresenter}},
                       Mode=OneWayToSource}" LastChildFill="True">
-                      <Label Style="{DynamicResource EditorHExpanderSimpleLabel}" Content="{x:Static r:Resources.LBL_CITATION_TITLES}"/>
-                            <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding XPath=resTitle, Mode=TwoWay}"/>
+                      <Label Content="{x:Static r:Resources.LBL_CITATION_TITLES}"/>
+                      <Label Content="{Binding XPath=resTitle, Mode=TwoWay}"/>
                     </DockPanel>
                   </Expander.Header>
 
-                  <Grid Style="{DynamicResource EditorSub2NoIndent}">
+                  <Grid>
                     <Grid.RowDefinitions>
                       <RowDefinition />
                       <RowDefinition />
@@ -160,21 +160,21 @@
                     </Grid.ColumnDefinitions>
 
                     <!-- title -->
-                    <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_TITLE}"/>
-                                        <TextBox Grid.Row="0" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" ToolTip="{x:Static r:Definitions.CI_Citation_title}"
+                    <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_TITLE}"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.CI_Citation_title}"
                             v:Nav.AnchorName="resTitle,resTitle"
                             Text="{e:MetadataElementSync XPath=resTitle}"
                             Name="CI_Citation_title"/>
 
                     <!-- alternative title -->
-                    <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_ALTERNATE_TITLE}"/>
-                    <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="1" Grid.Column="1"
+                    <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_ALTERNATE_TITLE}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1"
                              ToolTip="{x:Static r:Definitions.CI_Citation_alternateTitle}" Text="{e:MetadataBinding XPath=resAltTitle}" SourceUpdated="DefaultValueChanged"
                              Name="CI_Citation_alternateTitle"/>
 
                     <!-- collective title -->
-                    <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_COLLECTIVE_TITLE}"/>
-                    <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="2" Grid.Column="1"
+                    <Label Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_COLLECTIVE_TITLE}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1"
                              ToolTip="{x:Static r:Definitions.CI_Citation_collectiveTitle}" Text="{e:MetadataBinding XPath=collTitle}"
                              Name="CI_Citation_collectiveTitle"/>
 
@@ -183,9 +183,9 @@
               </Border>
 
               <!-- online resource -->
-              <Border Style="{DynamicResource EditorBorder2Style}" Visibility="{Binding ElementName=Citation, Path=SupressOnlineResource, Converter={StaticResource VisibleBoolNotConverter}}">
+              <Border Visibility="{Binding ElementName=Citation, Path=SupressOnlineResource, Converter={StaticResource VisibleBoolNotConverter}}">
                 <StackPanel>
-                  <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=citOnlineRes}">
+                  <ListBox ItemsSource="{Binding XPath=citOnlineRes}">
                     <ListBox.ItemsPanel>
                       <ItemsPanelTemplate>
                         <StackPanel/>
@@ -193,18 +193,17 @@
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate>
                       <DataTemplate>
-                        <Expander Style="{DynamicResource EditorExpander2Style}"  
-                                  Name="CI_Citatone_OnlineResourceGroup">
+                        <Expander Name="CI_Citatone_OnlineResourceGroup">
                           <Expander.Header>
                             <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                                 RelativeSource={RelativeSource FindAncestor,
                                 AncestorType={x:Type ContentPresenter}},
                                 Mode=OneWayToSource}" LastChildFill="True">
-                              <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                              <Button DockPanel.Dock="Right" Click="DeleteItem" 
                                       Name="CI_Citaton_OnlineResourceDelete">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                               </Button>
-                              <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_CONT_ONRES}"/>
+                              <Label Content="{x:Static r:Resources.LBL_CONT_ONRES}"/>
                             </DockPanel>
                           </Expander.Header>
                           <!-- online resource -->
@@ -215,16 +214,15 @@
                   </ListBox>
 
                   <!--  ADD online resource -->
-                  <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}"
-                      ItemsSource="{Binding XPath=self::*[not(citOnlineRes)]}"
+                  <ListBox ItemsSource="{Binding XPath=self::*[not(citOnlineRes)]}"
                       Visibility="{Binding ElementName=Citation, Path=SupressOnlineResource, Converter={StaticResource VisibleBoolNotConverter}}">
                     <ListBox.ItemTemplate>
                       <DataTemplate>
-                         <Button Tag="OnlineRes" Click="AddRecordByTag" Style="{DynamicResource AddButton}"
+                         <Button Tag="OnlineRes" Click="AddRecordByTag" 
                                 Name="CI_Citaton_OnlineResourceAdd">
                             <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                            <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                            <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_ONLINE_RES}"/>
+                            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                            <TextBlock Text="{x:Static r:Resources.BTN_ADD_ONLINE_RES}"/>
                           </StackPanel>
                         </Button>
                       </DataTemplate>
@@ -234,29 +232,29 @@
               </Border>
 
               <!-- ISO presentation form -->
-              <Border Style="{DynamicResource EditorBorder2Style}">
+              <Border>
                 <StackPanel>
                   <!-- presentation form -->
-                  <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=presForm}">
+                  <ListBox ItemsSource="{Binding XPath=presForm}">
                     <ListBox.ItemTemplate>
                       <DataTemplate>
                         <DockPanel LastChildFill="True">
                           <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center" Orientation="Horizontal">
                             <!-- add if the last sibling -->
-                            <ListBox DockPanel.Dock="Right" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(following-sibling::presForm)]}">
+                            <ListBox DockPanel.Dock="Right" ItemsSource="{Binding XPath=self::*[not(following-sibling::presForm)]}">
                               <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                  <Button Tag="PresForm_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
+                                  <Button Tag="PresForm_Parent" Click="AddRecordByTagToLocal" 
                                           Name="CI_Citaton_PresentationFormAdd">
-                                    <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                                    <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
                                   </Button>
                                 </DataTemplate>
                               </ListBox.ItemTemplate>
                             </ListBox>
                             <!-- delete -->
-                            <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
+                            <Button DockPanel.Dock="Right" Click="DeleteItem" 
                                     AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Citaton_PresentationFormDelete}">
-                              <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                              <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                             </Button>
                           </StackPanel>
 
@@ -269,14 +267,14 @@
                   </ListBox>
 
                   <!-- ADD presentation form -->
-                  <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(presForm)]}">
+                  <ListBox ItemsSource="{Binding XPath=self::*[not(presForm)]}">
                     <ListBox.ItemTemplate>
                       <DataTemplate>
-                        <Button Tag="PresForm" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                        <Button Tag="PresForm" Click="AddRecordByTagToLocal"
                                 Name="CI_Citaton_PresentationFormAdd">
                             <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                            <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                            <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_CI_NEW_PRESFORM}"/>
+                            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                            <TextBlock Text="{x:Static r:Resources.BTN_CI_NEW_PRESFORM}"/>
                           </StackPanel>
                         </Button>
                       </DataTemplate>
@@ -286,9 +284,9 @@
               </Border>
 
               <!-- identifiers -->
-              <Border Style="{DynamicResource EditorBorder2Style}">
+              <Border>
                 <StackPanel>
-                  <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=citId}">
+                  <ListBox ItemsSource="{Binding XPath=citId}">
                     <ListBox.ItemsPanel>
                       <ItemsPanelTemplate>
                         <StackPanel/>
@@ -296,18 +294,17 @@
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate>
                       <DataTemplate>
-                        <Expander Style="{DynamicResource EditorExpander2Style}"  
-                                  AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Citaton_IdentifierGroup}">
+                        <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Citaton_IdentifierGroup}">
                           <Expander.Header>
                             <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                                 RelativeSource={RelativeSource FindAncestor,
                                 AncestorType={x:Type ContentPresenter}},
                                 Mode=OneWayToSource}" LastChildFill="True">
-                              <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                              <Button DockPanel.Dock="Right" Click="DeleteItem"
                                       AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Citaton_IdentifierDelete}">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                               </Button>
-                              <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_IDENTIFIERS}"/>
+                              <Label Content="{x:Static r:Resources.LBL_IDENTIFIERS}"/>
                             </DockPanel>
                           </Expander.Header>
 
@@ -320,18 +317,17 @@
                   </ListBox>
 
                   <!-- ADD Identifier -->
-                  <Button Tag="Identifier" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
-                          Name="CI_Citaton_IdentifierAdd">
+                  <Button Tag="Identifier" Click="AddRecordByTagToLocal" Name="CI_Citaton_IdentifierAdd">
                       <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                      <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_ID}"/>
+                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <TextBlock Text="{x:Static r:Resources.BTN_ADD_ID}"/>
                     </StackPanel>
                   </Button>
                 </StackPanel>
               </Border>
 
-              <Border Style="{DynamicResource EditorBorder2Style}">
-                <Grid Style="{DynamicResource EditorSub2NoIndent}">
+              <Border>
+                <Grid>
                   <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition />
@@ -344,14 +340,14 @@
                   </Grid.ColumnDefinitions>
 
                   <!-- ISBN -->
-                  <Label Style="{DynamicResource EditorHLabelNoIdentStyle}"  Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_ISBN}"/>
-                  <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1"
+                  <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_ISBN}"/>
+                  <TextBox Grid.Row="0" Grid.Column="1"
                       ToolTip="{x:Static r:Definitions.CI_Citation_ISBN}" Text="{e:MetadataBinding XPath=isbn}"
                       Name="CI_Citaton_ISBN"/>
 
                   <!-- ISSN -->
-                  <Label Style="{DynamicResource EditorHLabelNoIdentStyle}" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_ISSN}"/>
-                  <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="1" Grid.Column="1"
+                  <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_ISSN}"/>
+                  <TextBox Grid.Row="1" Grid.Column="1"
                       ToolTip="{x:Static r:Definitions.CI_Citation_ISSN}" Text="{e:MetadataBinding XPath=issn}"
                       Name="CI_Citaton_ISSN"/>
 
@@ -360,13 +356,13 @@
 
 
               <!-- dates -->
-              <Border Style="{DynamicResource EditorBorder2Style}">
-                <Expander Style="{DynamicResource EditorExpander2Style}" IsExpanded="{Binding XPath=date/@editorExpand, Mode=TwoWay}" 
+              <Border>
+                <Expander IsExpanded="{Binding XPath=date/@editorExpand, Mode=TwoWay}" 
                           Name="CI_Citaton_DatesGroup">
                   <Expander.Header>
-                    <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_DATES}"/>
+                    <Label Content="{x:Static r:Resources.LBL_DATES}"/>
                   </Expander.Header>
-                  <Grid Style="{DynamicResource EditorSub2NoIndent}">
+                  <Grid>
                     <Grid.RowDefinitions>
                       <RowDefinition />
                       <RowDefinition />
@@ -378,7 +374,7 @@
                     </Grid.ColumnDefinitions>
 
                     <!-- created date -->
-                    <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0" 
+                    <Label Grid.Row="0" Grid.Column="0" 
                         ToolTip="{x:Static r:Definitions.CI_Date_creationDate}"
                         v:Nav.AnchorName="dates,date/createDate"
                         Content="{x:Static r:Resources.LBL_CREATED_DATE}" />
@@ -387,7 +383,7 @@
                         Name="CI_Date_creationDate"/>
 
                     <!-- published date -->
-                    <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0"
+                    <Label Grid.Row="1" Grid.Column="0"
                         ToolTip="{x:Static r:Definitions.CI_Date_publicationDate}"
                         v:Nav.AnchorName="dates,date/pubDate"
                         Content="{x:Static r:Resources.LBL_PUBLISHED_DATE}"/>
@@ -396,7 +392,7 @@
                         Name="CI_Date_publicationDate"/>
 
                     <!-- revised date -->
-                    <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0"
+                    <Label Grid.Row="2" Grid.Column="0"
                          ToolTip="{x:Static r:Definitions.CI_Date_revisionDate}"
                          v:Nav.AnchorName="dates,date/reviseDate"
                          Content="{x:Static r:Resources.LBL_REVISED_DATE}"/>
@@ -409,13 +405,13 @@
               </Border>
 
               <!-- other dates -->
-              <Border Style="{DynamicResource EditorBorder2Style}" t:MetadataStyle.OnlyProfiles="NAP">
-                <Expander Style="{DynamicResource EditorExpander2Style}" IsExpanded="{Binding XPath=date/notavailDate/@editorExpand, Mode=TwoWay}" 
+              <Border t:MetadataStyle.OnlyProfiles="NAP">
+                <Expander IsExpanded="{Binding XPath=date/notavailDate/@editorExpand, Mode=TwoWay}" 
                           Name="CI_Citaton_OtherDatesGroup">
                   <Expander.Header>
-                    <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_DATES_OTHER}"/>
+                    <Label Content="{x:Static r:Resources.LBL_DATES_OTHER}"/>
                   </Expander.Header>
-                  <Grid Style="{DynamicResource EditorSub2NoIndent}">
+                  <Grid>
                     <Grid.RowDefinitions>
                       <RowDefinition />
                       <RowDefinition />
@@ -429,7 +425,7 @@
                     </Grid.ColumnDefinitions>
 
                     <!-- NAP: not available date -->
-                    <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0"
+                    <Label Grid.Row="0" Grid.Column="0"
                         ToolTip="{x:Static r:Definitions.CI_Date_NAP_notAvailable}"
                         v:Nav.AnchorName="dates,date/notavailDate"
                         Content="{x:Static r:Resources.LBL_DATE_NAP_NOT_AVAIL}"/>
@@ -438,7 +434,7 @@
                         Name="CI_Date_NAP_notAvailable"/>
 
                     <!-- NAP: inforcement date -->
-                    <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0"
+                    <Label Grid.Row="1" Grid.Column="0"
                         ToolTip="{x:Static r:Definitions.CI_Date_NAP_inForce}"
                         v:Nav.AnchorName="dates,date/inforceDate"
                         Content="{x:Static r:Resources.LBL_DATE_NAP_INFORCE}"/>
@@ -447,7 +443,7 @@
                         Name="CI_Date_NAP_inForce"/>
 
                     <!-- NAP: adoption date -->
-                    <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0"
+                    <Label Grid.Row="2" Grid.Column="0"
                         ToolTip="{x:Static r:Definitions.CI_Date_NAP_adopted}"
                         v:Nav.AnchorName="dates,date/adoptDate"
                         Content="{x:Static r:Resources.LBL_DATE_NAP_ADOPTED}"/>
@@ -456,7 +452,7 @@
                         Name="CI_Date_NAP_adopted"/>
 
                     <!-- NAP: deprecation date -->
-                    <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="3" Grid.Column="0"
+                    <Label Grid.Row="3" Grid.Column="0"
                         ToolTip="{x:Static r:Definitions.CI_Date_NAP_deprecated}"
                         v:Nav.AnchorName="dates,date/deprecDate"
                         Content="{x:Static r:Resources.LBL_DATE_NAP_DEPRECATED}"/>
@@ -465,7 +461,7 @@
                         Name="CI_Date_NAP_deprecated"/>
 
                     <!-- NAP: superceed date -->
-                    <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="4" Grid.Column="0"
+                    <Label Grid.Row="4" Grid.Column="0"
                         ToolTip="{x:Static r:Definitions.CI_Date_NAP_superseded}"
                         v:Nav.AnchorName="dates,date/supersDate"
                         Content="{x:Static r:Resources.LBL_DATE_NAP_SUPERSEDED}"/>
@@ -478,13 +474,13 @@
               </Border>
 
               <!-- edition -->
-              <Border Style="{DynamicResource EditorBorder2Style}">
-                <Expander Style="{DynamicResource EditorExpander2Style}" IsExpanded="{Binding XPath=resEd/@editorExpand, Mode=TwoWay}" 
+              <Border>
+                <Expander IsExpanded="{Binding XPath=resEd/@editorExpand, Mode=TwoWay}" 
                           Name="CI_Citaton_EditionGroup">
                   <Expander.Header>
-                    <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_EDITION}"/>
+                    <Label Content="{x:Static r:Resources.LBL_EDITION}"/>
                   </Expander.Header>
-                  <Grid Style="{DynamicResource EditorSub2NoIndent}">
+                  <Grid>
                     <Grid.RowDefinitions>
                       <RowDefinition />
                       <RowDefinition />
@@ -494,11 +490,11 @@
                       <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Label Style="{DynamicResource EditorHLabelNoIdentStyle}" Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_EDITION}"/>
-                    <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.CI_Citation_edition}" Text="{e:MetadataBinding XPath=resEd}"
+                    <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_EDITION}"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.CI_Citation_edition}" Text="{e:MetadataBinding XPath=resEd}"
                              Name="CI_Citation_edition"/>
 
-                    <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0"
+                    <Label Grid.Row="1" Grid.Column="0"
                      ToolTip="{x:Static r:Definitions.CI_Citation_editionDate}"
                      Content="{x:Static r:Resources.LBL_EDITION_DATE}"/>
                     <controls:DateTimeControl Grid.Row="1" Grid.Column="1" ToolTip="{x:Static r:Definitions.CI_Citation_editionDate}"
@@ -511,13 +507,12 @@
               </Border>
 
               <!-- series -->
-              <Border Style="{DynamicResource EditorBorder2Style}">
-                <Expander Style="{DynamicResource EditorExpander2Style}" IsExpanded="{Binding XPath=datasetSeries/@editorExpand, Mode=TwoWay}"
-                          Name="CI_Citaton_SeriesGroup">
+              <Border>
+                <Expander IsExpanded="{Binding XPath=datasetSeries/@editorExpand, Mode=TwoWay}" Name="CI_Citaton_SeriesGroup">
                   <Expander.Header>
-                    <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_SERIES}"/>
+                    <Label Content="{x:Static r:Resources.LBL_SERIES}"/>
                   </Expander.Header>
-                  <Grid Style="{DynamicResource EditorSub2NoIndent}">
+                  <Grid>
                     <Grid.RowDefinitions>
                       <RowDefinition />
                       <RowDefinition />
@@ -529,24 +524,24 @@
                     </Grid.ColumnDefinitions>
 
                     <!-- series name -->
-                    <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_SERIES_NAME}"/>
-                    <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1"
+                    <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_SERIES_NAME}"/>
+                    <TextBox Grid.Row="0" Grid.Column="1"
                         ToolTip="{x:Static r:Definitions.CI_Series_name}" 
                         v:Nav.AnchorName="seriesName,datasetSeries/seriesName"
                         Text="{e:MetadataBinding XPath=datasetSeries/seriesName}" 
                         Name="CI_Series_name" />
 
                     <!-- series issue id -->
-                    <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_SERIES_ISSUE_ID}"/>
-                    <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="1" Grid.Column="1"
+                    <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_SERIES_ISSUE_ID}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1"
                         ToolTip="{x:Static r:Definitions.CI_Series_issueIdentification}" 
                         v:Nav.AnchorName="issId,datasetSeries/issId"
                         Text="{e:MetadataBinding XPath=datasetSeries/issId}"
                         Name="CI_Series_issueIdentification"/>
 
                     <!-- page -->
-                    <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_SERIES_PAGE}"/>
-                    <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="2" Grid.Column="1"
+                    <Label Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_SERIES_PAGE}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1"
                         ToolTip="{x:Static r:Definitions.CI_Series_page}" 
                         v:Nav.AnchorName="artPage,datasetSeries/artPage"
                         Text="{e:MetadataBinding XPath=datasetSeries/artPage}"
@@ -557,7 +552,7 @@
               </Border>
 
               <!-- reponsible parties -->
-              <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=citRespParty}" Visibility="{Binding ElementName=Citation, Path=SupressParties, Converter={StaticResource VisibleBoolNotConverter}}">
+              <ListBox ItemsSource="{Binding XPath=citRespParty}" Visibility="{Binding ElementName=Citation, Path=SupressParties, Converter={StaticResource VisibleBoolNotConverter}}">
                 <ListBox.ItemsPanel>
                   <ItemsPanelTemplate>
                     <StackPanel/>
@@ -565,21 +560,20 @@
                 </ListBox.ItemsPanel>
                 <ListBox.ItemTemplate>
                   <DataTemplate>
-                    <Border Style="{DynamicResource EditorBorder2Style}" >
+                    <Border>
                       <StackPanel>
-                        <Expander Style="{DynamicResource EditorExpander2Style}" 
-                                  AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Citaton_ContactGroup}">
+                        <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Citaton_ContactGroup}">
                           <Expander.Header>
                             <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                                 RelativeSource={RelativeSource FindAncestor,
                                 AncestorType={x:Type ContentPresenter}},
                                 Mode=TwoWay}" LastChildFill="True">
-                              <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                              <Button DockPanel.Dock="Right" Click="DeleteItem"
                                       AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Citaton_ContactDelete}">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                               </Button>
-                              <Label Style="{DynamicResource EditorHExpanderSimpleLabel}" Content="{x:Static r:Resources.LBL_CI_PARTY}"/>
-                              <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding ElementName=responsibleParty, Path=DefaultValue, Mode=TwoWay}"/>
+                              <Label Content="{x:Static r:Resources.LBL_CI_PARTY}"/>
+                              <Label Content="{Binding ElementName=responsibleParty, Path=DefaultValue, Mode=TwoWay}"/>
                             </DockPanel>
                           </Expander.Header>
                           <t:MTK_CI_ResponsibleParty x:Name="responsibleParty"/>
@@ -590,7 +584,7 @@
                 </ListBox.ItemTemplate>
               </ListBox>
 
-              <Border Style="{DynamicResource EditorBorder2Style}" Visibility="{Binding ElementName=Citation, Path=SupressParties, Converter={StaticResource VisibleBoolNotConverter}}">
+              <Border  Visibility="{Binding ElementName=Citation, Path=SupressParties, Converter={StaticResource VisibleBoolNotConverter}}">
                 <!-- LOAD SAVED CONTACT -->
                 <DockPanel LastChildFill="True">
                   <Label DockPanel.Dock="Left" VerticalAlignment="Center" Content="{x:Static r:Resources.LBL_CI_PARTY_PICK}"/>
@@ -599,21 +593,19 @@
               </Border>
 
               <!-- ADD CONTACT -->
-              <Button Click="AddRecordByTagToLocal" Tag="Contact" Style="{DynamicResource AddButton}" Visibility="{Binding ElementName=Citation, Path=SupressParties, Converter={StaticResource VisibleBoolNotConverter}}"
+              <Button Click="AddRecordByTagToLocal" Tag="Contact" Visibility="{Binding ElementName=Citation, Path=SupressParties, Converter={StaticResource VisibleBoolNotConverter}}"
                       Name="CI_Citaton_ContactAdd">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                  <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                  <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_CONTACT}"/>
+                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                  <TextBlock Text="{x:Static r:Resources.BTN_ADD_CONTACT}"/>
                 </StackPanel>
               </Button>
 
               <!-- other citation details -->
               <StackPanel>
-                <Label Style="{DynamicResource EditorVLabelStyle}" Content="{x:Static r:Resources.LBL_CITATION_DETAILS}"/>
+                <Label Content="{x:Static r:Resources.LBL_CITATION_DETAILS}"/>
                 <controls:Resizer>
-                  <TextBox Style="{DynamicResource EditorTextAreaResizeStyle}"
-                      ToolTip="{x:Static r:Definitions.CI_Citation_otherCitationDetails}" Text="{e:MetadataBinding XPath=otherCitDet}"
-                      Name="CI_Citaton_OtherDetails">
+                  <TextBox ToolTip="{x:Static r:Definitions.CI_Citation_otherCitationDetails}" Text="{e:MetadataBinding XPath=otherCitDet}" Name="CI_Citaton_OtherDetails">
                   </TextBox>
                 </controls:Resizer>
               </StackPanel>

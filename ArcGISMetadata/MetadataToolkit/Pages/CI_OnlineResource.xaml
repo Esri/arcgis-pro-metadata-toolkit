@@ -38,7 +38,7 @@
 
   <Grid>
     <StackPanel>
-      <Grid Style="{DynamicResource EditorSubPageStyle}">
+      <Grid>
         <Grid.RowDefinitions>
           <RowDefinition />
           <RowDefinition />
@@ -53,8 +53,8 @@
         </Grid.ColumnDefinitions>
 
         <!-- linkage -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_LINKAGE}" />
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1"
+        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_LINKAGE}" />
+        <TextBox Grid.Row="0" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.CI_OnlineResource_linkage}"
             v:Nav.AnchorName="linkage,linkage"
             Text="{e:MetadataBinding XPath=linkage}"
@@ -62,37 +62,37 @@
         <!-- NOTE: deleted URL rule -->
 
         <!-- protocol -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_PROTOCOL}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="1" Grid.Column="1"
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_PROTOCOL}"/>
+        <TextBox Grid.Row="1" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.CI_OnlineResource_protocol}"
             v:Nav.AnchorName="protocol,protocol"
             Text="{e:MetadataBinding XPath=protocol}"
             Name="CI_OnlineResource_protocol"/>
 
         <!-- profile -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_PROFILE}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="2" Grid.Column="1"
+        <Label Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_PROFILE}"/>
+        <TextBox Grid.Row="2" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.CI_OnlineResource_applicationProfile}"
             Text="{e:MetadataBinding XPath=appProfile}"
             Name="CI_OnlineResource_applicationProfile"/>
 
         <!-- name -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_NAME}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="3" Grid.Column="1"
+        <Label Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_NAME}"/>
+        <TextBox Grid.Row="3" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.CI_OnlineResource_name}"
             Text="{e:MetadataBinding XPath=orName}"
             Name="CI_OnlineResource_name"/>
 
         <!-- description -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="4" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_DESC}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="4" Grid.Column="1"
+        <Label Grid.Row="4" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_DESC}"/>
+        <TextBox Grid.Row="4" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.CI_OnlineResource_description}"
             Text="{e:MetadataBinding XPath=orDesc}"
             Name="CI_OnlineResource_description"/>
 
         <!-- function -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="5" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_FUNCTION}"/>
-        <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="orFunct/OnFunctCd/@value" Grid.Row="5" Grid.Column="1"  Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+        <Label Grid.Row="5" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_FUNCTION}"/>
+        <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="orFunct/OnFunctCd/@value" Grid.Row="5" Grid.Column="1" IsEditable="False"
             ToolTip="{x:Static r:Definitions.CI_OnlineResource_function}"
             ItemsSource="{Binding Source={StaticResource CI_OnLineFunctionCode}, Path=List}"
             DisplayMemberPath="."

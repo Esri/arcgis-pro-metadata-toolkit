@@ -96,7 +96,7 @@
   <!-- left top right bottom -->
   <Grid>
     <StackPanel>
-      <Grid Style="{DynamicResource EditorSubPageStyle}">
+      <Grid>
         <Grid.RowDefinitions>
           <RowDefinition />
           <RowDefinition />
@@ -122,31 +122,31 @@
         </Grid.ColumnDefinitions>
 
         <!-- email -->
-        <ListBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=cntAddress/eMailAdd}">
+        <ListBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding XPath=cntAddress/eMailAdd}">
           <ListBox.ItemTemplate>
             <DataTemplate>
               <DockPanel LastChildFill="True">
                 <Grid DockPanel.Dock="Left" Width="{Binding ElementName=ColumnOne, Path=ActualWidth, Mode=OneTime}">
-                  <Label Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_CONT_EMAIL}"/>
+                  <Label Content="{x:Static r:Resources.LBL_CONT_EMAIL}"/>
                 </Grid>
                 <!-- add if the last sibling -->
-                <ListBox DockPanel.Dock="Right" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(following-sibling::eMailAdd)]}">
+                <ListBox DockPanel.Dock="Right" ItemsSource="{Binding XPath=self::*[not(following-sibling::eMailAdd)]}">
                   <ListBox.ItemTemplate>
                     <DataTemplate>
-                      <Button Tag="Email_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
+                      <Button Tag="Email_Parent" Click="AddRecordByTagToLocal"
                               AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Contact_EmailAdd}">
-                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
                       </Button>
                     </DataTemplate>
                   </ListBox.ItemTemplate>
                 </ListBox>
                 <!-- delete -->
-                <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
+                <Button DockPanel.Dock="Right" Click="DeleteItem" 
                         AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Contact_EmailDelete}">
-                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                 </Button>
                 <!-- email -->
-                <TextBox Style="{DynamicResource EditorTextBoxStyle}" ToolTip="{x:Static r:Definitions.CI_Address_electronicMailAddress}"
+                <TextBox ToolTip="{x:Static r:Definitions.CI_Address_electronicMailAddress}"
                     v:Nav.AnchorName="eMailAdd"
                     Text="{e:MetadataBinding XPath=.}"
                     AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Contact_Email}"/>
@@ -158,7 +158,7 @@
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
 
           <!-- online resource -->
-          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=cntOnlineRes}">
+          <ListBox ItemsSource="{Binding XPath=cntOnlineRes}">
             <ListBox.ItemsPanel>
               <ItemsPanelTemplate>
                 <StackPanel/>
@@ -166,11 +166,10 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
               <DataTemplate>
-                <Expander Style="{DynamicResource EditorExpander2Style}" 
-                          AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Contact_OnlineResourceGroup}">
+                <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Contact_OnlineResourceGroup}">
                   <Expander.Header>
                     <TextBlock>
-                      <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_CONT_ONRES}"/>
+                      <Label Content="{x:Static r:Resources.LBL_CONT_ONRES}"/>
                     </TextBlock>
                   </Expander.Header>
                   <!-- online resource -->
@@ -181,15 +180,13 @@
           </ListBox>
 
           <!--  ADD online resource -->
-          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}"
-                  ItemsSource="{Binding XPath=self::*[not(cntOnlineRes)]}">
+          <ListBox ItemsSource="{Binding XPath=self::*[not(cntOnlineRes)]}">
             <ListBox.ItemTemplate>
               <DataTemplate>
-                <Button Tag="OnlineRes" Click="AddRecordByTag" Style="{DynamicResource AddButton}"
-                        Name="CI_OnlineResourceAdd">
+                <Button Tag="OnlineRes" Click="AddRecordByTag" Name="CI_OnlineResourceAdd">
                   <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                    <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_ONLINE_RES}"/>
+                    <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                    <TextBlock Text="{x:Static r:Resources.BTN_ADD_ONLINE_RES}"/>
                   </StackPanel>
                 </Button>
               </DataTemplate>
@@ -198,12 +195,12 @@
         </StackPanel>
 
         <!-- CI_Address cont... -->
-        <Border Style="{DynamicResource EditorBorderHRuleStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
+        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
         </Border>
 
         <!-- address type -->
-        <Label t:MetadataStyle.OnlyProfiles="FGDC,NAP" Content="{x:Static r:Resources.LBL_ADDRESS_TYPE}" Style="{DynamicResource EditorHLabelStyle}" Grid.Row="3" Grid.Column="0"/>
-        <ComboBox t:MetadataStyle.OnlyProfiles="FGDC,NAP" Grid.Row="3" Grid.Column="1" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+        <Label t:MetadataStyle.OnlyProfiles="FGDC,NAP" Content="{x:Static r:Resources.LBL_ADDRESS_TYPE}" Grid.Row="3" Grid.Column="0"/>
+        <ComboBox t:MetadataStyle.OnlyProfiles="FGDC,NAP" Grid.Row="3" Grid.Column="1" IsEditable="False"
             ToolTip="{x:Static r:Definitions.FGDC_Contact_addrtype}" ItemsSource="{Binding Source={StaticResource AddressType}, Path=List}"
             DisplayMemberPath="."
             Loaded="PostProcessComboBoxValues"  
@@ -215,32 +212,30 @@
             Name="CI_Contact_AddressType"/>
 
         <!-- address / delivery point -->
-        <ListBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=cntAddress/delPoint}">
+        <ListBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding XPath=cntAddress/delPoint}">
           <ListBox.ItemTemplate>
             <DataTemplate>
               <DockPanel LastChildFill="True">
                 <Grid DockPanel.Dock="Left" Width="{Binding ElementName=ColumnOne, Path=ActualWidth, Mode=OneTime}">
-                  <Label Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_CONT_ADDRESS}"/>
+                  <Label Content="{x:Static r:Resources.LBL_CONT_ADDRESS}"/>
                 </Grid>
                 <!-- add if the last sibling -->
-                <ListBox DockPanel.Dock="Right" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(following-sibling::delPoint)]}">
+                <ListBox DockPanel.Dock="Right" ItemsSource="{Binding XPath=self::*[not(following-sibling::delPoint)]}">
                   <ListBox.ItemTemplate>
                     <DataTemplate>
-                      <Button Tag="Address_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
-                              Name="CI_Contact_AddressAdd">
-                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Button Tag="Address_Parent" Click="AddRecordByTagToLocal" Name="CI_Contact_AddressAdd">
+                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
                       </Button>
                     </DataTemplate>
                   </ListBox.ItemTemplate>
                 </ListBox>
                 <!-- delete -->
-                <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
+                <Button DockPanel.Dock="Right" Click="DeleteItem" 
                         AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Contact_AddressDelete}">
-                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                 </Button>
                 <!-- address / delpoint -->
-                <TextBox Style="{DynamicResource EditorTextBoxStyle}"
-                    v:Nav.AnchorName="delPoint"
+                <TextBox v:Nav.AnchorName="delPoint"
                     v:MetadataRules.Rules="{x:Static v:MetadataRules.CheckRules}"
                     ToolTip="{x:Static r:Definitions.CI_Address_deliveryPoint}"
                     Text="{e:MetadataBinding XPath=.}" 
@@ -250,30 +245,30 @@
           </ListBox.ItemTemplate>
         </ListBox>
 
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="5" Grid.Column="0" Content="{x:Static r:Resources.LBL_CONT_CITY}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="5" Grid.Column="1" SourceUpdated="DefaultValueChanged"
+        <Label Grid.Row="5" Grid.Column="0" Content="{x:Static r:Resources.LBL_CONT_CITY}"/>
+        <TextBox Grid.Row="5" Grid.Column="1" SourceUpdated="DefaultValueChanged"
             v:Nav.AnchorName="city,cntAddress/city"
             ToolTip="{x:Static r:Definitions.CI_Address_city}"
             Text="{e:MetadataBinding XPath=cntAddress/city}"
             Name="CI_Contact_AddressCity"/>
 
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="6" Grid.Column="0" Content="{x:Static r:Resources.LBL_CONT_STATE}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="6" Grid.Column="1" SourceUpdated="DefaultValueChanged"
+        <Label Grid.Row="6" Grid.Column="0" Content="{x:Static r:Resources.LBL_CONT_STATE}"/>
+        <TextBox Grid.Row="6" Grid.Column="1" SourceUpdated="DefaultValueChanged"
             v:Nav.AnchorName="adminArea,cntAddress/adminArea"
             ToolTip="{x:Static r:Definitions.CI_Address_administrativeArea}"
             Text="{e:MetadataBinding XPath=cntAddress/adminArea}" 
             Name="CI_Address_administrativeArea"/>
 
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="7" Grid.Column="0" Content="{x:Static r:Resources.LBL_CONT_POSTAL}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="7" Grid.Column="1" SourceUpdated="DefaultValueChanged"
+        <Label Grid.Row="7" Grid.Column="0" Content="{x:Static r:Resources.LBL_CONT_POSTAL}"/>
+        <TextBox Grid.Row="7" Grid.Column="1" SourceUpdated="DefaultValueChanged"
             v:Nav.AnchorName="postCode,cntAddress/postCode"
             ToolTip="{x:Static r:Definitions.CI_Address_postalCode}"
             Text="{e:MetadataBinding XPath=cntAddress/postCode}" 
             Name="CI_Address_postalCode"/>
 
         <!-- country -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="8" Grid.Column="0" Content="{x:Static r:Resources.LBL_CONT_COUNTRY}"/>
-        <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="@country" Grid.Row="8" Grid.Column="1"  Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+        <Label Grid.Row="8" Grid.Column="0" Content="{x:Static r:Resources.LBL_CONT_COUNTRY}"/>
+        <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="@country" Grid.Row="8" Grid.Column="1" IsEditable="False"
             ItemsSource="{Binding Source={StaticResource CountryCodes}, Path=List}"
             ToolTip="{x:Static r:Definitions.CI_Address_country}"
             DisplayMemberPath="."
@@ -287,42 +282,40 @@
 
         <!-- CI_Telephone -->
 
-        <Border Style="{DynamicResource EditorBorderHRuleStyle}" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" >
+        <Border Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" >
         </Border>
 
         <!-- phone -->
-        <ListBox Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=cntPhone/voiceNum}">
+        <ListBox Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding XPath=cntPhone/voiceNum}">
           <ListBox.ItemTemplate>
             <DataTemplate>
               <DockPanel LastChildFill="True">
                 <Grid DockPanel.Dock="Left" Width="{Binding ElementName=ColumnOne, Path=ActualWidth, Mode=OneTime}">
-                  <Label Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_CONT_PHONE}"/>
+                  <Label Content="{x:Static r:Resources.LBL_CONT_PHONE}"/>
                 </Grid>
                 <!-- add if the last sibling -->
-                <ListBox DockPanel.Dock="Right" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(following-sibling::voiceNum)]}">
+                <ListBox DockPanel.Dock="Right" ItemsSource="{Binding XPath=self::*[not(following-sibling::voiceNum)]}">
                   <ListBox.ItemTemplate>
                     <DataTemplate>
-                      <Button Tag="Phone_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}" 
-                              Name="CI_Contact_PhoneAdd">
-                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Button Tag="Phone_Parent" Click="AddRecordByTagToLocal" Name="CI_Contact_PhoneAdd">
+                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
                       </Button>
                     </DataTemplate>
                   </ListBox.ItemTemplate>
                 </ListBox>
                 <!-- delete -->
-                <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
+                <Button DockPanel.Dock="Right" Click="DeleteItem" 
                         AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Contact_PhoneDelete}">
-                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                 </Button>
 
                 <!-- phone -->
-                <CheckBox t:MetadataStyle.OnlyProfiles="FGDC,NAP" DockPanel.Dock="Right" Style="{DynamicResource EditorCheckBoxStyle}"
+                <CheckBox t:MetadataStyle.OnlyProfiles="FGDC,NAP" DockPanel.Dock="Right" 
                     ToolTip="{x:Static r:Definitions.FGDC_Contact_tddtty}" 
                     v:MetadataRules.Rules="{x:Static v:MetadataRules.CheckRules}"
                     Content="{x:Static r:Resources.LBL_CONT_TDDTTY}" IsChecked="{Binding XPath=@tddtty, Mode=TwoWay}" 
                     AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Contact_PhoneTTY}"/>
-                <TextBox Style="{DynamicResource EditorTextBoxStyle}"
-                    v:Nav.AnchorName="voiceNum"
+                <TextBox v:Nav.AnchorName="voiceNum"
                     ToolTip="{x:Static r:Definitions.CI_Telephone_voice}"
                     Text="{e:MetadataBinding XPath=.}"
                     AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Contact_Phone}"/>
@@ -332,41 +325,40 @@
         </ListBox>
 
         <!-- fax -->
-        <ListBox Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=cntPhone/faxNum}">
+        <ListBox Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding XPath=cntPhone/faxNum}">
           <ListBox.ItemTemplate>
             <DataTemplate>
               <DockPanel LastChildFill="True">
                 <Grid DockPanel.Dock="Left" Width="{Binding ElementName=ColumnOne, Path=ActualWidth, Mode=OneTime}">
-                  <Label Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_CONT_FAX}"/>
+                  <Label Content="{x:Static r:Resources.LBL_CONT_FAX}"/>
                 </Grid>
 
                 <!-- add if the last sibling -->
-                <ListBox DockPanel.Dock="Right" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(following-sibling::faxNum)]}">
+                <ListBox DockPanel.Dock="Right" ItemsSource="{Binding XPath=self::*[not(following-sibling::faxNum)]}">
                   <ListBox.ItemTemplate>
                     <DataTemplate>
-                      <Button Tag="Fax_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
+                      <Button Tag="Fax_Parent" Click="AddRecordByTagToLocal" 
                               Name="CI_Contact_FaxAdd">
-                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
                       </Button>
                     </DataTemplate>
                   </ListBox.ItemTemplate>
                 </ListBox>
 
                 <!-- delete button if NOT the first sibling -->
-                <ListBox DockPanel.Dock="Right" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*}">
+                <ListBox DockPanel.Dock="Right" ItemsSource="{Binding XPath=self::*}">
                   <ListBox.ItemTemplate>
                     <DataTemplate>
-                      <Button Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
+                      <Button Click="DeleteItem"
                               AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Contact_FaxDelete}">
-                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                       </Button>
                     </DataTemplate>
                   </ListBox.ItemTemplate>
                 </ListBox>
 
                 <!-- fax -->
-                <TextBox Style="{DynamicResource EditorTextBoxStyle}"
-                    ToolTip="{x:Static r:Definitions.CI_Telephone_facsimile}"
+                <TextBox ToolTip="{x:Static r:Definitions.CI_Telephone_facsimile}"
                     Text="{e:MetadataBinding XPath=.}"
                     AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Contact_Fax}"/>
               </DockPanel>
@@ -374,17 +366,17 @@
           </ListBox.ItemTemplate>
         </ListBox>
 
-        <Border Style="{DynamicResource EditorBorderHRuleStyle}" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" >
+        <Border Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" >
         </Border>
 
         <!-- CI_Contact cont... -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="13" Grid.Column="0" Content="{x:Static r:Resources.LBL_CONT_INSTR}"/>
-        <TextBox Style="{DynamicResource EditorTextAreaShortStyle}" Grid.Row="13" Grid.Column="1"
+        <Label Grid.Row="13" Grid.Column="0" Content="{x:Static r:Resources.LBL_CONT_INSTR}"/>
+        <TextBox Grid.Row="13" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.CI_Contact_contactInstructions}" Text="{e:MetadataBinding XPath=cntInstr}"
             Name="CI_Contact_contactInstructions"/>
 
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="14" Grid.Column="0" Content="{x:Static r:Resources.LBL_CONT_HOURS}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="14" Grid.Column="1"
+        <Label Grid.Row="14" Grid.Column="0" Content="{x:Static r:Resources.LBL_CONT_HOURS}"/>
+        <TextBox Grid.Row="14" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.CI_Contact_hoursOfService}" Text="{e:MetadataBinding XPath=cntHours}"
             Name="CI_Contact_hoursOfService"/>
 

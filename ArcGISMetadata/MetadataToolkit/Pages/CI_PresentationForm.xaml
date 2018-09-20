@@ -49,12 +49,12 @@
       <ColumnDefinition Width="*"/>
     </Grid.ColumnDefinitions>
 
-    <Label Grid.Row="0" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_PRESENTATION_FORM}"/>
+    <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_PRESENTATION_FORM}"/>
     <t:MTK_CI_PresentationFormCode Grid.Row="0" Grid.Column="1"/>
 
     <!-- fgdc geospatial presentation form -->
-    <Label Grid.Row="1" Grid.Column="0" t:MetadataStyle.OnlyProfiles="FGDC,NAP" Content="{x:Static r:Resources.LBL_FGDC_GEOFORM}" Style="{DynamicResource EditorHLabelNoIdentStyle}"/>
-        <ComboBox Grid.Row="1" Grid.Column="1" t:MetadataStyle.OnlyProfiles="FGDC,NAP" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="True"
+    <Label Grid.Row="1" Grid.Column="0" t:MetadataStyle.OnlyProfiles="FGDC,NAP" Content="{x:Static r:Resources.LBL_FGDC_GEOFORM}" />
+        <ComboBox Grid.Row="1" Grid.Column="1" t:MetadataStyle.OnlyProfiles="FGDC,NAP" IsEditable="True"
         ToolTip="{x:Static r:Definitions.FGDC_Citation_geoform}" ItemsSource="{Binding Source={StaticResource PresentationForm}, Path=List}"
         DisplayMemberPath="."
         SelectedValuePath="@value"
