@@ -14,7 +14,7 @@
     <e:Codelists x:Key="CI_PresentationCode" CodelistName="CI_PresentationCode"/>
   </UserControl.Resources>
   <Grid>
-    <ComboBox Loaded="PostProcessComboBoxValues" SelectionChanged="ComboBoxSyncSelectionChanged" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+    <ComboBox Loaded="PostProcessComboBoxValues" SelectionChanged="ComboBoxSyncSelectionChanged" IsEditable="False"
         p:EditorPage.SourceXPath="PresFormCd/@value"
         ToolTip="{x:Static r:Definitions.CI_Citation_presentationForm}"
         ItemsSource="{Binding Source={StaticResource CI_PresentationCode}, Path=List}"

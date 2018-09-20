@@ -48,7 +48,7 @@
 
   <Grid>
     <StackPanel>
-      <Grid Style="{DynamicResource EditorSubPageStyle}">
+      <Grid>
         <Grid.RowDefinitions>
           <RowDefinition />
           <RowDefinition />
@@ -64,30 +64,29 @@
         </Grid.ColumnDefinitions>
 
         <!-- individual name -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Name}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_individualName}"
+        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Name}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_individualName}"
             v:Nav.AnchorName="IndName,rpIndName"
             Text="{e:MetadataBinding XPath=rpIndName}"
             Name="CI_ResponsibleParty_individualName" />
 
         <!-- organization -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Organization}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="1" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_organisationName}"
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Organization}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_organisationName}"
             v:Nav.AnchorName="OrgName,rpOrgName"
             Text="{e:MetadataBinding XPath=rpOrgName}"
             Name="CI_ResponsibleParty_organisationName"/>
 
-
         <!-- position -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Position}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="2" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_positionName}"
+        <Label Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Position}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_positionName}"
             v:Nav.AnchorName="PosName,rpPosName"
             Text="{e:MetadataBinding XPath=rpPosName}"
             Name="CI_ResponsibleParty_positionName"/>
 
         <!-- role -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Role}"/>
-                <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="role/RoleCd/@value" Grid.Row="3" Grid.Column="1" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+        <Label Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Role}"/>
+        <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="role/RoleCd/@value" Grid.Row="3" Grid.Column="1" IsEditable="False"
             v:Nav.AnchorName="role,role"
             ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_role}"
             ItemsSource="{Binding Source={StaticResource CI_RoleCode}, Path=List}"
@@ -103,7 +102,7 @@
         <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"  >
 
           <!-- contact -->
-          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=rpCntInfo}">
+          <ListBox ItemsSource="{Binding XPath=rpCntInfo}">
             <ListBox.ItemsPanel>
               <ItemsPanelTemplate>
                 <StackPanel/>
@@ -111,10 +110,9 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
               <DataTemplate>
-                <Expander Style="{DynamicResource EditorExpander2Style}"
-                          AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_ResponsibleParty_ContactGroup}" >
+                <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_ResponsibleParty_ContactGroup}" >
                     <Expander.Header>
-                    <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_CONT_CONTACT}"/>
+                    <Label Content="{x:Static r:Resources.LBL_CONT_CONTACT}"/>
                   </Expander.Header>
                   <!-- contact -->
                   <t:MTK_CI_Contact x:Name="partyContact"/>
@@ -124,15 +122,13 @@
           </ListBox>
 
           <!--  ADD CONTACT -->
-          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}"
-                  ItemsSource="{Binding XPath=self::*[not(rpCntInfo)]}">
+          <ListBox ItemsSource="{Binding XPath=self::*[not(rpCntInfo)]}">
             <ListBox.ItemTemplate>
               <DataTemplate>
-                <Button Tag="Contact" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
-                        Name="CI_ResponsibleParty_ContactAdd">
+                <Button Tag="Contact" Click="AddRecordByTagToLocal" Name="CI_ResponsibleParty_ContactAdd">
                   <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                    <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_CONTACT_INFO}"/>
+                    <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                    <TextBlock Text="{x:Static r:Resources.BTN_ADD_CONTACT_INFO}"/>
                   </StackPanel>
                 </Button>
               </DataTemplate>

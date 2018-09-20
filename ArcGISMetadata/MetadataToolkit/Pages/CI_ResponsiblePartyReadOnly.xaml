@@ -33,7 +33,7 @@
 
   <Grid>
     <StackPanel>
-      <Grid Style="{DynamicResource EditorSubPageStyle}">
+      <Grid>
         <Grid.RowDefinitions>
           <RowDefinition />
           <RowDefinition />
@@ -49,20 +49,20 @@
         </Grid.ColumnDefinitions>
 
         <!-- individual name -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Name}"/>
-        <TextBox IsEnabled="False" Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_individualName}"
+        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Name}"/>
+        <TextBox IsEnabled="False" Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_individualName}"
             Text="{e:MetadataBinding XPath=rpIndName}" 
             Name="CI_ResponsibleParty_individualName"/>
 
         <!-- organization -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Organization}"/>
-        <TextBox IsEnabled="False" Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="1" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_organisationName}"
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Organization}"/>
+        <TextBox IsEnabled="False" Grid.Row="1" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_organisationName}"
             Text="{e:MetadataBinding XPath=rpOrgName}"
             Name="CI_ResponsibleParty_organisationName"/>
 
         <!-- position -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Position}"/>
-        <TextBox IsEnabled="False" Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="2" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_positionName}"
+        <Label Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Position}"/>
+        <TextBox IsEnabled="False" Grid.Row="2" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_positionName}"
             Text="{e:MetadataBinding XPath=rpPosName}" 
             Name="CI_ResponsibleParty_positionName"/>
 
