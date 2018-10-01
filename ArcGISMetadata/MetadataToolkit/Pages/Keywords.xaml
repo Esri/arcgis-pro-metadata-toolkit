@@ -1,9 +1,10 @@
-<p:EditorPage x:Class="MetadataToolkit.MTK_Keywords" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_Keywords" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:t="clr-namespace:MetadataToolkit"
+             xmlns:tp="clr-namespace:MetadataToolkit.Pages"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
@@ -266,7 +267,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel>
-                            <t:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_theme}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_theme}"/>
                             <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
                           </StackPanel>
                         </Expander>
@@ -307,7 +308,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel>
-                            <t:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_place}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_place}"/>
                             <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
                             </Border>
                           </StackPanel>
@@ -349,7 +350,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel>
-                            <t:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_temporal}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_temporal}"/>
                             <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
                             </Border>
                           </StackPanel>
@@ -391,7 +392,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel>
-                            <t:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_discipline}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_discipline}"/>
                             <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
                             </Border>
                           </StackPanel>
@@ -433,7 +434,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel>
-                            <t:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_stratum}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_stratum}"/>
                             <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
                             </Border>
                           </StackPanel>
@@ -475,7 +476,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel>
-                            <t:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_other}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_other}"/>
                             <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
                             </Border>
                           </StackPanel>
@@ -517,7 +518,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel>
-                            <t:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_NAP_product}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_NAP_product}"/>
                             <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
                             </Border>
                           </StackPanel>
@@ -559,7 +560,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel>
-                            <t:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_NAP_subtopic}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_NAP_subtopic}"/>
                             <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
                             </Border>
                           </StackPanel>

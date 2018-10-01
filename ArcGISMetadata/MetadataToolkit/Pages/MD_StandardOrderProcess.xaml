@@ -1,9 +1,10 @@
-<p:EditorPage x:Class="MetadataToolkit.MTK_MD_StandardOrderProcess" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_MD_StandardOrderProcess" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:t="clr-namespace:MetadataToolkit"
+             xmlns:tp="clr-namespace:MetadataToolkit.Pages"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"             
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
@@ -106,7 +107,7 @@
                 ToolTip="{x:Static r:Definitions.FGDC_Distribution_availabl_beginTimePeriod}">
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <t:MTK_TM_Period/>
+                  <tp:MTK_TM_Period/>
                 </DataTemplate>
               </ListBox.ItemTemplate>
             </ListBox>

@@ -1,9 +1,10 @@
-<p:EditorPage x:Class="MetadataToolkit.MTK_MetadataDetails" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_MetadataDetails" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:t="clr-namespace:MetadataToolkit"
+             xmlns:tp="clr-namespace:MetadataToolkit.Pages"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"             
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
@@ -128,7 +129,7 @@
                   <ListBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding XPath=mdFileID}">
                     <ListBox.ItemTemplate>
                       <DataTemplate>
-                        <t:MTK_MD_FileIdentifier/>
+                        <tp:MTK_MD_FileIdentifier/>
                       </DataTemplate>
                     </ListBox.ItemTemplate>
                   </ListBox>
@@ -201,7 +202,7 @@
                   <ListBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding XPath=mdLang}">
                     <ListBox.ItemTemplate>
                       <DataTemplate>
-                        <t:MTK_LanguageCode ToolTip="{x:Static r:Definitions.MD_Metadata_language}"/>
+                        <tp:MTK_LanguageCode ToolTip="{x:Static r:Definitions.MD_Metadata_language}"/>
                       </DataTemplate>
                     </ListBox.ItemTemplate>
                   </ListBox>
@@ -211,7 +212,7 @@
                   <ListBox t:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding XPath=mdLang}">
                     <ListBox.ItemTemplate>
                       <DataTemplate>
-                        <t:MTK_CountryCode/>
+                        <tp:MTK_CountryCode/>
                       </DataTemplate>
                     </ListBox.ItemTemplate>
                   </ListBox>
@@ -221,7 +222,7 @@
                   <ListBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding XPath=mdChar}">
                     <ListBox.ItemTemplate>
                       <DataTemplate>
-                        <t:MTK_MD_CharacterSetCode ToolTip="{x:Static r:Definitions.MD_Metadata_characterSet}"/>
+                        <tp:MTK_MD_CharacterSetCode ToolTip="{x:Static r:Definitions.MD_Metadata_characterSet}"/>
                       </DataTemplate>
                     </ListBox.ItemTemplate>
                   </ListBox>
@@ -254,7 +255,7 @@
                             <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
                           <!-- scope code -->
-                          <t:MTK_MD_ScopeCode_MD_Metadata/>
+                          <tp:MTK_MD_ScopeCode_MD_Metadata/>
                         </DockPanel>
                       </DataTemplate>
                     </ListBox.ItemTemplate>

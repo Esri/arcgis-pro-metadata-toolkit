@@ -1,9 +1,10 @@
-﻿<p:EditorPage Tag="CI_Contact" x:Class="MetadataToolkit.MTK_CI_Contact" x:ClassModifier="internal" 
+<p:EditorPage Tag="CI_Contact" x:Class="MetadataToolkit.Pages.MTK_CI_Contact" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:t="clr-namespace:MetadataToolkit"
+             xmlns:tp="clr-namespace:MetadataToolkit.Pages"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
@@ -173,7 +174,7 @@
                     </TextBlock>
                   </Expander.Header>
                   <!-- online resource -->
-                  <t:MTK_CI_OnlineResource />
+                  <tp:MTK_CI_OnlineResource />
                 </Expander>
               </DataTemplate>
             </ListBox.ItemTemplate>

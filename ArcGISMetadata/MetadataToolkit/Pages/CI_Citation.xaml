@@ -1,10 +1,11 @@
-﻿<p:EditorPage x:Name="Citation" x:Class="MetadataToolkit.MTK_CI_Citation" x:ClassModifier="internal" 
+<p:EditorPage x:Name="Citation" x:Class="MetadataToolkit.Pages.MTK_CI_Citation" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:r="clr-namespace:MetadataToolkit.Properties"
              xmlns:t="clr-namespace:MetadataToolkit"
+             xmlns:tp="clr-namespace:MetadataToolkit.Pages"
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
              xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"                
@@ -207,7 +208,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <!-- online resource -->
-                          <t:MTK_CI_OnlineResource />
+                          <tp:MTK_CI_OnlineResource />
                         </Expander>
                       </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -259,7 +260,7 @@
                           </StackPanel>
 
                           <!-- presentation form-->
-                          <t:MTK_CI_PresentationForm/>
+                          <tp:MTK_CI_PresentationForm/>
 
                         </DockPanel>
                       </DataTemplate>
@@ -309,7 +310,7 @@
                           </Expander.Header>
 
                           <!-- identifier -->
-                          <t:MTK_MD_Identifier x:Name="identifier" ToolTip=""></t:MTK_MD_Identifier>
+                          <tp:MTK_MD_Identifier x:Name="identifier" ToolTip=""></tp:MTK_MD_Identifier>
 
                         </Expander>
                       </DataTemplate>
@@ -576,7 +577,7 @@
                               <Label Content="{Binding ElementName=responsibleParty, Path=DefaultValue, Mode=TwoWay}"/>
                             </DockPanel>
                           </Expander.Header>
-                          <t:MTK_CI_ResponsibleParty x:Name="responsibleParty"/>
+                          <tp:MTK_CI_ResponsibleParty x:Name="responsibleParty"/>
                         </Expander>
                       </StackPanel>
                     </Border>
@@ -588,7 +589,7 @@
                 <!-- LOAD SAVED CONTACT -->
                 <DockPanel LastChildFill="True">
                   <Label DockPanel.Dock="Left" VerticalAlignment="Center" Content="{x:Static r:Resources.LBL_CI_PARTY_PICK}"/>
-                  <t:MTK_PartyPickerControl ContainerElement="citRespParty" DockPanel.Dock="Right"/>
+                  <tp:MTK_PartyPickerControl ContainerElement="citRespParty" DockPanel.Dock="Right"/>
                 </DockPanel>
               </Border>
 
