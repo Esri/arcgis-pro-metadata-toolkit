@@ -31,7 +31,7 @@ using System.Xml;
 
 using ArcGIS.Desktop.Metadata.Editor.Pages;
 
-namespace MetadataToolkit
+namespace MetadataToolkit.Pages
 {
   /// <summary>
   /// Interaction logic for MTK_BooleanValueSync.xaml

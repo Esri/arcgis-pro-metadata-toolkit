@@ -1,4 +1,4 @@
-﻿/*
+/*
 COPYRIGHT 1995-2009 ESRI
 TRADE SECRETS: ESRI PROPRIETARY AND CONFIDENTIAL
 Unpublished material - all rights reserved under the 
@@ -14,7 +14,7 @@ email: contracts@esri.com
 using ArcGIS.Desktop.Metadata;
 using ArcGIS.Desktop.Metadata.Editor.Pages;
 
-namespace MetadataToolkit
+namespace MetadataToolkit.Pages
 {
   internal class LI_LineageSidebarLabel : ISidebarLabel
   {

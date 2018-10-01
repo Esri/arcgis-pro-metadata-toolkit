@@ -1,4 +1,4 @@
-﻿/*
+/*
 COPYRIGHT 1995-2009 ESRI
 TRADE SECRETS: ESRI PROPRIETARY AND CONFIDENTIAL
 Unpublished material - all rights reserved under the 
@@ -16,7 +16,7 @@ using System.ComponentModel;
 using System.Windows;
 using ArcGIS.Desktop.Metadata.Editor.Pages;
 
-namespace MetadataToolkit
+namespace MetadataToolkit.Pages
 {
   /// <summary>
   /// Interaction logic for MTK_CI_Citation.xaml

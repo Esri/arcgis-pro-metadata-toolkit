@@ -1,4 +1,4 @@
-﻿/*
+/*
 COPYRIGHT 1995-2009 ESRI
 TRADE SECRETS: ESRI PROPRIETARY AND CONFIDENTIAL
 Unpublished material - all rights reserved under the 
@@ -14,7 +14,7 @@ email: contracts@esri.com
 using System.Windows.Controls;
 using ArcGIS.Desktop.Metadata.Editor.Pages;
 
-namespace MetadataToolkit
+namespace MetadataToolkit.Pages
 {
   /// <summary>
   /// Interaction logic for MTK_CI_PresentationFormCode.xaml
