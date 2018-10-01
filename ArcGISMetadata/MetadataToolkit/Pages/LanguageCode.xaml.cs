@@ -34,8 +34,8 @@ namespace MetadataToolkit.Pages
 
     public void ValidateCode(object sender, RoutedEventArgs e)
     {
-      object context = Utils.GetDataContext(sender);
-      IEnumerable<XmlNode> data = Utils.GetXmlDataContext(context);
+      object context = Utils.Utils.GetDataContext(sender);
+      IEnumerable<XmlNode> data = Utils.Utils.GetXmlDataContext(context);
       if (null != data)
       {
         foreach (XmlNode node in data)
@@ -46,7 +46,7 @@ namespace MetadataToolkit.Pages
             string code = attr.Value;
             if (2 == code.Length)
             {
-              string threeLetter = LanguageConverter.GetThreeLetterCode(code);
+              string threeLetter = Utils.LanguageConverter.GetThreeLetterCode(code);
               if (null != threeLetter)
               {
                 attr.Value = threeLetter;

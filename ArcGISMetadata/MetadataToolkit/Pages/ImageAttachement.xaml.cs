@@ -99,8 +99,8 @@ namespace MetadataToolkit.Pages
 
     private void CreateThumbnailNode()
     {
-      object context = Utils.GetDataContext(this);
-      IEnumerable<XmlNode> nodes = Utils.GetXmlDataContext(context);
+      object context = Utils.Utils.GetDataContext(this);
+      IEnumerable<XmlNode> nodes = Utils.Utils.GetXmlDataContext(context);
       if (null != nodes)
       {
         var node = nodes.First().OwnerDocument;
@@ -114,15 +114,15 @@ namespace MetadataToolkit.Pages
 
         // copy new XML into document
         XmlDocument owner = (null == node.OwnerDocument) ? node : node.OwnerDocument;
-        Utils.CopyElements(owner, newDoc.FirstChild, true, false);
+        Utils.Utils.CopyElements(owner, newDoc.FirstChild, true, false);
 
       }
     }
 
     private XmlNode GetBinaryThumbnailNode(object sender, bool is_empty_ok)
     {
-      object context = Utils.GetDataContext(sender);
-      var nodes = Utils.GetXmlDataContext(context);
+      object context = Utils.Utils.GetDataContext(sender);
+      var nodes = Utils.Utils.GetXmlDataContext(context);
 
       if (null != nodes)
       {
@@ -139,8 +139,8 @@ namespace MetadataToolkit.Pages
 
     private void CleanThumbnailNodes(bool cleanAll)
     {
-      object context = Utils.GetDataContext(this);
-      var nodes = Utils.GetXmlDataContext(context);
+      object context = Utils.Utils.GetDataContext(this);
+      var nodes = Utils.Utils.GetXmlDataContext(context);
 
       if (null != nodes)
       {

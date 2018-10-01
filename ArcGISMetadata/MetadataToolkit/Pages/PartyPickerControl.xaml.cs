@@ -34,7 +34,7 @@ namespace MetadataToolkit.Pages
     {
       XmlDocument _contactsDoc = new XmlDocument();
 
-      var list = Utils.GenerateContactsList(_contactsDoc, this.DataContext);
+      var list = Utils.Utils.GenerateContactsList(_contactsDoc, this.DataContext);
       if (list == null)
         return;
 
@@ -47,7 +47,7 @@ namespace MetadataToolkit.Pages
         //  nameString = nameNode.InnerText;
         //}
 
-        var nameString = Utils.ExtractResponsiblePartyLabel(node, MetadataToolkit.Properties.Resources.LBL_CI_PARTY_ADD_FORMAT);
+        var nameString = Utils.Utils.ExtractResponsiblePartyLabel(node, MetadataToolkit.Properties.Resources.LBL_CI_PARTY_ADD_FORMAT);
 
         // create new node for display in the list control
         var newNode = _contactsDoc.CreateElement("displayName");
@@ -69,7 +69,7 @@ namespace MetadataToolkit.Pages
       string newXml = selectedNode.InnerXml;
 
       // get the context node
-      var dataContextXml = Utils.GetXmlDataContext(this.DataContext);
+      var dataContextXml = Utils.Utils.GetXmlDataContext(this.DataContext);
       if (null == dataContextXml)
         return;
 

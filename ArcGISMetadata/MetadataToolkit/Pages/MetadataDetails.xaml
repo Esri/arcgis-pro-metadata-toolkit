@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:t="clr-namespace:MetadataToolkit"
              xmlns:tp="clr-namespace:MetadataToolkit.Pages"
+             xmlns:tu="clr-namespace:MetadataToolkit.Utils"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"             
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
@@ -147,8 +148,8 @@
                       Name="MD_Metadata_dataSetURI"/>
 
                   <!-- NAP: dataset URI function -->
-                  <Label t:MetadataStyle.OnlyProfiles="NAP" Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_FUNCTION}"/>
-                  <ComboBox t:MetadataStyle.OnlyProfiles="NAP" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="dataSetFn/OnFunctCd/@value" Grid.Row="3" Grid.Column="1"  IsEditable="False"
+                  <Label tu:MetadataStyle.OnlyProfiles="NAP" Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_FUNCTION}"/>
+                  <ComboBox tu:MetadataStyle.OnlyProfiles="NAP" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="dataSetFn/OnFunctCd/@value" Grid.Row="3" Grid.Column="1"  IsEditable="False"
                       ToolTip="{x:Static r:Definitions.NAP_Metadata_DatasetURI_Function}"
                       ItemsSource="{Binding Source={StaticResource CI_OnLineFunctionCode}, Path=List}"
                       DisplayMemberPath="."
@@ -208,8 +209,8 @@
                   </ListBox>
 
                   <!-- country code -->
-                  <Label t:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_META_NAP_COUNTRY}"/>
-                  <ListBox t:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding XPath=mdLang}">
+                  <Label tu:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_META_NAP_COUNTRY}"/>
+                  <ListBox tu:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding XPath=mdLang}">
                     <ListBox.ItemTemplate>
                       <DataTemplate>
                         <tp:MTK_CountryCode/>
@@ -262,7 +263,7 @@
                   </ListBox>
 
                   <!-- hierarchy level name -->
-                  <t:MetadataStyle Except="NAP">
+                  <tu:MetadataStyle Except="NAP">
                     <StackPanel>
 
                       <ListBox ItemsSource="{Binding XPath=mdHrLvName}">
@@ -313,7 +314,7 @@
                         </ListBox.ItemTemplate>
                       </ListBox>
                     </StackPanel>
-                  </t:MetadataStyle>
+                  </tu:MetadataStyle>
 
                 </StackPanel>
               </Border>

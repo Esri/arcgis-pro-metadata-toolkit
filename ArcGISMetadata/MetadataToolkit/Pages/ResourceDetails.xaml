@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:t="clr-namespace:MetadataToolkit"
              xmlns:tp="clr-namespace:MetadataToolkit.Pages"
+             xmlns:tu="clr-namespace:MetadataToolkit.Utils"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"             
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
@@ -335,8 +336,8 @@
                             <tp:MTK_LanguageCode Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.MD_DataIdentification_language}"/>
 
                             <!-- country code -->
-                            <Label t:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_META_NAP_COUNTRY}"/>
-                            <tp:MTK_CountryCode t:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="1"  />
+                            <Label tu:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_META_NAP_COUNTRY}"/>
+                            <tp:MTK_CountryCode tu:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="1"  />
                           </Grid>
                         </StackPanel>
                       </DataTemplate>
@@ -476,7 +477,7 @@
               </Border>
 
               <!-- usage -->
-              <Border t:MetadataStyle.OnlyProfiles="ISO19139,INSPIRE">
+              <Border tu:MetadataStyle.OnlyProfiles="ISO19139,INSPIRE">
                 <StackPanel>
                   <ListBox ItemsSource="{Binding XPath=idSpecUse}">
                     <ListBox.ItemsPanel>
@@ -528,7 +529,7 @@
               </Border>
 
               <!-- formats -->
-              <Border t:MetadataStyle.OnlyProfiles="ISO19139,INSPIRE">
+              <Border tu:MetadataStyle.OnlyProfiles="ISO19139,INSPIRE">
                 <StackPanel>
                   <ListBox ItemsSource="{Binding XPath=dsFormat}">
                     <ListBox.ItemsPanel>

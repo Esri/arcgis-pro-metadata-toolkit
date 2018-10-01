@@ -25,7 +25,7 @@ using System.Windows;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Metadata;
 
-namespace MetadataToolkit
+namespace MetadataToolkit.Utils
 {
   internal class MetadataStyle : ContentControl
   {

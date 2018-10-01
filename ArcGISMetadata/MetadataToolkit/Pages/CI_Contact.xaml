@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:t="clr-namespace:MetadataToolkit"
              xmlns:tp="clr-namespace:MetadataToolkit.Pages"
+             xmlns:tu="clr-namespace:MetadataToolkit.Utils"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
@@ -200,8 +201,8 @@
         </Border>
 
         <!-- address type -->
-        <Label t:MetadataStyle.OnlyProfiles="FGDC,NAP" Content="{x:Static r:Resources.LBL_ADDRESS_TYPE}" Grid.Row="3" Grid.Column="0"/>
-        <ComboBox t:MetadataStyle.OnlyProfiles="FGDC,NAP" Grid.Row="3" Grid.Column="1" IsEditable="False"
+        <Label tu:MetadataStyle.OnlyProfiles="FGDC,NAP" Content="{x:Static r:Resources.LBL_ADDRESS_TYPE}" Grid.Row="3" Grid.Column="0"/>
+        <ComboBox tu:MetadataStyle.OnlyProfiles="FGDC,NAP" Grid.Row="3" Grid.Column="1" IsEditable="False"
             ToolTip="{x:Static r:Definitions.FGDC_Contact_addrtype}" ItemsSource="{Binding Source={StaticResource AddressType}, Path=List}"
             DisplayMemberPath="."
             Loaded="PostProcessComboBoxValues"  
@@ -311,7 +312,7 @@
                 </Button>
 
                 <!-- phone -->
-                <CheckBox t:MetadataStyle.OnlyProfiles="FGDC,NAP" DockPanel.Dock="Right" 
+                <CheckBox tu:MetadataStyle.OnlyProfiles="FGDC,NAP" DockPanel.Dock="Right" 
                     ToolTip="{x:Static r:Definitions.FGDC_Contact_tddtty}" 
                     v:MetadataRules.Rules="{x:Static v:MetadataRules.CheckRules}"
                     Content="{x:Static r:Resources.LBL_CONT_TDDTTY}" IsChecked="{Binding XPath=@tddtty, Mode=TwoWay}" 

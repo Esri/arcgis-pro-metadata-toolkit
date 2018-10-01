@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:t="clr-namespace:MetadataToolkit"
              xmlns:tp="clr-namespace:MetadataToolkit.Pages"
+             xmlns:tu="clr-namespace:MetadataToolkit.Utils"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"             
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
@@ -82,7 +83,7 @@
       </controls:Resizer>
 
       <!-- NAP style only -->
-      <t:MetadataStyle Only="NAP">
+      <tu:MetadataStyle Only="NAP">
         <Grid>
           <Grid.RowDefinitions>
             <RowDefinition />
@@ -113,7 +114,7 @@
             </ListBox.ItemTemplate>
           </ListBox>
         </Grid>
-      </t:MetadataStyle>
+      </tu:MetadataStyle>
 
       <!-- thesaurus citation -->
       <ListBox ItemsSource="{Binding XPath=thesaName}">

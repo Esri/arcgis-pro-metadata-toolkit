@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:t="clr-namespace:MetadataToolkit"
              xmlns:tp="clr-namespace:MetadataToolkit.Pages"
+             xmlns:tu="clr-namespace:MetadataToolkit.Utils"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
@@ -223,7 +224,7 @@
                 <DockPanel LastChildFill="True">
                   <Label DockPanel.Dock="Left" Content="{x:Static r:Resources.LBL_IMS_CONTENT_TYPE}"/>
                    <CheckBox DockPanel.Dock="Right"
-                      t:MetadataStyle.OnlyProfiles="FGDC"
+                      tu:MetadataStyle.OnlyProfiles="FGDC"
                       ToolTip="{x:Static r:Definitions.ESRI_exportContentTypeToFGDC}"
                       Content="{x:Static r:Resources.LBL_IMS_CONTENT_TYPE_EXPORT}" 
                       IsChecked="{Binding XPath=/metadata/Esri/DataProperties/itemProps/imsContentType/@export}"
@@ -369,7 +370,7 @@
               </Border>
 
               <!-- discipline keywords -->
-              <Border t:MetadataStyle.OnlyProfiles="ISO19139,NAP,INSPIRE">
+              <Border tu:MetadataStyle.OnlyProfiles="ISO19139,NAP,INSPIRE">
                 <StackPanel>
                   <ListBox ItemsSource="{Binding XPath=discKeys}">
                     <ListBox.ItemsPanel>
@@ -453,7 +454,7 @@
               </Border>
 
               <!-- other keywords -->
-              <Border t:MetadataStyle.OnlyProfiles="ISO19139,NAP,INSPIRE">
+              <Border tu:MetadataStyle.OnlyProfiles="ISO19139,NAP,INSPIRE">
                 <StackPanel>
                   <ListBox ItemsSource="{Binding XPath=otherKeys}">
                     <ListBox.ItemsPanel>
@@ -495,7 +496,7 @@
               </Border>
 
               <!-- product keys -->
-              <Border t:MetadataStyle.OnlyProfiles="NAP" >
+              <Border tu:MetadataStyle.OnlyProfiles="NAP" >
                 <StackPanel>
                   <ListBox ItemsSource="{Binding XPath=productKeys}">
                     <ListBox.ItemsPanel>
@@ -537,7 +538,7 @@
               </Border>
 
               <!-- sub topic keys -->
-              <Border t:MetadataStyle.OnlyProfiles="NAP" >
+              <Border tu:MetadataStyle.OnlyProfiles="NAP" >
                 <StackPanel>
                   <ListBox ItemsSource="{Binding XPath=subTopicCatKeys}">
                     <ListBox.ItemsPanel>

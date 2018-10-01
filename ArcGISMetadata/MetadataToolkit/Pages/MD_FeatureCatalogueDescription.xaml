@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:t="clr-namespace:MetadataToolkit"
              xmlns:tp="clr-namespace:MetadataToolkit.Pages"
+             xmlns:tu="clr-namespace:MetadataToolkit.Utils"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
@@ -129,10 +130,10 @@
                 <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
               </Button>
 
-              <tp:MTK_MD_CharacterSetCode DockPanel.Dock="Right" t:MetadataStyle.OnlyProfiles="NAP" 
+              <tp:MTK_MD_CharacterSetCode DockPanel.Dock="Right" tu:MetadataStyle.OnlyProfiles="NAP" 
                   ToolTip="{x:Static r:Definitions.MD_DataIdentification_characterSet}"/>
 
-              <ComboBox DockPanel.Dock="Right" Loaded="PostProcessComboBoxValues" t:MetadataStyle.OnlyProfiles="NAP" p:EditorPage.SourceXPath="countryCode/@value" IsEditable="False"
+              <ComboBox DockPanel.Dock="Right" Loaded="PostProcessComboBoxValues" tu:MetadataStyle.OnlyProfiles="NAP" p:EditorPage.SourceXPath="countryCode/@value" IsEditable="False"
                   ItemsSource="{Binding Source={StaticResource CountryCodes}, Path=List}"
                   ToolTip="{x:Static r:Definitions.PT_Locale_country}"
                   DisplayMemberPath="."

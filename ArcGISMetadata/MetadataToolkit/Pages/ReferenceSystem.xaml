@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:t="clr-namespace:MetadataToolkit"
              xmlns:tp="clr-namespace:MetadataToolkit.Pages"
+             xmlns:tu="clr-namespace:MetadataToolkit.Utils"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
@@ -105,7 +106,7 @@
                         <StackPanel>
 
                           <!-- dimension -->
-                          <DockPanel t:MetadataStyle.OnlyProfiles="FGDC,NAP" LastChildFill="True">
+                          <DockPanel tu:MetadataStyle.OnlyProfiles="FGDC,NAP" LastChildFill="True">
                             <Label Content="{x:Static r:Resources.LBL_RS_DIMENSION}"/>
                             <ComboBox DockPanel.Dock="Right" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="RefSystem/@dimension" IsEditable="False"
                                 ToolTip=""

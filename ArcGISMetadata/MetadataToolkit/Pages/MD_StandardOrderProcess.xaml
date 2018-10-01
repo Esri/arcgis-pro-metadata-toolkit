@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:t="clr-namespace:MetadataToolkit"
              xmlns:tp="clr-namespace:MetadataToolkit.Pages"
+             xmlns:tu="clr-namespace:MetadataToolkit.Utils"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"             
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
@@ -72,7 +73,7 @@
         <!-- fees -->
         <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" LastChildFill="True">
           <Label DockPanel.Dock="Left" Content="{x:Static r:Resources.LBL_STD_FEES}"/>
-          <ComboBox t:MetadataStyle.OnlyProfiles="NAP" DockPanel.Dock="Right" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="resFees/@units" IsEditable="False"
+          <ComboBox tu:MetadataStyle.OnlyProfiles="NAP" DockPanel.Dock="Right" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="resFees/@units" IsEditable="False"
               ToolTip="{x:Static r:Definitions.MD_StandardOrderProcess_feesCurrency}"
               v:Nav.AnchorName="role,role"
               ItemsSource="{Binding Source={StaticResource MonetaryUnits}, Path=List}"
