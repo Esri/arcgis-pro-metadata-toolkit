@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_MD_Distributor" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_MD_Distributor" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -85,13 +85,13 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorSubPageStyle}">
+  <Grid>
     <StackPanel>
 
       <!-- contact -->
-      <Border Style="{DynamicResource EditorBorder2Style}">
+      <Border>
         <StackPanel>
-          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=distorCont[1]}">
+          <ListBox ItemsSource="{Binding XPath=distorCont[1]}">
             <ListBox.ItemsPanel>
               <ItemsPanelTemplate>
                 <StackPanel/>
@@ -99,19 +99,17 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
               <DataTemplate>
-                <Expander Style="{DynamicResource EditorExpander2Style}"
-                          AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Distributor_ContactGroup}">
+                <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Distributor_ContactGroup}">
                   <Expander.Header>
                     <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                         RelativeSource={RelativeSource FindAncestor,
                         AncestorType={x:Type ContentPresenter}},
                         Mode=OneWayToSource}" LastChildFill="True">
-                      <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
-                              Name="MD_Distributor_ContactDelete">
-                        <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                      <Button DockPanel.Dock="Right" Click="DeleteItem" Name="MD_Distributor_ContactDelete">
+                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                       </Button>
-                      <Label Style="{DynamicResource EditorHExpanderSimpleLabel}" Content="{x:Static r:Resources.LBL_DIST_CONT}"/>
-                      <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding ElementName=responsibleParty, Path=DefaultValue, Mode=TwoWay}"/>
+                      <Label Content="{x:Static r:Resources.LBL_DIST_CONT}"/>
+                      <Label  Content="{Binding ElementName=responsibleParty, Path=DefaultValue, Mode=TwoWay}"/>
                     </DockPanel>
                   </Expander.Header>
                   <!-- party -->
@@ -122,13 +120,13 @@
           </ListBox>
 
           <!-- NOTE: only contact is allowed -->
-          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}">
+          <ListBox>
             <ListBox.ItemsSource>
               <Binding XPath="self::*[not(distorCont)]"/>
             </ListBox.ItemsSource>
             <ListBox.ItemTemplate>
               <DataTemplate>
-                <Border Style="{DynamicResource EditorBorder2Style}">
+                <Border>
                   <!-- LOAD SAVED CONTACT -->
                   <DockPanel LastChildFill="True">
                     <Label DockPanel.Dock="Left" VerticalAlignment="Center" Content="{x:Static r:Resources.LBL_CI_LOAD_DISTRIBUTOR}"/>
@@ -140,17 +138,16 @@
           </ListBox>
 
           <!--  ADD contact -->
-          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}">
+          <ListBox>
             <ListBox.ItemsSource>
               <Binding XPath="self::*[not(distorCont)]"/>
             </ListBox.ItemsSource>
             <ListBox.ItemTemplate>
               <DataTemplate>
-                <Button Tag="distorCont" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
-                        Name="MD_Distributor_ContactAdd">
+                <Button Tag="distorCont" Click="AddRecordByTagToLocal" Name="MD_Distributor_ContactAdd">
                   <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                    <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_CONTACT}"/>
+                    <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                    <TextBlock Text="{x:Static r:Resources.BTN_ADD_CONTACT}"/>
                   </StackPanel>
                 </Button>
               </DataTemplate>
@@ -162,9 +159,9 @@
 
 
       <!-- standard order process -->
-      <Border Style="{DynamicResource EditorBorder2Style}">
+      <Border>
         <StackPanel>
-          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=distorOrdPrc}">
+          <ListBox ItemsSource="{Binding XPath=distorOrdPrc}">
             <ListBox.ItemsPanel>
               <ItemsPanelTemplate>
                 <StackPanel/>
@@ -172,18 +169,16 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
               <DataTemplate>
-                <Expander Style="{DynamicResource EditorExpander2Style}"
-                          AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Distributor_OrderProcessGroup}">
+                <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Distributor_OrderProcessGroup}">
                   <Expander.Header>
                     <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                         RelativeSource={RelativeSource FindAncestor,
                         AncestorType={x:Type ContentPresenter}},
                         Mode=OneWayToSource}" LastChildFill="True">
-                      <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
-                              Name="MD_Distributor_OrderProcessDelete">
-                        <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                      <Button DockPanel.Dock="Right" Click="DeleteItem" Name="MD_Distributor_OrderProcessDelete">
+                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                       </Button>
-                      <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DIST_ORDER}"/>
+                      <Label  Content="{x:Static r:Resources.LBL_DIST_ORDER}"/>
                     </DockPanel>
                   </Expander.Header>
                   <!-- order process -->
@@ -194,20 +189,19 @@
           </ListBox>
 
           <!-- ADD order process -->
-          <Button Tag="Order" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
-                  Name="MD_Distributor_OrderProcessAdd">
+          <Button Tag="Order" Click="AddRecordByTagToLocal" Name="MD_Distributor_OrderProcessAdd">
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-              <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-              <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DIST_NEW_ORDER}"/>
+              <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+              <TextBlock Text="{x:Static r:Resources.BTN_DIST_NEW_ORDER}"/>
             </StackPanel>
           </Button>
         </StackPanel>
       </Border>
 
       <!-- formats -->
-      <Border Style="{DynamicResource EditorBorder2Style}">
+      <Border>
         <StackPanel>
-          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=distorFormat}">
+          <ListBox ItemsSource="{Binding XPath=distorFormat}">
             <ListBox.ItemsPanel>
               <ItemsPanelTemplate>
                 <StackPanel/>
@@ -215,18 +209,16 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
               <DataTemplate>
-                <Expander Style="{DynamicResource EditorExpander2Style}"
-                          AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Distributor_DistributionFormatGroup}">
+                <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Distributor_DistributionFormatGroup}">
                   <Expander.Header>
                     <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                         RelativeSource={RelativeSource FindAncestor,
                         AncestorType={x:Type ContentPresenter}},
                         Mode=OneWayToSource}" LastChildFill="True">
-                      <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
-                              Name="MD_Distributor_DistributionFormatDelete">
-                        <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                      <Button DockPanel.Dock="Right" Click="DeleteItem" Name="MD_Distributor_DistributionFormatDelete">
+                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                       </Button>
-                      <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DIST_FORMAT}"/>
+                      <Label  Content="{x:Static r:Resources.LBL_DIST_FORMAT}"/>
                     </DockPanel>
                   </Expander.Header>
                   <!-- format -->
@@ -237,20 +229,19 @@
           </ListBox>
 
           <!-- ADD format -->
-          <Button Tag="Format" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
-                  Name="MD_Distributor_DistributionFormatAdd">
+          <Button Tag="Format" Click="AddRecordByTagToLocal" Name="MD_Distributor_DistributionFormatAdd">
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-              <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-              <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DIST_NEW_FORMAT}"/>
+              <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+              <TextBlock Text="{x:Static r:Resources.BTN_DIST_NEW_FORMAT}"/>
             </StackPanel>
           </Button>
         </StackPanel>
       </Border>
 
       <!-- transfer options -->
-      <Border Style="{DynamicResource EditorBorder2Style}">
+      <Border>
         <StackPanel>
-          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=distorTran}">
+          <ListBox ItemsSource="{Binding XPath=distorTran}">
             <ListBox.ItemsPanel>
               <ItemsPanelTemplate>
                 <StackPanel/>
@@ -258,18 +249,16 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
               <DataTemplate>
-                <Expander Style="{DynamicResource EditorExpander2Style}"
-                          AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Distributor_TransferOptionGroup}">
+                <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Distributor_TransferOptionGroup}">
                   <Expander.Header>
                     <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                         RelativeSource={RelativeSource FindAncestor,
                         AncestorType={x:Type ContentPresenter}},
                         Mode=OneWayToSource}" LastChildFill="True">
-                      <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
-                              Name="MD_Distributor_TransferOptionDelete">
-                        <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                      <Button DockPanel.Dock="Right" Click="DeleteItem" Name="MD_Distributor_TransferOptionDelete">
+                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                       </Button>
-                      <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DIST_TRANS}"/>
+                      <Label  Content="{x:Static r:Resources.LBL_DIST_TRANS}"/>
                     </DockPanel>
                   </Expander.Header>
                   <!-- digital transfer options -->
@@ -280,11 +269,10 @@
           </ListBox>
 
           <!-- ADD transfer option -->
-          <Button Tag="Transfer" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
-                  Name="MD_Distributor_TransferOptionAdd">
+          <Button Tag="Transfer" Click="AddRecordByTagToLocal" Name="MD_Distributor_TransferOptionAdd">
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-              <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-              <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DIST_NEW_TRANS}"/>
+              <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+              <TextBlock Text="{x:Static r:Resources.BTN_DIST_NEW_TRANS}"/>
             </StackPanel>
           </Button>
         </StackPanel>

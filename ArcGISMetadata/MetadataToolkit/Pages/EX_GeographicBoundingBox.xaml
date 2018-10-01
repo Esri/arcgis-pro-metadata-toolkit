@@ -1,4 +1,4 @@
-﻿<pages:EditorPage x:Class="MetadataToolkit.MTK_EX_GeographicBoundingBox" x:ClassModifier="internal"     
+<pages:EditorPage x:Class="MetadataToolkit.MTK_EX_GeographicBoundingBox" x:ClassModifier="internal"     
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:t="clr-namespace:MetadataToolkit"
@@ -48,7 +48,7 @@
 
   <Grid>
     <StackPanel>
-      <Grid Style="{DynamicResource EditorSubPageStyle}">
+      <Grid>
         <Grid.RowDefinitions>
           <RowDefinition />
           <RowDefinition />
@@ -63,29 +63,29 @@
         </Grid.ColumnDefinitions>
 
         <!-- west -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_EXT_WEST}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.EX_GeographicBoundingBox_westBoundLongitude}"
+        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_EXT_WEST}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.EX_GeographicBoundingBox_westBoundLongitude}"
             v:Nav.AnchorName="westBL,GeoBndBox/westBL" v:MetadataRules.Rules="{StaticResource LonCoordRule}"
             Text="{editor:MetadataElementSync XPath=GeoBndBox/westBL}"
             Name="EX_GeographicBoundingBox_westBoundLongitude"/>
 
         <!-- east -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_EXT_EAST}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="1" Grid.Column="1" ToolTip="{x:Static r:Definitions.EX_GeographicBoundingBox_eastBoundLongitude}"
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_EXT_EAST}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" ToolTip="{x:Static r:Definitions.EX_GeographicBoundingBox_eastBoundLongitude}"
             v:Nav.AnchorName="eastBL,GeoBndBox/eastBL" v:MetadataRules.Rules="{StaticResource LonCoordRule}"
             Text="{editor:MetadataElementSync XPath=GeoBndBox/eastBL}" 
             Name="EX_GeographicBoundingBox_eastBoundLongitude"/>
 
             <!-- south -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_EXT_SOUTH}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="2" Grid.Column="1" ToolTip="{x:Static r:Definitions.EX_GeographicBoundingBox_southBoundLatitude}"
+        <Label Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_EXT_SOUTH}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" ToolTip="{x:Static r:Definitions.EX_GeographicBoundingBox_southBoundLatitude}"
             v:Nav.AnchorName="southBL,GeoBndBox/southBL" v:MetadataRules.Rules="{StaticResource LatCoordRule}"
             Text="{editor:MetadataElementSync XPath=GeoBndBox/southBL}" 
             Name="EX_GeographicBoundingBox_southBoundLatitude"/>
 
         <!-- north -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_EXT_NORTH}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="3" Grid.Column="1" ToolTip="{x:Static r:Definitions.EX_GeographicBoundingBox_northBoundLatitude}"
+        <Label Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_EXT_NORTH}"/>
+        <TextBox Grid.Row="3" Grid.Column="1" ToolTip="{x:Static r:Definitions.EX_GeographicBoundingBox_northBoundLatitude}"
             v:Nav.AnchorName="northBL,GeoBndBox/northBL" v:MetadataRules.Rules="{StaticResource LatCoordRule}"
             Text="{editor:MetadataElementSync XPath=GeoBndBox/northBL}" 
             Name="EX_GeographicBoundingBox_northBoundLatitude"/>

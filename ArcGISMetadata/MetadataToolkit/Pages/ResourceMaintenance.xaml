@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_ResourceMaintenance" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_ResourceMaintenance" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -48,11 +48,11 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorFrontPageStyle}">
+  <Grid>
     <StackPanel>
-      <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.LBL_RES_MAINT}"/>
+      <Label Content="{x:Static r:Resources.LBL_RES_MAINT}"/>
       <!-- maintenance info -->
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=//dataIdInfo[1]/resMaint[1]}">
+      <ListBox ItemsSource="{Binding XPath=//dataIdInfo[1]/resMaint[1]}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel/>

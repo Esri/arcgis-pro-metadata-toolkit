@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_GML_Point" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_GML_Point" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -44,7 +44,7 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorSubPageStyle}">
+  <Grid>
 
     <StackPanel>
       <Grid>
@@ -61,37 +61,37 @@
         </Grid.RowDefinitions>
 
         <!-- position  -->
-        <Label Grid.Row="0" Grid.Column="0" Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_GML_POINT_POS}"/>
-        <TextBox Grid.Row="0" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}"
+        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_GML_POINT_POS}"/>
+        <TextBox Grid.Row="0" Grid.Column="1"
             v:MetadataRules.Rules="{StaticResource doubleListRules}"
             v:Nav.AnchorName="pos,pos"
             Text="{e:MetadataBinding XPath=pos}"
             Name="GML_postiion"/>
 
         <!-- description  -->
-        <Label Grid.Row="1" Grid.Column="0" Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_GML_POINT_DESC}"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}"
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_GML_POINT_DESC}"/>
+        <TextBox Grid.Row="1" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.GML_description}"
             Text="{e:MetadataBinding XPath=gmlDesc}"
             Name="GML_description"/>
 
         <!-- description reference -->
-        <Label Grid.Row="2" Grid.Column="0" Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_GML_POINT_DESCREF}"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}"
+        <Label Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_GML_POINT_DESCREF}"/>
+        <TextBox Grid.Row="2" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.GML_descriptionReference}"
             Text="{e:MetadataBinding XPath=gmlDescRef}"
             Name="GML_descriptionReference"/>
 
         <!-- identifier -->
-        <Label Grid.Row="3" Grid.Column="0" Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_GML_POINT_ID}"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}"
+        <Label Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_GML_POINT_ID}"/>
+        <TextBox Grid.Row="3" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.GML_identifier}"
             Text="{e:MetadataBinding XPath=gmlIdent}"
             Name="GML_identifier"/>
 
         <!-- identifier codespace -->
-        <Label Grid.Row="4" Grid.Column="0" Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_GML_POINT_ID_CODESPACE}"/>
-        <TextBox Grid.Row="4" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}"
+        <Label Grid.Row="4" Grid.Column="0" Content="{x:Static r:Resources.LBL_GML_POINT_ID_CODESPACE}"/>
+        <TextBox Grid.Row="4" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.GML_identifierCodespace}"
             Text="{e:MetadataBinding XPath=gmlIdent/@codeSpace}"
             Name="GML_identifierCodespace"/>

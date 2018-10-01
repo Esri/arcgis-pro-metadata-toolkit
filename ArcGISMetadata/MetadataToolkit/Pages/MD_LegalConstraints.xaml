@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_MD_LegalConstraints" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_MD_LegalConstraints" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -102,27 +102,27 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorSubPageStyle}">
+  <Grid>
     <StackPanel>
 
       <!-- use limitations -->
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=useLimit}">
+      <ListBox ItemsSource="{Binding XPath=useLimit}">
         <ListBox.ItemTemplate>
           <DataTemplate>
             <StackPanel>
-              <DockPanel Style="{DynamicResource EditorDockPanelStyle}" HorizontalAlignment="{Binding HorizontalAlignment,
+              <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                   RelativeSource={RelativeSource FindAncestor,
                   AncestorType={x:Type ContentPresenter}},
                   Mode=OneWayToSource}" LastChildFill="True">
-                <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                <Button DockPanel.Dock="Right" Click="DeleteItem"
                         AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_LegalConstraints_UseLimitationDelete}">
-                  <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                 </Button>
-                <Label Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_CONSTS_USELIMIT}"/>
+                <Label Content="{x:Static r:Resources.LBL_CONSTS_USELIMIT}"/>
               </DockPanel>
               <!-- use limitations -->
               <controls:Resizer>
-                <TextBox Style="{DynamicResource EditorTextAreaResizeStyle}" 
+                <TextBox 
                     Text="{e:MetadataBinding XPath=.}"
                     v:Nav.AnchorName="useLimit"
                     ToolTip="{x:Static r:Definitions.MD_Constraints_useLimitation}"
@@ -134,16 +134,16 @@
       </ListBox>
 
       <!-- ADD use limitation -->
-      <Button Tag="UseLimit" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+      <Button Tag="UseLimit" Click="AddRecordByTagToLocal"
               AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_LegalConstraints_UserLimitationAdd}">
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_CONSTS_NEW_USELIMIT}"/>
+          <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <TextBlock Text="{x:Static r:Resources.BTN_CONSTS_NEW_USELIMIT}"/>
         </StackPanel>
       </Button>
 
       <!-- access contraints -->
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=accessConsts}"
+      <ListBox ItemsSource="{Binding XPath=accessConsts}"
           ToolTip="{x:Static r:Definitions.MD_LegalConstraints_accessConstraints}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
@@ -153,22 +153,22 @@
         <ListBox.ItemTemplate>
           <DataTemplate>
             <DockPanel LastChildFill="True">
-              <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_CONSTS_ACCESS}"/>
+              <Label DockPanel.Dock="Left" Content="{x:Static r:Resources.LBL_CONSTS_ACCESS}"/>
               <!-- add if the last sibling -->
-              <ListBox DockPanel.Dock="Right" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(following-sibling::accessConsts)]}">
+              <ListBox DockPanel.Dock="Right" ItemsSource="{Binding XPath=self::*[not(following-sibling::accessConsts)]}">
                 <ListBox.ItemTemplate>
                   <DataTemplate>
-                    <Button Tag="AccessConsts_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                    <Button Tag="AccessConsts_Parent" Click="AddRecordByTagToLocal"
                             AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_LegalConstraints_AccessConstraintsAdd}">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
                     </Button>
                   </DataTemplate>
                 </ListBox.ItemTemplate>
               </ListBox>
               <!-- delete -->
-              <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+              <Button DockPanel.Dock="Right" Click="DeleteItem"
                       AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_LegalConstraints_AccessConstraintsDelete}">
-                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
               </Button>
               <!-- restriction code -->
               <t:MTK_MD_RestrictionCode/>
@@ -178,7 +178,7 @@
       </ListBox>
 
       <!-- use contraints -->
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=useConsts}"
+      <ListBox ItemsSource="{Binding XPath=useConsts}"
           ToolTip="{x:Static r:Definitions.MD_LegalConstraints_useConstraints}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
@@ -188,22 +188,22 @@
         <ListBox.ItemTemplate>
           <DataTemplate>
             <DockPanel LastChildFill="True">
-              <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_CONSTS_USE}"/>
+              <Label DockPanel.Dock="Left" Content="{x:Static r:Resources.LBL_CONSTS_USE}"/>
               <!-- add if the last sibling -->
-              <ListBox DockPanel.Dock="Right" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(following-sibling::useConsts)]}">
+              <ListBox DockPanel.Dock="Right" ItemsSource="{Binding XPath=self::*[not(following-sibling::useConsts)]}">
                 <ListBox.ItemTemplate>
                   <DataTemplate>
-                    <Button Tag="UseConsts_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                    <Button Tag="UseConsts_Parent" Click="AddRecordByTagToLocal"
                             AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_LegalConstraints_UseConstraintsAdd}">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
                     </Button>
                   </DataTemplate>
                 </ListBox.ItemTemplate>
               </ListBox>
               <!-- delete -->
-              <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+              <Button DockPanel.Dock="Right" Click="DeleteItem"
                       AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_LegalConstraints_UseConstraintsDelete}">
-                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
               </Button>
               <!-- restriction code -->
               <t:MTK_MD_RestrictionCode />
@@ -213,23 +213,23 @@
       </ListBox>
 
       <!-- other constraints -->
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=othConsts}">
+      <ListBox ItemsSource="{Binding XPath=othConsts}">
         <ListBox.ItemTemplate>
           <DataTemplate>
             <StackPanel>
-              <DockPanel Style="{DynamicResource EditorDockPanelStyle}" HorizontalAlignment="{Binding HorizontalAlignment,
+              <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                   RelativeSource={RelativeSource FindAncestor,
                   AncestorType={x:Type ContentPresenter}},
                   Mode=OneWayToSource}" LastChildFill="True">
-                <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                <Button DockPanel.Dock="Right" Click="DeleteItem"
                         AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_LegalConstraints_OtherConstraintsDelete}">
-                  <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                 </Button>
-                <Label Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_CONSTS_OTHER}"/>
+                <Label Content="{x:Static r:Resources.LBL_CONSTS_OTHER}"/>
               </DockPanel>
               <!-- other constraints -->
               <controls:Resizer>
-                <TextBox Style="{DynamicResource EditorTextAreaResizeStyle}" 
+                <TextBox 
                     Text="{e:MetadataBinding XPath=.}"
                     v:Nav.AnchorName="othConsts"
                     ToolTip="{x:Static r:Definitions.MD_LegalConstraints_otherConstraints}"
@@ -241,11 +241,11 @@
       </ListBox>
 
       <!-- ADD other constraints -->
-      <Button Tag="Other" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+      <Button Tag="Other" Click="AddRecordByTagToLocal"
               AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_LegalConstraints_OtherConstraintsAdd}">
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_CONSTS_NEW_OTHER}"/>
+          <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <TextBlock Text="{x:Static r:Resources.BTN_CONSTS_NEW_OTHER}"/>
         </StackPanel>
       </Button>
     </StackPanel>

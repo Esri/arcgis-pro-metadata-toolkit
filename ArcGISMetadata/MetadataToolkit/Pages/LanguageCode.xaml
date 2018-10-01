@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_LanguageCode" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_LanguageCode" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -17,10 +17,10 @@
 
   <Grid>
     <StackPanel>
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=languageCode}">
+      <ListBox ItemsSource="{Binding XPath=languageCode}">
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="@value" SelectionChanged="ComboBoxSyncSelectionChanged" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+            <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="@value" SelectionChanged="ComboBoxSyncSelectionChanged" IsEditable="False"
                  ItemsSource="{Binding Source={StaticResource LanguageCode}, Path=List}"
                  DisplayMemberPath="."
                  v:Nav.AnchorName="languageCode"

@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_MD_Georectified" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_MD_Georectified" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -118,7 +118,7 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorSubPageStyle}">
+  <Grid>
     <StackPanel>
 
       <!-- base class -->
@@ -145,8 +145,8 @@
         </Grid.ColumnDefinitions>
 
         <!-- check point availability -->
-        <StackPanel Style="{DynamicResource EditorCheckboxPanel}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-          <CheckBox Style="{DynamicResource EditorCheckBoxStyle}" Content="{x:Static r:Resources.LBL_SPATREF_CHKPT}"
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+          <CheckBox Content="{x:Static r:Resources.LBL_SPATREF_CHKPT}"
               ToolTip="{x:Static r:Definitions.MD_Georectified_checkPointAvailability}"
               v:MetadataRules.Rules="{x:Static v:MetadataRules.CheckRules}"
               IsChecked="{Binding XPath=chkPtAv, Converter={StaticResource StringToBoolConverter}, Mode=TwoWay}"
@@ -154,15 +154,15 @@
         </StackPanel>
 
         <!-- check point description -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_SPATREF_CHKDESC}"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" 
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_SPATREF_CHKDESC}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" 
             ToolTip="{x:Static r:Definitions.MD_Georectified_checkPointDescription}"
             v:Nav.AnchorName="chkPtDesc,chkPtDesc"
             Text="{e:MetadataBinding XPath=chkPtDesc}"
             Name="MD_Georectified_checkPointDescription"/>
 
         <!-- corner points -->
-        <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+        <ListBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
             ToolTip="{x:Static r:Definitions.MD_Georectified_cornerPoints}"
             ItemsSource="{Binding XPath=cornerPts}">
           <ListBox.ItemsPanel>
@@ -172,18 +172,16 @@
           </ListBox.ItemsPanel>
           <ListBox.ItemTemplate>
             <DataTemplate>
-              <Expander Style="{DynamicResource EditorExpander2Style}"
-                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Georectified_CornerPointsGroup}">
+              <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Georectified_CornerPointsGroup}">
                 <Expander.Header>
                   <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                       RelativeSource={RelativeSource FindAncestor,
                       AncestorType={x:Type ContentPresenter}},
                       Mode=OneWayToSource}" LastChildFill="True">
-                    <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
-                            Name="MD_Georectified_CornerPointsDelete">
-                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                    <Button DockPanel.Dock="Right" Click="DeleteItem" Name="MD_Georectified_CornerPointsDelete">
+                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                     </Button>
-                    <Label Style="{DynamicResource EditorHExpanderSimpleLabel}" Content="{x:Static r:Resources.LBL_SPATREF_CORNER}"/>
+                    <Label Content="{x:Static r:Resources.LBL_SPATREF_CORNER}"/>
                   </DockPanel>
                 </Expander.Header>
                 <!-- gml point -->
@@ -194,17 +192,16 @@
         </ListBox>
 
         <!-- ADD corner point -->
-        <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2">
+        <ListBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2">
           <ListBox.ItemsSource>
             <Binding XPath="self::*[count(cornerPts) &lt; 4]"/>
           </ListBox.ItemsSource>
           <ListBox.ItemTemplate>
             <DataTemplate>
-              <Button Tag="cornerPts" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
-                      Name="MD_Georectified_CornerPointsAdd">
+              <Button Tag="cornerPts" Click="AddRecordByTagToLocal" Name="MD_Georectified_CornerPointsAdd">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                  <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                  <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_NEW_CORNER}"/>
+                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                  <TextBlock Text="{x:Static r:Resources.BTN_NEW_CORNER}"/>
                 </StackPanel>
               </Button>
             </DataTemplate>
@@ -212,7 +209,7 @@
         </ListBox>
 
         <!-- center point -->
-        <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" 
+        <ListBox Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" 
             ToolTip="{x:Static r:Definitions.MD_Georectified_centerPoint}"
             ItemsSource="{Binding XPath=centerPt}">
           <ListBox.ItemsPanel>
@@ -222,14 +219,13 @@
           </ListBox.ItemsPanel>
           <ListBox.ItemTemplate>
             <DataTemplate>
-              <Expander Style="{DynamicResource EditorExpander2Style}"
-                        Name="MD_Georectified_CenterPointGroup">
+              <Expander Name="MD_Georectified_CenterPointGroup">
                 <Expander.Header>
                   <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                       RelativeSource={RelativeSource FindAncestor,
                       AncestorType={x:Type ContentPresenter}},
                       Mode=OneWayToSource}" LastChildFill="True">
-                    <Label Style="{DynamicResource EditorHExpanderSimpleLabel}" Content="{x:Static r:Resources.LBL_SPATREF_CENTER}"/>
+                    <Label Content="{x:Static r:Resources.LBL_SPATREF_CENTER}"/>
                   </DockPanel>
                 </Expander.Header>
                 <!-- gml point -->
@@ -240,8 +236,8 @@
         </ListBox>
 
         <!-- point in pixel  -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="8" Grid.Column="0" Content="{x:Static r:Resources.LBL_SPATREF_POINTPIXEL}"/>
-        <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="ptInPixel/PixOrientCd/@value" Grid.Row="8" Grid.Column="1" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+        <Label Grid.Row="8" Grid.Column="0" Content="{x:Static r:Resources.LBL_SPATREF_POINTPIXEL}"/>
+        <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="ptInPixel/PixOrientCd/@value" Grid.Row="8" Grid.Column="1" IsEditable="False"
             ToolTip="{x:Static r:Definitions.MD_Georectified_pointInPixel}"
             v:Nav.AnchorName="ptInPixel,ptInPixel/PixOrientCd"
             ItemsSource="{Binding Source={StaticResource MD_PixelOrientationCode}, Path=List}"
@@ -254,15 +250,15 @@
         </ComboBox>
 
         <!-- transformation dimension description  -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="9" Grid.Column="0" Content="{x:Static r:Resources.LBL_SPATREF_TRANSDIMDESC}"/>
-        <TextBox Grid.Row="9" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" ToolTip="{x:Static r:Definitions.MD_Georectified_transformationDimensionDescription}"
+        <Label Grid.Row="9" Grid.Column="0" Content="{x:Static r:Resources.LBL_SPATREF_TRANSDIMDESC}"/>
+        <TextBox Grid.Row="9" Grid.Column="1" ToolTip="{x:Static r:Definitions.MD_Georectified_transformationDimensionDescription}"
             Text="{e:MetadataBinding XPath=transDimDesc}"
             Name="MD_Georectified_transformationDimensionDescription"/>
 
         <!-- transformation dimension mapping -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="10" Grid.Column="0" Content="{x:Static r:Resources.LBL_SPATREF_TRANSDIMMAP}"/>
-        <!-- <TextBox Grid.Row="10" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" ToolTip="{x:Static r:Definitions.MD_Georectified_checkPointDescription}" -->
-                <TextBox Grid.Row="10" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" ToolTip="{x:Static r:Definitions.MD_Georectified_transformationDimensionMapping}"     
+        <Label Grid.Row="10" Grid.Column="0" Content="{x:Static r:Resources.LBL_SPATREF_TRANSDIMMAP}"/>
+        <!-- <TextBox Grid.Row="10" Grid.Column="1" ToolTip="{x:Static r:Definitions.MD_Georectified_checkPointDescription}" -->
+                <TextBox Grid.Row="10" Grid.Column="1" ToolTip="{x:Static r:Definitions.MD_Georectified_transformationDimensionMapping}"     
             Text="{e:MetadataBinding XPath=transDimMap}"
             Name="MD_Georectified_transformationDimensionMapping"/>
         </Grid>

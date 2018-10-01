@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_ValueUoM" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_ValueUoM" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -17,7 +17,7 @@
     <StackPanel>
       <DockPanel LastChildFill="True">
         <!-- uom chooser -->
-        <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="@uom" DockPanel.Dock="Right"  Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+        <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="@uom" DockPanel.Dock="Right"  IsEditable="False"
             ItemsSource="{Binding Source={StaticResource UCUM}, Path=List}"
             v:Nav.AnchorName="ValueUoMUnits,."
             ToolTip="{x:Static r:Definitions.MD_Dimension_resolutionUnits}"
@@ -29,11 +29,10 @@
           </ComboBox.SelectedValue>
         </ComboBox>
         <!-- value -->
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}"
-            v:Nav.AnchorName="ValueUoM,." v:MetadataRules.Rules="{StaticResource ValueUoMRule}"
-            ToolTip="{x:Static r:Definitions.MD_Dimension_resolution}"
-            Text="{e:MetadataBinding XPath=.}"
-            Name="MD_Dimension_resolution"/>
+        <TextBox v:Nav.AnchorName="ValueUoM,." v:MetadataRules.Rules="{StaticResource ValueUoMRule}"
+                 ToolTip="{x:Static r:Definitions.MD_Dimension_resolution}"
+                 Text="{e:MetadataBinding XPath=.}"
+                 Name="MD_Dimension_resolution"/>
       </DockPanel>
 
       <!-- validate after all anchors are loaded -->

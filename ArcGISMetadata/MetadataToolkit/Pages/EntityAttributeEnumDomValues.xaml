@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_EntityAttributeEnumDomValues" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_EntityAttributeEnumDomValues" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -34,7 +34,7 @@
     </XmlDataProvider>
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorSubPageStyle}">
+  <Grid>
     <StackPanel>
       <Grid>
         <Grid.RowDefinitions>
@@ -55,27 +55,26 @@
         -->
 
         <!-- domain value -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0"
-            Content="{x:Static r:Resources.LBL_EAINFO_ENUM_VALUE}"/>
-        <TextBox Grid.Row="0" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" 
+        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ENUM_VALUE}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" 
             v:Nav.AnchorName="edomv,edomv" 
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_edomv}"
             Text="{e:MetadataBinding XPath=edomv}"
             Name="FGDC_EntityAndAttribute_edomv"/>
 
         <!-- domain value definition -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0"
+        <Label Grid.Row="1" Grid.Column="0"
             Content="{x:Static r:Resources.LBL_EAINFO_ENUM_DEF}"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" 
+        <TextBox Grid.Row="1" Grid.Column="1" 
             v:Nav.AnchorName="edomvd,edomvd" 
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_edomvd}"
             Text="{e:MetadataBinding XPath=edomvd}"
             Name="FGDC_EntityAndAttribute_edomvd"/>
 
         <!-- domain value definition source -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0"
+        <Label Grid.Row="2" Grid.Column="0"
             Content="{x:Static r:Resources.LBL_EAINFO_ENUM_SOURCE}"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" 
+        <TextBox Grid.Row="2" Grid.Column="1" 
             v:Nav.AnchorName="edomvds,edomvds" 
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_edomvds}"
             Text="{e:MetadataBinding XPath=edomvds}"

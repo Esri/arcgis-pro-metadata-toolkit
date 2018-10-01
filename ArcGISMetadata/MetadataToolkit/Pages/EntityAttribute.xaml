@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_EntityAttribute" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_EntityAttribute" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -194,70 +194,70 @@
 
         <!-- Attribute Label -->
         <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTRLABL}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1" 
+        <TextBox Grid.Row="0" Grid.Column="1" 
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_attrlabl}"
             v:Nav.AnchorName="attrlabl,attrlabl" v:MetadataRules.Rules="{x:Static v:MetadataRules.CheckRules}"
             Text="{e:MetadataElementSync XPath=attrlabl}"
             Name="FGDC_EntityAndAttribute_attrlabl"/>
 
         <!-- Attribute Alias -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTALIAS}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="1" Grid.Column="1"
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTALIAS}"/>
+        <TextBox Grid.Row="1" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_attalias}" Text="{e:MetadataElementSync XPath=attalias}"
             Name="FGDC_EntityAndAttribute_attalias"/>
 
         <!-- Attribute Definition -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTRDEF}"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTRDEF}"/>
 
-        <TextBox Style="{DynamicResource EditorTextAreaShortStyle}" Grid.Row="2" Grid.Column="1"
+        <TextBox Grid.Row="2" Grid.Column="1"
             v:Nav.AnchorName="attrdef,attrdef" v:MetadataRules.Rules="{x:Static v:MetadataRules.CheckRules}"
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_attrdef}"
             Text="{e:MetadataElementSync XPath=attrdef}"
             Name="FGDC_EntityAndAttribute_attrdef"/>
 
         <!-- Attribute Definition Source -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTRDEFS}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="3" Grid.Column="1"
+        <Label Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTRDEFS}"/>
+        <TextBox Grid.Row="3" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_attrdefs}"
             v:Nav.AnchorName="attrdefs,attrdefs" v:MetadataRules.Rules="{x:Static v:MetadataRules.CheckRules}"
             Text="{e:MetadataElementSync XPath=attrdefs}"
             Name="FGDC_EntityAndAttribute_attrdefs"/>
 
         <!-- Attribute Type -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="4" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTRTYPE}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="4" Grid.Column="1"
+        <Label Grid.Row="4" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTRTYPE}"/>
+        <TextBox Grid.Row="4" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_attrtype}"
             v:Nav.AnchorName="attrtype,attrtype" v:MetadataRules.Rules="{x:Static v:MetadataRules.CheckRules}"
             Text="{e:MetadataElementSync XPath=attrtype}"
             Name="FGDC_EntityAndAttribute_attrtype"/>
 
         <!-- Attribute Width -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="5" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTWIDTH}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="5" Grid.Column="1"
+        <Label Grid.Row="5" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTWIDTH}"/>
+        <TextBox Grid.Row="5" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_attwidth}"
             v:Nav.AnchorName="attwidth,attwidth" v:MetadataRules.Rules="{StaticResource attwidth}"
             Text="{e:MetadataElementSync XPath=attwidth}"
             Name="FGDC_EntityAndAttribute_attwidth"/>
 
         <!-- Attribute Precision -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="6" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATPRECIS}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="6" Grid.Column="1" 
+        <Label Grid.Row="6" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATPRECIS}"/>
+        <TextBox Grid.Row="6" Grid.Column="1" 
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_atprecis}"
             v:Nav.AnchorName="atprecis,atprecis" v:MetadataRules.Rules="{StaticResource atprecis}"
             Text="{e:MetadataElementSync XPath=atprecis}"
             Name="FGDC_EntityAndAttribute_atprecis"/>
 
         <!-- Attribute Scale -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="7" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTSCALE}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="7" Grid.Column="1"
+        <Label Grid.Row="7" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTSCALE}"/>
+        <TextBox Grid.Row="7" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_attscale}"
             v:Nav.AnchorName="attscale,attscale" v:MetadataRules.Rules="{StaticResource attscale}"
             Text="{e:MetadataElementSync XPath=attscale}"
             Name="FGDC_EntityAndAttribute_attscale"/>
 
         <!-- Attribute Indexed -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="8" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATINDEX}"/>
-        <TextBox Grid.Row="8" Grid.Column="1" ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_atindex}" Style="{DynamicResource EditorTextBoxStyle}"
+        <Label Grid.Row="8" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATINDEX}"/>
+        <TextBox Grid.Row="8" Grid.Column="1" ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_atindex}"
             Text="{e:MetadataBinding XPath=atindex}"
             Name="FGDC_EntityAndAttribute_atindex"/>
 
@@ -269,24 +269,24 @@
         -->
 
         <!-- Attribute Value Accuracy Explanation -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="9" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTRVAE}"/>
-        <TextBox Grid.Row="9" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}"
+        <Label Grid.Row="9" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTRVAE}"/>
+        <TextBox Grid.Row="9" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_attrva}"
             v:Nav.AnchorName="attrva,attrvai/attrva"
             Text="{e:MetadataBinding XPath=attrvai/attrva}"
             Name="FGDC_EntityAndAttribute_attrva"/>
 
         <!-- Attribute Value Accuracy  -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="10" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTRVA}"/>
-        <TextBox Grid.Row="10" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" 
+        <Label Grid.Row="10" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTRVA}"/>
+        <TextBox Grid.Row="10" Grid.Column="1" 
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_attrvae}"
             v:MetadataRules.Rules="{StaticResource attrvae}"
             Text="{e:MetadataBinding XPath=attrvai/attrvae}"
             Name="FGDC_EntityAndAttribute_attrvae"/>
 
         <!-- Attribute Value Measurement Frequency -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="11" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTRMFRQ}"/>
-        <ComboBox Grid.Row="11" Grid.Column="1" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="attrmfrq" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+        <Label Grid.Row="11" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTRMFRQ}"/>
+        <ComboBox Grid.Row="11" Grid.Column="1" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="attrmfrq" IsEditable="False"
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_attrmfrq}"
             ItemsSource="{Binding Source={StaticResource MD_MaintenanceFrequenceCode}, Path=List}"
             DisplayMemberPath="."
@@ -300,14 +300,14 @@
         <!-- begdatea, enddatea -->
 
         <!-- beginning date of attribute values -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="12" Grid.Column="0" ToolTip=""
+        <Label Grid.Row="12" Grid.Column="0" ToolTip=""
             Content="{x:Static r:Resources.LBL_EAINFO_BEGDATEA}"/>
         <controls:DateTimeControl Grid.Row="12" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_begdatea}"
             Items="{Binding XPath=begdatea}"/>
 
         <!-- ending date of attribute values -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="13" Grid.Column="0" ToolTip=""
+        <Label Grid.Row="13" Grid.Column="0" ToolTip=""
             Content="{x:Static r:Resources.LBL_EAINFO_ENDDATEA}"/>
         <controls:DateTimeControl Grid.Row="13" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_enddatea}"
@@ -316,10 +316,10 @@
       </Grid>
 
       <!-- enum domain values -->
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=attrdomv[edom]}">
+      <ListBox ItemsSource="{Binding XPath=attrdomv[edom]}">
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=edom}">
+            <ListBox ItemsSource="{Binding XPath=edom}">
               <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                   <StackPanel/>
@@ -328,19 +328,18 @@
               <ListBox.ItemTemplate>
                 <DataTemplate>
                   <StackPanel>
-                    <Border Style="{DynamicResource EditorBorder2LiteStyle}" >
-                      <Expander Style="{DynamicResource EditorExpander2Style}"
-                                AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=EntityAttribute_EnumeratedDomainGroup}">
+                    <Border>
+                      <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=EntityAttribute_EnumeratedDomainGroup}">
                         <Expander.Header>
                           <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                               RelativeSource={RelativeSource FindAncestor,
                               AncestorType={x:Type ContentPresenter}},
                               Mode=OneWayToSource}" LastChildFill="True">
-                            <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Style="{DynamicResource DeleteButton}"
+                            <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent"
                                     Name="EntityAttribute_EnumeratedDomainDelete">
-                              <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                              <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                             </Button>
-                            <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_EAINFO_ENUM_DOMAIN}"/>
+                            <Label  Content="{x:Static r:Resources.LBL_EAINFO_ENUM_DOMAIN}"/>
                           </DockPanel>
                         </Expander.Header>
                         <!-- attribute domain values -->
@@ -348,15 +347,15 @@
                       </Expander>
                     </Border>
 
-                    <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(following-sibling::edom)]}">
+                    <ListBox ItemsSource="{Binding XPath=self::*[not(following-sibling::edom)]}">
                       <ListBox.ItemTemplate>
                         <DataTemplate>
                           <!-- ADD enum domain value -->
-                          <Button Tag="EnumDomValueInside_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                          <Button Tag="EnumDomValueInside_Parent" Click="AddRecordByTagToLocal"
                                   Name="EntityAttribute_EnumeratedDomainAdd">
                             <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                              <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                              <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EAINFO_NEW_ENUM_DOMAIN}"/>
+                              <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                              <TextBlock Text="{x:Static r:Resources.BTN_EAINFO_NEW_ENUM_DOMAIN}"/>
                             </StackPanel>
                           </Button>
                         </DataTemplate>
@@ -372,14 +371,13 @@
       </ListBox>
 
       <!-- ADD enum domain value -->
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(attrdomv/edom)]}">
+      <ListBox ItemsSource="{Binding XPath=self::*[not(attrdomv/edom)]}">
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Button Tag="EnumDomValue" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
-                    Name="EntityAttribute_EnumeratedDomainAdd">
+            <Button Tag="EnumDomValue" Click="AddRecordByTagToLocal" Name="EntityAttribute_EnumeratedDomainAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EAINFO_NEW_ENUM_DOMAIN}"/>
+                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <TextBlock Text="{x:Static r:Resources.BTN_EAINFO_NEW_ENUM_DOMAIN}"/>
               </StackPanel>
             </Button>
           </DataTemplate>
@@ -387,7 +385,7 @@
       </ListBox>
 
       <!-- range domain -->
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=attrdomv/rdom}">
+      <ListBox ItemsSource="{Binding XPath=attrdomv/rdom}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel/>
@@ -395,19 +393,17 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Border Style="{DynamicResource EditorBorder2LiteStyle}" >
-              <Expander Style="{DynamicResource EditorExpander2Style}"
-                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=EntityAttribute_RangeDomainGroup}">
+            <Border>
+              <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=EntityAttribute_RangeDomainGroup}">
                 <Expander.Header>
                   <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                         RelativeSource={RelativeSource FindAncestor,
                         AncestorType={x:Type ContentPresenter}},
                         Mode=OneWayToSource}" LastChildFill="True">
-                    <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Style="{DynamicResource DeleteButton}"
-                            Name="EntityAttribute_RangeDomainDelete">
-                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                    <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Name="EntityAttribute_RangeDomainDelete">
+                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                     </Button>
-                    <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_EAINFO_RANGE_DOMAIN}"/>
+                    <Label Content="{x:Static r:Resources.LBL_EAINFO_RANGE_DOMAIN}"/>
                   </DockPanel>
                 </Expander.Header>
                 <!-- range domain -->
@@ -420,16 +416,15 @@
 
       <!-- ADD range domain -->
 
-      <Button Tag="RangeDomain" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
-              Name="EntityAttribute_RangeDomainAdd">
+      <Button Tag="RangeDomain" Click="AddRecordByTagToLocal" Name="EntityAttribute_RangeDomainAdd">
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EAINFO_NEW_RANGE}"/>
+          <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <TextBlock Text="{x:Static r:Resources.BTN_EAINFO_NEW_RANGE}"/>
         </StackPanel>
       </Button>
 
       <!-- codeset domain -->
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=attrdomv/codesetd}">
+      <ListBox ItemsSource="{Binding XPath=attrdomv/codesetd}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel/>
@@ -437,19 +432,17 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Border Style="{DynamicResource EditorBorder2LiteStyle}">
-              <Expander Style="{DynamicResource EditorExpander2Style}"
-                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=EntityAttribute_CodesetDomainGroup}">
+            <Border>
+              <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=EntityAttribute_CodesetDomainGroup}">
                 <Expander.Header>
                   <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                         RelativeSource={RelativeSource FindAncestor,
                         AncestorType={x:Type ContentPresenter}},
                         Mode=OneWayToSource}" LastChildFill="True">
-                    <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Style="{DynamicResource DeleteButton}"
-                            Name="EntityAttribute_CodesetDomainDelete">
-                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                    <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Name="EntityAttribute_CodesetDomainDelete">
+                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                     </Button>
-                    <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_EAINFO_CODESET}"/>
+                    <Label Content="{x:Static r:Resources.LBL_EAINFO_CODESET}"/>
                   </DockPanel>
                 </Expander.Header>
                 <!-- codeset domain -->
@@ -462,16 +455,15 @@
 
       <!-- ADD codeset domain -->
 
-      <Button Tag="CodesetDomain" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
-              Name="EntityAttribute_CodesetDomainAdd">
+      <Button Tag="CodesetDomain" Click="AddRecordByTagToLocal" Name="EntityAttribute_CodesetDomainAdd">
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EAINFO_NEW_CODESET}"/>
+          <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <TextBlock Text="{x:Static r:Resources.BTN_EAINFO_NEW_CODESET}"/>
         </StackPanel>
       </Button>
 
       <!-- unrepresentable domain -->
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=attrdomv/udom}">
+      <ListBox ItemsSource="{Binding XPath=attrdomv/udom}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel/>
@@ -480,9 +472,8 @@
         <ListBox.ItemTemplate>
           <DataTemplate>
             <StackPanel>
-              <Label Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_EAINFO_UDOM}"/>
-              <TextBox Style="{DynamicResource EditorTextAreaStyle}"
-                  ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_udom}"
+              <Label Content="{x:Static r:Resources.LBL_EAINFO_UDOM}"/>
+              <TextBox ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_udom}"
                   v:Nav.AnchorName="Attrdomv"
                   Text="{e:MetadataElementSync XPath=.}"
                   Name="FGDC_EntityAndAttribute_udom"/>
@@ -493,12 +484,11 @@
 
       <!-- ADD udom -->
 
-      <Button Tag="Udom" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
-          ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_udom}"
+      <Button Tag="Udom" Click="AddRecordByTagToLocal" ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_udom}"
           Name="EntityAttribute_UnpresentableDomainAdd">
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EAINFO_NEW_UDOM}"/>
+          <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <TextBlock Text="{x:Static r:Resources.BTN_EAINFO_NEW_UDOM}"/>
         </StackPanel>
       </Button>
 

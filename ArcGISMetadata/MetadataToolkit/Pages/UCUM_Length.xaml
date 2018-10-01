@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_UCUM_Length" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_UCUM_Length" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -16,7 +16,7 @@
 
   <DockPanel LastChildFill="True">
     <!-- uom chooser -->
-    <ComboBox Loaded="PostProcessComboBoxValues"  p:EditorPage.SourceXPath="@uom" DockPanel.Dock="Right" SelectionChanged="ComboBoxSyncSelectionChanged" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+    <ComboBox Loaded="PostProcessComboBoxValues"  p:EditorPage.SourceXPath="@uom" DockPanel.Dock="Right" SelectionChanged="ComboBoxSyncSelectionChanged" IsEditable="False"
         ItemsSource="{Binding Source={StaticResource UCUM_LENGTH}, Path=List}"
         DisplayMemberPath="."
         v:Nav.AnchorName="uom,@uom"

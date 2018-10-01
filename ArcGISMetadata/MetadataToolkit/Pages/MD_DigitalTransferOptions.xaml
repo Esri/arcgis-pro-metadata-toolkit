@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_MD_DigitalTransferOptions" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_MD_DigitalTransferOptions" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -55,7 +55,7 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorSubPageStyle}">
+  <Grid>
     <StackPanel>
       <Grid>
         <Grid.RowDefinitions>
@@ -68,14 +68,13 @@
         </Grid.ColumnDefinitions>
 
         <!-- units of distro -->
-        <Label Grid.Row="0" Grid.Column="0" Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_DIGOPT_UNITS}"/>
-        <TextBox Grid.Row="0" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" ToolTip="{x:Static r:Definitions.MD_DigitalTransferOptions_unitsOfDistribution}"
-            Text="{e:MetadataBinding XPath=unitsODist}"
-                 Name="MD_DigitalTransferOptions_unitsOfDistribution"/>
+        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_DIGOPT_UNITS}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.MD_DigitalTransferOptions_unitsOfDistribution}"
+            Text="{e:MetadataBinding XPath=unitsODist}" Name="MD_DigitalTransferOptions_unitsOfDistribution"/>
 
         <!-- transfer size -->
-        <Label Grid.Row="1" Grid.Column="0" Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_DIGOPT_SIZE}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="1" Grid.Column="1" ToolTip="{x:Static r:Definitions.MD_DigitalTransferOptions_transferSize}"
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_DIGOPT_SIZE}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" ToolTip="{x:Static r:Definitions.MD_DigitalTransferOptions_transferSize}"
             v:Nav.AnchorName="transSize,transSize" v:MetadataRules.Rules="{StaticResource transSize}"
             Text="{e:MetadataElementSync XPath=transSize}"
             Name="MD_DigitalTransferOptions_transferSize"/>
@@ -90,18 +89,16 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Expander Style="{DynamicResource EditorExpander2Style}"
-                      AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_DigitalTransferOptions_OnlineResourceGroup}">
+            <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_DigitalTransferOptions_OnlineResourceGroup}">
               <Expander.Header>
                 <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                     RelativeSource={RelativeSource FindAncestor,
                     AncestorType={x:Type ContentPresenter}},
                     Mode=OneWayToSource}" LastChildFill="True">
-                  <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
-                          Name="MD_DigitalTransferOptions_OnlineResourceDelete">
-                    <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                  <Button DockPanel.Dock="Right" Click="DeleteItem" Name="MD_DigitalTransferOptions_OnlineResourceDelete">
+                    <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                   </Button>
-                  <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DIGOPT_ONLINE}"/>
+                  <Label  Content="{x:Static r:Resources.LBL_DIGOPT_ONLINE}"/>
                 </DockPanel>
               </Expander.Header>
               <!-- online resource -->
@@ -112,11 +109,10 @@
       </ListBox>
 
       <!-- ADD online resource -->
-      <Button Tag="Online" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
-              Name="MD_DigitalTransferOptions_OnlineResourceAdd">
+      <Button Tag="Online" Click="AddRecordByTagToLocal" Name="MD_DigitalTransferOptions_OnlineResourceAdd">
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DIGOPT_NEW_ONLINE}"/>
+          <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <TextBlock Text="{x:Static r:Resources.BTN_DIGOPT_NEW_ONLINE}"/>
         </StackPanel>
       </Button>
 
@@ -129,10 +125,9 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Expander Style="{DynamicResource EditorExpander2Style}"
-                      Name="MD_DigitalTransferOptions_OfflineMedium">
+            <Expander Name="MD_DigitalTransferOptions_OfflineMedium">
               <Expander.Header>
-                <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_DIGOPT_OFFLINE}"/>
+                <Label Content="{x:Static r:Resources.LBL_DIGOPT_OFFLINE}"/>
               </Expander.Header>
               <!-- medium -->
               <t:MTK_MD_Medium/>

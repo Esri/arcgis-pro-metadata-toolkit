@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_SpatialRepresentation" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_SpatialRepresentation" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -129,14 +129,14 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorFrontPageStyle}">
-    <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata}">
+  <Grid>
+    <ListBox ItemsSource="{Binding XPath=/metadata}">
       <ListBox.ItemTemplate>
         <DataTemplate>
           <StackPanel>
-            <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_SPATREF}"/>
+            <Label Content="{x:Static r:Resources.SEC_SPATREF}"/>
             <!-- grid spatial representation -->
-            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=spatRepInfo[GridSpatRep]}">
+            <ListBox ItemsSource="{Binding XPath=spatRepInfo[GridSpatRep]}">
               <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                   <StackPanel/>
@@ -144,22 +144,20 @@
               </ListBox.ItemsPanel>
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Border Style="{DynamicResource EditorBorder2Style}" >
-                    <Expander Style="{DynamicResource EditorExpander2Style}" 
-                              AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SpatialRepresentation_GridSpatialRepresentationGroup}">
+                  <Border>
+                    <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SpatialRepresentation_GridSpatialRepresentationGroup}">
                       <Expander.Header>
                         <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                             RelativeSource={RelativeSource FindAncestor,
                             AncestorType={x:Type ContentPresenter}},
                             Mode=OneWayToSource}" LastChildFill="True">
-                          <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
-                                  Name="SpatialRepresentation_GridSpatialRepresentationDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                          <Button DockPanel.Dock="Right" Click="DeleteItem" Name="SpatialRepresentation_GridSpatialRepresentationDelete">
+                            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
-                          <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_SPATREF_GRID}"/>
+                          <Label Content="{x:Static r:Resources.LBL_SPATREF_GRID}"/>
                         </DockPanel>
                       </Expander.Header>
-                      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=GridSpatRep}">
+                      <ListBox ItemsSource="{Binding XPath=GridSpatRep}">
                         <ListBox.ItemTemplate>
                           <DataTemplate>
                             <!-- grid spatial representation -->
@@ -174,7 +172,7 @@
             </ListBox>
 
             <!-- geo rectified -->
-            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=spatRepInfo[Georect]}">
+            <ListBox ItemsSource="{Binding XPath=spatRepInfo[Georect]}">
               <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                   <StackPanel/>
@@ -182,22 +180,20 @@
               </ListBox.ItemsPanel>
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Border Style="{DynamicResource EditorBorder2Style}" >
-                    <Expander Style="{DynamicResource EditorExpander2Style}"
-                              AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SpatialRepresentation_GeorectifiedRepresentationGroup}" >
+                  <Border>
+                    <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SpatialRepresentation_GeorectifiedRepresentationGroup}" >
                       <Expander.Header>
                         <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                             RelativeSource={RelativeSource FindAncestor,
                             AncestorType={x:Type ContentPresenter}},
                             Mode=OneWayToSource}" LastChildFill="True">
-                          <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
-                                  Name="SpatialRepresentation_GeorectifiedRepresentationDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                          <Button DockPanel.Dock="Right" Click="DeleteItem" Name="SpatialRepresentation_GeorectifiedRepresentationDelete">
+                            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
-                          <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_SPATREF_GEOREC}"/>
+                          <Label Content="{x:Static r:Resources.LBL_SPATREF_GEOREC}"/>
                         </DockPanel>
                       </Expander.Header>
-                      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=Georect}">
+                      <ListBox ItemsSource="{Binding XPath=Georect}">
                         <ListBox.ItemTemplate>
                           <DataTemplate>
                             <!-- georectified representation -->
@@ -212,7 +208,7 @@
             </ListBox>
 
             <!-- geo referenced -->
-            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=spatRepInfo[Georef]}">
+            <ListBox ItemsSource="{Binding XPath=spatRepInfo[Georef]}">
               <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                   <StackPanel/>
@@ -220,22 +216,20 @@
               </ListBox.ItemsPanel>
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Border Style="{DynamicResource EditorBorder2Style}" >
-                    <Expander Style="{DynamicResource EditorExpander2Style}"
-                              AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SpatialRepresentation_GeoreferenceableRepresentationGroup}" >
+                  <Border>
+                    <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SpatialRepresentation_GeoreferenceableRepresentationGroup}" >
                       <Expander.Header>
                         <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                             RelativeSource={RelativeSource FindAncestor,
                             AncestorType={x:Type ContentPresenter}},
                             Mode=OneWayToSource}" LastChildFill="True">
-                          <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
-                                  Name="SpatialRepresentation_GeoreferenceableRepresentationDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                          <Button DockPanel.Dock="Right" Click="DeleteItem" Name="SpatialRepresentation_GeoreferenceableRepresentationDelete">
+                            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
-                          <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_SPATREF_GEOREF}"/>
+                          <Label Content="{x:Static r:Resources.LBL_SPATREF_GEOREF}"/>
                         </DockPanel>
                       </Expander.Header>
-                      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=Georef}">
+                      <ListBox ItemsSource="{Binding XPath=Georef}">
                         <ListBox.ItemTemplate>
                           <DataTemplate>
                             <!-- georeferenced representation -->
@@ -250,7 +244,7 @@
             </ListBox>
 
             <!-- vector representation -->
-            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=spatRepInfo[VectSpatRep]}">
+            <ListBox ItemsSource="{Binding XPath=spatRepInfo[VectSpatRep]}">
               <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                   <StackPanel/>
@@ -258,22 +252,20 @@
               </ListBox.ItemsPanel>
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Border Style="{DynamicResource EditorBorder2Style}" >
-                    <Expander Style="{DynamicResource EditorExpander2Style}"
-                              AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SpatialRepresentation_VectorRepresentationGroup}" >
+                  <Border>
+                    <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SpatialRepresentation_VectorRepresentationGroup}" >
                       <Expander.Header>
                         <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                             RelativeSource={RelativeSource FindAncestor,
                             AncestorType={x:Type ContentPresenter}},
                             Mode=OneWayToSource}" LastChildFill="True">
-                          <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
-                                  Name="SpatialRepresentation_VectorRepresentationDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                          <Button DockPanel.Dock="Right" Click="DeleteItem" Name="SpatialRepresentation_VectorRepresentationDelete">
+                            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
-                          <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_SPATREF_VEC}"/>
+                          <Label Content="{x:Static r:Resources.LBL_SPATREF_VEC}"/>
                         </DockPanel>
                       </Expander.Header>
-                      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=VectSpatRep}">
+                      <ListBox ItemsSource="{Binding XPath=VectSpatRep}">
                         <ListBox.ItemTemplate>
                           <DataTemplate>
                             <!-- vector representation -->
@@ -288,7 +280,7 @@
             </ListBox>
 
             <!-- indirect spatial representation -->
-            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=spatRepInfo[Indref]}">
+            <ListBox ItemsSource="{Binding XPath=spatRepInfo[Indref]}">
               <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                   <StackPanel/>
@@ -296,29 +288,25 @@
               </ListBox.ItemsPanel>
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Border Style="{DynamicResource EditorBorder2Style}" >
-                    <Expander Style="{DynamicResource EditorExpander2Style}"
-                              AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SpatialRepresentation_IndirectSpatialRepresentationGroup}" >
+                  <Border>
+                    <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SpatialRepresentation_IndirectSpatialRepresentationGroup}" >
                       <Expander.Header>
                         <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                             RelativeSource={RelativeSource FindAncestor,
                             AncestorType={x:Type ContentPresenter}},
                             Mode=OneWayToSource}" LastChildFill="True">
-                          <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
-                                  Name="SpatialRepresentation_IndirectSpatialRepresentationDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                          <Button DockPanel.Dock="Right" Click="DeleteItem" Name="SpatialRepresentation_IndirectSpatialRepresentationDelete">
+                            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
-                          <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_SPATREF_IND}"/>
+                          <Label Content="{x:Static r:Resources.LBL_SPATREF_IND}"/>
                         </DockPanel>
                       </Expander.Header>
 
-                      <Grid Style="{DynamicResource EditorSubPageStyle}">
+                      <Grid>
                         <!-- indirect spatial reference -->
                         <controls:Resizer>
-                          <TextBox Style="{DynamicResource EditorTextAreaShortResizeStyle}" 
-                              ToolTip="{x:Static r:Definitions.FGDC_SpatialDataOrganization_indspref}"
-                              Text="{e:MetadataBinding XPath=Indref}"
-                              Name="FGDC_SpatialDataOrganization_indspref"/>
+                          <TextBox ToolTip="{x:Static r:Definitions.FGDC_SpatialDataOrganization_indspref}"
+                                   Text="{e:MetadataBinding XPath=Indref}" Name="FGDC_SpatialDataOrganization_indspref"/>
                         </controls:Resizer>
                       </Grid>
                     </Expander>
@@ -328,47 +316,47 @@
             </ListBox>
 
             <!-- ADD grid spatial representation -->
-            <Button Tag="GridSpatRep" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+            <Button Tag="GridSpatRep" Click="AddRecordByTagToLocal"
                     Name="SpatialRepresentation_GridSpatialRepresentationAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_SPATREF_NEW_GRID}"/>
+                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <TextBlock Text="{x:Static r:Resources.BTN_SPATREF_NEW_GRID}"/>
               </StackPanel>
             </Button>
 
             <!-- ADD georectified -->
-            <Button Tag="Georect" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+            <Button Tag="Georect" Click="AddRecordByTagToLocal"
                     Name="SpatialRepresentation_GeorectifiedRepresentationAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_SPATREF_NEW_GEOREC}"/>
+                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <TextBlock Text="{x:Static r:Resources.BTN_SPATREF_NEW_GEOREC}"/>
               </StackPanel>
             </Button>
 
             <!-- ADD georeferenced -->
-            <Button Tag="Georef" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+            <Button Tag="Georef" Click="AddRecordByTagToLocal"
                     Name="SpatialRepresentation_GeoreferenceableRepresentationAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_SPATREF_NEW_GEOREF}"/>
+                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <TextBlock Text="{x:Static r:Resources.BTN_SPATREF_NEW_GEOREF}"/>
               </StackPanel>
             </Button>
 
             <!-- ADD vector representation -->
-            <Button Tag="VectSpatRep" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+            <Button Tag="VectSpatRep" Click="AddRecordByTagToLocal"
                     Name="SpatialRepresentation_VectorRepresentationAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_SPATREF_NEW_VEC}"/>
+                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <TextBlock Text="{x:Static r:Resources.BTN_SPATREF_NEW_VEC}"/>
               </StackPanel>
             </Button>
 
             <!-- ADD indirect spatial representation -->
-            <Button Tag="IndSpatRep" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+            <Button Tag="IndSpatRep" Click="AddRecordByTagToLocal"
                     Name="SpatialRepresentation_IndirectSpatialRepresentationAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_SPATREF_NEW_IND}"/>
+                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <TextBlock Text="{x:Static r:Resources.BTN_SPATREF_NEW_IND}"/>
               </StackPanel>
             </Button>
 

@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_MD_RangeDimension" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_MD_RangeDimension" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -36,7 +36,7 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorSubPageStyle}">
+  <Grid>
     <StackPanel>
 
       <!-- sequence identifier -->
@@ -51,14 +51,14 @@
         </Grid.RowDefinitions>
 
         <!-- sequence id / type -->
-        <Label  Grid.Row="0" Grid.Column="0" Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_COV_SEQID}"/>
+        <Label  Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_COV_SEQID}"/>
         <DockPanel Grid.Row="0" Grid.Column="1">
-          <TextBox DockPanel.Dock="Right" Style="{DynamicResource EditorTextBoxStyle}"
+          <TextBox DockPanel.Dock="Right"
               v:Nav.AnchorName="attributeType,seqID/attributeType/aName"
               ToolTip="{x:Static r:Definitions.MD_RangeDimension_sequenceIdentifierType}"
               Text="{e:MetadataBinding XPath=seqID/attributeType/aName}"
               Name="MD_RangeDimension_sequenceIdentifierType"/>
-          <TextBox Grid.Row="0" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" 
+          <TextBox Grid.Row="0" Grid.Column="1" 
               ToolTip="{x:Static r:Definitions.MD_RangeDimension_sequenceIdentifier}" 
               v:Nav.AnchorName="aName,seqID/aName"
               Text="{e:MetadataBinding XPath=seqID/aName}"
@@ -66,8 +66,8 @@
         </DockPanel>
 
         <!-- descriptor -->
-        <Label Grid.Row="1" Grid.Column="0" Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_COV_DESCRIPTOR}"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" ToolTip="{x:Static r:Definitions.MD_RangeDimensions_descriptor}" 
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_COV_DESCRIPTOR}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" ToolTip="{x:Static r:Definitions.MD_RangeDimensions_descriptor}" 
             Text="{e:MetadataBinding XPath=dimDescrp}"
             Name="MD_RangeDimensions_descriptor"/>
 

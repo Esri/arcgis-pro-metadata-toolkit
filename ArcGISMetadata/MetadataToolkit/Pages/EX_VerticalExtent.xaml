@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_EX_VerticalExtent" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_EX_VerticalExtent" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -28,7 +28,7 @@
   <!-- vertical extent -->
   <Grid>
     <StackPanel>
-      <Grid Style="{DynamicResource EditorSubPageStyle}">
+      <Grid>
 
         <Grid.RowDefinitions>
           <RowDefinition />
@@ -41,16 +41,16 @@
         </Grid.ColumnDefinitions>
 
         <!-- minimum value -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_EXT_VERT_MIN}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1"
+        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_EXT_VERT_MIN}"/>
+        <TextBox Grid.Row="0" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.EX_VerticalExtent_minimumValue}"
             v:Nav.AnchorName="vertMinVal,vertMinVal" v:MetadataRules.Rules="{StaticResource vertMinVal}"
             Text="{e:MetadataBinding XPath=vertMinVal}" 
                  Name="EX_VerticalExtent_minimumValue"/>
 
         <!-- maximum value -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_EXT_VERT_MAX}"/>
-        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="1" Grid.Column="1"
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_EXT_VERT_MAX}"/>
+        <TextBox Grid.Row="1" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.EX_VerticalExtent_maximumValue}"
             v:Nav.AnchorName="vertMaxVal,vertMaxVal" v:MetadataRules.Rules="{StaticResource vertMaxVal}"
             Text="{e:MetadataBinding XPath=vertMaxVal}" 

@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_Services" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_Services" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -102,25 +102,25 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorFrontPageStyle}">
-    <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata/dataIdInfo[1]}">
+  <Grid>
+    <ListBox ItemsSource="{Binding XPath=/metadata/dataIdInfo[1]}">
       <ListBox.ItemTemplate>
         <DataTemplate>
           <StackPanel>
 
             <!-- page title -->
-            <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_SV_DETAILS}"/>
+            <Label Content="{x:Static r:Resources.SEC_SV_DETAILS}"/>
 
             <!-- service type -->
-            <Border Style="{DynamicResource EditorBorder2Style}">
+            <Border>
               <StackPanel>
-                <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=svType}">
+                <ListBox ItemsSource="{Binding XPath=svType}">
                   <ListBox.ItemTemplate>
                     <DataTemplate>
                       <StackPanel>
                         <!-- service type -->
-                        <Label Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_SERVICE_SERVICETYPE}"/>
-                        <Border Style="{DynamicResource EditorBorderSubStyle}">
+                        <Label Content="{x:Static r:Resources.LBL_SERVICE_SERVICETYPE}"/>
+                        <Border>
                           <t:MTK_GenericName ToolTip="{x:Static r:Definitions.SV_IdentificationInfo_serviceType}"/>
                         </Border>
                       </StackPanel>
@@ -129,48 +129,47 @@
                 </ListBox>
 
                 <!-- service type version -->
-                <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=svTypeVer}">
+                <ListBox ItemsSource="{Binding XPath=svTypeVer}">
                   <ListBox.ItemTemplate>
                     <DataTemplate>
                       <DockPanel LastChildFill="True">
-                        <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_SERVICE_SERVICETYPEVER}"/>
+                        <Label DockPanel.Dock="Left" Content="{x:Static r:Resources.LBL_SERVICE_SERVICETYPEVER}"/>
                         <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
                           <!-- delete -->
-                          <Button Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                          <Button Click="DeleteItem"
                                   AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SV_IdentificationInfo_ServiceTypeDelete}">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
                           <!-- add if the last sibling -->
-                          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(following-sibling::catFetTyps)]}">
+                          <ListBox ItemsSource="{Binding XPath=self::*[not(following-sibling::catFetTyps)]}">
                             <ListBox.ItemTemplate>
                               <DataTemplate>
-                                <Button Tag="ServiceTypeVersion_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                                <Button Tag="ServiceTypeVersion_Parent" Click="AddRecordByTagToLocal"
                                         AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SV_IdentificationInfo_ServiceTypeAdd}">
-                                  <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
                                 </Button>
                               </DataTemplate>
                             </ListBox.ItemTemplate>
                           </ListBox>
                         </StackPanel>
                         <!-- service type version -->
-                        <TextBox Style="{DynamicResource EditorTextBoxStyle}"
-                            ToolTip="{x:Static r:Definitions.SV_IdentificationInfo_serviceTypeVersion}"
-                            Text="{e:MetadataBinding XPath=.}"
-                            AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SV_IdentificationInfo_serviceTypeVersion}"/>
+                        <TextBox ToolTip="{x:Static r:Definitions.SV_IdentificationInfo_serviceTypeVersion}"
+                                 Text="{e:MetadataBinding XPath=.}"
+                                 AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SV_IdentificationInfo_serviceTypeVersion}"/>
                       </DockPanel>
                     </DataTemplate>
                   </ListBox.ItemTemplate>
                 </ListBox>
 
                 <!-- ADD service type version -->
-                <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(svTypeVer)]}">
+                <ListBox ItemsSource="{Binding XPath=self::*[not(svTypeVer)]}">
                   <ListBox.ItemTemplate>
                     <DataTemplate>
-                      <Button Tag="ServiceTypeVersion" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                      <Button Tag="ServiceTypeVersion" Click="AddRecordByTagToLocal"
                               AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SV_IdentificationInfo_ServiceTypeAdd}">
                         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_NEW_SERVICE_TYPEVERSION}"/>
+                          <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                          <TextBlock Text="{x:Static r:Resources.BTN_NEW_SERVICE_TYPEVERSION}"/>
                         </StackPanel>
                       </Button>
                     </DataTemplate>
@@ -180,13 +179,13 @@
             </Border>
 
             <!-- coupling -->
-            <Border Style="{DynamicResource EditorBorder2Style}">
+            <Border>
               <StackPanel>
                 <DockPanel LastChildFill="True">
-                  <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_SERVICE_COUPLINGTYPE}"/>
+                  <Label DockPanel.Dock="Left" Content="{x:Static r:Resources.LBL_SERVICE_COUPLINGTYPE}"/>
 
                   <!-- coupling type -->
-                  <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="svCouplType/CouplTypCd/@value" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+                  <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="svCouplType/CouplTypCd/@value" IsEditable="False"
                       ItemsSource="{Binding Source={StaticResource SV_CouplingType}, Path=List}"
                       DisplayMemberPath="."
                       ToolTip="{x:Static r:Definitions.SV_IdentificationInfo_couplingType}"
@@ -200,7 +199,7 @@
                 </DockPanel>
 
                 <!-- coupled resource -->
-                <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=svCouplRes}">
+                <ListBox ItemsSource="{Binding XPath=svCouplRes}">
                   <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
                       <StackPanel/>
@@ -208,18 +207,16 @@
                   </ListBox.ItemsPanel>
                   <ListBox.ItemTemplate>
                     <DataTemplate>
-                      <Expander Style="{DynamicResource EditorExpander2Style}"
-                                AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SV_IdentificationInfo_CouplingResourceGroup}">
+                      <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SV_IdentificationInfo_CouplingResourceGroup}">
                         <Expander.Header>
                           <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                               RelativeSource={RelativeSource FindAncestor,
                               AncestorType={x:Type ContentPresenter}},
                               Mode=OneWayToSource}" LastChildFill="True">
-                            <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
-                                    Name="SV_IdentificationInfo_CouplingResourceDelete">
-                              <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Button DockPanel.Dock="Right" Click="DeleteItem" Name="SV_IdentificationInfo_CouplingResourceDelete">
+                              <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                             </Button>
-                            <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_SERVICE_COUPLEDRES}"/>
+                            <Label Content="{x:Static r:Resources.LBL_SERVICE_COUPLEDRES}"/>
                           </DockPanel>
                         </Expander.Header>
                         <!-- coupled resource -->
@@ -232,11 +229,10 @@
                 </ListBox>
 
                 <!-- add coupled resource -->
-                <Button Tag="CoupledResource" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
-                        Name="SV_IdentificationInfo_CouplingResourceAdd">
+                <Button Tag="CoupledResource" Click="AddRecordByTagToLocal" Name="SV_IdentificationInfo_CouplingResourceAdd">
                   <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                    <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_SERVICE_NEW_COUPLEDRES}"/>
+                    <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                    <TextBlock Text="{x:Static r:Resources.BTN_SERVICE_NEW_COUPLEDRES}"/>
                   </StackPanel>
                 </Button>
               </StackPanel>
@@ -245,8 +241,8 @@
             <!-- extents removed, use the more generic extents elements -->
 
             <!-- standard order process -->
-            <Border Style="{DynamicResource EditorBorder2Style}">
-              <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=svAccProps[1]}">
+            <Border>
+              <ListBox ItemsSource="{Binding XPath=svAccProps[1]}">
                 <ListBox.ItemsPanel>
                   <ItemsPanelTemplate>
                     <StackPanel/>
@@ -254,14 +250,13 @@
                 </ListBox.ItemsPanel>
                 <ListBox.ItemTemplate>
                   <DataTemplate>
-                    <Expander Style="{DynamicResource EditorExpander2Style}"
-                              Name="SV_IdentificationInfo_AccessPropertiesGroup">
+                    <Expander Name="SV_IdentificationInfo_AccessPropertiesGroup">
                       <Expander.Header>
                         <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                               RelativeSource={RelativeSource FindAncestor,
                               AncestorType={x:Type ContentPresenter}},
                               Mode=OneWayToSource}" LastChildFill="True">
-                          <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_SERVICE_ACCESSPROPS}"/>
+                          <Label Content="{x:Static r:Resources.LBL_SERVICE_ACCESSPROPS}"/>
                         </DockPanel>
                       </Expander.Header>
                       <!-- order process -->

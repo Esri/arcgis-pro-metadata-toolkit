@@ -1,4 +1,4 @@
-﻿<pages:EditorPage x:Class="MetadataToolkit.MTK_ImageAttachement" x:ClassModifier="internal"  
+<pages:EditorPage x:Class="MetadataToolkit.MTK_ImageAttachement" x:ClassModifier="internal"  
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:dg="http://schemas.microsoft.com/wpf/2008/toolkit"
@@ -28,23 +28,21 @@
 
   <Grid>
     <!-- thumbnail -->
-    <DockPanel Style="{DynamicResource ThumbnailPanel}">
-      <Border Style="{DynamicResource ThumbnailBorderStyle}" DockPanel.Dock="Top">
-        <Image ToolTip="{x:Static r:Definitions.ESRI_thumbnail}" Style="{DynamicResource ThumbnailImageStyle}" x:Name="ThumbnailImage" Loaded="LoadedThumbnailImage" />
+    <DockPanel>
+      <Border DockPanel.Dock="Top">
+        <Image ToolTip="{x:Static r:Definitions.ESRI_thumbnail}" x:Name="ThumbnailImage" Loaded="LoadedThumbnailImage" />
       </Border>
       <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" >
-        <Button Click="DeleteThumbnail" Style="{DynamicResource TopButton}"
-                Name="ImageAttachement_ThumbnailDelete">
+        <Button Click="DeleteThumbnail" Name="ImageAttachement_ThumbnailDelete">
           <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-            <Image Style="{DynamicResource TopButtonImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
-            <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_THUMB_DELETE}"/>
+            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+            <TextBlock Text="{x:Static r:Resources.BTN_THUMB_DELETE}"/>
           </StackPanel>
         </Button>
-        <Button Click="UpdateThumbnail" Style="{DynamicResource TopButton}"
-                Name="ImageAttachement_ThumbnailUpdate">
+        <Button Click="UpdateThumbnail" Name="ImageAttachement_ThumbnailUpdate">
           <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-            <Image Style="{DynamicResource TopButtonImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/FolderOpenState16.png"/>
-            <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_THUMB_REPLACE}"/>
+            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/FolderOpenState16.png"/>
+            <TextBlock Text="{x:Static r:Resources.BTN_THUMB_REPLACE}"/>
           </StackPanel>
         </Button>
       </StackPanel>

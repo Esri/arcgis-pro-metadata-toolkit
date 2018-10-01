@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_EntityAttributeRangeDomain" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_EntityAttributeRangeDomain" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -45,7 +45,7 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorSubPageStyle}">
+  <Grid>
     <StackPanel>
       <Grid>
         <Grid.RowDefinitions>
@@ -66,53 +66,52 @@
         -->
 
         <!-- range domain minimum -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0"
-            Content="{x:Static r:Resources.LBL_EAINFO_RDOMMIN}"/>
-        <TextBox Grid.Row="0" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" 
+        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_RDOMMIN}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" 
             v:Nav.AnchorName="rdommin,rdommin" v:MetadataRules.Rules="{StaticResource rdommin}"
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_rdommin}"
             Text="{e:MetadataBinding XPath=rdommin}"
             Name="FGDC_EntityAndAttribute_rdommin"/>
 
         <!-- range domain maximum -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0"
+        <Label Grid.Row="1" Grid.Column="0"
             Content="{x:Static r:Resources.LBL_EAINFO_RDOMMAX}"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" 
+        <TextBox Grid.Row="1" Grid.Column="1" 
             v:Nav.AnchorName="rdommax,rdommax" v:MetadataRules.Rules="{StaticResource rdommax}"
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_rdommax}"
             Text="{e:MetadataBinding XPath=rdommax}"
             Name="FGDC_EntityAndAttribute_rdommax"/>
 
         <!-- domain mean -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0"
+        <Label Grid.Row="2" Grid.Column="0"
             Content="{x:Static r:Resources.LBL_EAINFO_RDOMMEAN}"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" 
+        <TextBox Grid.Row="2" Grid.Column="1" 
             v:Nav.AnchorName="rdommean,rdommean" v:MetadataRules.Rules="{StaticResource rdommean}"
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_rdommean}"
             Text="{e:MetadataBinding XPath=rdommean}"
             Name="FGDC_EntityAndAttribute_rdommean"/>
 
         <!-- standard deviation -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="3" Grid.Column="0"
+        <Label Grid.Row="3" Grid.Column="0"
             Content="{x:Static r:Resources.LBL_EAINFO_RDOMSTDV}"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" 
+        <TextBox Grid.Row="3" Grid.Column="1" 
             v:Nav.AnchorName="rdomstdv,rdomstdv" v:MetadataRules.Rules="{StaticResource rdomstdv}"
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_rdomstdv}"
             Text="{e:MetadataBinding XPath=rdomstdv}"
             Name="FGDC_EntityAndAttribute_rdomstdv"/>
 
         <!-- units of measure -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="4" Grid.Column="0"
+        <Label Grid.Row="4" Grid.Column="0"
             Content="{x:Static r:Resources.LBL_EAINFO_ATTRUNIT}"/>
-        <TextBox Grid.Row="4" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}"
+        <TextBox Grid.Row="4" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_rdomunit}"
             Text="{e:MetadataBinding XPath=attrunit}"
             Name="FGDC_EntityAndAttribute_rdomunit"/>
 
         <!-- mesaurement resolution -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="5" Grid.Column="0"
+        <Label Grid.Row="5" Grid.Column="0"
             Content="{x:Static r:Resources.LBL_EAINFO_ATTRMRES}"/>
-        <TextBox Grid.Row="5" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" 
+        <TextBox Grid.Row="5" Grid.Column="1" 
             v:Nav.AnchorName="attrmres,attrmres" v:MetadataRules.Rules="{StaticResource attrmres}"
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_rdommres}"
             Text="{e:MetadataBinding XPath=attrmres}"

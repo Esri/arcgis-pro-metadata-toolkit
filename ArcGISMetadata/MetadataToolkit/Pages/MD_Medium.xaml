@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="MetadataToolkit.MTK_MD_Medium" x:ClassModifier="internal" 
+<p:EditorPage x:Class="MetadataToolkit.MTK_MD_Medium" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -79,7 +79,7 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorSubPageStyle}">
+  <Grid>
     <StackPanel>
       <Grid>
         <Grid.RowDefinitions>
@@ -96,8 +96,8 @@
         </Grid.ColumnDefinitions>
 
         <!-- medium name -->
-        <Label Grid.Row="0" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_MED_NAME}"/>
-        <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="medName/MedNameCd/@value" Grid.Row="0" Grid.Column="1" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_MED_NAME}"/>
+        <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="medName/MedNameCd/@value" Grid.Row="0" Grid.Column="1" IsEditable="False"
             ToolTip="{x:Static r:Definitions.MD_Medium_name}"
             ItemsSource="{Binding Source={StaticResource MD_MediumNameCode}, Path=List}"
             DisplayMemberPath="."
@@ -109,33 +109,32 @@
         </ComboBox>
 
         <!-- density -->
-        <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=medDensity}">
+        <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding XPath=medDensity}">
           <ListBox.ItemTemplate>
             <DataTemplate>
 
               <DockPanel LastChildFill="True">
-                <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_DIGOPT_DENSITY}"/>
+                <Label DockPanel.Dock="Left" Content="{x:Static r:Resources.LBL_DIGOPT_DENSITY}"/>
 
                 <!-- add if the last sibling -->
-                <ListBox DockPanel.Dock="Right" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(following-sibling::medDensity)]}">
+                <ListBox DockPanel.Dock="Right" ItemsSource="{Binding XPath=self::*[not(following-sibling::medDensity)]}">
                   <ListBox.ItemTemplate>
                     <DataTemplate>
-                      <Button Tag="MediumDensity_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
-                              Name="MD_Medium_DensityAdd">
-                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Button Tag="MediumDensity_Parent" Click="AddRecordByTagToLocal" Name="MD_Medium_DensityAdd">
+                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
                       </Button>
                     </DataTemplate>
                   </ListBox.ItemTemplate>
                 </ListBox>
 
                 <!-- delete -->
-                <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
+                <Button DockPanel.Dock="Right" Click="DeleteItem"
                         AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Medium_DensityDelete}">
-                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                 </Button>
 
                 <!-- density -->
-                <TextBox Style="{DynamicResource EditorTextBoxStyle}" ToolTip="{x:Static r:Definitions.MD_Medium_density}"
+                <TextBox ToolTip="{x:Static r:Definitions.MD_Medium_density}"
                     v:Nav.AnchorName="medDensity,." v:MetadataRules.Rules="{StaticResource medDensity}"
                     Text="{e:MetadataBinding XPath=.}"
                     AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Medium_density}"/>
@@ -146,25 +145,25 @@
         </ListBox>
 
         <!-- density units -->
-        <Label Grid.Row="2" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_MED_DENUNITS}"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" 
+        <Label Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_MED_DENUNITS}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" 
             ToolTip="{x:Static r:Definitions.MD_Medium_densityUnits}"
             v:Nav.AnchorName="medDenUnits,medDenUnits"
             Text="{e:MetadataBinding XPath=medDenUnits}"
             Name="MD_Medium_densityUnits"/>
 
         <!-- volumes -->
-        <Label Grid.Row="3" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_MED_VOLUMES}"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" ToolTip="{x:Static r:Definitions.MD_Medium_volumes}" 
+        <Label Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_MED_VOLUMES}"/>
+        <TextBox Grid.Row="3" Grid.Column="1" ToolTip="{x:Static r:Definitions.MD_Medium_volumes}" 
             v:Nav.AnchorName="medVol,medVol" v:MetadataRules.Rules="{StaticResource medVol}"
             Text="{e:MetadataBinding XPath=medVol}"
             Name="MD_Medium_volumes"/>
 
         <!-- note -->
         <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
-          <Label Style="{DynamicResource EditorVLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_MED_NOTE}"/>
+          <Label Content="{x:Static r:Resources.LBL_MED_NOTE}"/>
           <controls:Resizer>
-            <TextBox Style="{DynamicResource EditorTextAreaShortResizeStyle}" ToolTip="{x:Static r:Definitions.MD_Medium_mediumNote}" 
+            <TextBox ToolTip="{x:Static r:Definitions.MD_Medium_mediumNote}" 
                 Text="{e:MetadataBinding XPath=medNote}"
                 Name="MD_Medium_mediumNote"/>
           </controls:Resizer>
@@ -172,7 +171,7 @@
       </Grid>
 
       <!-- medium format -->
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+      <ListBox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
           ItemsSource="{Binding XPath=medFormat}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
@@ -182,22 +181,21 @@
         <ListBox.ItemTemplate>
           <DataTemplate>
             <DockPanel LastChildFill="True">
-              <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_MED_FORMAT}"/>
+              <Label DockPanel.Dock="Left" Content="{x:Static r:Resources.LBL_MED_FORMAT}"/>
               <!-- add if the last sibling -->
-              <ListBox DockPanel.Dock="Right" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(following-sibling::medFormat)]}">
+              <ListBox DockPanel.Dock="Right" ItemsSource="{Binding XPath=self::*[not(following-sibling::medFormat)]}">
                 <ListBox.ItemTemplate>
                   <DataTemplate>
-                    <Button Tag="Format_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
-                            Name="MD_Medium_MediumFormatCodeAdd">
-                      <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                    <Button Tag="Format_Parent" Click="AddRecordByTagToLocal" Name="MD_Medium_MediumFormatCodeAdd">
+                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
                     </Button>
                   </DataTemplate>
                 </ListBox.ItemTemplate>
               </ListBox>
               <!-- delete -->
-              <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
+              <Button DockPanel.Dock="Right" Click="DeleteItem"
                       AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Medium_MediumFormatCodeDelete}">
-                <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
               </Button>
               <!-- medium format code -->
               <t:MTK_MD_MediumFormatCode/>
