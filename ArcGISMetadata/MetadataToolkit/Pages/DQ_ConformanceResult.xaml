@@ -36,29 +36,27 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorSubPageStyle}">
+  <Grid>
     <StackPanel>
 
       <!-- passed? -->
-      <CheckBox Style="{DynamicResource EditorCheckBoxIdentStyle}"
-          Content="{x:Static r:Resources.LBL_DQ_PASS}"
+      <CheckBox Content="{x:Static r:Resources.LBL_DQ_PASS}"
           v:Nav.AnchorName="conPass"
           ToolTip="{x:Static r:Definitions.DQ_ConformanceResult_pass}"
           IsChecked="{Binding XPath=conPass, Converter={StaticResource StringToBoolConverter}}"
           Name="DQ_ConformanceResult_pass"/>
 
       <!-- explaination-->
-      <Label Style="{DynamicResource EditorVLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_DQ_CNFRMEXPLAIN}"/>
+      <Label Content="{x:Static r:Resources.LBL_DQ_CNFRMEXPLAIN}"/>
       <controls:Resizer>
-        <TextBox Style="{DynamicResource EditorTextAreaResizeStyle}" 
-            ToolTip="{x:Static r:Definitions.DQ_ConformanceResult_explanation}" 
+        <TextBox ToolTip="{x:Static r:Definitions.DQ_ConformanceResult_explanation}" 
             v:Nav.AnchorName="conExpl,conExpl"  
             Text="{e:MetadataBinding XPath=conExpl}"
             Name="DQ_ConformanceResult_explanation"/>
       </controls:Resizer>
 
       <!-- specification -->
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=conSpec}">
+      <ListBox ItemsSource="{Binding XPath=conSpec}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel />
@@ -66,13 +64,12 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Expander Style="{DynamicResource EditorExpander2Style}"
-                      Name="DQ_ConformanceResult_SpecificationGroup">
+            <Expander Name="DQ_ConformanceResult_SpecificationGroup">
               <Expander.Header>
-                <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_DQ_SPEC}"/>
+                <Label Content="{x:Static r:Resources.LBL_DQ_SPEC}"/>
               </Expander.Header>
               <!-- citation -->
-              <Border Style="{DynamicResource EditorBorderSubStyle}">
+              <Border>
                 <t:MTK_CI_Citation v:Nav.AnchorName="conSpec" />
               </Border>
             </Expander>

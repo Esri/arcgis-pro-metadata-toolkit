@@ -149,7 +149,7 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorSubPageStyle}">
+  <Grid>
     <StackPanel>
       <Grid>
         <Grid.RowDefinitions>
@@ -193,7 +193,7 @@
         -->
 
         <!-- Attribute Label -->
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTRLABL}"/>
+        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ATTRLABL}"/>
         <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1" 
             ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_attrlabl}"
             v:Nav.AnchorName="attrlabl,attrlabl" v:MetadataRules.Rules="{x:Static v:MetadataRules.CheckRules}"

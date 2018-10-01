@@ -16,10 +16,10 @@
 
   <Grid>
     <StackPanel>
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=countryCode}">
+      <ListBox ItemsSource="{Binding XPath=countryCode}">
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <ComboBox Loaded="PostProcessComboBoxValues" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+            <ComboBox Loaded="PostProcessComboBoxValues" IsEditable="False"
                 ToolTip="{x:Static r:Definitions.CI_Address_country}"
                 ItemsSource="{Binding Source={StaticResource CountryCodes}, Path=List}"
                 DisplayMemberPath="."

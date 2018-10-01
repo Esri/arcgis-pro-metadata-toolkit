@@ -24,7 +24,7 @@
   </UserControl.Resources>
 
   <Grid>
-    <ComboBox Loaded="PostProcessComboBoxValues" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+    <ComboBox Loaded="PostProcessComboBoxValues" IsEditable="False"
         ToolTip="{x:Static r:Definitions.MD_AggregateInformation_initiativeType}"
         ItemsSource="{Binding Source={StaticResource DS_InitiativeTypeCode}, Path=List}"
         DisplayMemberPath="."

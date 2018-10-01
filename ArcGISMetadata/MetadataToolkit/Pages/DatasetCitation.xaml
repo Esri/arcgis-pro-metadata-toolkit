@@ -42,8 +42,8 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorFrontPageStyle}">
-    <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata/dataIdInfo[1]/idCitation}">
+  <Grid>
+    <ListBox ItemsSource="{Binding XPath=/metadata/dataIdInfo[1]/idCitation}">
       <ListBox.ItemsPanel>
         <ItemsPanelTemplate>
           <StackPanel/>
@@ -52,7 +52,7 @@
       <ListBox.ItemTemplate>
         <DataTemplate>
           <StackPanel>
-            <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_RES_CITE}"/>
+            <Label Content="{x:Static r:Resources.SEC_RES_CITE}"/>
             <!-- citation -->
             <t:MTK_CI_Citation SupressParties="True" SupressOnlineResource="True"/>
           </StackPanel>

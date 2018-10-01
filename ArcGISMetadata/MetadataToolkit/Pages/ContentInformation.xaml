@@ -93,15 +93,15 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorFrontPageStyle}">
-    <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata}">
+  <Grid>
+    <ListBox ItemsSource="{Binding XPath=/metadata}">
       <ListBox.ItemTemplate>
         <DataTemplate>
           <StackPanel>
             <!-- label -->
-            <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_CONTENT_INFO}"/>
+            <Label Content="{x:Static r:Resources.SEC_CONTENT_INFO}"/>
             <!-- coverage description -->
-            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=contInfo[CovDesc]}">
+            <ListBox ItemsSource="{Binding XPath=contInfo[CovDesc]}">
               <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                   <StackPanel/>
@@ -109,22 +109,20 @@
               </ListBox.ItemsPanel>
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Border Style="{DynamicResource EditorBorder2Style}" >
-                    <Expander Style="{DynamicResource EditorExpander2Style}"
-                              AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ResourceContent_CoverageDescriptionGroup}">
+                  <Border>
+                    <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ResourceContent_CoverageDescriptionGroup}">
                       <Expander.Header>
                         <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                             RelativeSource={RelativeSource FindAncestor,
                             AncestorType={x:Type ContentPresenter}},
                             Mode=OneWayToSource}" LastChildFill="True">
-                          <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
-                                  Name="ResourceContent_CoverageDescriptionDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                          <Button DockPanel.Dock="Right" Click="DeleteItem" Name="ResourceContent_CoverageDescriptionDelete">
+                            <Image  Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
-                          <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_COV_DESC}"/>
+                          <Label Content="{x:Static r:Resources.LBL_COV_DESC}"/>
                         </DockPanel>
                       </Expander.Header>
-                      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=CovDesc}">
+                      <ListBox ItemsSource="{Binding XPath=CovDesc}">
                         <ListBox.ItemTemplate>
                           <DataTemplate>
                             <!-- coverage description -->
@@ -139,7 +137,7 @@
             </ListBox>
 
             <!-- image description -->
-            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=contInfo[ImgDesc]}">
+            <ListBox ItemsSource="{Binding XPath=contInfo[ImgDesc]}">
               <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                   <StackPanel/>
@@ -147,22 +145,20 @@
               </ListBox.ItemsPanel>
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Border Style="{DynamicResource EditorBorder2Style}" >
-                    <Expander Style="{DynamicResource EditorExpander2Style}"
-                              AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ResourceContent_ImageDescriptionGroup}">
+                  <Border>
+                    <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ResourceContent_ImageDescriptionGroup}">
                       <Expander.Header>
                         <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                             RelativeSource={RelativeSource FindAncestor,
                             AncestorType={x:Type ContentPresenter}},
                             Mode=OneWayToSource}" LastChildFill="True">
-                          <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
-                                  Name="ResourceContent_ImageDescriptionDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                          <Button DockPanel.Dock="Right" Click="DeleteItem" Name="ResourceContent_ImageDescriptionDelete">
+                            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
-                          <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_COV_IMGDESC}"/>
+                          <Label Content="{x:Static r:Resources.LBL_COV_IMGDESC}"/>
                         </DockPanel>
                       </Expander.Header>
-                      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=ImgDesc}">
+                      <ListBox ItemsSource="{Binding XPath=ImgDesc}">
                         <ListBox.ItemTemplate>
                           <DataTemplate>
                             <!-- image description -->
@@ -177,7 +173,7 @@
             </ListBox>
 
             <!-- feature catalog -->
-            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=contInfo[FetCatDesc]}">
+            <ListBox ItemsSource="{Binding XPath=contInfo[FetCatDesc]}">
               <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                   <StackPanel/>
@@ -185,22 +181,20 @@
               </ListBox.ItemsPanel>
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Border Style="{DynamicResource EditorBorder2Style}" >
-                    <Expander Style="{DynamicResource EditorExpander2Style}"
-                              AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ResourceContent_FeatureCatalogGroup}">
+                  <Border>
+                    <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ResourceContent_FeatureCatalogGroup}">
                       <Expander.Header>
                         <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                             RelativeSource={RelativeSource FindAncestor,
                             AncestorType={x:Type ContentPresenter}},
                             Mode=OneWayToSource}" LastChildFill="True">
-                          <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
-                                  Name="ResourceContent_FeatureCatalogDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                          <Button DockPanel.Dock="Right" Click="DeleteItem" Name="ResourceContent_FeatureCatalogDelete">
+                            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
-                          <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_COV_FEATCAT}"/>
+                          <Label Content="{x:Static r:Resources.LBL_COV_FEATCAT}"/>
                         </DockPanel>
                       </Expander.Header>
-                      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=FetCatDesc}">
+                      <ListBox ItemsSource="{Binding XPath=FetCatDesc}">
                         <ListBox.ItemTemplate>
                           <DataTemplate>
                             <!-- feature catalog description -->
@@ -215,29 +209,26 @@
             </ListBox>
 
             <!-- ADD Converage Description -->
-            <Button Tag="CovDesc" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
-                    Name="ResourceContent_CoverageDescriptionAdd">
+            <Button Tag="CovDesc" Click="AddRecordByTagToLocal" Name="ResourceContent_CoverageDescriptionAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_COV_NEW_COVDESC}"/>
+                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <TextBlock Text="{x:Static r:Resources.BTN_COV_NEW_COVDESC}"/>
               </StackPanel>
             </Button>
 
             <!-- ADD Image Description -->
-            <Button Tag="ImgDesc" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
-                    Name="ResourceContent_ImageDescriptionAdd">
+            <Button Tag="ImgDesc" Click="AddRecordByTagToLocal" Name="ResourceContent_ImageDescriptionAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_COV_NEW_IMGDESC}"/>
+                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <TextBlock Text="{x:Static r:Resources.BTN_COV_NEW_IMGDESC}"/>
               </StackPanel>
             </Button>
 
             <!-- ADD feature catalogue description -->
-            <Button Tag="FetCatDesc" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
-                    Name="ResourceContent_FeatureCatalogAdd">
+            <Button Tag="FetCatDesc" Click="AddRecordByTagToLocal" Name="ResourceContent_FeatureCatalogAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_COV_NEW_FEATCAT}"/>
+                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <TextBlock Text="{x:Static r:Resources.BTN_COV_NEW_FEATCAT}"/>
               </StackPanel>
             </Button>
           </StackPanel>

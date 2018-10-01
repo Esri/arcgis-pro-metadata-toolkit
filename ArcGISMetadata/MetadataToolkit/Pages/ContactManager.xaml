@@ -16,11 +16,11 @@
     <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter" />
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorFrontPageStyle}">
+  <Grid>
     <StackPanel>
       <!-- label -->
-      <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_CONTACT_MGR}"/>
-      <ListBox x:Name="contactsListBox" Style="{DynamicResource EditorNoScrollListBoxStyle}">
+      <Label Content="{x:Static r:Resources.SEC_CONTACT_MGR}"/>
+      <ListBox x:Name="contactsListBox">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel/>
@@ -28,19 +28,17 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Border Style="{DynamicResource EditorBorder2Style}">
-              <Expander Style="{DynamicResource EditorExpander2Style}" 
-                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ContactManager_Group}">
+            <Border>
+              <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ContactManager_Group}">
                 <Expander.Header>
                   <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                         RelativeSource={RelativeSource FindAncestor,
                         AncestorType={x:Type ContentPresenter}},
                         Mode=OneWayToSource}" LastChildFill="True">
-                    <CheckBox DockPanel.Dock="Right" Style="{DynamicResource EditorCheckBoxStyle}"
-                          Content="{x:Static r:Resources.LBL_CM_Save}" Unchecked="OnUnCheck" Checked="OnCheck" Tag="{Binding XPath=editorSource/text()}" IsChecked="{Binding XPath=editorSave, Mode=TwoWay}"
+                    <CheckBox DockPanel.Dock="Right" Content="{x:Static r:Resources.LBL_CM_Save}" Unchecked="OnUnCheck" Checked="OnCheck" Tag="{Binding XPath=editorSource/text()}" IsChecked="{Binding XPath=editorSave, Mode=TwoWay}"
                           AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ContactManager_Save}"/>
 
-                    <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding ElementName=responsibleParty, Path=DefaultValue}"/>
+                    <Label Content="{Binding ElementName=responsibleParty, Path=DefaultValue}"/>
                   </DockPanel>
                 </Expander.Header>
                 <!-- party -->

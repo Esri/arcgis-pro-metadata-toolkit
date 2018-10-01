@@ -77,11 +77,11 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorFrontPageStyle}">
+  <Grid>
     <StackPanel>
       <!-- page title -->
-      <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_DATAQUAL}"/>
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata/dqInfo}">
+      <Label Content="{x:Static r:Resources.SEC_DATAQUAL}"/>
+      <ListBox ItemsSource="{Binding XPath=/metadata/dqInfo}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel/>

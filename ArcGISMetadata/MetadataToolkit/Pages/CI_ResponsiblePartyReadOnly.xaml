@@ -67,8 +67,8 @@
             Name="CI_ResponsibleParty_positionName"/>
 
         <!-- role 
-        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Role}"/>
-        <ComboBox IsEnabled="False" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="role/RoleCd/@value" Grid.Row="3" Grid.Column="1" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+        <Label Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_CI_Role}"/>
+        <ComboBox IsEnabled="False" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="role/RoleCd/@value" Grid.Row="3" Grid.Column="1" IsEditable="False"
             v:Nav.AnchorName="role,role"
             ToolTip="{x:Static r:Definitions.CI_ResponsibleParty_role}"
             ItemsSource="{Binding Source={StaticResource CI_RoleCode}, Path=List}"

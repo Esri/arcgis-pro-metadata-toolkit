@@ -25,7 +25,7 @@
   </UserControl.Resources>
 
   <Grid>
-    <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="AscTypeCd/@value" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+    <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="AscTypeCd/@value" IsEditable="False"
         ToolTip="{x:Static r:Definitions.MD_AggregateInformation_associationType}"
         ItemsSource="{Binding Source={StaticResource DS_AssociationTypeCode}, Path=List}"
         DisplayMemberPath="."

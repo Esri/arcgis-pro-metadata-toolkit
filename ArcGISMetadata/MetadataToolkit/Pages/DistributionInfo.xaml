@@ -50,8 +50,8 @@
 
   </UserControl.Resources>
 
-  <Grid Style="{DynamicResource EditorFrontPageStyle}">
-    <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata/distInfo}">
+  <Grid>
+    <ListBox ItemsSource="{Binding XPath=/metadata/distInfo}">
       <ListBox.ItemsPanel>
         <ItemsPanelTemplate>
           <StackPanel/>
@@ -60,7 +60,7 @@
       <ListBox.ItemTemplate>
         <DataTemplate>
           <StackPanel>
-            <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_DISTRIBUTION}"/>
+            <Label Content="{x:Static r:Resources.SEC_DISTRIBUTION}"/>
             <!-- distribution section -->
             <t:MTK_MD_Distribution/>
           </StackPanel>
