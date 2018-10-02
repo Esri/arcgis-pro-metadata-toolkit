@@ -19,7 +19,7 @@
             <editor>
               <forms>
                 <section class="MetadataToolkit.Sections.Overview">
-                  <page class="MetadataToolkit.MTK_ItemInfo">
+                  <page class="MetadataToolkit.Pages.MTK_ItemInfo">
                     <validation>
                       <!-- title -->
                       <exists xpath="/metadata/dataIdInfo/idCitation/resTitle[. != '']" ref="resTitle" />
@@ -46,7 +46,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_Keywords">
+                  <page class="MetadataToolkit.Pages.MTK_Keywords">
                     <validation>
                       <!-- topic categories required for dataset or series -->
                       <for xpath="/metadata[mdHrLv/ScopeCd/@value = '005' or mdHrLv/ScopeCd/@value = '006']">
@@ -106,7 +106,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_DatasetCitation">
+                  <page class="MetadataToolkit.Pages.MTK_DatasetCitation">
                     <validation>
                       <!-- citation -->
                       <!-- title and date required for main citation and identifier citation -->
@@ -140,7 +140,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_ResourceCitationContacts">
+                  <page class="MetadataToolkit.Pages.MTK_ResourceCitationContacts">
                     <validation>
                       <!-- contact name, org or role -->
                       <for xpath="/metadata/dataIdInfo/idCitation/citRespParty">
@@ -153,8 +153,8 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_ContactManager"></page>
-                  <page class="MetadataToolkit.MTK_Locales">
+                  <page class="MetadataToolkit.Pages.MTK_ContactManager"></page>
+                  <page class="MetadataToolkit.Pages.MTK_Locales">
                     <validation>
                       <!-- language is required for all locales -->
                       <for xpath="/metadata/Esri/locales/locale">
@@ -162,13 +162,13 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.CustomPage">
+                  <page class="MetadataToolkit.Pages.CustomPage">
                     <validation>
                     </validation>
                   </page>
                 </section>
                 <section class="MetadataToolkit.Sections.Metadata">
-                  <page class="MetadataToolkit.MTK_MetadataDetails">
+                  <page class="MetadataToolkit.Pages.MTK_MetadataDetails">
                     <validation>
                       <!-- language is required for all iso styles -->
                       <exists xpath="/metadata/mdLang/languageCode[@value != '']" ref="languageCode" />
@@ -180,7 +180,7 @@
                       <exists xpath="/metadata/mdDateSt[. != '']" ref="mdDateSt" />
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_MetadataContacts">
+                  <page class="MetadataToolkit.Pages.MTK_MetadataContacts">
                     <validation>
                       <!-- one contact requried -->
                       <exists xpath="/metadata[mdContact]" ref="mdContact" />
@@ -195,7 +195,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_MetadataMaintenance">
+                  <page class="MetadataToolkit.Pages.MTK_MetadataMaintenance">
                     <validation>
                       <for xpath="//mdMaint">
                         <!-- maintentance frequency -->
@@ -218,7 +218,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_MetadataConstraints">
+                  <page class="MetadataToolkit.Pages.MTK_MetadataConstraints">
                     <validation>
                       <!-- classification code -->
                       <for xpath="//mdConst/SecConsts">
@@ -236,7 +236,7 @@
                   </page>
                 </section>
                 <section class="MetadataToolkit.Sections.Resource">
-                  <page class="MetadataToolkit.MTK_ResourceDetails">
+                  <page class="MetadataToolkit.Pages.MTK_ResourceDetails">
                     <validation>
                       <!-- language of the dataset is mandatory as long as the hierarchy level code != service -->
                       <for xpath="/metadata[mdHrLv/ScopeCd/@value != '014']">
@@ -270,7 +270,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_ResourceExtent">
+                  <page class="MetadataToolkit.Pages.MTK_ResourceExtent">
                     <validation>
                       <!-- either a bounding box or a geographic description (identifier) must be provided if the item's hierarchy level is "dataset" -->
                       <for xpath="/metadata[mdHrLv/ScopeCd/@value = '005']">
@@ -317,7 +317,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_ResourcePoc">
+                  <page class="MetadataToolkit.Pages.MTK_ResourcePoc">
                     <validation>
                       <!-- contact name, org or role -->
                       <for xpath="//dataIdInfo/idPoC">
@@ -330,7 +330,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_ResourceMaintenance">
+                  <page class="MetadataToolkit.Pages.MTK_ResourceMaintenance">
                     <validation>
                       <for xpath="//resMaint">
                         <!-- maintentance frequency -->
@@ -353,7 +353,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_ResourceConstraints">
+                  <page class="MetadataToolkit.Pages.MTK_ResourceConstraints">
                     <validation>
                       <!-- classification code -->
                       <for xpath="//resConst/SecConsts">
@@ -369,7 +369,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_ReferenceSystem">
+                  <page class="MetadataToolkit.Pages.MTK_ReferenceSystem">
                     <validation>
                       <!-- reference system ID -->
                       <for xpath="//RefSystem">
@@ -400,7 +400,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_SpatialRepresentation">
+                  <page class="MetadataToolkit.Pages.MTK_SpatialRepresentation">
                     <validation>
                       <!-- dimension type -->
                       <for xpath="//axisDimension">
@@ -465,7 +465,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_ContentInformation">
+                  <page class="MetadataToolkit.Pages.MTK_ContentInformation">
                     <validation>
                       <!-- content information citations -->
                       <!--  title and date required -->
@@ -537,7 +537,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_DataQuality">
+                  <page class="MetadataToolkit.Pages.MTK_DataQuality">
                     <validation>
                       <!-- data quality report type -->
                       <for xpath="//dqInfo/report">
@@ -635,7 +635,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_LI_Lineage">
+                  <page class="MetadataToolkit.Pages.MTK_LI_Lineage">
                     <validation>
                       <!-- if scope = "dataset" or "series", one of process step, data source, or lineage statement is required -->
                       <for xpath="//dqInfo[dqScope/scpLvl/ScopeCd/@value = '005' or dqScope/scpLvl/ScopeCd/@value = '006']">
@@ -719,7 +719,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_DistributionInfo">
+                  <page class="MetadataToolkit.Pages.MTK_DistributionInfo">
                     <validation>
                       <!-- format name and version -->
                       <for xpath="//distFormat">
@@ -749,7 +749,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_EntityAttributeInfo">
+                  <page class="MetadataToolkit.Pages.MTK_EntityAttributeInfo">
                     <validation>
                       <!-- codeset domains -->
                       <for xpath="//codesetd">
@@ -792,7 +792,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_References">
+                  <page class="MetadataToolkit.Pages.MTK_References">
                     <validation>
                       <!-- aggregate resource -->
                       <!-- association type required under aggregate information -->
@@ -882,7 +882,7 @@
                       </for>
                     </validation>
                   </page>
-                  <page class="MetadataToolkit.MTK_GeoprocessingHistory"></page>
+                  <page class="MetadataToolkit.Pages.MTK_GeoprocessingHistory"></page>
                 </section>
               </forms>
             </editor>
