@@ -1,0 +1,1076 @@
+<ResourceDictionary x:Class="MetadataToolkit.View.GenericDictionary" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:framework="clr-namespace:ArcGIS.Desktop.Framework;assembly=ArcGIS.Desktop.Framework"
+    xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"     
+    xmlns:controls="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Controls;assembly=ArcGIS.Desktop.Metadata" 
+    xmlns:local="clr-namespace:MetadataToolkit.View"
+    xmlns:pages="clr-namespace:MetadataToolkit.Pages">
+
+  <!-- issues panel -->
+  <Style x:Key="EditorIssuesListBoxStyle" TargetType="{x:Type ListBox}">
+    <!-- left, top, right, bottom-->
+    <Setter Property="Padding" Value="0"/>
+    <Setter Property="Margin" Value="0"/>
+    <Setter Property="MaxHeight" Value="150"/>
+    <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ListBox">
+          <Border Background="{TemplateBinding Background}" Padding="10" Margin="3" BorderThickness="0,0,0,1" BorderBrush="#CCCCCC">
+            <ScrollViewer>
+              <ItemsPresenter />
+            </ScrollViewer>
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <DataTrigger
+          Binding="{Binding HasItems, RelativeSource={RelativeSource Self}}"
+          Value="False">
+        <Setter Property="Visibility" Value="Collapsed" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+  
+  <!-- issue type -->
+  <Style x:Key="EditorIssueTypeStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource RegularText}">
+    <Setter Property="Margin" Value="0 0 0 0"/>
+  </Style>
+
+  <!-- validation page images -->
+  <Style x:Key="EditorImageValidUnknownStyle" TargetType="{x:Type Image}">
+    <Setter Property="Height" Value="16"/>
+    <Setter Property="Width" Value="16"/>
+    <Setter Property="Margin" Value="0 0 5 0"/>
+    <Setter Property="Source" Value="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MetadataDocument16.png" />
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding XPath=@valid}" Value="false">
+        <Setter Property="Source" Value="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MetadataInvalid16.png" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding XPath=@valid}" Value="true">
+        <Setter Property="Source" Value="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MetadataValid16.png" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+
+  <!-- resizer control -->
+  <local:GripAlignmentConverter x:Key="GripAlignmentConverter"/>
+  <local:GripCursorConverter x:Key="GripCursorConverter"/>
+  <local:GripRotationConverter x:Key="GripRotationConverter"/>
+
+  <Style TargetType="{x:Type controls:Resizer}">
+    <Setter Property="VerticalAlignment" Value="Top"/>
+    <Setter Property="HorizontalAlignment" Value="Left"/>
+    <Setter Property="MinWidth" Value="17"/>
+    <Setter Property="IsTabStop" Value="False"/>
+    <Setter Property="Width" Value="{Binding 
+        RelativeSource={RelativeSource FindAncestor, 
+        AncestorType={x:Type Panel}}, Path=ActualWidth}"/>
+    <Setter Property="MinHeight" Value="17"/>
+    <!-- left, top, right, bottom -->
+    <Setter Property="Margin" Value="0 0 0 10"/>
+
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type controls:Resizer}">
+          <Grid Background="{TemplateBinding Background}">
+            <ContentPresenter x:Name="TheContent" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" ContentTemplate="{TemplateBinding ContentTemplate}" RecognizesAccessKey="True"/>
+            <ResizeGrip x:Name="PART_Grip" IsEnabled="{TemplateBinding IsGripEnabled}" HorizontalAlignment="{TemplateBinding ResizeDirection, Converter={StaticResource GripAlignmentConverter}, ConverterParameter={x:Static Orientation.Horizontal}}" VerticalAlignment="{TemplateBinding ResizeDirection, Converter={StaticResource GripAlignmentConverter}, ConverterParameter={x:Static Orientation.Vertical}}" Cursor="{TemplateBinding ResizeDirection, Converter={StaticResource GripCursorConverter}}" Width="17" Height="17" MouseLeftButtonDown="PART_Grip_MouseLeftButtonDown" MouseLeftButtonUp="PART_Grip_MouseLeftButtonUp" MouseMove="PART_Grip_MouseMove" MouseDoubleClick="PART_Grip_MouseDoubleClick" Focusable="False">
+              <ResizeGrip.LayoutTransform>
+                <RotateTransform Angle="{Binding ResizeDirection, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource GripRotationConverter}}" CenterX="8" CenterY="8"/>
+              </ResizeGrip.LayoutTransform>
+            </ResizeGrip>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!-- SIDEBAR GRID -->
+  <Style x:Key="EditorSidebarGridStyle" TargetType="{x:Type Grid}">
+    <Setter Property="Background" Value="#FBFBFC"/>
+  </Style>
+
+  <!-- VIEW GRID STYLE -->
+  <Style x:Key="EditorViewerGridStyle" TargetType="{x:Type Grid}">
+    <Setter Property="Background" Value="#FBFBFC"/>
+  </Style>
+
+  <!-- GRID SPLITTER -->
+  <Style x:Key="EditorGridSplitterStyle" TargetType="GridSplitter">
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Stretch"/>
+    <Setter Property="Background" Value="#ccc"/>
+    <Setter Property="ShowsPreview" Value="True"/>
+    <Setter Property="Width" Value="4"/>
+  </Style>
+
+  <Style x:Key="EditorGridSplitterIssuesStyle" TargetType="GridSplitter">
+    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="Background" Value="#ccc"/>
+    <Setter Property="ShowsPreview" Value="True"/>
+    <Setter Property="Width" Value="4"/>
+  </Style>
+
+  <!-- Top-level Page Style -->
+  <Style x:Key="EditorFrontPageStyle" TargetType="Grid">
+    <Setter Property="Margin" Value="10"/>
+    <Setter Property="Focusable" Value="False"/>
+  </Style>
+
+  <!-- Top-level Page Title Style -->
+  <Style x:Key="EditorPageTitle" TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+    <Setter Property="FontSize" Value="20"/>
+    <Setter Property="Margin" Value="0 0 0 8"/>
+  </Style>
+
+  <!-- Second-level Page Title Style -->
+  <Style x:Key="EditorPageTitle2" TargetType="Label">
+    <Setter Property="FontSize" Value="16"/>
+    <Setter Property="Margin" Value="0 0 0 6"/>
+  </Style>
+
+  <!-- Sub-Page Style -->
+  <Style x:Key="EditorSubPageStyle" TargetType="Grid">
+    <Setter Property="Margin" Value="18 6 0 6"/>
+    <Setter Property="Focusable" Value="False"/>
+  </Style>
+
+  <!-- Sub-Page Style for StackPanel -->
+  <Style x:Key="EditorSubPageStackPanelStyle" TargetType="StackPanel">
+    <Setter Property="Margin" Value="18 6 0 6"/>
+    <Setter Property="Focusable" Value="False"/>
+  </Style>  
+
+  <!-- Sub-ListBox Style -->
+  <Style x:Key="EditorSubListBoxStyle" TargetType="ListBox">
+    <Setter Property="Margin" Value="18 6 0 6"/>
+    <Setter Property="BorderThickness" Value="0"/>
+  </Style>
+
+  <!-- Sub-Section Style -->
+  <Style x:Key="EditorSubSectionStyle" TargetType="Grid">
+    <Setter Property="Margin" Value="0 0 0 0"/>
+    <Setter Property="Focusable" Value="False"/>
+  </Style>
+
+  <!-- Sub-Section Vertical Style -->
+  <Style x:Key="EditorSubVSectionStyle" TargetType="Grid">
+    <Setter Property="Margin" Value="0 10 0 0"/>
+  </Style>
+
+  <!-- Horizontal Rule Border -->
+  <Style x:Key="EditorBorderHRuleStyle" TargetType="Border">
+    <Setter Property="BorderBrush" Value="#CCCCCC"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="CornerRadius" Value="0"/>
+    <Setter Property="Margin" Value="75,8,75,8"/>
+    <Setter Property="Height" Value="1"/>
+  </Style>
+
+  <!-- Sub Border Style -->
+  <Style x:Key="EditorBorderSubStyle" TargetType="Border">
+    <Setter Property="BorderThickness" Value="0"/>
+    <Setter Property="Focusable" Value="False"/>
+    <Setter Property="Margin" Value="18 6 0 6"/>
+  </Style>  
+
+  <!-- Tool Bar Background-->
+  <LinearGradientBrush x:Key="EditorToolBarBackground" EndPoint="0,1" StartPoint="0,0">
+    <GradientStop Color="#FAF9F5" Offset="0.0"/>
+    <GradientStop Color="#D6D6C5" Offset="1"/>
+  </LinearGradientBrush>
+
+  <!-- Border Style for Tool Bar -->
+  <Style x:Key="EditorToolBorderStyle" TargetType="Border">
+    <Setter Property="Background" Value="{StaticResource EditorToolBarBackground}"/>
+    <Setter Property="BorderBrush" Value="#C6C6B0"/>
+    <Setter Property="BorderThickness" Value="0 0 0 1"/>
+    <Setter Property="CornerRadius" Value="0"/>
+    <Setter Property="Padding" Value="0"/>
+    <Setter Property="Margin" Value="0"/>
+    <Setter Property="Focusable" Value="False"/>
+  </Style>
+
+  <!-- Border Style for Status Bar -->
+  <Style x:Key="EditorStatusBorderStyle" TargetType="Border">
+    <!-- left, top, right, bottom-->
+    <Setter Property="Background" Value="#F3F2EB"/>
+    <Setter Property="BorderBrush" Value="#CCCCCC"/>
+    <Setter Property="BorderThickness" Value="1 4 1 1"/>
+    <Setter Property="CornerRadius" Value="0"/>
+    <Setter Property="Padding" Value="5 5 5 5"/>
+    <Setter Property="Margin" Value="0"/>
+    <Setter Property="Focusable" Value="False"/>
+  </Style>
+
+  <!-- "Lite" Border -->
+  <Style x:Key="EditorBorderV2LiteStyle" TargetType="Border">
+    <!-- left, top, right, bottom-->
+    <Setter Property="BorderBrush" Value="#E6E6E6"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="CornerRadius" Value="0"/>
+    <Setter Property="Padding" Value="3 5 10 5"/>
+    <Setter Property="Margin" Value="25 10 3 3"/>
+    <Setter Property="Focusable" Value="False"/>
+  </Style>
+
+  <!-- "Lite" Border -->
+  <Style x:Key="EditorBorder2LiteStyle" TargetType="Border">
+    <!-- left, top, right, bottom-->
+    <Setter Property="BorderBrush" Value="#E6E6E6"/>
+    <Setter Property="Focusable" Value="False"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="CornerRadius" Value="0"/>
+    <Setter Property="Padding" Value="3 5 10 5"/>
+    <Setter Property="Margin" Value="3"/>
+  </Style>
+
+  <!-- Border -->
+  <Style x:Key="EditorBorder2Style" TargetType="Border">
+    <Setter Property="BorderBrush" Value="#CCCCCC"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="CornerRadius" Value="3"/>
+    <!-- left, top, right, bottom-->
+    <Setter Property="Padding" Value="10 5 10 5"/>
+    <Setter Property="Margin" Value="3"/>
+  </Style>
+
+  <!-- Expander2 Style -->
+  <Style x:Key="EditorExpander2Style" TargetType="Expander" BasedOn="{StaticResource {x:Type Expander}}">
+    <!-- left, top, right, bottom-->
+    <Setter Property="Margin" Value="0,0,0,10"/>
+    <Setter Property="IsExpanded" Value="{Binding XPath=@editorExpand, Mode=TwoWay}"/>
+  </Style>
+  
+  <!-- Sub2NoIndent Style -->
+  <Style x:Key="EditorSub2NoIndent" TargetType="Grid">
+    <Setter Property="Margin" Value="20,0,0,0"/>
+  </Style>
+
+  <!-- StackPanel for a right checkbox panel -->
+  <Style x:Key="EditorCheckboxPanel" TargetType="StackPanel">
+    <Setter Property="Margin" Value="20,5,0,5"/>
+  </Style>
+
+  <Style x:Key="EditorCheckBoxStyle" TargetType="CheckBox" BasedOn="{StaticResource {x:Type CheckBox}}">
+    <Setter Property="Margin" Value="0 5 5 5"/>
+  </Style>
+
+  <Style x:Key="EditorCheckBoxIdentStyle" TargetType="CheckBox" BasedOn="{StaticResource {x:Type CheckBox}}">
+    <Setter Property="Margin" Value="25 5 5 5"/>
+  </Style>
+
+  <!-- Label Base Style -->
+  <Style x:Key="EditorLabelBaseStyle" TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+    <Setter Property="Padding" Value="3"/>
+  </Style>
+
+  <!-- EditorHLabel Style -->
+  <Style x:Key="EditorHLabelStyle" TargetType="Label"  BasedOn="{StaticResource EditorLabelBaseStyle}">
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="Margin" Value="25 0 10 0"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="HorizontalAlignment" Value="Left"/>
+    <Style.Triggers>
+      <Trigger Property="v:MetadataRules.HasIssue" Value="true">
+        <Setter Property="Background" Value="{StaticResource Esri_Red1}"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <!-- EditorHLabelNoIdent Style -->
+  <Style x:Key="EditorHLabelNoIdentStyle" TargetType="Label" BasedOn="{StaticResource EditorHLabelStyle}">
+    <Setter Property="Margin" Value="0 0 10 0"/>
+  </Style>
+
+  <Style x:Key="EditorHLabelLeftStyle" TargetType="Label" BasedOn="{StaticResource EditorHLabelStyle}">
+    <Setter Property="Margin" Value="0 0 10 0"/>
+  </Style>
+
+  <!-- Horizontal Message Label Style -->
+  <Style x:Key="EditorHMessageLabel" TargetType="Label" BasedOn="{StaticResource EditorHLabelStyle}">
+    <Setter Property="FontStyle" Value="Italic"/>
+  </Style>
+
+  <!-- Horizontal Expander Label Style -->
+  <Style x:Key="EditorHExpanderLabel" TargetType="Label" BasedOn="{StaticResource EditorHLabelStyle}">
+    <Setter Property="Margin" Value="0 0 10 0"/>
+  </Style>
+
+  <!-- Horizontal Expander Label Style No Margins -->
+  <Style x:Key="EditorHExpanderSimpleLabel" TargetType="Label" BasedOn="{StaticResource EditorHExpanderLabel}">
+    <Setter Property="Margin" Value="0 0 0 0"/>
+  </Style>
+
+  <!-- Editor EditorVLabel Style -->
+  <Style x:Key="EditorVLabelStyle" TargetType="{x:Type Label}" BasedOn="{StaticResource {x:Type Label}}">
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="Margin" Value="0 0 0 0"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+  </Style>
+
+  <Style x:Key="EditorVLabelNoIdentStyle" TargetType="Label" BasedOn="{StaticResource EditorVLabelStyle}">
+    <Setter Property="Margin" Value="0 0 0 0"/>
+  </Style>
+
+  <!-- Editor TextBox Style -->
+  <Style x:Key="EditorTextBoxStyle" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="Margin" Value="3 5 10 3"/>
+    <Setter Property="MinWidth" Value="100"/>
+    <Setter Property="Background" Value="Transparent"/>
+
+    <Setter Property="Language" Value="{Binding Source={x:Static framework:FrameworkApplication.ApplicationProperties}, Path=DictionaryLanguage, Mode=TwoWay}"/>
+    <Setter Property="SpellCheck.IsEnabled" Value="{Binding Source={x:Static framework:FrameworkApplication.ApplicationProperties}, Path=IsSpellCheckingEnabled, Mode=TwoWay}"/>
+
+    <Setter Property="Validation.ErrorTemplate">
+      <!-- from http://stackoverflow.com/questions/321327/how-do-i-get-rid-of-the-red-rectangle-when-my-wpf-binding-validation-has-failed-a -->
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.Resources>
+            <BooleanToVisibilityConverter x:Key="converter" />
+          </ControlTemplate.Resources>
+          <DockPanel LastChildFill="True">
+            <Border
+                BorderThickness="2"
+                BorderBrush="{StaticResource Esri_Red2}"
+                Visibility="{Binding ElementName=placeholder, Mode=OneWay, Path=AdornedElement.IsVisible, Converter={StaticResource converter}}">
+              <AdornedElementPlaceholder x:Name="placeholder" />
+            </Border>
+          </DockPanel>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <Trigger Property="v:MetadataRules.HasIssue" Value="true">
+        <Setter Property="Background" Value="{StaticResource Esri_Red1}"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <!-- EditorDockPanel Style -->
+  <Style x:Key="EditorDockPanelStyle" TargetType="DockPanel">
+    <!-- left, top, right, bottom-->
+    <Setter Property="Margin" Value="0 0 0 8"/>
+  </Style>
+
+  <Style x:Key="EditorRichTextBoxContainerNoIndentStyle" TargetType="Border">
+    <!-- left, top, right, bottom-->
+    <Setter Property="Margin" Value="0 5 0 0"/>
+  </Style>
+
+  <!-- RichTextBoxButton Style -->
+  <Style x:Key="EditorRTBTextStyle" TargetType="Button" >
+    <Setter Property="FontFamily" Value="Palatino Linotype"></Setter>
+    <Setter Property="Width" Value="30"></Setter>
+    <Setter Property="FontSize" Value="14"></Setter>
+  </Style>
+
+  <!-- RichTextBoxImage Style -->
+  <Style x:Key="EditorRTBImageStyle" TargetType="Button">
+    <Setter Property="Width" Value="30"/>
+    <Setter Property="IsTabStop" Value="False"/>
+  </Style>
+
+  <!-- BaseImageStyle -->
+  <Style x:Key="EditorBaseImageStyle" TargetType="Image">
+    <Setter Property="FlowDirection" Value="LeftToRight"/>
+  </Style>
+
+  <!-- RichTextBoxToolImageStyle -->
+  <Style x:Key="RichTextBoxToolbarImageStyle" TargetType="Image">
+    <Setter Property="Height" Value="16"/>
+    <Setter Property="Width" Value="16"/>
+    <Setter Property="Margin" Value="0 0 0 0"/>
+    <Setter Property="FlowDirection" Value="LeftToRight"/>
+  </Style>
+
+  <Style x:Key="RichTextBoxToolbarImageNoFlowStyle" TargetType="Image">
+    <Setter Property="Height" Value="16"/>
+    <Setter Property="Width" Value="16"/>
+    <Setter Property="Margin" Value="0 0 0 0"/>
+  </Style>
+
+  <Style x:Key="EditorScaleImage" TargetType="Image"> 
+    <Setter Property="Height" Value="64"/>
+    <Setter Property="Width" Value="64"/>
+    <Setter Property="Margin" Value="4"/>
+  </Style>
+
+  <!-- RichTextBox Style -->
+  <Style x:Key="EditorRichTextBoxStyle" TargetType="RichTextBox" BasedOn="{StaticResource {x:Type RichTextBox}}">
+    <Setter Property="MinHeight" Value="80"/>
+    <Setter Property="VerticalScrollBarVisibility" Value="Visible"/>
+    <Setter Property="FontSize" Value="11"></Setter>
+    <Setter Property="Background" Value="Transparent"/>
+    <Style.Triggers>
+      <Trigger Property="v:MetadataRules.HasIssue" Value="True">
+        <Setter Property="Background" Value="{StaticResource Esri_Red1}"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <!-- RichTextBox for the GP explanation data grid column -->
+  <Style x:Key="EditorGpExplainationTextBoxStyle" TargetType="RichTextBox" BasedOn="{StaticResource EditorRichTextBoxStyle}">
+    <Setter Property="Height" Value="120"/>
+    <Setter Property="VerticalScrollBarVisibility" Value="Visible"/>
+  </Style>
+
+  <!-- ThumbnailPanel -->
+  <Style x:Key="ThumbnailPanel" TargetType="DockPanel">
+    <Setter Property="Width" Value="200"/>
+    <Setter Property="Margin" Value="0 20 0 5"/>
+  </Style>
+
+  <!-- ThumbnailBorderStyle -->
+  <Style x:Key="ThumbnailBorderStyle" TargetType="Border">
+    <Setter Property="BorderBrush" Value="Black"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="MinHeight" Value="133"/>
+  </Style>
+
+  <!-- ThumbnailImageStyle -->
+  <Style x:Key="ThumbnailImageStyle" TargetType="Image" BasedOn="{StaticResource EditorBaseImageStyle}">
+    <Setter Property="Margin" Value="0 0 0 0"/>
+  </Style>
+
+  <!-- expander body -->
+  <Style x:Key="ExpanderBodyStyle" TargetType="StackPanel">
+    <!-- left, top, right, bottom-->
+    <Setter Property="Margin" Value="5 10 0 5"/>
+  </Style>
+
+  <!-- TextArea Style -->
+  <Style x:Key="EditorTextAreaStyle" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="TextWrapping" Value="Wrap"/>
+    <Setter Property="AcceptsReturn" Value="True"/>
+    <Setter Property="MinHeight" Value="125"/>
+    <Setter Property="Margin" Value="3 5 10 3"/>
+    <Setter Property="Background" Value="Transparent"/>
+    <!-- left, top, right, bottom-->
+    <Setter Property="Language" Value="{Binding Source={x:Static framework:FrameworkApplication.ApplicationProperties}, Path=DictionaryLanguage, Mode=TwoWay}"/>
+    <Setter Property="SpellCheck.IsEnabled" Value="{Binding Source={x:Static framework:FrameworkApplication.ApplicationProperties}, Path=IsSpellCheckingEnabled, Mode=TwoWay}"/>
+    <Setter Property="VerticalScrollBarVisibility" Value="Visible"/>
+
+    <Setter Property="Validation.ErrorTemplate">
+      <!-- from http://stackoverflow.com/questions/321327/how-do-i-get-rid-of-the-red-rectangle-when-my-wpf-binding-validation-has-failed-a -->
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.Resources>
+            <BooleanToVisibilityConverter x:Key="converter" />
+          </ControlTemplate.Resources>
+          <DockPanel LastChildFill="True">
+            <Border
+                BorderThickness="2"
+                BorderBrush="{StaticResource Esri_Red2}"
+                Padding="1"
+                Visibility="{Binding ElementName=placeholder, Mode=OneWay, Path=AdornedElement.IsVisible, Converter={StaticResource converter}}">
+              <AdornedElementPlaceholder x:Name="placeholder" />
+            </Border>
+          </DockPanel>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <Trigger Property="v:MetadataRules.HasIssue" Value="true">
+        <Setter Property="Background" Value="{StaticResource Esri_Red1}"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <!-- EditorTextAreaResize Style -->
+  <Style x:Key="EditorTextAreaResizeStyle" TargetType="TextBox" BasedOn="{StaticResource EditorTextAreaStyle}">
+    <Setter Property="Margin" Value="0 0 0 0"/>
+  </Style>
+
+  <!-- TextAreaCode Style -->
+  <Style x:Key="EditorTextAreaCodeStyle" TargetType="TextBox" BasedOn="{StaticResource EditorTextAreaStyle}">
+    <Setter Property="FontFamily" Value="Lucida Console,Courier New"/>
+  </Style>
+
+  <!-- TextAreaShort Style -->
+  <Style x:Key="EditorTextAreaShortStyle" TargetType="TextBox" BasedOn="{StaticResource EditorTextAreaStyle}">
+    <Setter Property="MinHeight" Value="80"/>
+  </Style>
+
+  <!-- TextAreaShort Style -->
+  <Style x:Key="EditorTextAreaShortResizeStyle" TargetType="TextBox" BasedOn="{StaticResource EditorTextAreaStyle}">
+    <Setter Property="MinHeight" Value="80"/>
+    <Setter Property="Margin" Value="0 0 0 0"/>
+  </Style>
+  
+  <!-- Horizontal ComboBox Style -->
+  <Style x:Key="EditorHComboBoxStyle" TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="Margin" Value="3 5 5 3"/>
+    <Setter Property="Validation.ErrorTemplate">
+      <!-- from http://stackoverflow.com/questions/321327/how-do-i-get-rid-of-the-red-rectangle-when-my-wpf-binding-validation-has-failed-a -->
+      <Setter.Value>
+        <ControlTemplate>
+          <ControlTemplate.Resources>
+            <BooleanToVisibilityConverter x:Key="converter" />
+          </ControlTemplate.Resources>
+          <DockPanel LastChildFill="True">
+            <Border BorderThickness="2"
+                    BorderBrush="{StaticResource Esri_Red2}"
+                    Visibility="{Binding ElementName=placeholder, Mode=OneWay, Path=AdornedElement.IsVisible, Converter={StaticResource converter}}">
+              <AdornedElementPlaceholder x:Name="placeholder" />
+            </Border>
+          </DockPanel>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <Trigger Property="v:MetadataRules.HasIssue" Value="true">
+        <Setter Property="Background" Value="{StaticResource Esri_Red1}"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <!-- Horizontal ComboBox for Language Codes Style -->
+  <Style x:Key="EditorHComboBoxLangStyle" TargetType="ComboBox" BasedOn="{StaticResource EditorHComboBoxStyle}">
+    <Setter Property="Width" Value="60"/>
+    <Setter Property="Margin" Value="0 5 5 0"/>
+  </Style>
+
+  <!-- ANY LIST BOX -->
+  <Style TargetType="ListBox">
+    <Setter Property="BorderThickness" Value="0"/>
+    <Setter Property="Background" Value="{x:Null}"/>
+    <Setter Property="Focusable" Value="False"/>
+  </Style>
+
+  <!-- ANY LIST BOX ITEM -->
+  <Style TargetType="{x:Type ListBoxItem}">
+    <Setter Property="Focusable" Value="False"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+          <ContentPresenter />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!-- needed to stop the listboxes from handling the scroll event 
+  see http://stackoverflow.com/questions/2189053/disable-mouse-wheel-on-itemscontrol-in-wpf
+  -->
+  <ControlTemplate x:Key="NoWheelScrollListBoxTemplate" TargetType="ListBox">
+    <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+    <ControlTemplate.Triggers>
+      <Trigger Property="ItemsControl.IsGrouping" Value="True">
+        <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+
+  <!-- EditorNoScrollListBoxStyle -->
+  <Style x:Key="EditorNoScrollListBoxStyle" TargetType="ListBox">
+    <Setter Property="Template" Value="{StaticResource NoWheelScrollListBoxTemplate}"/>
+    <Setter Property="Focusable" Value="False"/>
+    <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+    <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+    <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
+  </Style>
+
+  <!-- Sidebar ListBox Item Style -->
+  <Style x:Key="EditorSidebarListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+    <Setter Property="Focusable" Value="True"/>
+    <Setter Property="Background" Value="Transparent"/>   
+
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+          <Border Name="Bd"
+              Background="{TemplateBinding Background}"
+              BorderBrush="{TemplateBinding BorderBrush}"
+              BorderThickness="{TemplateBinding BorderThickness}"
+              Padding="{TemplateBinding Padding}"
+              SnapsToDevicePixels="True">
+            <ContentPresenter
+                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+          </Border>
+
+          <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding XPath=@IsSelected}" Value="True">
+              <Setter TargetName="Bd" Property="Background" Value="#E7E6DB"/>
+            </DataTrigger>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="Bd" Property="Background" Value="#D3D3C2"/>
+            </Trigger>
+          </ControlTemplate.Triggers>
+
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!-- pages:EditorRichTextBox -->
+  <Style TargetType="{x:Type pages:MTK_EditorRichTextBox}">
+    <EventSetter Event="ToolTipOpening" Handler="UpdateStatusOpenTip"/>
+  </Style>
+
+  <!-- BooleanValueSync -->
+  <Style TargetType="{x:Type pages:MTK_BooleanValueSync}">
+    <EventSetter Event="ToolTipOpening" Handler="UpdateStatusOpenTip"/>
+  </Style>
+
+  <!-- DATE PICKER -->
+  <Style TargetType="{x:Type DatePicker}">
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="Margin" Value="0 5 0 0"/>
+    <Setter Property="MaxWidth" Value="200"/>
+    <Setter Property="HorizontalAlignment" Value="Left"/>
+    <Style.Triggers>
+      <Trigger Property="v:MetadataRules.HasIssue" Value="true">
+        <Setter Property="Background" Value="{StaticResource Esri_Red1}"/>
+      </Trigger>
+    </Style.Triggers>    
+  </Style>
+
+  <!-- DATE PICKER -->
+  <Style TargetType="{x:Type controls:DateTimePicker}">  
+    <Style.Triggers>
+      <Trigger Property="v:MetadataRules.HasIssue" Value="true">
+        <Setter Property="Background" Value="{StaticResource Esri_Red1}"/>
+      </Trigger>
+    </Style.Triggers>    
+  </Style>
+
+  <!-- DATE TIME CONTROL -->
+  <Style TargetType="controls:DateTimeControl">
+    <Style.Triggers>
+      <Trigger Property="v:MetadataRules.HasIssue" Value="true">
+        <Setter Property="Background" Value="{StaticResource Esri_Red1}"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+  
+  <Style TargetType="controls:DateTimeIsoControl">
+    <Style.Triggers>
+      <Trigger Property="v:MetadataRules.HasIssue" Value="true">
+        <Setter Property="Background" Value="{StaticResource Esri_Red1}"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+  
+  <!-- Top Level Button Mouse Over -->
+  <LinearGradientBrush x:Key="ButtonMouseOverBrush" EndPoint="0,1" StartPoint="0,0">
+    <GradientStop Color="#FFEBF0F3" Offset="1"/>
+    <GradientStop Color="#FFFEFFFF" Offset="0"/>
+    <GradientStop Color="#FFFCFEFF" Offset="0.485"/>
+    <GradientStop Color="#FFD7EEFF" Offset="0.491"/>
+  </LinearGradientBrush>
+
+  <!-- Top Level Buttons -->
+  <Style x:Key="TopButton" TargetType="{x:Type Button}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border x:Name="Border"
+              SnapsToDevicePixels="true"
+              BorderThickness="1"
+              CornerRadius="0"
+              Padding="3"
+              Margin="3">
+            <ContentPresenter
+                Margin="{TemplateBinding Padding}"
+                Width="{TemplateBinding Width}"
+                RecognizesAccessKey="True"/>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="Border" Property="Background" Value="{DynamicResource Esri_Blue1}"/>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!-- Image-Only Buttons -->
+  <Style x:Key="ImageOnlyButton" TargetType="Button">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <Border x:Name="Border"
+              SnapsToDevicePixels="true"
+              BorderThickness="1"
+              CornerRadius="0"
+              Padding="3"
+              Margin="1"
+              Width="26"
+              Height="25">
+            <ContentPresenter
+                Margin="{TemplateBinding Padding}"
+                Width="{TemplateBinding Width}"
+                RecognizesAccessKey="True"/>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="Border" Property="Background" Value="{DynamicResource Esri_Blue1}"/>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!-- Delete Button-->
+  <Style x:Key="DeleteButton" TargetType="{x:Type Button}" BasedOn="{StaticResource TopButton}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border x:Name="Border"
+              SnapsToDevicePixels="true"
+              BorderThickness="1"
+              CornerRadius="0"
+              Padding="2 0 2 0"
+              Margin="2 0 2 0" >
+            <ContentPresenter
+                Margin="{TemplateBinding Padding}"
+                Width="{TemplateBinding Width}"
+                RecognizesAccessKey="True"/>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+              <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonMouseOverBrush}"/>
+              <Setter TargetName="Border" Property="BorderBrush" Value="#4E7DC9" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!-- Add Button -->
+  <Style x:Key="AddButton" TargetType="{x:Type Button}" BasedOn="{StaticResource TopButton}">
+  </Style>
+
+  <!-- Top Button Image -->
+  <Style x:Key="TopButtonImageStyle" TargetType="Image" BasedOn="{StaticResource EditorBaseImageStyle}">
+    <Setter Property="Height" Value="16"/>
+    <Setter Property="Width" Value="16"/>
+    <Setter Property="Margin" Value="0 0 5 0"/>
+  </Style>
+
+  <!-- Top Button Image -->
+  <Style x:Key="ImageOnlyButtonStyle" TargetType="Image" BasedOn="{StaticResource EditorBaseImageStyle}">
+    <Setter Property="Height" Value="16"/>
+    <Setter Property="Width" Value="16"/>
+    <Setter Property="Margin" Value="0 0 0 0"/>
+  </Style>
+
+  <!-- Add Button Image -->
+  <Style x:Key="AddImageStyle" TargetType="Image" BasedOn="{StaticResource TopButtonImageStyle}">
+    <Setter Property="Height" Value="16"/>
+    <Setter Property="Width" Value="16"/>
+    <Setter Property="Margin" Value="0 0 5 0"/>
+  </Style>
+
+  <!-- Delete Button Image -->
+  <Style x:Key="DeleteImageStyle" TargetType="Image" BasedOn="{StaticResource TopButtonImageStyle}">
+    <Setter Property="Height" Value="16"/>
+    <Setter Property="Width" Value="16"/>
+    <Setter Property="Margin" Value="0 0 0 0"/>
+  </Style>
+
+  <!-- Button Text Style -->
+  <Style x:Key="ButtonTextStyle" TargetType="TextBlock" BasedOn="{StaticResource RegularText}">
+    <Setter Property="VerticalAlignment" Value="Center"/>
+  </Style>
+  
+  <!-- GENERAL LINKS -->
+  <Style x:Key="EditorHyperlinkStyle" TargetType="Hyperlink">
+    <Setter Property="TextDecorations" Value="none"/>
+    <Setter Property="Foreground" Value="#1E467B"/>
+    <Setter Property="Focusable" Value="False"/>
+    <Style.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter Property="TextDecorations" Value="Underline"/>
+        <Setter Property="Foreground" Value="#285EA6"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <!-- DELETE LINK -->
+  <Style x:Key="EditorDeleteLinkStyle" TargetType="TextBlock">
+    <Setter Property="TextAlignment" Value="Right"/>
+    <Setter Property="Margin" Value="0,5,0,5"/>
+    <Setter Property="HorizontalAlignment" Value="Right"/>
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="Foreground" Value="#333"/>
+  </Style>
+
+  <Style x:Key="EditorDeleteButtonHStyle" TargetType="Button">
+    <Setter Property="Margin" Value="10,0,0,0"/>
+  </Style>
+
+  <!-- TABLE OF CONTENTS SIDEBAR -->
+  <Style x:Key="EditorSidebarTextBlockStyle" TargetType="TextBlock">
+    <Setter Property="Margin" Value="0 5 0 5"/>
+    <Setter Property="FontSize" Value="12"/>
+  </Style>
+
+  <Style x:Key="EditorSidebarHyperlinkStyle" TargetType="Hyperlink">
+    <Setter Property="TextDecorations" Value="none"/>
+    <Setter Property="Foreground" Value="#1E467B"/>
+    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+    <Style.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter Property="TextDecorations" Value="None"/>
+        <Setter Property="Foreground" Value="#285EA6"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <Style x:Key="EditorSidebarListBoxStyle" TargetType="ListBox">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ListBox">
+          <Border Background="{TemplateBinding Background}"
+                  BorderThickness="0">
+            <ItemsPresenter />
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="ButtonFocusVisual">
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <Rectangle Stroke="Black" StrokeDashArray="1 2" StrokeThickness="1" Margin="2" SnapsToDevicePixels="true"/>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <LinearGradientBrush x:Key="EditorSidebarHeaderMouseOverBrush" EndPoint="0,1" StartPoint="0,0">
+    <GradientStop Color="#F1EFE4" Offset="0.0"/>
+    <GradientStop Color="#E3E1D4" Offset="0.66"/>
+    <GradientStop Color="#B8B89D" Offset="1"/>
+
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="EditorSidebarHeaderPressedBrush" EndPoint="0,1" StartPoint="0,0">
+    <GradientStop Color="#ECEBE2" Offset="1"/>
+    <GradientStop Color="#ECEBE2" Offset="0"/>
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="EditorSidebarHeaderNormalBackground" EndPoint="0,1" StartPoint="0,0">
+    <GradientStop Color="#FAF9F5" Offset="0.0"/>
+    <GradientStop Color="#ECEBE2" Offset="0.66"/>
+    <GradientStop Color="#C3C3AC" Offset="1"/>
+  </LinearGradientBrush>
+
+  <!-- border around sidebar headers -->
+  <SolidColorBrush x:Key="EditorSidebarHeaderNormalBorder" Color="#CFCFBB"/>
+
+  <Style x:Key="EditorSidebarHeaderCheckBoxStyle" TargetType="CheckBox">
+
+    <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+    <Setter Property="Background" Value="{StaticResource EditorSidebarHeaderNormalBackground}"/>
+    <Setter Property="BorderBrush" Value="{StaticResource EditorSidebarHeaderNormalBorder}"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+    <Setter Property="VerticalContentAlignment" Value="Center"/>
+    <Setter Property="Padding" Value="4"/>
+    <Setter Property="Margin" Value="0"/>
+    <Setter Property="FontSize" Value="14"/>
+
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type CheckBox}">
+          <Border x:Name="Chrome" SnapsToDevicePixels="true"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="1,1,1,1"
+                  Background="{TemplateBinding Background}">
+            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    Margin="{TemplateBinding Padding}"
+                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                    RecognizesAccessKey="True"/>
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="EditorSidebarListItemExpanderStyle" TargetType="Expander">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Expander}">
+          <Border Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}">
+            <DockPanel>
+
+              <CheckBox DockPanel.Dock="Top"
+                  Content="{TemplateBinding Header}"
+                  ContentTemplate="{TemplateBinding HeaderTemplate}"
+                  ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
+                  Style="{StaticResource EditorSidebarHeaderCheckBoxStyle}"
+                  IsChecked="{Binding Path=IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+
+              <ContentPresenter x:Name="ExpandSite" DockPanel.Dock="Bottom"
+                  Content="{TemplateBinding Content}"
+                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                  ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}">
+
+              </ContentPresenter>
+            </DockPanel>
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <ControlTemplate x:Key="DateTimePickerTemplate" TargetType="{x:Type DatePicker}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:assembly="http://schemas.microsoft.com/wpf/2008/toolkit" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Border BorderThickness="0" Padding="0">
+      <Grid Name="PART_Root" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+          <SolidColorBrush x:Key="DisabledBrush">#A5FFFFFF</SolidColorBrush>
+          <ControlTemplate TargetType="Button" x:Key="DropDownButtonTemplate">
+            <Grid>
+              <Grid Background="#11FFFFFF" Width="19" Height="18" FlowDirection="LeftToRight" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="20*" />
+                  <ColumnDefinition Width="20*" />
+                  <ColumnDefinition Width="20*" />
+                  <ColumnDefinition Width="20*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="23*" />
+                  <RowDefinition Height="19*" />
+                  <RowDefinition Height="19*" />
+                  <RowDefinition Height="19*" />
+                </Grid.RowDefinitions>
+                <Border BorderThickness="1,1,1,1" CornerRadius="0,0,1,1" BorderBrush="#FF45D6FA" Name="Highlight" Margin="-1,-1,-1,-1" Opacity="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="4" />
+                <Border BorderThickness="1,1,1,1" CornerRadius="0.5,0.5,0.5,0.5" BorderBrush="#FFFFFFFF" Background="#FF1F3B53" Name="Background" Margin="0,-1,0,0" Opacity="1" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="3" />
+                <Border BorderThickness="1,1,1,1" CornerRadius="0.5,0.5,0.5,0.5" BorderBrush="#BF000000" Name="BackgroundGradient" Margin="0,-1,0,0" Opacity="1" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="3">
+                  <Border.Background>
+                    <LinearGradientBrush StartPoint="0.7,0" EndPoint="0.7,1">
+                      <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="#FFFFFFFF" Offset="0" />
+                        <GradientStop Color="#F9FFFFFF" Offset="0.375" />
+                        <GradientStop Color="#E5FFFFFF" Offset="0.625" />
+                        <GradientStop Color="#C6FFFFFF" Offset="1" />
+                      </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                  </Border.Background>
+                </Border>
+                <Rectangle StrokeThickness="1" Grid.ColumnSpan="4" Grid.RowSpan="1">
+                  <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0.46,1.6" EndPoint="0.3,-1.1">
+                      <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="#FF4084BD" />
+                        <GradientStop Color="#FFAFCFEA" Offset="1" />
+                      </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                  </Rectangle.Fill>
+                  <Rectangle.Stroke>
+                    <LinearGradientBrush StartPoint="0.48,1.25" EndPoint="0.48,-1">
+                      <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="#FF494949" />
+                        <GradientStop Color="#FF9F9F9F" Offset="1" />
+                      </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                  </Rectangle.Stroke>
+                </Rectangle>
+                <Path Data="M11.426758,8.4305077L11.749023,8.4305077 11.749023,16.331387 10.674805,16.331387 10.674805,10.299648 9.0742188,11.298672 9.0742188,10.294277C9.4788408,10.090176 9.9094238,9.8090878 10.365967,9.4510155 10.82251,9.0929432 11.176106,8.7527733 11.426758,8.4305077z M14.65086,8.4305077L18.566387,8.4305077 18.566387,9.3435936 15.671368,9.3435936 15.671368,11.255703C15.936341,11.058764 16.27293,10.960293 16.681133,10.960293 17.411602,10.960293 17.969301,11.178717 18.354229,11.615566 18.739157,12.052416 18.931622,12.673672 18.931622,13.479336 18.931622,15.452317 18.052553,16.438808 16.294415,16.438808 15.560365,16.438808 14.951641,16.234707 14.468243,15.826504L14.881817,14.929531C15.368796,15.326992 15.837872,15.525723 16.289043,15.525723 17.298809,15.525723 17.803692,14.895514 17.803692,13.635098 17.803692,12.460618 17.305971,11.873379 16.310528,11.873379 15.83071,11.873379 15.399232,12.079271 15.016094,12.491055L14.65086,12.238613z" Stretch="Fill" Fill="#FF2F2F2F" Margin="4,3,4,3" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="3" />
+                <Ellipse Fill="#FFFFFFFF" StrokeThickness="0" Width="3" Height="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="4" />
+                <Border BorderThickness="1,1,1,1" CornerRadius="0,0,0.5,0.5" BorderBrush="#B2FFFFFF" Name="DisabledVisual" Opacity="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="4" />
+              </Grid>
+            </Grid>
+          </ControlTemplate>
+        </Grid.Resources>
+        <Button Foreground="{TemplateBinding TextElement.Foreground}" Name="PART_Button" Width="20" Margin="3,0,3,0" HorizontalAlignment="Left" VerticalAlignment="Center" Focusable="False" Grid.Column="1" Grid.Row="0">
+          <Button.Template>
+            <ControlTemplate TargetType="Button">
+              <Grid>
+                <Grid Background="#11FFFFFF" Width="19" Height="18" FlowDirection="LeftToRight" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="20*" />
+                  </Grid.ColumnDefinitions>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="23*" />
+                    <RowDefinition Height="19*" />
+                    <RowDefinition Height="19*" />
+                    <RowDefinition Height="19*" />
+                  </Grid.RowDefinitions>
+                  <Border BorderThickness="1,1,1,1" CornerRadius="0,0,1,1" BorderBrush="#FF45D6FA" Name="Highlight" Margin="-1,-1,-1,-1" Opacity="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="4" />
+                  <Border BorderThickness="1,1,1,1" CornerRadius="0.5,0.5,0.5,0.5" BorderBrush="#FFFFFFFF" Background="#FF1F3B53" Name="Background" Margin="0,-1,0,0" Opacity="1" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="3" />
+                  <Border BorderThickness="1,1,1,1" CornerRadius="0.5,0.5,0.5,0.5" BorderBrush="#BF000000" Name="BackgroundGradient" Margin="0,-1,0,0" Opacity="1" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="3">
+                    <Border.Background>
+                      <LinearGradientBrush StartPoint="0.7,0" EndPoint="0.7,1">
+                        <LinearGradientBrush.GradientStops>
+                          <GradientStop Color="#FFFFFFFF" Offset="0" />
+                          <GradientStop Color="#F9FFFFFF" Offset="0.375" />
+                          <GradientStop Color="#E5FFFFFF" Offset="0.625" />
+                          <GradientStop Color="#C6FFFFFF" Offset="1" />
+                        </LinearGradientBrush.GradientStops>
+                      </LinearGradientBrush>
+                    </Border.Background>
+                  </Border>
+                  <Rectangle StrokeThickness="1" Grid.ColumnSpan="4" Grid.RowSpan="1">
+                    <Rectangle.Fill>
+                      <LinearGradientBrush StartPoint="0.46,1.6" EndPoint="0.3,-1.1">
+                        <LinearGradientBrush.GradientStops>
+                          <GradientStop Color="#FF4084BD" />
+                          <GradientStop Color="#FFAFCFEA" Offset="1" />
+                        </LinearGradientBrush.GradientStops>
+                      </LinearGradientBrush>
+                    </Rectangle.Fill>
+                    <Rectangle.Stroke>
+                      <LinearGradientBrush StartPoint="0.48,1.25" EndPoint="0.48,-1">
+                        <LinearGradientBrush.GradientStops>
+                          <GradientStop Color="#FF494949" />
+                          <GradientStop Color="#FF9F9F9F" Offset="1" />
+                        </LinearGradientBrush.GradientStops>
+                      </LinearGradientBrush>
+                    </Rectangle.Stroke>
+                  </Rectangle>
+                  <Path Data="M11.426758,8.4305077L11.749023,8.4305077 11.749023,16.331387 10.674805,16.331387 10.674805,10.299648 9.0742188,11.298672 9.0742188,10.294277C9.4788408,10.090176 9.9094238,9.8090878 10.365967,9.4510155 10.82251,9.0929432 11.176106,8.7527733 11.426758,8.4305077z M14.65086,8.4305077L18.566387,8.4305077 18.566387,9.3435936 15.671368,9.3435936 15.671368,11.255703C15.936341,11.058764 16.27293,10.960293 16.681133,10.960293 17.411602,10.960293 17.969301,11.178717 18.354229,11.615566 18.739157,12.052416 18.931622,12.673672 18.931622,13.479336 18.931622,15.452317 18.052553,16.438808 16.294415,16.438808 15.560365,16.438808 14.951641,16.234707 14.468243,15.826504L14.881817,14.929531C15.368796,15.326992 15.837872,15.525723 16.289043,15.525723 17.298809,15.525723 17.803692,14.895514 17.803692,13.635098 17.803692,12.460618 17.305971,11.873379 16.310528,11.873379 15.83071,11.873379 15.399232,12.079271 15.016094,12.491055L14.65086,12.238613z" Stretch="Fill" Fill="#FF2F2F2F" Margin="4,3,4,3" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="3" />
+                  <Ellipse Fill="#FFFFFFFF" StrokeThickness="0" Width="3" Height="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="4" />
+                  <Border BorderThickness="1,1,1,1" CornerRadius="0,0,0.5,0.5" BorderBrush="#B2FFFFFF" Name="DisabledVisual" Opacity="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="4" />
+                </Grid>
+              </Grid>
+            </ControlTemplate>
+          </Button.Template>
+        </Button>
+
+        <!-- date only -->
+        <controls:TimePicker Display="DateOnly" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SelectedDate, Mode=TwoWay}"/>
+
+        <Grid Name="PART_DisabledVisual" Opacity="0" IsHitTestVisible="False" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <Rectangle RadiusX="1" RadiusY="1" Fill="#A5FFFFFF" Grid.Column="0" Grid.Row="0" />
+          <Rectangle RadiusX="1" RadiusY="1" Fill="#A5FFFFFF" Width="19" Height="18" Margin="3,0,3,0" Grid.Column="1" Grid.Row="0" />
+          <Popup Placement="Bottom" StaysOpen="False" AllowsTransparency="True" Name="PART_Popup" />
+        </Grid>
+      </Grid>
+    </Border>
+  </ControlTemplate>
+
+</ResourceDictionary>

@@ -115,7 +115,6 @@ namespace MetadataToolkit.Pages
         // copy new XML into document
         XmlDocument owner = (null == node.OwnerDocument) ? node : node.OwnerDocument;
         Utils.Utils.CopyElements(owner, newDoc.FirstChild, true, false);
-
       }
     }
 
