@@ -92,6 +92,9 @@
     <Compile Include="Pages\ContactManager.xaml.cs" />
     <Compile Include="Pages\ContentInformation.xaml.cs" />
     <Compile Include="Pages\CountryCode.xaml.cs" />
+    <Compile Include="Pages\CustomPage.xaml.cs">
+      <DependentUpon>CustomPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DataQuality.xaml.cs" />
     <Compile Include="Pages\DatasetCitation.xaml.cs" />
     <Compile Include="Pages\DistributionInfo.xaml.cs" />
@@ -294,6 +297,10 @@
     <Page Include="Pages\CountryCode.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\CustomPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\DataQuality.xaml">
       <Generator>MSBuild:Compile</Generator>

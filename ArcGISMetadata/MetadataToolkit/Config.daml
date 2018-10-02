@@ -4,15 +4,13 @@
     <Name>MetadataToolkit</Name>
     <Description>Metadata Toolkit</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Jingcheng Liu</Author>
     <Company>Esri</Company>
-    <Date>3/5/2017 10:47:25 AM, 2017</Date>
     <Subject>Framework</Subject>
   </AddInInfo>
   <categories>
     <updateCategory refID="esri_metadata_metadataEditors">
       <insertComponent id="esri_metadata_metadataEditor_toolkit" className="ToolkitMetadataEditor">
-        <content type="ToolkitEditor" displayName="My Metadata Toolkit Editor">
+        <content type="ToolkitEditor" id="My_Metadata_Toolkit_Editor" displayName="My Metadata Toolkit Editor">
           <metadataConfig ArcGISProfile="ISO19139" ValidatePages="True">
             <validationNamespaceURI>http://www.isotc211.org/2005/gmd</validationNamespaceURI>
             <validationSchemaURL>http://www.isotc211.org/schemas/2005/gmd/metadataEntity.xsd</validationSchemaURL>
@@ -162,6 +160,10 @@
                       <for xpath="/metadata/Esri/locales/locale">
                         <exists xpath=".[@language != '']" ref="language" />
                       </for>
+                    </validation>
+                  </page>
+                  <page class="MetadataToolkit.CustomPage">
+                    <validation>
                     </validation>
                   </page>
                 </section>
