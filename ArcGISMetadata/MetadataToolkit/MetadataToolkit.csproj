@@ -428,9 +428,6 @@
     <Compile Include="Utils\MetadataException.cs" />
     <Compile Include="Utils\MetadataStyle.cs" />
     <Compile Include="Utils\Utils.cs" />
-	<Compile Include="View\ControlTemplates.xaml.cs">
-      <DependentUpon>ControlTemplates.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AddInContent Include="Images\GenericButtonPurple16.png" />
@@ -892,10 +889,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\ValueUoM.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\ControlTemplates.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
