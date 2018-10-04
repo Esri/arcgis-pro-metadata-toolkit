@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_ConstraintTypes" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_ConstraintTypes" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -51,7 +51,7 @@
     <StackPanel>
 
       <!-- general constraints -->
-      <ListBox ItemsSource="{Binding XPath=Consts}">
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=Consts}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel/>
@@ -59,17 +59,19 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Border>
-              <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MetadataConstraints_GeneralConstraintsGroup}">
+            <Border Style="{DynamicResource EditorBorder2Style}">
+              <Expander Style="{DynamicResource EditorExpander2Style}" 
+                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MetadataConstraints_GeneralConstraintsGroup}">
                 <Expander.Header>
                   <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                         RelativeSource={RelativeSource FindAncestor,
                         AncestorType={x:Type ContentPresenter}},
                         Mode=OneWayToSource}" LastChildFill="True">
-                    <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Name="MetadataConstraints_GeneralConstraintsDelete">
-                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                    <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Style="{DynamicResource DeleteButton}"
+                            Name="MetadataConstraints_GeneralConstraintsDelete">
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                     </Button>
-                    <Label Content="{x:Static r:Resources.LBL_CONSTS_GENERAL}"/>
+                    <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_CONSTS_GENERAL}"/>
                   </DockPanel>
                 </Expander.Header>
                 <t:MTK_MD_Constraints/>
@@ -81,7 +83,7 @@
 
 
       <!-- legal contstraints -->
-      <ListBox ItemsSource="{Binding XPath=LegConsts}">
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=LegConsts}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel/>
@@ -89,19 +91,20 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Border>
-              <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MetadataConstraints_LegalConstraintsGroup}">
+            <Border Style="{DynamicResource EditorBorder2Style}">
+              <Expander Style="{DynamicResource EditorExpander2Style}" 
+                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MetadataConstraints_LegalConstraintsGroup}">
                 <Expander.Header>
                   <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                         RelativeSource={RelativeSource FindAncestor,
                         AncestorType={x:Type ContentPresenter}},
                         Mode=OneWayToSource}" LastChildFill="True">
-                    <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" 
+                    <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Style="{DynamicResource DeleteButton}"
                             AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MetadataConstraints_LegalConstraintsDelete}"
                             Name="MetadataConstraints_LegalConstraintsDelete">
-                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                     </Button>
-                    <Label Content="{x:Static r:Resources.LBL_CONSTS_LEGAL}"/>
+                    <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_CONSTS_LEGAL}"/>
                   </DockPanel>
                 </Expander.Header>
                 <t:MTK_MD_LegalConstraints/>
@@ -112,7 +115,7 @@
       </ListBox>
 
       <!-- security contstraints -->
-      <ListBox ItemsSource="{Binding XPath=SecConsts}">
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=SecConsts}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel/>
@@ -120,18 +123,19 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Border>
-              <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MetadataConstraints_SecurityConstraintsGroup}">
+            <Border Style="{DynamicResource EditorBorder2Style}">
+              <Expander Style="{DynamicResource EditorExpander2Style}" 
+                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MetadataConstraints_SecurityConstraintsGroup}">
                 <Expander.Header>
                   <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                         RelativeSource={RelativeSource FindAncestor,
                         AncestorType={x:Type ContentPresenter}},
                         Mode=OneWayToSource}" LastChildFill="True">
-                    <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" 
+                    <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Style="{DynamicResource DeleteButton}"
                             Name="MetadataConstraints_SecurityConstraintsDelete">
-                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                     </Button>
-                    <Label Content="{x:Static r:Resources.LBL_CONSTS_SECURITY}"/>
+                    <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_CONSTS_SECURITY}"/>
                   </DockPanel>
                 </Expander.Header>
                 <t:MTK_MD_SecurityConstraints/>

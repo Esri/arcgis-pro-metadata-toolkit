@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_MD_ApplicationSchemaInformation" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_MD_ApplicationSchemaInformation" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -39,7 +39,7 @@
 
   <Grid>
     <StackPanel>
-      <Grid>
+      <Grid Style="{DynamicResource EditorSubPageStyle}">
         <Grid.RowDefinitions>
           <RowDefinition />
           <RowDefinition />
@@ -57,7 +57,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- citation -->
-        <ListBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding XPath=asName}">
+        <ListBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=asName}">
           <ListBox.ItemsPanel>
             <ItemsPanelTemplate>
               <StackPanel />
@@ -65,12 +65,13 @@
           </ListBox.ItemsPanel>
           <ListBox.ItemTemplate>
             <DataTemplate>
-              <Expander Name="MD_ApplicationSchemaInformation_CitationGroup">
+              <Expander Style="{DynamicResource EditorExpander2Style}"
+                        Name="MD_ApplicationSchemaInformation_CitationGroup">
                 <Expander.Header>
-                  <Label Content="{x:Static r:Resources.LBL_APP_SCHEMA_NAME}"/>
+                  <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_APP_SCHEMA_NAME}"/>
                 </Expander.Header>
                 <!-- citation -->
-                <Border>
+                <Border Style="{DynamicResource EditorBorderSubStyle}">
                   <t:MTK_CI_Citation/>
                 </Border>
               </Expander>
@@ -79,59 +80,59 @@
         </ListBox>
 
         <!-- schema language -->
-        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_LANG}"/>
-        <TextBox Grid.Row="1" Grid.Column="1"
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_LANG}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="1" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.MD_ApplicationSchemaInformation_schemaLanguage}"
             v:Nav.AnchorName="asSchLang,asSchLang"
             Text="{e:MetadataBinding XPath=asSchLang}"
             Name="MD_ApplicationSchemaInformation_schemaLanguage"/>
 
         <!-- constraint language -->
-        <Label Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_CONSTRAINT_LANG}"/>
-        <TextBox Grid.Row="2" Grid.Column="1"
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_CONSTRAINT_LANG}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="2" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.MD_ApplicationSchemaInformation_constraintLanguage}"
             v:Nav.AnchorName="asCstLang,asCstLang"
             Text="{e:MetadataBinding XPath=asCstLang}"
             Name="MD_ApplicationSchemaInformation_constraintLanguage"/>
 
         <!-- schema ascii -->
-        <Label Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_ASCII}"/>
-        <TextBox Grid.Row="3" Grid.Column="1"
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_ASCII}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="3" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.MD_ApplicationSchemaInformation_schemaAscii}"
             Text="{e:MetadataBinding XPath=asAscii}"
             Name="MD_ApplicationSchemaInformation_schemaAscii"/>
 
         <!-- graphics file -->
-        <Label Grid.Row="4" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_GRAPHICS}"/>
-        <TextBox Grid.Row="4" Grid.Column="1"
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="4" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_GRAPHICS}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="4" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.MD_ApplicationSchemaInformation_graphicsFile}"
             Text="{e:MetadataBinding XPath=asGraFile}"
             Name="MD_ApplicationSchemaInformation_graphicsFile"/>
 
         <!-- graphics file source -->
-        <Label Grid.Row="5" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_GRAPHICS_SRC}"/>
-        <TextBox Grid.Row="5" Grid.Column="1"
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="5" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_GRAPHICS_SRC}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="5" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.GCO_Binary_href}"
             Text="{e:MetadataBinding XPath=asGraFile/@src}"
             Name="MD_ApplicationSchemaInformation_graphicsFileSource"/>
 
         <!-- software development file -->
-        <Label Grid.Row="6" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_SOFTWARE}"/>
-        <TextBox Grid.Row="6" Grid.Column="1"
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="6" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_SOFTWARE}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="6" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.MD_ApplicationSchemaInformation_softwareDevelopmentFile}"
             Text="{e:MetadataBinding XPath=asSwDevFile}"
             Name="MD_ApplicationSchemaInformation_softwareDevelopmentFile"/>
 
         <!-- software development file source -->
-        <Label Grid.Row="7" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_SOFTWARE_SRC}"/>
-        <TextBox Grid.Row="7" Grid.Column="1"
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="7" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_SOFTWARE_SRC}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="7" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.GCO_Binary_href}"
             Text="{e:MetadataBinding XPath=asSwDevFile/@src}"
             Name="MD_ApplicationSchemaInformation_softwareDevelopmentFileSource"/>
 
         <!-- software development file format -->
-        <Label Grid.Row="8" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_SOFTWARE_FORMAT}"/>
-        <TextBox Grid.Row="8" Grid.Column="1" 
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="8" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_SOFTWARE_FORMAT}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="8" Grid.Column="1" 
             ToolTip="{x:Static r:Definitions.MD_ApplicationSchemaInformation_softwareDevelopmenFileFormat}"
             Text="{e:MetadataBinding XPath=asSwDevFiFt}"
             Name="MD_ApplicationSchemaInformation_softwareDevelopmenFileFormat"/>

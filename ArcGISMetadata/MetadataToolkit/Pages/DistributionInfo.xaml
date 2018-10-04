@@ -1,4 +1,4 @@
-<p:EditorPage Tag="Page" x:Class="MetadataToolkit.Pages.MTK_DistributionInfo" x:ClassModifier="internal" 
+﻿<p:EditorPage Tag="Page" x:Class="MetadataToolkit.Pages.MTK_DistributionInfo" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -50,8 +50,8 @@
 
   </UserControl.Resources>
 
-  <Grid>
-    <ListBox ItemsSource="{Binding XPath=/metadata/distInfo}">
+  <Grid Style="{DynamicResource EditorFrontPageStyle}">
+    <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata/distInfo}">
       <ListBox.ItemsPanel>
         <ItemsPanelTemplate>
           <StackPanel/>
@@ -60,7 +60,7 @@
       <ListBox.ItemTemplate>
         <DataTemplate>
           <StackPanel>
-            <Label Content="{x:Static r:Resources.SEC_DISTRIBUTION}"/>
+            <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_DISTRIBUTION}"/>
             <!-- distribution section -->
             <t:MTK_MD_Distribution/>
           </StackPanel>

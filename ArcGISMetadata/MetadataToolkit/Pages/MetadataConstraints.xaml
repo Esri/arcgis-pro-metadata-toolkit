@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_MetadataConstraints" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_MetadataConstraints" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -73,19 +73,19 @@
 
   </UserControl.Resources>
 
-  <Grid>
+  <Grid Style="{DynamicResource EditorFrontPageStyle}">
     <StackPanel>
 
       <!-- title -->
-      <Label Content="{x:Static r:Resources.LBL_CONSTS_METADATA}"/>
+      <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.LBL_CONSTS_METADATA}"/>
 
-      <ListBox v:Nav.AnchorName="mdConst" ItemsSource="{Binding XPath=/metadata}">
+      <ListBox v:Nav.AnchorName="mdConst" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata}">
         <ListBox.ItemTemplate>
           <DataTemplate>
             <StackPanel>
 
               <!-- all resource constraints -->
-              <ListBox ItemsSource="{Binding XPath=mdConst}">
+              <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=mdConst}">
                 <ListBox.ItemTemplate>
                   <DataTemplate>
                     <!-- constraint types -->
@@ -95,26 +95,29 @@
               </ListBox>
 
               <!-- ADD general constraints -->
-              <Button Tag="General" Click="AddRecordByTagToLocal" Name="MetadataConstraints_GeneralConstraintsAdd">
+              <Button Tag="General" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                      Name="MetadataConstraints_GeneralConstraintsAdd">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                  <TextBlock Text="{x:Static r:Resources.BTN_CONSTS_NEW_GENERAL}"/>
+                  <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                  <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_CONSTS_NEW_GENERAL}"/>
                 </StackPanel>
               </Button>
 
               <!-- ADD legal constraints -->
-              <Button Tag="Legal" Click="AddRecordByTagToLocal" Name="MetadataConstraints_LegalConstraintsAdd">
+              <Button Tag="Legal" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                      Name="MetadataConstraints_LegalConstraintsAdd">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                  <TextBlock Text="{x:Static r:Resources.BTN_CONSTS_NEW_LEGAL}"/>
+                  <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                  <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_CONSTS_NEW_LEGAL}"/>
                 </StackPanel>
               </Button>
 
               <!-- ADD security constraints -->
-              <Button Tag="Security" Click="AddRecordByTagToLocal" Name="MetadataConstraints_SecurityConstraintsAdd">
+              <Button Tag="Security" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                      Name="MetadataConstraints_SecurityConstraintsAdd">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                  <TextBlock Text="{x:Static r:Resources.BTN_CONSTS_NEW_SECURITY}"/>
+                  <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                  <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_CONSTS_NEW_SECURITY}"/>
                 </StackPanel>
               </Button>
 

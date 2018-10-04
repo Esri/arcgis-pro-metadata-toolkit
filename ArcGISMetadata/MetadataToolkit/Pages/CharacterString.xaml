@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_CharacterString" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_CharacterString" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -13,16 +13,16 @@
     <UserControl.Resources>
         <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter" />
     </UserControl.Resources>
-
-  <Grid>
+    
+    <Grid Style="{DynamicResource EditorSubSectionStyle}">
     <DockPanel LastChildFill="True">
-      <Button DockPanel.Dock="Right" Click="DeleteItem"
-          AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CharacterStringDelete}">
-        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+      <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CharacterStringDelete}">
+        <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
       </Button>
-      <TextBox Text="{Binding XPath=.}"
+      <TextBox Style="{DynamicResource EditorTextBoxStyle}" Text="{Binding XPath=.}"
                AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CharacterString}"/>
     </DockPanel>
   </Grid>
-
-</p:EditorPage>
+  
+  </p:EditorPage>

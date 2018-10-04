@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_LI_ProcessStep" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_LI_ProcessStep" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -52,29 +52,29 @@
 
   </UserControl.Resources>
 
-  <Grid>
+  <Grid Style="{DynamicResource EditorSubPageStyle}">
     <StackPanel>
 
       <!-- description -->
-      <Label Content="{x:Static r:Resources.LBL_LI_PROCESS_STEP_DESC}"/>
+      <Label Style="{DynamicResource EditorVLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_LI_PROCESS_STEP_DESC}"/>
       <controls:Resizer>
-        <TextBox ToolTip="{x:Static r:Definitions.LI_ProcessStep_description}" 
+        <TextBox Style="{DynamicResource EditorTextAreaResizeStyle}" ToolTip="{x:Static r:Definitions.LI_ProcessStep_description}" 
             v:Nav.AnchorName="stepDesc,stepDesc" 
             Text="{e:MetadataBinding XPath=stepDesc}"
             Name="LI_ProcessStep_description"/>
       </controls:Resizer>
 
       <!-- rationale -->
-      <Label Content="{x:Static r:Resources.LBL_LI_PROCESS_STEP_RATIONALE}"/>
+      <Label Style="{DynamicResource EditorVLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_LI_PROCESS_STEP_RATIONALE}"/>
       <controls:Resizer>
-        <TextBox ToolTip="{x:Static r:Definitions.LI_ProcessStep_rationale}" 
+        <TextBox Style="{DynamicResource EditorTextAreaResizeStyle}" ToolTip="{x:Static r:Definitions.LI_ProcessStep_rationale}" 
             Text="{e:MetadataBinding XPath=stepRat}"
             Name="LI_ProcessStep_rationale"/>
       </controls:Resizer>
 
       <!-- date time -->
       <DockPanel LastChildFill="True">
-        <Label DockPanel.Dock="Left" ToolTip="{x:Static r:Definitions.LI_ProcessStep_dateTime}"
+        <Label Style="{DynamicResource EditorHLabelNoIdentStyle}" DockPanel.Dock="Left" ToolTip="{x:Static r:Definitions.LI_ProcessStep_dateTime}"
             v:Nav.AnchorName="stepDateTm,stepDateTm"
             Content="{x:Static r:Resources.LBL_LI_PROCESS_STEP_DATE}"/>
         <controls:DateTimeIsoControl Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.LI_ProcessStep_dateTime}"
@@ -83,7 +83,7 @@
 
       <!-- processors (contacts) -->
       <StackPanel>
-        <ListBox ItemsSource="{Binding XPath=stepProc}">
+        <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=stepProc}">
           <ListBox.ItemsPanel>
             <ItemsPanelTemplate>
               <StackPanel/>
@@ -91,21 +91,23 @@
           </ListBox.ItemsPanel>
           <ListBox.ItemTemplate>
             <DataTemplate>
-              <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=LI_ProcessStep_ProcessorGroup}">
+              <Expander Style="{DynamicResource EditorExpander2Style}"
+                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=LI_ProcessStep_ProcessorGroup}">
                 <Expander.Header>
                   <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                     RelativeSource={RelativeSource FindAncestor,
                     AncestorType={x:Type ContentPresenter}},
                     Mode=OneWayToSource}" LastChildFill="True">
-                    <Button DockPanel.Dock="Right" Click="DeleteItem" Name="LI_ProcessStep_ProcessorDelete">
-                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                    <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                            Name="LI_ProcessStep_ProcessorDelete">
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                     </Button>
-                    <Label  Content="{x:Static r:Resources.LBL_LI_PROCESS_PROCESSOR}"/>
-                    <Label  Content="{Binding ElementName=responsibleParty, Path=DefaultValue, Mode=TwoWay}"/>
+                    <Label Style="{DynamicResource EditorHExpanderSimpleLabel}"  Content="{x:Static r:Resources.LBL_LI_PROCESS_PROCESSOR}"/>
+                    <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding ElementName=responsibleParty, Path=DefaultValue, Mode=TwoWay}"/>
                   </DockPanel>
                 </Expander.Header>
                 <!-- party -->
-                <Border>
+                <Border Style="{DynamicResource EditorBorder2Style}">
                   <t:MTK_CI_ResponsibleParty x:Name="responsibleParty"/>
                 </Border>
               </Expander>
@@ -113,7 +115,7 @@
           </ListBox.ItemTemplate>
         </ListBox>
 
-        <Border>
+        <Border Style="{DynamicResource EditorBorder2Style}">
           <!-- LOAD SAVED CONTACT -->
           <DockPanel LastChildFill="True">
             <Label DockPanel.Dock="Left" VerticalAlignment="Center" Content="{x:Static r:Resources.LBL_CI_LOAD_PROCESSOR}"/>
@@ -122,16 +124,17 @@
         </Border>
 
         <!-- ADD contact -->
-        <Button Tag="Processor" Click="AddRecordByTagToLocal" Name="LI_ProcessStep_ProcessorAdd">
+        <Button Tag="Processor" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                Name="LI_ProcessStep_ProcessorAdd">
           <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-            <TextBlock Text="{x:Static r:Resources.BTN_LI_PROCESS_STEP_NEW_PROC}"/>
+            <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+            <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_LI_PROCESS_STEP_NEW_PROC}"/>
           </StackPanel>
         </Button>
       </StackPanel>
 
       <!-- li_source -->
-      <ListBox ItemsSource="{Binding XPath=stepSrc}">
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=stepSrc}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel/>
@@ -139,18 +142,20 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Border>
+            <Border Style="{DynamicResource EditorBorder2Style}">
               <StackPanel>
-                <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=LI_ProcessStep_DataSourceGroup}">
+                <Expander Style="{DynamicResource EditorExpander2Style}"
+                          AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=LI_ProcessStep_DataSourceGroup}">
                   <Expander.Header>
                     <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                         RelativeSource={RelativeSource FindAncestor,
                         AncestorType={x:Type ContentPresenter}},
                         Mode=OneWayToSource}" LastChildFill="True">
-                      <Button DockPanel.Dock="Right" Click="DeleteItem" Name="LI_ProcessStep_DataSourceDelete">
-                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                      <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                              Name="LI_ProcessStep_DataSourceDelete">
+                        <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                       </Button>
-                      <Label Content="{x:Static r:Resources.LBL_LI_SOURCE}"/>
+                      <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_LI_SOURCE}"/>
                     </DockPanel>
                   </Expander.Header>
                   <!-- lineage source -->
@@ -163,10 +168,11 @@
       </ListBox>
 
       <!-- ADD source -->
-      <Button Tag="Source" Click="AddRecordByTagToLocal" Name="LI_ProcessStep_DataSourceAdd">
+      <Button Tag="Source" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+              Name="LI_ProcessStep_DataSourceAdd">
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-          <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-          <TextBlock Text="{x:Static r:Resources.BTN_LI_NEW_SOURCE}"/>
+          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_LI_NEW_SOURCE}"/>
         </StackPanel>
       </Button>
 

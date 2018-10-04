@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_References" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_References" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -96,23 +96,23 @@
 
   </UserControl.Resources>
 
-  <Grid>
+  <Grid Style="{DynamicResource EditorFrontPageStyle}">
 
-    <ListBox ItemsSource="{Binding XPath=/metadata}">
+    <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata}">
       <ListBox.ItemTemplate>
         <DataTemplate>
           <StackPanel>
 
             <!-- page title -->
-            <Label Content="{x:Static r:Resources.SEC_RES_REF}"/>
+            <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_RES_REF}"/>
             <StackPanel>
-              <ListBox ItemsSource="{Binding XPath=dataIdInfo}">
+              <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=dataIdInfo}">
                 <ListBox.ItemTemplate>
                   <DataTemplate>
                     <StackPanel>
 
                       <!-- aggregate info -->
-                      <ListBox ItemsSource="{Binding XPath=aggrInfo}">
+                      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=aggrInfo}">
                         <ListBox.ItemsPanel>
                           <ItemsPanelTemplate>
                             <StackPanel />
@@ -120,23 +120,26 @@
                         </ListBox.ItemsPanel>
                         <ListBox.ItemTemplate>
                           <DataTemplate>
-                            <Border >
-                              <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=References_AggregateInformationGroup}">
+                            <Border Style="{DynamicResource EditorBorder2Style}" >
+                              <Expander Style="{DynamicResource EditorExpander2Style}" 
+                                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=References_AggregateInformationGroup}">
                                 <Expander.Header>
                                   <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                                     RelativeSource={RelativeSource FindAncestor,
                                     AncestorType={x:Type ContentPresenter}},
                                     Mode=OneWayToSource}" LastChildFill="True">
-                                    <Button DockPanel.Dock="Right" Click="DeleteItem" Name="References_AggregateInformationDelete">
-                                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                    <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                                            Name="References_AggregateInformationDelete">
+                                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                                     </Button>
-                                    <Label Content="{x:Static r:Resources.LBL_AGG_INFO}"/>
-                                    <Label  Content="{Binding XPath=resTitle, Mode=TwoWay}"/>
+                                    <Label Style="{DynamicResource EditorHExpanderSimpleLabel}" Content="{x:Static r:Resources.LBL_AGG_INFO}"/>
+                                    <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding XPath=resTitle, Mode=TwoWay}"/>
                                   </DockPanel>
                                 </Expander.Header>
                                 <!-- aggregate info -->
-                                <Border>
-                                  <t:MTK_MD_AggregateInformation v:Nav.AnchorName="aggrInfo"
+                                <Border Style="{DynamicResource EditorBorderSubStyle}">
+                                  <t:MTK_MD_AggregateInformation 
+                                      v:Nav.AnchorName="aggrInfo"
                                   />
                                 </Border>
                               </Expander>
@@ -146,10 +149,11 @@
                       </ListBox>
 
                       <!-- ADD agg info -->
-                      <Button Click="AddRecordByTagToLocal" Tag="AggInfo" Name="References_AggregateInformationAdd">
+                      <Button Click="AddRecordByTagToLocal" Tag="AggInfo" Style="{DynamicResource AddButton}"
+                              Name="References_AggregateInformationAdd">
                         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                          <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                          <TextBlock Text="{x:Static r:Resources.BTN_NEW_AGG_INFO}"/>
+                          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_NEW_AGG_INFO}"/>
                         </StackPanel>
                       </Button>
                     </StackPanel>
@@ -161,7 +165,7 @@
 
             <!-- portrayal citations -->
             <StackPanel >
-              <ListBox ItemsSource="{Binding XPath=porCatInfo}">
+              <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=porCatInfo}">
                 <ListBox.ItemsPanel>
                   <ItemsPanelTemplate>
                     <StackPanel/>
@@ -169,23 +173,25 @@
                 </ListBox.ItemsPanel>
                 <ListBox.ItemTemplate>
                   <DataTemplate>
-                    <Border >
-                      <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=References_PortrayalCitationGroup}">
+                    <Border Style="{DynamicResource EditorBorder2Style}" >
+                      <Expander Style="{DynamicResource EditorExpander2Style}"
+                                AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=References_PortrayalCitationGroup}">
                         <Expander.Header>
                           <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                             RelativeSource={RelativeSource FindAncestor,
                             AncestorType={x:Type ContentPresenter}},
                             Mode=OneWayToSource}" LastChildFill="True">
-                            <Button DockPanel.Dock="Right" Click="DeleteItem" Name="References_PortrayalCitationDelete">
-                              <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                                    Name="References_PortrayalCitationDelete">
+                              <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                             </Button>
-                            <Label Content="{x:Static r:Resources.LBL_PORTRAYAL_CIT}"/>
-                            <Label Content="{Binding XPath=resTitle, Mode=TwoWay}"/>
+                            <Label Style="{DynamicResource EditorHExpanderSimpleLabel}" Content="{x:Static r:Resources.LBL_PORTRAYAL_CIT}"/>
+                            <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding XPath=resTitle, Mode=TwoWay}"/>
                           </DockPanel>
                         </Expander.Header>
                         <!-- citation -->
-                        <Border>
-                          <ListBox ItemsSource="{Binding XPath=portCatCit}">
+                        <Border Style="{DynamicResource EditorBorderSubStyle}">
+                          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=portCatCit}">
                             <ListBox.ItemTemplate>
                               <DataTemplate>
                                 <t:MTK_CI_Citation/>
@@ -200,10 +206,11 @@
               </ListBox>
 
               <!-- ADD Citation -->
-              <Button Click="AddRecordByTagToLocal" Tag="Citation" Name="References_PortrayalCitationAdd">
+              <Button Click="AddRecordByTagToLocal" Tag="Citation" Style="{DynamicResource AddButton}"
+                      Name="References_PortrayalCitationAdd">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                  <TextBlock Text="{x:Static r:Resources.BTN_NEW_PORTRAYAL_CIT}"/>
+                  <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                  <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_NEW_PORTRAYAL_CIT}"/>
                 </StackPanel>
               </Button>
 
@@ -211,7 +218,7 @@
 
             <!-- application schema -->
             <StackPanel>
-              <ListBox ItemsSource="{Binding XPath=appSchInfo}">
+              <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=appSchInfo}">
                 <ListBox.ItemsPanel>
                   <ItemsPanelTemplate>
                     <StackPanel/>
@@ -219,17 +226,19 @@
                 </ListBox.ItemsPanel>
                 <ListBox.ItemTemplate>
                   <DataTemplate>
-                    <Border >
-                      <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=References_ApplicationSchemaGroup}">
+                    <Border Style="{DynamicResource EditorBorder2Style}" >
+                      <Expander Style="{DynamicResource EditorExpander2Style}"
+                                AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=References_ApplicationSchemaGroup}">
                         <Expander.Header>
                           <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                                 RelativeSource={RelativeSource FindAncestor,
                                 AncestorType={x:Type ContentPresenter}},
                                 Mode=OneWayToSource}" LastChildFill="True">
-                            <Button DockPanel.Dock="Right" Click="DeleteItem" Name="References_ApplicationSchemaDelete">
-                              <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                                    Name="References_ApplicationSchemaDelete">
+                              <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                             </Button>
-                            <Label  Content="{x:Static r:Resources.LBL_APP_SCHEMA}"/>
+                            <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_APP_SCHEMA}"/>
                           </DockPanel>
                         </Expander.Header>
                         <!-- application schema -->
@@ -241,10 +250,11 @@
               </ListBox>
 
               <!-- ADD application schema -->
-              <Button Tag="AppSchema" Click="AddRecordByTagToLocal" Name="References_ApplicationSchemaAdd">
+              <Button Tag="AppSchema" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                      Name="References_ApplicationSchemaAdd">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                  <TextBlock Text="{x:Static r:Resources.BTN_NEW_APP_SCHEMA}"/>
+                  <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                  <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_NEW_APP_SCHEMA}"/>
                 </StackPanel>
               </Button>
             </StackPanel>

@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_DQ_ConformanceResult" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_DQ_ConformanceResult" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -36,27 +36,29 @@
 
   </UserControl.Resources>
 
-  <Grid>
+  <Grid Style="{DynamicResource EditorSubPageStyle}">
     <StackPanel>
 
       <!-- passed? -->
-      <CheckBox Content="{x:Static r:Resources.LBL_DQ_PASS}"
+      <CheckBox Style="{DynamicResource EditorCheckBoxIdentStyle}"
+          Content="{x:Static r:Resources.LBL_DQ_PASS}"
           v:Nav.AnchorName="conPass"
           ToolTip="{x:Static r:Definitions.DQ_ConformanceResult_pass}"
           IsChecked="{Binding XPath=conPass, Converter={StaticResource StringToBoolConverter}}"
           Name="DQ_ConformanceResult_pass"/>
 
       <!-- explaination-->
-      <Label Content="{x:Static r:Resources.LBL_DQ_CNFRMEXPLAIN}"/>
+      <Label Style="{DynamicResource EditorVLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_DQ_CNFRMEXPLAIN}"/>
       <controls:Resizer>
-        <TextBox ToolTip="{x:Static r:Definitions.DQ_ConformanceResult_explanation}" 
+        <TextBox Style="{DynamicResource EditorTextAreaResizeStyle}" 
+            ToolTip="{x:Static r:Definitions.DQ_ConformanceResult_explanation}" 
             v:Nav.AnchorName="conExpl,conExpl"  
             Text="{e:MetadataBinding XPath=conExpl}"
             Name="DQ_ConformanceResult_explanation"/>
       </controls:Resizer>
 
       <!-- specification -->
-      <ListBox ItemsSource="{Binding XPath=conSpec}">
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=conSpec}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel />
@@ -64,12 +66,13 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Expander Name="DQ_ConformanceResult_SpecificationGroup">
+            <Expander Style="{DynamicResource EditorExpander2Style}"
+                      Name="DQ_ConformanceResult_SpecificationGroup">
               <Expander.Header>
-                <Label Content="{x:Static r:Resources.LBL_DQ_SPEC}"/>
+                <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_DQ_SPEC}"/>
               </Expander.Header>
               <!-- citation -->
-              <Border>
+              <Border Style="{DynamicResource EditorBorderSubStyle}">
                 <t:MTK_CI_Citation v:Nav.AnchorName="conSpec" />
               </Border>
             </Expander>

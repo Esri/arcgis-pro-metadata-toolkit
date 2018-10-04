@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_ReferenceSystem" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_ReferenceSystem" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -71,11 +71,11 @@
 
   </UserControl.Resources>
 
-  <Grid>
+  <Grid Style="{DynamicResource EditorFrontPageStyle}">
     <StackPanel>
 
       <!-- page title -->
-      <Label Content="{x:Static r:Resources.SEC_REFSYSINFO}"/>
+      <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_REFSYSINFO}"/>
 
       <ListBox ItemsSource="{Binding XPath=/metadata}">
         <ListBox.ItemTemplate>
@@ -89,32 +89,34 @@
                 </ListBox.ItemsPanel>
                 <ListBox.ItemTemplate>
                   <DataTemplate>
-                    <Border>
-                      <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SpatialReference_ReferenceSystemGroup}">
+                    <Border Style="{DynamicResource EditorBorder2Style}">
+                      <Expander Style="{DynamicResource EditorExpander2Style}" 
+                                AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SpatialReference_ReferenceSystemGroup}">
                         <Expander.Header>
                           <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                               RelativeSource={RelativeSource FindAncestor,
                               AncestorType={x:Type ContentPresenter}},
                               Mode=OneWayToSource}" LastChildFill="True">
-                            <Button DockPanel.Dock="Right" Click="DeleteItem" Name="SpatialReference_ReferenceSystemDelete">
-                              <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                                    Name="SpatialReference_ReferenceSystemDelete">
+                              <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                             </Button>
-                            <Label  Content="{x:Static r:Resources.LBL_MD_RS}"/>
+                            <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_MD_RS}"/>
                           </DockPanel>
                         </Expander.Header>
 
-                        <StackPanel>
+                        <StackPanel Style="{DynamicResource EditorSubPageStackPanelStyle}">
 
                           <!-- dimension -->
                           <DockPanel tu:MetadataStyle.OnlyProfiles="FGDC,NAP" LastChildFill="True">
-                            <Label Content="{x:Static r:Resources.LBL_RS_DIMENSION}"/>
-                            <ComboBox DockPanel.Dock="Right" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="RefSystem/@dimension" IsEditable="False"
+                            <Label Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_RS_DIMENSION}"/>
+                            <ComboBox DockPanel.Dock="Right" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="RefSystem/@dimension" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
                                 ToolTip=""
                                 ItemsSource="{Binding Source={StaticResource RS_Dimension}, Path=List}"
                                 DisplayMemberPath="."
                                 v:Nav.AnchorName="RefSystem,RefSystem"
                                 SelectedValuePath="@value"
-                                AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SpatialReference_ReferenceSystemDimension}">
+                                      AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SpatialReference_ReferenceSystemDimension}">
                               <ComboBox.SelectedValue>
                                 <e:MetadataBinding XPath="RefSystem/@dimension"/>
                               </ComboBox.SelectedValue>
@@ -143,10 +145,11 @@
               </ListBox>
 
               <!-- ADD reference system -->
-              <Button Tag="RefSystem" Click="AddRecordByTagToLocal" Name="SpatialReference_ReferenceSystemAdd">
+              <Button Tag="RefSystem" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                      Name="SpatialReference_ReferenceSystemAdd">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                  <TextBlock Text="{x:Static r:Resources.BTN_MD_RS_NEW_RS}"/>
+                  <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                  <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_MD_RS_NEW_RS}"/>
                 </StackPanel>
               </Button>
             </StackPanel>

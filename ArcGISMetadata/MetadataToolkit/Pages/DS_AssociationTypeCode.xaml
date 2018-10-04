@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_DS_AssociationTypeCode" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_DS_AssociationTypeCode" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -25,7 +25,7 @@
   </UserControl.Resources>
 
   <Grid>
-    <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="AscTypeCd/@value" IsEditable="False"
+    <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="AscTypeCd/@value" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
         ToolTip="{x:Static r:Definitions.MD_AggregateInformation_associationType}"
         ItemsSource="{Binding Source={StaticResource DS_AssociationTypeCode}, Path=List}"
         DisplayMemberPath="."

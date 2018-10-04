@@ -1,4 +1,4 @@
-<p:EditorPage x:Name="resourceExtent" x:Class="MetadataToolkit.Pages.MTK_ResourceExtent" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Name="resourceExtent" x:Class="MetadataToolkit.Pages.MTK_ResourceExtent" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -88,15 +88,15 @@
 
   </UserControl.Resources>
 
-  <Grid>
-    <ListBox ItemsSource="{Binding XPath=/metadata/dataIdInfo}">
+  <Grid Style="{DynamicResource EditorFrontPageStyle}">
+    <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata/dataIdInfo}">
 
       <ListBox.ItemTemplate>
         <DataTemplate>
 
           <StackPanel>
-            <Label Content="{x:Static r:Resources.LBL_RES_EXTENTS}"/>
-            <ListBox ItemsSource="{Binding XPath=/metadata/dataIdInfo/dataExt}">
+            <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.LBL_RES_EXTENTS}"/>
+            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata/dataIdInfo/dataExt}">
               <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                   <StackPanel/>
@@ -104,19 +104,19 @@
               </ListBox.ItemsPanel>
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Border >
-                    <Expander 
+                  <Border Style="{DynamicResource EditorBorder2Style}" >
+                    <Expander Style="{DynamicResource EditorExpander2Style}" 
                               AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ResourceExtent_ExtentGroup}">
                       <Expander.Header>
                         <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                       RelativeSource={RelativeSource FindAncestor,
                       AncestorType={x:Type ContentPresenter}},
                       Mode=OneWayToSource}" LastChildFill="True">
-                          <Button DockPanel.Dock="Right" Click="DeleteItem"
+                          <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                   AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ResourceExtent_ExtentDelete}">
-                            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
-                          <Label Content="{x:Static r:Resources.LBL_EXTENT}"/>
+                          <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_EXTENT}"/>
                         </DockPanel>
                       </Expander.Header>
                       <!-- extent -->
@@ -128,10 +128,11 @@
             </ListBox>
 
             <!-- add extent -->
-            <Button Click="AddRecordByTagToLocal" Tag="Extent" Name="ResourceExtent_ExtentAdd">
+            <Button Click="AddRecordByTagToLocal" Tag="Extent" Style="{DynamicResource AddButton}"
+                    Name="ResourceExtent_ExtentAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                <TextBlock Text="{x:Static r:Resources.BTN_RES_EXTENTS_NEW}"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_RES_EXTENTS_NEW}"/>
               </StackPanel>
             </Button>
 

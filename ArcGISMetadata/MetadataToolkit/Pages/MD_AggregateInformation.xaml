@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_MD_AggregateInformation" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_MD_AggregateInformation" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -75,11 +75,11 @@
 
   </UserControl.Resources>
 
-  <Grid>
+  <Grid Style="{DynamicResource EditorFrontPageStyle}">
     <StackPanel>
 
       <!-- aggregate dataset name citation -->
-      <ListBox ItemsSource="{Binding XPath=aggrDSName}"
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=aggrDSName}"
           ToolTip="{x:Static r:Definitions.MD_AggregateInformation_aggregateDataSetName}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
@@ -88,21 +88,23 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Expander Name="MD_AggregateInformation_AggregateDataSetNameCitationGroup">
+            <Expander Style="{DynamicResource EditorExpander2Style}"
+                      Name="MD_AggregateInformation_AggregateDataSetNameCitationGroup">
               <Expander.Header>
                 <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                     RelativeSource={RelativeSource FindAncestor,
                     AncestorType={x:Type ContentPresenter}},
                     Mode=OneWayToSource}" LastChildFill="True">
-                  <Button DockPanel.Dock="Right" Click="DeleteItem" Name="MD_AggregateInformation_AggregateDataSetNameCitationDelete">
-                    <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                  <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                          Name="MD_AggregateInformation_AggregateDataSetNameCitationDelete">
+                    <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                   </Button>
-                  <Label Content="{x:Static r:Resources.LBL_AGG_NAME}"/>
-                  <Label Content="{Binding XPath=resTitle, Mode=TwoWay}"/>
+                  <Label Style="{DynamicResource EditorHExpanderSimpleLabel}" Content="{x:Static r:Resources.LBL_AGG_NAME}"/>
+                  <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding XPath=resTitle, Mode=TwoWay}"/>
                 </DockPanel>
               </Expander.Header>
               <!-- citation -->
-              <Border>
+              <Border Style="{DynamicResource EditorBorderSubStyle}">
                 <t:MTK_CI_Citation/>
               </Border>
             </Expander>
@@ -111,13 +113,15 @@
       </ListBox>
 
       <!-- ADD citation -->
-      <ListBox ItemsSource="{Binding XPath=self::*[not(aggrDSName)]}">
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}"
+          ItemsSource="{Binding XPath=self::*[not(aggrDSName)]}">
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Button Tag="aggrDSName" Click="AddRecordByTagToLocal" Name="MD_AggregateInformation_AggregateDataSetNameCitationAdd">
+            <Button Tag="aggrDSName" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                    Name="MD_AggregateInformation_AggregateDataSetNameCitationAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                <TextBlock Text="{x:Static r:Resources.BTN_ADD_AGG_CIT}"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_AGG_CIT}"/>
               </StackPanel>
             </Button>
           </DataTemplate>
@@ -125,7 +129,8 @@
       </ListBox>
 
       <!-- identifier -->
-      <ListBox ToolTip="{x:Static r:Definitions.MD_AggregateInformation_aggregateDataSetIdentifier}"
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" 
+          ToolTip="{x:Static r:Definitions.MD_AggregateInformation_aggregateDataSetIdentifier}"
           ItemsSource="{Binding XPath=aggrDSIdent}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
@@ -134,17 +139,19 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Expander Name="MD_AggregateInformation_IdentifierGroup">
+            <Expander Style="{DynamicResource EditorExpander2Style}"
+                      Name="MD_AggregateInformation_IdentifierGroup">
               <Expander.Header>
                 <DockPanel HorizontalAlignment="{Binding HorizontalAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContentPresenter}}, Mode=OneWayToSource}" LastChildFill="True">
-                  <Button DockPanel.Dock="Right" Click="DeleteItem" Name="MD_AggregateInformation_IdentifierDelete">
-                    <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                  <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                          Name="MD_AggregateInformation_IdentifierDelete">
+                    <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                   </Button>
-                  <Label Content="{x:Static r:Resources.LBL_AGG_ID}"/>
-                  <Label Content="{Binding XPath=identCode, Mode=TwoWay}"/>
+                  <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_AGG_ID}"/>
+                  <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding XPath=identCode, Mode=TwoWay}"/>
                 </DockPanel>
               </Expander.Header>
-              <Border>
+              <Border Style="{DynamicResource EditorBorderSubStyle}">
                 <!-- identifier -->
                 <t:MTK_MD_Identifier/>
               </Border>
@@ -154,13 +161,15 @@
       </ListBox>
 
       <!-- ADD identifier -->
-      <ListBox ItemsSource="{Binding XPath=self::*[not(aggrDSIdent)]}">
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}"
+          ItemsSource="{Binding XPath=self::*[not(aggrDSIdent)]}">
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Button Tag="aggrDSIdent" Click="AddRecordByTagToLocal" Name="MD_AggregateInformation_IdentifierAdd">
+            <Button Tag="aggrDSIdent" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                    Name="MD_AggregateInformation_IdentifierAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                <TextBlock Text="{x:Static r:Resources.BTN_ADD_AGG_ID}"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_AGG_ID}"/>
               </StackPanel>
             </Button>
           </DataTemplate>
@@ -168,8 +177,8 @@
       </ListBox>
 
       <!-- association type -->
-      <Label Content="{x:Static r:Resources.LBL_AGG_TYPE}"/>
-      <ListBox ItemsSource="{Binding XPath=assocType}">
+      <Label Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_AGG_TYPE}"/>
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=assocType}">
         <ListBox.ItemTemplate>
           <DataTemplate>
             <t:MTK_DS_AssociationTypeCode/>
@@ -178,8 +187,8 @@
       </ListBox>
 
       <!-- initiative type -->
-      <Label Content="{x:Static r:Resources.LBL_AGG_INIT_TYPE}"/>
-      <ListBox ItemsSource="{Binding XPath=initType}">
+      <Label Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_AGG_INIT_TYPE}"/>
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=initType}">
         <ListBox.ItemTemplate>
           <DataTemplate>
             <t:MTK_DS_InitiativeTypeCode/>

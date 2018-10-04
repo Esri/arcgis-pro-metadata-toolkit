@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_DQ_QuantitativeResult" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_DQ_QuantitativeResult" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -74,7 +74,7 @@
 
   <Grid>
     <StackPanel>
-      <Grid>
+      <Grid Style="{DynamicResource EditorSubPageStyle}">
         <Grid.RowDefinitions>
           <RowDefinition />
           <RowDefinition />
@@ -87,35 +87,38 @@
         </Grid.ColumnDefinitions>
 
         <!-- value type -->
-        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_DQ_VALTYPE}"/>
-        <TextBox Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.DQ_QuantitativeResult_valueType}"
+        <Label Style="{DynamicResource EditorHLabelNoIdentStyle}" Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_DQ_VALTYPE}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.DQ_QuantitativeResult_valueType}"
             Text="{e:MetadataBinding XPath=quanValType}"
             Name="DQ_QuantitativeResult_valueType"/>
 
         <!-- values -->
-        <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+        <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
             ItemsSource="{Binding XPath=quanVal}">
           <ListBox.ItemTemplate>
             <DataTemplate>
               <DockPanel LastChildFill="True">
-                <Label DockPanel.Dock="Left" Content="{x:Static r:Resources.LBL_DQ_VALUE}"/>
+                <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_DQ_VALUE}"/>
 
                 <!-- add if the last sibling -->
-                <ListBox DockPanel.Dock="Right" ItemsSource="{Binding XPath=self::*[not(following-sibling::quanVal)]}">
+                <ListBox DockPanel.Dock="Right" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(following-sibling::quanVal)]}">
                   <ListBox.ItemTemplate>
                     <DataTemplate>
-                      <Button Tag="Value_Parent" Click="AddRecordByTagToLocal" Name="DQ_QuantitativeResult_ValueAdd">
-                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Button Tag="Value_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
+                              Name="DQ_QuantitativeResult_ValueAdd">
+                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
                       </Button>
                     </DataTemplate>
                   </ListBox.ItemTemplate>
                 </ListBox>
                 <!-- delete -->
-                <Button DockPanel.Dock="Right" Click="DeleteItem" AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_QuantitativeResult_ValueDelete}">
-                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
+                  AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_QuantitativeResult_ValueDelete}">
+                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                 </Button>
                 <!-- value -->
-                <TextBox ToolTip="{x:Static r:Definitions.DQ_QuantitativeResult_value}"
+                <TextBox Style="{DynamicResource EditorTextBoxStyle}"
+                    ToolTip="{x:Static r:Definitions.DQ_QuantitativeResult_value}"
                     v:Nav.AnchorName="quanVal"
                     Text="{e:MetadataBinding XPath=.}"
                     AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_QuantitativeResult_value}"/>
@@ -125,9 +128,9 @@
         </ListBox>
 
         <!-- value unit -->
-        <Label Grid.Row="2" Grid.Column="0"
+        <Label Style="{DynamicResource EditorHLabelNoIdentStyle}"  Grid.Row="2" Grid.Column="0"
             Content="{x:Static r:Resources.LBL_DQ_VALUNIT}"/>
-        <ListBox Grid.Row="2" Grid.Column="1"
+        <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" Grid.Row="2" Grid.Column="1"
             ItemsSource="{Binding XPath=quanValUnit/UOM}">
           <ListBox.ItemTemplate>
             <DataTemplate>
@@ -140,8 +143,8 @@
         </ListBox>
 
         <!-- error statistic -->
-        <Label Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_DQ_ERRORSTAT}"/>
-        <TextBox Grid.Row="3" Grid.Column="1" ToolTip="{x:Static r:Definitions.DQ_QuantitativeResult_errorStatistic}" Text="{e:MetadataBinding XPath=errStat}"
+        <Label Style="{DynamicResource EditorHLabelNoIdentStyle}" Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_DQ_ERRORSTAT}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="3" Grid.Column="1" ToolTip="{x:Static r:Definitions.DQ_QuantitativeResult_errorStatistic}" Text="{e:MetadataBinding XPath=errStat}"
                  Name="DQ_QuantitativeResult_errorStatistic"/>
 
       </Grid>

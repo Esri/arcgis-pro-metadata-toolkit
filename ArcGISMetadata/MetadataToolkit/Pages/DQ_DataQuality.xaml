@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_DQ_DataQuality" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_DQ_DataQuality" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -64,12 +64,12 @@
     <StackPanel>
 
       <!-- scope -->
-      <Border>
-        <ListBox ItemsSource="{Binding XPath=dqScope/scpLvl}">
+      <Border Style="{DynamicResource EditorBorder2Style}">
+        <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=dqScope/scpLvl}">
           <ListBox.ItemTemplate>
             <DataTemplate>
               <DockPanel LastChildFill="True">
-                <Label DockPanel.Dock="Left" Content="{x:Static r:Resources.LBL_DQ_LEVELSCOPE}"/>
+                <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_DQ_LEVELSCOPE}"/>
                 <!-- scope code -->
                 <t:MTK_MD_ScopeCode ToolTip="{x:Static r:Definitions.DQ_DataQuality_scope}"/>
               </DockPanel>
@@ -79,12 +79,12 @@
       </Border>
 
       <!-- scope level description -->
-      <Border>
-        <ListBox ItemsSource="{Binding XPath=dqScope}">
+      <Border Style="{DynamicResource EditorBorder2Style}">
+        <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=dqScope}">
           <ListBox.ItemTemplate>
             <DataTemplate>
               <StackPanel>
-                <ListBox ItemsSource="{Binding XPath=scpLvlDesc}">
+                <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}"  ItemsSource="{Binding XPath=scpLvlDesc}">
                   <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
                       <StackPanel/>
@@ -92,16 +92,18 @@
                   </ListBox.ItemsPanel>
                   <ListBox.ItemTemplate>
                     <DataTemplate>
-                      <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_DataQuality_LevelDescriptionGroup}">
+                      <Expander Style="{DynamicResource EditorExpander2Style}" 
+                                AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_DataQuality_LevelDescriptionGroup}">
                         <Expander.Header>
                           <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                               RelativeSource={RelativeSource FindAncestor,
                               AncestorType={x:Type ContentPresenter}},
                               Mode=OneWayToSource}" LastChildFill="True">
-                            <Button DockPanel.Dock="Right" Click="DeleteItem" Name="DQ_DataQuality_LevelDescriptionDelete">
-                              <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                                    Name="DQ_DataQuality_LevelDescriptionDelete">
+                              <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                             </Button>
-                            <Label Content="{x:Static r:Resources.LBL_DQ_LEVELDESC}"/>
+                            <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DQ_LEVELDESC}"/>
                           </DockPanel>
                         </Expander.Header>
                         <!-- scope description -->
@@ -114,10 +116,11 @@
                 </ListBox>
 
                 <!-- ADD level description -->
-                <Button Tag="LevelDesc" Click="AddRecordByTagToLocal" Name="DQ_DataQuality_LevelDescriptionAdd">
+                <Button Tag="LevelDesc" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                        Name="DQ_DataQuality_LevelDescriptionAdd">
                   <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                    <TextBlock Text="{x:Static r:Resources.BTN_NEW_LEVELDESC}"/>
+                    <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                    <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_NEW_LEVELDESC}"/>
                   </StackPanel>
                 </Button>
               </StackPanel>
@@ -127,8 +130,8 @@
       </Border>
 
       <!-- extents -->
-      <Border>
-        <ListBox ItemsSource="{Binding XPath=dqScope}">
+      <Border Style="{DynamicResource EditorBorder2Style}">
+        <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=dqScope}">
           <ListBox.ItemsPanel>
             <ItemsPanelTemplate>
               <StackPanel/>
@@ -145,16 +148,18 @@
                   </ListBox.ItemsPanel>
                   <ListBox.ItemTemplate>
                     <DataTemplate>
-                      <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_DataQuality_ExtentGroup}">
+                      <Expander Style="{DynamicResource EditorExpander2Style}"
+                                AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_DataQuality_ExtentGroup}">
                         <Expander.Header>
                           <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                               RelativeSource={RelativeSource FindAncestor,
                               AncestorType={x:Type ContentPresenter}},
                               Mode=OneWayToSource}" LastChildFill="True">
-                            <Button DockPanel.Dock="Right" Click="DeleteItem" Name="DQ_DataQuality_ExtentDelete">
-                              <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                                    Name="DQ_DataQuality_ExtentDelete">
+                              <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                             </Button>
-                            <Label Content="{x:Static r:Resources.LBL_DQ_LEVELEXT}"/>
+                            <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DQ_LEVELEXT}"/>
                           </DockPanel>
                         </Expander.Header>
                         <!-- extent -->
@@ -165,10 +170,11 @@
                 </ListBox>
 
                 <!-- ADD extent -->
-                <Button Tag="ScpExt" Click="AddRecordByTagToLocal" Name="DQ_DataQuality_ExtentAdd">
+                <Button Tag="ScpExt" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                        Name="DQ_DataQuality_ExtentAdd">
                   <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                    <TextBlock Text="{x:Static r:Resources.BTN_DATAQUAL_NEW_EXT}"/>
+                    <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                    <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DATAQUAL_NEW_EXT}"/>
                   </StackPanel>
                 </Button>
               </StackPanel>
@@ -180,9 +186,9 @@
       <!--
         <!ENTITY % DQElementTypes '(DQCompComm | DQCompOm | DQConcConsis | DQDomConsis | DQFormConsis | DQTopConsis | DQAbsExtPosAcc | DQGridDataPosAcc | DQRelIntPosAcc | DQThemClassCor | DQNonQuanAttAcc | DQQuanAttAcc | DQAccTimeMeas | DQTempConsis | DQTempValid | QeUsability)'>
       -->
-      <Border>
+      <Border Style="{DynamicResource EditorBorder2Style}">
         <StackPanel>
-          <ListBox ItemsSource="{Binding XPath=report}">
+          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=report}">
             <ListBox.ItemsPanel>
               <ItemsPanelTemplate>
                 <StackPanel/>
@@ -190,16 +196,18 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
               <DataTemplate>
-                <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_DataQuality_ReportGroup}">
+                <Expander Style="{DynamicResource EditorExpander2Style}"
+                          AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_DataQuality_ReportGroup}">
                   <Expander.Header>
                     <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                         RelativeSource={RelativeSource FindAncestor,
                         AncestorType={x:Type ContentPresenter}},
                         Mode=OneWayToSource}" LastChildFill="True">
-                      <Button DockPanel.Dock="Right" Click="DeleteItem" Name="DQ_DataQuality_ReportDelete">
-                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                      <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                              Name="DQ_DataQuality_ReportDelete">
+                        <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                       </Button>
-                      <Label Content="{x:Static r:Resources.LBL_DQ_REPORT}"/>
+                      <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DQ_REPORT}"/>
                     </DockPanel>
                   </Expander.Header>
                   <!-- element -->
@@ -209,10 +217,11 @@
             </ListBox.ItemTemplate>
           </ListBox>
           <!-- ADD report -->
-          <Button Tag="Report" Click="AddRecordByTag" Name="DQ_DataQuality_ReportAdd">
+          <Button Tag="Report" Click="AddRecordByTag" Style="{DynamicResource AddButton}"
+                  Name="DQ_DataQuality_ReportAdd">
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-              <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-              <TextBlock Text="{x:Static r:Resources.BTN_DQ_NEW_REPORT}"/>
+              <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+              <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DQ_NEW_REPORT}"/>
             </StackPanel>
           </Button>
         </StackPanel>

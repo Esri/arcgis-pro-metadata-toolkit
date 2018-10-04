@@ -1,4 +1,4 @@
-<p:EditorPage x:Name="itemInfoPage" Tag="Page" x:Class="MetadataToolkit.Pages.MTK_GPCustomTool" x:ClassModifier="internal"  
+﻿<p:EditorPage x:Name="itemInfoPage" Tag="Page" x:Class="MetadataToolkit.Pages.MTK_GPCustomTool" x:ClassModifier="internal"  
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:dg="http://schemas.microsoft.com/wpf/2008/toolkit"
@@ -58,11 +58,11 @@
     <StackPanel>
 
       <!-- tool summary -->
-      <Label Content="{x:Static r:Resources.LBL_TOOL_SUMMARY}"/>
-      <ListBox ItemsSource="{Binding XPath=summary}">
+      <Label Style="{DynamicResource EditorVLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_TOOL_SUMMARY}"/>
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=summary}">
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Border>
+            <Border Style="{DynamicResource EditorRichTextBoxContainerNoIndentStyle}">
               <!-- text box -->
               <t:MTK_EditorRichTextBox 
                   v:Nav.AnchorName="toolSummary"
@@ -73,8 +73,8 @@
       </ListBox>
 
       <!-- usage -->
-      <Label Content="{x:Static r:Resources.LBL_TOOL_USAGE}"/>
-      <ListBox ItemsSource="{Binding XPath=usage}">
+      <Label Style="{DynamicResource EditorVLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_TOOL_USAGE}"/>
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=usage}">
         <ListBox.ItemTemplate>
           <DataTemplate>
             <!-- text box -->
@@ -84,17 +84,17 @@
       </ListBox>
 
       <!-- syntax reference -->
-      <ListBox ItemsSource="{Binding XPath=parameters[1][param]}">
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=parameters[1][param]}">
 
         <ListBox.ItemTemplate>
           <DataTemplate>
             <StackPanel>
 
               <!-- label -->
-              <Label Content="{x:Static r:Resources.LBL_TOOL_SYNTAX}"/>
+              <Label Style="{DynamicResource EditorVLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_TOOL_SYNTAX}"/>
 
               <!-- parameters -->
-              <ListBox ItemsSource="{Binding XPath=param}">
+              <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=param}">
                 <ListBox.ItemsPanel>
                   <ItemsPanelTemplate>
                     <StackPanel/>
@@ -102,19 +102,20 @@
                 </ListBox.ItemsPanel>
                 <ListBox.ItemTemplate>
                   <DataTemplate>
-                    <Border >
-                      <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=GPCustomTool_SyntaxReferenceParameterGroup}">
+                    <Border Style="{DynamicResource EditorBorder2Style}" >
+                      <Expander Style="{DynamicResource EditorExpander2Style}"
+                                AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=GPCustomTool_SyntaxReferenceParameterGroup}">
                         <Expander.Header>
                           <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                       RelativeSource={RelativeSource FindAncestor,
                       AncestorType={x:Type ContentPresenter}},
                       Mode=OneWayToSource}" LastChildFill="True">
-                            <Label Content="{Binding XPath=(@displayname | @name)[1]}"/>
+                            <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding XPath=(@displayname | @name)[1]}"/>
                           </DockPanel>
                         </Expander.Header>
                         <StackPanel>
                           <!-- dialog reference -->
-                          <ListBox ItemsSource="{Binding XPath=dialogReference}">
+                          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=dialogReference}">
                             <ListBox.ItemTemplate>
                               <DataTemplate>
                                 <StackPanel>
@@ -122,7 +123,7 @@
                                 RelativeSource={RelativeSource FindAncestor,
                                 AncestorType={x:Type ContentPresenter}},
                                 Mode=OneWayToSource}" LastChildFill="True">
-                                    <Label Content="{x:Static r:Resources.LBL_TOOL_DIALOGREF}"/>
+                                    <Label Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_TOOL_DIALOGREF}"/>
                                   </DockPanel>
                                   <!-- text box -->
                                   <t:MTK_EditorRichTextBox ToolTip="{x:Static r:Definitions.ESRI_tool_parameter_dialogExplanation}"/>
@@ -132,13 +133,14 @@
                           </ListBox>
 
                           <!-- ADD dialog reference -->
-                          <ListBox ItemsSource="{Binding XPath=self::*[not(dialogReference)]}">
+                          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(dialogReference)]}">
                             <ListBox.ItemTemplate>
                               <DataTemplate>
-                                <Button Tag="DialogReference" Click="AddRecordByTagToLocal" Name="GPCustomTool_SyntaxReferenceParameterAdd">
+                                <Button Tag="DialogReference" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                                        Name="GPCustomTool_SyntaxReferenceParameterAdd">
                                   <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                                    <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                                    <TextBlock Text="{x:Static r:Resources.BTN_GP_NEW_DIALOGREF}"/>
+                                    <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                                    <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_GP_NEW_DIALOGREF}"/>
                                   </StackPanel>
                                 </Button>
                               </DataTemplate>
@@ -146,15 +148,15 @@
                           </ListBox>
 
                           <!-- python reference -->
-                          <ListBox ItemsSource="{Binding XPath=pythonReference}">
+                          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=pythonReference}">
                             <ListBox.ItemTemplate>
                               <DataTemplate>
                                 <StackPanel>
                                   <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
-                                             RelativeSource={RelativeSource FindAncestor,
-                                             AncestorType={x:Type ContentPresenter}},
-                                             Mode=OneWayToSource}" LastChildFill="True">
-                                    <Label Content="{x:Static r:Resources.LBL_TOOL_SCRIPTREF}"/>
+                              RelativeSource={RelativeSource FindAncestor,
+                              AncestorType={x:Type ContentPresenter}},
+                              Mode=OneWayToSource}" LastChildFill="True">
+                                    <Label Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_TOOL_SCRIPTREF}"/>
                                   </DockPanel>
                                   <!-- text box -->
                                   <t:MTK_EditorRichTextBox ToolTip="{x:Static r:Definitions.ESRI_tool_parameter_pythonExplanation}"/>
@@ -164,13 +166,14 @@
                           </ListBox>
 
                           <!-- ADD python reference -->
-                          <ListBox ItemsSource="{Binding XPath=self::*[not(pythonReference)]}">
+                          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(pythonReference)]}">
                             <ListBox.ItemTemplate>
                               <DataTemplate>
-                                <Button Tag="PythonReference" Click="AddRecordByTagToLocal" Name="GPCustomTool_PythonReferenceAdd">
+                                <Button Tag="PythonReference" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                                        Name="GPCustomTool_PythonReferenceAdd">
                                   <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                                    <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                                    <TextBlock Text="{x:Static r:Resources.BTN_GP_NEW_PYREF}"/>
+                                    <Image Style="{DynamicResource AddImageStyle}"  Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                                    <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_GP_NEW_PYREF}"/>
                                   </StackPanel>
                                 </Button>
                               </DataTemplate>
@@ -188,8 +191,8 @@
       </ListBox>
 
       <!-- examples -->
-      <Label Content="{x:Static r:Resources.LBL_TOOL_EXAMPLES}"/>
-      <ListBox ItemsSource="{Binding XPath=scriptExamples/scriptExample}">
+      <Label Style="{DynamicResource EditorVLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_TOOL_EXAMPLES}"/>
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=scriptExamples/scriptExample}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel/>
@@ -197,20 +200,21 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Border>
-              <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=GPCustomTool_Code_Samples}" >
+            <Border Style="{DynamicResource EditorBorder2Style}">
+              <Expander Style="{DynamicResource EditorExpander2Style}" 
+                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=GPCustomTool_Code_Samples}" >
                 <Expander.Header>
                   <!-- title -->
                   <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                       RelativeSource={RelativeSource FindAncestor,
                       AncestorType={x:Type ContentPresenter}},
                       Mode=OneWayToSource}" LastChildFill="True">
-                      <Label DockPanel.Dock="Left" Content="{x:Static r:Resources.LBL_TOOL_TITLE}"/>
-                      <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent">
-                          <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"
+                      <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_TOOL_TITLE}"/>
+                      <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Style="{DynamicResource DeleteButton}">
+                          <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"
                                  Name="GPCustomTool_CodeSampleDelete"/>
                       </Button>
-                    <TextBox ToolTip="{x:Static r:Definitions.ESRI_tool_codeSample_title}" 
+                    <TextBox Style="{DynamicResource EditorTextBoxStyle}" ToolTip="{x:Static r:Definitions.ESRI_tool_codeSample_title}" 
                         v:Nav.AnchorName="scriptTitle,title"
                         Text="{e:MetadataBinding XPath=title}"
                         Name="GPCustomTool_CodeSampleTitle"/>   
@@ -219,7 +223,7 @@
 
                 <StackPanel>
                   <!-- description -->
-                  <ListBox ItemsSource="{Binding XPath=para}">
+                  <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=para}">
                     <ListBox.ItemTemplate>
                       <DataTemplate>
                         <t:MTK_EditorRichTextBox ToolTip="{x:Static r:Definitions.ESRI_tool_codeSample_description}"/>
@@ -227,8 +231,8 @@
                     </ListBox.ItemTemplate>
                   </ListBox>
                   <!-- sample -->
-                  <Label Content="{x:Static r:Resources.LBL_TOOL_CODE}"/>
-                  <TextBox ToolTip="{x:Static r:Definitions.ESRI_tool_codeSample_code}" 
+                  <Label Style="{DynamicResource EditorVLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_TOOL_CODE}"/>
+                  <TextBox Style="{DynamicResource EditorTextAreaCodeStyle}" ToolTip="{x:Static r:Definitions.ESRI_tool_codeSample_code}" 
                       Text="{e:MetadataBinding XPath=code}"
                       Name="GPCustomTool_CodeSampleCode"/>
                 </StackPanel>
@@ -239,15 +243,16 @@
       </ListBox>
 
       <!-- ADD tool example -->
-      <Button Tag="Example" Click="AddRecordByTagToLocal" Name="GPCustomTool_CodeSampleAdd">
+      <Button Tag="Example" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+              Name="GPCustomTool_CodeSampleAdd">
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-          <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-          <TextBlock Text="{x:Static r:Resources.BTN_ADD_TOOL_EXAMPLE}"/>
+          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_TOOL_EXAMPLE}"/>
         </StackPanel>
       </Button>
 
       <!-- sidebar tool help image -->
-      <Label Content="{x:Static r:Resources.LBL_TOOL_SIDEBARHELPIMAGE}"/>
+      <Label Style="{DynamicResource EditorVLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_TOOL_SIDEBARHELPIMAGE}"/>
       <t:MTK_ImageAttachement Parent="/" XPath='/metadata/Binary/Enclosure[@rel = "side-panel-help"]/Data[@EsriPropertyType="Image"]' Rel='side-panel-help'/>
 
       <!-- validate after all anchors are loaded -->

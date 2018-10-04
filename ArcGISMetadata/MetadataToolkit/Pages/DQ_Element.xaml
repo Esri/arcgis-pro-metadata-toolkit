@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_DQ_Element" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_DQ_Element" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"              
@@ -96,7 +96,7 @@
 
   </UserControl.Resources>
 
-  <Grid>
+  <Grid Style="{DynamicResource EditorSubPageStyle}">
     <StackPanel>
 
       <Grid>
@@ -110,8 +110,8 @@
         </Grid.ColumnDefinitions>
 
         <!-- report type -->
-        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_DQ_REPORTTYPE}"/>
-        <ComboBox Grid.Row="0" Grid.Column="1" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="@type" IsEditable="False"
+        <Label Grid.Row="0" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_DQ_REPORTTYPE}"/>
+        <ComboBox Grid.Row="0" Grid.Column="1" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="@type" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
             v:Nav.AnchorName="ReportType,."
             ToolTip="{x:Static r:Definitions.DQ_DataQuality_reportType}"
             ItemsSource="{Binding Source={StaticResource DQ_ElementType}, Path=List}"
@@ -124,8 +124,8 @@
         </ComboBox>
 
         <!-- dimension -->
-        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_DQ_REPORTDIM}"/>
-        <ComboBox Grid.Row="1" Grid.Column="1"  Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="@dimension" IsEditable="False"
+        <Label Grid.Row="1" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_DQ_REPORTDIM}"/>
+        <ComboBox Grid.Row="1" Grid.Column="1"  Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="@dimension" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
             ToolTip="{x:Static r:Definitions.DQ_DataQuality_reportDimension}"
             ItemsSource="{Binding Source={StaticResource DQ_ElementDimension}, Path=List}"
             DisplayMemberPath="."
@@ -139,7 +139,7 @@
 
       <!-- measure date time -->
       <StackPanel>
-        <ListBox ItemsSource="{Binding XPath=measDateTm}">
+        <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=measDateTm}">
           <ListBox.ItemsPanel>
             <ItemsPanelTemplate>
               <StackPanel />
@@ -148,12 +148,14 @@
           <ListBox.ItemTemplate>
             <DataTemplate>
               <DockPanel LastChildFill="True">
-                <Button DockPanel.Dock="Right" Click="DeleteItem" AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_Element_MeasureDateDelete}">
-                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                  AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_Element_MeasureDateDelete}">
+                  <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                 </Button>
 
                 <!-- date time -->
-                <Label DockPanel.Dock="Left"  ToolTip="{x:Static r:Definitions.DQ_Element_dateTime}" Content="{x:Static r:Resources.LBL_DQ_MEASDATE}"/>
+                <Label Style="{DynamicResource EditorHLabelStyle}" DockPanel.Dock="Left"  ToolTip="{x:Static r:Definitions.DQ_Element_dateTime}"
+                    Content="{x:Static r:Resources.LBL_DQ_MEASDATE}"/>
                 <controls:DateTimeIsoControl Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.DQ_Element_dateTime}"
                     AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_Element_dateTime}"                         
                     Items="{Binding XPath=.}"/>
@@ -163,28 +165,29 @@
           </ListBox.ItemTemplate>
         </ListBox>
         <!-- ADD measure name -->
-        <Button Tag="MeasDateTime" Click="AddRecordByTag" Name="DQ_Element_MeasureDateAdd">
+        <Button Tag="MeasDateTime" Click="AddRecordByTag" Style="{DynamicResource AddButton}"
+                Name="DQ_Element_MeasureDateAdd">
           <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-            <TextBlock Text="{x:Static r:Resources.BTN_DQ_NEW_MEASDATETIME}"/>
+            <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+            <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DQ_NEW_MEASDATETIME}"/>
           </StackPanel>
         </Button>
       </StackPanel>
 
-      <Expander IsExpanded="{Binding XPath=measDesc/@editorExpand, Mode=TwoWay}"
+      <Expander Style="{DynamicResource EditorExpander2Style}" IsExpanded="{Binding XPath=measDesc/@editorExpand, Mode=TwoWay}"
         AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_Element_MeasureGroup}">
         <Expander.Header>
-          <Label Content="{x:Static r:Resources.LBL_DQ_MEASURE}"/>
+          <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_DQ_MEASURE}"/>
         </Expander.Header>
-        <Border>
+        <Border Style="{DynamicResource EditorBorderSubStyle}">
           <StackPanel>
             <!-- measure name -->
             <StackPanel>
-              <ListBox ItemsSource="{Binding XPath=measName}">
+              <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=measName}">
                 <ListBox.ItemTemplate>
                   <DataTemplate>
                     <DockPanel LastChildFill="True">
-                      <Label DockPanel.Dock="Left" Content="{x:Static r:Resources.LBL_DQ_MEASNAME}"/>
+                      <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_DQ_MEASNAME}"/>
                       <t:MTK_CharacterString
                         v:Nav.AnchorName="measName"
                         ToolTip="{x:Static r:Definitions.DQ_Element_nameOfMeasure}"/>
@@ -194,16 +197,17 @@
               </ListBox>
 
               <!-- ADD measure name -->
-              <Button Tag="MeasName" Click="AddRecordByTag" Name="DQ_Element_MeasureNameAdd">
+              <Button Tag="MeasName" Click="AddRecordByTag" Style="{DynamicResource AddButton}"
+                      Name="DQ_Element_MeasureNameAdd">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                  <TextBlock Text="{x:Static r:Resources.BTN_DQ_NEW_MEASNAME}"/>
+                  <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                  <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DQ_NEW_MEASNAME}"/>
                 </StackPanel>
               </Button>
             </StackPanel>
 
             <!-- measure identifier -->
-            <ListBox ItemsSource="{Binding XPath=measId}">
+            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=measId}">
               <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                   <StackPanel />
@@ -211,16 +215,18 @@
               </ListBox.ItemsPanel>
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_Element_MeasureIdentifierGroup}">
+                  <Expander Style="{DynamicResource EditorExpander2Style}"
+                            AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_Element_MeasureIdentifierGroup}">
                     <Expander.Header>
                       <DockPanel HorizontalAlignment="{Binding HorizontalAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContentPresenter}}, Mode=OneWayToSource}" LastChildFill="True">
-                        <Button DockPanel.Dock="Right" Click="DeleteItem" Name="DQ_Element_MeasureIdentifierDelete">
-                          <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                        <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                                Name="DQ_Element_MeasureIdentifierDelete">
+                          <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                         </Button>
-                        <Label DockPanel.Dock="Left" Content="{x:Static r:Resources.LBL_DQ_MEASID}"/>
+                        <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_DQ_MEASID}"/>
                       </DockPanel>
                     </Expander.Header>
-                    <Border>
+                    <Border Style="{DynamicResource EditorBorderSubStyle}">
                       <t:MTK_MD_Identifier x:Name="identifier" ToolTip="{x:Static r:Definitions.DQ_Element_measureIdentification}" />
                     </Border>
                   </Expander>
@@ -229,16 +235,17 @@
             </ListBox>
 
             <!--  ADD measure identifier -->
-            <ListBox>
+            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}">
               <ListBox.ItemsSource>
                 <Binding XPath="self::*[not(measId)]"/>
               </ListBox.ItemsSource>
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Button Tag="measId" Click="AddRecordByTagToLocal" Name="DQ_Element_MeasureIdentifierAdd">
+                  <Button Tag="measId" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                          Name="DQ_Element_MeasureIdentifierAdd">
                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                      <TextBlock Text="{x:Static r:Resources.BTN_DQ_NEW_MEASID}"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DQ_NEW_MEASID}"/>
                     </StackPanel>
                   </Button>
                 </DataTemplate>
@@ -247,9 +254,10 @@
 
             <!-- measure description -->
             <StackPanel>
-              <Label Content="{x:Static r:Resources.LBL_DQ_MEASDESC}"/>
+              <Label Style="{DynamicResource EditorVLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_DQ_MEASDESC}"/>
               <controls:Resizer>
-                <TextBox ToolTip="{x:Static r:Definitions.DQ_Element_measureDescription}"
+                <TextBox Style="{DynamicResource EditorTextAreaResizeStyle}" 
+                    ToolTip="{x:Static r:Definitions.DQ_Element_measureDescription}"
                     v:Nav.AnchorName="measDesc,measDesc"
                     Text="{e:MetadataBinding XPath=measDesc}"
                     Name="DQ_Element_measureDescription"/>
@@ -259,16 +267,17 @@
         </Border>
       </Expander>
 
-      <Expander IsExpanded="{Binding XPath=evalMethType/@editorExpand, Mode=TwoWay}" Name="DQ_Element_EvaluationMethodGroup">
+      <Expander Style="{DynamicResource EditorExpander2Style}" IsExpanded="{Binding XPath=evalMethType/@editorExpand, Mode=TwoWay}"
+                Name="DQ_Element_EvaluationMethodGroup">
         <Expander.Header>
-          <Label Content="{x:Static r:Resources.LBL_DQ_EVALMETH}"/>
+          <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_DQ_EVALMETH}"/>
         </Expander.Header>
-        <StackPanel>
+        <StackPanel Style="{DynamicResource ExpanderBodyStyle}">
 
           <!-- evaluation method type -->
           <DockPanel LastChildFill="True">
-            <Label DockPanel.Dock="Left" Content="{x:Static r:Resources.LBL_DQ_EVALMETHTYPE}"/>
-            <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="evalMethType/EvalMethTypeCd/@value" IsEditable="False"
+            <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_DQ_EVALMETHTYPE}"/>
+            <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="evalMethType/EvalMethTypeCd/@value" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
                 ToolTip="{x:Static r:Definitions.DQ_Element_evaluationMethodType}"
                 ItemsSource="{Binding Source={StaticResource DQ_EvaluationMethodTypeCode}, Path=List}"
                 DisplayMemberPath="."
@@ -283,9 +292,10 @@
 
           <!-- evaluation method description -->
           <StackPanel>
-            <Label Content="{x:Static r:Resources.LBL_DQ_EVALDESC}"/>
+            <Label Style="{DynamicResource EditorVLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_DQ_EVALDESC}"/>
             <controls:Resizer>
-              <TextBox ToolTip="{x:Static r:Definitions.DQ_Element_evaluationMethodDescription}" 
+              <TextBox Style="{DynamicResource EditorTextAreaResizeStyle}" 
+                  ToolTip="{x:Static r:Definitions.DQ_Element_evaluationMethodDescription}" 
                   v:Nav.AnchorName="evalMethDesc,evalMethDesc"
                   Text="{e:MetadataBinding XPath=evalMethDesc}"
                   Name="DQ_Element_evaluationMethodDescription"/>
@@ -293,7 +303,7 @@
           </StackPanel>
 
           <!-- evaluation method procedure -->
-          <ListBox ItemsSource="{Binding XPath=evalProc}">
+          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=evalProc}">
             <ListBox.ItemsPanel>
               <ItemsPanelTemplate>
                 <StackPanel />
@@ -301,18 +311,20 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
               <DataTemplate>
-                <Expander Name="DQ_Element_EvaluationProcedureGroup">
+                <Expander Style="{DynamicResource EditorExpander2Style}"
+                          Name="DQ_Element_EvaluationProcedureGroup">
                   <Expander.Header>
                     <DockPanel HorizontalAlignment="{Binding HorizontalAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContentPresenter}}, Mode=OneWayToSource}" LastChildFill="True">
-                      <Button DockPanel.Dock="Right" Click="DeleteItem" Name="DQ_Element_EvaluationProcedureDelete">
-                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                      <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                          Name="DQ_Element_EvaluationProcedureDelete">
+                        <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                       </Button>
-                      <Label DockPanel.Dock="Left" Content="{x:Static r:Resources.LBL_DQ_EVALPROC}"/>
+                      <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_DQ_EVALPROC}"/>
                     </DockPanel>
                   </Expander.Header>
 
                   <!-- citation -->
-                  <Border>
+                  <Border Style="{DynamicResource EditorBorderSubStyle}">
                     <t:MTK_CI_Citation/>
                   </Border>
                 </Expander>
@@ -321,16 +333,17 @@
           </ListBox>
 
           <!--  ADD measure evaluation procedure -->
-          <ListBox>
+          <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}">
             <ListBox.ItemsSource>
               <Binding XPath="self::*[not(evalProc)]"/>
             </ListBox.ItemsSource>
             <ListBox.ItemTemplate>
               <DataTemplate>
-                <Button Tag="evalProc" Click="AddRecordByTagToLocal" Name="DQ_Element_EvaluationProcedureAdd">
+                <Button Tag="evalProc" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                        Name="DQ_Element_EvaluationProcedureAdd">
                   <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                    <TextBlock Text="{x:Static r:Resources.BTN_DQ_NEW_EVALPROC}"/>
+                    <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                    <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DQ_NEW_EVALPROC}"/>
                   </StackPanel>
                 </Button>
               </DataTemplate>
@@ -340,13 +353,13 @@
         </StackPanel>
       </Expander>
 
-      <ListBox ItemsSource="{Binding XPath=measResult}">
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=measResult}">
         <ListBox.ItemTemplate>
           <DataTemplate>
             <StackPanel>
 
               <!-- conformance result -->
-              <ListBox ItemsSource="{Binding XPath=ConResult}">
+              <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=ConResult}">
                 <ListBox.ItemsPanel>
                   <ItemsPanelTemplate>
                     <StackPanel />
@@ -354,16 +367,18 @@
                 </ListBox.ItemsPanel>
                 <ListBox.ItemTemplate>
                   <DataTemplate>
-                    <Expander Name="DQ_Element_ConformanceResultGroup">
+                    <Expander Style="{DynamicResource EditorExpander2Style}"
+                              Name="DQ_Element_ConformanceResultGroup">
                       <Expander.Header>
                         <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                             RelativeSource={RelativeSource FindAncestor,
                             AncestorType={x:Type ContentPresenter}},
                             Mode=OneWayToSource}" LastChildFill="True">
-                          <Button DockPanel.Dock="Right" Click="DeleteItem" Name="DQ_Element_ConformanceResultDelete">
-                            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                          <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                                  Name="DQ_Element_ConformanceResultDelete">
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
-                          <Label Content="{x:Static r:Resources.LBL_DQ_CONFORMREPORT}"/>
+                          <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_DQ_CONFORMREPORT}"/>
                         </DockPanel>
                       </Expander.Header>
                       <!-- conformance result -->
@@ -374,13 +389,15 @@
               </ListBox>
 
               <!--  ADD conformance result -->
-              <ListBox ItemsSource="{Binding XPath=self::*[not(ConResult)]}">
+              <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}"
+                      ItemsSource="{Binding XPath=self::*[not(ConResult)]}">
                 <ListBox.ItemTemplate>
                   <DataTemplate>
-                    <Button Tag="ConfResult" Click="AddRecordByTagToLocal" Name="DQ_Element_ConformanceResultAdd">
+                    <Button Tag="ConfResult" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                            Name="DQ_Element_ConformanceResultAdd">
                       <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                        <TextBlock Text="{x:Static r:Resources.BTN_ADD_DQ_CONF_RESULTS}"/>
+                        <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                        <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_DQ_CONF_RESULTS}"/>
                       </StackPanel>
                     </Button>
                   </DataTemplate>
@@ -388,7 +405,7 @@
               </ListBox>
 
               <!-- quantitative result -->
-              <ListBox ItemsSource="{Binding XPath=QuanResult}">
+              <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=QuanResult}">
                 <ListBox.ItemsPanel>
                   <ItemsPanelTemplate>
                     <StackPanel />
@@ -396,16 +413,18 @@
                 </ListBox.ItemsPanel>
                 <ListBox.ItemTemplate>
                   <DataTemplate>
-                    <Expander Name="DQ_Element_QualitativeResultsGroup">
+                    <Expander Style="{DynamicResource EditorExpander2Style}"
+                              Name="DQ_Element_QualitativeResultsGroup">
                       <Expander.Header>
                         <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                             RelativeSource={RelativeSource FindAncestor,
                             AncestorType={x:Type ContentPresenter}},
                             Mode=OneWayToSource}" LastChildFill="True">
-                          <Button DockPanel.Dock="Right" Click="DeleteItem" Name="DQ_Element_QualitativeResultsDelete">
-                            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                          <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                                  Name="DQ_Element_QualitativeResultsDelete">
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
-                          <Label Content="{x:Static r:Resources.LBL_DQ_QUANRESULT}"/>
+                          <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_DQ_QUANRESULT}"/>
                         </DockPanel>
                       </Expander.Header>
                       <!-- quantitative result -->
@@ -416,13 +435,15 @@
               </ListBox>
 
               <!--  ADD quantitative result -->
-              <ListBox ItemsSource="{Binding XPath=self::*[not(QuanResult)]}">
+              <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}"
+                      ItemsSource="{Binding XPath=self::*[not(QuanResult)]}">
                 <ListBox.ItemTemplate>
                   <DataTemplate>
-                    <Button Tag="QuanResult" Click="AddRecordByTagToLocal" Name="DQ_Element_QualitativeResultsAdd">
+                    <Button Tag="QuanResult" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                            Name="DQ_Element_QualitativeResultsAdd">
                       <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                        <TextBlock Text="{x:Static r:Resources.BTN_ADD_DQ_QUAN_RESULTS}"/>
+                        <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                        <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_DQ_QUAN_RESULTS}"/>
                       </StackPanel>
                     </Button>
                   </DataTemplate>

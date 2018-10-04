@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_EntityAttributeInfo" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_EntityAttributeInfo" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -123,17 +123,17 @@
 
   </UserControl.Resources>
 
-  <Grid>
-    <ListBox ItemsSource="{Binding XPath=/metadata/eainfo}">
+  <Grid Style="{DynamicResource EditorFrontPageStyle}">
+    <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata/eainfo}">
       <ListBox.ItemTemplate>
         <DataTemplate>
           <StackPanel>
 
             <!-- label -->
-            <Label Content="{x:Static r:Resources.SEC_EAINFO}"/>
+            <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_EAINFO}"/>
 
             <!-- details -->
-            <ListBox ItemsSource="{Binding XPath=detailed}">
+            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=detailed}">
               <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                   <StackPanel/>
@@ -141,18 +141,20 @@
               </ListBox.ItemsPanel>
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Border>
-                    <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=EntityAttributeInfo_DetailsGroup}">
+                  <Border Style="{DynamicResource EditorBorder2Style}" >
+                    <Expander Style="{DynamicResource EditorExpander2Style}"
+                              AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=EntityAttributeInfo_DetailsGroup}">
                       <Expander.Header>
                         <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                             RelativeSource={RelativeSource FindAncestor,
                             AncestorType={x:Type ContentPresenter}},
                             Mode=OneWayToSource}" LastChildFill="True">
-                          <Button DockPanel.Dock="Right" Click="DeleteItem" Name="EntityAttributeInfo_DetailsDelete">
-                            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                          <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                                  Name="EntityAttributeInfo_DetailsDelete">
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
-                          <Label Content="{x:Static r:Resources.LBL_EAINFO_DETAILS}"/>
-                          <Label Content="{Binding XPath=enttyp/enttypl}"/>
+                          <Label Style="{DynamicResource EditorHExpanderSimpleLabel}" Content="{x:Static r:Resources.LBL_EAINFO_DETAILS}"/>
+                          <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{Binding XPath=enttyp/enttypl}"/>
                         </DockPanel>
                       </Expander.Header>
                       <!-- details -->
@@ -164,15 +166,16 @@
             </ListBox>
 
             <!-- ADD details -->
-            <Button Tag="Details" Click="AddRecordByTagToLocal" Name="EntityAttributeInfo_DetailsAdd">
+            <Button Tag="Details" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                    Name="EntityAttributeInfo_DetailsAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                <TextBlock Text="{x:Static r:Resources.BTN_EAINFO_NEW_DETAILS}"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EAINFO_NEW_DETAILS}"/>
               </StackPanel>
             </Button>
 
             <!-- overview -->
-            <ListBox ItemsSource="{Binding XPath=overview}">
+            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=overview}">
               <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                   <StackPanel/>
@@ -180,17 +183,19 @@
               </ListBox.ItemsPanel>
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Border>
-                    <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=EntityAttributeInfo_OverviewGroup}">
+                  <Border Style="{DynamicResource EditorBorder2Style}">
+                    <Expander Style="{DynamicResource EditorExpander2Style}"
+                              AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=EntityAttributeInfo_OverviewGroup}">
                       <Expander.Header>
                         <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                             RelativeSource={RelativeSource FindAncestor,
                             AncestorType={x:Type ContentPresenter}},
                             Mode=OneWayToSource}" LastChildFill="True">
-                          <Button DockPanel.Dock="Right" Click="DeleteItem" Name="EntityAttributeInfo_OverviewDelete">
-                            <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                          <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                                  Name="EntityAttributeInfo_OverviewDelete">
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
-                          <Label Content="{x:Static r:Resources.LBL_EAINFO_OVERVIEW}"/>
+                          <Label Style="{DynamicResource EditorHExpanderSimpleLabel}" Content="{x:Static r:Resources.LBL_EAINFO_OVERVIEW}"/>
                         </DockPanel>
                       </Expander.Header>
 
@@ -204,10 +209,11 @@
             </ListBox>
 
             <!-- ADD overview -->
-            <Button Tag="Overview" Click="AddRecordByTagToLocal" Name="EntityAttributeInfo_OverviewAdd">
+            <Button Tag="Overview" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                    Name="EntityAttributeInfo_OverviewAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                <TextBlock Text="{x:Static r:Resources.BTN_NEW_OVERVIEW}"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_NEW_OVERVIEW}"/>
               </StackPanel>
             </Button>
 

@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_EntityAttributeDetails" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_EntityAttributeDetails" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -95,21 +95,22 @@
 
   </UserControl.Resources>
 
-  <Grid>
+  <Grid Style="{DynamicResource EditorSubPageStyle}">
     <StackPanel>
 
       <!-- <!ELEMENT enttyp (enttypl, enttypt?, enttypc?, enttypd, enttypds)> -->
 
       <!-- Entity Type Label -->
       <DockPanel LastChildFill="True">
-        <Label DockPanel.Dock="Left" Content="{x:Static r:Resources.LBL_EAINFO_ENTTYPL}"/>
-        <TextBox ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_enttypl}"
+        <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_EAINFO_ENTTYPL}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}"
+            ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_enttypl}"
             v:Nav.AnchorName="enttypl,enttyp/enttypl" v:MetadataRules.Rules="{x:Static v:MetadataRules.CheckRules}"
             Text="{e:MetadataElementSync XPath=enttyp/enttypl}"
             Name="EntityAttributeDetails_Label"/>
       </DockPanel>
 
-      <ListBox ItemsSource="{Binding XPath=enttyp}">
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=enttyp}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel/>
@@ -117,14 +118,15 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Border >
-              <Expander Name="EntityAttributeDetails_TypeGroup">
+            <Border Style="{DynamicResource EditorBorder2LiteStyle}" >
+              <Expander Style="{DynamicResource EditorExpander2Style}"
+                        Name="EntityAttributeDetails_TypeGroup">
                 <Expander.Header>
                   <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                         RelativeSource={RelativeSource FindAncestor,
                         AncestorType={x:Type ContentPresenter}},
                         Mode=OneWayToSource}" LastChildFill="True">
-                    <Label Content="{x:Static r:Resources.LBL_EAINFO_ENTITY_TYPE}"/>
+                    <Label Style="{DynamicResource EditorHExpanderSimpleLabel}"  Content="{x:Static r:Resources.LBL_EAINFO_ENTITY_TYPE}"/>
                   </DockPanel>
                 </Expander.Header>
 
@@ -142,31 +144,35 @@
                   </Grid.ColumnDefinitions>
 
                   <!-- Entity Type Type -->
-                  <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ENTTYPT}"/>
-                  <TextBox Grid.Row="0" Grid.Column="1"
+                  <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0"
+                      Content="{x:Static r:Resources.LBL_EAINFO_ENTTYPT}"/>
+                  <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1"
                       ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_enttypt}"
                       Text="{e:MetadataElementSync XPath=enttypt}"
                            Name="FGDC_EntityAndAttribute_enttypt"/>
 
                   <!-- Entity Type Count -->
-                  <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ENTTYPC}"/>
-                  <TextBox Grid.Row="1" Grid.Column="1"
+                  <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0"
+                      Content="{x:Static r:Resources.LBL_EAINFO_ENTTYPC}"/>
+                  <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="1" Grid.Column="1"
                       ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_enttypc}"
                       v:Nav.AnchorName="enttypc,enttypc" v:MetadataRules.Rules="{StaticResource EnttypcRule}"
                       Text="{e:MetadataElementSync XPath=enttypc}"
                       Name="FGDC_EntityAndAttribute_enttypc"/>
 
                   <!-- Entity Type Definition -->
-                  <Label Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ENTTYPD}"/>
-                  <TextBox Grid.Row="2" Grid.Column="1"
+                  <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0"
+                      Content="{x:Static r:Resources.LBL_EAINFO_ENTTYPD}"/>
+                  <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="2" Grid.Column="1"
                       ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_enttypd}"
                       v:Nav.AnchorName="enttypd,enttypd" v:MetadataRules.Rules="{x:Static v:MetadataRules.CheckRules}"
                       Text="{e:MetadataBinding XPath=enttypd}"
                       Name="FGDC_EntityAndAttribute_enttypd"/>
 
                   <!-- Entity Type Definition Source -->
-                  <Label Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_EAINFO_ENTTYPDS}"/>
-                  <TextBox Grid.Row="3" Grid.Column="1"
+                  <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="3" Grid.Column="0"
+                      Content="{x:Static r:Resources.LBL_EAINFO_ENTTYPDS}"/>
+                  <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="3" Grid.Column="1"
                       ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_enttypds}"
                       v:Nav.AnchorName="enttypds,enttypds" v:MetadataRules.Rules="{x:Static v:MetadataRules.CheckRules}"
                       Text="{e:MetadataBinding XPath=enttypds}"
@@ -180,7 +186,7 @@
       </ListBox>
 
       <!-- attributes -->
-      <ListBox ItemsSource="{Binding XPath=attr}">
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=attr}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel/>
@@ -188,18 +194,20 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Border>
-              <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=EntityAttributeDetails_AttributeGroup}">
+            <Border Style="{DynamicResource EditorBorder2LiteStyle}" >
+              <Expander Style="{DynamicResource EditorExpander2Style}"
+                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=EntityAttributeDetails_AttributeGroup}">
                 <Expander.Header>
                   <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                         RelativeSource={RelativeSource FindAncestor,
                         AncestorType={x:Type ContentPresenter}},
                         Mode=OneWayToSource}" LastChildFill="True">
-                    <Button DockPanel.Dock="Right" Click="DeleteItem" Name="EntityAttributeDetails_AttributeDelete">
-                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                    <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                            Name="EntityAttributeDetails_AttributeDelete">
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                     </Button>
-                    <Label  Content="{x:Static r:Resources.LBL_EAINFO_ATT}"/>
-                    <Label Content="{Binding XPath=attrlabl}"/>
+                    <Label Style="{DynamicResource EditorHExpanderSimpleLabel}"  Content="{x:Static r:Resources.LBL_EAINFO_ATT}"/>
+                    <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{Binding XPath=attrlabl}"/>
                   </DockPanel>
                 </Expander.Header>
                 <!-- attribute -->
@@ -211,10 +219,11 @@
       </ListBox>
 
       <!-- ADD attribute -->
-      <Button Tag="Attribute" Click="AddRecordByTagToLocal" Name="EntityAttributeDetails_AttributeAdd">
+      <Button Tag="Attribute" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+              Name="EntityAttributeDetails_AttributeAdd">
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-          <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-          <TextBlock Text="{x:Static r:Resources.BTN_EAINFO_NEW_ATT}"/>
+          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EAINFO_NEW_ATT}"/>
         </StackPanel>
       </Button>
 

@@ -1,0 +1,42 @@
+﻿<p:EditorPage x:Class="MetadataToolkit.MTK_CountryCode" x:ClassModifier="internal" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:r="clr-namespace:MetadataToolkit.Properties"
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
+             mc:Ignorable="d" >
+  <UserControl.Resources>
+    <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter" />
+    <e:Codelists x:Key="CountryCodes" CodelistName="CountryCodes"/>
+  </UserControl.Resources>
+
+  <Grid>
+    <StackPanel>
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=countryCode}">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <ComboBox Loaded="PostProcessComboBoxValues" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+                ToolTip="{x:Static r:Definitions.CI_Address_country}"
+                ItemsSource="{Binding Source={StaticResource CountryCodes}, Path=List}"
+                DisplayMemberPath="."
+                v:Nav.AnchorName="countryCode"
+                SelectedValuePath="@value"
+                Name="MD_Metadata_Country">
+              <ComboBox.SelectedValue>
+                <e:MetadataBinding XPath="@value"/>
+              </ComboBox.SelectedValue>
+            </ComboBox>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+
+      <!-- validate after all anchors are loaded -->
+      <v:PageValidateControl/>
+
+    </StackPanel>
+  </Grid>
+</p:EditorPage>

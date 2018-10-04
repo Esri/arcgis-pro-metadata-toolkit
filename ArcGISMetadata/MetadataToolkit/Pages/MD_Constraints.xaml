@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_MD_Constraints" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_MD_Constraints" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -38,25 +38,26 @@
 
   </UserControl.Resources>
 
-  <Grid>
+  <Grid Style="{DynamicResource EditorSubPageStyle}">
     <StackPanel>
 
       <!-- use limitations -->
-      <ListBox ItemsSource="{Binding XPath=useLimit}">
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=useLimit}">
         <ListBox.ItemTemplate>
           <DataTemplate>
             <StackPanel>
-              <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
+              <DockPanel Style="{DynamicResource EditorDockPanelStyle}" HorizontalAlignment="{Binding HorizontalAlignment,
                   RelativeSource={RelativeSource FindAncestor,
                   AncestorType={x:Type ContentPresenter}},
                   Mode=OneWayToSource}" LastChildFill="True">
-                <Button DockPanel.Dock="Right" Click="DeleteItem" AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MetadataConstraints_UseLimitationDelete}">
-                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MetadataConstraints_UseLimitationDelete}">
+                  <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                 </Button>
-                <Label Content="{x:Static r:Resources.LBL_CONSTS_USELIMIT}"/>
+                <Label Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_CONSTS_USELIMIT}"/>
               </DockPanel>
               <!-- use limitations -->
-              <Border>
+              <Border Style="{DynamicResource EditorRichTextBoxContainerNoIndentStyle}">
                 <t:MTK_EditorRichTextBox
                     v:Nav.AnchorName="useLimit"
                     ToolTip="{x:Static r:Definitions.MD_Constraints_useLimitation}" />
@@ -66,10 +67,11 @@
         </ListBox.ItemTemplate>
       </ListBox>
       <!-- ADD use limitation -->
-      <Button Tag="UseLimit" Click="AddRecordByTagToLocal" Name="MetadataConstraints_UseLimitationAdd">
+      <Button Tag="UseLimit" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+              Name="MetadataConstraints_UseLimitationAdd">
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-          <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-          <TextBlock Text="{x:Static r:Resources.BTN_CONSTS_NEW_USELIMIT}"/>
+          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_CONSTS_NEW_USELIMIT}"/>
         </StackPanel>
       </Button>
 

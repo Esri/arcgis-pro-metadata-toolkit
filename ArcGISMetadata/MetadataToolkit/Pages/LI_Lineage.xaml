@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_LI_Lineage" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_LI_Lineage" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -99,20 +99,21 @@
 
   </UserControl.Resources>
 
-  <Grid>
-    <ListBox ItemsSource="{Binding XPath=/metadata/dqInfo/dataLineage}">
+  <Grid Style="{DynamicResource EditorFrontPageStyle}">
+    <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata/dqInfo/dataLineage}">
       <ListBox.ItemTemplate>
         <DataTemplate>
           <StackPanel>
             <!-- label -->
-            <Label Content="{x:Static r:Resources.SEC_LINEAGE}" v:Nav.AnchorName="dataLineage" />
+            <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_LINEAGE}"
+                v:Nav.AnchorName="dataLineage" />
 
             <!-- statement -->
-            <Border>
+            <Border Style="{DynamicResource EditorBorder2Style}">
               <StackPanel>
-                <Label Content="{x:Static r:Resources.LBL_LI_STATEMENT}"/>
+                <Label Style="{DynamicResource EditorVLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_LI_STATEMENT}"/>
                 <controls:Resizer>
-                  <TextBox ToolTip="{x:Static r:Definitions.LI_Lineage_statement}" 
+                  <TextBox Style="{DynamicResource EditorTextAreaResizeStyle}" ToolTip="{x:Static r:Definitions.LI_Lineage_statement}" 
                       Text="{e:MetadataBinding XPath=statement}" v:Nav.Check="True"
                       Name="LI_Lineage_statement"/>
                 </controls:Resizer>
@@ -120,7 +121,7 @@
             </Border>
 
             <!-- li_source -->
-            <ListBox ItemsSource="{Binding XPath=dataSource}">
+            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=dataSource}">
               <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                   <StackPanel/>
@@ -128,18 +129,20 @@
               </ListBox.ItemsPanel>
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Border>
+                  <Border Style="{DynamicResource EditorBorder2Style}">
                     <StackPanel>
-                      <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=LI_Lineage_DataSourceGroup}">
+                      <Expander Style="{DynamicResource EditorExpander2Style}"
+                                AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=LI_Lineage_DataSourceGroup}">
                         <Expander.Header>
                           <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                               RelativeSource={RelativeSource FindAncestor,
                               AncestorType={x:Type ContentPresenter}},
                               Mode=OneWayToSource}" LastChildFill="True">
-                            <Button DockPanel.Dock="Right" Click="DeleteItem" Name="LI_Lineage_DataSourceDelete">
-                              <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                                    Name="LI_Lineage_DataSourceDelete">
+                              <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                             </Button>
-                            <Label Content="{x:Static r:Resources.LBL_LI_SOURCE}"/>
+                            <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_LI_SOURCE}"/>
                           </DockPanel>
                         </Expander.Header>
                         <!-- lineage source -->
@@ -152,15 +155,16 @@
             </ListBox>
 
             <!-- ADD source -->
-            <Button Tag="Source" Click="AddRecordByTagToLocal" Name="LI_Lineage_DataSourceAdd">
+            <Button Tag="Source" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                    Name="LI_Lineage_DataSourceAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                <TextBlock Text="{x:Static r:Resources.BTN_LI_NEW_SOURCE}"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_LI_NEW_SOURCE}"/>
               </StackPanel>
             </Button>
 
             <!-- li_processstep -->
-            <ListBox ItemsSource="{Binding XPath=prcStep}">
+            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=prcStep}">
               <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                   <StackPanel/>
@@ -168,18 +172,20 @@
               </ListBox.ItemsPanel>
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Border>
+                  <Border Style="{DynamicResource EditorBorder2Style}">
                     <StackPanel>
-                      <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=LI_Lineage_ProcessStepGroup}">
+                      <Expander Style="{DynamicResource EditorExpander2Style}"
+                          AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=LI_Lineage_ProcessStepGroup}">
                         <Expander.Header>
                           <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                             RelativeSource={RelativeSource FindAncestor,
                             AncestorType={x:Type ContentPresenter}},
                             Mode=OneWayToSource}" LastChildFill="True">
-                            <Button DockPanel.Dock="Right" Click="DeleteItem" Name="LI_Lineage_ProcessStepDelete">
-                              <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                                    Name="LI_Lineage_ProcessStepDelete">
+                              <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                             </Button>
-                            <Label Content="{x:Static r:Resources.LBL_LI_PROCESS_STEP}"/>
+                            <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_LI_PROCESS_STEP}"/>
                           </DockPanel>
                         </Expander.Header>
                         <!-- process step -->
@@ -192,10 +198,11 @@
             </ListBox>
 
             <!-- ADD process step -->
-            <Button Tag="ProcessStep" Click="AddRecordByTagToLocal" Name="LI_Lineage_ProcessStepAdd">
+            <Button Tag="ProcessStep" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                    Name="LI_Lineage_ProcessStepAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                <TextBlock Text="{x:Static r:Resources.BTN_LI_NEW_PROCESS_STEP}"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <TextBlock Text="{x:Static r:Resources.BTN_LI_NEW_PROCESS_STEP}" Style="{DynamicResource RegularText}"/>
               </StackPanel>
             </Button>
 

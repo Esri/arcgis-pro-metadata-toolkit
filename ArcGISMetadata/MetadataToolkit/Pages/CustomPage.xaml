@@ -20,7 +20,7 @@
       <RowDefinition Height="Auto"></RowDefinition>
       <RowDefinition Height="*"></RowDefinition>
     </Grid.RowDefinitions>
-    <DockPanel LastChildFill="True" Grid.Row="0">
+    <DockPanel LastChildFill="True" Grid.Row="0" Margin="0,20,0,0">
       <TextBlock Text="Custom Field:" Margin="10,0,10,0" Style="{DynamicResource Esri_TextBlockRegular}" 
                        DockPanel.Dock="Left"></TextBlock>
       <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,0,10,0"></TextBox>

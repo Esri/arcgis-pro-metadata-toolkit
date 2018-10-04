@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_CI_PresentationFormCode" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_CI_PresentationFormCode" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -14,7 +14,7 @@
     <e:Codelists x:Key="CI_PresentationCode" CodelistName="CI_PresentationCode"/>
   </UserControl.Resources>
   <Grid>
-    <ComboBox Loaded="PostProcessComboBoxValues" SelectionChanged="ComboBoxSyncSelectionChanged" IsEditable="False"
+    <ComboBox Loaded="PostProcessComboBoxValues" SelectionChanged="ComboBoxSyncSelectionChanged" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
         p:EditorPage.SourceXPath="PresFormCd/@value"
         ToolTip="{x:Static r:Definitions.CI_Citation_presentationForm}"
         ItemsSource="{Binding Source={StaticResource CI_PresentationCode}, Path=List}"

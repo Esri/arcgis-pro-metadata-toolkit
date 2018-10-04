@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_MD_ConverageDescriptionBase" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_MD_ConverageDescriptionBase" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -93,15 +93,15 @@
       </Grid.ColumnDefinitions>
 
       <!-- attribute description -->
-      <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_COV_ATTRDESC}"/>
-      <TextBox Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.MD_CoverageDescription_attributeDescription}"
+      <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_COV_ATTRDESC}"/>
+      <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.MD_CoverageDescription_attributeDescription}"
           v:Nav.AnchorName="attDesc,attDesc" 
           Text="{e:MetadataBinding XPath=attDesc}"
           Name="MD_CoverageDescription_attributeDescription"/>
 
       <!-- content type -->
-      <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_COV_CONTTYPE}"/>
-      <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="contentTyp/ContentTypCd/@value" Grid.Row="1" Grid.Column="1" IsEditable="False"
+      <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_COV_CONTTYPE}"/>
+      <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="contentTyp/ContentTypCd/@value" Grid.Row="1" Grid.Column="1" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
           v:Nav.AnchorName="ContentTypCd,contentTyp/ContentTypCd"
           ToolTip="{x:Static r:Definitions.MD_CoverageDescription_contentType}"
           ItemsSource="{Binding Source={StaticResource MD_CoverageContentTypeCode}, Path=List}"
@@ -115,7 +115,7 @@
     </Grid>
 
     <!-- range dimension  -->
-    <ListBox ItemsSource="{Binding XPath=covDim/RangeDim}">
+    <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=covDim/RangeDim}">
       <ListBox.ItemsPanel>
         <ItemsPanelTemplate>
           <StackPanel/>
@@ -123,16 +123,18 @@
       </ListBox.ItemsPanel>
       <ListBox.ItemTemplate>
         <DataTemplate>
-          <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_CoverageDescription_RangeDimensionGroup}">
+          <Expander Style="{DynamicResource EditorExpander2Style}"
+                    AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_CoverageDescription_RangeDimensionGroup}">
             <Expander.Header>
               <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                   RelativeSource={RelativeSource FindAncestor,
                   AncestorType={x:Type ContentPresenter}},
                   Mode=OneWayToSource}" LastChildFill="True">
-                <Button DockPanel.Dock="Right" Click="DeleteItem" Name="MD_CoverageDescription_RangeDimensionDelete">
-                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                        Name="MD_CoverageDescription_RangeDimensionDelete">
+                  <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                 </Button>
-                <Label  Content="{x:Static r:Resources.LBL_COV_RANGEDIM}"/>
+                <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_COV_RANGEDIM}"/>
               </DockPanel>
             </Expander.Header>
             <!-- range dimension -->
@@ -143,7 +145,7 @@
     </ListBox>
 
     <!-- band -->
-    <ListBox ItemsSource="{Binding XPath=covDim/Band}">
+    <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=covDim/Band}">
       <ListBox.ItemsPanel>
         <ItemsPanelTemplate>
           <StackPanel/>
@@ -151,16 +153,18 @@
       </ListBox.ItemsPanel>
       <ListBox.ItemTemplate>
         <DataTemplate>
-          <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_CoverageDescription_BandGroup}">
+          <Expander Style="{DynamicResource EditorExpander2Style}"
+                    AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_CoverageDescription_BandGroup}">
             <Expander.Header>
               <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                   RelativeSource={RelativeSource FindAncestor,
                   AncestorType={x:Type ContentPresenter}},
                   Mode=OneWayToSource}" LastChildFill="True">
-                <Button DockPanel.Dock="Right" Click="DeleteItem" Name="MD_CoverageDescription_BandDelete">
-                  <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                        Name="MD_CoverageDescription_BandDelete">
+                  <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                 </Button>
-                <Label Content="{x:Static r:Resources.LBL_COV_BAND}"/>
+                <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_COV_BAND}"/>
               </DockPanel>
             </Expander.Header>
             <!-- band -->
@@ -171,18 +175,20 @@
     </ListBox>
 
     <!-- ADD range dimension -->
-    <Button Tag="RangeDim" Click="AddRecordByTagToLocal" Name="MD_CoverageDescription_RangeDimensionAdd">
+    <Button Tag="RangeDim" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+            Name="MD_CoverageDescription_RangeDimensionAdd">
       <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-        <TextBlock Text="{x:Static r:Resources.BTN_COV_NEW_RANGEDIM}"/>
+        <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+        <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_COV_NEW_RANGEDIM}"/>
       </StackPanel>
     </Button>
 
     <!-- ADD band -->
-    <Button Tag="Band" Click="AddRecordByTagToLocal" Name="MD_CoverageDescription_BandAdd">
+    <Button Tag="Band" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+            Name="MD_CoverageDescription_BandAdd">
       <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-        <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-        <TextBlock Text="{x:Static r:Resources.BTN_COV_NEW_BAND}"/>
+        <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+        <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_COV_NEW_BAND}"/>
       </StackPanel>
     </Button>
 

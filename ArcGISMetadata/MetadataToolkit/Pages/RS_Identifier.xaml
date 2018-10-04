@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_RS_Identifier" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_RS_Identifier" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -37,7 +37,7 @@
   </UserControl.Resources>
 
   <!-- left top right bottom -->
-  <Grid>
+  <Grid Style="{DynamicResource EditorSubSectionStyle}">
     <StackPanel>
       <Grid>
         <Grid.RowDefinitions>
@@ -52,25 +52,25 @@
         </Grid.ColumnDefinitions>
 
         <!-- identifier code -->
-        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_RS_IDENTCODE}"/>
-        <TextBox Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.MD_Identifier_code}"
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_RS_IDENTCODE}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.MD_Identifier_code}"
             v:Nav.AnchorName="refSysID,identCode"
             Text="{e:MetadataBinding XPath=identCode/@code}"/>
 
         <!-- identifier code space -->
-        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_RS_IDENTCODESPACE}"/>
-        <TextBox Grid.Row="1" Grid.Column="1" SourceUpdated="DefaultValueChanged"
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_RS_IDENTCODESPACE}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="1" Grid.Column="1" SourceUpdated="DefaultValueChanged"
             ToolTip="{x:Static r:Definitions.RS_Identifier_codeSpace}"
             Text="{e:MetadataBinding XPath=idCodeSpace}" />
 
         <!-- identifier version -->
-        <Label Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_RS_IDENTVERSION}"/>
-        <TextBox Grid.Row="2" Grid.Column="1" SourceUpdated="DefaultValueChanged"
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_RS_IDENTVERSION}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="2" Grid.Column="1" SourceUpdated="DefaultValueChanged"
             ToolTip="{x:Static r:Definitions.RS_Identifier_version}"
             Text="{e:MetadataBinding XPath=idVersion}" />
 
         <!-- authority citation  -->
-        <ListBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+        <ListBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Style="{DynamicResource EditorNoScrollListBoxStyle}"
             ItemsSource="{Binding XPath=identAuth}">
           <ListBox.ItemsPanel>
             <ItemsPanelTemplate>
@@ -79,18 +79,18 @@
           </ListBox.ItemsPanel>
           <ListBox.ItemTemplate>
             <DataTemplate>
-              <Expander >
+              <Expander Style="{DynamicResource EditorExpander2Style}" >
                 <Expander.Header>
                   <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                   RelativeSource={RelativeSource FindAncestor,
                   AncestorType={x:Type ContentPresenter}},
                   Mode=OneWayToSource}" LastChildFill="True">
-                    <Label Content="{x:Static r:Resources.LBL_RS_IDENTAUTH}"/>
-                    <Label Content="{Binding XPath=resTitle, Mode=TwoWay}"/>
+                    <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_RS_IDENTAUTH}"/>
+                    <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{Binding XPath=resTitle, Mode=TwoWay}"/>
                   </DockPanel>
                 </Expander.Header>
                 <!-- citation -->
-                <Border>
+                <Border Style="{DynamicResource EditorBorderSubStyle}">
                   <t:MTK_CI_Citation/>
                 </Border>
               </Expander>

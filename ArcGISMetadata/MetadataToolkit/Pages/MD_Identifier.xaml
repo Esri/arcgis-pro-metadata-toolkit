@@ -1,4 +1,4 @@
-<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_MD_Identifier" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_MD_Identifier" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -39,7 +39,7 @@
   </UserControl.Resources>
 
   <!-- left top right bottom -->
-  <Grid>
+  <Grid Style="{DynamicResource EditorSubSectionStyle}">
     <StackPanel>
       <Grid>
         <Grid.RowDefinitions>
@@ -52,18 +52,18 @@
         </Grid.ColumnDefinitions>
 
         <!-- identifier code -->
-        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_MD_IDENTCODE}"/>
-               <TextBox Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.MD_Identifier_code}"
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_MD_IDENTCODE}"/>
+                <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1" SourceUpdated="DefaultValueChanged" ToolTip="{x:Static r:Definitions.MD_Identifier_code}"
             v:Nav.AnchorName="identCode,identCode"
             Text="{e:MetadataBinding XPath=identCode}"
             Name="MD_Identifier_code" />
 
 
-        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+        <Border Style="{DynamicResource EditorBorderSubStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
           <StackPanel>
 
             <!-- authority citation  -->
-            <ListBox ItemsSource="{Binding XPath=identAuth}">
+            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=identAuth}">
               <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                   <StackPanel/>
@@ -72,20 +72,22 @@
               <ListBox.ItemTemplate>
                 <DataTemplate>
 
-                  <Expander AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Identifier_AuthorityCitationGroup}">
+                  <Expander Style="{DynamicResource EditorExpander2Style}" 
+                            AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Identifier_AuthorityCitationGroup}">
                     <Expander.Header>
                       <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
                           RelativeSource={RelativeSource FindAncestor,
                           AncestorType={x:Type ContentPresenter}},
                           Mode=OneWayToSource}" LastChildFill="True">
-                        <Button DockPanel.Dock="Right"   Click="DeleteItem" Name="MD_Identifier_AuthorityCitationDelete">
-                          <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                        <Button DockPanel.Dock="Right"   Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                                Name="MD_Identifier_AuthorityCitationDelete">
+                          <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                         </Button>
-                        <Label Content="{x:Static r:Resources.LBL_MD_IDENTAUTH}"/>
+                        <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_MD_IDENTAUTH}"/>
                       </DockPanel>
                     </Expander.Header>
                     <!-- citation -->
-                    <Border>
+                    <Border Style="{DynamicResource EditorBorderSubStyle}">
                       <t:MTK_CI_Citation/>
                     </Border>
                   </Expander>
@@ -94,14 +96,15 @@
             </ListBox>
 
             <!-- ADD citation -->
-            <ListBox
+            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}"
                 ItemsSource="{Binding XPath=self::*[not(identAuth)]}">
               <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Button Tag="Citation" Click="AddRecordByTagToLocal" Name="MD_Identifier_AuthorityCitationAdd">
+                  <Button Tag="Citation" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
+                          Name="MD_Identifier_AuthorityCitationAdd">
                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
-                      <TextBlock Text="{x:Static r:Resources.BTN_ADD_AUTH_CIT}"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_AUTH_CIT}"/>
                     </StackPanel>
                   </Button>
                 </DataTemplate>
