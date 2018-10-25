@@ -1,0 +1,110 @@
+﻿<p:EditorPage x:Class="$safeprojectname$.MTK_CI_OnlineResource" x:ClassModifier="internal" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:r="clr-namespace:$safeprojectname$.Properties"
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
+             mc:Ignorable="d"
+             Loaded="FillXml">
+  <UserControl.Resources>
+
+    <!--     
+    <!ENTITY % OnlineRes '(linkage, protocol?, appProfile?, orName?, orDesc?, orFunct?)'>
+    -->
+
+      <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter" />
+      <XmlDataProvider x:Key="XmlRecord" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <linkage/>
+          <protocol/>
+          <appProfile/>
+          <orName/>
+          <orDesc/>
+          <orFunct>
+            <OnFunctCd value=""/>
+          </orFunct>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <e:Codelists x:Key="CI_OnLineFunctionCode" CodelistName="CI_OnLineFunctionCode"/>
+
+  </UserControl.Resources>
+
+  <Grid>
+    <StackPanel>
+      <Grid Style="{DynamicResource EditorSubPageStyle}">
+        <Grid.RowDefinitions>
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- linkage -->
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_LINKAGE}" />
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="0" Grid.Column="1"
+            ToolTip="{x:Static r:Definitions.CI_OnlineResource_linkage}"
+            v:Nav.AnchorName="linkage,linkage"
+            Text="{e:MetadataBinding XPath=linkage}"
+            Name="CI_OnlineResource_linkage"/>
+        <!-- NOTE: deleted URL rule -->
+
+        <!-- protocol -->
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_PROTOCOL}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="1" Grid.Column="1"
+            ToolTip="{x:Static r:Definitions.CI_OnlineResource_protocol}"
+            v:Nav.AnchorName="protocol,protocol"
+            Text="{e:MetadataBinding XPath=protocol}"
+            Name="CI_OnlineResource_protocol"/>
+
+        <!-- profile -->
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_PROFILE}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="2" Grid.Column="1"
+            ToolTip="{x:Static r:Definitions.CI_OnlineResource_applicationProfile}"
+            Text="{e:MetadataBinding XPath=appProfile}"
+            Name="CI_OnlineResource_applicationProfile"/>
+
+        <!-- name -->
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="3" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_NAME}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="3" Grid.Column="1"
+            ToolTip="{x:Static r:Definitions.CI_OnlineResource_name}"
+            Text="{e:MetadataBinding XPath=orName}"
+            Name="CI_OnlineResource_name"/>
+
+        <!-- description -->
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="4" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_DESC}"/>
+        <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="4" Grid.Column="1"
+            ToolTip="{x:Static r:Definitions.CI_OnlineResource_description}"
+            Text="{e:MetadataBinding XPath=orDesc}"
+            Name="CI_OnlineResource_description"/>
+
+        <!-- function -->
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="5" Grid.Column="0" Content="{x:Static r:Resources.LBL_ONLINE_FUNCTION}"/>
+        <ComboBox Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="orFunct/OnFunctCd/@value" Grid.Row="5" Grid.Column="1"  Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+            ToolTip="{x:Static r:Definitions.CI_OnlineResource_function}"
+            ItemsSource="{Binding Source={StaticResource CI_OnLineFunctionCode}, Path=List}"
+            DisplayMemberPath="."
+            SelectedValuePath="@value"
+            SelectedValue="{Binding XPath=orFunct/OnFunctCd/@value}"
+            Name="CI_OnlineResource_function">
+        </ComboBox>
+      </Grid>
+
+      <!-- validate after all anchors are loaded -->
+      <v:PageValidateControl/>
+
+    </StackPanel>
+  </Grid>
+</p:EditorPage>

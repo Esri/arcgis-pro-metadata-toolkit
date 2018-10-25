@@ -1,0 +1,118 @@
+﻿<Window x:Class="proapp_sdk_Wizard.ProjectView" x:ClassModifier="internal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModel="clr-namespace:proapp_sdk_Wizard.ViewModel"
+             xmlns:view="clr-namespace:proapp_sdk_Wizard.View"
+             mc:Ignorable="d" 
+             Title="ArcGIS Add-In Wizard"
+              ShowInTaskbar="True"
+              Width="600" Height="400"
+              WindowStartupLocation="CenterScreen"
+              WindowStyle="ToolWindow"
+              >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/Colours.xaml" />
+                <ResourceDictionary Source="Styles/Controls.Buttons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- This Style inherits from the Button style seen above. -->
+        <Style BasedOn="{StaticResource SquareButtonStyle}" TargetType="{x:Type Button}" x:Key="moveNextButtonStyle">
+            <Setter Property="Margin" Value="3.5, 2" />
+            <Setter Property="Content" Value="Next > " />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=IsOnLastPage}" Value="True">
+                    <Setter Property="IsEnabled" Value="False" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+         <DataTemplate DataType="{x:Type viewModel:ButtonViewModel}">
+            <view:ButtonView />
+        </DataTemplate>
+
+         <DataTemplate DataType="{x:Type viewModel:ButtonPaletteViewModel}">
+            <view:ButtonPaletteView />
+         </DataTemplate>
+
+         <DataTemplate DataType="{x:Type viewModel:SplitButtonViewModel}">
+            <view:SplitButtonView />
+         </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:GalleryViewModel}">
+            <view:GalleryView />
+         </DataTemplate>
+          
+        <DataTemplate DataType="{x:Type viewModel:DockPaneViewModel}">
+            <view:DockPaneView />
+        </DataTemplate>
+            
+        <DataTemplate DataType="{x:Type viewModel:ToolViewModel}">
+            <view:ToolView />
+        </DataTemplate>
+
+      <DataTemplate DataType="{x:Type viewModel:PaneViewModel}">
+        <view:PaneView />
+      </DataTemplate>
+
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid Background="AliceBlue" Margin="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        
+        <!-- CURRENT PAGE AREA -->
+        <Border Background="White" Grid.Column="1" Grid.Row="0">
+            <HeaderedContentControl Margin="10">
+                <HeaderedContentControl.Template>
+                    <ControlTemplate>
+                        <DockPanel LastChildFill="True">
+                            <TextBlock FontSize="16" 
+                                       Foreground="{StaticResource Esri_Gray80}" 
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center" 
+                                       Text="{Binding Path=CurrentPage.DisplayName}" 
+                                       DockPanel.Dock="Top"/>
+                            <ContentPresenter Content="{Binding CurrentPage}"/>
+                        </DockPanel>
+                    </ControlTemplate>
+                </HeaderedContentControl.Template>
+            </HeaderedContentControl>
+        </Border>
+
+        <Border Grid.Column="0" Grid.Row="1" Background="{StaticResource Esri_Gray3}" Grid.ColumnSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- NAVIGATION BUTTONS -->
+                <Grid Grid.Column="2" Grid.IsSharedSizeScope="True" HorizontalAlignment="Right">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition SharedSizeGroup="Buttons" />
+                        <ColumnDefinition SharedSizeGroup="Buttons" />
+                        <ColumnDefinition SharedSizeGroup="Buttons" />
+                        <ColumnDefinition SharedSizeGroup="Buttons" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Button Grid.Column="0" Grid.Row="0" Command="{Binding Path=MovePreviousCommand}" Content="Back" Style="{StaticResource SquareButtonStyle}" />
+                    <Button Grid.Column="1" Grid.Row="0" Command="{Binding Path=MoveNextCommand}" Content="Next" Style="{StaticResource moveNextButtonStyle}"/>
+                    <Button Grid.Column="2" Grid.Row="0" Command="{Binding Path=FinishCommand}" Content="Finish" Style="{StaticResource SquareButtonStyle}" />
+                    <Button Grid.Column="3" Grid.Row="0" Command="{Binding Path=CancelCommand}" Content="Cancel" Style="{StaticResource SquareButtonStyle}"/>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

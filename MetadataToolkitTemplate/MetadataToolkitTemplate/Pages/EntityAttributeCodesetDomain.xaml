@@ -1,0 +1,79 @@
+﻿<p:EditorPage x:Class="$safeprojectname$.MTK_EntityAttributeCodesetDomain" x:ClassModifier="internal" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:r="clr-namespace:$safeprojectname$.Properties"
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"
+             mc:Ignorable="d"
+             Loaded="FillXml">
+
+  <UserControl.Resources>
+    <!--       
+    <!ELEMENT attr (attrlabl, attalias?, attrdef, attrdefs, attrtype, attwidth, atprecis?, 
+        attscale?, atoutwid?, atnumdec?, atindex?, 
+        attrdomv+, (begdatea, enddatea?)*, attrvai?, attrmfrq?)>
+   
+    <!ELEMENT attrdomv ((edom+ | rdom | codesetd | udom))>   
+    
+    <!ELEMENT codesetd (codesetn, codesets)>
+    <!ELEMENT codesetn (#PCDATA)>
+    <!ELEMENT codesets (#PCDATA)>
+
+    -->
+    <XmlDataProvider x:Key="XmlRecord" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <codesetn></codesetn>
+          <codesets></codesets>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+  </UserControl.Resources>
+
+  <Grid Style="{DynamicResource EditorSubPageStyle}">
+    <StackPanel>
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition />
+          <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- 
+        <!ELEMENT codesetd (codesetn, codesets)>
+        <!ELEMENT codesetn (#PCDATA)>
+        <!ELEMENT codesets (#PCDATA)>
+        -->
+
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0"
+            Content="{x:Static r:Resources.LBL_EAINFO_CODESETN}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" 
+            v:Nav.AnchorName="codesetn,codesetn" 
+            ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_codesetn}"
+            Text="{e:MetadataBinding XPath=codesetn}"
+            Name="FGDC_EntityAndAttribute_codesetn"/>
+
+        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0"
+            Content="{x:Static r:Resources.LBL_EAINFO_CODESETS}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}" 
+            v:Nav.AnchorName="codesets,codesets"
+            ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_codesets}"
+            Text="{e:MetadataBinding XPath=codesets}"
+            Name="FGDC_EntityAndAttribute_codesets"/>
+
+      </Grid>
+
+      <!-- validate after all anchors are loaded -->
+      <v:PageValidateControl/>
+
+    </StackPanel>
+  </Grid>
+
+</p:EditorPage>

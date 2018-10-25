@@ -1,0 +1,58 @@
+﻿<p:EditorPage x:Class="$safeprojectname$.MTK_GenericName" x:ClassModifier="internal" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:r="clr-namespace:$safeprojectname$.Properties"
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
+             mc:Ignorable="d"
+             Loaded="FillXml">
+  <UserControl.Resources>
+    <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter" />
+    <!--
+      <!ELEMENT genericName (#PCDATA)>
+      <!ATTLIST genericName
+          codeSpace CDATA #IMPLIED
+          nilReason (inapplicable | missing | template | unknown | withheld) #IMPLIED
+      >  codeSpace is type anyURI; it is optional     
+    -->
+    <XmlDataProvider x:Key="XmlRecord" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <genericName editorAppend="True" codeSpace=""/>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+  </UserControl.Resources>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <!-- generic name -->
+    <Label Style="{DynamicResource EditorHLabelNoIdentStyle}"  Grid.Row="0" Grid.Column="0"
+        Content="{x:Static r:Resources.LBL_GENERICNAME_NAME}"/>
+    <TextBox Grid.Row="0" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}"
+        v:Nav.AnchorName="genericName,genericName"
+        Text="{e:MetadataBinding XPath=genericName}"
+        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=GenericName_genericName}"/>
+
+    <!-- codespace -->
+    <Label Style="{DynamicResource EditorHLabelNoIdentStyle}"  Grid.Row="1" Grid.Column="0"
+        Content="{x:Static r:Resources.LBL_GENERICNAME_CODESPACE}"/>
+    <TextBox Grid.Row="1" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}"
+        ToolTip="{x:Static r:Definitions.GenericName_codeSpace}"
+        Text="{e:MetadataBinding XPath=genericName/@codeSpace}"
+        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=GenericName_codeSpace}"/>
+
+  </Grid>
+</p:EditorPage>

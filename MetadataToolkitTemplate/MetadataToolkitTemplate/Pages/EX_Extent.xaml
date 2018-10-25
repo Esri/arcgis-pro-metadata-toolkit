@@ -1,0 +1,366 @@
+﻿<p:EditorPage x:Name="exExtent" x:Class="$safeprojectname$.MTK_EX_Extent" x:ClassModifier="internal" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:t="clr-namespace:$safeprojectname$"
+             xmlns:r="clr-namespace:$safeprojectname$.Properties"             
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"             
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata" 
+             xmlns:controls="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Controls;assembly=ArcGIS.Desktop.Metadata"
+             mc:Ignorable="d"
+             Loaded="FillXml">
+
+  <!--
+  <!ENTITY % Extent '(exDesc?, geoEle*, tempEle*, vertEle*)'>
+  <!ELEMENT geoEle %GeoExtentTypes;>
+  <!ENTITY % GeoExtentTypes '(BoundPoly | GeoBndBox | GeoDesc )'>
+  <!ENTITY % BoundPoly '(exTypeCode?, polygon+)'>
+  <!ENTITY % GeoBndBox '(exTypeCode?, westBL, eastBL, southBL, northBL)'>
+  <!ENTITY % GeoDesc '(exTypeCode?, geoId)'>
+  
+  <!ELEMENT tempEle %TempExtentTypes;>
+  <!ENTITY % TempExtentTypes '(TempExtent | SpatTempEx)'>
+  <!ENTITY % TempExtent '(exTemp)'>
+  <!ENTITY % SpatTempEx '(exTemp, exSpat+)'>
+  
+  <!ELEMENT exTemp %TM_Primitive;>
+  <!ENTITY % TM_Primitive '(TM_Instant | TM_Period)'>
+  <!ENTITY % TM_Instant '(gmlDesc?, gmlDescRef?, gmlIdent?, gmlName*, tmPosition)'> 
+  <!ENTITY % TM_Period '(gmlDesc?, gmlDescRef?, gmlIdent?, gmlName*, tmBegin, tmEnd)'> 
+  <!ELEMENT TM_Instant %TM_Instant;> 
+  <!ATTLIST TM_Instant
+	  gmlID CDATA #REQUIRED
+	  frame CDATA '#ISO-8601' 
+  > 
+  <!ELEMENT TM_Period %TM_Period;> 
+  <!ATTLIST TM_Period
+	  gmlID CDATA #REQUIRED
+	  frame CDATA '#ISO-8601' 
+  >
+
+  <!ELEMENT vertEle %VertExtent;>
+  <!ELEMENT VertExtent %VertExtent;>
+  <!ENTITY % VertExtent '(vertMinVal, vertMaxVal, vertUoM, vertDatum)'>
+  <!ELEMENT vertMinVal %Real;>
+  <!ELEMENT vertMaxVal %Real;>
+
+  -->
+
+  <UserControl.Resources>
+    <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter" />
+      
+    <XmlDataProvider x:Key="XmlRecord" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <exDesc></exDesc>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <!-- bounding box -->
+    <XmlDataProvider x:Key="XmlRecord_bbox" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <geoEle editorExpand="True">
+            <GeoBndBox/>
+          </geoEle>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <!-- geographic description -->
+    <XmlDataProvider x:Key="XmlRecord_geodesc" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <geoEle editorExpand="True">
+            <GeoDesc/>
+          </geoEle>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <!-- temporal element / period -->
+    <XmlDataProvider x:Key="XmlRecord_tempEle" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <tempEle>
+            <TempExtent>
+              <exTemp>
+                <TM_Period editorExpand="True"/>
+              </exTemp>
+            </TempExtent>
+          </tempEle>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <!-- temporal element / instant -->
+    <XmlDataProvider x:Key="XmlRecord_tempEleInstant" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <tempEle editorExpand="True">
+            <TempExtent>
+              <exTemp>
+                <TM_Instant>
+                  <tmPosition></tmPosition>
+                </TM_Instant>
+              </exTemp>
+            </TempExtent>
+          </tempEle>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+    <!-- vertical element -->
+    <XmlDataProvider x:Key="XmlRecord_vertEle" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
+      <x:XData>
+        <ANY xmlns="">
+          <vertEle editorExpand="True">
+            <vertMinVal></vertMinVal>
+            <vertMaxVal></vertMaxVal>
+          </vertEle>
+        </ANY>
+      </x:XData>
+    </XmlDataProvider>
+
+  </UserControl.Resources>
+
+  <Grid Style="{DynamicResource EditorSubPageStyle}">
+    <StackPanel>
+
+      <!-- description -->
+      <Label Style="{DynamicResource EditorVLabelStyle}" Content="{x:Static r:Resources.LBL_EXT_DESC}"/>
+      <controls:Resizer>
+        <TextBox Style="{DynamicResource EditorTextAreaShortResizeStyle}" 
+            Text="{e:MetadataBinding XPath=exDesc}"
+            ToolTip="{x:Static r:Definitions.EX_Extent_description}"
+            v:Nav.Check="True"
+            v:Nav.AnchorName="exDesc,exDesc"
+                 Name="EX_Extent_description"/>
+      </controls:Resizer>
+
+      <!-- bounding box -->
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=geoEle[GeoBndBox]}">
+        <ListBox.ItemsPanel>
+          <ItemsPanelTemplate>
+            <StackPanel/>
+          </ItemsPanelTemplate>
+        </ListBox.ItemsPanel>
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <Border Style="{DynamicResource EditorBorder2LiteStyle}" >
+              <Expander Style="{DynamicResource EditorExpander2Style}" 
+                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=Ex_Extent_BoundingBoxGroup}">
+                <Expander.Header>
+                  <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
+                      RelativeSource={RelativeSource FindAncestor,
+                      AncestorType={x:Type ContentPresenter}},
+                      Mode=OneWayToSource}" LastChildFill="True">
+                    <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                            Name="Ex_Extent_BoundingBoxDelete">
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                    </Button>
+                    <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_EXT_BOX}"/>
+                  </DockPanel>
+                </Expander.Header>
+                <!-- geographic bounding box -->
+                <t:MTK_EX_GeographicBoundingBox x:Name="boundingBox"/>
+              </Expander>
+            </Border>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+
+      <!-- geographic description -->
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=geoEle[GeoDesc]}">
+        <ListBox.ItemsPanel>
+          <ItemsPanelTemplate>
+            <StackPanel/>
+          </ItemsPanelTemplate>
+        </ListBox.ItemsPanel>
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <Border Style="{DynamicResource EditorBorder2LiteStyle}" >
+              <Expander Style="{DynamicResource EditorExpander2Style}" 
+                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=Ex_Extent_GeographicDescriptionGroup}">
+                <Expander.Header>
+                  <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
+                      RelativeSource={RelativeSource FindAncestor,
+                      AncestorType={x:Type ContentPresenter}},
+                      Mode=OneWayToSource}" LastChildFill="True">
+                    <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                            Name="Ex_Extent_GeographicDescriptionDelete">
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                    </Button>
+                    <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_EXT_GEODESC}"/>
+                  </DockPanel>
+                </Expander.Header>
+                <t:MTK_EX_GeographicDescription x:Name="geoDescription"/>
+              </Expander>
+            </Border>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+
+      <!-- temporal period -->
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" 
+          ToolTip="{x:Static r:Definitions.EX_TemporalExtent_beginTimePeriod}"
+          ItemsSource="{Binding XPath=tempEle/TempExtent/exTemp/TM_Period}">
+        <ListBox.ItemsPanel>
+          <ItemsPanelTemplate>
+            <StackPanel/>
+          </ItemsPanelTemplate>
+        </ListBox.ItemsPanel>
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <Border Style="{DynamicResource EditorBorder2LiteStyle}">
+              <Expander Style="{DynamicResource EditorExpander2Style}" 
+                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=EX_Extent_TemporalPeriodGroup}">
+                <Expander.Header>
+                  <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
+                      RelativeSource={RelativeSource FindAncestor,
+                      AncestorType={x:Type ContentPresenter}},
+                      Mode=OneWayToSource}" LastChildFill="True">
+                    <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                            Name="EX_Extent_TemporalPeriodDelete">
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                    </Button>
+                    <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_EXT_TEMP}"/>
+                  </DockPanel>
+                </Expander.Header>
+                <Border Style="{DynamicResource EditorBorderSubStyle}">
+                  <t:MTK_TM_Period x:Name="tempExtent"/>
+                </Border>
+              </Expander>
+            </Border>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+
+      <!-- temporal instant -->
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=tempEle[TempExtent/exTemp/TM_Instant]}">
+        <ListBox.ItemsPanel>
+          <ItemsPanelTemplate>
+            <StackPanel/>
+          </ItemsPanelTemplate>
+        </ListBox.ItemsPanel>
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <Border Style="{DynamicResource EditorBorder2LiteStyle}" ToolTip="{x:Static r:Definitions.EX_TemporalExtent_timeInstant}">
+              <Expander Style="{DynamicResource EditorExpander2Style}" 
+                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=EX_Extent_TemporalInstantGroup}">
+                <Expander.Header>
+                  <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
+                      RelativeSource={RelativeSource FindAncestor,
+                      AncestorType={x:Type ContentPresenter}},
+                      Mode=OneWayToSource}" LastChildFill="True">
+                    <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                            Name="EX_Extent_TemporalInstantDelete">
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                    </Button>
+                    <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_EXT_TEMPINSTANT}"/>
+                  </DockPanel>
+                </Expander.Header>
+
+                <Grid Style="{DynamicResource EditorSub2NoIndent}">
+                  <Grid.RowDefinitions>
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+
+                  <!-- TM_Instant -->
+                  <Label Style="{DynamicResource EditorHLabelNoIdentStyle}" Grid.Row="0" Grid.Column="0" ToolTip=""
+                   Content="{x:Static r:Resources.LBL_EXT_TEMP_INSTANT}" Name="EX_Extent_TemporalInstant"/>
+                  <controls:DateTimeIsoControl Grid.Row="0" Grid.Column="1" Items="{Binding XPath=TempExtent/exTemp/TM_Instant/tmPosition[1]}"/>
+                </Grid>
+              </Expander>
+            </Border>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+
+      <!-- vertical -->
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=vertEle}">
+        <ListBox.ItemsPanel>
+          <ItemsPanelTemplate>
+            <StackPanel/>
+          </ItemsPanelTemplate>
+        </ListBox.ItemsPanel>
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <Border Style="{DynamicResource EditorBorder2LiteStyle}" >
+              <Expander Style="{DynamicResource EditorExpander2Style}" 
+                        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=EX_Extent_VerticalExtentGroup}">
+                <Expander.Header>
+                  <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
+                      RelativeSource={RelativeSource FindAncestor,
+                      AncestorType={x:Type ContentPresenter}},
+                      Mode=OneWayToSource}" LastChildFill="True">
+                    <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+                            Name="EX_Extent_VerticalExtentDelete">
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                    </Button>
+                    <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_EXT_VERT}"/>
+                  </DockPanel>
+                </Expander.Header>
+                <t:MTK_EX_VerticalExtent/>
+              </Expander>
+            </Border>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+
+      <!-- ADD bounding box -->
+      <Button Tag="bbox" Click="AddRecordByTag" Style="{DynamicResource AddButton}"
+              Name="Ex_Extent_BoundingBoxAdd">
+        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EXTENTS_NEW_BBOX}"/>
+        </StackPanel>
+      </Button>
+
+      <!-- ADD geographic description -->
+      <Button Tag="geodesc" Click="AddRecordByTag" Style="{DynamicResource AddButton}"
+              Name="Ex_Extent_GeographicDescriptionAdd">
+        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EXTENTS_NEW_GEODESC}"/>
+        </StackPanel>
+      </Button>
+
+      <!-- ADD temporal -->
+      <StackPanel Orientation="Horizontal">
+        <Button Tag="tempEle" Click="AddRecordByTag" Style="{DynamicResource AddButton}"
+                Name="EX_Extent_TemporalPeriodAdd">
+          <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+            <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+            <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EXTENTS_NEW_TEMP}"/>
+          </StackPanel>
+        </Button>
+        <Button Tag="tempEleInstant" Click="AddRecordByTag" Style="{DynamicResource AddButton}"
+                Name="EX_Extent_TemporalInstantAdd">
+          <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+            <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+            <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EXTENTS_NEW_TEMP_INSTANT}"/>
+          </StackPanel>
+        </Button>
+      </StackPanel>
+
+      <!-- ADD vertical -->
+      <Button Tag="vertEle" Click="AddRecordByTag" Style="{DynamicResource AddButton}"
+              Name="EX_Extent_VerticalExtentAdd">
+        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EXTENTS_NEW_VERT}"/>
+        </StackPanel>
+      </Button>
+
+    </StackPanel>
+  </Grid>
+</p:EditorPage>

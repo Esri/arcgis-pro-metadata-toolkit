@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetadataToolkitTemplate", "MetadataToolkitTemplate\MetadataToolkitTemplate.csproj", "{827CC223-F392-4278-BDD1-7993945934C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TemplateProject", "TemplateProject", "{7A48FA53-0A33-4A3E-B42C-0D65FC2381BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{38D6FA42-F4E9-47F4-8602-EFA55125D4DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VSPackage", "VSPackage", "{0D75DF78-2388-438A-BA80-20E11E3D6954}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetadataToolkitVSPackage", "MetadataToolkitVSPackage\MetadataToolkitVSPackage.csproj", "{8644693E-5204-4036-8EFB-97499FF614AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "proapp-sdk-Wizard", "proapp-sdk-Wizard\proapp-sdk-Wizard.csproj", "{F08E8EBB-4EA2-43DD-9987-4A2ACE163CCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "proapp-sdk-MSBuild", "proapp-sdk-MSBuild\proapp-sdk-MSBuild.csproj", "{3356CBCD-E935-472F-B576-2287F0EF7C33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{827CC223-F392-4278-BDD1-7993945934C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{827CC223-F392-4278-BDD1-7993945934C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{827CC223-F392-4278-BDD1-7993945934C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{827CC223-F392-4278-BDD1-7993945934C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8644693E-5204-4036-8EFB-97499FF614AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8644693E-5204-4036-8EFB-97499FF614AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8644693E-5204-4036-8EFB-97499FF614AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8644693E-5204-4036-8EFB-97499FF614AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F08E8EBB-4EA2-43DD-9987-4A2ACE163CCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08E8EBB-4EA2-43DD-9987-4A2ACE163CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08E8EBB-4EA2-43DD-9987-4A2ACE163CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08E8EBB-4EA2-43DD-9987-4A2ACE163CCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3356CBCD-E935-472F-B576-2287F0EF7C33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3356CBCD-E935-472F-B576-2287F0EF7C33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3356CBCD-E935-472F-B576-2287F0EF7C33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3356CBCD-E935-472F-B576-2287F0EF7C33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{827CC223-F392-4278-BDD1-7993945934C7} = {7A48FA53-0A33-4A3E-B42C-0D65FC2381BE}
+		{8644693E-5204-4036-8EFB-97499FF614AB} = {0D75DF78-2388-438A-BA80-20E11E3D6954}
+		{F08E8EBB-4EA2-43DD-9987-4A2ACE163CCD} = {38D6FA42-F4E9-47F4-8602-EFA55125D4DA}
+		{3356CBCD-E935-472F-B576-2287F0EF7C33} = {38D6FA42-F4E9-47F4-8602-EFA55125D4DA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5BEDB7F-2F0A-46FF-9372-F29B964C5888}
+	EndGlobalSection
+EndGlobal
