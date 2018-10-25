@@ -30,7 +30,7 @@ using ArcGIS.Desktop.Metadata;
 using ArcGIS.Desktop.Metadata.Editor.Pages;
 using ArcGIS.Desktop.Metadata.Editor.Validation;
 
-namespace $safeprojectname$
+namespace $safeprojectname$.Pages
 {
   /// <summary>
   /// Interaction logic for MTK_EditorRichTextBox.xaml

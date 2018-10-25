@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.Xml;
 using ArcGIS.Desktop.Metadata.Editor.Pages;
 
-namespace $safeprojectname$
+namespace $safeprojectname$.Pages
 {
   /// <summary>
   /// Interaction logic for MTK_CI_Contact.xaml

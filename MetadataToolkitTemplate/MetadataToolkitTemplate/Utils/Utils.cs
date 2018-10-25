@@ -38,7 +38,7 @@ using System.Reflection;
 using ArcGIS.Desktop.Metadata.Editor.Convert;
 using ArcGIS.Desktop.Metadata.Editor;
 
-namespace $safeprojectname$
+namespace $safeprojectname$.Utils
 {
   internal class Utils
   {

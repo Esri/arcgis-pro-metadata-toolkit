@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace $safeprojectname$
+namespace $safeprojectname$.Utils
 {
   internal class LanguageConverter
   {

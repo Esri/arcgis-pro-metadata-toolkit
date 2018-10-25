@@ -20,7 +20,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$
+namespace $safeprojectname$.Utils
 {
   internal class MetadataException : Exception
   {

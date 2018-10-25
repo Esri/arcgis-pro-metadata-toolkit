@@ -1,4 +1,4 @@
-﻿<pages:EditorPage x:Class="$safeprojectname$.MTK_EX_GeographicBoundingBox" x:ClassModifier="internal"     
+﻿<pages:EditorPage x:Class="$safeprojectname$.Pages.MTK_EX_GeographicBoundingBox" x:ClassModifier="internal"     
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:t="clr-namespace:$safeprojectname$"

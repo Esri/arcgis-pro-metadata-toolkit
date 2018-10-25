@@ -21,7 +21,7 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Metadata;
 using ArcGIS.Desktop.Metadata.Editor.Pages;
 
-namespace $safeprojectname$
+namespace $safeprojectname$.Pages
 {
   internal class ContactManagerSidebarLabel : ISidebarLabel
   {

@@ -14,7 +14,7 @@ email: contracts@esri.com
 using System.Windows.Controls;
 using ArcGIS.Desktop.Metadata.Editor.Pages;
 
-namespace $safeprojectname$
+namespace $safeprojectname$.Pages
 {
   /// <summary>
   /// Interaction logic for MTK_Locale.xaml

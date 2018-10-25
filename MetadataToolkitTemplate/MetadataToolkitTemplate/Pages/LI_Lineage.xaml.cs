@@ -14,7 +14,7 @@ email: contracts@esri.com
 using ArcGIS.Desktop.Metadata;
 using ArcGIS.Desktop.Metadata.Editor.Pages;
 
-namespace $safeprojectname$
+namespace $safeprojectname$.Pages
 {
   internal class LI_LineageSidebarLabel : ISidebarLabel
   {

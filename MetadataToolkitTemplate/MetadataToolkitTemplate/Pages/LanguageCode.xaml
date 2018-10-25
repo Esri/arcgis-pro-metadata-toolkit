@@ -1,4 +1,4 @@
-﻿<p:EditorPage x:Class="$safeprojectname$.MTK_LanguageCode" x:ClassModifier="internal" 
+﻿<p:EditorPage x:Class="$safeprojectname$.Pages.MTK_LanguageCode" x:ClassModifier="internal" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

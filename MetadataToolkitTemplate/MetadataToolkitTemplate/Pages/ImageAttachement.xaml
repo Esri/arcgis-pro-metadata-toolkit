@@ -1,4 +1,4 @@
-﻿<pages:EditorPage x:Class="$safeprojectname$.MTK_ImageAttachement" x:ClassModifier="internal"  
+﻿<pages:EditorPage x:Class="$safeprojectname$.Pages.MTK_ImageAttachement" x:ClassModifier="internal"  
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:dg="http://schemas.microsoft.com/wpf/2008/toolkit"

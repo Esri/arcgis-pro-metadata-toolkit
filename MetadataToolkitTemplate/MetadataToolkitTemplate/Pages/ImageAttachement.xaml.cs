@@ -39,7 +39,7 @@ using ArcGIS.Desktop.Metadata;
 using ArcGIS.Desktop.Metadata.Editor.Pages;
 using ArcGIS.Desktop.Metadata.Editor.Convert;
 
-namespace $safeprojectname$
+namespace $safeprojectname$.Pages
 {
   /// <summary>
   /// Interaction logic for ImageAttachement.xaml
