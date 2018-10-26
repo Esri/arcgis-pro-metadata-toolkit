@@ -29,7 +29,7 @@ namespace $safeprojectname$.Pages
     {
       get
       {
-        return Utils.ExtractResponsiblePartyLabel(this, $safeprojectname$.Properties.Resources.LBL_CI_PARTY_FORMAT);
+        return Utils.Utils.ExtractResponsiblePartyLabel(this, $safeprojectname$.Properties.Resources.LBL_CI_PARTY_FORMAT);
       }
 
       set

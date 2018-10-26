@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:t="clr-namespace:$safeprojectname$"
+             xmlns:tp="clr-namespace:$safeprojectname$.Pages"
+             xmlns:tu="clr-namespace:$safeprojectname$.Utils"
              xmlns:r="clr-namespace:$safeprojectname$.Properties"             
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
@@ -231,7 +233,7 @@
                             <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
                           <!-- progress code -->
-                          <t:MTK_MD_ProgressCode/>
+                          <tp:MTK_MD_ProgressCode/>
                         </DockPanel>
                       </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -335,11 +337,11 @@
 
                             <!-- language -->
                             <Label Grid.Row="0" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_RES_LANG}"/>
-                            <t:MTK_LanguageCode Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.MD_DataIdentification_language}"/>
+                            <tp:MTK_LanguageCode Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.MD_DataIdentification_language}"/>
 
                             <!-- country code -->
-                            <Label t:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_META_NAP_COUNTRY}"/>
-                            <t:MTK_CountryCode t:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="1"  />
+                            <Label tu:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_META_NAP_COUNTRY}"/>
+                            <tp:MTK_CountryCode tu:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="1"  />
                           </Grid>
                         </StackPanel>
                       </DataTemplate>
@@ -369,7 +371,7 @@
                             <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                           </Button>
                           <!-- character set -->
-                          <t:MTK_MD_CharacterSetCode ToolTip="{x:Static r:Definitions.MD_DataIdentification_characterSet}"/>
+                          <tp:MTK_MD_CharacterSetCode ToolTip="{x:Static r:Definitions.MD_DataIdentification_characterSet}"/>
                         </DockPanel>
                       </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -423,7 +425,7 @@
                     <ListBox.ItemTemplate>
                       <DataTemplate>
                         <!-- resolution -->
-                        <t:MTK_MD_Resolution/>
+                        <tp:MTK_MD_Resolution/>
                       </DataTemplate>
                     </ListBox.ItemTemplate>
                   </ListBox>
@@ -456,7 +458,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <!-- browse graphic -->
-                          <t:MTK_MD_BrowseGraphic/>
+                          <tp:MTK_MD_BrowseGraphic/>
                         </Expander>
                       </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -484,7 +486,7 @@
               </Border>
 
               <!-- usage -->
-              <Border Style="{DynamicResource EditorBorder2Style}" t:MetadataStyle.OnlyProfiles="ISO19139,INSPIRE">
+              <Border Style="{DynamicResource EditorBorder2Style}" tu:MetadataStyle.OnlyProfiles="ISO19139,INSPIRE">
                 <StackPanel>
                   <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=idSpecUse}">
                     <ListBox.ItemsPanel>
@@ -509,7 +511,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <!-- usage -->
-                          <t:MTK_MD_Usage/>
+                          <tp:MTK_MD_Usage/>
                         </Expander>
                       </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -539,7 +541,7 @@
               </Border>
 
               <!-- formats -->
-              <Border Style="{DynamicResource EditorBorder2Style}" t:MetadataStyle.OnlyProfiles="ISO19139,INSPIRE">
+              <Border Style="{DynamicResource EditorBorder2Style}" tu:MetadataStyle.OnlyProfiles="ISO19139,INSPIRE">
                 <StackPanel>
                   <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=dsFormat}">
                     <ListBox.ItemsPanel>
@@ -564,7 +566,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <!-- format -->
-                          <t:MTK_MD_Format/>
+                          <tp:MTK_MD_Format/>
                         </Expander>
                       </DataTemplate>
                     </ListBox.ItemTemplate>

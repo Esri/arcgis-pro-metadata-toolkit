@@ -34,7 +34,7 @@ namespace $safeprojectname$.Sections
       get {
         if (null == _sidebarLabel)
         {
-          _sidebarLabel = Utils.GetResString(this.ResourceID);
+          _sidebarLabel = Utils.Utils.GetResString(this.ResourceID);
         }
         return _sidebarLabel;       
       }     

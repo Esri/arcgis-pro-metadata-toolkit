@@ -2,7 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:t="clr-namespace:$safeprojectname$"
+             xmlns:tp="clr-namespace:$safeprojectname$.Pages"
+             xmlns:tu="clr-namespace:$safeprojectname$.Utils"
              xmlns:r="clr-namespace:$safeprojectname$.Properties"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
@@ -50,11 +51,11 @@
     </Grid.ColumnDefinitions>
 
     <Label Grid.Row="0" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_PRESENTATION_FORM}"/>
-    <t:MTK_CI_PresentationFormCode Grid.Row="0" Grid.Column="1"/>
+    <tp:MTK_CI_PresentationFormCode Grid.Row="0" Grid.Column="1"/>
 
     <!-- fgdc geospatial presentation form -->
-    <Label Grid.Row="1" Grid.Column="0" t:MetadataStyle.OnlyProfiles="FGDC,NAP" Content="{x:Static r:Resources.LBL_FGDC_GEOFORM}" Style="{DynamicResource EditorHLabelNoIdentStyle}"/>
-        <ComboBox Grid.Row="1" Grid.Column="1" t:MetadataStyle.OnlyProfiles="FGDC,NAP" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="True"
+    <Label Grid.Row="1" Grid.Column="0" tu:MetadataStyle.OnlyProfiles="FGDC,NAP" Content="{x:Static r:Resources.LBL_FGDC_GEOFORM}" Style="{DynamicResource EditorHLabelNoIdentStyle}"/>
+        <ComboBox Grid.Row="1" Grid.Column="1" tu:MetadataStyle.OnlyProfiles="FGDC,NAP" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="True"
         ToolTip="{x:Static r:Definitions.FGDC_Citation_geoform}" ItemsSource="{Binding Source={StaticResource PresentationForm}, Path=List}"
         DisplayMemberPath="."
         SelectedValuePath="@value"

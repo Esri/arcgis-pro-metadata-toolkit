@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:t="clr-namespace:$safeprojectname$"
+             xmlns:tp="clr-namespace:$safeprojectname$.Pages"
+             xmlns:tu="clr-namespace:$safeprojectname$.Utils"
              xmlns:r="clr-namespace:$safeprojectname$.Properties"
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
@@ -106,7 +108,7 @@
                         <StackPanel Style="{DynamicResource EditorSubPageStackPanelStyle}">
 
                           <!-- dimension -->
-                          <DockPanel t:MetadataStyle.OnlyProfiles="FGDC,NAP" LastChildFill="True">
+                          <DockPanel tu:MetadataStyle.OnlyProfiles="FGDC,NAP" LastChildFill="True">
                             <Label Style="{DynamicResource EditorHLabelStyle}" Content="{x:Static r:Resources.LBL_RS_DIMENSION}"/>
                             <ComboBox DockPanel.Dock="Right" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="RefSystem/@dimension" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
                                 ToolTip=""
@@ -130,7 +132,7 @@
                             </ListBox.ItemsPanel>
                             <ListBox.ItemTemplate>
                               <DataTemplate>
-                                <t:MTK_MD_ReferenceSystem/>
+                                <tp:MTK_MD_ReferenceSystem/>
                               </DataTemplate>
                             </ListBox.ItemTemplate>
                           </ListBox>

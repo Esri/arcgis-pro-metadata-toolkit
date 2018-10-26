@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:t="clr-namespace:$safeprojectname$"
+             xmlns:tp="clr-namespace:$safeprojectname$.Pages"
+             xmlns:tu="clr-namespace:$safeprojectname$.Utils"
              xmlns:r="clr-namespace:$safeprojectname$.Properties"
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
@@ -129,10 +131,10 @@
                 <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
               </Button>
 
-              <t:MTK_MD_CharacterSetCode DockPanel.Dock="Right" t:MetadataStyle.OnlyProfiles="NAP" 
+              <tp:MTK_MD_CharacterSetCode DockPanel.Dock="Right" tu:MetadataStyle.OnlyProfiles="NAP" 
                   ToolTip="{x:Static r:Definitions.MD_DataIdentification_characterSet}"/>
 
-              <ComboBox DockPanel.Dock="Right" Loaded="PostProcessComboBoxValues" t:MetadataStyle.OnlyProfiles="NAP" p:EditorPage.SourceXPath="countryCode/@value" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+              <ComboBox DockPanel.Dock="Right" Loaded="PostProcessComboBoxValues" tu:MetadataStyle.OnlyProfiles="NAP" p:EditorPage.SourceXPath="countryCode/@value" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
                   ItemsSource="{Binding Source={StaticResource CountryCodes}, Path=List}"
                   ToolTip="{x:Static r:Definitions.PT_Locale_country}"
                   DisplayMemberPath="."
@@ -180,7 +182,7 @@
               </DockPanel>
               <!-- feature type -->
               <Border Style="{DynamicResource EditorBorderSubStyle}">
-                <t:MTK_GenericName ToolTip="{x:Static r:Definitions.MD_FeatureCatalogueDescription_featureTypes}"/>
+                <tp:MTK_GenericName ToolTip="{x:Static r:Definitions.MD_FeatureCatalogueDescription_featureTypes}"/>
               </Border>
             </StackPanel>
           </DataTemplate>
@@ -223,7 +225,7 @@
                 </Expander.Header>
                 <!-- citation -->
                 <Border Style="{DynamicResource EditorBorderSubStyle}">
-                  <t:MTK_CI_Citation/>
+                  <tp:MTK_CI_Citation/>
                 </Border>
               </Expander>
             </DataTemplate>

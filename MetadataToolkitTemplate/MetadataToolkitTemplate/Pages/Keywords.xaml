@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:t="clr-namespace:$safeprojectname$"
+             xmlns:tp="clr-namespace:$safeprojectname$.Pages"
+             xmlns:tu="clr-namespace:$safeprojectname$.Utils"
              xmlns:r="clr-namespace:$safeprojectname$.Properties"
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
@@ -224,7 +226,7 @@
                   <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelNoIdentStyle}" 
                       Content="{x:Static r:Resources.LBL_IMS_CONTENT_TYPE}"/>
                    <CheckBox Style="{DynamicResource EditorCheckBoxStyle}" DockPanel.Dock="Right"
-                      t:MetadataStyle.OnlyProfiles="FGDC"
+                      tu:MetadataStyle.OnlyProfiles="FGDC"
                       ToolTip="{x:Static r:Definitions.ESRI_exportContentTypeToFGDC}"
                       Content="{x:Static r:Resources.LBL_IMS_CONTENT_TYPE_EXPORT}" 
                       IsChecked="{Binding XPath=/metadata/Esri/DataProperties/itemProps/imsContentType/@export}"
@@ -270,7 +272,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel Style="{DynamicResource ExpanderBodyStyle}">
-                            <t:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_theme}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_theme}"/>
                             <Border Style="{DynamicResource EditorBorderHRuleStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
                           </StackPanel>
                         </Expander>
@@ -314,7 +316,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel>
-                            <t:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_place}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_place}"/>
                             <Border Style="{DynamicResource EditorBorderHRuleStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
                             </Border>
                           </StackPanel>
@@ -359,7 +361,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel>
-                            <t:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_temporal}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_temporal}"/>
                             <Border Style="{DynamicResource EditorBorderHRuleStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
                             </Border>
                           </StackPanel>
@@ -379,7 +381,7 @@
               </Border>
 
               <!-- discipline keywords -->
-              <Border Style="{DynamicResource EditorBorder2Style}" t:MetadataStyle.OnlyProfiles="ISO19139,NAP,INSPIRE">
+              <Border Style="{DynamicResource EditorBorder2Style}" tu:MetadataStyle.OnlyProfiles="ISO19139,NAP,INSPIRE">
                 <StackPanel>
                   <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=discKeys}">
                     <ListBox.ItemsPanel>
@@ -404,7 +406,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel>
-                            <t:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_discipline}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_discipline}"/>
                             <Border Style="{DynamicResource EditorBorderHRuleStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
                             </Border>
                           </StackPanel>
@@ -449,7 +451,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel>
-                            <t:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_stratum}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_stratum}"/>
                             <Border Style="{DynamicResource EditorBorderHRuleStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
                             </Border>
                           </StackPanel>
@@ -469,7 +471,7 @@
               </Border>
 
               <!-- other keywords -->
-              <Border Style="{DynamicResource EditorBorder2Style}" t:MetadataStyle.OnlyProfiles="ISO19139,NAP,INSPIRE">
+              <Border Style="{DynamicResource EditorBorder2Style}" tu:MetadataStyle.OnlyProfiles="ISO19139,NAP,INSPIRE">
                 <StackPanel>
                   <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=otherKeys}">
                     <ListBox.ItemsPanel>
@@ -494,7 +496,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel>
-                            <t:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_other}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_other}"/>
                             <Border Style="{DynamicResource EditorBorderHRuleStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
                             </Border>
                           </StackPanel>
@@ -514,7 +516,7 @@
               </Border>
 
               <!-- product keys -->
-              <Border Style="{DynamicResource EditorBorder2Style}" t:MetadataStyle.OnlyProfiles="NAP" >
+              <Border Style="{DynamicResource EditorBorder2Style}" tu:MetadataStyle.OnlyProfiles="NAP" >
                 <StackPanel>
                   <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=productKeys}">
                     <ListBox.ItemsPanel>
@@ -539,7 +541,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel>
-                            <t:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_NAP_product}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_NAP_product}"/>
                             <Border Style="{DynamicResource EditorBorderHRuleStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
                             </Border>
                           </StackPanel>
@@ -559,7 +561,7 @@
               </Border>
 
               <!-- sub topic keys -->
-              <Border Style="{DynamicResource EditorBorder2Style}" t:MetadataStyle.OnlyProfiles="NAP" >
+              <Border Style="{DynamicResource EditorBorder2Style}" tu:MetadataStyle.OnlyProfiles="NAP" >
                 <StackPanel>
                   <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=subTopicCatKeys}">
                     <ListBox.ItemsPanel>
@@ -584,7 +586,7 @@
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel>
-                            <t:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_NAP_subtopic}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_NAP_subtopic}"/>
                             <Border Style="{DynamicResource EditorBorderHRuleStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
                             </Border>
                           </StackPanel>

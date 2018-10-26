@@ -103,8 +103,8 @@ namespace $safeprojectname$.Pages
 
     private void CreateThumbnailNode()
     {
-      object context = Utils.GetDataContext(this);
-      IEnumerable nodes = Utils.GetXmlDataContext(context);
+      object context = Utils.Utils.GetDataContext(this);
+      IEnumerable nodes = Utils.Utils.GetXmlDataContext(context);
       if (null != nodes)
       {
         foreach (XmlNode node in nodes)
@@ -112,7 +112,7 @@ namespace $safeprojectname$.Pages
 
           XmlDataProvider provider = Resources["ThumbnailXml"] as XmlDataProvider;
           XmlNode owner = (null == node.OwnerDocument) ? node : node.OwnerDocument;
-          Utils.CopyElements(owner, provider.Document.FirstChild, true, false);
+          Utils.Utils.CopyElements(owner, provider.Document.FirstChild, true, false);
 
           break; // paranoid
         }
@@ -121,8 +121,8 @@ namespace $safeprojectname$.Pages
 
     private XmlNode GetBinaryThumbnailNode(object sender, bool is_empty_ok)
     {
-      object context = Utils.GetDataContext(sender);
-      IEnumerable nodes = Utils.GetXmlDataContext(context);
+      object context = Utils.Utils.GetDataContext(sender);
+      IEnumerable nodes = Utils.Utils.GetXmlDataContext(context);
 
       if (null != nodes)
       {
@@ -141,8 +141,8 @@ namespace $safeprojectname$.Pages
 
     private void CleanThumbnailNodes(bool cleanAll)
     {
-      object context = Utils.GetDataContext(this);
-      IEnumerable nodes = Utils.GetXmlDataContext(context);
+      object context = Utils.Utils.GetDataContext(this);
+      IEnumerable nodes = Utils.Utils.GetXmlDataContext(context);
 
       if (null != nodes)
       {

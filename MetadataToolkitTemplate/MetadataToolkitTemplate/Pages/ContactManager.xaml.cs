@@ -104,7 +104,7 @@ namespace $safeprojectname$.Pages
         }
 
         // save back unique key
-        string digest = Utils.GeneratePartyKey(child);
+        string digest = Utils.Utils.GeneratePartyKey(child);
         sb.Append("<contact>");
         sb.Append("<editorSource>external</editorSource>");
         sb.Append("<editorDigest>");
@@ -118,7 +118,7 @@ namespace $safeprojectname$.Pages
       contactsNode.InnerXml = sb.ToString();
 
       // save to file
-      string file = Utils.GetContactsFileLocation();
+      string file = Utils.Utils.GetContactsFileLocation();
       clone.Save(file);
     }
 
@@ -178,7 +178,7 @@ namespace $safeprojectname$.Pages
     private void ReloadContacts()
     {
       _contactsDoc = new XmlDocument();
-      contactsListBox.ItemsSource = Utils.GenerateContactsList(_contactsDoc, this.DataContext);
+      contactsListBox.ItemsSource = Utils.Utils.GenerateContactsList(_contactsDoc, this.DataContext);
 
       var mdModule = FrameworkApplication.FindModule("esri_metadata_module") as IMetadataEditorHost;
       if (mdModule != null)

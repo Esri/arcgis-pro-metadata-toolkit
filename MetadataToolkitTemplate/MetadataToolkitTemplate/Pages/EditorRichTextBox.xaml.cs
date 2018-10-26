@@ -61,7 +61,7 @@ namespace $safeprojectname$.Pages
 
     public void LoadedItemInfo(object sender, RoutedEventArgs e)
     {
-      object context = Utils.GetDataContext(sender);
+      object context = Utils.Utils.GetDataContext(sender);
 
       // If this page is declared in the window,
       // the intial data context will be NULL.
@@ -81,7 +81,7 @@ namespace $safeprojectname$.Pages
       this.cachedRTB = sender as RichTextBox;
 
       // load it
-      Utils.LoadRichTextbox(sender, context);
+      Utils.Utils.LoadRichTextbox(sender, context);
 
       // add me, so I can be called later
       if (mdModule != null)
@@ -92,7 +92,7 @@ namespace $safeprojectname$.Pages
       // update XML on lost focus
       this.LostFocus += new RoutedEventHandler(delegate(object sender2, RoutedEventArgs rea)
       {
-        Utils.UnLoadRichTextbox(editorPage.cachedRTB, editorPage.cachedContext, true);
+        Utils.Utils.UnLoadRichTextbox(editorPage.cachedRTB, editorPage.cachedContext, true);
 
         // create event and raise it
         MetadataRuleSet rules = editorPage.cachedRTB.GetValue(MetadataRules.RulesProperty) as MetadataRuleSet;
@@ -104,7 +104,7 @@ namespace $safeprojectname$.Pages
 
       // create event and raise it
       {
-        Utils.UnLoadRichTextbox(editorPage.cachedRTB, editorPage.cachedContext, true);
+        Utils.Utils.UnLoadRichTextbox(editorPage.cachedRTB, editorPage.cachedContext, true);
 
         // create event and raise it
         MetadataRuleSet rules = editorPage.cachedRTB.GetValue(MetadataRules.RulesProperty) as MetadataRuleSet;
@@ -131,7 +131,7 @@ namespace $safeprojectname$.Pages
       if (null == this.cachedRTB || null == this.cachedContext)
         return;
 
-      Utils.UnLoadRichTextbox(this.cachedRTB, this.cachedContext, true);
+      Utils.Utils.UnLoadRichTextbox(this.cachedRTB, this.cachedContext, true);
     }
 
     /**** COMMANDS ****/
