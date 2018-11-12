@@ -20,6 +20,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "proapp-sdk-MSBuild", "proap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "proapp-sdk-vspackage", "proapp-sdk-vspackage\proapp-sdk-vspackage.csproj", "{D2743BC6-54F9-42C6-95E4-32ECA8AA8153}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{DEE1D0C7-A4E6-4A78-8CC5-A15BCF989DE8}"
+	ProjectSection(SolutionItems) = preProject
+		Common\BuildEvents.targets = Common\BuildEvents.targets
+		Common\buildnum.cs = Common\buildnum.cs
+		Common\proapp-sdk.props = Common\proapp-sdk.props
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

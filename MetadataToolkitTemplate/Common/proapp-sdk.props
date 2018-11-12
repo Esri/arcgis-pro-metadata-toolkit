@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--USE_DEV_KEY is the variable that toggles to true or false -->
+  <!--The build process sets this USE_DEV_KEY to false -->
+  <!--When USE_DEV_KEY is false the vstemplate file gets the production key-->
+  <PropertyGroup>
+    <USE_DEV_KEY>true</USE_DEV_KEY>
+    <ReplaceString>PublicKeyToken=8fc3cc631e44ad86</ReplaceString>
+    <SearchString>PublicKeyToken=0ea314499ff521aa</SearchString>
+	<TextReplace>\\sdkpro\sdkpro1\tools\TextReplace\TextReplace.exe</TextReplace>
+	<AssemblyVersion>12.3.0.0</AssemblyVersion>
+	<AssemblyFileVersion>12.3.0.14055</AssemblyFileVersion>
+	<ProAssemblyFileVersion>2.3.0.14055</ProAssemblyFileVersion>
+  </PropertyGroup>
+</Project>
