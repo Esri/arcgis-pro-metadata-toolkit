@@ -147,7 +147,7 @@ namespace $safeprojectname$.Pages
         MessageBoxImage icon = MessageBoxImage.Warning;
 
         // show dialog
-        MessageBoxResult result = ArcGIS.Desktop.Internal.Framework.DialogManager.ShowMessageBox($safeprojectname$.Properties.Resources.LBL_CM_Confirm, $safeprojectname$.Properties.Resources.LBL_CM_ConfirmTitle, button, icon);
+        MessageBoxResult result = ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show($safeprojectname$.Properties.Resources.LBL_CM_Confirm, $safeprojectname$.Properties.Resources.LBL_CM_ConfirmTitle, button, icon);
 
         switch (result)
         {

@@ -230,7 +230,7 @@ namespace ArcGIS.Desktop.Metadata.Editor.Pages
       MessageBoxImage icon = MessageBoxImage.Question;
 
       // show dialog
-      MessageBoxResult result = ArcGIS.Desktop.Internal.Framework.DialogManager.ShowMessageBox(message, caption, button, icon);
+      MessageBoxResult result = ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(message, caption, button, icon);
 
       switch (result)
       {
@@ -296,7 +296,7 @@ namespace ArcGIS.Desktop.Metadata.Editor.Pages
       MessageBoxImage icon = MessageBoxImage.Question;
 
       // show dialog
-      MessageBoxResult result = ArcGIS.Desktop.Internal.Framework.DialogManager.ShowMessageBox(message, caption, button, icon);
+      MessageBoxResult result = ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(message, caption, button, icon);
       switch (result)
       {
         case MessageBoxResult.Cancel:
