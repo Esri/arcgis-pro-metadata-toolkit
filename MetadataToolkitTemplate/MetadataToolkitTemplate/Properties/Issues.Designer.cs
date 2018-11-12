@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MetadataToolkitThree.Properties {
+namespace $safeprojectname$.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace MetadataToolkitThree.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MetadataToolkitThree.Properties.Issues", typeof(Issues).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("$safeprojectname$.Properties.Issues", typeof(Issues).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

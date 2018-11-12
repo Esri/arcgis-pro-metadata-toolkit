@@ -5,8 +5,8 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-[assembly: AssemblyVersion("12.2.0.0")]
-[assembly: AssemblyFileVersion("12.2.0.12569")]
+[assembly: AssemblyVersion("12.3.0.0")]
+[assembly: AssemblyFileVersion("12.3.0.14055")]
 
 [assembly: AssemblyCompany("Esri")]
 [assembly: AssemblyProduct("ArcGIS")]

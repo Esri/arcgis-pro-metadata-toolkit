@@ -276,7 +276,7 @@
       <CustomParameter Name="sdkversion" Value="2.2.0.11399"/>
       <CustomParameter Name="addintype" Value="module"/>
       <CustomParameter Name="templatetype" Value="project"/>
-      <!--<CustomParameter Name="language" Value=".cs"/>-->
+      <!--<CustomParameter Name="language" Value=".cs"/> I am commenting this because this was replacing all occurance of language in the xaml. Which is messing up the pages-->
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

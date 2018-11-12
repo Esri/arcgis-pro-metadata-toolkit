@@ -16,8 +16,8 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\win-net-ide-templates-output\bin\Debug\</OutputPath>
-    <BaseIntermediateOutputPath>..\..\win-net-ide-templates-output\obj\</BaseIntermediateOutputPath>
+    <OutputPath>..\..\..\arcgis-pro-metadata-toolkit-output\bin\Debug\</OutputPath>
+    <BaseIntermediateOutputPath>..\..\..\arcgis-pro-metadata-toolkit-output\obj\</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,8 +25,8 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\win-net-ide-templates-output\bin\Release\</OutputPath>
-    <BaseIntermediateOutputPath>..\..\win-net-ide-templates-output\obj\</BaseIntermediateOutputPath>
+    <OutputPath>..\..\..\arcgis-pro-metadata-toolkit-output\bin\Release\</OutputPath>
+    <BaseIntermediateOutputPath>..\..\..\arcgis-pro-metadata-toolkit-output\obj\</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
