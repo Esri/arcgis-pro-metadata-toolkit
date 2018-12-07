@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<VsixLanguagePack Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema-lp/2010">
-  <LocalizedName>ArcGIS Pro SDK for .NET</LocalizedName>
-  <LocalizedDescription>用于创建 ArcGIS Pro 加载项的工程和项模板集合。</LocalizedDescription>
-  <License>Eula.rtf</License>
-  <MoreInfoUrl> http://www.esri.com</MoreInfoUrl>
-</VsixLanguagePack>
