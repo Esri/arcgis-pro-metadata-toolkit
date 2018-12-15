@@ -41,7 +41,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\..\..\arcgis-pro-metadata-toolkit-output\bin\Release\</OutputPath>
-	<BaseIntermediateOutputPath>..\..\..\arcgis-pro-metadata-toolkit-output\obj\</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>..\..\..\arcgis-pro-metadata-toolkit-output\obj\</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -649,6 +649,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DarkImages\AddInDesktop16.png" />
+    <None Include="DarkImages\AddInDesktop32.png" />
+    <None Include="Images\AddInDesktop16.png" />
+    <None Include="Images\AddInDesktop32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\Common\BuildEvents.targets" />

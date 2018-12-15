@@ -18,6 +18,14 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
       <ProjectItem  ReplaceParameters="true" TargetFileName="Config.daml" OpenInEditor="true">Config.daml</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="MetadataToolkitModule.cs">MetadataToolkitModule.cs</ProjectItem>
+      <Folder TargetFolderName="Images" Name="Images">
+        <ProjectItem ReplaceParameters="false" TargetFileName="AddInDesktop16.png">AddInDesktop16.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="AddInDesktop32.png">AddInDesktop32.png</ProjectItem>
+      </Folder>
+      <Folder TargetFolderName="DarkImages" Name="DarkImages">
+        <ProjectItem ReplaceParameters="false" TargetFileName="AddInDesktop16.png">AddInDesktop16.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="AddInDesktop32.png">AddInDesktop32.png</ProjectItem>
+      </Folder>
       <Folder Name="Pages" TargetFolderName="Pages">
         <ProjectItem ReplaceParameters="true" TargetFileName="BooleanValueSync.xaml">BooleanValueSync.xaml</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="BooleanValueSync.xaml.cs">BooleanValueSync.xaml.cs</ProjectItem>

@@ -919,6 +919,10 @@
     <Compile Include="MetadataToolkitModule.cs"/>
     <Compile Include="ToolkitMetadataEditor.cs"/>
     <AddInContent Include="Config.daml" />
+    <AddInContent Include="Images\AddInDesktop16.png" />
+    <AddInContent Include="Images\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
     <AddInContent Include="Icons\RichTextEditor\indentless.png" />
     <AddInContent Include="Icons\RichTextEditor\indentmore.png" />
     <AddInContent Include="Icons\RichTextEditor\link.png" />
