@@ -289,6 +289,6 @@
   </TemplateContent>
   <WizardExtension>
     <Assembly>metadata-toolkit-wizard, Version=12.3.0.0, Culture=Neutral, PublicKeyToken=0ea314499ff521aa</Assembly>
-    <FullClassName>metadata-toolkit-wizard.ProjectWizard</FullClassName>
+    <FullClassName>metadata_toolkit_wizard.ProjectWizard</FullClassName>
   </WizardExtension>
 </VSTemplate>
