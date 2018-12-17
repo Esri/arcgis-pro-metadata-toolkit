@@ -12,12 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using proapp_sdk_Wizard.ConfigureAddins;
-using proapp_sdk_Wizard.Helpers;
-using proapp_sdk_Wizard.ViewModel;
-using proapp_sdk_Wizard.View;
+using metadata_toolkit_wizard.ConfigureAddins;
+using metadata_toolkit_wizard.Helpers;
+using metadata_toolkit_wizard.ViewModel;
+using metadata_toolkit_wizard.View;
 
-namespace proapp_sdk_Wizard {
+namespace metadata_toolkit_wizard {
     /// <summary>
     /// Interaction logic for ProjectView.xaml
     /// </summary>

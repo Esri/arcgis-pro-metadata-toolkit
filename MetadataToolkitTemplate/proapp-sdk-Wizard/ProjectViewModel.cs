@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using proapp_sdk_Wizard.ConfigureAddins;
-using proapp_sdk_Wizard.Helpers;
-using proapp_sdk_Wizard.ViewModel;
+using metadata_toolkit_wizard.ConfigureAddins;
+using metadata_toolkit_wizard.Helpers;
+using metadata_toolkit_wizard.ViewModel;
 
-namespace proapp_sdk_Wizard {
+namespace metadata_toolkit_wizard {
     internal class ProjectViewModel {
 
         #region Fields

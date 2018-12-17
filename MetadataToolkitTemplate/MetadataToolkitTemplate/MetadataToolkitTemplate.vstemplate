@@ -288,7 +288,7 @@
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>
-    <Assembly>proapp-sdk-Wizard, Version=12.3.0.0, Culture=Neutral, PublicKeyToken=0ea314499ff521aa</Assembly>
-    <FullClassName>proapp_sdk_Wizard.ProjectWizard</FullClassName>
+    <Assembly>metadata-toolkit-wizard, Version=12.3.0.0, Culture=Neutral, PublicKeyToken=0ea314499ff521aa</Assembly>
+    <FullClassName>metadata-toolkit-wizard.ProjectWizard</FullClassName>
   </WizardExtension>
 </VSTemplate>

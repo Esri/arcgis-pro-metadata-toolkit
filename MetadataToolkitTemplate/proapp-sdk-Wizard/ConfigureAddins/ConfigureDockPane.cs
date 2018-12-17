@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Xml.Linq;
 using EnvDTE;
-using proapp_sdk_Wizard.Helpers;
-using proapp_sdk_Wizard.ViewModel;
+using metadata_toolkit_wizard.Helpers;
+using metadata_toolkit_wizard.ViewModel;
 using System.Text.RegularExpressions;
 
-namespace proapp_sdk_Wizard.ConfigureAddins {
+namespace metadata_toolkit_wizard.ConfigureAddins {
 
     internal class ConfigureDockPane : ConfigureControlBase, IWizardConfig {
 

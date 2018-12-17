@@ -18,7 +18,7 @@
     </Dependencies>
     <Assets>
         <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="proapp-sdk-Wizard" d:VsixSubPath="ArcGIS" Path="|proapp-sdk-Wizard|" AssemblyName="|proapp-sdk-Wizard;AssemblyName|" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="metadata-toolkit-wizard" d:VsixSubPath="ArcGIS" Path="|metadata-toolkit-wizard|" AssemblyName="|metadata-toolkit-wizard;AssemblyName|" />
         <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="MetadataToolkitTemplate" d:TargetPath="|MetadataToolkitTemplate;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ArcGIS" />
     </Assets>
     <Prerequisites>

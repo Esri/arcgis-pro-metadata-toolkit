@@ -10,11 +10,11 @@ using EnvDTE80;
 using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
-using proapp_sdk_Wizard.Helpers;
-using proapp_sdk_Wizard.ConfigureAddins;
+using metadata_toolkit_wizard.Helpers;
+using metadata_toolkit_wizard.ConfigureAddins;
 using System.Windows;
 
-namespace proapp_sdk_Wizard
+namespace metadata_toolkit_wizard
 {
     /// <summary>
     /// PublicKeyToken: 0ea314499ff521aa

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace proapp_sdk_Wizard.ViewModel
+namespace metadata_toolkit_wizard.ViewModel
 {
   /// <summary>
   /// A command whose sole purpose is to 

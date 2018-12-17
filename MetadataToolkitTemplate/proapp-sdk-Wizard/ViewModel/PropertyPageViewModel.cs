@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using proapp_sdk_Wizard.Helpers;
+using metadata_toolkit_wizard.Helpers;
 using System.Windows.Media.Imaging;
 
-namespace proapp_sdk_Wizard.ViewModel
+namespace metadata_toolkit_wizard.ViewModel
 {
     internal class PropertyPageViewModel : AddinViewModelBase
     {
@@ -81,7 +81,7 @@ namespace proapp_sdk_Wizard.ViewModel
             {
                 if (_smallImage == null)
                 {
-                    string imageUri = string.Format(@"pack://application:,,,/proapp-sdk-Wizard;component/Images/{0}",
+                    string imageUri = string.Format(@"pack://application:,,,/metadata_toolkit_wizard;component/Images/{0}",
                         _hlpr.ReplacementsDictionary["$defaultimage16$"]);
                     try
                     {
@@ -104,7 +104,7 @@ namespace proapp_sdk_Wizard.ViewModel
             {
                 if (_largeImage == null)
                 {
-                    string imageUri = string.Format(@"pack://application:,,,/proapp-sdk-Wizard;component/Images/{0}",
+                    string imageUri = string.Format(@"pack://application:,,,/metadata_toolkit_wizard;component/Images/{0}",
                         _hlpr.ReplacementsDictionary["$defaultimage32$"]);
                     try
                     {

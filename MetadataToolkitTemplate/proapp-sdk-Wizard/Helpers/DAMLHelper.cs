@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace proapp_sdk_Wizard.Helpers {
+namespace metadata_toolkit_wizard.Helpers {
     public static class DAMLHelper {
         //http://schemas.esri.com/DADF/Registry
 

@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
-using proapp_sdk_Wizard.Helpers;
+using metadata_toolkit_wizard.Helpers;
 
-namespace proapp_sdk_Wizard.ViewModel {
+namespace metadata_toolkit_wizard.ViewModel {
     internal class DockPaneViewModel : AddinViewModelBase {
 
         private ProjectHelper _hlpr = null;
@@ -47,7 +47,7 @@ namespace proapp_sdk_Wizard.ViewModel {
         public BitmapImage SmallImage {
             get {
                 if (_smallImage == null) {
-                    string imageUri = string.Format(@"pack://application:,,,/proapp-sdk-Wizard;component/Images/{0}",
+                    string imageUri = string.Format(@"pack://application:,,,/metadata_toolkit_wizard;component/Images/{0}",
                         _hlpr.ReplacementsDictionary["$defaultimage16$"]);
                     try {
                         Uri uri = new Uri(imageUri);
@@ -65,7 +65,7 @@ namespace proapp_sdk_Wizard.ViewModel {
         public BitmapImage LargeImage {
             get {
                 if (_largeImage == null) {
-                    string imageUri = string.Format(@"pack://application:,,,/proapp-sdk-Wizard;component/Images/{0}",
+                    string imageUri = string.Format(@"pack://application:,,,/metadata_toolkit_wizard;component/Images/{0}",
                         _hlpr.ReplacementsDictionary["$defaultimage32$"]);
                     try {
                         Uri uri = new Uri(imageUri);
