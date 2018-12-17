@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace proapp_sdk_Wizard {
+namespace metadata_toolkit_wizard {
 
     internal static class Defaults {
         public static readonly string DefaultOrganization = "Acme";

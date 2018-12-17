@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
-using proapp_sdk_Wizard.Helpers;
+using metadata_toolkit_wizard.Helpers;
 
-namespace proapp_sdk_Wizard.ViewModel {
+namespace metadata_toolkit_wizard.ViewModel {
     internal class GalleryViewModel : AddinViewModelBase {
 
         private ProjectHelper _hlpr = null;

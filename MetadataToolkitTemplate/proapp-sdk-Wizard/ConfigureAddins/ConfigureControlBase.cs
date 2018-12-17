@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using EnvDTE;
-using proapp_sdk_Wizard.Helpers;
+using metadata_toolkit_wizard.Helpers;
 
-namespace proapp_sdk_Wizard.ConfigureAddins {
+namespace metadata_toolkit_wizard.ConfigureAddins {
     internal class ConfigureControlBase : IAddinConfig {
 
         public string TemplateType { get; set; }

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace proapp_sdk_Wizard.View {
+namespace metadata_toolkit_wizard.View {
     /// <summary>
     /// Interaction logic for SplitButtonView.xaml
     /// </summary>

@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VSPackage", "VSPackage", "{0D75DF78-2388-438A-BA80-20E11E3D6954}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "proapp-sdk-Wizard", "proapp-sdk-Wizard\proapp-sdk-Wizard.csproj", "{F08E8EBB-4EA2-43DD-9987-4A2ACE163CCD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "metadata-toolkit-wizard", "proapp-sdk-Wizard\metadata-toolkit-wizard.csproj", "{F08E8EBB-4EA2-43DD-9987-4A2ACE163CCD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "proapp-sdk-MSBuild", "proapp-sdk-MSBuild\proapp-sdk-MSBuild.csproj", "{3356CBCD-E935-472F-B576-2287F0EF7C33}"
 EndProject

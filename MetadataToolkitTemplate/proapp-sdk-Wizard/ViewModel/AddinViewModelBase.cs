@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace proapp_sdk_Wizard.ViewModel {
+namespace metadata_toolkit_wizard.ViewModel {
     internal abstract class AddinViewModelBase : PropertyChangedBase  {
 
         #region Fields

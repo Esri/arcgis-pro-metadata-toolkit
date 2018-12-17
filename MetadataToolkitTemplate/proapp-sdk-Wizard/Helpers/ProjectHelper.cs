@@ -11,7 +11,7 @@ using EnvDTE80;
 using System.Collections;
 using System.Web;
 
-namespace proapp_sdk_Wizard.Helpers {
+namespace metadata_toolkit_wizard.Helpers {
     /// <summary>
     /// Utility methods and accessors for working with the IDE <b>EnvDTE.Project</b> class.
     /// Also includes a global reference to the current replacementsDictionary

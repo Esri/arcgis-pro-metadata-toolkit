@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using proapp_sdk_Wizard.Helpers;
-using proapp_sdk_Wizard.ViewModel;
+using metadata_toolkit_wizard.Helpers;
+using metadata_toolkit_wizard.ViewModel;
 using EnvDTE;
 using System.Xml.Linq;
 
-namespace proapp_sdk_Wizard.ConfigureAddins
+namespace metadata_toolkit_wizard.ConfigureAddins
 {
     class ConfigureBackstageTab : ConfigureControlBase, IWizardConfig
     {

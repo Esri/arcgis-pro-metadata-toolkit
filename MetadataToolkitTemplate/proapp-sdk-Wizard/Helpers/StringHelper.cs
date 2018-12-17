@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace proapp_sdk_Wizard.Helpers
+namespace metadata_toolkit_wizard.Helpers
 {
   internal class StringHelper
   {

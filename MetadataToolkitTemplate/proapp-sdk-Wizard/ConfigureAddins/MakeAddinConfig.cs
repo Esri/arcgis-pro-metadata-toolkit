@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace proapp_sdk_Wizard.ConfigureAddins {
+namespace metadata_toolkit_wizard.ConfigureAddins {
     internal class MakeAddinConfig {
         /// <summary>
         /// Create the confiuration module relevant to the addintype

@@ -7,8 +7,8 @@
     <ProjectGuid>{F08E8EBB-4EA2-43DD-9987-4A2ACE163CCD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>proapp_sdk_Wizard</RootNamespace>
-    <AssemblyName>proapp-sdk-Wizard</AssemblyName>
+    <RootNamespace>metadata_toolkit_wizard</RootNamespace>
+    <AssemblyName>metadata-toolkit-wizard</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

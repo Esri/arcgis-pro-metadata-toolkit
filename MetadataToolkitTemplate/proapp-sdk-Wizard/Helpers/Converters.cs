@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
-namespace proapp_sdk_Wizard.Helpers
+namespace metadata_toolkit_wizard.Helpers
 {
     public class BoolToVisibleConverter : IValueConverter
     {

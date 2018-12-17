@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using proapp_sdk_Wizard.Helpers;
+using metadata_toolkit_wizard.Helpers;
 using System.Windows.Media.Imaging;
 
-namespace proapp_sdk_Wizard.ViewModel
+namespace metadata_toolkit_wizard.ViewModel
 {
     internal class PropertyPageViewModel : AddinViewModelBase
     {

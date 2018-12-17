@@ -296,9 +296,9 @@
       <Project>{3356cbcd-e935-472f-b576-2287f0ef7c33}</Project>
       <Name>proapp-sdk-MSBuild</Name>
     </ProjectReference>
-    <ProjectReference Include="..\proapp-sdk-Wizard\proapp-sdk-Wizard.csproj">
+    <ProjectReference Include="..\proapp-sdk-Wizard\metadata-toolkit-wizard.csproj">
       <Project>{F08E8EBB-4EA2-43DD-9987-4A2ACE163CCD}</Project>
-      <Name>proapp-sdk-Wizard</Name>
+      <Name>metadata-toolkit-wizard</Name>
       <VSIXSubPath>ArcGIS</VSIXSubPath>
       <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
       <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>

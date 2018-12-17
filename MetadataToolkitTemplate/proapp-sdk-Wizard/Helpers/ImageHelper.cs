@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using EnvDTE;
 using VSLangProj80;
 
-namespace proapp_sdk_Wizard.Helpers {
+namespace metadata_toolkit_wizard.Helpers {
     internal static class ImageHelper {
 
         //public static readonly string ImageFolderName = "Images";
