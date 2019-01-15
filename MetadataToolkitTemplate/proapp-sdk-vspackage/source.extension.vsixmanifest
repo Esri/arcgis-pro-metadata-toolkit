@@ -4,7 +4,7 @@
         <Identity Id="MetadataToolkitVSPackage.697e33b6-b6ff-4765-af9d-e9086474ee49" Version="2.3.0.0" Language="en-US" Publisher="Esri" />
         <DisplayName>ArcGIS Pro Metadata Toolkit</DisplayName>
         <Description xml:space="preserve">ArcGIS Pro Metadata Toolkit</Description>
-        <MoreInfo>https://pro.arcgis.com/en/pro-app/sdk/</MoreInfo>
+        <!--<MoreInfo>https://pro.arcgis.com/en/pro-app/sdk/</MoreInfo>-->
         <License>Eula.rtf</License>
         <Icon>ArcGIS_Product_Icon.ico</Icon>
         <PreviewImage>ArcGIS_Pro_preview.png</PreviewImage>
