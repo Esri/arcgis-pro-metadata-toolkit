@@ -651,12 +651,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\AddInDesktop16.png" />
-    <None Include="Images\AddInDesktop32.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="DarkImages\AddInDesktop16.png" />
     <None Include="DarkImages\AddInDesktop32.png" />
+    <None Include="Images\AddInDesktop16.png" />
+    <None Include="Images\AddInDesktop32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\Common\BuildEvents.targets" />
