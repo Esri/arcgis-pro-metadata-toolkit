@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 Copyright 2019 Esri
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -11,7 +12,6 @@ See the License for the specific language governing permissions and
 limitations under the License.​
 -->
 
-<?xml version="1.0" encoding="utf-8"?>
 <ArcGIS defaultAssembly="$safeprojectname$.dll" 
         defaultNamespace="$safeprojectname$" 
         xmlns="http://schemas.esri.com/DADF/Registry" 
