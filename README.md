@@ -5,18 +5,18 @@ Extend ArcGIS Pro with ArcGIS Pro Metadata Toolkit. The ArcGIS Pro Metadata Tool
 ***
 
 ## Table of Contents
-- [Introduction](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit#introduction)
-- [Requirements](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit#requirements)
-- [Installing ArcGIS Pro Metadata Toolkit](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit#installing-arcgis-pro-metadata-toolkit)
-- [ArcGIS Pro Metadata Toolkit components](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit#arcgis-pro-metadata-toolkit-components)
-- [ArcGIS Pro Metadata Toolkit templates](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit#arcgis-pro-metadata-toolkit-templates)
-- [Build your first ArcGIS Pro metadata editor add-in](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Build-your-first-ArcGIS-Pro-metadata-editor-add-in)
-- [Change the pages used in the metadata editor](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Change-the-pages-used-in-the-metadata-editor)
-- [Change the values in a list](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Change-the-values-in-a-list)
-- [Create a custom page](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Create-a-custom-page)
-- [Customize the metadata display](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Customize-the-metadata-display)
-- [Customize the metadata translators](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Customize-the-metadata-translators)
-- [Release notes](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit#release-notes)
+- [Introduction](https://github.com/Esri/arcgis-pro-metadata-toolkit#introduction)
+- [Requirements](https://github.com/Esri/arcgis-pro-metadata-toolkit#requirements)
+- [Installing ArcGIS Pro Metadata Toolkit](https://github.com/Esri/arcgis-pro-metadata-toolkit#installing-arcgis-pro-metadata-toolkit)
+- [ArcGIS Pro Metadata Toolkit components](https://github.com/Esri/arcgis-pro-metadata-toolkit#arcgis-pro-metadata-toolkit-components)
+- [ArcGIS Pro Metadata Toolkit templates](https://github.com/Esri/arcgis-pro-metadata-toolkit#arcgis-pro-metadata-toolkit-templates)
+- [Build your first ArcGIS Pro metadata editor add-in](https://github.com/Esri/arcgis-pro-metadata-toolkit/wiki/Build-your-first-ArcGIS-Pro-metadata-editor-add-in)
+- [Change the pages used in the metadata editor](https://github.com/Esri/arcgis-pro-metadata-toolkit/wiki/Change-the-pages-used-in-the-metadata-editor)
+- [Change the values in a list](https://github.com/Esri/arcgis-pro-metadata-toolkit/wiki/Change-the-values-in-a-list)
+- [Create a custom page](https://github.com/Esri/arcgis-pro-metadata-toolkit/wiki/Create-a-custom-page)
+- [Customize the metadata display](https://github.com/Esri/arcgis-pro-metadata-toolkit/wiki/Customize-the-metadata-display)
+- [Customize the metadata translators](https://github.com/Esri/arcgis-pro-metadata-toolkit/wiki/Customize-the-metadata-translators)
+- [Release notes](https://github.com/Esri/arcgis-pro-metadata-toolkit#release-notes)
 
 ## Introduction[](#introduction)
 
@@ -43,7 +43,7 @@ The ArcGIS Pro Metadata Toolkit has the same requirements as the ArcGIS Pro SDK 
 ## Installing ArcGIS Pro Metadata Toolkit[](#installing-arcgis-pro-metadata-toolkit)
 After the ArcGIS Pro SDK for .NET, and ArcGIS Pro SDK for .NET (Utilities), have been downloaded and installed, the ArcGIS Pro Metadata Toolkit can also be downloaded and installed from within Visual Studio.
 * [Installing ArcGIS Pro SDK for .NET, and ArcGIS Pro SDK for .NET (Utilities)](https://github.com/Esri/arcgis-pro-sdk/wiki/ProGuide-Installation-and-Upgrade)
-* [Installing ArcGIS Pro Metadata Toolkit](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/ArcGIS-Pro-Metadata-Toolkit-Installation)
+* [Installing ArcGIS Pro Metadata Toolkit](https://github.com/Esri/arcgis-pro-metadata-toolkit/wiki/ArcGIS-Pro-Metadata-Toolkit-Installation)
 
 ## ArcGIS Pro Metadata Toolkit components[](#arcgis-pro-metadata-toolkit-components)
 The following table summarizes the functionality of each .vsix file included in the SDK download:
@@ -65,7 +65,7 @@ ArcGIS Pro Metadata Toolkit provides the following project templates:
 
 ### ArcGIS Pro Metadata Toolkit 2.3.0.15769
 
-These release notes describe details of the ArcGIS Pro Metadata Toolkit 1.0 release. Here you will find information about available functionality as well as known issues and limitations.
+These release notes describe details of the ArcGIS Pro Metadata Toolkit 2.3.0.15769 release. Here you will find information about available functionality as well as known issues and limitations.
 
 #### What's new
 
@@ -97,4 +97,4 @@ http://www.apache.org/licenses/LICENSE-2.0.
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
-A copy of the license is available in the repository's [license.txt](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/blob/master/license.txt) file.
+A copy of the license is available in the repository's [license.txt](https://github.com/Esri/arcgis-pro-metadata-toolkit/blob/master/license.txt) file.
