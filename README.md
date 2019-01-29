@@ -16,7 +16,7 @@ Extend ArcGIS Pro with ArcGIS Pro Metadata Toolkit. The ArcGIS Pro Metadata Tool
 - [Create a custom page](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Create-a-custom-page)
 - [Customize the metadata display](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Customize-the-metadata-display)
 - [Customize the metadata translators](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Customize-the-metadata-translators)
-- [Known issues](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki#known-issues)
+- [Release notes](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit#release-notes)
 
 ## Introduction[](#introduction)
 
@@ -61,3 +61,6 @@ ArcGIS Pro Metadata Toolkit provides the following project templates:
 | C#	| Name	|
 | ----- | -----	|
 | ![ArcGIS Pro Add-in C#](https://camo.githubusercontent.com/fa0bb62d6c13e36c08fecaee3f61558e40b8ba16/687474703a2f2f457372692e6769746875622e696f2f6172636769732d70726f2d73646b2f696d616765732f56697375616c53747564696f54656d706c617465732f41726347495350726f4d6f64756c654333322e706e67 "ArcGIS Pro Add-in C#") | ArcGIS Pro Custom Metadata Editor Source Project template |
+
+## Release notes[](#release-notes)
+
