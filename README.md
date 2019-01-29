@@ -63,7 +63,7 @@ ArcGIS Pro Metadata Toolkit provides the following project templates:
 
 ## Release notes[](#release-notes)
 
-### ArcGIS Pro Metadata Toolkit 1.0
+### ArcGIS Pro Metadata Toolkit 2.3.0.15769
 
 These release notes describe details of the ArcGIS Pro Metadata Toolkit 1.0 release. Here you will find information about available functionality as well as known issues and limitations.
 
