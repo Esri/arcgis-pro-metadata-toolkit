@@ -83,7 +83,7 @@ However, the code associated with the ArcGIS Pro Metadata Toolkit is available a
 
 ## Contributing
 
-Esri welcomes contributions from anyone and everyone. For more information, see our guidelines for contributing.
+Esri welcomes contributions from anyone and everyone. For more information, see our [guidelines for contributing](https://github.com/esri/contributing).
 
 ## Issues
 Find a bug or want to request a new feature? Let us know by submitting an issue.
@@ -98,3 +98,5 @@ http://www.apache.org/licenses/LICENSE-2.0.
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 A copy of the license is available in the repository's [license.txt](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/blob/master/license.txt) file.
+
+[](Esri Tags: ArcGIS Pro SDK Metadata Toolkit)
