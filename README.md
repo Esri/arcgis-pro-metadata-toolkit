@@ -1,4 +1,4 @@
-# ArcGIS Pro Metadata Tollkit
+# ArcGIS Pro Metadata Toolkit
 
 Extend ArcGIS Pro with ArcGIS Pro Metadata Toolkit. The ArcGIS Pro Metadata Toolkit is based on the add-in and configurations extensibility pattern. This toolkit provides resources to support customizing the pages that appear in the ArcGIS Pro metadata editor to suit your organizational, community, or regional requirements. Your modifications can be distributed as an ArcGIS Pro Add-In.
 
