@@ -67,13 +67,13 @@ ArcGIS Pro Metadata Toolkit provides the following project templates:
 
 These release notes describe details of the ArcGIS Pro Metadata Toolkit 1.0 release. Here you will find information about available functionality as well as known issues and limitations.
 
-### What's new
+#### What's new
 
 The ArcGIS Pro Metadata Toolkit 1.0 release is similar to the ArcGIS Metadata Toolkit for ArcMap that continues to be available as a download from the Esri Support site. The pages in the ArcGIS Pro metadata editor are very similar, and in general, the same customizations can be made in ArcMap and ArcGIS Pro. 
 
 However, the code associated with the ArcGIS Pro Metadata Toolkit is available as a Visual Studio project template instead of as an archived solution. Also, customizations created with the ArcGIS Pro Metadata Toolkit are delivered as an add-in to ArcGIS Pro. Your customizations become available in the ArcGIS Pro Options dialog box on the Metadata tab once the add-in has been installed. Add-ins can be created for ArcGIS Pro 2.3. Add-ins with some limitations can also be created for ArcGIS Pro 2.2. 
 
-### Known limitations
+#### Known limitations
 
 - There is a spelling error for one of the pages in the Metadata Toolkit repo. One of the XAML pages is named for the MD_CoverageDescription class defined in the ISO 19115 metadata standard, however, the file name has this class name incorrectly spelled. The file name is spelled MD_ConverageDescriptionBase.xaml instead of MD_CoverageDescriptionBase.xaml. The page works correctly, and is correctly referenced by the rest of the application. The spelling error is only visible to those who develop customizations with the toolkit.
 - The ArcGIS Pro metadata toolkit can be used to customize the metadata editor and the metadata display for ArcGIS Pro 2.2. However, while ArcGIS Pro 2.2 supports importing and exporting metadata, any custom importers or exporters defined in a metadata toolkit add-in compiled for this release will not be recognized and included in the Pro 2.2 Import Metadata and Export Metadata dialog boxes. They will appear in a metadata toolkit add-in compiled for ArcGIS Pro 2.3. 
