@@ -80,3 +80,21 @@ However, the code associated with the ArcGIS Pro Metadata Toolkit is available a
 - It is possible to add custom metadata elements in ArcGIS metadata, and to create a custom metadata importer for Pro 2.3 that handles those custom elements. However, if the custom metadata elements are in a separate custom section at the root of the metadata document, these elements will not be saved successfully in the item's ArcGIS metadata. Custom elements should be placed in a "custom" section at the root of the metadata document. A future update will correct the problem and ensure the "custom" section of the metadata is successfully saved to the item's metadata. 
 - The ArcGIS Pro metadata editor doesn't yet have a central location in which to display guidance for the content that should be provided in a metadata element.  
 - The capability to validate an item's metadata using an XML schema is not yet available in ArcGIS Pro.
+
+## Contributing
+
+Esri welcomes contributions from anyone and everyone. For more information, see our guidelines for contributing.
+
+## Issues
+Find a bug or want to request a new feature? Let us know by submitting an issue.
+
+## Licensing
+Copyright 2019 Esri
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
+
+http://www.apache.org/licenses/LICENSE-2.0.
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+A copy of the license is available in the repository's [license.txt](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/blob/master/license.txt) file.
