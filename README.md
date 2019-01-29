@@ -4,13 +4,19 @@ Extend ArcGIS Pro with ArcGIS Pro Metadata Toolkit. The ArcGIS Pro Metadata Tool
 
 ***
 
-* [Introduction](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki#introduction)
-* [Requirements](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki#requirements)
-* [Installing ArcGIS Pro Metadata Toolkit](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki#installing-arcgis-pro-metadata-toolkit)
-* [ArcGIS Pro Metadata Toolkit components](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki#arcgis-pro-metadata-toolkit-components)
-* [ArcGIS Pro Metadata Toolkit templates](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki#arcgis-pro-metadata-toolkit-templates)
-* [Get started](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki#get-started)
-* [Known issues](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki#known-issues)
+## Table of Contents
+- [Introduction](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit#introduction)
+- [Requirements](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit#requirements)
+- [Installing ArcGIS Pro Metadata Toolkit](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit#installing-arcgis-pro-metadata-toolkit)
+- [ArcGIS Pro Metadata Toolkit components](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit#arcgis-pro-metadata-toolkit-components)
+- [ArcGIS Pro Metadata Toolkit templates](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit#arcgis-pro-metadata-toolkit-templates)
+- [Build your first ArcGIS Pro metadata editor add-in](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Build-your-first-ArcGIS-Pro-metadata-editor-add-in)
+- [Change the pages used in the metadata editor](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Change-the-pages-used-in-the-metadata-editor)
+- [Change the values in a list](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Change-the-values-in-a-list)
+- [Create a custom page](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Create-a-custom-page)
+- [Customize the metadata display](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Customize-the-metadata-display)
+- [Customize the metadata translators](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Customize-the-metadata-translators)
+- [Known issues](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki#known-issues)
 
 ## Introduction[](#introduction)
 
@@ -55,11 +61,3 @@ ArcGIS Pro Metadata Toolkit provides the following project templates:
 | C#	| Name	|
 | ----- | -----	|
 | ![ArcGIS Pro Add-in C#](https://camo.githubusercontent.com/fa0bb62d6c13e36c08fecaee3f61558e40b8ba16/687474703a2f2f457372692e6769746875622e696f2f6172636769732d70726f2d73646b2f696d616765732f56697375616c53747564696f54656d706c617465732f41726347495350726f4d6f64756c654333322e706e67 "ArcGIS Pro Add-in C#") | ArcGIS Pro Custom Metadata Editor Source Project template |
-
-## Get started[](#get-started)
-- [Build your first ArcGIS Pro metadata editor add-in](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Build-your-first-ArcGIS-Pro-metadata-editor-add-in)
-- [Change the pages used in the metadata editor](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Change-the-pages-used-in-the-metadata-editor)
-- [Change the values in a list](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Change-the-values-in-a-list)
-- [Create a custom page](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Create-a-custom-page)
-- [Customize the metadata display](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Customize-the-metadata-display)
-- [Customize the metadata translators](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/wiki/Customize-the-metadata-translators)
