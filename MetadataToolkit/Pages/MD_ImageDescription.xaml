@@ -118,7 +118,7 @@ limitations under the License.​
     <StackPanel>
 
       <!-- MD_CoverageDescription -->
-      <t:MTK_MD_ConverageDescriptionBase/>
+      <t:MTK_MD_CoverageDescriptionBase/>
 
       <Grid>
         <Grid.RowDefinitions>

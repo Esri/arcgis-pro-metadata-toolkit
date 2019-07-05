@@ -17,11 +17,11 @@ using ArcGIS.Desktop.Metadata.Editor.Pages;
 namespace MetadataToolkit.Pages
 {
   /// <summary>
-  /// Interaction logic for MTK_MD_ConverageDescriptionBase.xaml
+  /// Interaction logic for MTK_MD_CoverageDescriptionBase.xaml
   /// </summary>
-  internal partial class MTK_MD_ConverageDescriptionBase : EditorPage
+  internal partial class MTK_MD_CoverageDescriptionBase : EditorPage
   {
-    public MTK_MD_ConverageDescriptionBase()
+    public MTK_MD_CoverageDescriptionBase()
     {
       InitializeComponent();
     }

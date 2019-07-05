@@ -73,7 +73,7 @@ limitations under the License.​
 
   <Grid Style="{DynamicResource EditorSubPageStyle}">
     <!-- base -->
-    <t:MTK_MD_ConverageDescriptionBase/>
+    <t:MTK_MD_CoverageDescriptionBase/>
   </Grid>
 
 

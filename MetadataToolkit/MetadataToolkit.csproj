@@ -244,8 +244,8 @@
     <Compile Include="Pages\MD_Constraints.xaml.cs">
       <DependentUpon>MD_Constraints.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\MD_ConverageDescriptionBase.xaml.cs">
-      <DependentUpon>MD_ConverageDescriptionBase.xaml</DependentUpon>
+    <Compile Include="Pages\MD_CoverageDescriptionBase.xaml.cs">
+      <DependentUpon>MD_CoverageDescriptionBase.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MD_CoverageDescription.xaml.cs">
       <DependentUpon>MD_CoverageDescription.xaml</DependentUpon>
@@ -680,7 +680,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\MD_ConverageDescriptionBase.xaml">
+    <Page Include="Pages\MD_CoverageDescriptionBase.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

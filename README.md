@@ -63,23 +63,30 @@ ArcGIS Pro Metadata Toolkit provides the following project templates:
 
 ## Release notes[](#release-notes)
 
-### ArcGIS Pro Metadata Toolkit 2.3.0.15769
+### ArcGIS Pro Metadata Toolkit 2.4.0.19948
 
-These release notes describe details of the ArcGIS Pro Metadata Toolkit 2.3.0.15769 release. Here you will find information about available functionality as well as known issues and limitations.
+These release notes describe details of the ArcGIS Pro Metadata Toolkit 2.4.0.19948 release. Here you will find information about available functionality as well as known issues and limitations.
 
 #### What's new
 
-The ArcGIS Pro Metadata Toolkit 1.0 release is similar to the ArcGIS Metadata Toolkit for ArcMap that continues to be available as a download from the Esri Support site. The pages in the ArcGIS Pro metadata editor are very similar, and in general, the same customizations can be made in ArcMap and ArcGIS Pro. 
+This release of the ArcGIS Pro Metadata Toolkit is not significantly different from the previous release.  
 
-However, the code associated with the ArcGIS Pro Metadata Toolkit is available as a Visual Studio project template instead of as an archived solution. Also, customizations created with the ArcGIS Pro Metadata Toolkit are delivered as an add-in to ArcGIS Pro. Your customizations become available in the ArcGIS Pro Options dialog box on the Metadata tab once the add-in has been installed. Add-ins can be created for ArcGIS Pro 2.3. Add-ins with some limitations can also be created for ArcGIS Pro 2.2. 
+In the previous release, one of the XAML files that defines a page in the metadata editor had a spelling error in its name; it was named  MD_ConverageDescriptionBase.xaml. The spelling error has been corrected in the Visual Studio project, and the XAML page is now named  MD_CoverageDescriptionBase.xaml. All references to this page throughout the Visual Studio project have also been corrected so the page can function properly when used in an ArcGIS Pro Metadata Toolkit add-in.
+
+Additional bugs were fixed in ArcGIS Pro 2.4 that now allow custom elements contained by a "custom" element at the root of the metadata document to be successfully saved to another item's metadata. This way, you can copy customized ArcGIS metadata content from one item to another using ArcGIS Pro. This fix did not require any changes to the ArcGIS Pro Metadata Toolkit.
+
+Also, a bug was fixed in ArcGIS Pro 2.4 that allows an installer to save a custom metadata importer XSLT and a custom metadata exporter XSLT to the core ArcGIS Pro install location, and have a custom metadata style successfully reference the translators that are available in the install location using a relative path. This fix did not require any changes to the ArcGIS Pro Metadata Toolkit.
 
 #### Known limitations
 
-- There is a spelling error for one of the pages in the Metadata Toolkit repo. One of the XAML pages is named for the MD_CoverageDescription class defined in the ISO 19115 metadata standard, however, the file name has this class name incorrectly spelled. The file name is spelled MD_ConverageDescriptionBase.xaml instead of MD_CoverageDescriptionBase.xaml. The page works correctly, and is correctly referenced by the rest of the application. The spelling error is only visible to those who develop customizations with the toolkit.
 - The ArcGIS Pro metadata toolkit can be used to customize the metadata editor and the metadata display for ArcGIS Pro 2.2. However, while ArcGIS Pro 2.2 supports importing and exporting metadata, any custom importers or exporters defined in a metadata toolkit add-in compiled for this release will not be recognized and included in the Pro 2.2 Import Metadata and Export Metadata dialog boxes. They will appear in a metadata toolkit add-in compiled for ArcGIS Pro 2.3. 
-- It is possible to add custom metadata elements in ArcGIS metadata, and to create a custom metadata importer for Pro 2.3 that handles those custom elements. However, if the custom metadata elements are in a separate custom section at the root of the metadata document, these elements will not be saved successfully in the item's ArcGIS metadata. Custom elements should be placed in a "custom" section at the root of the metadata document. A future update will correct the problem and ensure the "custom" section of the metadata is successfully saved to the item's metadata. 
 - The ArcGIS Pro metadata editor doesn't yet have a central location in which to display guidance for the content that should be provided in a metadata element.  
 - The capability to validate an item's metadata using an XML schema is not yet available in ArcGIS Pro.
+
+
+### Previous releases
+
+- [ArcGIS Pro 2.3 Metadata Toolkit](https://github.com/Esri/arcgis-pro-metadata-toolkit/releases/tag/2.3.0.15769)
 
 ## Contributing
 
@@ -97,4 +104,4 @@ http://www.apache.org/licenses/LICENSE-2.0.
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
-A copy of the license is available in the repository's [license.txt](https://github.com/Esri/arcgis-pro-metadata-toolkit/blob/master/license.txt) file.
+A copy of the license is available in the repository's [license.txt](https://github.com/ArcGIS/arcgis-pro-metadata-toolkit/blob/master/license.txt) file.
