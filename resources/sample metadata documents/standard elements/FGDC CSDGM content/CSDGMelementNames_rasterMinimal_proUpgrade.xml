@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<metadata>
+	<idinfo>
+		<citation>
+			<citeinfo>
+				<origin>Originator</origin>
+				<pubdate>2006</pubdate>
+				<title>Title</title>
+				<geoform>remote-sensing image</geoform>
+				<onlink>http://Citation.Online_Linkage.com</onlink>
+			</citeinfo>
+		</citation>
+		<descript>
+			<abstract>Abstract</abstract>
+			<purpose>Purpose</purpose>
+		</descript>
+		<timeperd>
+			<timeinfo>
+				<mdattim>
+					<sngdate>
+						<caldate>200210</caldate>
+					</sngdate>
+					<sngdate>
+						<caldate>20060610</caldate>
+						<time>041500</time>
+					</sngdate>
+				</mdattim>
+			</timeinfo>
+			<current>Currentness Reference</current>
+		</timeperd>
+		<status>
+			<progress>In work</progress>
+			<update>As needed</update>
+		</status>
+		<spdom>
+			<bounding>
+				<westbc>-164</westbc>
+				<eastbc>-132</eastbc>
+				<northbc>87</northbc>
+				<southbc>25</southbc>
+			</bounding>
+		</spdom>
+		<keywords>
+			<theme>
+				<themekt>None</themekt>
+				<themekey>Theme Keyword1</themekey>
+				<themekey>Theme Keyword2</themekey>
+			</theme>
+		</keywords>
+		<accconst>None</accconst>
+		<useconst>None</useconst>
+		<ptcontac>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Point of Contact Organization</cntorg>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>mailing and physical</addrtype>
+					<address>Point of Contact Address</address>
+					<city>Point of Contact City</city>
+					<state>Point of Contact State or Province</state>
+					<postal>Point of Contact Postal Code</postal>
+					<country>Point of Contact Country</country>
+				</cntaddr>
+				<cntvoice>Point of Contact Voice Telephone</cntvoice>
+			</cntinfo>
+		</ptcontac>
+	</idinfo>
+	<dataqual>
+		<logic>Logical Consistency Report</logic>
+		<complete>Completeness Report</complete>
+		<lineage>
+			<procstep>
+				<procdesc>Process Description</procdesc>
+				<procdate>20060518</procdate>
+			</procstep>
+		</lineage>
+		<cloud>13</cloud>
+	</dataqual>
+	<spdoinfo>
+		<direct>Raster</direct>
+		<rastinfo>
+			<rasttype>Pixel</rasttype>
+			<rowcount>2432</rowcount>
+			<colcount>26749</colcount>
+		</rastinfo>
+	</spdoinfo>
+	<spref>
+		<horizsys>
+			<geograph>
+				<latres>8.9831528411952133e-009</latres>
+				<longres>8.9831528411952133e-009</longres>
+				<geogunit>Decimal degrees</geogunit>
+			</geograph>
+			<geodetic>
+				<horizdn>D WGS 1984</horizdn>
+				<ellips>WGS 1984</ellips>
+				<semiaxis>6378137.0</semiaxis>
+				<denflat>298.257223563</denflat>
+			</geodetic>
+		</horizsys>
+	</spref>
+	<metainfo>
+		<metd>20030331</metd>
+		<metc>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Metadata Contact Organization</cntorg>
+					<cntper>Metadata Contact Person</cntper>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>mailing and physical</addrtype>
+					<address>Metadata Contact Address</address>
+					<city>Metadata Contact City</city>
+					<state>Metadata Contact State or Province</state>
+					<postal>Metadata Contact Postal Code</postal>
+					<country>Metadata Contact Country</country>
+				</cntaddr>
+				<cntvoice>Metadata Contact Voice Telephone</cntvoice>
+				<cntemail>Metadata_Contact@Electronic_Mail.Address</cntemail>
+			</cntinfo>
+		</metc>
+		<metstdn>Metadata Standard Name</metstdn>
+		<metstdv>Metadata Standard Version</metstdv>
+	</metainfo>
+	<mdChar>
+		<CharSetCd value="004"/>
+	</mdChar>
+	<mdHrLv>
+		<ScopeCd value="005"/>
+	</mdHrLv>
+	<mdContact>
+		<rpIndName>Metadata Contact Person</rpIndName>
+		<rpOrgName>Metadata Contact Organization</rpOrgName>
+		<rpCntInfo>
+			<cntPhone>
+				<voiceNum>Metadata Contact Voice Telephone</voiceNum>
+			</cntPhone>
+			<cntAddress addressType="both">
+				<delPoint>Metadata Contact Address</delPoint>
+				<city>Metadata Contact City</city>
+				<adminArea>Metadata Contact State or Province</adminArea>
+				<postCode>Metadata Contact Postal Code</postCode>
+				<country>Metadata Contact Country</country>
+				<eMailAdd>Metadata_Contact@Electronic_Mail.Address</eMailAdd>
+			</cntAddress>
+		</rpCntInfo>
+		<role>
+			<RoleCd value="007"/>
+		</role>
+	</mdContact>
+	<mdDateSt>20030331</mdDateSt>
+	<mdStanName>ArcGIS Metadata</mdStanName>
+	<mdStanVer>1.0</mdStanVer>
+	<dataIdInfo><idCitation><resTitle>Title</resTitle><date><pubDate>2006</pubDate></date><citRespParty><rpOrgName>Originator<!-- WARNING: translation from FGDC is ambiguous, this may require correction --></rpOrgName><role><RoleCd value="006"/></role></citRespParty><presForm><PresFormCd value="005"/></presForm><presForm><fgdcGeoform>remote-sensing image</fgdcGeoform></presForm></idCitation><idAbs>Abstract</idAbs><idPurp>Purpose</idPurp><idStatus><ProgCd value="007"/></idStatus><idPoC><rpOrgName>Point of Contact Organization</rpOrgName><rpCntInfo><cntPhone><voiceNum>Point of Contact Voice Telephone</voiceNum></cntPhone><cntAddress addressType="both"><delPoint>Point of Contact Address</delPoint><city>Point of Contact City</city><adminArea>Point of Contact State or Province</adminArea><postCode>Point of Contact Postal Code</postCode><country>Point of Contact Country</country></cntAddress></rpCntInfo><role><RoleCd value="007"/></role></idPoC><resMaint><maintFreq><MaintFreqCd value="009"/></maintFreq></resMaint><themeKeys><keyword>Theme Keyword1</keyword><keyword>Theme Keyword2</keyword></themeKeys><searchKeys><keyword>Theme Keyword1</keyword><keyword>Theme Keyword2</keyword></searchKeys><spatRpType><SpatRepTypCd value="002"/></spatRpType><dataExt><geoEle><GeoBndBox><exTypeCode>true</exTypeCode><westBL>-164</westBL><eastBL>-132</eastBL><northBL>87</northBL><southBL>25</southBL></GeoBndBox></geoEle></dataExt><dataExt><exDesc>Currentness Reference</exDesc><tempEle><TempExtent><exTemp><TM_Instant><tmPosition>2002-10</tmPosition></TM_Instant></exTemp></TempExtent></tempEle><tempEle><TempExtent><exTemp><TM_Instant><tmPosition>2006-06-10T04:15:00</tmPosition></TM_Instant></exTemp></TempExtent></tempEle></dataExt></dataIdInfo>
+	<dqInfo>
+		<dqScope>
+			<scpLvl>
+				<ScopeCd value="005"/>
+			</scpLvl>
+		</dqScope>
+		<report type="DQConcConsis">
+			<measDesc>Logical Consistency Report</measDesc>
+		</report>
+		<report type="DQCompOm">
+			<measDesc>Completeness Report</measDesc>
+		</report>
+		<dataLineage>
+			<prcStep>
+				<stepDesc>Process Description</stepDesc>
+				<stepDateTm>2006-05-18</stepDateTm>
+			</prcStep>
+		</dataLineage>
+	</dqInfo>
+	<spatRepInfo>
+		<Georect>
+			<numDims>2</numDims>
+			<axisDimension type="001">
+				<dimSize>2432</dimSize>
+			</axisDimension>
+			<axisDimension type="002">
+				<dimSize>26749</dimSize>
+			</axisDimension>
+			<cellGeo>
+				<CellGeoCd value="002"/>
+			</cellGeo>
+		</Georect>
+	</spatRepInfo>
+	<Esri>
+		<ArcGISFormat>1.0</ArcGISFormat>
+	</Esri>
+	<Binary></Binary>
+</metadata>

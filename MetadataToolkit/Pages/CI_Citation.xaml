@@ -424,7 +424,7 @@ limitations under the License.​
               </Border>
 
               <!-- other dates -->
-              <Border Style="{DynamicResource EditorBorder2Style}" tu:MetadataStyle.OnlyProfiles="NAP">
+              <Border Style="{DynamicResource EditorBorder2Style}" tu:MetadataStyle.OnlyProfiles="NAP,ISO19115_3">
                 <Expander Style="{DynamicResource EditorExpander2Style}" IsExpanded="{Binding XPath=date/notavailDate/@editorExpand, Mode=TwoWay}" 
                           Name="CI_Citaton_OtherDatesGroup">
                   <Expander.Header>

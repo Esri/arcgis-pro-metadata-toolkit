@@ -222,8 +222,8 @@ limitations under the License.​
                   </ListBox>
 
                   <!-- country code -->
-                  <Label tu:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_META_NAP_COUNTRY}"/>
-                  <ListBox tu:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="1" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=mdLang}">
+                  <Label tu:MetadataStyle.OnlyProfiles="NAP,ISO19115_3" Grid.Row="1" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_META_NAP_COUNTRY}"/>
+                  <ListBox tu:MetadataStyle.OnlyProfiles="NAP,ISO19115_3" Grid.Row="1" Grid.Column="1" Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=mdLang}">
                     <ListBox.ItemTemplate>
                       <DataTemplate>
                         <tp:MTK_CountryCode/>

@@ -1,0 +1,1250 @@
+<metadata xml:lang="en">
+	<Esri>
+		<CreaDate>20111017</CreaDate>
+		<CreaTime>16451700</CreaTime>
+		<ArcGISstyle>North American Profile of ISO19115 2003</ArcGISstyle>
+		<SyncOnce>FALSE</SyncOnce>
+		<SyncDate>20111020</SyncDate>
+		<SyncTime>16140500</SyncTime>
+		<ModDate>20121019</ModDate>
+		<ModTime>17033600</ModTime>
+		<ArcGISProfile>NAP</ArcGISProfile>
+		<locales>
+			<locale language="fre" country="FR" xmlns="">
+				<resTitle>identificationInfo.MD_DataIdentification.citation.CI_Citation.title.PT_FreeText.LocalisedCharacterString</resTitle>
+				<idAbs>identificationInfo.MD_DataIdentification.abstract.PT_FreeText.LocalisedCharacterString</idAbs>
+			</locale>
+		</locales>
+		<ArcGISFormat>1.0</ArcGISFormat>
+		<scaleRange>
+			<minScale>50000000</minScale>
+			<maxScale>5000000</maxScale>
+		</scaleRange>
+		<DataProperties>
+			<itemProps>
+				<imsContentType export="False"/>
+			</itemProps>
+		</DataProperties>
+	</Esri>
+	<mdChar>
+		<CharSetCd value="004"/>
+	</mdChar>
+	<mdHrLv>
+		<ScopeCd value="005"/>
+	</mdHrLv>
+	<mdContact xmlns="">
+		<rpIndName>contact.CI_ResponsibleParty.individualName</rpIndName>
+		<rpCntInfo xmlns="">
+			<cntAddress addressType="both">
+				<delPoint>contact.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.deliveryPoint</delPoint>
+				<city>contact.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.city</city>
+				<adminArea>contact.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.administrativeArea</adminArea>
+				<postCode>contact.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.postalCode</postCode>
+				<eMailAdd>contact.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+				<country>US</country>
+			</cntAddress>
+			<cntPhone>
+				<voiceNum tddtty="">contact.CI_ResponsibleParty.contactInfo.CI_Contact.phone.CI_Telephone.voice</voiceNum>
+				<faxNum>contact.CI_ResponsibleParty.contactInfo.CI_Contact.phone.CI_Telephone.facsimile</faxNum>
+				<voiceNum tddtty="True">contact.CI_ResponsibleParty.contactInfo.CI_Contact.phone.CI_Telephone.voice + TDD/TTY=True</voiceNum>
+			</cntPhone>
+			<cntOnlineRes xmlns="">
+				<linkage>http://contact.CI_ResponsibleParty.contactInfo.CI_Contact.onlineResource.CI_OnlineResource.linkage</linkage>
+				<protocol>contact.CI_ResponsibleParty.contactInfo.CI_Contact.onlineResource.CI_OnlineResource.protocol</protocol>
+				<appProfile>contact.CI_ResponsibleParty.contactInfo.CI_Contact.onlineResource.CI_OnlineResource.applicationProfile</appProfile>
+				<orName>contact.CI_ResponsibleParty.contactInfo.CI_Contact.onlineResource.CI_OnlineResource.name</orName>
+				<orDesc>contact.CI_ResponsibleParty.contactInfo.CI_Contact.onlineResource.CI_OnlineResource.description</orDesc>
+				<orFunct>
+					<OnFunctCd value="004"/>
+				</orFunct>
+			</cntOnlineRes>
+			<cntHours>contact.CI_ResponsibleParty.contactInfo.CI_Contact.hoursOfService</cntHours>
+			<cntInstr>contact.CI_ResponsibleParty.contactInfo.CI_Contact.contactInstructions</cntInstr>
+		</rpCntInfo>
+		<role>
+			<RoleCd value="007"/>
+		</role>
+		<rpOrgName>contact.CI_ResponsibleParty.organisationName</rpOrgName>
+		<rpPosName>contact.CI_ResponsibleParty.positionName</rpPosName>
+	</mdContact>
+	<distInfo xmlns="">
+		<distributor xmlns="">
+			<distorCont xmlns="">
+				<rpOrgName>distributionInfo.MD_Distribution.distributor.MD_Distributor.distributorContact.CI_ResponsibleParty.organisationName</rpOrgName>
+				<role>
+					<RoleCd value="005"/>
+				</role>
+				<rpCntInfo xmlns="">
+					<cntAddress addressType="">
+						<eMailAdd>distributionInfo.MD_Distribution.distributor.MD_Distributor.distributorContact.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+					</cntAddress>
+					<cntPhone>
+						<voiceNum tddtty="">distributionInfo.MD_Distribution.distributor.MD_Distributor.distributorContact.CI_ResponsibleParty.contactInfo.CI_Contact.phone.CI_Telephone.voice</voiceNum>
+					</cntPhone>
+				</rpCntInfo>
+			</distorCont>
+			<distorOrdPrc xmlns="">
+				<resFees units="CAD">distributionInfo.MD_Distribution.distributor.MD_Distributor.distributionOrderProcess.MD_StandardOrderProcess.fees</resFees>
+				<planAvDtTm>2011-10-31T13:00:00</planAvDtTm>
+				<ordInstr>distributionInfo.MD_Distribution.distributor.MD_Distributor.distributionOrderProcess.MD_StandardOrderProcess.orderingInstructions</ordInstr>
+				<ordTurn>distributionInfo.MD_Distribution.distributor.MD_Distributor.distributionOrderProcess.MD_StandardOrderProcess.turnaround</ordTurn>
+			</distorOrdPrc>
+		</distributor>
+		<distFormat xmlns="">
+			<formatName>distributionInfo.MD_Distribution.distributionFormat.MD_Format.name</formatName>
+			<formatVer>distributionInfo.MD_Distribution.distributionFormat.MD_Format.version</formatVer>
+			<formatAmdNum>distributionInfo.MD_Distribution.distributionFormat.MD_Format.amendmentNumber</formatAmdNum>
+			<formatSpec>distributionInfo.MD_Distribution.distributionFormat.MD_Format.specification</formatSpec>
+			<fileDecmTech>distributionInfo.MD_Distribution.distributionFormat.MD_Format.fileDecompressionTechnique</fileDecmTech>
+		</distFormat>
+		<distTranOps xmlns="">
+			<transSize>0.001</transSize>
+			<onLineSrc xmlns="">
+				<linkage>http://distributionInfo.MD_Distribution.transferOptions.MD_DigitalTransferOptions.onLine.CI_OnlineResource.linkage</linkage>
+				<protocol>distributionInfo.MD_Distribution.transferOptions.MD_DigitalTransferOptions.onLine.CI_OnlineResource.protocol</protocol>
+				<appProfile>distributionInfo.MD_Distribution.transferOptions.MD_DigitalTransferOptions.onLine.CI_OnlineResource.applicationProfile</appProfile>
+				<orName>distributionInfo.MD_Distribution.transferOptions.MD_DigitalTransferOptions.onLine.CI_OnlineResource.name</orName>
+				<orDesc>distributionInfo.MD_Distribution.transferOptions.MD_DigitalTransferOptions.onLine.CI_OnlineResource.description</orDesc>
+				<orFunct>
+					<OnFunctCd value="009"/>
+				</orFunct>
+			</onLineSrc>
+			<unitsODist>distributionInfo.MD_Distribution.transferOptions.MD_DigitalTransferOptions.unitsOfDistribution</unitsODist>
+			<offLineMed xmlns="">
+				<medName>
+					<MedNameCd value="003"/>
+				</medName>
+				<medFormat>
+					<MedFormCd value="004"/>
+				</medFormat>
+				<medDensity>1.0</medDensity>
+				<medDenUnits>distributionInfo.MD_Distribution.transferOptions.MD_DigitalTransferOptions.offLine.MD_Medium.densityUnits</medDenUnits>
+				<medVol>1</medVol>
+				<medNote>distributionInfo.MD_Distribution.transferOptions.MD_DigitalTransferOptions.offLine.MD_Medium.mediumNote</medNote>
+			</offLineMed>
+			<onLineSrc xmlns="">
+				<linkage>distributionInfo.MD_Distribution.transferOptions.MD_DigitalTransferOptions.onLine.CI_OnlineResource.linkage</linkage>
+				<protocol>distributionInfo.MD_Distribution.transferOptions.MD_DigitalTransferOptions.onLine.CI_OnlineResource.protocol</protocol>
+			</onLineSrc>
+		</distTranOps>
+		<distTranOps xmlns="">
+			<offLineMed xmlns="">
+				<medName>
+					<MedNameCd value="032"/>
+				</medName>
+				<medFormat>
+					<MedFormCd value="007"/>
+				</medFormat>
+			</offLineMed>
+		</distTranOps>
+		<distFormat xmlns="">
+			<formatName>distributionInfo.MD_Distribution.distributor.MD_Distributor.distributorFormat.MD_Format.name</formatName>
+			<formatVer>distributionInfo.MD_Distribution.distributor.MD_Distributor.distributorFormat.MD_Format.version</formatVer>
+		</distFormat>
+		<distTranOps xmlns="">
+			<transSize>1.000</transSize>
+			<offLineMed xmlns="">
+				<medName>
+					<MedNameCd value="018"/>
+				</medName>
+				<medNote>distributionInfo.MD_Distribution.distributor.MD_Distributor.distributorTransferOptions.MD_DigitalTransferOptions.offLine.MD_Medium.mediumNote</medNote>
+			</offLineMed>
+			<onLineSrc xmlns="">
+				<linkage>http://distributionInfo.MD_Distribution.distributor.MD_Distributor.distributorTransferOptions.MD_DigitalTransferOptions.onLine.CI_OnlineResource.linkage</linkage>
+				<protocol>distributionInfo.MD_Distribution.distributor.MD_Distributor.distributorTransferOptions.MD_DigitalTransferOptions.onLine.CI_OnlineResource.protocol</protocol>
+			</onLineSrc>
+			<unitsODist>distributionInfo.MD_Distribution.distributor.MD_Distributor.distributorTransferOptions.MD_DigitalTransferOptions.unitsOfDistribution</unitsODist>
+			<onLineSrc xmlns="">
+				<linkage>\\networkServer\sharedFolder\Distributor1_Digital_Transfer_Option_Format_Name_Network_Resource_Name</linkage>
+				<protocol>distributionInfo.MD_Distribution.distributor.MD_Distributor.distributorTransferOptions.MD_DigitalTransferOptions.onLine.CI_OnlineResource.protocol</protocol>
+			</onLineSrc>
+			<onLineSrc xmlns="">
+				<linkage>c:\folder\Distributor1_Digital_Transfer_Option_Format_Name_Network_Resource_Name</linkage>
+				<protocol>distributionInfo.MD_Distribution.distributor.MD_Distributor.distributorTransferOptions.MD_DigitalTransferOptions.onLine.CI_OnlineResource.protocol</protocol>
+			</onLineSrc>
+		</distTranOps>
+	</distInfo>
+	<dataIdInfo>
+		<idCitation xmlns="">
+			<resTitle>identificationInfo.MD_DataIdentification.citation.CI_Citation.title</resTitle>
+			<date>
+				<pubDate>1994-01-01T06:00:00</pubDate>
+				<createDate>1993-01-01T00:00:00</createDate>
+				<reviseDate>1995-01-01T18:30:59</reviseDate>
+				<notavailDate>2000-01-01T00:00:00</notavailDate>
+				<adoptDate>2002-03-01T16:01:23</adoptDate>
+				<inforceDate>2001-02-01T01:15:06</inforceDate>
+				<deprecDate>2003-04-01T23:59:59</deprecDate>
+				<supersDate>2004-05-01T12:00:01</supersDate>
+			</date>
+			<resEd>identificationInfo.MD_DataIdentification.citation.CI_Citation.edition</resEd>
+			<datasetSeries>
+				<seriesName>identificationInfo.MD_DataIdentification.citation.CI_Citation.series.CI_Series.name</seriesName>
+				<issId>identificationInfo.MD_DataIdentification.citation.CI_Citation.series.CI_Series.issueIdentification</issId>
+				<artPage>identificationInfo.MD_DataIdentification.citation.CI_Citation.series.CI_Series.page</artPage>
+			</datasetSeries>
+			<otherCitDet>identificationInfo.MD_DataIdentification.citation.CI_Citation.otherCitationDetails; identificationInfo.MD_DataIdentification.citation.CI_Citation.otherCitationDetails</otherCitDet>
+			<presForm xmlns="">
+				<PresFormCd value="018"/>
+			</presForm>
+			<citRespParty xmlns="">
+				<rpOrgName>identificationInfo.MD_DataIdentification.citation.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+				<role>
+					<RoleCd value="014"/>
+				</role>
+				<rpPosName>identificationInfo.MD_DataIdentification.citation.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.positionName</rpPosName>
+				<rpCntInfo xmlns="">
+					<cntAddress addressType="">
+						<eMailAdd>identificationInfo.MD_DataIdentification.citation.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+					</cntAddress>
+				</rpCntInfo>
+			</citRespParty>
+			<collTitle>identificationInfo.MD_DataIdentification.citation.CI_Citation.collectiveTitle</collTitle>
+			<resAltTitle>identificationInfo.MD_DataIdentification.citation.CI_Citation.alternateTitle</resAltTitle>
+			<resEdDate>20110101</resEdDate>
+			<citId xmlns="">
+				<identCode>identificationInfo.MD_DataIdentification.citation.CI_Citation.identifier.MD_Identifier.code</identCode>
+				<identAuth xmlns="">
+					<resTitle>identificationInfo.MD_DataIdentification.citation.CI_Citation.identifier.MD_Identifier.authority.CI_Citation.title</resTitle>
+					<date>
+						<pubDate>2010-01-01T00:00:00</pubDate>
+						<reviseDate>2012-10-10T05:35:03</reviseDate>
+					</date>
+					<citRespParty xmlns="">
+						<rpOrgName>identificationInfo.MD_DataIdentification.citation.CI_Citation.identifier.MD_Identifier.authority.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+						<role>
+							<RoleCd value="003"/>
+						</role>
+						<rpCntInfo xmlns="">
+							<cntAddress addressType="">
+								<eMailAdd>identificationInfo.MD_DataIdentification.citation.CI_Citation.identifier.MD_Identifier.authority.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+							</cntAddress>
+						</rpCntInfo>
+					</citRespParty>
+				</identAuth>
+			</citId>
+			<isbn>identificationInfo.MD_DataIdentification.citation.CI_Citation.ISBN</isbn>
+			<issn>identificationInfo.MD_DataIdentification.citation.CI_Citation.ISSN</issn>
+		</idCitation>
+		<idAbs>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;identificationInfo.MD_DataIdentification.abstract&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs>
+		<idPurp>identificationInfo.MD_DataIdentification.purpose</idPurp>
+		<idCredit>identificationInfo.MD_DataIdentification.credit</idCredit>
+		<idStatus>
+			<ProgCd value="008"/>
+		</idStatus>
+		<graphOver xmlns="">
+			<bgFileName>http://identificationInfo.MD_DataIdentification.graphicOverview.MD_BrowseGraphic.fileName</bgFileName>
+			<bgFileType>identificationInfo.MD_DataIdentification.graphicOverview.MD_BrowseGraphic.fileType</bgFileType>
+			<bgFileDesc>identificationInfo.MD_DataIdentification.graphicOverview.MD_BrowseGraphic.fileDescription</bgFileDesc>
+		</graphOver>
+		<placeKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.title</resTitle>
+				<date>
+					<pubDate>2010-01-01T00:00:00</pubDate>
+					<reviseDate>2012-08-01T00:00:00</reviseDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+					<role>
+						<RoleCd value="001"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress addressType="">
+							<eMailAdd>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+			</thesaName>
+			<thesaLang>
+				<languageCode value="eng"/>
+				<countryCode value="US"/>
+			</thesaLang>
+			<keyword>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword1 (type=place)</keyword>
+			<keyword>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword2 (type=place)</keyword>
+		</placeKeys>
+		<stratKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.title</resTitle>
+				<date>
+					<reviseDate>1988-08-26T00:00:00</reviseDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+					<role>
+						<RoleCd value="003"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress addressType="">
+							<eMailAdd>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+			</thesaName>
+			<keyword>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword1 (type=stratum)</keyword>
+			<keyword>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword2 (type=stratum)</keyword>
+		</stratKeys>
+		<tempKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.title</resTitle>
+				<date>
+					<reviseDate>1996-08-22T00:00:00</reviseDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpIndName>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.individualName</rpIndName>
+					<role>
+						<RoleCd value="001"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress addressType="">
+							<eMailAdd>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+			</thesaName>
+			<keyword>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword1 (type=temporal)</keyword>
+			<keyword>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword2 (type=temporal)</keyword>
+		</tempKeys>
+		<themeKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.title</resTitle>
+				<date>
+					<pubDate>2010-01-01T00:00:00</pubDate>
+					<createDate>2009-06-09T00:00:00</createDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpPosName>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.positionName</rpPosName>
+					<role>
+						<RoleCd value="001"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress addressType="">
+							<eMailAdd>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+			</thesaName>
+			<thesaLang>
+				<languageCode value="eng"/>
+				<countryCode value="CA"/>
+			</thesaLang>
+			<keyword>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword1 (type=theme)</keyword>
+			<keyword>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword2 (type=theme)</keyword>
+		</themeKeys>
+		<resConst>
+			<Consts xmlns="">
+				<useLimit>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;identificationInfo.MD_DataIdentification.resourceConstraints.MD_Constraints.useLimitation&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</useLimit>
+			</Consts>
+			<LegConsts xmlns="">
+				<useLimit>identificationInfo.MD_DataIdentification.resourceConstraints.MD_LegalConstraints.useLimitation</useLimit>
+				<othConsts>identificationInfo.MD_DataIdentification.resourceConstraints.MD_LegalConstraints.otherConstraints</othConsts>
+				<accessConsts>
+					<RestrictCd value="010"/>
+				</accessConsts>
+				<useConsts>
+					<RestrictCd value="008"/>
+				</useConsts>
+			</LegConsts>
+			<SecConsts xmlns="">
+				<class>
+					<ClasscationCd value="007"/>
+				</class>
+				<classSys>identificationInfo.MD_DataIdentification.resourceConstraints.MD_SecurityConstraints.classificationSystem</classSys>
+				<handDesc>identificationInfo.MD_DataIdentification.resourceConstraints.MD_SecurityConstraints.handlingDescription</handDesc>
+				<userNote>identificationInfo.MD_DataIdentification.resourceConstraints.MD_SecurityConstraints.userNote</userNote>
+				<useLimit>identificationInfo.MD_DataIdentification.resourceConstraints.MD_SecurityConstraints.useLimitation</useLimit>
+			</SecConsts>
+		</resConst>
+		<spatRpType>
+			<SpatRepTypCd value="001"/>
+		</spatRpType>
+		<dataLang>
+			<languageCode value="eng"/>
+			<countryCode value="CA"/>
+		</dataLang>
+		<envirDesc>identificationInfo.MD_DataIdentification.environmentDescription</envirDesc>
+		<dataExt xmlns="">
+			<exDesc>identificationInfo.MD_DataIdentification.extent.EX_Extent.description</exDesc>
+			<vertEle xmlns="">
+				<vertMinVal>0.01</vertMinVal>
+				<vertMaxVal>599.99</vertMaxVal>
+			</vertEle>
+			<geoEle xmlns="">
+				<GeoDesc>
+					<exTypeCode>1</exTypeCode>
+					<geoId xmlns="">
+						<identCode>identificationInfo.MD_DataIdentification.extent.EX_GeographicDescription.geographicIdentifier.MD_Identifier.code</identCode>
+						<identAuth xmlns="">
+							<resTitle>identificationInfo.MD_DataIdentification.extent.EX_GeographicDescription.geographicIdentifier.MD_Identifier.authority.CI_Citation.title</resTitle>
+							<date>
+								<pubDate>2011-01-01T00:00:00</pubDate>
+							</date>
+							<citRespParty xmlns="">
+								<rpOrgName>identificationInfo.MD_DataIdentification.extent.EX_GeographicDescription.geographicIdentifier.MD_Identifier.authority.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+								<role>
+									<RoleCd value="015"/>
+								</role>
+								<rpCntInfo xmlns="">
+									<cntAddress addressType="">
+										<eMailAdd>identificationInfo.MD_DataIdentification.extent.EX_GeographicDescription.geographicIdentifier.MD_Identifier.authority.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+									</cntAddress>
+								</rpCntInfo>
+							</citRespParty>
+						</identAuth>
+					</geoId>
+				</GeoDesc>
+			</geoEle>
+			<tempEle>
+				<TempExtent>
+					<exTemp>
+						<TM_Period xmlns="">
+							<tmBegin>2011-01-01T00:00:01</tmBegin>
+							<tmEnd>2011-12-31T23:59:59</tmEnd>
+						</TM_Period>
+					</exTemp>
+				</TempExtent>
+			</tempEle>
+		</dataExt>
+		<suppInfo>identificationInfo.MD_DataIdentification.supplementalInformation</suppInfo>
+		<dataChar>
+			<CharSetCd value="004"/>
+		</dataChar>
+		<resMaint xmlns="">
+			<maintFreq>
+				<MaintFreqCd value="009"/>
+			</maintFreq>
+			<dateNext>2012-01-01T00:00:00</dateNext>
+			<usrDefFreq>
+				<duration>P36DT12H (identificationInfo.MD_DataIdentification.resourceMaintenance.MD_MaintenanceInformation.userDefinedMaintenanceFrequency)</duration>
+			</usrDefFreq>
+			<maintScp>
+				<ScopeCd value="005"/>
+			</maintScp>
+			<upScpDesc xmlns="">
+				<datasetSet>identificationInfo.MD_DataIdentification.resourceMaintenance.MD_MaintenanceInformation.updateScopeDescription.MD_ScopeDescription.dataset</datasetSet>
+			</upScpDesc>
+			<maintCont xmlns="">
+				<rpIndName>identificationInfo.MD_DataIdentification.resourceMaintenance.MD_MaintenanceInformation.contact.CI_ResponsibleParty.individualName</rpIndName>
+				<role>
+					<RoleCd value="002"/>
+				</role>
+				<rpCntInfo xmlns="">
+					<cntAddress addressType="">
+						<eMailAdd>identificationInfo.MD_DataIdentification.resourceMaintenance.MD_MaintenanceInformation.contact.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+					</cntAddress>
+				</rpCntInfo>
+			</maintCont>
+			<maintNote>identificationInfo.MD_DataIdentification.resourceMaintenance.MD_MaintenanceInformation.maintenanceNote</maintNote>
+		</resMaint>
+		<aggrInfo xmlns="">
+			<aggrDSName xmlns="">
+				<resTitle>identificationInfo.MD_DataIdentification.aggregationInfo.MD_AggregateInformation.aggregateDataSetName.CI_Citation.title</resTitle>
+				<date>
+					<pubDate>2006-06-01T00:00:00</pubDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>identificationInfo.MD_DataIdentification.aggregationInfo.MD_AggregateInformation.aggregateDataSetName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+					<role>
+						<RoleCd value="002"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress addressType="">
+							<eMailAdd>identificationInfo.MD_DataIdentification.aggregationInfo.MD_AggregateInformation.aggregateDataSetName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+				<presForm xmlns="">
+					<PresFormCd value="019"/>
+				</presForm>
+			</aggrDSName>
+			<assocType>
+				<AscTypeCd value="006"/>
+			</assocType>
+			<aggrDSIdent xmlns="">
+				<identCode>identificationInfo.MD_DataIdentification.aggregationInfo.MD_AggregateInformation.aggregateDataSetIdentifier.MD_Identifier.code</identCode>
+				<identAuth xmlns="">
+					<resTitle>identificationInfo.MD_Identification.aggregationInfo.MD_AggregateInformation.aggregateDataSetIdentifier.MD_Identifier.authority.CI_Citation.title</resTitle>
+					<date>
+						<createDate>2009-05-15T00:00:00</createDate>
+					</date>
+					<citRespParty xmlns="">
+						<rpOrgName>identificationInfo.MD_DataIdentification.aggregationInfo.MD_AggregateInformation.aggregateDataSetIdentifier.MD_Identifier.authority.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+						<role>
+							<RoleCd value="006"/>
+						</role>
+						<rpCntInfo xmlns="">
+							<cntAddress addressType="">
+								<eMailAdd>identificationInfo.MD_DataIdentification.aggregationInfo.MD_AggregateInformation.aggregateDataSetIdentifier.MD_Identifier.authority.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+							</cntAddress>
+						</rpCntInfo>
+					</citRespParty>
+				</identAuth>
+			</aggrDSIdent>
+			<initType>
+				<InitTypCd value="005"/>
+			</initType>
+		</aggrInfo>
+		<discKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.title</resTitle>
+				<date>
+					<reviseDate>2007-02-12T00:00:00</reviseDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpPosName>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.positionName</rpPosName>
+					<role>
+						<RoleCd value="001"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress addressType="">
+							<eMailAdd>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+			</thesaName>
+			<keyword>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword1 (type=discipline)</keyword>
+			<keyword>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword2 (type=discipline)</keyword>
+		</discKeys>
+		<otherKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.title</resTitle>
+				<date>
+					<reviseDate>2010-05-10T00:00:00</reviseDate>
+					<inforceDate>2012-01-01T00:00:00</inforceDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpIndName>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.individualName</rpIndName>
+					<role>
+						<RoleCd value="015"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress addressType="">
+							<eMailAdd>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+			</thesaName>
+			<thesaLang>
+				<languageCode value="fre"/>
+				<countryCode value="CA"/>
+			</thesaLang>
+			<keyword>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword1 (no type, possibly from thesaurus)</keyword>
+			<keyword>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword2 (no type, possibly from thesaurus)</keyword>
+		</otherKeys>
+		<dataScale xmlns="">
+			<scaleDist>
+				<value uom="m">0.001</value>
+			</scaleDist>
+			<equScale>
+				<rfDenom>72000</rfDenom>
+			</equScale>
+		</dataScale>
+		<dataExt xmlns="">
+			<geoEle xmlns="">
+				<GeoBndBox>
+					<exTypeCode>0</exTypeCode>
+					<westBL>-117.9</westBL>
+					<eastBL>-116.1</eastBL>
+					<northBL>34.3</northBL>
+					<southBL>33.7</southBL>
+				</GeoBndBox>
+			</geoEle>
+		</dataExt>
+		<dataExt xmlns="">
+			<geoEle xmlns="">
+				<GeoBndBox esriExtentType="search">
+					<westBL>-180</westBL>
+					<eastBL>180</eastBL>
+					<northBL>90</northBL>
+					<southBL>-90</southBL>
+					<exTypeCode>1</exTypeCode>
+				</GeoBndBox>
+			</geoEle>
+		</dataExt>
+		<productKeys xmlns="">
+			<thesaLang>
+				<languageCode value="eng"/>
+				<countryCode value="US"/>
+			</thesaLang>
+			<thesaName xmlns="">
+				<resTitle>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.title</resTitle>
+				<date>
+					<pubDate>2011-08-12T00:00:00</pubDate>
+					<supersDate>2012-04-18T00:00:00</supersDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpIndName>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.individualName</rpIndName>
+					<role>
+						<RoleCd value="013"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress addressType="">
+							<eMailAdd>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+			</thesaName>
+			<keyword>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword1 (type=product)</keyword>
+			<keyword>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword2 (type=product)</keyword>
+		</productKeys>
+		<subTopicCatKeys xmlns="">
+			<thesaLang>
+				<languageCode value="spa"/>
+				<countryCode value="MX"/>
+			</thesaLang>
+			<thesaName xmlns="">
+				<resTitle>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.title</resTitle>
+				<date>
+					<createDate>2012-02-22T00:00:00</createDate>
+					<adoptDate>2012-10-03T00:00:00</adoptDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+					<rpPosName>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.positionName</rpPosName>
+					<role>
+						<RoleCd value="014"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress addressType="">
+							<eMailAdd>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.thesaurusName.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+			</thesaName>
+			<keyword>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword1 (type=subtopicKeywords)</keyword>
+			<keyword>identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword2 (type=subtopicKeywords)</keyword>
+		</subTopicCatKeys>
+		<spatRpType>
+			<SpatRepTypCd value="002"/>
+		</spatRpType>
+		<idPoC xmlns="">
+			<rpOrgName>identificationInfo.MD_DataIdentification.pointOfContact.CI_ResponsibleParty.organisationName</rpOrgName>
+			<role>
+				<RoleCd value="012"/>
+			</role>
+			<rpCntInfo xmlns="">
+				<cntPhone>
+					<voiceNum tddtty="">identificationInfo.MD_DataIdentification.pointOfContact.CI_ResponsibleParty.contactInfo.CI_Contact.phone.CI_Telephone.voice</voiceNum>
+					<voiceNum tddtty="True">identificationInfo.MD_DataIdentification.pointOfContact.CI_ResponsibleParty.contactInfo.CI_Contact.phone.CI_Telephone.voice TDD/TTY</voiceNum>
+				</cntPhone>
+				<cntHours>08:00:00/17:00:00 PST</cntHours>
+			</rpCntInfo>
+		</idPoC>
+		<idStatus>
+			<ProgCd value="004"/>
+		</idStatus>
+		<tpCat>
+			<TopicCatCd value="008"/>
+		</tpCat>
+		<tpCat>
+			<TopicCatCd value="010"/>
+		</tpCat>
+	</dataIdInfo>
+	<mdMaint xmlns="">
+		<dateNext>2012-11-01T12:00:00</dateNext>
+		<maintFreq>
+			<MaintFreqCd value="013"/>
+		</maintFreq>
+		<usrDefFreq>
+			<duration>P1Y2M3DT4H5M6S (metadataMaintenance.MD_MaintenanceInformation.userDefinedMaintenanceFrequency)</duration>
+		</usrDefFreq>
+		<maintScp>
+			<ScopeCd value="005"/>
+		</maintScp>
+		<upScpDesc xmlns="">
+			<attribSet>metadataMaintenance.MD_MaintenanceInformation.updateScopeDescription.MD_ScopeDescription.attributes</attribSet>
+			<featSet>metadataMaintenance.MD_MaintenanceInformation.updateScopeDescription.MD_ScopeDescription.features</featSet>
+			<featIntSet>metadataMaintenance.MD_MaintenanceInformation.updateScopeDescription.MD_ScopeDescription.featureInstances</featIntSet>
+			<attribIntSet>metadataMaintenance.MD_MaintenanceInformation.updateScopeDescription.MD_ScopeDescription.attributeInstances</attribIntSet>
+			<datasetSet>metadataMaintenance.MD_MaintenanceInformation.updateScopeDescription.MD_ScopeDescription.dataset</datasetSet>
+			<other>metadataMaintenance.MD_MaintenanceInformation.updateScopeDescription.MD_ScopeDescription.other</other>
+		</upScpDesc>
+		<maintCont xmlns="">
+			<rpOrgName>metadataMaintenance.MD_MaintenanceInformation.contact.CI_ResponsibleParty.organisationName</rpOrgName>
+			<role>
+				<RoleCd value="011"/>
+			</role>
+			<rpCntInfo xmlns="">
+				<cntAddress addressType="postal">
+					<delPoint>metadataMaintenance.MD_MaintenanceInformation.contact.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.deliveryPoint</delPoint>
+					<city>metadataMaintenance.MD_MaintenanceInformation.contact.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.city</city>
+					<adminArea>metadataMaintenance.MD_MaintenanceInformation.contact.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.administrativeArea</adminArea>
+					<postCode>metadataMaintenance.MD_MaintenanceInformation.contact.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.postalCode</postCode>
+					<country>CA</country>
+				</cntAddress>
+			</rpCntInfo>
+		</maintCont>
+		<maintNote>metadataMaintenance.MD_MaintenanceInformation.maintenanceNote</maintNote>
+	</mdMaint>
+	<mdConst>
+		<Consts xmlns="">
+			<useLimit>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;metadataConstraints.MD_Constraints.useLimitation&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</useLimit>
+		</Consts>
+	</mdConst>
+	<mdConst>
+		<LegConsts xmlns="">
+			<othConsts>metadataConstraints.MD_LegalConstraints.otherConstraints</othConsts>
+			<accessConsts>
+				<RestrictCd value="008"/>
+			</accessConsts>
+			<useConsts>
+				<RestrictCd value="015"/>
+			</useConsts>
+			<useLimit>metadataConstraints.MD_LegalConstraints.useLimitation</useLimit>
+		</LegConsts>
+	</mdConst>
+	<mdConst>
+		<SecConsts xmlns="">
+			<class>
+				<ClasscationCd value="006"/>
+			</class>
+			<classSys>metadataConstraints.MD_SecurityConstraints.classificationSystem</classSys>
+			<handDesc>metadataConstraints.MD_SecurityConstraints.handlingDescription</handDesc>
+			<userNote>metadataConstraints.MD_SecurityConstraints.userNote</userNote>
+			<useLimit>metadataConstraints.MD_SecurityConstraints.useLimitation</useLimit>
+		</SecConsts>
+	</mdConst>
+	<dqInfo xmlns="">
+		<dqScope>
+			<scpLvl>
+				<ScopeCd value="005"/>
+			</scpLvl>
+			<scpLvlDesc xmlns="">
+				<datasetSet>dataQualityInfo.DQ_DataQuality.scope.DQ_Scope.levelDescription.MD_ScopeDescription.dataset</datasetSet>
+			</scpLvlDesc>
+			<scpExt xmlns="">
+				<exDesc>dataQualityInfo.DQ_DataQuality.scope.DQ_Scope.extent.EX_Extent.description</exDesc>
+				<tempEle>
+					<TempExtent>
+						<exTemp>
+							<TM_Period xmlns="">
+								<tmBegin>2011-10-01T00:00:00</tmBegin>
+								<tmEnd>2012-10-31T00:00:00</tmEnd>
+							</TM_Period>
+						</exTemp>
+					</TempExtent>
+				</tempEle>
+			</scpExt>
+		</dqScope>
+		<dataLineage>
+			<dataSource type="" xmlns="">
+				<srcDesc>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.source.LI_Source.description</srcDesc>
+				<srcScale>
+					<rfDenom>250000</rfDenom>
+				</srcScale>
+				<srcCitatn xmlns="">
+					<resTitle>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.source.LI_Source.sourceCitation.CI_Citation.title</resTitle>
+					<date>
+						<pubDate>2011-07-15T00:00:00</pubDate>
+					</date>
+					<citRespParty xmlns="">
+						<rpOrgName>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.source.LI_Source.sourceCitation.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+						<role>
+							<RoleCd value="002"/>
+						</role>
+						<rpCntInfo xmlns="">
+							<cntAddress addressType="">
+								<eMailAdd>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.source.LI_Source.sourceCitation.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+							</cntAddress>
+						</rpCntInfo>
+					</citRespParty>
+					<presForm xmlns="">
+						<PresFormCd value="020"/>
+					</presForm>
+				</srcCitatn>
+				<srcExt xmlns="">
+					<exDesc>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.source.LI_Source.sourceExtent.EX_Extent.description</exDesc>
+					<tempEle>
+						<TempExtent>
+							<exTemp>
+								<TM_Period xmlns="">
+									<tmBegin>2011-06-06T00:00:00</tmBegin>
+									<tmEnd>2011-08-05T06:05:00</tmEnd>
+								</TM_Period>
+							</exTemp>
+						</TempExtent>
+					</tempEle>
+				</srcExt>
+				<srcRefSys xmlns="">
+					<identCode code="dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.source.LI_Source.sourceReferenceSystem.MD_ReferenceSystem.referenceSystemIdentifier.RS_Identifier.code"/>
+					<idCodeSpace>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.source.LI_Source.sourceReferenceSystem.MD_ReferenceSystem.referenceSystemIdentifier.RS_Identifier.codeSpace</idCodeSpace>
+					<idVersion>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.source.LI_Source.sourceReferenceSystem.MD_ReferenceSystem.referenceSystemIdentifier.RS_Identifier.version</idVersion>
+					<identAuth xmlns="">
+						<resTitle>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.source.LI_Source.sourceReferenceSystem.MD_ReferenceSystem.referenceSystemIdentifier.RS_Identifier.authority.CI_Citation.title</resTitle>
+						<date>
+							<reviseDate>2011-06-15T00:00:00</reviseDate>
+						</date>
+						<citRespParty xmlns="">
+							<rpOrgName>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.source.LI_Source.sourceReferenceSystem.MD_ReferenceSystem.referenceSystemIdentifier.RS_Identifier.authority.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+							<role>
+								<RoleCd value="001"/>
+							</role>
+							<rpCntInfo xmlns="">
+								<cntAddress addressType="">
+									<eMailAdd>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.source.LI_Source.sourceReferenceSystem.MD_ReferenceSystem.referenceSystemIdentifier.RS_Identifier.authority.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+								</cntAddress>
+							</rpCntInfo>
+						</citRespParty>
+					</identAuth>
+				</srcRefSys>
+				<srcMedName>
+					<MedNameCd value="031"/>
+				</srcMedName>
+			</dataSource>
+			<statement>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.statement</statement>
+			<dataSource type="" xmlns="">
+				<srcDesc>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.source.LI_Source.description</srcDesc>
+				<srcCitatn xmlns="">
+					<resTitle>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.processStep.LI_ProcessStep.source.LI_Source.sourceCitation.CI_Citation.title</resTitle>
+					<date>
+						<reviseDate>2011-09-14T00:00:00</reviseDate>
+					</date>
+					<citRespParty xmlns="">
+						<rpOrgName>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.processStep.LI_ProcessStep.source.LI_Source.sourceCitation.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+						<role>
+							<RoleCd value="002"/>
+						</role>
+						<rpCntInfo xmlns="">
+							<cntAddress addressType="">
+								<eMailAdd>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.processStep.LI_ProcessStep.source.LI_Source.sourceCitation.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+							</cntAddress>
+						</rpCntInfo>
+					</citRespParty>
+				</srcCitatn>
+				<srcDesc>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.processStep.LI_ProcessStep.source.LI_Source.description</srcDesc>
+				<srcExt xmlns="">
+					<geoEle xmlns="">
+						<GeoBndBox>
+							<exTypeCode>1</exTypeCode>
+							<westBL>-100.0</westBL>
+							<eastBL>-80.0</eastBL>
+							<southBL>21.5</southBL>
+							<northBL>42.5</northBL>
+						</GeoBndBox>
+					</geoEle>
+				</srcExt>
+				<srcMedName>
+					<MedNameCd value="029"/>
+				</srcMedName>
+			</dataSource>
+			<prcStep xmlns="">
+				<stepDesc>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.processStep.LI_ProcessStep.description</stepDesc>
+				<stepDateTm>2011-10-01T16:10:32</stepDateTm>
+				<stepProc xmlns="">
+					<rpIndName>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.processStep.LI_ProcessStep.processor.CI_ResponsibleParty.individualName</rpIndName>
+					<role>
+						<RoleCd value="009"/>
+					</role>
+					<rpOrgName>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.processStep.LI_ProcessStep.processor.CI_ResponsibleParty.organisationName</rpOrgName>
+				</stepProc>
+				<stepRat>dataQualityInfo.DQ_DataQuality.lineage.LI_Lineage.processStep.LI_ProcessStep.rationale</stepRat>
+			</prcStep>
+		</dataLineage>
+		<report type="DQAccTimeMeas" dimension="" xmlns="">
+			<measDesc>dataQualityInfo.DQ_DataQuality.report.DQ_AccuracyOfATimeMeasurement.measureDescription</measDesc>
+			<measId xmlns="">
+				<identCode>dataQualityInfo.DQ_DataQuality.report.DQ_AccuracyOfATimeMeasurement.measureIdentification.MD_Identifier.code</identCode>
+				<identAuth xmlns="">
+					<resTitle>dataQualityInfo.DQ_DataQuality.report.DQ_AccuracyOfATimeMeasurement.measureIdentification.MD_Identifier.authority.CI_Citation.title</resTitle>
+					<date>
+						<reviseDate>2011-08-31T00:00:00</reviseDate>
+					</date>
+					<citRespParty xmlns="">
+						<rpOrgName>dataQualityInfo.DQ_DataQuality.report.DQ_AccuracyOfATimeMeasurement.measureIdentification.MD_Identifier.authority.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+						<role>
+							<RoleCd value="015"/>
+						</role>
+						<rpCntInfo xmlns="">
+							<cntAddress addressType="">
+								<eMailAdd>dataQualityInfo.DQ_DataQuality.report.DQ_AccuracyOfATimeMeasurement.measureIdentification.MD_Identifier.authority.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+							</cntAddress>
+						</rpCntInfo>
+					</citRespParty>
+				</identAuth>
+			</measId>
+			<evalMethDesc>dataQualityInfo.DQ_DataQuality.report.DQ_AccuracyOfATimeMeasurement.evaluationMethodDescription</evalMethDesc>
+			<evalMethType>
+				<EvalMethTypeCd value="003"/>
+			</evalMethType>
+			<evalProc xmlns="">
+				<resTitle>dataQualityInfo.DQ_DataQuality.report.DQ_AccuracyOfATimeMeasurement.evaluationProcedure.CI_Citation.title</resTitle>
+				<date>
+					<reviseDate>2011-08-01T00:00:00</reviseDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>dataQualityInfo.DQ_DataQuality.report.DQ_AccuracyOfATimeMeasurement.evaluationProcedure.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+					<role>
+						<RoleCd value="008"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress addressType="">
+							<eMailAdd>dataQualityInfo.DQ_DataQuality.report.DQ_AccuracyOfATimeMeasurement.evaluationProcedure.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+			</evalProc>
+			<measResult>
+				<ConResult xmlns="">
+					<conSpec xmlns="">
+						<resTitle>dataQualityInfo.DQ_DataQuality.report.DQ_DomainConsistency.result.DQ_ConformanceResult.specification.CI_Citation.title</resTitle>
+						<date>
+							<createDate>2009-06-20T00:00:00</createDate>
+						</date>
+						<citRespParty xmlns="">
+							<rpOrgName>dataQualityInfo.DQ_DataQuality.report.DQ_DomainConsistency.result.DQ_ConformanceResult.specification.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+							<role>
+								<RoleCd value="003"/>
+							</role>
+							<rpCntInfo xmlns="">
+								<cntAddress addressType="">
+									<eMailAdd>dataQualityInfo.DQ_DataQuality.report.DQ_DomainConsistency.result.DQ_ConformanceResult.specification.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+								</cntAddress>
+							</rpCntInfo>
+						</citRespParty>
+					</conSpec>
+					<conExpl>dataQualityInfo.DQ_DataQuality.report.DQ_AccuracyOfATimeMeasurement.result.DQ_ConformanceResult.explanation</conExpl>
+					<conPass>True</conPass>
+				</ConResult>
+				<QuanResult xmlns="">
+					<quanValType>dataQualityInfo.DQ_DataQuality.report.DQ_AccuracyOfATimeMeasurement.result.DQ_QuantitativeResult.valueType</quanValType>
+					<quanValUnit>
+						<UOM gmlID="" type="">
+							<unitSymbol>s</unitSymbol>
+						</UOM>
+					</quanValUnit>
+					<errStat>dataQualityInfo.DQ_DataQuality.report.DQ_AccuracyOfATimeMeasurement.result.DQ_QuantitativeResult.errorStatistic</errStat>
+					<quanVal>dataQualityInfo.DQ_DataQuality.report.DQ_AccuracyOfATimeMeasurement.result.DQ_QuantitativeResult.value </quanVal>
+				</QuanResult>
+			</measResult>
+			<measDateTm>2011-10-12T00:00:00</measDateTm>
+			<measName>dataQualityInfo.DQ_DataQuality.report.DQ_AccuracyOfATimeMeasurement.nameOfMeasure</measName>
+		</report>
+	</dqInfo>
+	<spatRepInfo>
+		<Georect xmlns="">
+			<numDims>2</numDims>
+			<axisDimension type="001" xmlns="">
+				<dimSize>15000</dimSize>
+				<dimResol>
+					<value uom="m">5</value>
+				</dimResol>
+			</axisDimension>
+			<cellGeo>
+				<CellGeoCd value="003"/>
+			</cellGeo>
+			<tranParaAv>True</tranParaAv>
+			<chkPtAv>True</chkPtAv>
+			<chkPtDesc>spatialRepresentationInfo.MD_Georectified.checkPointDescription</chkPtDesc>
+			<cornerPts xmlns="">
+				<gmlDesc>spatialRepresentationInfo.MD_Georectified.cornerPoint.GM_Point.gml:description</gmlDesc>
+				<gmlDescRef>http://spatialRepresentationInfo.MD_Georectified.cornerPoint.GM_Point.gml:descriptionReference</gmlDescRef>
+				<gmlIdent codeSpace="spatialRepresentationInfo.MD_Georectified.cornerPoint.GM_Point.gml:identifier.codeSpace">spatialRepresentationInfo.MD_Georectified.cornerPoint.GM_Point.gml:identifier</gmlIdent>
+				<pos>0 0</pos>
+			</cornerPts>
+			<centerPt xmlns="">
+				<gmlDesc>spatialRepresentationInfo.MD_Georectified.centerPoint.GM_Point.gml:description</gmlDesc>
+				<gmlDescRef>http://spatialRepresentationInfo.MD_Georectified.centerPoint.GM_Point.gml:descriptionReference</gmlDescRef>
+				<gmlIdent codeSpace="spatialRepresentationInfo.MD_Georectified.centerPoint.GM_Point.gml:identifier.codeSpace">spatialRepresentationInfo.MD_Georectified.centerPoint.GM_Point.gml:identifier</gmlIdent>
+				<pos>8.0 8.0</pos>
+			</centerPt>
+			<ptInPixel>
+				<PixOrientCd value="005"/>
+			</ptInPixel>
+			<transDimDesc>spatialRepresentationInfo.MD_Georectified.transformationDimensionDescription</transDimDesc>
+			<transDimMap>spatialRepresentationInfo.MD_Georectified.transformationDimensionMapping</transDimMap>
+			<axisDimension type="002" xmlns="">
+				<dimSize>3500</dimSize>
+				<dimResol>
+					<value uom="m">10</value>
+				</dimResol>
+			</axisDimension>
+			<cornerPts xmlns="">
+				<gmlDesc>spatialRepresentationInfo.MD_Georectified.cornerPoint.GM_Point.gml:description</gmlDesc>
+				<gmlDescRef>spatialRepresentationInfo.MD_Georectified.cornerPoint.GM_Point.gml:descriptionReference</gmlDescRef>
+				<gmlIdent codeSpace="spatialRepresentationInfo.MD_Georectified.cornerPoint.GM_Point.gml:identifier.codeSpace">spatialRepresentationInfo.MD_Georectified.cornerPoint.GM_Point.gml:identifier</gmlIdent>
+				<pos>16.0 16.0</pos>
+			</cornerPts>
+			<axisDimension type="003" xmlns="">
+				<dimSize>15</dimSize>
+				<dimResol>
+					<value uom="[in_i]">10</value>
+				</dimResol>
+			</axisDimension>
+		</Georect>
+		<Georef xmlns="">
+			<numDims>1</numDims>
+			<axisDimension type="008" xmlns="">
+				<dimSize>180</dimSize>
+				<dimResol>
+					<value uom="min">1</value>
+				</dimResol>
+			</axisDimension>
+			<cellGeo>
+				<CellGeoCd value="001"/>
+			</cellGeo>
+			<tranParaAv>True</tranParaAv>
+			<ctrlPtAv>True</ctrlPtAv>
+			<orieParaAv>True</orieParaAv>
+			<orieParaDs>spatialRepresentationInfo.MD_Georeferenceable.orientationParameterDescription</orieParaDs>
+			<georefPars>spatialRepresentationInfo.MD_Georeferenceable.georeferencedParameters</georefPars>
+			<paraCit xmlns="">
+				<resTitle>spatialRepresentationInfo.MD_Georeferenceable.parameterCitation.CI_Citation.title</resTitle>
+				<date>
+					<reviseDate>2011-01-01T00:00:00</reviseDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>spatialRepresentationInfo.MD_Georeferenceable.parameterCitation.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+					<role>
+						<RoleCd value="006"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress addressType="">
+							<eMailAdd>spatialRepresentationInfo.MD_Georeferenceable.parameterCitation.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+			</paraCit>
+		</Georef>
+		<VectSpatRep xmlns="">
+			<geometObjs>
+				<geoObjTyp>
+					<GeoObjTypCd value="006"/>
+				</geoObjTyp>
+				<geoObjCnt>129</geoObjCnt>
+			</geometObjs>
+			<topLvl>
+				<TopoLevCd value="004"/>
+			</topLvl>
+		</VectSpatRep>
+	</spatRepInfo>
+	<mdLang>
+		<languageCode value="eng"/>
+		<countryCode value="CA"/>
+	</mdLang>
+	<mdDateSt>20111020</mdDateSt>
+	<mdFileID>fileIdentifier</mdFileID>
+	<mdParentID>parentIdentifier</mdParentID>
+	<dataSetURI>dataSetURI</dataSetURI>
+	<contInfo>
+		<FetCatDesc xmlns="">
+			<compCode>True</compCode>
+			<catLang>
+				<languageCode value="fre"/>
+				<countryCode value="CA"/>
+				<CharSetCd value="004"/>
+			</catLang>
+			<incWithDS>True</incWithDS>
+			<catCitation xmlns="">
+				<resTitle>contentInfo.MD_FeatureCatalogue.featureCatalogueCitation.CI_Citation.title</resTitle>
+				<date>
+					<createDate>2011-03-15T00:00:00</createDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>contentInfo.MD_FeatureCatalogue.featureCatalogueCitation.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+					<role>
+						<RoleCd value="014"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress addressType="">
+							<eMailAdd>contentInfo.MD_FeatureCatalogue.featureCatalogueCitation.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+			</catCitation>
+			<catFetTyps xmlns="">
+				<genericName codeSpace="contentInfo.MD_FeatureCatalogue.featureTypes.GenericName.gml:CodeType.codeSpace">contentInfo.MD_FeatureCatalogue.featureTypes.GenericName.gml:CodeType</genericName>
+			</catFetTyps>
+		</FetCatDesc>
+	</contInfo>
+	<contInfo>
+		<CovDesc xmlns="">
+			<attDesc>contentInfo.MD_CoverageDescription.attributeDescription</attDesc>
+			<contentTyp>
+				<ContentTypCd value="003"/>
+			</contentTyp>
+			<covDim>
+				<RangeDim xmlns="">
+					<seqID>
+						<aName>contentInfo.MD_CoverageDescription.dimension.MD_RangeDimension.sequenceIdentifier.MemeberName.aName</aName>
+						<attributeType>
+							<aName>contentInfo.MD_CoverageDescription.dimension.MD_RangeDimension.sequenceIdentifier.MemeberName.attributeType</aName>
+						</attributeType>
+					</seqID>
+					<dimDescrp>contentInfo.MD_CoverageDescription.dimension.MD_RangeDimension.descriptor</dimDescrp>
+				</RangeDim>
+			</covDim>
+		</CovDesc>
+	</contInfo>
+	<porCatInfo>
+		<portCatCit xmlns="">
+			<resTitle>portrayalCatalogueInfo.MD_PortrayalCatalogueReference.portrayalCatalogueCitation.CI_Citation.title</resTitle>
+			<date>
+				<createDate>2009-07-24T00:00:00</createDate>
+			</date>
+			<citRespParty xmlns="">
+				<rpOrgName>portrayalCatalogueInfo.MD_PortrayalCatalogueReference.portrayalCatalogueCitation.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+				<rpPosName>portrayalCatalogueInfo.MD_PortrayalCatalogueReference.portrayalCatalogueCitation.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.positionName</rpPosName>
+				<role>
+					<RoleCd value="003"/>
+				</role>
+				<rpCntInfo xmlns="">
+					<cntAddress addressType="">
+						<eMailAdd>portrayalCatalogueInfo.MD_PortrayalCatalogueReference.portrayalCatalogueCitation.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+					</cntAddress>
+				</rpCntInfo>
+			</citRespParty>
+		</portCatCit>
+	</porCatInfo>
+	<appSchInfo xmlns="">
+		<asName xmlns="">
+			<resTitle>applicationSchemaInfo.MD_ApplicationSchemaInformation.name.CI_Citation.title</resTitle>
+			<date>
+				<createDate>2011-04-08T00:00:00</createDate>
+			</date>
+			<citRespParty xmlns="">
+				<rpOrgName>applicationSchemaInfo.MD_ApplicationSchemaInformation.name.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+				<role>
+					<RoleCd value="003"/>
+				</role>
+				<rpCntInfo xmlns="">
+					<cntAddress addressType="">
+						<eMailAdd>applicationSchemaInfo.MD_ApplicationSchemaInformation.name.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+					</cntAddress>
+				</rpCntInfo>
+			</citRespParty>
+		</asName>
+		<asSchLang>applicationSchemaInfo.MD_ApplicationSchemaInformation.schemaLanguage</asSchLang>
+		<asCstLang>applicationSchemaInfo.MD_ApplicationSchemaInformation.constraintLanguage</asCstLang>
+		<asAscii>applicationSchemaInfo.MD_ApplicationSchemaInformation.schemaAscii</asAscii>
+		<asGraFile src="applicationSchemaInfo.MD_ApplicationSchemaInformation.graphicsFile.Binary.src">applicationSchemaInfo.MD_ApplicationSchemaInformation.graphicsFile.Binary</asGraFile>
+		<asSwDevFile src="applicationSchemaInfo.MD_ApplicationSchemaInformation.softwareDevelopmentFile.Binary.src">applicationSchemaInfo.MD_ApplicationSchemaInformation.softwareDevelopmentFile.Binary</asSwDevFile>
+		<asSwDevFiFt>applicationSchemaInfo.MD_ApplicationSchemaInformation.softwareDevelopmentFileFormat</asSwDevFiFt>
+	</appSchInfo>
+	<contInfo>
+		<ImgDesc xmlns="">
+			<attDesc>contentInfo.MD_ImageDescription.attributeDescription</attDesc>
+			<contentTyp>
+				<ContentTypCd value="001"/>
+			</contentTyp>
+			<illElevAng>78.5</illElevAng>
+			<illAziAng>135.5</illAziAng>
+			<imagCond>
+				<ImgCondCd value="010"/>
+			</imagCond>
+			<imagQuCode xmlns="">
+				<identCode>contentInfo.MD_ImageDescription.imageQualityCode.MD_Identifier.code</identCode>
+				<identAuth xmlns="">
+					<resTitle>contentInfo.MD_ImageDescription.imageQualityCode.MD_Identifier.authority.CI_Citation.title</resTitle>
+					<date>
+						<reviseDate>2008-09-18T00:00:00</reviseDate>
+					</date>
+					<citRespParty xmlns="">
+						<rpOrgName>contentInfo.MD_ImageDescription.imageQualityCode.MD_Identifier.authority.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+						<role>
+							<RoleCd value="013"/>
+						</role>
+						<rpCntInfo xmlns="">
+							<cntAddress addressType="">
+								<eMailAdd>contentInfo.MD_ImageDescription.imageQualityCode.MD_Identifier.authority.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+							</cntAddress>
+						</rpCntInfo>
+					</citRespParty>
+				</identAuth>
+			</imagQuCode>
+			<cloudCovPer>13.25</cloudCovPer>
+			<prcTypCde xmlns="">
+				<identCode>contentInfo.MD_ImageDescription.processingLevelCode.MD_Identifier.code</identCode>
+				<identAuth xmlns="">
+					<resTitle>contentInfo.MD_ImageDescription.processingLevelCode.MD_Identifier.authority.CI_Citation.title</resTitle>
+					<date>
+						<reviseDate>2008-09-18T00:00:00</reviseDate>
+					</date>
+					<citRespParty xmlns="">
+						<rpIndName>contentInfo.MD_ImageDescription.processingLevelCode.MD_Identifier.authority.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpIndName>
+						<role>
+							<RoleCd value="002"/>
+						</role>
+						<rpCntInfo xmlns="">
+							<cntAddress addressType="">
+								<eMailAdd>contentInfo.MD_ImageDescription.processingLevelCode.MD_Identifier.authority.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+							</cntAddress>
+						</rpCntInfo>
+					</citRespParty>
+				</identAuth>
+			</prcTypCde>
+			<cmpGenQuan>2</cmpGenQuan>
+			<trianInd>True</trianInd>
+			<radCalDatAv>True</radCalDatAv>
+			<camCalInAv>True</camCalInAv>
+			<filmDistInAv>True</filmDistInAv>
+			<lensDistInAv>True</lensDistInAv>
+			<covDim>
+				<Band xmlns="">
+					<seqID>
+						<aName>contentInfo.MD_ImageDescription.dimension.MD_Band.sequenceIdentifier.MemeberName.aName</aName>
+						<attributeType>
+							<aName>contentInfo.MD_ImageDescription.dimension.MD_Band.sequenceIdentifier.MemeberName.attributeType</aName>
+						</attributeType>
+					</seqID>
+					<dimDescrp>contentInfo.MD_ImageDescription.dimension.MD_Band.descriptor</dimDescrp>
+					<maxVal>254.9</maxVal>
+					<minVal>0.9</minVal>
+					<valUnit>
+						<UOM gmlID="" type="">
+							<unitSymbol>[mil_i]</unitSymbol>
+						</UOM>
+					</valUnit>
+					<pkResp>225.2</pkResp>
+					<bitsPerVal>8</bitsPerVal>
+					<toneGrad>4</toneGrad>
+					<sclFac>1.3</sclFac>
+					<offset>24.5</offset>
+				</Band>
+			</covDim>
+		</ImgDesc>
+	</contInfo>
+	<refSysInfo>
+		<RefSystem dimension="">
+			<refSysID xmlns="">
+				<identAuth xmlns="">
+					<resTitle>referenceSystemInfo.MD_ReferenceSystem.referenceSystemIdentifier.RS_Identifier.authority.CI_Citation.title</resTitle>
+					<date>
+						<pubDate>2011-07-01T00:00:00</pubDate>
+					</date>
+					<citRespParty xmlns="">
+						<rpOrgName>referenceSystemInfo.MD_ReferenceSystem.referenceSystemIdentifier.RS_Identifier.authority.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.organisationName</rpOrgName>
+						<role>
+							<RoleCd value="001"/>
+						</role>
+						<rpCntInfo xmlns="">
+							<cntAddress addressType="">
+								<eMailAdd>referenceSystemInfo.MD_ReferenceSystem.referenceSystemIdentifier.RS_Identifier.authority.CI_Citation.citedResponsibleParty.CI_ResponsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress</eMailAdd>
+							</cntAddress>
+						</rpCntInfo>
+					</citRespParty>
+				</identAuth>
+				<identCode code="referenceSystemInfo.MD_ReferenceSystem.referenceSystemIdentifier.RS_Identifier.code"/>
+				<idCodeSpace>referenceSystemInfo.MD_ReferenceSystem.referenceSystemIdentifier.RS_Identifier.codeSpace</idCodeSpace>
+				<idVersion>referenceSystemInfo.MD_ReferenceSystem.referenceSystemIdentifier.RS_Identifier.version</idVersion>
+			</refSysID>
+		</RefSystem>
+	</refSysInfo>
+	<spatRepInfo>
+		<GridSpatRep xmlns="">
+			<numDims>1</numDims>
+			<axisDimension type="005" xmlns="">
+				<dimSize>14000</dimSize>
+				<dimResol>
+					<value uom="m">0.1</value>
+				</dimResol>
+			</axisDimension>
+			<cellGeo>
+				<CellGeoCd value="002"/>
+			</cellGeo>
+			<tranParaAv>True</tranParaAv>
+		</GridSpatRep>
+	</spatRepInfo>
+	<dataSetFn>
+		<OnFunctCd value="010"/>
+	</dataSetFn>
+</metadata>

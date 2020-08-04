@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadataConfig ArcGISProfile="ItemDescription" ValidatePages="True">
+  <validationNamespaceURI></validationNamespaceURI>
+  <validationSchemaURL></validationSchemaURL>
+  <tranformXslt>ArcGIS_2ISO19139gml321.xslt</tranformXslt>
+  <viewerXslt>Metadata\Stylesheets\ArcGISPro.xsl</viewerXslt>
+  <editor hideSidebar="True">
+    <forms>
+      <section class="ArcGIS.Desktop.Metadata.Editor.Sections.Overview">
+        <page class="ArcGIS.Desktop.Metadata.Editor.Pages.ItemInfo">
+          <validation>
+
+            <!-- title -->
+            <exists xpath="/metadata/dataIdInfo/idCitation/resTitle[. != '']" ref="resTitle"/>
+
+            <!-- summary / purpose -->
+            <for xpath="/metadata[not(tool)]">
+              <exists xpath="dataIdInfo/idPurp[. != '']" ref="idPurp"/>
+            </for>
+
+            <!-- search keywords -->
+            <for xpath="/metadata/dataIdInfo/searchKeys">
+              <exists xpath="bag[. != '']" ref="searchKeys"/>
+            </for>
+
+          </validation>
+        </page>
+      </section>
+    </forms>
+  </editor>
+</metadataConfig>

@@ -96,7 +96,7 @@ limitations under the License.​
         <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_LANG}"/>
         <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="1" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.MD_ApplicationSchemaInformation_schemaLanguage}"
-            v:Nav.AnchorName="asSchLang,asSchLang"
+            v:Nav.AnchorName="schemaLanguage,asSchLang"
             Text="{e:MetadataBinding XPath=asSchLang}"
             Name="MD_ApplicationSchemaInformation_schemaLanguage"/>
 
@@ -104,7 +104,7 @@ limitations under the License.​
         <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0" Content="{x:Static r:Resources.LBL_APP_SCHEMA_CONSTRAINT_LANG}"/>
         <TextBox Style="{DynamicResource EditorTextBoxStyle}" Grid.Row="2" Grid.Column="1"
             ToolTip="{x:Static r:Definitions.MD_ApplicationSchemaInformation_constraintLanguage}"
-            v:Nav.AnchorName="asCstLang,asCstLang"
+            v:Nav.AnchorName="constraintLanguage,asCstLang"
             Text="{e:MetadataBinding XPath=asCstLang}"
             Name="MD_ApplicationSchemaInformation_constraintLanguage"/>
 

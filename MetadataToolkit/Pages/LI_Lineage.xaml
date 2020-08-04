@@ -79,6 +79,7 @@ limitations under the License.​
 
     <v:MetadataIssueInfo x:Key="dataLineage" Message="{x:Static r:Issues.dataLineage_REQ}" />
     <v:MetadataIssueInfo x:Key="dataLineage_FGDC" Message="{x:Static r:Issues.dataLineage_FGDC_REQ}" />
+    <v:MetadataIssueInfo x:Key="lineageContentReqd" Message="{x:Static r:Issues.lineageContentReqd_191153_REQ}" />
 
     <v:MetadataIssueInfo x:Key="dqInfo" Message="{x:Static r:Issues.dqInfo_REQ}" />
     <v:MetadataIssueInfo x:Key="dataSource" Message="{x:Static r:Issues.dataSource_REQ}" />
@@ -122,7 +123,7 @@ limitations under the License.​
                 v:Nav.AnchorName="dataLineage" />
 
             <!-- statement -->
-            <Border Style="{DynamicResource EditorBorder2Style}">
+            <Border Style="{DynamicResource EditorBorder2Style}" v:Nav.AnchorName="lineageContentReqd,.">
               <StackPanel>
                 <Label Style="{DynamicResource EditorVLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_LI_STATEMENT}"/>
                 <controls:Resizer>
@@ -223,6 +224,9 @@ limitations under the License.​
         </DataTemplate>
       </ListBox.ItemTemplate>
     </ListBox>
+    
+    <!-- validate after all anchors are loaded -->
+    <v:PageValidateControl/>
   </Grid>
 
 </p:EditorPage>

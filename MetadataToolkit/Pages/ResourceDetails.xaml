@@ -353,8 +353,8 @@ limitations under the License.​
                             <tp:MTK_LanguageCode Grid.Row="0" Grid.Column="1" ToolTip="{x:Static r:Definitions.MD_DataIdentification_language}"/>
 
                             <!-- country code -->
-                            <Label tu:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_META_NAP_COUNTRY}"/>
-                            <tp:MTK_CountryCode tu:MetadataStyle.OnlyProfiles="NAP" Grid.Row="1" Grid.Column="1"  />
+                            <Label tu:MetadataStyle.OnlyProfiles="NAP,ISO19115_3" Grid.Row="1" Grid.Column="0" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_META_NAP_COUNTRY}"/>
+                            <tp:MTK_CountryCode tu:MetadataStyle.OnlyProfiles="NAP,ISO19115_3" Grid.Row="1" Grid.Column="1"  />
                           </Grid>
                         </StackPanel>
                       </DataTemplate>

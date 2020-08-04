@@ -1,0 +1,316 @@
+<metadata xml:lang="en">
+	<Esri>
+		<CreaDate>20111017</CreaDate>
+		<CreaTime>14550200</CreaTime>
+		<ArcGISFormat>1.0</ArcGISFormat>
+		<ArcGISstyle>INSPIRE Metadata Directive</ArcGISstyle>
+		<SyncOnce>FALSE</SyncOnce>
+		<DataProperties>
+			<itemProps>
+				<itemName Sync="TRUE">INSPIREcontent</itemName>
+				<imsContentType Sync="FALSE" export="False">003</imsContentType>
+				<nativeExtBox>
+					<westBL Sync="TRUE">209394.355626</westBL>
+					<eastBL Sync="TRUE">363953.161903</eastBL>
+					<southBL Sync="TRUE">-473625.442789</southBL>
+					<northBL Sync="TRUE">-423892.114464</northBL>
+					<exTypeCode Sync="TRUE">1</exTypeCode>
+				</nativeExtBox>
+				<itemSize Sync="TRUE">0.001</itemSize>
+				<itemLocation>
+					<linkage Sync="FALSE">withheld</linkage>
+					<protocol Sync="TRUE">Local Area Network</protocol>
+				</itemLocation>
+			</itemProps>
+			<coordRef>
+				<type Sync="TRUE">Projected</type>
+				<geogcsn Sync="TRUE">GCS_North_American_1983</geogcsn>
+				<csUnits Sync="TRUE">Linear Unit: Meter (1.000000)</csUnits>
+				<projcsn Sync="TRUE">NAD_1983_California_Teale_Albers</projcsn>
+				<peXml Sync="TRUE">&lt;ProjectedCoordinateSystem xsi:type='typens:ProjectedCoordinateSystem' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/10.1'&gt;&lt;WKT&gt;PROJCS[&amp;quot;NAD_1983_California_Teale_Albers&amp;quot;,GEOGCS[&amp;quot;GCS_North_American_1983&amp;quot;,DATUM[&amp;quot;D_North_American_1983&amp;quot;,SPHEROID[&amp;quot;GRS_1980&amp;quot;,6378137.0,298.257222101]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Albers&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,0.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,-4000000.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,-120.0],PARAMETER[&amp;quot;Standard_Parallel_1&amp;quot;,34.0],PARAMETER[&amp;quot;Standard_Parallel_2&amp;quot;,40.5],PARAMETER[&amp;quot;Latitude_Of_Origin&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,3310]]&lt;/WKT&gt;&lt;XOrigin&gt;-16909700&lt;/XOrigin&gt;&lt;YOrigin&gt;-8597000&lt;/YOrigin&gt;&lt;XYScale&gt;266332319.7555542&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;3310&lt;/WKID&gt;&lt;LatestWKID&gt;3310&lt;/LatestWKID&gt;&lt;/ProjectedCoordinateSystem&gt;</peXml>
+			</coordRef>
+		</DataProperties>
+		<SyncDate>20121019</SyncDate>
+		<SyncTime>11292700</SyncTime>
+		<ModDate>20121019</ModDate>
+		<ModTime>11292700</ModTime>
+		<ArcGISProfile>INSPIRE</ArcGISProfile>
+		<scaleRange>
+			<minScale>150000000</minScale>
+			<maxScale>5000</maxScale>
+		</scaleRange>
+	</Esri>
+	<dataIdInfo>
+		<envirDesc Sync="TRUE">Microsoft Windows 7 Version 6.1 (Build 7601) Service Pack 1; Esri ArcGIS 10.1.1.3143</envirDesc>
+		<dataLang>
+			<languageCode value="eng" Sync="FALSE"/>
+			<countryCode value="USA" Sync="TRUE"/>
+		</dataLang>
+		<idCitation xmlns="">
+			<resTitle Sync="FALSE">2.2.1 Resource title</resTitle>
+			<presForm xmlns="">
+				<PresFormCd value="005" Sync="TRUE"/>
+			</presForm>
+			<date>
+				<createDate>2011-10-17T14:56:00</createDate>
+				<pubDate>2011-11-01T00:00:00</pubDate>
+				<reviseDate>2012-10-17T18:02:00</reviseDate>
+			</date>
+			<citId xmlns="">
+				<identCode>E349C468-50EC-4B08-BE4F-7372175A195A (2.2.5 Unique resource identifier)</identCode>
+			</citId>
+			<otherCitDet>Published Date: 2.6.2 Date of publication
+Revised Date: 2.6.2 Date of last revision
+Creation Date: 2.6.4 Date of creation</otherCitDet>
+		</idCitation>
+		<spatRpType>
+			<SpatRepTypCd value="001" Sync="TRUE"/>
+		</spatRpType>
+		<dataExt xmlns="">
+			<geoEle xmlns="">
+				<GeoBndBox esriExtentType="search">
+					<exTypeCode Sync="TRUE">1</exTypeCode>
+					<westBL Sync="TRUE">-117.740965</westBL>
+					<eastBL Sync="TRUE">-116.052702</eastBL>
+					<northBL Sync="TRUE">34.178178</northBL>
+					<southBL Sync="TRUE">33.684469</southBL>
+				</GeoBndBox>
+			</geoEle>
+			<exDesc>2.5.1 Geographic bounding box</exDesc>
+		</dataExt>
+		<dataChar>
+			<CharSetCd value="004"/>
+		</dataChar>
+		<resConst>
+			<LegConsts xmlns="">
+				<accessConsts>
+					<RestrictCd value="008"/>
+				</accessConsts>
+				<othConsts>2.9.1 Limitations on public access
+
+OR Access Constraints: 2.9.1 Limitations on public access</othConsts>
+			</LegConsts>
+			<Consts xmlns="">
+				<useLimit>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;2.9.2 Conditions applying to access and use&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</useLimit>
+			</Consts>
+		</resConst>
+		<idPoC xmlns="">
+			<rpOrgName>2.10.1 Responsible party</rpOrgName>
+			<rpCntInfo xmlns="">
+				<cntAddress addressType="">
+					<eMailAdd>contactInfo &gt; address &gt; electronicMailAddress: info@jrc.it</eMailAdd>
+				</cntAddress>
+			</rpCntInfo>
+			<role>
+				<RoleCd value="002"/>
+			</role>
+			<rpPosName>Role: 2.10.2 Responsible party role</rpPosName>
+		</idPoC>
+		<themeKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>GEMET - INSPIRE Spatial Data Themes (2.4.2 Originating controlled vocabulary)</resTitle>
+				<date>
+					<pubDate>2008-12-05T00:00:00</pubDate>
+				</date>
+				<otherCitDet>http://www.eionet.europa.eu/gemet/inspire_themes?langcode=en</otherCitDet>
+			</thesaName>
+			<keyword>Administrative units (2.4.1 Keyword value)</keyword>
+		</themeKeys>
+		<idAbs>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;2.2.2 Resource abstract&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs>
+		<dataExt xmlns="">
+			<tempEle>
+				<TempExtent>
+					<exTemp>
+						<TM_Period xmlns="">
+							<tmBegin>2011-10-03T00:00:00</tmBegin>
+							<tmEnd>2012-06-01T00:00:00</tmEnd>
+						</TM_Period>
+					</exTemp>
+				</TempExtent>
+			</tempEle>
+			<exDesc>2.6.1 Temporal extent</exDesc>
+		</dataExt>
+		<dataScale xmlns="">
+			<equScale>
+				<rfDenom>50000</rfDenom>
+			</equScale>
+			<scaleDist>
+				<value uom="m">0.0001</value>
+			</scaleDist>
+		</dataScale>
+		<aggrInfo>
+			<aggrDSName>
+				<resTitle>INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119</resTitle>
+				<date>
+					<createDate>2007-10-26T00:00:00</createDate>
+					<reviseDate>2010-06-16T00:00:00</reviseDate>
+				</date>
+				<resEd>V. 1.2</resEd>
+				<citId>
+					<identCode>MD_IR_and_ISO_v1_2_20100616</identCode>
+				</citId>
+				<citRespParty>
+					<rpOrgName>European Commission Joint Research Centre</rpOrgName>
+					<role>
+						<RoleCd value="010"/>
+					</role>
+				</citRespParty>
+			</aggrDSName>
+			<assocType>
+				<AscTypeCd value="001"/>
+			</assocType>
+		</aggrInfo>
+		<suppInfo>Language: 2.2.7 Resource language
+Scale Resolution OR Distance Resolution: 2.7.2 Spatial resolution</suppInfo>
+		<resConst>
+			<SecConsts xmlns="">
+				<class>
+					<ClasscationCd value="001"/>
+				</class>
+				<classSys>Classification: 2.9.1 Limitations on public access</classSys>
+			</SecConsts>
+		</resConst>
+		<tpCat>
+			<TopicCatCd value="008"/>
+		</tpCat>
+	</dataIdInfo>
+	<mdLang>
+		<languageCode value="eng" Sync="FALSE"/>
+		<countryCode value="USA" Sync="TRUE"/>
+	</mdLang>
+	<mdChar>
+		<CharSetCd value="004" Sync="TRUE"/>
+	</mdChar>
+	<distInfo xmlns="">
+		<distFormat xmlns="">
+			<formatName Sync="TRUE">Shapefile</formatName>
+		</distFormat>
+		<distTranOps xmlns="">
+			<transSize Sync="TRUE">0.001</transSize>
+			<onLineSrc xmlns="">
+				<linkage>http://www.jrc.it (2.2.4 Resource locator)</linkage>
+			</onLineSrc>
+		</distTranOps>
+	</distInfo>
+	<mdHrLv>
+		<ScopeCd value="005" Sync="TRUE"/>
+	</mdHrLv>
+	<mdHrLvName Sync="FALSE">Hierarchy Level: 2.2.3 Resource Type; Date Stamp: 2.11.2 Metadata date; Language: 2.11.3 Metadata language</mdHrLvName>
+	<refSysInfo>
+		<RefSystem>
+			<refSysID>
+				<identCode code="3310" Sync="TRUE" value="3310"/>
+				<idCodeSpace Sync="TRUE">EPSG</idCodeSpace>
+				<idVersion Sync="TRUE">7.11.2</idVersion>
+			</refSysID>
+		</RefSystem>
+	</refSysInfo>
+	<spatRepInfo>
+		<VectSpatRep><geometObjs Name="INSPIREcontent"><geoObjTyp><GeoObjTypCd value="004" Sync="TRUE"></GeoObjTypCd></geoObjTyp><geoObjCnt Sync="TRUE">37</geoObjCnt></geometObjs><topLvl><TopoLevCd value="001" Sync="TRUE"></TopoLevCd></topLvl></VectSpatRep></spatRepInfo>
+	<spdoinfo>
+		<ptvctinf><esriterm Name="INSPIREcontent"><efeatyp Sync="TRUE">Simple</efeatyp><efeageom code="1" Sync="TRUE"></efeageom><esritopo Sync="TRUE">FALSE</esritopo><efeacnt Sync="TRUE">37</efeacnt><spindex Sync="TRUE">TRUE</spindex><linrefer Sync="TRUE">FALSE</linrefer></esriterm></ptvctinf></spdoinfo>
+	<eainfo>
+		<detailed Name="INSPIREcontent">
+			<enttyp>
+				<enttypl Sync="TRUE">INSPIREcontent</enttypl>
+				<enttypt Sync="TRUE">Feature Class</enttypt>
+				<enttypc Sync="TRUE">37</enttypc>
+			</enttyp>
+			<attr>
+				<attrlabl Sync="TRUE">FID</attrlabl>
+				<attalias Sync="TRUE">FID</attalias>
+				<attrtype Sync="TRUE">OID</attrtype>
+				<attwidth Sync="TRUE">4</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+				<attrdef Sync="TRUE">Internal feature number.</attrdef>
+				<attrdefs Sync="TRUE">ESRI</attrdefs>
+				<attrdomv>
+					<udom Sync="TRUE">Sequential unique whole numbers that are automatically generated.</udom>
+				</attrdomv>
+			</attr>
+			<attr>
+				<attrlabl Sync="TRUE">Shape</attrlabl>
+				<attalias Sync="TRUE">Shape</attalias>
+				<attrtype Sync="TRUE">Geometry</attrtype>
+				<attwidth Sync="TRUE">0</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+				<attrdef Sync="TRUE">Feature geometry.</attrdef>
+				<attrdefs Sync="TRUE">ESRI</attrdefs>
+				<attrdomv>
+					<udom Sync="TRUE">Coordinates defining the features.</udom>
+				</attrdomv>
+			</attr>
+			<attr>
+				<attrlabl Sync="TRUE">Id</attrlabl>
+				<attalias Sync="TRUE">Id</attalias>
+				<attrtype Sync="TRUE">Integer</attrtype>
+				<attwidth Sync="TRUE">6</attwidth>
+				<atprecis Sync="TRUE">6</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+			</attr>
+			<attr>
+				<attrlabl Sync="TRUE">Code</attrlabl>
+				<attalias Sync="TRUE">Code</attalias>
+				<attrtype Sync="TRUE">SmallInteger</attrtype>
+				<attwidth Sync="TRUE">4</attwidth>
+				<atprecis Sync="TRUE">4</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+			</attr>
+			<attr>
+				<attrlabl Sync="TRUE">Type</attrlabl>
+				<attalias Sync="TRUE">Type</attalias>
+				<attrtype Sync="TRUE">String</attrtype>
+				<attwidth Sync="TRUE">1</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+			</attr>
+		</detailed>
+	</eainfo>
+	<mdDateSt Sync="TRUE">20121019</mdDateSt>
+	<dqInfo xmlns="">
+		<dqScope>
+			<scpLvl>
+				<ScopeCd value="005"/>
+			</scpLvl>
+		</dqScope>
+		<dataLineage>
+			<statement>2.7.1 Lineage</statement>
+		</dataLineage>
+		<report type="DQDomConsis" dimension="" xmlns="">
+			<measResult>
+				<ConResult xmlns="">
+					<conSpec xmlns="">
+						<resTitle>INSPIRE Data Specification on Administrative Units – Guidelines (2.8.2 Specification)</resTitle>
+						<date>
+							<pubDate>2010-03-05T00:00:00</pubDate>
+						</date>
+						<resEd>3.0.1</resEd>
+						<otherCitDet>http://inspire.jrc.ec.europa.eu/index.cfm/pageid/2</otherCitDet>
+						<citRespParty xmlns="">
+							<rpOrgName>INSPIRE Thematic Working Group Administrative Units</rpOrgName>
+							<role>
+								<RoleCd value="010"/>
+							</role>
+						</citRespParty>
+					</conSpec>
+					<conExpl>See the referenced specification</conExpl>
+					<conPass>False</conPass>
+				</ConResult>
+			</measResult>
+			<measDesc>Conformance Result Pass AND Explanation: 2.8.1 Degree</measDesc>
+		</report>
+	</dqInfo>
+	<mdContact xmlns="">
+		<rpOrgName>2.11.1 Metadata point of contact</rpOrgName>
+		<rpCntInfo xmlns="">
+			<cntAddress addressType="">
+				<eMailAdd>contactInfo &gt; address &gt; electronicMailAddress: info@jrc.it</eMailAdd>
+			</cntAddress>
+		</rpCntInfo>
+		<role>
+			<RoleCd value="007"/>
+		</role>
+	</mdContact>
+</metadata>

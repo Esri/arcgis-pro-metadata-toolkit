@@ -41,6 +41,7 @@ limitations under the License.​
     <v:MetadataIssueInfo x:Key="scpLvlDesc" Message="{x:Static r:Issues.scpLvlDesc_REQ}" />
     <v:MetadataIssueInfo x:Key="datasetReq" Message="{x:Static r:Issues.dq_dataset_REQ}" />
     <v:MetadataIssueInfo x:Key="reportReq" Message="{x:Static r:Issues.dq_report_REQ}" />
+    <v:MetadataIssueInfo x:Key="DQReportRequired" Message="{x:Static r:Issues.dq_ReportRequired_191153_REQ}" />
 
     <v:MetadataIssueInfo x:Key="conPass" Message="{x:Static r:Issues.conPass_REQ}" />
     <v:MetadataIssueInfo x:Key="conExpl" Message="{x:Static r:Issues.conExpl_REQ}" />
@@ -94,7 +95,7 @@ limitations under the License.​
     <StackPanel>
       <!-- page title -->
       <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_DATAQUAL}"/>
-      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata/dqInfo}">
+      <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata/dqInfo}" v:Nav.AnchorName="DQReportRequired,/metadata/dqInfo">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel/>

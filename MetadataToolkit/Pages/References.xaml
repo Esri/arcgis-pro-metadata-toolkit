@@ -93,6 +93,9 @@ limitations under the License.​
     <v:MetadataIssueInfo x:Key="protocol" Message="{x:Static r:Issues.protocol_REQ}" />
     <v:MetadataIssueInfo x:Key="rpCntInfo_NAP_REQ" Message="{x:Static r:Issues.rpCntInfo_NAP_REQ}" />
     <v:MetadataIssueInfo x:Key="aggrInfo" Message="{x:Static r:Issues.aggrInfo_REQ}" />
+    <v:MetadataIssueInfo x:Key="aggrCitation" Message="{x:Static r:Issues.aggrCitation_191153_REQ}" />
+    <v:MetadataIssueInfo x:Key="schemaLanguage" Message="{x:Static r:Issues.schemaLanguage_191153_REQ}" />
+    <v:MetadataIssueInfo x:Key="constraintLanguage" Message="{x:Static r:Issues.constraintLanguage_191153_REQ}" />
 
     <v:MetadataIssueInfo x:Key="resTitle" Message="{x:Static r:Issues.resTitle_REQ}" />
     <v:MetadataIssueInfo x:Key="dates" Message="{x:Static r:Issues.dates_REQ}" />

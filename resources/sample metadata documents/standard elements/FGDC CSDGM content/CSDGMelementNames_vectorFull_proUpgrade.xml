@@ -1,0 +1,909 @@
+<?xml version="1.0"?>
+<metadata>
+	<idinfo>
+		<citation>
+			<citeinfo>
+				<origin>Originator1</origin>
+				<origin>Originator2</origin>
+				<pubdate>20030516</pubdate>
+				<pubtime>123018</pubtime>
+				<title>Title</title>
+				<edition>Edition</edition>
+				<geoform>vector digital data</geoform>
+				<serinfo>
+					<sername>Series Name</sername>
+					<issue>Issue Identification</issue>
+				</serinfo>
+				<pubinfo>
+					<pubplace>Publication Place</pubplace>
+					<publish>Publisher</publish>
+				</pubinfo>
+				<othercit>Other Citation Details</othercit>
+				<onlink>http://Citation.Online_Linkage.com</onlink>
+				<lworkcit>
+					<citeinfo>
+						<origin>Citation Larger Work Citation Originator</origin>
+						<pubdate>1998</pubdate>
+						<title>Citation Larger Work Citation Title</title>
+						<geoform>multimedia presentation</geoform>
+						<onlink>http://Citation_Larger_Work.Online_Linkage.com</onlink>
+					</citeinfo>
+				</lworkcit>
+			</citeinfo>
+		</citation>
+		<descript>
+			<abstract>Abstract</abstract>
+			<purpose>Purpose</purpose>
+			<supplinf>Supplemental Information</supplinf>
+		</descript>
+		<timeperd>
+			<timeinfo>
+				<rngdates>
+					<begdate>19990216</begdate>
+					<begtime>080000</begtime>
+					<enddate>19991121</enddate>
+					<endtime>200000</endtime>
+				</rngdates>
+			</timeinfo>
+			<current>Currentness Reference</current>
+		</timeperd>
+		<status>
+			<progress>Complete</progress>
+			<update>None planned</update>
+		</status>
+		<spdom>
+			<bounding>
+				<westbc>-138</westbc>
+				<eastbc>-112</eastbc>
+				<northbc>41</northbc>
+				<southbc>36</southbc>
+			</bounding>
+			<dsgpoly>
+				<dsgpolyo>
+					<grngpoin>
+						<gringlat>1.0</gringlat>
+						<gringlon>1.0</gringlon>
+					</grngpoin>
+					<grngpoin>
+						<gringlat>5.0</gringlat>
+						<gringlon>1.0</gringlon>
+					</grngpoin>
+					<grngpoin>
+						<gringlat>5.0</gringlat>
+						<gringlon>5.0</gringlon>
+					</grngpoin>
+					<grngpoin>
+						<gringlat>1.0</gringlat>
+						<gringlon>5.0</gringlon>
+					</grngpoin>
+					<grngpoin>
+						<gringlat>1.0</gringlat>
+						<gringlon>1.0</gringlon>
+					</grngpoin>
+				</dsgpolyo>
+				<dsgpolyx>
+					<gring>2.0,2.0 4.0,2.0 4.0,4.0 2.0,4.0 2.0,2.0</gring>
+				</dsgpolyx>
+			</dsgpoly>
+		</spdom>
+		<keywords>
+			<theme>
+				<themekt>Theme Keyword Thesaurus</themekt>
+				<themekey>Theme Keyword1</themekey>
+				<themekey>Theme Keyword2</themekey>
+			</theme>
+			<place>
+				<placekt>Place Keyword Thesaurus</placekt>
+				<placekey>Place Keyword1</placekey>
+				<placekey>Place Keyword2</placekey>
+			</place>
+			<stratum>
+				<stratkt>Stratum Keyword Thesaurus</stratkt>
+				<stratkey>Stratum Keyword1</stratkey>
+				<stratkey>Stratum Keyword2</stratkey>
+			</stratum>
+			<temporal>
+				<tempkt>Temporal Keyword Thesaurus</tempkt>
+				<tempkey>Temporal Keyword1</tempkey>
+				<tempkey>Temporal Keyword2</tempkey>
+			</temporal>
+		</keywords>
+		<accconst>Access Constraints</accconst>
+		<useconst>Use Constraints</useconst>
+		<ptcontac>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Point of Contact Organization</cntorg>
+					<cntper>Point of Contact Person</cntper>
+				</cntorgp>
+				<cntpos>Point of Contact Position</cntpos>
+				<cntaddr>
+					<addrtype>physical</addrtype>
+					<address>Point of Contact Address</address>
+					<city>Point of Contact City</city>
+					<state>Point of Contact State or Province</state>
+					<postal>Point of Contact Postal Code</postal>
+					<country>Point of Contact Country</country>
+				</cntaddr>
+				<cntvoice>Point of Contact Voice Telephone</cntvoice>
+				<cnttdd>Point of Contact TDD/TTY Telephone</cnttdd>
+				<cntfax>Point of Contact Facsimile Telephone</cntfax>
+				<cntemail>Point_Of_Contact@Electronic_Mail.Address</cntemail>
+				<hours>Point of Contact Hours of Service</hours>
+				<cntinst>Point of Contact Instructions</cntinst>
+			</cntinfo>
+		</ptcontac>
+		<browse>
+			<browsen>Browse Graphic File Name</browsen>
+			<browsed>Browse Graphic File Description</browsed>
+			<browset>Browse Graphic File Type</browset>
+		</browse>
+		<datacred>Data Set Credit</datacred>
+		<secinfo>
+			<secsys>Security Classification System</secsys>
+			<secclass>Confidential</secclass>
+			<sechandl>Security Handling Description</sechandl>
+		</secinfo>
+		<native>Native Data Set Environment</native>
+		<crossref>
+			<citeinfo>
+				<origin>Cross Reference Originator</origin>
+				<pubdate>2002</pubdate>
+				<title>Cross Reference Title</title>
+				<onlink>http://Cross_Reference.Online_Linkage.com</onlink>
+			</citeinfo>
+		</crossref>
+	</idinfo>
+	<dataqual>
+		<attracc>
+			<attraccr>Attribute Accuracy Report</attraccr>
+			<qattracc>
+				<attraccv>Attribute Accuracy Value</attraccv>
+				<attracce>Attribute Accuracy Explanation</attracce>
+			</qattracc>
+		</attracc>
+		<logic>Logical Consistency Report</logic>
+		<complete>Completeness Report</complete>
+		<posacc>
+			<horizpa>
+				<horizpar>Horizontal Positional Accuracy Report</horizpar>
+				<qhorizpa>
+					<horizpav>1.75</horizpav>
+					<horizpae>Horizontal Positional Accuracy Explanation</horizpae>
+				</qhorizpa>
+			</horizpa>
+			<vertacc>
+				<vertaccr>Vertical Positional Accuracy Report</vertaccr>
+				<qvertpa>
+					<vertaccv>2.12</vertaccv>
+					<vertacce>Vertical Positional Accuracy Explanation</vertacce>
+				</qvertpa>
+			</vertacc>
+		</posacc>
+		<lineage>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<origin>Source Citation Originator</origin>
+						<pubdate>20001121</pubdate>
+						<title>Source Citation Title</title>
+						<geoform>map</geoform>
+					</citeinfo>
+				</srccite>
+				<srcscale>1250000</srcscale>
+				<typesrc>paper</typesrc>
+				<srctime>
+					<timeinfo>
+						<mdattim>
+							<sngdate>
+								<caldate>19990223</caldate>
+								<time>040000</time>
+							</sngdate>
+							<sngdate>
+								<caldate>19990615</caldate>
+								<time>142000</time>
+							</sngdate>
+							<sngdate>
+								<caldate>19991008</caldate>
+								<time>185030</time>
+							</sngdate>
+						</mdattim>
+					</timeinfo>
+					<srccurr>Source Currentness Reference</srccurr>
+				</srctime>
+				<srccitea>Source Citation Abbreviation</srccitea>
+				<srccontr>Source Contribution</srccontr>
+			</srcinfo>
+			<procstep>
+				<procdesc>Process Description</procdesc>
+				<srcused>Source Used Citation Abbreviation</srcused>
+				<procdate>20010918</procdate>
+				<proctime>190000</proctime>
+				<srcprod>Source Produced Citation Abbreviation</srcprod>
+				<proccont>
+					<cntinfo>
+						<cntperp>
+							<cntper>Process Contact Person</cntper>
+						</cntperp>
+						<cntaddr>
+							<addrtype>mailing</addrtype>
+							<address>Process Contact Address</address>
+							<city>Process Contact City</city>
+							<state>Process Contact State or Province</state>
+							<postal>Process Contact Postal Code</postal>
+							<country>Process Contact Country</country>
+						</cntaddr>
+						<cntvoice>Process Contact Voice Telephone</cntvoice>
+					</cntinfo>
+				</proccont>
+			</procstep>
+		</lineage>
+	</dataqual>
+	<spdoinfo>
+		<indspref>Indirect Spatial Reference</indspref>
+		<direct>Vector</direct>
+		<ptvctinf>
+			<sdtsterm>
+				<sdtstype>Entity point</sdtstype>
+				<ptvctcnt>18</ptvctcnt>
+			</sdtsterm>
+		</ptvctinf>
+	</spdoinfo>
+	<spref>
+		<horizsys>
+			<planar>
+				<mapproj>
+					<mapprojn>Transverse Mercator</mapprojn>
+					<transmer>
+						<sfctrmer>0.9996</sfctrmer>
+						<longcm>-111.0</longcm>
+						<latprjo>0.0</latprjo>
+						<feast>500000.0</feast>
+						<fnorth>0.0</fnorth>
+					</transmer>
+				</mapproj>
+				<planci>
+					<plance>coordinate pair</plance>
+					<coordrep>
+						<absres>0.000001</absres>
+						<ordres>0.000001</ordres>
+					</coordrep>
+					<plandu>Meter</plandu>
+				</planci>
+			</planar>
+			<geodetic>
+				<horizdn>North American Datum of 1927</horizdn>
+				<ellips>Clarke 1866</ellips>
+				<semiaxis>6378206.400000</semiaxis>
+				<denflat>294.978698</denflat>
+			</geodetic>
+		</horizsys>
+		<vertdef>
+			<altsys>
+				<altdatum>North American Vertical Datum of 1988</altdatum>
+				<altres>0.001</altres>
+				<altunits>meters</altunits>
+				<altenc>Attribute values</altenc>
+			</altsys>
+		</vertdef>
+	</spref>
+	<eainfo>
+		<detailed>
+			<enttyp>
+				<enttypl>Entity Type Label</enttypl>
+				<enttypd>Entity Type Definition</enttypd>
+				<enttypds>Entity Type Definition Source</enttypds>
+			</enttyp>
+			<attr>
+				<attrlabl>Attribute Label</attrlabl>
+				<attrdef>Attribute Definition</attrdef>
+				<attrdefs>Attribute Definition Source</attrdefs>
+				<attrdomv>
+					<udom>Unrepresentable Domain</udom>
+				</attrdomv>
+			</attr>
+			<attr>
+				<attrlabl>Id</attrlabl>
+				<attrdef>Id Attribute Definition</attrdef>
+				<attrdefs>Id Attribute Definition Source</attrdefs>
+				<attrdomv>
+					<rdom>
+						<rdommin>1</rdommin>
+						<rdommax>10</rdommax>
+						<attrunit>Id Attribute Units of Measure</attrunit>
+						<attrmres>1</attrmres>
+						<attr>
+							<attrlabl>Attribute Label</attrlabl>
+							<attrdef>Attribute Definition</attrdef>
+							<attrdefs>Attribute Definition Source</attrdefs>
+							<attrdomv>
+								<udom>Unrepresentable Domain</udom>
+							</attrdomv>
+						</attr>
+					</rdom>
+				</attrdomv>
+				<begdatea>20000601</begdatea>
+				<enddatea>20000630</enddatea>
+				<attrvai>
+					<attrva>0.01</attrva>
+					<attrvae>Id Attribute Value Accuracy Explanation</attrvae>
+				</attrvai>
+				<attrmfrq>Irregular</attrmfrq>
+			</attr>
+			<attr>
+				<attrlabl>Code</attrlabl>
+				<attrdef>Code Attribute Definition</attrdef>
+				<attrdefs>Code Attribute Definition Source</attrdefs>
+				<attrdomv>
+					<codesetd>
+						<codesetn>Code Codeset Name</codesetn>
+						<codesets>Code Codeset Source</codesets>
+					</codesetd>
+				</attrdomv>
+			</attr>
+			<attr>
+				<attrlabl>Type</attrlabl>
+				<attrdef>Type Attribute Definition</attrdef>
+				<attrdefs>Type Attribute Definition Source</attrdefs>
+				<attrdomv>
+					<edom>
+						<edomv>Type Enumerated Domain Value</edomv>
+						<edomvd>Type Enumerated Domain Value Definition</edomvd>
+						<edomvds>Type Enumerated Domain Value Definition Source</edomvds>
+						<attr>
+							<attrlabl>Attribute Label</attrlabl>
+							<attrdef>Attribute Definition</attrdef>
+							<attrdefs>Attribute Definition Source</attrdefs>
+							<attrdomv>
+								<udom>Unrepresentable Domain</udom>
+							</attrdomv>
+						</attr>
+					</edom>
+				</attrdomv>
+			</attr>
+		</detailed>
+		<overview>
+			<eaover>Entity and Attribute Overview</eaover>
+			<eadetcit>Entity and Attribute Detail Citation</eadetcit>
+		</overview>
+	</eainfo>
+	<distinfo>
+		<distrib>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Distributor1 Organization</cntorg>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>mailing</addrtype>
+					<address>Distributor1 Address</address>
+					<city>Distributor1 City</city>
+					<state>Distributor1 State or Province</state>
+					<postal>Distributor1 Postal Code</postal>
+					<country>Distributor1 Country</country>
+				</cntaddr>
+				<cntvoice>Distributor1 Voice Telephone</cntvoice>
+			</cntinfo>
+		</distrib>
+		<resdesc>Offline Data</resdesc>
+		<distliab>Distributor1 Distribution Liability</distliab>
+		<stdorder>
+			<nondig>Distributor1 Non-Digital Form</nondig>
+			<fees>Distributor1 Non-Digital Fees</fees>
+			<ordering>Distributor1 Non-Digital Ordering Instructions</ordering>
+			<turnarnd>Distributor1 Non-Digital Turnaround</turnarnd>
+		</stdorder>
+		<stdorder>
+			<digform>
+				<digtinfo>
+					<formname>Distributor1 Format Name</formname>
+					<formvern>Distributor1 Format Version Number</formvern>
+					<formspec>Distributor1 Format Specification</formspec>
+					<formcont>Distributor1 Format Information Content</formcont>
+					<filedec>Distributor1 File Decompression Technique</filedec>
+					<transize>3.200</transize>
+				</digtinfo>
+				<digtopt>
+					<onlinopt>
+						<computer>
+							<networka>
+								<networkr>http://Distributor1_Digital_Transfer_Option_Format_Name.Network_Resource_Name.com</networkr>
+							</networka>
+						</computer>
+						<accinstr>Distributor1 Access Instructions</accinstr>
+						<oncomp>Distributor1 Online Computer and Operating System</oncomp>
+					</onlinopt>
+					<offoptn>
+						<offmedia>CD-ROM</offmedia>
+						<reccap>
+							<recden>1.0</recden>
+							<recdenu>Distributor1 Recording Density Units</recdenu>
+						</reccap>
+						<recfmt>ISO 9660</recfmt>
+						<compat>Distributor1 Compatibility Information</compat>
+					</offoptn>
+				</digtopt>
+			</digform>
+			<fees>Distributor1 Digital Fees</fees>
+			<ordering>Distributor1 Digital Ordering Instructions</ordering>
+			<turnarnd>Distributor1 Digital Turnaround</turnarnd>
+		</stdorder>
+		<techpreq>Distributor1 Technical Prerequisites</techpreq>
+		<availabl>
+			<timeinfo>
+				<sngdate>
+					<caldate>20031218</caldate>
+					<time>180000</time>
+				</sngdate>
+			</timeinfo>
+		</availabl>
+	</distinfo>
+	<distinfo>
+		<distrib>
+			<cntinfo>
+				<cntperp>
+					<cntper>Distributor2 Person</cntper>
+					<cntorg>Distributor2 Organization</cntorg>
+				</cntperp>
+				<cntaddr>
+					<addrtype>mailing and physical</addrtype>
+					<address>Distributor2 Address</address>
+					<city>Distributor2 City</city>
+					<state>Distributor2 State or Province</state>
+					<postal>Distributor2 Postal Code</postal>
+					<country>Distributor2 Country</country>
+				</cntaddr>
+				<cntvoice>Distributor2 Voice Telephone</cntvoice>
+			</cntinfo>
+		</distrib>
+		<resdesc>Distributor2 Resource Description</resdesc>
+		<distliab>Distributor2 Distribution Liability</distliab>
+		<stdorder>
+			<digform>
+				<digtinfo>
+					<formname>Distributor2 Format Name</formname>
+					<formverd>2003</formverd>
+				</digtinfo>
+				<digtopt>
+					<onlinopt>
+						<computer>
+							<dialinst>
+								<lowbps>110</lowbps>
+								<highbps>220</highbps>
+								<numdata>8</numdata>
+								<numstop>1</numstop>
+								<parity>Odd</parity>
+								<compress>V.32</compress>
+								<dialtel>Distributor2 Dialup Telephone</dialtel>
+								<dialfile>Distributor2 Dialup File Name</dialfile>
+							</dialinst>
+						</computer>
+					</onlinopt>
+					<offoptn>
+						<offmedia>USB</offmedia>
+						<recfmt>ISO 9660</recfmt>
+						<compat>Distributor2 Compatibility Information</compat>
+					</offoptn>
+				</digtopt>
+			</digform>
+			<fees>Distributor2 Fees</fees>
+			<ordering>Distributor2 Ordering Instructions</ordering>
+			<turnarnd>Distributor2 Turnaround</turnarnd>
+		</stdorder>
+		<availabl>
+			<timeinfo>
+				<rngdates>
+					<begdate>200301</begdate>
+					<begtime>unknown</begtime>
+					<enddate>200506</enddate>
+					<endtime>unknown</endtime>
+				</rngdates>
+			</timeinfo>
+		</availabl>
+	</distinfo>
+	<metainfo>
+		<metd>20030331</metd>
+		<metrd>20030601</metrd>
+		<metfrd>20050301</metfrd>
+		<metc>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Metadata Contact Organization</cntorg>
+					<cntper>Metadata Contact Person</cntper>
+				</cntorgp>
+				<cntpos>Metadata Contact Position</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical</addrtype>
+					<address>Metadata Contact Address</address>
+					<city>Metadata Contact City</city>
+					<state>Metadata Contact State or Province</state>
+					<postal>Metadata Contact Postal Code</postal>
+					<country>Metadata Contact Country</country>
+				</cntaddr>
+				<cntvoice>Metadata Contact Voice Telephone</cntvoice>
+				<cnttdd>Metadata Contact TDD/TTY Telephone</cnttdd>
+				<cntfax>Metadata Contact Facsimile Telephone</cntfax>
+				<cntemail>Metadata_Contact@Electronic_Mail.Address</cntemail>
+				<hours>Metadata Contact Hours of Service</hours>
+				<cntinst>Metadata Contact Instructions</cntinst>
+			</cntinfo>
+		</metc>
+		<metstdn>Metadata Standard Name</metstdn>
+		<metstdv>Metadata Standard Version</metstdv>
+		<mettc>local time</mettc>
+		<metac>Metadata Access Constraints</metac>
+		<metuc>Metadata Use Constraints</metuc>
+		<metsi>
+			<metscs>Metadata Security Classification System</metscs>
+			<metsc>Unclassified</metsc>
+			<metshd>Metadata Security Handling Description</metshd>
+		</metsi>
+		<metextns>
+			<onlink>http://Metadata_Extensions.Online_Linkage.com</onlink>
+			<metprof>Profile Name</metprof>
+		</metextns>
+	</metainfo>
+	<mdChar>
+		<CharSetCd value="004"/>
+	</mdChar>
+	<mdHrLv>
+		<ScopeCd value="005"/>
+	</mdHrLv>
+	<mdContact>
+		<rpIndName>Metadata Contact Person</rpIndName>
+		<rpOrgName>Metadata Contact Organization</rpOrgName>
+		<rpPosName>Metadata Contact Position</rpPosName>
+		<rpCntInfo>
+			<cntPhone>
+				<voiceNum>Metadata Contact Voice Telephone</voiceNum>
+				<voiceNum tddtty="True">Metadata Contact TDD/TTY Telephone</voiceNum>
+				<faxNum>Metadata Contact Facsimile Telephone</faxNum>
+			</cntPhone>
+			<cntAddress addressType="both">
+				<delPoint>Metadata Contact Address</delPoint>
+				<city>Metadata Contact City</city>
+				<adminArea>Metadata Contact State or Province</adminArea>
+				<postCode>Metadata Contact Postal Code</postCode>
+				<country>Metadata Contact Country</country>
+				<eMailAdd>Metadata_Contact@Electronic_Mail.Address</eMailAdd>
+			</cntAddress>
+			<cntHours>Metadata Contact Hours of Service</cntHours>
+			<cntInstr>Metadata Contact Instructions</cntInstr>
+		</rpCntInfo>
+		<role>
+			<RoleCd value="007"/>
+		</role>
+	</mdContact>
+	<mdDateSt>20030331</mdDateSt>
+	<mdStanName>ArcGIS Metadata</mdStanName>
+	<mdStanVer>1.0</mdStanVer>
+	<distInfo>
+		<distributor>
+			<distorCont>
+				<rpOrgName>Distributor1 Organization</rpOrgName>
+				<rpCntInfo>
+					<cntPhone>
+						<voiceNum>Distributor1 Voice Telephone</voiceNum>
+					</cntPhone>
+					<cntAddress addressType="postal">
+						<delPoint>Distributor1 Address</delPoint>
+						<city>Distributor1 City</city>
+						<adminArea>Distributor1 State or Province</adminArea>
+						<postCode>Distributor1 Postal Code</postCode>
+						<country>Distributor1 Country</country>
+					</cntAddress>
+				</rpCntInfo>
+				<role>
+					<RoleCd value="005"/>
+				</role>
+			</distorCont>
+			<distorOrdPrc>
+				<resFees>Distributor1 Non-Digital Fees</resFees>
+				<planAvDtTm>2003-12-18T18:00:00</planAvDtTm>
+				<ordInstr>Distributor1 Non-Digital Ordering Instructions</ordInstr>
+				<ordTurn>Distributor1 Non-Digital Turnaround</ordTurn>
+			</distorOrdPrc>
+			<distorTran>
+				<offLineMed>
+					<medName>
+						<MedNameCd value="018"/>
+					</medName>
+					<medNote>Distributor1 Non-Digital Form</medNote>
+				</offLineMed>
+			</distorTran>
+		</distributor>
+		<distributor>
+			<distorCont>
+				<rpOrgName>Distributor1 Organization</rpOrgName>
+				<rpCntInfo>
+					<cntPhone>
+						<voiceNum>Distributor1 Voice Telephone</voiceNum>
+					</cntPhone>
+					<cntAddress addressType="postal">
+						<delPoint>Distributor1 Address</delPoint>
+						<city>Distributor1 City</city>
+						<adminArea>Distributor1 State or Province</adminArea>
+						<postCode>Distributor1 Postal Code</postCode>
+						<country>Distributor1 Country</country>
+					</cntAddress>
+				</rpCntInfo>
+				<role>
+					<RoleCd value="005"/>
+				</role>
+			</distorCont>
+			<distorOrdPrc>
+				<resFees>Distributor1 Digital Fees</resFees>
+				<planAvDtTm>2003-12-18T18:00:00</planAvDtTm>
+				<ordInstr>Distributor1 Digital Ordering Instructions</ordInstr>
+				<ordTurn>Distributor1 Digital Turnaround</ordTurn>
+			</distorOrdPrc>
+			<distorFormat>
+				<formatName>Distributor1 Format Name</formatName>
+				<formatVer>Distributor1 Format Version Number</formatVer>
+				<formatSpec>Distributor1 Format Specification</formatSpec>
+				<fileDecmTech>Distributor1 File Decompression Technique</fileDecmTech>
+				<formatInfo>Distributor1 Format Information Content</formatInfo>
+				<formatTech>Distributor1 Technical Prerequisites</formatTech>
+			</distorFormat>
+			<distorTran>
+				<transSize>3.200</transSize>
+				<offLineMed>
+					<medName>
+						<MedNameCd value="001"/>
+					</medName>
+					<medDensity>1.0</medDensity>
+					<medDenUnits>Distributor1 Recording Density Units</medDenUnits>
+					<medFormat>
+						<MedFormCd value="004"/>
+					</medFormat>
+					<medNote>Distributor1 Compatibility Information</medNote>
+				</offLineMed>
+			</distorTran>
+			<distorTran>
+				<transSize>3.200</transSize>
+				<onLineSrc>
+					<linkage>http://Distributor1_Digital_Transfer_Option_Format_Name.Network_Resource_Name.com</linkage>
+					<orDesc>Distributor1 Access Instructions</orDesc>
+				</onLineSrc>
+			</distorTran>
+		</distributor>
+		<distributor>
+			<distorCont>
+				<rpIndName>Distributor2 Person</rpIndName>
+				<rpOrgName>Distributor2 Organization</rpOrgName>
+				<rpCntInfo>
+					<cntPhone>
+						<voiceNum>Distributor2 Voice Telephone</voiceNum>
+					</cntPhone>
+					<cntAddress addressType="both">
+						<delPoint>Distributor2 Address</delPoint>
+						<city>Distributor2 City</city>
+						<adminArea>Distributor2 State or Province</adminArea>
+						<postCode>Distributor2 Postal Code</postCode>
+						<country>Distributor2 Country</country>
+					</cntAddress>
+				</rpCntInfo>
+				<role>
+					<RoleCd value="005"/>
+				</role>
+			</distorCont>
+			<distorOrdPrc>
+				<resFees>Distributor2 Fees</resFees>
+				<planAvTmPd>
+					<tmBegin time="unknown">2003-01</tmBegin>
+					<tmEnd time="unknown">2005-06</tmEnd>
+				</planAvTmPd>
+				<ordInstr>Distributor2 Ordering Instructions</ordInstr>
+				<ordTurn>Distributor2 Turnaround</ordTurn>
+			</distorOrdPrc>
+			<distorFormat>
+				<formatName>Distributor2 Format Name</formatName>
+				<formatVer>2003</formatVer>
+			</distorFormat>
+			<distorTran>
+				<offLineMed>
+					<medName>
+						<MedNameCd value="032"/>
+					</medName>
+					<medFormat>
+						<MedFormCd value="004"/>
+					</medFormat>
+					<medNote>Distributor2 Compatibility Information</medNote>
+				</offLineMed>
+			</distorTran>
+		</distributor>
+		<distTranOps>
+			<onLineSrc>
+				<linkage>http://Citation.Online_Linkage.com</linkage>
+			</onLineSrc>
+		</distTranOps>
+	</distInfo>
+	<dataIdInfo><idCitation><resTitle>Title</resTitle><date><pubDate>2003-05-16T12:30:18</pubDate></date><resEd>Edition</resEd><citRespParty><rpOrgName>Originator1<!-- WARNING: translation from FGDC is ambiguous, this may require correction --></rpOrgName><role><RoleCd value="006"/></role></citRespParty><citRespParty><rpOrgName>Originator2<!-- WARNING: translation from FGDC is ambiguous, this may require correction --></rpOrgName><role><RoleCd value="006"/></role></citRespParty><citRespParty><rpOrgName>Publisher<!-- WARNING: translation from FGDC is ambiguous, this may require correction --></rpOrgName><rpCntInfo><cntAddress><delPoint>Publication Place<!-- WARNING: translation from FGDC is ambiguous, this may require correction --></delPoint></cntAddress></rpCntInfo><role><RoleCd value="010"/></role></citRespParty><presForm><PresFormCd value="005"/></presForm><presForm><fgdcGeoform>vector digital data</fgdcGeoform></presForm><datasetSeries><seriesName>Series Name</seriesName><issId>Issue Identification</issId></datasetSeries><otherCitDet>Other Citation Details</otherCitDet><collTitle>Citation Larger Work Citation Title</collTitle></idCitation><idAbs>Abstract</idAbs><idPurp>Purpose</idPurp><idCredit>Data Set Credit</idCredit><idStatus><ProgCd value="001"/></idStatus><idPoC><rpIndName>Point of Contact Person</rpIndName><rpOrgName>Point of Contact Organization</rpOrgName><rpPosName>Point of Contact Position</rpPosName><rpCntInfo><cntPhone><voiceNum>Point of Contact Voice Telephone</voiceNum><voiceNum tddtty="True">Point of Contact TDD/TTY Telephone</voiceNum><faxNum>Point of Contact Facsimile Telephone</faxNum></cntPhone><cntAddress addressType="physical"><delPoint>Point of Contact Address</delPoint><city>Point of Contact City</city><adminArea>Point of Contact State or Province</adminArea><postCode>Point of Contact Postal Code</postCode><country>Point of Contact Country</country><eMailAdd>Point_Of_Contact@Electronic_Mail.Address</eMailAdd></cntAddress><cntHours>Point of Contact Hours of Service</cntHours><cntInstr>Point of Contact Instructions</cntInstr></rpCntInfo><role><RoleCd value="007"/></role></idPoC><resMaint><maintFreq><MaintFreqCd value="011"/></maintFreq></resMaint><graphOver><bgFileName>Browse Graphic File Name</bgFileName><bgFileDesc>Browse Graphic File Description</bgFileDesc><bgFileType>Browse Graphic File Type</bgFileType></graphOver><placeKeys><keyword>Place Keyword1</keyword><keyword>Place Keyword2</keyword><thesaName><resTitle>Place Keyword Thesaurus</resTitle></thesaName></placeKeys><stratKeys><keyword>Stratum Keyword1</keyword><keyword>Stratum Keyword2</keyword><thesaName><resTitle>Stratum Keyword Thesaurus</resTitle></thesaName></stratKeys><tempKeys><keyword>Temporal Keyword1</keyword><keyword>Temporal Keyword2</keyword><thesaName><resTitle>Temporal Keyword Thesaurus</resTitle></thesaName></tempKeys><themeKeys><keyword>Theme Keyword1</keyword><keyword>Theme Keyword2</keyword><thesaName><resTitle>Theme Keyword Thesaurus</resTitle></thesaName></themeKeys><searchKeys><keyword>Theme Keyword1</keyword><keyword>Theme Keyword2</keyword><keyword>Place Keyword1</keyword><keyword>Place Keyword2</keyword><keyword>Stratum Keyword1</keyword><keyword>Stratum Keyword2</keyword><keyword>Temporal Keyword1</keyword><keyword>Temporal Keyword2</keyword></searchKeys><resConst><Consts><useLimit>Use Constraints</useLimit></Consts></resConst><resConst><LegConsts><useLimit>Distributor1 Distribution Liability</useLimit><useLimit>Distributor2 Distribution Liability</useLimit><accessConsts><RestrictCd value="008"/></accessConsts><othConsts>Access Constraints</othConsts></LegConsts></resConst><resConst><SecConsts><class><ClasscationCd value="003"/></class><classSys>Security Classification System</classSys><handDesc>Security Handling Description</handDesc></SecConsts></resConst><aggrInfo><aggrDSName><resTitle>Citation Larger Work Citation Title</resTitle><date><pubDate>1998</pubDate></date><citRespParty><rpOrgName>Citation Larger Work Citation Originator<!-- WARNING: translation from FGDC is ambiguous, this may require correction --></rpOrgName><role><RoleCd value="006"/></role></citRespParty><presForm><PresFormCd value="017"/></presForm><presForm><fgdcGeoform>multimedia presentation</fgdcGeoform></presForm><citOnlineRes><linkage>http://Citation_Larger_Work.Online_Linkage.com</linkage></citOnlineRes></aggrDSName><assocType><AscTypeCd value="002"/></assocType></aggrInfo><aggrInfo><aggrDSName><resTitle>Cross Reference Title</resTitle><date><pubDate>2002</pubDate></date><citRespParty><rpOrgName>Cross Reference Originator<!-- WARNING: translation from FGDC is ambiguous, this may require correction --></rpOrgName><role><RoleCd value="006"/></role></citRespParty><citOnlineRes><linkage>http://Cross_Reference.Online_Linkage.com</linkage></citOnlineRes></aggrDSName><assocType><AscTypeCd value="001"/></assocType></aggrInfo><spatRpType><SpatRepTypCd value="001"/></spatRpType><envirDesc>Native Data Set Environment</envirDesc><dataExt><geoEle><GeoBndBox><exTypeCode>true</exTypeCode><westBL>-138</westBL><eastBL>-112</eastBL><northBL>41</northBL><southBL>36</southBL></GeoBndBox></geoEle><geoEle><BoundPoly><exTypeCode>true</exTypeCode><polygon><exterior><pos>1.0 1.0</pos><pos>1.0 5.0</pos><pos>5.0 5.0</pos><pos>5.0 1.0</pos><pos>1.0 1.0</pos></exterior><interior><posList>2.0 2.0 4.0 2.0 4.0 4.0 2.0 4.0 2.0 2.0</posList></interior></polygon></BoundPoly></geoEle></dataExt><dataExt><exDesc>Currentness Reference</exDesc><tempEle><TempExtent><exTemp><TM_Period><tmBegin>1999-02-16T08:00:00</tmBegin><tmEnd>1999-11-21T20:00:00</tmEnd></TM_Period></exTemp></TempExtent></tempEle></dataExt><suppInfo>Supplemental Information</suppInfo></dataIdInfo>
+	<mdMaint>
+		<maintFreq>
+			<MaintFreqCd value="012"/>
+		</maintFreq>
+		<dateNext>2005-03-01</dateNext>
+		<maintNote>Last metadata review date: 2003-06-01</maintNote>
+	</mdMaint>
+	<mdConst>
+		<Consts><useLimit>Metadata Use Constraints</useLimit>
+		</Consts>
+	</mdConst>
+	<mdConst>
+		<LegConsts>
+			<accessConsts>
+				<RestrictCd value="008"/>
+			</accessConsts>
+			<othConsts>Metadata Access Constraints</othConsts>
+		</LegConsts>
+	</mdConst>
+	<mdConst>
+		<SecConsts>
+			<class>
+				<ClasscationCd value="001"/>
+			</class>
+			<classSys>Metadata Security Classification System</classSys>
+			<handDesc>Metadata Security Handling Description</handDesc>
+		</SecConsts>
+	</mdConst>
+	<dqInfo>
+		<dqScope>
+			<scpLvl>
+				<ScopeCd value="005"/>
+			</scpLvl>
+		</dqScope>
+		<report type="DQQuanAttAcc">
+			<measDesc>Attribute Accuracy Report</measDesc>
+			<evalMethDesc>Attribute Accuracy Explanation</evalMethDesc>
+			<measResult>
+				<QuanResult>
+					<quanVal>Attribute Accuracy Value</quanVal>
+				</QuanResult>
+			</measResult>
+		</report>
+		<report type="DQConcConsis">
+			<measDesc>Logical Consistency Report</measDesc>
+		</report>
+		<report type="DQCompOm">
+			<measDesc>Completeness Report</measDesc>
+		</report>
+		<report type="DQAbsExtPosAcc" dimension="horizontal">
+			<measDesc>Horizontal Positional Accuracy Report</measDesc>
+			<evalMethDesc>Horizontal Positional Accuracy Explanation</evalMethDesc>
+			<measResult>
+				<QuanResult>
+					<quanVal>1.75</quanVal>
+				</QuanResult>
+			</measResult>
+		</report>
+		<report type="DQAbsExtPosAcc" dimension="vertical">
+			<measDesc>Vertical Positional Accuracy Report</measDesc>
+			<evalMethDesc>Vertical Positional Accuracy Explanation</evalMethDesc>
+			<measResult>
+				<QuanResult>
+					<quanVal>2.12</quanVal>
+				</QuanResult>
+			</measResult>
+		</report>
+		<dataLineage>
+			<prcStep>
+				<stepDesc>Process Description</stepDesc>
+				<stepDateTm>2001-09-18T19:00:00</stepDateTm>
+				<stepProc>
+					<rpIndName>Process Contact Person</rpIndName>
+					<rpCntInfo>
+						<cntPhone>
+							<voiceNum>Process Contact Voice Telephone</voiceNum>
+						</cntPhone>
+						<cntAddress addressType="postal">
+							<delPoint>Process Contact Address</delPoint>
+							<city>Process Contact City</city>
+							<adminArea>Process Contact State or Province</adminArea>
+							<postCode>Process Contact Postal Code</postCode>
+							<country>Process Contact Country</country>
+						</cntAddress>
+					</rpCntInfo>
+					<role>
+						<RoleCd value="009"/>
+					</role>
+				</stepProc>
+				<stepSrc type="used">
+					<srcCitatn>
+						<resAltTitle>Source Used Citation Abbreviation</resAltTitle>
+					</srcCitatn>
+				</stepSrc>
+				<stepSrc type="produced">
+					<srcCitatn>
+						<resAltTitle>Source Produced Citation Abbreviation</resAltTitle>
+					</srcCitatn>
+				</stepSrc>
+			</prcStep>
+			<dataSource>
+				<srcDesc>Source Contribution</srcDesc>
+				<srcMedName>
+					<MedNameCd value="027"/>
+				</srcMedName>
+				<srcScale>
+					<rfDenom>1250000</rfDenom>
+				</srcScale>
+				<srcCitatn>
+					<resTitle>Source Citation Title</resTitle>
+					<resAltTitle>Source Citation Abbreviation</resAltTitle>
+					<date>
+						<pubDate>2000-11-21</pubDate>
+					</date>
+					<citRespParty>
+						<rpOrgName>Source Citation Originator<!-- WARNING: translation from FGDC is ambiguous, this may require correction --></rpOrgName>
+						<role>
+							<RoleCd value="006"/>
+						</role>
+					</citRespParty>
+					<presForm>
+						<PresFormCd value="006"/>
+					</presForm>
+					<presForm>
+						<fgdcGeoform>map</fgdcGeoform>
+					</presForm>
+				</srcCitatn>
+				<srcExt>
+					<exDesc>Source Currentness Reference</exDesc>
+					<tempEle>
+						<TempExtent>
+							<exTemp>
+								<TM_Instant>
+									<tmPosition>1999-02-23T04:00:00</tmPosition>
+								</TM_Instant>
+							</exTemp>
+						</TempExtent>
+					</tempEle>
+					<tempEle>
+						<TempExtent>
+							<exTemp>
+								<TM_Instant>
+									<tmPosition>1999-06-15T14:20:00</tmPosition>
+								</TM_Instant>
+							</exTemp>
+						</TempExtent>
+					</tempEle>
+					<tempEle>
+						<TempExtent>
+							<exTemp>
+								<TM_Instant>
+									<tmPosition>1999-10-08T18:50:30</tmPosition>
+								</TM_Instant>
+							</exTemp>
+						</TempExtent>
+					</tempEle>
+				</srcExt>
+			</dataSource>
+		</dataLineage>
+	</dqInfo>
+	<spatRepInfo>
+		<VectSpatRep>
+			<geometObjs>
+				<geoObjTyp>
+					<GeoObjTypCd value="004"/>
+				</geoObjTyp>
+				<geoObjCnt>18</geoObjCnt>
+			</geometObjs>
+		</VectSpatRep>
+	</spatRepInfo>
+	<spatRepInfo>
+		<Indref>Indirect Spatial Reference</Indref>
+	</spatRepInfo>
+	<mdExtInfo>
+		<extOnRes>
+			<linkage>http://Metadata_Extensions.Online_Linkage.com</linkage>
+			<orName>Profile Name</orName>
+		</extOnRes>
+	</mdExtInfo>
+	<Esri>
+		<ArcGISFormat>1.0</ArcGISFormat>
+		<DataProperties>
+			<itemProps>
+				<imsContentType>003</imsContentType>
+			</itemProps>
+		</DataProperties>
+	</Esri>
+	<Binary></Binary>
+</metadata>

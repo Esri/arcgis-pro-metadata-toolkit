@@ -1,0 +1,2954 @@
+<?xml version="1.0"?>
+<MD_Metadata xmlns="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<fileIdentifier>
+		<gco:CharacterString>Metadata &gt; Details &gt; File Identifier</gco:CharacterString>
+	</fileIdentifier>
+	<language>
+		<LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="eng" codeSpace="ISO639-2">eng</LanguageCode>
+	</language>
+	<characterSet>
+		<MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8" codeSpace="ISOTC211/19115">utf8</MD_CharacterSetCode>
+	</characterSet>
+	<parentIdentifier>
+		<gco:CharacterString>Metadata &gt; Details &gt; Parent Identifier</gco:CharacterString>
+	</parentIdentifier>
+	<hierarchyLevel>
+		<MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset" codeSpace="ISOTC211/19115">dataset</MD_ScopeCode>
+	</hierarchyLevel>
+	<hierarchyLevelName>
+		<gco:CharacterString>Metadata &gt; Details &gt; Hierarchy Level Name</gco:CharacterString>
+	</hierarchyLevelName>
+	<contact>
+		<CI_ResponsibleParty>
+			<individualName>
+				<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Name</gco:CharacterString>
+			</individualName>
+			<organisationName>
+				<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Organization</gco:CharacterString>
+			</organisationName>
+			<positionName>
+				<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Position</gco:CharacterString>
+			</positionName>
+			<contactInfo>
+				<CI_Contact>
+					<phone>
+						<CI_Telephone>
+							<voice>
+								<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Phone</gco:CharacterString>
+							</voice>
+							<voice>
+								<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Phone + TDD/TTY</gco:CharacterString>
+							</voice>
+							<facsimile>
+								<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Fax</gco:CharacterString>
+							</facsimile>
+						</CI_Telephone>
+					</phone>
+					<address>
+						<CI_Address>
+							<deliveryPoint>
+								<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Address</gco:CharacterString>
+							</deliveryPoint>
+							<city>
+								<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; City</gco:CharacterString>
+							</city>
+							<administrativeArea>
+								<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; State</gco:CharacterString>
+							</administrativeArea>
+							<postalCode>
+								<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Postal Code</gco:CharacterString>
+							</postalCode>
+							<country>
+								<gco:CharacterString>US</gco:CharacterString>
+							</country>
+							<electronicMailAddress>
+								<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+							</electronicMailAddress>
+						</CI_Address>
+					</address>
+					<onlineResource>
+						<CI_OnlineResource>
+							<linkage>
+								<URL>http://Metadata_Contacts_Contact_Contact_Information_Online_Resource_Linkage</URL>
+							</linkage>
+							<protocol>
+								<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Online Resource &gt; Protocol</gco:CharacterString>
+							</protocol>
+							<applicationProfile>
+								<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Online Resource &gt; Profile</gco:CharacterString>
+							</applicationProfile>
+							<name>
+								<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Online Resource &gt; Name</gco:CharacterString>
+							</name>
+							<description>
+								<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Online Resource &gt; Description</gco:CharacterString>
+							</description>
+							<function>
+								<CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information" codeSpace="ISOTC211/19115">information</CI_OnLineFunctionCode>
+							</function>
+						</CI_OnlineResource>
+					</onlineResource>
+					<hoursOfService>
+						<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Hours</gco:CharacterString>
+					</hoursOfService>
+					<contactInstructions>
+						<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Instructions</gco:CharacterString>
+					</contactInstructions>
+				</CI_Contact>
+			</contactInfo>
+			<role>
+				<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact" codeSpace="ISOTC211/19115">pointOfContact</CI_RoleCode>
+			</role>
+		</CI_ResponsibleParty>
+	</contact>
+	<dateStamp>
+		<gco:Date>2011-10-17</gco:Date>
+	</dateStamp>
+	<metadataStandardName>
+		<gco:CharacterString>ISO 19139 Geographic Information - Metadata - Implementation Specification</gco:CharacterString>
+	</metadataStandardName>
+	<metadataStandardVersion>
+		<gco:CharacterString>2007</gco:CharacterString>
+	</metadataStandardVersion>
+	<dataSetURI>
+		<gco:CharacterString>Metadata &gt; Details &gt; Dataset URI (NAP Function Code=Web Map Service)</gco:CharacterString>
+	</dataSetURI>
+	<locale>
+		<PT_Locale>
+			<languageCode>
+				<LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="fre" codeSpace="ISO639-2">fre</LanguageCode>
+			</languageCode>
+			<country>
+				<Country gco:nilReason="unknown"/>
+			</country>
+			<characterEncoding>
+				<MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8" codeSpace="ISOTC211/19115">utf8</MD_CharacterSetCode>
+			</characterEncoding>
+		</PT_Locale>
+	</locale>
+	<spatialRepresentationInfo>
+		<MD_VectorSpatialRepresentation>
+			<topologyLevel>
+				<MD_TopologyLevelCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_TopologyLevelCode" codeListValue="fullSurfaceGraph" codeSpace="ISOTC211/19115">fullSurfaceGraph</MD_TopologyLevelCode>
+			</topologyLevel>
+			<geometricObjects>
+				<MD_GeometricObjects>
+					<geometricObjectType>
+						<MD_GeometricObjectTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_GeometricObjectTypeCode" codeListValue="complex" codeSpace="ISOTC211/19115">complex</MD_GeometricObjectTypeCode>
+					</geometricObjectType>
+					<geometricObjectCount>
+						<gco:Integer>27249</gco:Integer>
+					</geometricObjectCount>
+				</MD_GeometricObjects>
+			</geometricObjects>
+		</MD_VectorSpatialRepresentation>
+	</spatialRepresentationInfo>
+	<spatialRepresentationInfo>
+		<MD_GridSpatialRepresentation>
+			<numberOfDimensions>
+				<gco:Integer>1</gco:Integer>
+			</numberOfDimensions>
+			<axisDimensionProperties>
+				<MD_Dimension>
+					<dimensionName>
+						<MD_DimensionNameTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_DimensionNameTypeCode" codeListValue="track" codeSpace="ISOTC211/19115">track</MD_DimensionNameTypeCode>
+					</dimensionName>
+					<dimensionSize>
+						<gco:Integer>35</gco:Integer>
+					</dimensionSize>
+					<resolution>
+						<gco:Measure uom="[ft_i]">1.0</gco:Measure>
+					</resolution>
+				</MD_Dimension>
+			</axisDimensionProperties>
+			<cellGeometry>
+				<MD_CellGeometryCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CellGeometryCode" codeListValue="point" codeSpace="ISOTC211/19115">point</MD_CellGeometryCode>
+			</cellGeometry>
+			<transformationParameterAvailability>
+				<gco:Boolean>true</gco:Boolean>
+			</transformationParameterAvailability>
+		</MD_GridSpatialRepresentation>
+	</spatialRepresentationInfo>
+	<spatialRepresentationInfo>
+		<MD_Georectified>
+			<numberOfDimensions>
+				<gco:Integer>3</gco:Integer>
+			</numberOfDimensions>
+			<axisDimensionProperties>
+				<MD_Dimension>
+					<dimensionName>
+						<MD_DimensionNameTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_DimensionNameTypeCode" codeListValue="row" codeSpace="ISOTC211/19115">row</MD_DimensionNameTypeCode>
+					</dimensionName>
+					<dimensionSize>
+						<gco:Integer>150</gco:Integer>
+					</dimensionSize>
+					<resolution>
+						<gco:Measure uom="m">5.0</gco:Measure>
+					</resolution>
+				</MD_Dimension>
+			</axisDimensionProperties>
+			<axisDimensionProperties>
+				<MD_Dimension>
+					<dimensionName>
+						<MD_DimensionNameTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_DimensionNameTypeCode" codeListValue="column" codeSpace="ISOTC211/19115">column</MD_DimensionNameTypeCode>
+					</dimensionName>
+					<dimensionSize>
+						<gco:Integer>259</gco:Integer>
+					</dimensionSize>
+					<resolution>
+						<gco:Measure uom="m">10.0</gco:Measure>
+					</resolution>
+				</MD_Dimension>
+			</axisDimensionProperties>
+			<axisDimensionProperties>
+				<MD_Dimension>
+					<dimensionName>
+						<MD_DimensionNameTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_DimensionNameTypeCode" codeListValue="vertical" codeSpace="ISOTC211/19115">vertical</MD_DimensionNameTypeCode>
+					</dimensionName>
+					<dimensionSize>
+						<gco:Integer>20</gco:Integer>
+					</dimensionSize>
+					<resolution>
+						<gco:Measure uom="m">0.1</gco:Measure>
+					</resolution>
+				</MD_Dimension>
+			</axisDimensionProperties>
+			<cellGeometry>
+				<MD_CellGeometryCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CellGeometryCode" codeListValue="area" codeSpace="ISOTC211/19115">area</MD_CellGeometryCode>
+			</cellGeometry>
+			<transformationParameterAvailability>
+				<gco:Boolean>true</gco:Boolean>
+			</transformationParameterAvailability>
+			<checkPointAvailability>
+				<gco:Boolean>true</gco:Boolean>
+			</checkPointAvailability>
+			<checkPointDescription>
+				<gco:CharacterString>Resource &gt; Spatial Data Representation &gt; Georectified &gt; Check Point Description</gco:CharacterString>
+			</checkPointDescription>
+			<cornerPoints>
+				<gml:Point gml:id="IDSDJG12MBUATLPXQA2XPE533WOIS1VWSFJ1M150FEI0UMRAIF1XHH">
+					<gml:description>Resource &gt; Spatial Data Representation &gt; Georectified &gt; Corner Point &gt; Description</gml:description>
+					<gml:descriptionReference xlink:href="Resource &gt; Spatial Data Representation &gt; Georectified &gt; Corner Point &gt; Reference"/>
+					<gml:identifier codeSpace="Resource &gt; Spatial Data Representation &gt; Georectified &gt; Corner Point &gt; Identifier Codespace">Resource &gt; Spatial Data Representation &gt; Georectified &gt; Corner Point &gt; Identifier</gml:identifier>
+					<gml:pos>1.0 1.0</gml:pos>
+				</gml:Point>
+			</cornerPoints>
+			<cornerPoints>
+				<gml:Point gml:id="ID3CJP3RIP35KHBQQ4AJJHN3FI0POXJP5WLIBJSEOPLI1JLQCUH5BM">
+					<gml:description>Resource &gt; Spatial Data Representation &gt; Georectified &gt; Corner Point &gt; Description</gml:description>
+					<gml:descriptionReference xlink:href="Resource &gt; Spatial Data Representation &gt; Georectified &gt; Corner Point &gt; Reference"/>
+					<gml:identifier codeSpace="Resource &gt; Spatial Data Representation &gt; Georectified &gt; Corner Point &gt; Identifier Codespace">Resource &gt; Spatial Data Representation &gt; Georectified &gt; Corner Point &gt; Identifier</gml:identifier>
+					<gml:pos>7.0 7.0</gml:pos>
+				</gml:Point>
+			</cornerPoints>
+			<centerPoint>
+				<gml:Point gml:id="IDKXXA1FVBKAUHGC2RMAMRY3OGREJN4PRHFU4EVXOZRTCXKDVACHUO">
+					<gml:description>Resource &gt; Spatial Data Representation &gt; Georectified &gt; Center Point &gt; Description</gml:description>
+					<gml:descriptionReference xlink:href="Resource &gt; Spatial Data Representation &gt; Georectified &gt; Center Point &gt; Reference"/>
+					<gml:identifier codeSpace="Resource &gt; Spatial Data Representation &gt; Georectified &gt; Center Point &gt; Identifier Codespace">Resource &gt; Spatial Data Representation &gt; Georectified &gt; Center Point &gt; Identifier</gml:identifier>
+					<gml:pos>4.0 4.0</gml:pos>
+				</gml:Point>
+			</centerPoint>
+			<pointInPixel>
+				<MD_PixelOrientationCode>upperLeft</MD_PixelOrientationCode>
+			</pointInPixel>
+			<transformationDimensionDescription>
+				<gco:CharacterString>Resource &gt; Spatial Data Representation &gt; Georectified &gt; Transformation Dimension Description</gco:CharacterString>
+			</transformationDimensionDescription>
+			<transformationDimensionMapping>
+				<gco:CharacterString>Resource &gt; Spatial Data Representation &gt; Georectified &gt; Transformation Dimension Mapping</gco:CharacterString>
+			</transformationDimensionMapping>
+		</MD_Georectified>
+	</spatialRepresentationInfo>
+	<spatialRepresentationInfo>
+		<MD_Georeferenceable>
+			<numberOfDimensions>
+				<gco:Integer>1</gco:Integer>
+			</numberOfDimensions>
+			<axisDimensionProperties>
+				<MD_Dimension>
+					<dimensionName>
+						<MD_DimensionNameTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_DimensionNameTypeCode" codeListValue="time" codeSpace="ISOTC211/19115">time</MD_DimensionNameTypeCode>
+					</dimensionName>
+					<dimensionSize>
+						<gco:Integer>140</gco:Integer>
+					</dimensionSize>
+					<resolution>
+						<gco:Measure uom="h">1</gco:Measure>
+					</resolution>
+				</MD_Dimension>
+			</axisDimensionProperties>
+			<cellGeometry>
+				<MD_CellGeometryCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CellGeometryCode" codeListValue="point" codeSpace="ISOTC211/19115">point</MD_CellGeometryCode>
+			</cellGeometry>
+			<transformationParameterAvailability>
+				<gco:Boolean>true</gco:Boolean>
+			</transformationParameterAvailability>
+			<controlPointAvailability>
+				<gco:Boolean>true</gco:Boolean>
+			</controlPointAvailability>
+			<orientationParameterAvailability>
+				<gco:Boolean>true</gco:Boolean>
+			</orientationParameterAvailability>
+			<orientationParameterDescription>
+				<gco:CharacterString>Resource &gt; Spatial Data Representation &gt; Georeferenceable &gt; Orientation Parameter Description</gco:CharacterString>
+			</orientationParameterDescription>
+			<georeferencedParameters>
+				<gco:Record>Resource &gt; Spatial Data Representation &gt; Georeferenceable &gt; Georeferenced Parameters</gco:Record>
+			</georeferencedParameters>
+			<parameterCitation>
+				<CI_Citation>
+					<title>
+						<gco:CharacterString>Resource &gt; Spatial Data Representation &gt; Georeferenceable &gt; Parameter Citation &gt; Titles &gt; Title</gco:CharacterString>
+					</title>
+					<date>
+						<CI_Date>
+							<date>
+								<gco:Date>2011-01-01</gco:Date>
+							</date>
+							<dateType>
+								<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision" codeSpace="ISOTC211/19115">revision</CI_DateTypeCode>
+							</dateType>
+						</CI_Date>
+					</date>
+					<citedResponsibleParty>
+						<CI_ResponsibleParty>
+							<organisationName>
+								<gco:CharacterString>Resource &gt; Spatial Data Representation &gt; Georeferenceable &gt; Parameter Citation &gt; Contact &gt; Organization</gco:CharacterString>
+							</organisationName>
+							<contactInfo>
+								<CI_Contact>
+									<address>
+										<CI_Address>
+											<electronicMailAddress>
+												<gco:CharacterString>Resource &gt; Spatial Data Representation &gt; Georeferenceable &gt; Parameter Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+											</electronicMailAddress>
+										</CI_Address>
+									</address>
+								</CI_Contact>
+							</contactInfo>
+							<role>
+								<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+							</role>
+						</CI_ResponsibleParty>
+					</citedResponsibleParty>
+				</CI_Citation>
+			</parameterCitation>
+		</MD_Georeferenceable>
+	</spatialRepresentationInfo>
+	<referenceSystemInfo>
+		<MD_ReferenceSystem>
+			<referenceSystemIdentifier>
+				<RS_Identifier>
+					<authority>
+						<CI_Citation>
+							<title>
+								<gco:CharacterString>Resource &gt; Spatial Reference &gt; Reference System &gt; Authority Citation &gt; Titles &gt; Title</gco:CharacterString>
+							</title>
+							<date>
+								<CI_Date>
+									<date>
+										<gco:Date>2011-07-01</gco:Date>
+									</date>
+									<dateType>
+										<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" codeSpace="ISOTC211/19115">publication</CI_DateTypeCode>
+									</dateType>
+								</CI_Date>
+							</date>
+							<citedResponsibleParty>
+								<CI_ResponsibleParty>
+									<organisationName>
+										<gco:CharacterString>Resource &gt; Spatial Reference &gt; Reference System &gt; Authority Citation &gt; Contact &gt; Organization</gco:CharacterString>
+									</organisationName>
+									<contactInfo>
+										<CI_Contact>
+											<address>
+												<CI_Address>
+													<electronicMailAddress>
+														<gco:CharacterString>Resource &gt; Spatial Reference &gt; Reference System &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+													</electronicMailAddress>
+												</CI_Address>
+											</address>
+										</CI_Contact>
+									</contactInfo>
+									<role>
+										<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+									</role>
+								</CI_ResponsibleParty>
+							</citedResponsibleParty>
+						</CI_Citation>
+					</authority>
+					<code>
+						<gco:CharacterString>Resource &gt; Spatial Reference &gt; Reference System &gt; Code</gco:CharacterString>
+					</code>
+					<codeSpace>
+						<gco:CharacterString>Resource &gt; Spatial Reference &gt; Reference System &gt; Code Space</gco:CharacterString>
+					</codeSpace>
+					<version>
+						<gco:CharacterString>Resource &gt; Spatial Reference &gt; Reference System &gt; Version</gco:CharacterString>
+					</version>
+				</RS_Identifier>
+			</referenceSystemIdentifier>
+		</MD_ReferenceSystem>
+	</referenceSystemInfo>
+	<identificationInfo>
+		<MD_DataIdentification>
+			<citation>
+				<CI_Citation>
+					<title xsi:type="PT_FreeText_PropertyType">
+						<gco:CharacterString>Overview &gt; Item Description &gt; Title + Overview &gt; Citation &gt; Titles &gt; Title</gco:CharacterString>
+						<PT_FreeText>
+							<textGroup>
+								<LocalisedCharacterString locale="fre-FR">Overview &gt; Locales &gt; Locale &gt; Title</LocalisedCharacterString>
+							</textGroup>
+						</PT_FreeText>
+					</title>
+					<alternateTitle>
+						<gco:CharacterString>Overview &gt; Citation &gt; Titles &gt; Alternate Title</gco:CharacterString>
+					</alternateTitle>
+					<date>
+						<CI_Date>
+							<date>
+								<gco:DateTime>1993-01-01T23:59:59</gco:DateTime>
+							</date>
+							<dateType>
+								<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation" codeSpace="ISOTC211/19115">creation</CI_DateTypeCode>
+							</dateType>
+						</CI_Date>
+					</date>
+					<date>
+						<CI_Date>
+							<date>
+								<gco:DateTime>1994-01-01T06:00:00</gco:DateTime>
+							</date>
+							<dateType>
+								<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" codeSpace="ISOTC211/19115">publication</CI_DateTypeCode>
+							</dateType>
+						</CI_Date>
+					</date>
+					<date>
+						<CI_Date>
+							<date>
+								<gco:DateTime>1995-01-01T18:30:59</gco:DateTime>
+							</date>
+							<dateType>
+								<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision" codeSpace="ISOTC211/19115">revision</CI_DateTypeCode>
+							</dateType>
+						</CI_Date>
+					</date>
+					<edition>
+						<gco:CharacterString>Overview &gt; Citation &gt; Edition &gt; Edition</gco:CharacterString>
+					</edition>
+					<editionDate>
+						<gco:Date>2011-01-01</gco:Date>
+					</editionDate>
+					<identifier>
+						<MD_Identifier>
+							<authority>
+								<CI_Citation>
+									<title>
+										<gco:CharacterString>Overview &gt; Citation &gt; Identifier &gt; Authority Citation &gt; Titles &gt; Title</gco:CharacterString>
+									</title>
+									<date>
+										<CI_Date>
+											<date>
+												<gco:Date>2010-01-01</gco:Date>
+											</date>
+											<dateType>
+												<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" codeSpace="ISOTC211/19115">publication</CI_DateTypeCode>
+											</dateType>
+										</CI_Date>
+									</date>
+									<citedResponsibleParty>
+										<CI_ResponsibleParty>
+											<organisationName>
+												<gco:CharacterString>Overview &gt; Citation &gt; Identifier &gt; Authority Citation &gt; Contact &gt; Organization</gco:CharacterString>
+											</organisationName>
+											<contactInfo>
+												<CI_Contact>
+													<address>
+														<CI_Address>
+															<electronicMailAddress>
+																<gco:CharacterString>Overview &gt; Citation &gt; Identifier &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+															</electronicMailAddress>
+														</CI_Address>
+													</address>
+												</CI_Contact>
+											</contactInfo>
+											<role>
+												<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+											</role>
+										</CI_ResponsibleParty>
+									</citedResponsibleParty>
+								</CI_Citation>
+							</authority>
+							<code>
+								<gco:CharacterString>Overview &gt; Citation &gt; Identifier &gt; Code</gco:CharacterString>
+							</code>
+						</MD_Identifier>
+					</identifier>
+					<citedResponsibleParty>
+						<CI_ResponsibleParty>
+							<individualName>
+								<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Name (Role=Originator)</gco:CharacterString>
+							</individualName>
+							<organisationName>
+								<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Organization (Role=Originator)</gco:CharacterString>
+							</organisationName>
+							<positionName>
+								<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Position (Role=Originator)</gco:CharacterString>
+							</positionName>
+							<contactInfo>
+								<CI_Contact>
+									<phone>
+										<CI_Telephone>
+											<voice>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Phone (Role=Originator)</gco:CharacterString>
+											</voice>
+										</CI_Telephone>
+									</phone>
+									<address>
+										<CI_Address>
+											<deliveryPoint>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Address (Role=Originator)</gco:CharacterString>
+											</deliveryPoint>
+											<city>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; City (Role=Originator)</gco:CharacterString>
+											</city>
+											<administrativeArea>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; State (Role=Originator)</gco:CharacterString>
+											</administrativeArea>
+											<postalCode>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Postal Code (Role=Originator)</gco:CharacterString>
+											</postalCode>
+											<country>
+												<gco:CharacterString>US</gco:CharacterString>
+											</country>
+											<electronicMailAddress>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Email (Role=Originator)</gco:CharacterString>
+											</electronicMailAddress>
+										</CI_Address>
+									</address>
+								</CI_Contact>
+							</contactInfo>
+							<role>
+								<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator" codeSpace="ISOTC211/19115">originator</CI_RoleCode>
+							</role>
+						</CI_ResponsibleParty>
+					</citedResponsibleParty>
+					<citedResponsibleParty>
+						<CI_ResponsibleParty>
+							<individualName>
+								<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Name (Role=Publisher)</gco:CharacterString>
+							</individualName>
+							<organisationName>
+								<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Organization (Role=Publisher)</gco:CharacterString>
+							</organisationName>
+							<positionName>
+								<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Position (Role=Publisher)</gco:CharacterString>
+							</positionName>
+							<contactInfo>
+								<CI_Contact>
+									<address>
+										<CI_Address>
+											<deliveryPoint>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Address (Role=Publisher)</gco:CharacterString>
+											</deliveryPoint>
+											<city>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; City (Role=Publisher)</gco:CharacterString>
+											</city>
+											<administrativeArea>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; State (Role=Publisher)</gco:CharacterString>
+											</administrativeArea>
+											<postalCode>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Postal Code (Role=Publisher)</gco:CharacterString>
+											</postalCode>
+											<country>
+												<gco:CharacterString>US</gco:CharacterString>
+											</country>
+											<electronicMailAddress>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Email (Role=Publisher)</gco:CharacterString>
+											</electronicMailAddress>
+										</CI_Address>
+									</address>
+								</CI_Contact>
+							</contactInfo>
+							<role>
+								<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+							</role>
+						</CI_ResponsibleParty>
+					</citedResponsibleParty>
+					<citedResponsibleParty>
+						<CI_ResponsibleParty>
+							<individualName>
+								<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Name (NAP Role=Rights Holder)</gco:CharacterString>
+							</individualName>
+							<organisationName>
+								<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Organization (NAP Role=Rights Holder)</gco:CharacterString>
+							</organisationName>
+							<positionName>
+								<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Position (NAP Role=Rights Holder)</gco:CharacterString>
+							</positionName>
+							<contactInfo>
+								<CI_Contact>
+									<phone>
+										<CI_Telephone>
+											<voice>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Phone (NAP Role=Rights Holder)</gco:CharacterString>
+											</voice>
+										</CI_Telephone>
+									</phone>
+									<address>
+										<CI_Address>
+											<deliveryPoint>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Address (NAP Role=Rights Holder)</gco:CharacterString>
+											</deliveryPoint>
+											<city>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; City (NAP Role=Rights Holder)</gco:CharacterString>
+											</city>
+											<administrativeArea>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; State (NAP Role=Rights Holder)</gco:CharacterString>
+											</administrativeArea>
+											<postalCode>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Postal Code (NAP Role=Rights Holder)</gco:CharacterString>
+											</postalCode>
+											<country>
+												<gco:CharacterString>US</gco:CharacterString>
+											</country>
+											<electronicMailAddress>
+												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Email (NAP Role=Rights Holder)</gco:CharacterString>
+											</electronicMailAddress>
+										</CI_Address>
+									</address>
+								</CI_Contact>
+							</contactInfo>
+							<role>
+								<CI_RoleCode codeList="http://www.fgdc.gov/nap/metadata/register/codelists.html#napCI_RoleCode" codeListValue="rightsHolder" codeSpace="ISOTC211/19139/NAP">rightsHolder</CI_RoleCode>
+							</role>
+						</CI_ResponsibleParty>
+					</citedResponsibleParty>
+					<presentationForm>
+						<CI_PresentationFormCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode" codeListValue="mapDigital" codeSpace="ISOTC211/19115">mapDigital</CI_PresentationFormCode>
+					</presentationForm>
+					<series>
+						<CI_Series>
+							<name>
+								<gco:CharacterString>Overview &gt; Citation &gt; Series &gt; Name</gco:CharacterString>
+							</name>
+							<issueIdentification>
+								<gco:CharacterString>Overview &gt; Citation &gt; Series &gt; Issue</gco:CharacterString>
+							</issueIdentification>
+							<page>
+								<gco:CharacterString>Overview &gt; Citation &gt; Series &gt; Page</gco:CharacterString>
+							</page>
+						</CI_Series>
+					</series>
+					<otherCitationDetails>
+						<gco:CharacterString>Overview &gt; Citation &gt; Other Details</gco:CharacterString>
+					</otherCitationDetails>
+					<collectiveTitle>
+						<gco:CharacterString>Overview &gt; Citation &gt; Titles &gt; Collective Title</gco:CharacterString>
+					</collectiveTitle>
+					<ISBN>
+						<gco:CharacterString>Overview &gt; Citation &gt; ISBN</gco:CharacterString>
+					</ISBN>
+					<ISSN>
+						<gco:CharacterString>Overview &gt; Citation &gt; ISSN</gco:CharacterString>
+					</ISSN>
+				</CI_Citation>
+			</citation>
+			<abstract xsi:type="PT_FreeText_PropertyType">
+				<gco:CharacterString>Overview &amp;gt; Item Description &amp;gt; Description/Abstract</gco:CharacterString>
+				<PT_FreeText>
+					<textGroup>
+						<LocalisedCharacterString locale="fre-FR">Overview &gt; Locales &gt; Locale &gt; Abstract</LocalisedCharacterString>
+					</textGroup>
+				</PT_FreeText>
+			</abstract>
+			<purpose>
+				<gco:CharacterString>Overview &gt; Item Description &gt; Summary/Purpose</gco:CharacterString>
+			</purpose>
+			<credit>
+				<gco:CharacterString>Overview &gt; Item Description &gt; Credits + Resource &gt; Details &gt; Credit</gco:CharacterString>
+			</credit>
+			<status>
+				<MD_ProgressCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="onGoing" codeSpace="ISOTC211/19115">onGoing</MD_ProgressCode>
+			</status>
+			<pointOfContact>
+				<CI_ResponsibleParty>
+					<individualName>
+						<gco:CharacterString>Resource &gt; Points of Contact &gt; Contact &gt; Name</gco:CharacterString>
+					</individualName>
+					<contactInfo>
+						<CI_Contact>
+							<phone>
+								<CI_Telephone>
+									<voice>
+										<gco:CharacterString>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; Phone</gco:CharacterString>
+									</voice>
+								</CI_Telephone>
+							</phone>
+							<address>
+								<CI_Address>
+									<deliveryPoint>
+										<gco:CharacterString>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; Address</gco:CharacterString>
+									</deliveryPoint>
+									<city>
+										<gco:CharacterString>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; City</gco:CharacterString>
+									</city>
+									<administrativeArea>
+										<gco:CharacterString>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; State</gco:CharacterString>
+									</administrativeArea>
+									<postalCode>
+										<gco:CharacterString>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; Zip</gco:CharacterString>
+									</postalCode>
+									<country>
+										<gco:CharacterString>US</gco:CharacterString>
+									</country>
+									<electronicMailAddress>
+										<gco:CharacterString>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+									</electronicMailAddress>
+								</CI_Address>
+							</address>
+							<onlineResource>
+								<CI_OnlineResource>
+									<linkage>
+										<URL>http://Resource_Points_of_Contact_Contact_Contact_Information_Online_Resource_Linkage</URL>
+									</linkage>
+									<protocol>
+										<gco:CharacterString>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; Online Resource &gt; Protocol</gco:CharacterString>
+									</protocol>
+								</CI_OnlineResource>
+							</onlineResource>
+						</CI_Contact>
+					</contactInfo>
+					<role>
+						<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact" codeSpace="ISOTC211/19115">pointOfContact</CI_RoleCode>
+					</role>
+				</CI_ResponsibleParty>
+			</pointOfContact>
+			<resourceMaintenance>
+				<MD_MaintenanceInformation>
+					<maintenanceAndUpdateFrequency>
+						<MD_MaintenanceFrequencyCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="asNeeded" codeSpace="ISOTC211/19115">asNeeded</MD_MaintenanceFrequencyCode>
+					</maintenanceAndUpdateFrequency>
+					<dateOfNextUpdate>
+						<gco:Date>2012-01-01</gco:Date>
+					</dateOfNextUpdate>
+					<userDefinedMaintenanceFrequency>
+						<gts:TM_PeriodDuration>P36DT12H</gts:TM_PeriodDuration>
+					</userDefinedMaintenanceFrequency>
+					<updateScope>
+						<MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset" codeSpace="ISOTC211/19115">dataset</MD_ScopeCode>
+					</updateScope>
+					<updateScopeDescription>
+						<MD_ScopeDescription>
+							<dataset>
+								<gco:CharacterString>Resource &gt; Maintenance &gt; Scope Description &gt; Dataset</gco:CharacterString>
+							</dataset>
+						</MD_ScopeDescription>
+					</updateScopeDescription>
+					<maintenanceNote>
+						<gco:CharacterString>Resource &gt; Maintenance &gt; Maintenance Note</gco:CharacterString>
+					</maintenanceNote>
+					<contact>
+						<CI_ResponsibleParty>
+							<individualName>
+								<gco:CharacterString>Resource &gt; Maintenance &gt; Contact &gt; Name</gco:CharacterString>
+							</individualName>
+							<contactInfo>
+								<CI_Contact>
+									<address>
+										<CI_Address>
+											<electronicMailAddress>
+												<gco:CharacterString>Resource &gt; Maintenance &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+											</electronicMailAddress>
+										</CI_Address>
+									</address>
+								</CI_Contact>
+							</contactInfo>
+							<role>
+								<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian" codeSpace="ISOTC211/19115">custodian</CI_RoleCode>
+							</role>
+						</CI_ResponsibleParty>
+					</contact>
+				</MD_MaintenanceInformation>
+			</resourceMaintenance>
+			<graphicOverview>
+				<MD_BrowseGraphic>
+					<fileName>
+						<gco:CharacterString>Resource &gt; Details &gt; Browse Graphic &gt; File Name</gco:CharacterString>
+					</fileName>
+					<fileDescription>
+						<gco:CharacterString>Resource &gt; Details &gt; Browse Graphic &gt; Description</gco:CharacterString>
+					</fileDescription>
+					<fileType>
+						<gco:CharacterString>Resource &gt; Details &gt; Browse Graphic &gt; File Type</gco:CharacterString>
+					</fileType>
+				</MD_BrowseGraphic>
+			</graphicOverview>
+			<resourceFormat>
+				<MD_Format>
+					<name>
+						<gco:CharacterString>Resource &gt; Details &gt; Distribution Format &gt; Format Name</gco:CharacterString>
+					</name>
+					<version>
+						<gco:CharacterString>Resource &gt; Details &gt; Distribution Format &gt; Format Version</gco:CharacterString>
+					</version>
+					<amendmentNumber>
+						<gco:CharacterString>Resource &gt; Details &gt; Distribution Format &gt; Amendment Number</gco:CharacterString>
+					</amendmentNumber>
+					<specification>
+						<gco:CharacterString>Resource &gt; Details &gt; Distribution Format &gt; Specification</gco:CharacterString>
+					</specification>
+					<fileDecompressionTechnique>
+						<gco:CharacterString>Resource &gt; Details &gt; Distribution Format &gt; Decompression Technique</gco:CharacterString>
+					</fileDecompressionTechnique>
+				</MD_Format>
+			</resourceFormat>
+			<descriptiveKeywords>
+				<MD_Keywords>
+					<keyword>
+						<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Discipline Keywords &gt; Keyword1</gco:CharacterString>
+					</keyword>
+					<keyword>
+						<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Discipline Keywords &gt; Keyword2</gco:CharacterString>
+					</keyword>
+					<type>
+						<MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="discipline" codeSpace="ISOTC211/19115">discipline</MD_KeywordTypeCode>
+					</type>
+					<thesaurusName>
+						<CI_Citation>
+							<title>
+								<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Discipline Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</gco:CharacterString>
+							</title>
+							<date>
+								<CI_Date>
+									<date>
+										<gco:Date>2007-02-12</gco:Date>
+									</date>
+									<dateType>
+										<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision" codeSpace="ISOTC211/19115">revision</CI_DateTypeCode>
+									</dateType>
+								</CI_Date>
+							</date>
+							<citedResponsibleParty>
+								<CI_ResponsibleParty>
+									<organisationName>
+										<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Discipline Keywords &gt; Thesaurus Citation &gt; Contact &gt; Organization</gco:CharacterString>
+									</organisationName>
+									<contactInfo>
+										<CI_Contact>
+											<address>
+												<CI_Address>
+													<electronicMailAddress>
+														<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Discipline Keywords &gt; Thesaurus Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+													</electronicMailAddress>
+												</CI_Address>
+											</address>
+										</CI_Contact>
+									</contactInfo>
+									<role>
+										<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+									</role>
+								</CI_ResponsibleParty>
+							</citedResponsibleParty>
+						</CI_Citation>
+					</thesaurusName>
+				</MD_Keywords>
+			</descriptiveKeywords>
+			<descriptiveKeywords>
+				<MD_Keywords>
+					<keyword>
+						<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Place Keywords &gt; Keyword1</gco:CharacterString>
+					</keyword>
+					<keyword>
+						<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Place Keywords &gt; Keyword2</gco:CharacterString>
+					</keyword>
+					<type>
+						<MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="place" codeSpace="ISOTC211/19115">place</MD_KeywordTypeCode>
+					</type>
+					<thesaurusName>
+						<CI_Citation>
+							<title>
+								<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Place Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</gco:CharacterString>
+							</title>
+							<date>
+								<CI_Date>
+									<date>
+										<gco:Date>2010-01-01</gco:Date>
+									</date>
+									<dateType>
+										<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" codeSpace="ISOTC211/19115">publication</CI_DateTypeCode>
+									</dateType>
+								</CI_Date>
+							</date>
+							<citedResponsibleParty>
+								<CI_ResponsibleParty>
+									<organisationName>
+										<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Place Keywords &gt; Thesaurus Citation &gt; Contact &gt; Organization</gco:CharacterString>
+									</organisationName>
+									<contactInfo>
+										<CI_Contact>
+											<address>
+												<CI_Address>
+													<electronicMailAddress>
+														<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Place Keywords &gt; Thesaurus Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+													</electronicMailAddress>
+												</CI_Address>
+											</address>
+										</CI_Contact>
+									</contactInfo>
+									<role>
+										<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+									</role>
+								</CI_ResponsibleParty>
+							</citedResponsibleParty>
+						</CI_Citation>
+					</thesaurusName>
+				</MD_Keywords>
+			</descriptiveKeywords>
+			<descriptiveKeywords>
+				<MD_Keywords>
+					<keyword>
+						<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Stratum Keywords &gt; Keyword1</gco:CharacterString>
+					</keyword>
+					<keyword>
+						<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Stratum Keywords &gt; Keyword2</gco:CharacterString>
+					</keyword>
+					<type>
+						<MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="stratum" codeSpace="ISOTC211/19115">stratum</MD_KeywordTypeCode>
+					</type>
+					<thesaurusName>
+						<CI_Citation>
+							<title>
+								<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Stratum Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</gco:CharacterString>
+							</title>
+							<date>
+								<CI_Date>
+									<date>
+										<gco:Date>1988-08-26</gco:Date>
+									</date>
+									<dateType>
+										<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision" codeSpace="ISOTC211/19115">revision</CI_DateTypeCode>
+									</dateType>
+								</CI_Date>
+							</date>
+							<citedResponsibleParty>
+								<CI_ResponsibleParty>
+									<organisationName>
+										<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Stratum Keywords &gt; Thesaurus Citation &gt; Contact &gt; Organization</gco:CharacterString>
+									</organisationName>
+									<contactInfo>
+										<CI_Contact>
+											<address>
+												<CI_Address>
+													<electronicMailAddress>
+														<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Stratum Keywords &gt; Thesaurus Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+													</electronicMailAddress>
+												</CI_Address>
+											</address>
+										</CI_Contact>
+									</contactInfo>
+									<role>
+										<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+									</role>
+								</CI_ResponsibleParty>
+							</citedResponsibleParty>
+						</CI_Citation>
+					</thesaurusName>
+				</MD_Keywords>
+			</descriptiveKeywords>
+			<descriptiveKeywords>
+				<MD_Keywords>
+					<keyword>
+						<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Temporal Keywords &gt; Keyword1</gco:CharacterString>
+					</keyword>
+					<keyword>
+						<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Temporal Keywords &gt; Keyword2</gco:CharacterString>
+					</keyword>
+					<type>
+						<MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="temporal" codeSpace="ISOTC211/19115">temporal</MD_KeywordTypeCode>
+					</type>
+					<thesaurusName>
+						<CI_Citation>
+							<title>
+								<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Temporal Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</gco:CharacterString>
+							</title>
+							<date>
+								<CI_Date>
+									<date>
+										<gco:Date>1996-08-22</gco:Date>
+									</date>
+									<dateType>
+										<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision" codeSpace="ISOTC211/19115">revision</CI_DateTypeCode>
+									</dateType>
+								</CI_Date>
+							</date>
+							<citedResponsibleParty>
+								<CI_ResponsibleParty>
+									<organisationName>
+										<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Temporal Keywords &gt; Thesaurus Citation &gt; Contact &gt; Organization</gco:CharacterString>
+									</organisationName>
+									<contactInfo>
+										<CI_Contact>
+											<address>
+												<CI_Address>
+													<electronicMailAddress>
+														<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Temporal Keywords &gt; Thesaurus Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+													</electronicMailAddress>
+												</CI_Address>
+											</address>
+										</CI_Contact>
+									</contactInfo>
+									<role>
+										<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+									</role>
+								</CI_ResponsibleParty>
+							</citedResponsibleParty>
+						</CI_Citation>
+					</thesaurusName>
+				</MD_Keywords>
+			</descriptiveKeywords>
+			<descriptiveKeywords>
+				<MD_Keywords>
+					<keyword>
+						<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Theme Keywords &gt; Keyword1</gco:CharacterString>
+					</keyword>
+					<keyword>
+						<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Theme Keywords &gt; Keyword2</gco:CharacterString>
+					</keyword>
+					<type>
+						<MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme" codeSpace="ISOTC211/19115">theme</MD_KeywordTypeCode>
+					</type>
+					<thesaurusName>
+						<CI_Citation>
+							<title>
+								<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Theme Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</gco:CharacterString>
+							</title>
+							<date>
+								<CI_Date>
+									<date>
+										<gco:Date>2010-01-01</gco:Date>
+									</date>
+									<dateType>
+										<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" codeSpace="ISOTC211/19115">publication</CI_DateTypeCode>
+									</dateType>
+								</CI_Date>
+							</date>
+							<citedResponsibleParty>
+								<CI_ResponsibleParty>
+									<organisationName>
+										<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Theme Keywords &gt; Thesaurus Citation &gt; Contact &gt; Organization</gco:CharacterString>
+									</organisationName>
+									<contactInfo>
+										<CI_Contact>
+											<address>
+												<CI_Address>
+													<electronicMailAddress>
+														<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Theme Keywords &gt; Thesaurus Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+													</electronicMailAddress>
+												</CI_Address>
+											</address>
+										</CI_Contact>
+									</contactInfo>
+									<role>
+										<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+									</role>
+								</CI_ResponsibleParty>
+							</citedResponsibleParty>
+						</CI_Citation>
+					</thesaurusName>
+				</MD_Keywords>
+			</descriptiveKeywords>
+			<descriptiveKeywords>
+				<MD_Keywords>
+					<keyword>
+						<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Other Keywords &gt; Keyword1</gco:CharacterString>
+					</keyword>
+					<keyword>
+						<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Other Keywords &gt; Keyword2</gco:CharacterString>
+					</keyword>
+					<thesaurusName>
+						<CI_Citation>
+							<title>
+								<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Other Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</gco:CharacterString>
+							</title>
+							<date>
+								<CI_Date>
+									<date>
+										<gco:Date>2010-05-10</gco:Date>
+									</date>
+									<dateType>
+										<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision" codeSpace="ISOTC211/19115">revision</CI_DateTypeCode>
+									</dateType>
+								</CI_Date>
+							</date>
+							<citedResponsibleParty>
+								<CI_ResponsibleParty>
+									<organisationName>
+										<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Other Keywords &gt; Thesaurus Citation &gt; Contact &gt; Organization</gco:CharacterString>
+									</organisationName>
+									<contactInfo>
+										<CI_Contact>
+											<address>
+												<CI_Address>
+													<electronicMailAddress>
+														<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Other Keywords &gt; Thesaurus Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+													</electronicMailAddress>
+												</CI_Address>
+											</address>
+										</CI_Contact>
+									</contactInfo>
+									<role>
+										<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+									</role>
+								</CI_ResponsibleParty>
+							</citedResponsibleParty>
+						</CI_Citation>
+					</thesaurusName>
+				</MD_Keywords>
+			</descriptiveKeywords>
+			<descriptiveKeywords>
+				<MD_Keywords>
+					<keyword>
+						<gco:CharacterString>Offline Data</gco:CharacterString>
+					</keyword>
+					<thesaurusName uuidref="723f6998-058e-11dc-8314-0800200c9a66"/>
+				</MD_Keywords>
+			</descriptiveKeywords>
+			<resourceSpecificUsage>
+				<MD_Usage>
+					<specificUsage>
+						<gco:CharacterString>Resource &gt; Details &gt; Usage &gt; Specific Usage</gco:CharacterString>
+					</specificUsage>
+					<usageDateTime>
+						<gco:DateTime>2011-10-01T10:00:00</gco:DateTime>
+					</usageDateTime>
+					<userDeterminedLimitations>
+						<gco:CharacterString>Resource &gt; Details &gt; Usage &gt; Limitations</gco:CharacterString>
+					</userDeterminedLimitations>
+					<userContactInfo>
+						<CI_ResponsibleParty>
+							<organisationName>
+								<gco:CharacterString>Resource &gt; Details &gt; Usage &gt; Contact &gt; Organization</gco:CharacterString>
+							</organisationName>
+							<positionName>
+								<gco:CharacterString>Resource &gt; Details &gt; Usage &gt; Contact &gt; Position</gco:CharacterString>
+							</positionName>
+							<contactInfo>
+								<CI_Contact>
+									<address>
+										<CI_Address>
+											<electronicMailAddress>
+												<gco:CharacterString>Resource &gt; Details &gt; Usage &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+											</electronicMailAddress>
+										</CI_Address>
+									</address>
+								</CI_Contact>
+							</contactInfo>
+							<role>
+								<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="user" codeSpace="ISOTC211/19115">user</CI_RoleCode>
+							</role>
+						</CI_ResponsibleParty>
+					</userContactInfo>
+				</MD_Usage>
+			</resourceSpecificUsage>
+			<resourceConstraints>
+				<MD_Constraints>
+					<useLimitation>
+						<gco:CharacterString>Overview &amp;gt; Item Description &amp;gt; Use Limitation + Resource &amp;gt; Constraints &amp;gt; General Constraints &amp;gt; Use Limitation</gco:CharacterString>
+					</useLimitation>
+				</MD_Constraints>
+			</resourceConstraints>
+			<resourceConstraints>
+				<MD_LegalConstraints>
+					<useLimitation>
+						<gco:CharacterString>Resource &gt; Constraints &gt; Legal Constraints &gt; Use Limitation</gco:CharacterString>
+					</useLimitation>
+					<accessConstraints>
+						<MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="license" codeSpace="ISOTC211/19115">license</MD_RestrictionCode>
+					</accessConstraints>
+					<useConstraints>
+						<MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions" codeSpace="ISOTC211/19115">otherRestrictions</MD_RestrictionCode>
+					</useConstraints>
+					<otherConstraints>
+						<gco:CharacterString>Resource &gt; Constraints &gt; Legal Constraints &gt; Other Constraints</gco:CharacterString>
+					</otherConstraints>
+				</MD_LegalConstraints>
+			</resourceConstraints>
+			<resourceConstraints>
+				<MD_SecurityConstraints>
+					<useLimitation>
+						<gco:CharacterString>Resource &gt; Constraints &gt; Security Constraints &gt; Use Limitation</gco:CharacterString>
+					</useLimitation>
+					<classification>
+						<MD_ClassificationCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ClassificationCode" codeListValue="restricted" codeSpace="ISOTC211/19115">restricted</MD_ClassificationCode>
+					</classification>
+					<userNote>
+						<gco:CharacterString>Resource &gt; Constraints &gt; Security Constraints &gt; User Note</gco:CharacterString>
+					</userNote>
+					<classificationSystem>
+						<gco:CharacterString>Resource &gt; Constraints &gt; Security Constraints &gt; Classification System</gco:CharacterString>
+					</classificationSystem>
+					<handlingDescription>
+						<gco:CharacterString>Resource &gt; Constraints &gt; Security Constraints &gt; Handling Description</gco:CharacterString>
+					</handlingDescription>
+				</MD_SecurityConstraints>
+			</resourceConstraints>
+			<aggregationInfo>
+				<MD_AggregateInformation>
+					<aggregateDataSetName>
+						<CI_Citation>
+							<title>
+								<gco:CharacterString>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Titles &gt; Title (Association=Cross Reference)</gco:CharacterString>
+							</title>
+							<date>
+								<CI_Date>
+									<date>
+										<gco:Date>2006-06-01</gco:Date>
+									</date>
+									<dateType>
+										<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" codeSpace="ISOTC211/19115">publication</CI_DateTypeCode>
+									</dateType>
+								</CI_Date>
+							</date>
+							<citedResponsibleParty>
+								<CI_ResponsibleParty>
+									<individualName>
+										<gco:CharacterString>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Contact &gt; Name (Association=Cross Reference)</gco:CharacterString>
+									</individualName>
+									<organisationName>
+										<gco:CharacterString>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Contact &gt; Organization (Association=Cross Reference)</gco:CharacterString>
+									</organisationName>
+									<contactInfo>
+										<CI_Contact>
+											<address>
+												<CI_Address>
+													<electronicMailAddress>
+														<gco:CharacterString>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Contact &gt; Contact Information &gt; Email (Association=Cross Reference)</gco:CharacterString>
+													</electronicMailAddress>
+												</CI_Address>
+											</address>
+										</CI_Contact>
+									</contactInfo>
+									<role>
+										<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator" codeSpace="ISOTC211/19115">originator</CI_RoleCode>
+									</role>
+								</CI_ResponsibleParty>
+							</citedResponsibleParty>
+						</CI_Citation>
+					</aggregateDataSetName>
+					<aggregateDataSetIdentifier>
+						<MD_Identifier>
+							<authority>
+								<CI_Citation>
+									<title>
+										<gco:CharacterString>Resource &gt; References &gt; Aggregate Information &gt; Identifier &gt; Authority Citation &gt; Titles &gt; Title (Association=Cross Reference)</gco:CharacterString>
+									</title>
+									<date>
+										<CI_Date>
+											<date>
+												<gco:Date>2009-05-15</gco:Date>
+											</date>
+											<dateType>
+												<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation" codeSpace="ISOTC211/19115">creation</CI_DateTypeCode>
+											</dateType>
+										</CI_Date>
+									</date>
+									<citedResponsibleParty>
+										<CI_ResponsibleParty>
+											<organisationName>
+												<gco:CharacterString>Resource &gt; References &gt; Aggregate Information &gt; Identifier &gt; Authority Citation &gt; Contact &gt; Organization (Association=Cross Reference)</gco:CharacterString>
+											</organisationName>
+											<contactInfo>
+												<CI_Contact>
+													<address>
+														<CI_Address>
+															<electronicMailAddress>
+																<gco:CharacterString>Resource &gt; References &gt; Aggregate Information &gt; Identifier &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email (Association=Cross Reference)</gco:CharacterString>
+															</electronicMailAddress>
+														</CI_Address>
+													</address>
+												</CI_Contact>
+											</contactInfo>
+											<role>
+												<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+											</role>
+										</CI_ResponsibleParty>
+									</citedResponsibleParty>
+								</CI_Citation>
+							</authority>
+							<code>
+								<gco:CharacterString>Resource &gt; References &gt; Aggregate Information &gt; Identifier &gt; Code (Association=Cross Reference)</gco:CharacterString>
+							</code>
+						</MD_Identifier>
+					</aggregateDataSetIdentifier>
+					<associationType>
+						<DS_AssociationTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DS_AssociationTypeCode" codeListValue="crossReference" codeSpace="ISOTC211/19115">crossReference</DS_AssociationTypeCode>
+					</associationType>
+					<initiativeType>
+						<DS_InitiativeTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DS_InitiativeTypeCode" codeListValue="investigation" codeSpace="ISOTC211/19115">investigation</DS_InitiativeTypeCode>
+					</initiativeType>
+				</MD_AggregateInformation>
+			</aggregationInfo>
+			<aggregationInfo>
+				<MD_AggregateInformation>
+					<aggregateDataSetName>
+						<CI_Citation>
+							<title>
+								<gco:CharacterString>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Titles &gt; Title (Association=Larger Work)</gco:CharacterString>
+							</title>
+							<date>
+								<CI_Date>
+									<date>
+										<gco:Date>2003-09-18</gco:Date>
+									</date>
+									<dateType>
+										<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" codeSpace="ISOTC211/19115">publication</CI_DateTypeCode>
+									</dateType>
+								</CI_Date>
+							</date>
+							<citedResponsibleParty>
+								<CI_ResponsibleParty>
+									<individualName>
+										<gco:CharacterString>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Contact &gt; Name (Association=Larger Work)</gco:CharacterString>
+									</individualName>
+									<organisationName>
+										<gco:CharacterString>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Contact &gt; Organization (Association=Larger Work)</gco:CharacterString>
+									</organisationName>
+									<contactInfo>
+										<CI_Contact>
+											<address>
+												<CI_Address>
+													<electronicMailAddress>
+														<gco:CharacterString>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Contact &gt; Contact Information &gt; Email (Association=Larger Work)</gco:CharacterString>
+													</electronicMailAddress>
+												</CI_Address>
+											</address>
+										</CI_Contact>
+									</contactInfo>
+									<role>
+										<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator" codeSpace="ISOTC211/19115">originator</CI_RoleCode>
+									</role>
+								</CI_ResponsibleParty>
+							</citedResponsibleParty>
+						</CI_Citation>
+					</aggregateDataSetName>
+					<associationType>
+						<DS_AssociationTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DS_AssociationTypeCode" codeListValue="largerWorkCitation" codeSpace="ISOTC211/19115">largerWorkCitation</DS_AssociationTypeCode>
+					</associationType>
+				</MD_AggregateInformation>
+			</aggregationInfo>
+			<spatialRepresentationType>
+				<MD_SpatialRepresentationTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="vector" codeSpace="ISOTC211/19115">vector</MD_SpatialRepresentationTypeCode>
+			</spatialRepresentationType>
+			<spatialRepresentationType>
+				<MD_SpatialRepresentationTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="grid" codeSpace="ISOTC211/19115">grid</MD_SpatialRepresentationTypeCode>
+			</spatialRepresentationType>
+			<spatialResolution>
+				<MD_Resolution>
+					<equivalentScale>
+						<MD_RepresentativeFraction>
+							<denominator>
+								<gco:Integer>24000</gco:Integer>
+							</denominator>
+						</MD_RepresentativeFraction>
+					</equivalentScale>
+				</MD_Resolution>
+			</spatialResolution>
+			<spatialResolution>
+				<MD_Resolution>
+					<distance>
+						<gco:Distance uom="m">0.001</gco:Distance>
+					</distance>
+				</MD_Resolution>
+			</spatialResolution>
+			<language>
+				<LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="spa" codeSpace="ISO639-2">spa</LanguageCode>
+			</language>
+			<characterSet>
+				<MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf16" codeSpace="ISOTC211/19115">utf16</MD_CharacterSetCode>
+			</characterSet>
+			<topicCategory>
+				<MD_TopicCategoryCode>geoscientificInformation</MD_TopicCategoryCode>
+			</topicCategory>
+			<topicCategory>
+				<MD_TopicCategoryCode>imageryBaseMapsEarthCover</MD_TopicCategoryCode>
+			</topicCategory>
+			<environmentDescription>
+				<gco:CharacterString>Resource &gt; Details &gt; Processing Environment</gco:CharacterString>
+			</environmentDescription>
+			<extent>
+				<EX_Extent>
+					<description>
+						<gco:CharacterString>Resource &gt; Extents &gt; Extent &gt; Description
+
+Bounding boxes created on the Extents page do not have the esriExtentType attribute.</gco:CharacterString>
+					</description>
+					<geographicElement>
+						<EX_GeographicBoundingBox>
+							<extentTypeCode>
+								<gco:Boolean>true</gco:Boolean>
+							</extentTypeCode>
+							<westBoundLongitude>
+								<gco:Decimal>-155</gco:Decimal>
+							</westBoundLongitude>
+							<eastBoundLongitude>
+								<gco:Decimal>-135</gco:Decimal>
+							</eastBoundLongitude>
+							<southBoundLatitude>
+								<gco:Decimal>35</gco:Decimal>
+							</southBoundLatitude>
+							<northBoundLatitude>
+								<gco:Decimal>42</gco:Decimal>
+							</northBoundLatitude>
+						</EX_GeographicBoundingBox>
+					</geographicElement>
+					<geographicElement>
+						<EX_GeographicDescription>
+							<extentTypeCode>
+								<gco:Boolean>true</gco:Boolean>
+							</extentTypeCode>
+							<geographicIdentifier>
+								<MD_Identifier>
+									<authority>
+										<CI_Citation>
+											<title>
+												<gco:CharacterString>Resource &gt; Extents &gt; Extent &gt; Geographic Description &gt; Authority Citation &gt; Titles &gt; Title</gco:CharacterString>
+											</title>
+											<date>
+												<CI_Date>
+													<date>
+														<gco:Date>2011-01-01</gco:Date>
+													</date>
+													<dateType>
+														<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" codeSpace="ISOTC211/19115">publication</CI_DateTypeCode>
+													</dateType>
+												</CI_Date>
+											</date>
+											<citedResponsibleParty>
+												<CI_ResponsibleParty>
+													<organisationName>
+														<gco:CharacterString>Resource &gt; Extents &gt; Extent &gt; Geographic Description &gt; Authority Citation &gt; Contact &gt; Organization</gco:CharacterString>
+													</organisationName>
+													<contactInfo>
+														<CI_Contact>
+															<address>
+																<CI_Address>
+																	<electronicMailAddress>
+																		<gco:CharacterString>Resource &gt; Extents &gt; Extent &gt; Geographic Description &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+																	</electronicMailAddress>
+																</CI_Address>
+															</address>
+														</CI_Contact>
+													</contactInfo>
+													<role>
+														<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+													</role>
+												</CI_ResponsibleParty>
+											</citedResponsibleParty>
+										</CI_Citation>
+									</authority>
+									<code>
+										<gco:CharacterString>Resource &gt; Extents &gt; Extent &gt; Geographic Description &gt; Code</gco:CharacterString>
+									</code>
+								</MD_Identifier>
+							</geographicIdentifier>
+						</EX_GeographicDescription>
+					</geographicElement>
+					<temporalElement>
+						<EX_TemporalExtent>
+							<extent>
+								<gml:TimePeriod gml:id="IDGT5BQD2HE3HHH2CKCOIH2WDHJKKI5LX4LEXYRMHXMD33C2RQKMIF">
+									<gml:beginPosition>2011-01-01T00:00:01</gml:beginPosition>
+									<gml:endPosition>2011-12-31T23:59:59</gml:endPosition>
+								</gml:TimePeriod>
+							</extent>
+						</EX_TemporalExtent>
+					</temporalElement>
+					<verticalElement>
+						<EX_VerticalExtent>
+							<minimumValue>
+								<gco:Real>0.01</gco:Real>
+							</minimumValue>
+							<maximumValue>
+								<gco:Real>599.99</gco:Real>
+							</maximumValue>
+							<verticalCRS gco:nilReason="other:see_referenceSystemInfo"/>
+						</EX_VerticalExtent>
+					</verticalElement>
+				</EX_Extent>
+			</extent>
+			<extent>
+				<EX_Extent>
+					<description>
+						<gco:CharacterString>A bounding box created on the Item Description page has the esriExtentType attribute set with the value "search". The Item Description page only supports editing a bounding box with that attribute. The bounding box added by the synchronization process has the esriExtentType attribute set with the value "search". This bounding box is preferred when exporting to a standard that only allows one bounding box, such as the FGDC CSDGM.</gco:CharacterString>
+					</description>
+					<geographicElement>
+						<EX_GeographicBoundingBox>
+							<extentTypeCode>
+								<gco:Boolean>true</gco:Boolean>
+							</extentTypeCode>
+							<westBoundLongitude>
+								<gco:Decimal>-180</gco:Decimal>
+							</westBoundLongitude>
+							<eastBoundLongitude>
+								<gco:Decimal>180</gco:Decimal>
+							</eastBoundLongitude>
+							<southBoundLatitude>
+								<gco:Decimal>-90</gco:Decimal>
+							</southBoundLatitude>
+							<northBoundLatitude>
+								<gco:Decimal>90</gco:Decimal>
+							</northBoundLatitude>
+						</EX_GeographicBoundingBox>
+					</geographicElement>
+				</EX_Extent>
+			</extent>
+			<supplementalInformation>
+				<gco:CharacterString>Resource &gt; Details &gt; Supplemental Information</gco:CharacterString>
+			</supplementalInformation>
+		</MD_DataIdentification>
+	</identificationInfo>
+	<contentInfo>
+		<MD_FeatureCatalogueDescription>
+			<complianceCode>
+				<gco:Boolean>true</gco:Boolean>
+			</complianceCode>
+			<language>
+				<LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="fre" codeSpace="ISO639-2">fre</LanguageCode>
+			</language>
+			<includedWithDataset>
+				<gco:Boolean>true</gco:Boolean>
+			</includedWithDataset>
+			<featureTypes>
+				<gco:LocalName codeSpace="Resource &gt; Content &gt; Feature Catalogue &gt; Feature Type &gt; Codespace">Resource &gt; Content &gt; Feature Catalogue &gt; Feature Type &gt; Name</gco:LocalName>
+			</featureTypes>
+			<featureCatalogueCitation>
+				<CI_Citation>
+					<title>
+						<gco:CharacterString>Resource &gt; Content &gt; Feature Catalogue &gt; Feature Catalogue Citation &gt; Titles &gt; Title</gco:CharacterString>
+					</title>
+					<date>
+						<CI_Date>
+							<date>
+								<gco:Date>2011-03-15</gco:Date>
+							</date>
+							<dateType>
+								<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation" codeSpace="ISOTC211/19115">creation</CI_DateTypeCode>
+							</dateType>
+						</CI_Date>
+					</date>
+					<citedResponsibleParty>
+						<CI_ResponsibleParty>
+							<organisationName>
+								<gco:CharacterString>Resource &gt; Content &gt; Feature Catalogue &gt; Feature Catalogue Citation &gt; Contact &gt; Organization</gco:CharacterString>
+							</organisationName>
+							<contactInfo>
+								<CI_Contact>
+									<address>
+										<CI_Address>
+											<electronicMailAddress>
+												<gco:CharacterString>Resource &gt; Content &gt; Feature Catalogue &gt; Feature Catalogue Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+											</electronicMailAddress>
+										</CI_Address>
+									</address>
+								</CI_Contact>
+							</contactInfo>
+							<role>
+								<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+							</role>
+						</CI_ResponsibleParty>
+					</citedResponsibleParty>
+				</CI_Citation>
+			</featureCatalogueCitation>
+		</MD_FeatureCatalogueDescription>
+	</contentInfo>
+	<contentInfo>
+		<MD_CoverageDescription>
+			<attributeDescription>
+				<gco:RecordType>Resource &gt; Content &gt; Coverage Description &gt; Attribute Description</gco:RecordType>
+			</attributeDescription>
+			<contentType>
+				<MD_CoverageContentTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CoverageContentTypeCode" codeListValue="physicalMeasurement" codeSpace="ISOTC211/19115">physicalMeasurement</MD_CoverageContentTypeCode>
+			</contentType>
+			<dimension>
+				<MD_RangeDimension>
+					<sequenceIdentifier>
+						<gco:MemberName>
+							<gco:aName>
+								<gco:CharacterString>Resource &gt; Content &gt; Coverage Description &gt; Range Dimension &gt; Sequence Identifier</gco:CharacterString>
+							</gco:aName>
+							<gco:attributeType>
+								<gco:TypeName>
+									<gco:aName>
+										<gco:CharacterString>Resource &gt; Content &gt; Coverage Description &gt; Range Dimension &gt; Sequence Identifier &gt; Type</gco:CharacterString>
+									</gco:aName>
+								</gco:TypeName>
+							</gco:attributeType>
+						</gco:MemberName>
+					</sequenceIdentifier>
+					<descriptor>
+						<gco:CharacterString>Resource &gt; Content &gt; Coverage Description &gt; Range Dimension &gt; Descriptor</gco:CharacterString>
+					</descriptor>
+				</MD_RangeDimension>
+			</dimension>
+		</MD_CoverageDescription>
+	</contentInfo>
+	<contentInfo>
+		<MD_ImageDescription>
+			<attributeDescription>
+				<gco:RecordType>Resource &gt; Content &gt; Image Description &gt; Attribute Description</gco:RecordType>
+			</attributeDescription>
+			<contentType>
+				<MD_CoverageContentTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CoverageContentTypeCode" codeListValue="image" codeSpace="ISOTC211/19115">image</MD_CoverageContentTypeCode>
+			</contentType>
+			<dimension>
+				<MD_Band>
+					<sequenceIdentifier>
+						<gco:MemberName>
+							<gco:aName>
+								<gco:CharacterString>Resource &gt; Content &gt; Image Description &gt; Band &gt; Sequence Identifier</gco:CharacterString>
+							</gco:aName>
+							<gco:attributeType>
+								<gco:TypeName>
+									<gco:aName>
+										<gco:CharacterString>Resource &gt; Content &gt; Image Description &gt; Band &gt; Sequence Identifier &gt; Type</gco:CharacterString>
+									</gco:aName>
+								</gco:TypeName>
+							</gco:attributeType>
+						</gco:MemberName>
+					</sequenceIdentifier>
+					<descriptor>
+						<gco:CharacterString>Resource &gt; Content &gt; Image Description &gt; Band &gt; Descriptor</gco:CharacterString>
+					</descriptor>
+					<maxValue>
+						<gco:Real>255.99</gco:Real>
+					</maxValue>
+					<minValue>
+						<gco:Real>0.01</gco:Real>
+					</minValue>
+					<units>
+						<gml:UnitDefinition gml:id="IDKB303DJXRCVGBVQVWC13MHMVIKFOQ4KIG0IUSXNXVJ5PPQGNNXTM">
+							<gml:identifier codeSpace="GML_UomSymbol">Unified Code of Units of Measure</gml:identifier>
+							<gml:catalogSymbol codeSpace="http://aurora.regenstrief.org/UCUM">m</gml:catalogSymbol>
+						</gml:UnitDefinition>
+					</units>
+					<peakResponse>
+						<gco:Real>225.4</gco:Real>
+					</peakResponse>
+					<bitsPerValue>
+						<gco:Integer>8</gco:Integer>
+					</bitsPerValue>
+					<toneGradation>
+						<gco:Integer>4</gco:Integer>
+					</toneGradation>
+					<scaleFactor>
+						<gco:Real>0.98</gco:Real>
+					</scaleFactor>
+					<offset>
+						<gco:Real>19.3</gco:Real>
+					</offset>
+				</MD_Band>
+			</dimension>
+			<illuminationElevationAngle>
+				<gco:Real>78.5</gco:Real>
+			</illuminationElevationAngle>
+			<illuminationAzimuthAngle>
+				<gco:Real>135.5</gco:Real>
+			</illuminationAzimuthAngle>
+			<imagingCondition>
+				<MD_ImagingConditionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ImagingConditionCode" codeListValue="shadow" codeSpace="ISOTC211/19115">shadow</MD_ImagingConditionCode>
+			</imagingCondition>
+			<imageQualityCode>
+				<MD_Identifier>
+					<authority>
+						<CI_Citation>
+							<title>
+								<gco:CharacterString>Resource &gt; Content &gt; Image Description &gt; Quality Code &gt; Authority Citation &gt; Titles &gt; Title</gco:CharacterString>
+							</title>
+							<date>
+								<CI_Date>
+									<date>
+										<gco:Date>2008-09-18</gco:Date>
+									</date>
+									<dateType>
+										<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision" codeSpace="ISOTC211/19115">revision</CI_DateTypeCode>
+									</dateType>
+								</CI_Date>
+							</date>
+							<citedResponsibleParty>
+								<CI_ResponsibleParty>
+									<organisationName>
+										<gco:CharacterString>Resource &gt; Content &gt; Image Description &gt; Quality Code &gt; Authority Citation &gt; Contact &gt; Organization</gco:CharacterString>
+									</organisationName>
+									<contactInfo>
+										<CI_Contact>
+											<address>
+												<CI_Address>
+													<electronicMailAddress>
+														<gco:CharacterString>Resource &gt; Content &gt; Image Description &gt; Quality Code &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+													</electronicMailAddress>
+												</CI_Address>
+											</address>
+										</CI_Contact>
+									</contactInfo>
+									<role>
+										<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+									</role>
+								</CI_ResponsibleParty>
+							</citedResponsibleParty>
+						</CI_Citation>
+					</authority>
+					<code>
+						<gco:CharacterString>Resource &gt; Content &gt; Image Description &gt; Quality Code &gt; Code</gco:CharacterString>
+					</code>
+				</MD_Identifier>
+			</imageQualityCode>
+			<cloudCoverPercentage>
+				<gco:Real>6.5</gco:Real>
+			</cloudCoverPercentage>
+			<processingLevelCode>
+				<MD_Identifier>
+					<authority>
+						<CI_Citation>
+							<title>
+								<gco:CharacterString>Resource &gt; Content &gt; Image Description &gt; Processing Level Code &gt; Authority Citation &gt; Titles &gt; Title</gco:CharacterString>
+							</title>
+							<date>
+								<CI_Date>
+									<date>
+										<gco:Date>2008-09-18</gco:Date>
+									</date>
+									<dateType>
+										<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision" codeSpace="ISOTC211/19115">revision</CI_DateTypeCode>
+									</dateType>
+								</CI_Date>
+							</date>
+							<citedResponsibleParty>
+								<CI_ResponsibleParty>
+									<organisationName>
+										<gco:CharacterString>Resource &gt; Content &gt; Image Description &gt; Processing Level Code &gt; Authority Citation &gt; Contact &gt; Organization</gco:CharacterString>
+									</organisationName>
+									<contactInfo>
+										<CI_Contact>
+											<address>
+												<CI_Address>
+													<electronicMailAddress>
+														<gco:CharacterString>Resource &gt; Content &gt; Image Description &gt; Processing Level Code &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+													</electronicMailAddress>
+												</CI_Address>
+											</address>
+										</CI_Contact>
+									</contactInfo>
+									<role>
+										<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+									</role>
+								</CI_ResponsibleParty>
+							</citedResponsibleParty>
+						</CI_Citation>
+					</authority>
+					<code>
+						<gco:CharacterString>Resource &gt; Content &gt; Image Description &gt; Processing Level Code &gt; Code</gco:CharacterString>
+					</code>
+				</MD_Identifier>
+			</processingLevelCode>
+			<compressionGenerationQuantity>
+				<gco:Integer>2</gco:Integer>
+			</compressionGenerationQuantity>
+			<triangulationIndicator>
+				<gco:Boolean>true</gco:Boolean>
+			</triangulationIndicator>
+			<radiometricCalibrationDataAvailability>
+				<gco:Boolean>true</gco:Boolean>
+			</radiometricCalibrationDataAvailability>
+			<cameraCalibrationInformationAvailability>
+				<gco:Boolean>true</gco:Boolean>
+			</cameraCalibrationInformationAvailability>
+			<filmDistortionInformationAvailability>
+				<gco:Boolean>true</gco:Boolean>
+			</filmDistortionInformationAvailability>
+			<lensDistortionInformationAvailability>
+				<gco:Boolean>true</gco:Boolean>
+			</lensDistortionInformationAvailability>
+		</MD_ImageDescription>
+	</contentInfo>
+	<distributionInfo>
+		<MD_Distribution>
+			<distributionFormat>
+				<MD_Format>
+					<name>
+						<gco:CharacterString>Resource &gt; Distribution &gt; Distribution Format &gt; Format Name</gco:CharacterString>
+					</name>
+					<version>
+						<gco:CharacterString>Resource &gt; Distribution &gt; Distribution Format &gt; Format Version</gco:CharacterString>
+					</version>
+				</MD_Format>
+			</distributionFormat>
+			<distributor>
+				<MD_Distributor>
+					<distributorContact>
+						<CI_ResponsibleParty>
+							<organisationName>
+								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Organization</gco:CharacterString>
+							</organisationName>
+							<contactInfo>
+								<CI_Contact>
+									<phone>
+										<CI_Telephone>
+											<voice>
+												<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Contact Information &gt; Phone</gco:CharacterString>
+											</voice>
+										</CI_Telephone>
+									</phone>
+									<address>
+										<CI_Address>
+											<deliveryPoint>
+												<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Contact Information &gt; Address</gco:CharacterString>
+											</deliveryPoint>
+											<city>
+												<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Contact Information &gt; City</gco:CharacterString>
+											</city>
+											<administrativeArea>
+												<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Contact Information &gt; State</gco:CharacterString>
+											</administrativeArea>
+											<postalCode>
+												<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Contact Information &gt; Postal Code</gco:CharacterString>
+											</postalCode>
+											<country>
+												<gco:CharacterString>US</gco:CharacterString>
+											</country>
+											<electronicMailAddress>
+												<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Contact Information &gt; Email</gco:CharacterString>
+											</electronicMailAddress>
+										</CI_Address>
+									</address>
+								</CI_Contact>
+							</contactInfo>
+							<role>
+								<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="distributor" codeSpace="ISOTC211/19115">distributor</CI_RoleCode>
+							</role>
+						</CI_ResponsibleParty>
+					</distributorContact>
+					<distributionOrderProcess>
+						<MD_StandardOrderProcess>
+							<fees>
+								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Ordering Process &gt; Fees</gco:CharacterString>
+							</fees>
+							<plannedAvailableDateTime>
+								<gco:DateTime>2011-10-15T13:00:00</gco:DateTime>
+							</plannedAvailableDateTime>
+							<orderingInstructions>
+								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Ordering Process &gt; Ordering Instructions</gco:CharacterString>
+							</orderingInstructions>
+							<turnaround>
+								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Ordering Process &gt; Turnaround</gco:CharacterString>
+							</turnaround>
+						</MD_StandardOrderProcess>
+					</distributionOrderProcess>
+					<distributorFormat>
+						<MD_Format>
+							<name>
+								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Distribution Format &gt; Format Name</gco:CharacterString>
+							</name>
+							<version>
+								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Distribution Format &gt; Format Version</gco:CharacterString>
+							</version>
+							<amendmentNumber>
+								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Distribution Format &gt; Amendment Number</gco:CharacterString>
+							</amendmentNumber>
+							<specification>
+								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Distribution Format &gt; Specification</gco:CharacterString>
+							</specification>
+							<fileDecompressionTechnique>
+								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Distribution Format &gt; Decompression Technique</gco:CharacterString>
+							</fileDecompressionTechnique>
+						</MD_Format>
+					</distributorFormat>
+					<distributorTransferOptions>
+						<MD_DigitalTransferOptions>
+							<unitsOfDistribution>
+								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Units of Distribution</gco:CharacterString>
+							</unitsOfDistribution>
+							<transferSize>
+								<gco:Real>1</gco:Real>
+							</transferSize>
+							<onLine>
+								<CI_OnlineResource>
+									<linkage>
+										<URL>http://Resource_Distribution_Digital_Transfer_Options_Online_Resource_Linkage</URL>
+									</linkage>
+									<protocol>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Online Resource &gt; Protocol</gco:CharacterString>
+									</protocol>
+									<applicationProfile>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Online Resource &gt; Profile</gco:CharacterString>
+									</applicationProfile>
+									<name>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Online Resource &gt; Name</gco:CharacterString>
+									</name>
+									<description>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Online Resource &gt; Description (not a geoportal content type, e.g. Offline Data)</gco:CharacterString>
+									</description>
+									<function>
+										<CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="download" codeSpace="ISOTC211/19115">download</CI_OnLineFunctionCode>
+									</function>
+								</CI_OnlineResource>
+							</onLine>
+							<offLine>
+								<MD_Medium>
+									<name>
+										<MD_MediumNameCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_MediumNameCode" codeListValue="dvdRom" codeSpace="ISOTC211/19115">dvdRom</MD_MediumNameCode>
+									</name>
+									<density>
+										<gco:Real>1</gco:Real>
+									</density>
+									<densityUnits>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Offline Medium &gt; Density Units (dvdRom Medium Name)</gco:CharacterString>
+									</densityUnits>
+									<volumes>
+										<gco:Integer>1</gco:Integer>
+									</volumes>
+									<mediumFormat>
+										<MD_MediumFormatCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_MediumFormatCode" codeListValue="iso9660" codeSpace="ISOTC211/19115">iso9660</MD_MediumFormatCode>
+									</mediumFormat>
+									<mediumNote>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Offline Medium &gt; Medium Note (dvdRom Medium Name)</gco:CharacterString>
+									</mediumNote>
+								</MD_Medium>
+							</offLine>
+						</MD_DigitalTransferOptions>
+					</distributorTransferOptions>
+					<distributorTransferOptions>
+						<MD_DigitalTransferOptions>
+							<offLine>
+								<MD_Medium>
+									<name>
+										<MD_MediumNameCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_MediumNameCode" codeListValue="hardcopy" codeSpace="ISOTC211/19115">hardcopy</MD_MediumNameCode>
+									</name>
+									<mediumNote>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Offline Medium &gt; Medium Note (hardcopy Medium Name)</gco:CharacterString>
+									</mediumNote>
+								</MD_Medium>
+							</offLine>
+						</MD_DigitalTransferOptions>
+					</distributorTransferOptions>
+					<distributorTransferOptions>
+						<MD_DigitalTransferOptions>
+							<offLine>
+								<MD_Medium>
+									<name>
+										<MD_MediumNameCode codeList="http://www.fgdc.gov/nap/metadata/register/codelists.html#napMD_MediumNameCode" codeListValue="USBFlashDrive" codeSpace="ISOTC211/19139/NAP">USBFlashDrive</MD_MediumNameCode>
+									</name>
+									<mediumFormat>
+										<MD_MediumFormatCode codeList="http://www.fgdc.gov/nap/metadata/register/codelists.html#napMD_MediumFormatCode" codeListValue="UDF" codeSpace="ISOTC211/19139/NAP">UDF</MD_MediumFormatCode>
+									</mediumFormat>
+									<mediumNote>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Offline Medium &gt; Medium Note (NAP USBFlashDrive Medium Name + UDF Format Code)</gco:CharacterString>
+									</mediumNote>
+								</MD_Medium>
+							</offLine>
+						</MD_DigitalTransferOptions>
+					</distributorTransferOptions>
+				</MD_Distributor>
+			</distributor>
+			<transferOptions>
+				<MD_DigitalTransferOptions>
+					<transferSize>
+						<gco:Real>2.12</gco:Real>
+					</transferSize>
+					<onLine>
+						<CI_OnlineResource>
+							<linkage>
+								<URL>http://Resource_Distribution_Digital_Transfer_Options_Online_Resource_Linkage</URL>
+							</linkage>
+							<protocol>
+								<gco:CharacterString>Resource &gt; Distribution &gt; Digital Transfer Options &gt; Online Resource &gt; Protocol</gco:CharacterString>
+							</protocol>
+						</CI_OnlineResource>
+					</onLine>
+				</MD_DigitalTransferOptions>
+			</transferOptions>
+		</MD_Distribution>
+	</distributionInfo>
+	<dataQualityInfo>
+		<DQ_DataQuality>
+			<scope>
+				<DQ_Scope>
+					<level>
+						<MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset" codeSpace="ISOTC211/19115">dataset</MD_ScopeCode>
+					</level>
+					<extent>
+						<EX_Extent>
+							<description>
+								<gco:CharacterString>Resource &gt; Data Quality &gt; Extent &gt; Description</gco:CharacterString>
+							</description>
+							<temporalElement>
+								<EX_TemporalExtent>
+									<extent>
+										<gml:TimeInstant gml:id="ID5EMB5024DNK5GDPZTPISS4TDVLPAHUE23GQTDRD50RZORDOG4T1">
+											<gml:timePosition>2011-10-12T00:00:00</gml:timePosition>
+										</gml:TimeInstant>
+									</extent>
+								</EX_TemporalExtent>
+							</temporalElement>
+						</EX_Extent>
+					</extent>
+					<levelDescription>
+						<MD_ScopeDescription>
+							<dataset>
+								<gco:CharacterString>Resource &gt; Data Quality &gt; Level Description &gt; Dataset</gco:CharacterString>
+							</dataset>
+						</MD_ScopeDescription>
+					</levelDescription>
+				</DQ_Scope>
+			</scope>
+			<report>
+				<DQ_AbsoluteExternalPositionalAccuracy>
+					<nameOfMeasure>
+						<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Name (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+					</nameOfMeasure>
+					<measureIdentification>
+						<MD_Identifier>
+							<authority>
+								<CI_Citation>
+									<title>
+										<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Identifier &gt; Authority Citation &gt; Titles &gt; Title (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+									</title>
+									<date>
+										<CI_Date>
+											<date>
+												<gco:Date>2011-08-31</gco:Date>
+											</date>
+											<dateType>
+												<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision" codeSpace="ISOTC211/19115">revision</CI_DateTypeCode>
+											</dateType>
+										</CI_Date>
+									</date>
+									<citedResponsibleParty>
+										<CI_ResponsibleParty>
+											<organisationName>
+												<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Identifier &gt; Authority Citation &gt; Contact &gt; Organization (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+											</organisationName>
+											<contactInfo>
+												<CI_Contact>
+													<address>
+														<CI_Address>
+															<electronicMailAddress>
+																<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Identifier &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+															</electronicMailAddress>
+														</CI_Address>
+													</address>
+												</CI_Contact>
+											</contactInfo>
+											<role>
+												<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+											</role>
+										</CI_ResponsibleParty>
+									</citedResponsibleParty>
+								</CI_Citation>
+							</authority>
+							<code>
+								<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Identifier &gt; Code (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+							</code>
+						</MD_Identifier>
+					</measureIdentification>
+					<measureDescription>
+						<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Description (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+					</measureDescription>
+					<evaluationMethodType>
+						<DQ_EvaluationMethodTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DQ_EvaluationMethodTypeCode" codeListValue="indirect" codeSpace="ISOTC211/19115">indirect</DQ_EvaluationMethodTypeCode>
+					</evaluationMethodType>
+					<evaluationMethodDescription>
+						<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Evaluation Method &gt; Description (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+					</evaluationMethodDescription>
+					<evaluationProcedure>
+						<CI_Citation>
+							<title>
+								<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Evaluation Method &gt; Procedure Citation &gt; Titles &gt; Title (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+							</title>
+							<date>
+								<CI_Date>
+									<date>
+										<gco:Date>2011-08-01</gco:Date>
+									</date>
+									<dateType>
+										<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision" codeSpace="ISOTC211/19115">revision</CI_DateTypeCode>
+									</dateType>
+								</CI_Date>
+							</date>
+							<citedResponsibleParty>
+								<CI_ResponsibleParty>
+									<organisationName>
+										<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Evaluation Method &gt; Procedure Citation &gt; Contact &gt; Organization (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+									</organisationName>
+									<contactInfo>
+										<CI_Contact>
+											<address>
+												<CI_Address>
+													<electronicMailAddress>
+														<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Evaluation Method &gt; Procedure Citation &gt; Contact &gt; Contact Information &gt; Email (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+													</electronicMailAddress>
+												</CI_Address>
+											</address>
+										</CI_Contact>
+									</contactInfo>
+									<role>
+										<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+									</role>
+								</CI_ResponsibleParty>
+							</citedResponsibleParty>
+						</CI_Citation>
+					</evaluationProcedure>
+					<dateTime>
+						<gco:DateTime>2011-10-12T00:00:00</gco:DateTime>
+					</dateTime>
+					<result>
+						<DQ_ConformanceResult>
+							<specification>
+								<CI_Citation>
+									<title>
+										<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Titles &gt; Title (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+									</title>
+									<date>
+										<CI_Date>
+											<date>
+												<gco:Date>2009-06-20</gco:Date>
+											</date>
+											<dateType>
+												<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation" codeSpace="ISOTC211/19115">creation</CI_DateTypeCode>
+											</dateType>
+										</CI_Date>
+									</date>
+									<citedResponsibleParty>
+										<CI_ResponsibleParty>
+											<organisationName>
+												<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Contact &gt; Organization (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+											</organisationName>
+											<contactInfo>
+												<CI_Contact>
+													<address>
+														<CI_Address>
+															<electronicMailAddress>
+																<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Contact &gt; Contact Information &gt; Email (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+															</electronicMailAddress>
+														</CI_Address>
+													</address>
+												</CI_Contact>
+											</contactInfo>
+											<role>
+												<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+											</role>
+										</CI_ResponsibleParty>
+									</citedResponsibleParty>
+								</CI_Citation>
+							</specification>
+							<explanation>
+								<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Explanation (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+							</explanation>
+							<pass>
+								<gco:Boolean>true</gco:Boolean>
+							</pass>
+						</DQ_ConformanceResult>
+					</result>
+					<result>
+						<DQ_QuantitativeResult>
+							<valueType>
+								<gco:RecordType>Resource &gt; Data Quality &gt; Report &gt; Quantitative Result &gt; Value Type (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:RecordType>
+							</valueType>
+							<valueUnit>
+								<gml:UnitDefinition gml:id="ID33GL11AQMZQCOIQC3NZB4AETSL4IQVELQCYGUOHXAR2SH1KB1UUK">
+									<gml:identifier codeSpace="GML_UomSymbol">Unified Code of Units of Measure</gml:identifier>
+									<gml:catalogSymbol codeSpace="http://aurora.regenstrief.org/UCUM">m</gml:catalogSymbol>
+								</gml:UnitDefinition>
+							</valueUnit>
+							<errorStatistic>
+								<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Quantitative Result &gt; Error Statistic (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+							</errorStatistic>
+							<value>
+								<gco:Record>Resource &gt; Data Quality &gt; Report &gt; Quantitative Result &gt; Value (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:Record>
+							</value>
+						</DQ_QuantitativeResult>
+					</result>
+				</DQ_AbsoluteExternalPositionalAccuracy>
+			</report>
+			<report>
+				<DQ_AbsoluteExternalPositionalAccuracy>
+					<measureDescription>
+						<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Description (Type=Absolute External Positional Accuracy + Dimension=Vertical)</gco:CharacterString>
+					</measureDescription>
+					<evaluationMethodDescription>
+						<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Evaluation Method &gt; Description (Type=Absolute External Positional Accuracy + Dimension=Vertical)</gco:CharacterString>
+					</evaluationMethodDescription>
+					<result>
+						<DQ_QuantitativeResult>
+							<valueUnit>
+								<gml:UnitDefinition gml:id="IDQSYZDNEIKFD3BMNWWPISHH0HFHKOE3HJX5WGI4N44ZOJYNDQA24N">
+									<gml:identifier codeSpace="GML_UomSymbol">Unified Code of Units of Measure</gml:identifier>
+									<gml:catalogSymbol codeSpace="http://aurora.regenstrief.org/UCUM">m</gml:catalogSymbol>
+								</gml:UnitDefinition>
+							</valueUnit>
+							<value>
+								<gco:Record>Resource &gt; Data Quality &gt; Report &gt; Quantitative Result &gt; Value (Type=Absolute External Positional Accuracy + Dimension=Vertical)</gco:Record>
+							</value>
+						</DQ_QuantitativeResult>
+					</result>
+				</DQ_AbsoluteExternalPositionalAccuracy>
+			</report>
+			<report>
+				<DQ_CompletenessOmission>
+					<measureDescription>
+						<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Description (Type=Completeness Omission)</gco:CharacterString>
+					</measureDescription>
+					<result>
+						<DQ_QuantitativeResult>
+							<valueUnit>
+								<gml:UnitDefinition gml:id="IDFT0UTU0KQLR5MTACEX5WW3CGZYMSVONF2QOTZDIWKZDMYOP3AJL">
+									<gml:identifier codeSpace="GML_UomSymbol">Unified Code of Units of Measure</gml:identifier>
+									<gml:catalogSymbol codeSpace="http://aurora.regenstrief.org/UCUM">m</gml:catalogSymbol>
+								</gml:UnitDefinition>
+							</valueUnit>
+							<value>
+								<gco:Record>Resource &gt; Data Quality &gt; Report &gt; Quantitative Result &gt; Value (Type=Completeness Omission)</gco:Record>
+							</value>
+						</DQ_QuantitativeResult>
+					</result>
+				</DQ_CompletenessOmission>
+			</report>
+			<report>
+				<DQ_ConceptualConsistency>
+					<measureDescription>
+						<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Description (Type=Conceptual Consistency)</gco:CharacterString>
+					</measureDescription>
+					<result>
+						<DQ_QuantitativeResult>
+							<valueUnit>
+								<gml:UnitDefinition gml:id="IDYM5N3OEL20DRO23ONL3Z4JDQ2FE5R4IDL4KY51NXIG5E5MTZWTAH">
+									<gml:identifier codeSpace="GML_UomSymbol">Unified Code of Units of Measure</gml:identifier>
+									<gml:catalogSymbol codeSpace="http://aurora.regenstrief.org/UCUM">m</gml:catalogSymbol>
+								</gml:UnitDefinition>
+							</valueUnit>
+							<value>
+								<gco:Record>Resource &gt; Data Quality &gt; Report &gt; Quantitative Result &gt; Value (Type=Conceptual Consistency)</gco:Record>
+							</value>
+						</DQ_QuantitativeResult>
+					</result>
+				</DQ_ConceptualConsistency>
+			</report>
+			<report>
+				<DQ_QuantitativeAttributeAccuracy>
+					<measureDescription>
+						<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Description (Type=Quantitative Attribute Accuracy)</gco:CharacterString>
+					</measureDescription>
+					<evaluationMethodDescription>
+						<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Evaluation Method &gt; Description (Type=Quantitative Attribute Accuracy)</gco:CharacterString>
+					</evaluationMethodDescription>
+					<result>
+						<DQ_QuantitativeResult>
+							<valueUnit>
+								<gml:UnitDefinition gml:id="IDNEXCM0LPPHVQHXW4OEOMSL1B3LE5WDK4B2TIP3ELR1LDOEF12VDF">
+									<gml:identifier codeSpace="GML_UomSymbol">Unified Code of Units of Measure</gml:identifier>
+									<gml:catalogSymbol codeSpace="http://aurora.regenstrief.org/UCUM">Cel</gml:catalogSymbol>
+								</gml:UnitDefinition>
+							</valueUnit>
+							<value>
+								<gco:Record>Resource &gt; Data Quality &gt; Report &gt; Quantitative Result &gt; Value (Type=Quantitative Attribute Accuracy)</gco:Record>
+							</value>
+						</DQ_QuantitativeResult>
+					</result>
+				</DQ_QuantitativeAttributeAccuracy>
+			</report>
+			<report>
+				<DQ_DomainConsistency>
+					<result>
+						<DQ_ConformanceResult>
+							<specification>
+								<CI_Citation>
+									<title>
+										<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Titles &gt; Title (Type=Domain Consistency)</gco:CharacterString>
+									</title>
+									<date>
+										<CI_Date>
+											<date>
+												<gco:Date>2010-07-01</gco:Date>
+											</date>
+											<dateType>
+												<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation" codeSpace="ISOTC211/19115">creation</CI_DateTypeCode>
+											</dateType>
+										</CI_Date>
+									</date>
+									<citedResponsibleParty>
+										<CI_ResponsibleParty>
+											<organisationName>
+												<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Contact &gt; Organization (Type=Domain Consistency)</gco:CharacterString>
+											</organisationName>
+											<contactInfo>
+												<CI_Contact>
+													<address>
+														<CI_Address>
+															<electronicMailAddress>
+																<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Contact &gt; Contact Information &gt; Email (Type=Domain Consistency)</gco:CharacterString>
+															</electronicMailAddress>
+														</CI_Address>
+													</address>
+												</CI_Contact>
+											</contactInfo>
+											<role>
+												<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+											</role>
+										</CI_ResponsibleParty>
+									</citedResponsibleParty>
+								</CI_Citation>
+							</specification>
+							<explanation>
+								<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Explanation (Type=Domain Consistency)</gco:CharacterString>
+							</explanation>
+							<pass>
+								<gco:Boolean>true</gco:Boolean>
+							</pass>
+						</DQ_ConformanceResult>
+					</result>
+				</DQ_DomainConsistency>
+			</report>
+			<lineage>
+				<LI_Lineage>
+					<statement>
+						<gco:CharacterString>Resource &gt; Lineage &gt; Statement</gco:CharacterString>
+					</statement>
+					<processStep>
+						<LI_ProcessStep>
+							<description>
+								<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Process Description</gco:CharacterString>
+							</description>
+							<rationale>
+								<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Rationale</gco:CharacterString>
+							</rationale>
+							<dateTime>
+								<gco:DateTime>2011-10-01T16:10:32</gco:DateTime>
+							</dateTime>
+							<processor>
+								<CI_ResponsibleParty>
+									<individualName>
+										<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Name</gco:CharacterString>
+									</individualName>
+									<organisationName>
+										<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Organization</gco:CharacterString>
+									</organisationName>
+									<contactInfo>
+										<CI_Contact>
+											<phone>
+												<CI_Telephone>
+													<voice>
+														<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Contact Information &gt; Phone</gco:CharacterString>
+													</voice>
+												</CI_Telephone>
+											</phone>
+											<address>
+												<CI_Address>
+													<deliveryPoint>
+														<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Contact Information &gt; Address</gco:CharacterString>
+													</deliveryPoint>
+													<city>
+														<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Contact Information &gt; City</gco:CharacterString>
+													</city>
+													<administrativeArea>
+														<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Contact Information &gt; State</gco:CharacterString>
+													</administrativeArea>
+													<postalCode>
+														<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Contact Information &gt; Postal Code</gco:CharacterString>
+													</postalCode>
+													<country>
+														<gco:CharacterString>US</gco:CharacterString>
+													</country>
+													<electronicMailAddress>
+														<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Contact Information &gt; Email</gco:CharacterString>
+													</electronicMailAddress>
+												</CI_Address>
+											</address>
+										</CI_Contact>
+									</contactInfo>
+									<role>
+										<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="processor" codeSpace="ISOTC211/19115">processor</CI_RoleCode>
+									</role>
+								</CI_ResponsibleParty>
+							</processor>
+							<source>
+								<LI_Source>
+									<description>
+										<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Description (Source Type=Used)</gco:CharacterString>
+									</description>
+									<sourceReferenceSystem>
+										<MD_ReferenceSystem>
+											<referenceSystemIdentifier>
+												<RS_Identifier>
+													<authority>
+														<CI_Citation>
+															<title>
+																<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Titles &gt; Title (Source Type=Used)</gco:CharacterString>
+															</title>
+															<date>
+																<CI_Date>
+																	<date>
+																		<gco:Date>2012-07-20</gco:Date>
+																	</date>
+																	<dateType>
+																		<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" codeSpace="ISOTC211/19115">publication</CI_DateTypeCode>
+																	</dateType>
+																</CI_Date>
+															</date>
+															<citedResponsibleParty>
+																<CI_ResponsibleParty>
+																	<organisationName>
+																		<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Contact &gt; Organization (Source Type=Used)</gco:CharacterString>
+																	</organisationName>
+																	<contactInfo>
+																		<CI_Contact>
+																			<address>
+																				<CI_Address>
+																					<electronicMailAddress>
+																						<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email (Source Type=Used)</gco:CharacterString>
+																					</electronicMailAddress>
+																				</CI_Address>
+																			</address>
+																		</CI_Contact>
+																	</contactInfo>
+																	<role>
+																		<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="resourceProvider" codeSpace="ISOTC211/19115">resourceProvider</CI_RoleCode>
+																	</role>
+																</CI_ResponsibleParty>
+															</citedResponsibleParty>
+														</CI_Citation>
+													</authority>
+													<code>
+														<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Reference System &gt; Code (Source Type=Used)</gco:CharacterString>
+													</code>
+													<codeSpace>
+														<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Reference System &gt; Code Space (Source Type=Used)</gco:CharacterString>
+													</codeSpace>
+													<version>
+														<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Reference System &gt; Version (Source Type=Used)</gco:CharacterString>
+													</version>
+												</RS_Identifier>
+											</referenceSystemIdentifier>
+										</MD_ReferenceSystem>
+									</sourceReferenceSystem>
+									<sourceCitation>
+										<CI_Citation>
+											<title>
+												<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Titles &gt; Title (Source Type=Used)</gco:CharacterString>
+											</title>
+											<alternateTitle>
+												<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Titles &gt; Alternate Title (Source Type=Used)</gco:CharacterString>
+											</alternateTitle>
+											<date>
+												<CI_Date>
+													<date>
+														<gco:Date>2011-09-14</gco:Date>
+													</date>
+													<dateType>
+														<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision" codeSpace="ISOTC211/19115">revision</CI_DateTypeCode>
+													</dateType>
+												</CI_Date>
+											</date>
+											<citedResponsibleParty>
+												<CI_ResponsibleParty>
+													<organisationName>
+														<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Organization (Source Type=Used Role=Publisher)</gco:CharacterString>
+													</organisationName>
+													<contactInfo>
+														<CI_Contact>
+															<address>
+																<CI_Address>
+																	<city>
+																		<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Contact Information &gt; City (Source Type=Used Role=Publisher)</gco:CharacterString>
+																	</city>
+																	<administrativeArea>
+																		<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Contact Information &gt; State (Source Type=Used Role=Publisher)</gco:CharacterString>
+																	</administrativeArea>
+																	<country>
+																		<gco:CharacterString>US</gco:CharacterString>
+																	</country>
+																	<electronicMailAddress>
+																		<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Contact Information &gt; Email (Source Type=Used Role=Publisher)</gco:CharacterString>
+																	</electronicMailAddress>
+																</CI_Address>
+															</address>
+														</CI_Contact>
+													</contactInfo>
+													<role>
+														<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+													</role>
+												</CI_ResponsibleParty>
+											</citedResponsibleParty>
+											<citedResponsibleParty>
+												<CI_ResponsibleParty>
+													<organisationName>
+														<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Organization (Source Type=Used Role=Originator)</gco:CharacterString>
+													</organisationName>
+													<contactInfo>
+														<CI_Contact>
+															<address>
+																<CI_Address>
+																	<electronicMailAddress>
+																		<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Contact Information &gt; Email (Source Type=Used Role=Originator)</gco:CharacterString>
+																	</electronicMailAddress>
+																</CI_Address>
+															</address>
+														</CI_Contact>
+													</contactInfo>
+													<role>
+														<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator" codeSpace="ISOTC211/19115">originator</CI_RoleCode>
+													</role>
+												</CI_ResponsibleParty>
+											</citedResponsibleParty>
+										</CI_Citation>
+									</sourceCitation>
+									<sourceExtent>
+										<EX_Extent>
+											<geographicElement>
+												<EX_GeographicBoundingBox>
+													<extentTypeCode>
+														<gco:Boolean>true</gco:Boolean>
+													</extentTypeCode>
+													<westBoundLongitude>
+														<gco:Decimal>-100</gco:Decimal>
+													</westBoundLongitude>
+													<eastBoundLongitude>
+														<gco:Decimal>-80</gco:Decimal>
+													</eastBoundLongitude>
+													<southBoundLatitude>
+														<gco:Decimal>21.5</gco:Decimal>
+													</southBoundLatitude>
+													<northBoundLatitude>
+														<gco:Decimal>42.5</gco:Decimal>
+													</northBoundLatitude>
+												</EX_GeographicBoundingBox>
+											</geographicElement>
+										</EX_Extent>
+									</sourceExtent>
+								</LI_Source>
+							</source>
+							<source>
+								<LI_Source>
+									<description>
+										<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Description (Source Type=Produced)</gco:CharacterString>
+									</description>
+									<sourceCitation>
+										<CI_Citation>
+											<title>
+												<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Titles &gt; Title (Source Type=Produced)</gco:CharacterString>
+											</title>
+											<alternateTitle>
+												<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Titles &gt; Alternate Title (Source Type=Produced)</gco:CharacterString>
+											</alternateTitle>
+											<date>
+												<CI_Date>
+													<date>
+														<gco:Date>2011-10-14</gco:Date>
+													</date>
+													<dateType>
+														<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation" codeSpace="ISOTC211/19115">creation</CI_DateTypeCode>
+													</dateType>
+												</CI_Date>
+											</date>
+											<citedResponsibleParty>
+												<CI_ResponsibleParty>
+													<organisationName>
+														<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Organization (Source Type=Produced Role=Originator)</gco:CharacterString>
+													</organisationName>
+													<contactInfo>
+														<CI_Contact>
+															<address>
+																<CI_Address>
+																	<electronicMailAddress>
+																		<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Contact Information &gt; Email (Source Type=Produced Role=Originator)</gco:CharacterString>
+																	</electronicMailAddress>
+																</CI_Address>
+															</address>
+														</CI_Contact>
+													</contactInfo>
+													<role>
+														<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator" codeSpace="ISOTC211/19115">originator</CI_RoleCode>
+													</role>
+												</CI_ResponsibleParty>
+											</citedResponsibleParty>
+										</CI_Citation>
+									</sourceCitation>
+								</LI_Source>
+							</source>
+						</LI_ProcessStep>
+					</processStep>
+					<source>
+						<LI_Source>
+							<description>
+								<gco:CharacterString>Resource &gt; Lineage &gt; Data Source &gt; Source Description</gco:CharacterString>
+							</description>
+							<scaleDenominator>
+								<MD_RepresentativeFraction>
+									<denominator>
+										<gco:Integer>250000</gco:Integer>
+									</denominator>
+								</MD_RepresentativeFraction>
+							</scaleDenominator>
+							<sourceReferenceSystem>
+								<MD_ReferenceSystem>
+									<referenceSystemIdentifier>
+										<RS_Identifier>
+											<authority>
+												<CI_Citation>
+													<title>
+														<gco:CharacterString>Resource &gt; Lineage &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Titles &gt; Title</gco:CharacterString>
+													</title>
+													<date>
+														<CI_Date>
+															<date>
+																<gco:Date>2011-06-15</gco:Date>
+															</date>
+															<dateType>
+																<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision" codeSpace="ISOTC211/19115">revision</CI_DateTypeCode>
+															</dateType>
+														</CI_Date>
+													</date>
+													<citedResponsibleParty>
+														<CI_ResponsibleParty>
+															<organisationName>
+																<gco:CharacterString>Resource &gt; Lineage &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Contact &gt; Organization</gco:CharacterString>
+															</organisationName>
+															<contactInfo>
+																<CI_Contact>
+																	<address>
+																		<CI_Address>
+																			<electronicMailAddress>
+																				<gco:CharacterString>Resource &gt; Lineage &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+																			</electronicMailAddress>
+																		</CI_Address>
+																	</address>
+																</CI_Contact>
+															</contactInfo>
+															<role>
+																<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian" codeSpace="ISOTC211/19115">custodian</CI_RoleCode>
+															</role>
+														</CI_ResponsibleParty>
+													</citedResponsibleParty>
+												</CI_Citation>
+											</authority>
+											<code>
+												<gco:CharacterString>Resource &gt; Lineage &gt; Data Source &gt; Reference System &gt; Code</gco:CharacterString>
+											</code>
+											<codeSpace>
+												<gco:CharacterString>Resource &gt; Lineage &gt; Data Source &gt; Reference System &gt; Code Space</gco:CharacterString>
+											</codeSpace>
+											<version>
+												<gco:CharacterString>Resource &gt; Lineage &gt; Data Source &gt; Reference System &gt; Version</gco:CharacterString>
+											</version>
+										</RS_Identifier>
+									</referenceSystemIdentifier>
+								</MD_ReferenceSystem>
+							</sourceReferenceSystem>
+							<sourceCitation>
+								<CI_Citation>
+									<title>
+										<gco:CharacterString>Resource &gt; Lineage &gt; Data Source &gt; Source Citation &gt; Titles &gt; Title</gco:CharacterString>
+									</title>
+									<alternateTitle>
+										<gco:CharacterString>Resource &gt; Lineage &gt; Data Source &gt; Source Citation &gt; Titles &gt; Alternate Title</gco:CharacterString>
+									</alternateTitle>
+									<date>
+										<CI_Date>
+											<date>
+												<gco:Date>2011-07-15</gco:Date>
+											</date>
+											<dateType>
+												<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" codeSpace="ISOTC211/19115">publication</CI_DateTypeCode>
+											</dateType>
+										</CI_Date>
+									</date>
+									<citedResponsibleParty>
+										<CI_ResponsibleParty>
+											<organisationName>
+												<gco:CharacterString>Resource &gt; Lineage &gt; Data Source &gt; Source Citation &gt; Contact &gt; Organization</gco:CharacterString>
+											</organisationName>
+											<contactInfo>
+												<CI_Contact>
+													<address>
+														<CI_Address>
+															<electronicMailAddress>
+																<gco:CharacterString>Resource &gt; Lineage &gt; Data Source &gt; Source Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+															</electronicMailAddress>
+														</CI_Address>
+													</address>
+												</CI_Contact>
+											</contactInfo>
+											<role>
+												<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator" codeSpace="ISOTC211/19115">originator</CI_RoleCode>
+											</role>
+										</CI_ResponsibleParty>
+									</citedResponsibleParty>
+								</CI_Citation>
+							</sourceCitation>
+							<sourceExtent>
+								<EX_Extent>
+									<description>
+										<gco:CharacterString>Resource &gt; Lineage &gt; Data Source &gt; Source Extent &gt; Description</gco:CharacterString>
+									</description>
+									<temporalElement>
+										<EX_TemporalExtent>
+											<extent>
+												<gml:TimeInstant gml:id="IDW2PFFN3B1N3OPNIVOCNANNLIAMO3Z23BF4KJPLKAEEXB32GVPED">
+													<gml:timePosition>2011-06-06T00:00:00</gml:timePosition>
+												</gml:TimeInstant>
+											</extent>
+										</EX_TemporalExtent>
+									</temporalElement>
+									<temporalElement>
+										<EX_TemporalExtent>
+											<extent>
+												<gml:TimeInstant gml:id="IDBDJVJK4QGUGGFOSKF4LG1SFQMIB44X5J2EPV4BOYWJQEZEDEZ3KI">
+													<gml:timePosition>2011-07-14T14:20:00</gml:timePosition>
+												</gml:TimeInstant>
+											</extent>
+										</EX_TemporalExtent>
+									</temporalElement>
+									<temporalElement>
+										<EX_TemporalExtent>
+											<extent>
+												<gml:TimeInstant gml:id="IDSEHIZGFCTLOMPBYAQH4WJEIHAHGZ2DK1SDTZ0RCUZAZGCZD5UR0P">
+													<gml:timePosition>2011-08-05T06:05:00</gml:timePosition>
+												</gml:TimeInstant>
+											</extent>
+										</EX_TemporalExtent>
+									</temporalElement>
+								</EX_Extent>
+							</sourceExtent>
+						</LI_Source>
+					</source>
+				</LI_Lineage>
+			</lineage>
+		</DQ_DataQuality>
+	</dataQualityInfo>
+	<portrayalCatalogueInfo>
+		<MD_PortrayalCatalogueReference>
+			<portrayalCatalogueCitation>
+				<CI_Citation>
+					<title>
+						<gco:CharacterString>Resource &gt; References &gt; Portrayal Citation &gt; Titles &gt; Title</gco:CharacterString>
+					</title>
+					<date>
+						<CI_Date>
+							<date>
+								<gco:Date>2008-01-01</gco:Date>
+							</date>
+							<dateType>
+								<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision" codeSpace="ISOTC211/19115">revision</CI_DateTypeCode>
+							</dateType>
+						</CI_Date>
+					</date>
+					<citedResponsibleParty>
+						<CI_ResponsibleParty>
+							<organisationName>
+								<gco:CharacterString>Resource &gt; References &gt; Portrayal Citation &gt; Contact &gt; Organization</gco:CharacterString>
+							</organisationName>
+							<positionName>
+								<gco:CharacterString>Resource &gt; References &gt; Portrayal Citation &gt; Contact &gt; Position</gco:CharacterString>
+							</positionName>
+							<contactInfo>
+								<CI_Contact>
+									<address>
+										<CI_Address>
+											<electronicMailAddress>
+												<gco:CharacterString>Resource &gt; References &gt; Portrayal Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+											</electronicMailAddress>
+										</CI_Address>
+									</address>
+								</CI_Contact>
+							</contactInfo>
+							<role>
+								<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian" codeSpace="ISOTC211/19115">custodian</CI_RoleCode>
+							</role>
+						</CI_ResponsibleParty>
+					</citedResponsibleParty>
+				</CI_Citation>
+			</portrayalCatalogueCitation>
+		</MD_PortrayalCatalogueReference>
+	</portrayalCatalogueInfo>
+	<metadataConstraints>
+		<MD_Constraints>
+			<useLimitation>
+				<gco:CharacterString>Metadata &gt; Constraints &gt; General Constraints &gt; Use Limitation</gco:CharacterString>
+			</useLimitation>
+		</MD_Constraints>
+	</metadataConstraints>
+	<metadataConstraints>
+		<MD_LegalConstraints>
+			<useLimitation>
+				<gco:CharacterString>Metadata &gt; Constraints &gt; Legal Constraints &gt; Use Limitation</gco:CharacterString>
+			</useLimitation>
+			<accessConstraints>
+				<MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions" codeSpace="ISOTC211/19115">otherRestrictions</MD_RestrictionCode>
+			</accessConstraints>
+			<useConstraints>
+				<MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="restricted" codeSpace="ISOTC211/19115">restricted</MD_RestrictionCode>
+			</useConstraints>
+			<otherConstraints>
+				<gco:CharacterString>Metadata &gt; Constraints &gt; Legal Constraints &gt; Other Constraints</gco:CharacterString>
+			</otherConstraints>
+		</MD_LegalConstraints>
+	</metadataConstraints>
+	<metadataConstraints>
+		<MD_SecurityConstraints>
+			<useLimitation>
+				<gco:CharacterString>Metadata &gt; Constraints &gt; Security Constraints &gt; Use Limitation</gco:CharacterString>
+			</useLimitation>
+			<classification>
+				<MD_ClassificationCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ClassificationCode" codeListValue="unclassified" codeSpace="ISOTC211/19115">unclassified</MD_ClassificationCode>
+			</classification>
+			<userNote>
+				<gco:CharacterString>Metadata &gt; Constraints &gt; Security Constraints &gt; User Note</gco:CharacterString>
+			</userNote>
+			<classificationSystem>
+				<gco:CharacterString>Metadata &gt; Constraints &gt; Security Constraints &gt; Classification System</gco:CharacterString>
+			</classificationSystem>
+			<handlingDescription>
+				<gco:CharacterString>Metadata &gt; Constraints &gt; Security Constraints &gt; Handling Description</gco:CharacterString>
+			</handlingDescription>
+		</MD_SecurityConstraints>
+	</metadataConstraints>
+	<applicationSchemaInfo>
+		<MD_ApplicationSchemaInformation>
+			<name>
+				<CI_Citation>
+					<title>
+						<gco:CharacterString>Resource &gt; References &gt; Application Schema Information &gt; Citation &gt; Titles &gt; Title</gco:CharacterString>
+					</title>
+					<date>
+						<CI_Date>
+							<date>
+								<gco:Date>2011-04-08</gco:Date>
+							</date>
+							<dateType>
+								<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation" codeSpace="ISOTC211/19115">creation</CI_DateTypeCode>
+							</dateType>
+						</CI_Date>
+					</date>
+					<citedResponsibleParty>
+						<CI_ResponsibleParty>
+							<organisationName>
+								<gco:CharacterString>Resource &gt; References &gt; Application Schema Information &gt; Citation &gt; Contact &gt; Organization</gco:CharacterString>
+							</organisationName>
+							<contactInfo>
+								<CI_Contact>
+									<address>
+										<CI_Address>
+											<electronicMailAddress>
+												<gco:CharacterString>Resource &gt; References &gt; Application Schema Information &gt; Citation &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+											</electronicMailAddress>
+										</CI_Address>
+									</address>
+								</CI_Contact>
+							</contactInfo>
+							<role>
+								<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+							</role>
+						</CI_ResponsibleParty>
+					</citedResponsibleParty>
+				</CI_Citation>
+			</name>
+			<schemaLanguage>
+				<gco:CharacterString>Resource &gt; References &gt; Application Schema Information &gt; Schema Language</gco:CharacterString>
+			</schemaLanguage>
+			<constraintLanguage>
+				<gco:CharacterString>Resource &gt; References &gt; Application Schema Information &gt; Constraint Language</gco:CharacterString>
+			</constraintLanguage>
+			<schemaAscii>
+				<gco:CharacterString>Resource &gt; References &gt; Application Schema Information &gt; ASCII</gco:CharacterString>
+			</schemaAscii>
+			<graphicsFile>
+				<gco:Binary src="Resource &gt; References &gt; Application Schema Information &gt; Graphics File Source">Resource &gt; References &gt; Application Schema Information &gt; Graphics File</gco:Binary>
+			</graphicsFile>
+			<softwareDevelopmentFile>
+				<gco:Binary src="Resource &gt; References &gt; Application Schema Information &gt; Software Development File Source">Resource &gt; References &gt; Application Schema Information &gt; Software Development File</gco:Binary>
+			</softwareDevelopmentFile>
+			<softwareDevelopmentFileFormat>
+				<gco:CharacterString>Resource &gt; References &gt; Application Schema Information &gt; Software Development File Format</gco:CharacterString>
+			</softwareDevelopmentFileFormat>
+		</MD_ApplicationSchemaInformation>
+	</applicationSchemaInfo>
+	<metadataMaintenance>
+		<MD_MaintenanceInformation>
+			<maintenanceAndUpdateFrequency>
+				<MD_MaintenanceFrequencyCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="unknown" codeSpace="ISOTC211/19115">unknown</MD_MaintenanceFrequencyCode>
+			</maintenanceAndUpdateFrequency>
+			<dateOfNextUpdate>
+				<gco:DateTime>2012-11-01T12:00:00</gco:DateTime>
+			</dateOfNextUpdate>
+			<userDefinedMaintenanceFrequency>
+				<gts:TM_PeriodDuration>P1Y2M3DT4H5M6S</gts:TM_PeriodDuration>
+			</userDefinedMaintenanceFrequency>
+			<updateScope>
+				<MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset" codeSpace="ISOTC211/19115">dataset</MD_ScopeCode>
+			</updateScope>
+			<updateScopeDescription>
+				<MD_ScopeDescription>
+					<attributes uuidref="Metadata &gt; Maintenance &gt; Scope Description &gt; Attributes"/>
+				</MD_ScopeDescription>
+			</updateScopeDescription>
+			<updateScopeDescription>
+				<MD_ScopeDescription>
+					<features uuidref="Metadata &gt; Maintenance &gt; Scope Description &gt; Features"/>
+				</MD_ScopeDescription>
+			</updateScopeDescription>
+			<updateScopeDescription>
+				<MD_ScopeDescription>
+					<featureInstances uuidref="Metadata &gt; Maintenance &gt; Scope Description &gt; Feature Instances"/>
+				</MD_ScopeDescription>
+			</updateScopeDescription>
+			<updateScopeDescription>
+				<MD_ScopeDescription>
+					<attributeInstances uuidref="Metadata &gt; Maintenance &gt; Scope Description &gt; Attribute Instances"/>
+				</MD_ScopeDescription>
+			</updateScopeDescription>
+			<updateScopeDescription>
+				<MD_ScopeDescription>
+					<dataset>
+						<gco:CharacterString>Metadata &gt; Maintenance &gt; Scope Description &gt; Dataset</gco:CharacterString>
+					</dataset>
+				</MD_ScopeDescription>
+			</updateScopeDescription>
+			<updateScopeDescription>
+				<MD_ScopeDescription>
+					<other>
+						<gco:CharacterString>Metadata &gt; Maintenance &gt; Scope Description &gt; Other Instances</gco:CharacterString>
+					</other>
+				</MD_ScopeDescription>
+			</updateScopeDescription>
+			<maintenanceNote>
+				<gco:CharacterString>Last metadata review date: 20111014</gco:CharacterString>
+			</maintenanceNote>
+			<maintenanceNote>
+				<gco:CharacterString>Metadata &gt; Maintenance &gt; Maintenance Note</gco:CharacterString>
+			</maintenanceNote>
+			<contact>
+				<CI_ResponsibleParty>
+					<organisationName>
+						<gco:CharacterString>Metadata &gt; Maintenance &gt; Contact &gt; Organization</gco:CharacterString>
+					</organisationName>
+					<contactInfo>
+						<CI_Contact>
+							<address>
+								<CI_Address>
+									<electronicMailAddress>
+										<gco:CharacterString>Metadata &gt; Maintenance &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+									</electronicMailAddress>
+								</CI_Address>
+							</address>
+						</CI_Contact>
+					</contactInfo>
+					<role>
+						<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian" codeSpace="ISOTC211/19115">custodian</CI_RoleCode>
+					</role>
+				</CI_ResponsibleParty>
+			</contact>
+		</MD_MaintenanceInformation>
+	</metadataMaintenance>
+</MD_Metadata>

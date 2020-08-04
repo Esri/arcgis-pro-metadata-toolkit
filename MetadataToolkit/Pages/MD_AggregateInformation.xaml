@@ -93,7 +93,7 @@ limitations under the License.​
 
       <!-- aggregate dataset name citation -->
       <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=aggrDSName}"
-          ToolTip="{x:Static r:Definitions.MD_AggregateInformation_aggregateDataSetName}">
+          ToolTip="{x:Static r:Definitions.MD_AggregateInformation_aggregateDataSetName}" v:Nav.AnchorName="aggrCitation,.">>
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>
             <StackPanel/>

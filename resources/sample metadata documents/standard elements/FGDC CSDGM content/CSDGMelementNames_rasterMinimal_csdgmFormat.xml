@@ -1,0 +1,125 @@
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Originator</origin>
+        <pubdate>2006</pubdate>
+        <title>Title</title>
+        <geoform>remote-sensing image</geoform>
+        <onlink>http://Citation.Online_Linkage.com</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>Abstract</abstract>
+      <purpose>Purpose</purpose>
+    </descript>
+    <timeperd>
+      <timeinfo>
+		<mdattim>
+		  <sngdate>
+			<caldate>200210</caldate>
+		  </sngdate>
+			<sngdate>
+			  <caldate>20060610</caldate>
+			  <time>041500</time>
+			</sngdate>
+		</mdattim>
+      </timeinfo>
+      <current>Currentness Reference</current>
+    </timeperd>
+    <status>
+      <progress>In work</progress>
+      <update>As needed</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-164</westbc>
+        <eastbc>-132</eastbc>
+        <northbc>87</northbc>
+        <southbc>25</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>Theme Keyword1</themekey>
+        <themekey>Theme Keyword2</themekey>
+      </theme>
+    </keywords>
+    <accconst>None</accconst>
+    <useconst>None</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>Point of Contact Organization</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>Point of Contact Address</address>
+          <city>Point of Contact City</city>
+          <state>Point of Contact State or Province</state>
+          <postal>Point of Contact Postal Code</postal>
+          <country>Point of Contact Country</country>
+        </cntaddr>
+        <cntvoice>Point of Contact Voice Telephone</cntvoice>
+      </cntinfo>
+    </ptcontac>
+  </idinfo>
+  <dataqual>
+    <logic>Logical Consistency Report</logic>
+    <complete>Completeness Report</complete>
+    <lineage>
+      <procstep>
+        <procdesc>Process Description</procdesc>
+        <procdate>20060518</procdate>
+      </procstep>
+    </lineage>
+    <cloud>13</cloud>
+  </dataqual>
+  <spdoinfo>
+    <direct>Raster</direct>
+    <rastinfo>
+      <rasttype>Pixel</rasttype>
+      <rowcount>2432</rowcount>
+      <colcount>26749</colcount>
+    </rastinfo>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+        <geograph>
+			<latres>8.9831528411952133e-009</latres>
+			<longres>8.9831528411952133e-009</longres>
+			<geogunit>Decimal degrees</geogunit>
+        </geograph>
+      <geodetic>
+        <horizdn>D WGS 1984</horizdn>
+        <ellips>WGS 1984</ellips>
+        <semiaxis>6378137.0</semiaxis>
+        <denflat>298.257223563</denflat>
+      </geodetic>
+    </horizsys>
+  </spref>
+  <metainfo>
+    <metd>20030331</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>Metadata Contact Organization</cntorg>
+          <cntper>Metadata Contact Person</cntper>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>Metadata Contact Address</address>
+          <city>Metadata Contact City</city>
+          <state>Metadata Contact State or Province</state>
+          <postal>Metadata Contact Postal Code</postal>
+          <country>Metadata Contact Country</country>
+        </cntaddr>
+        <cntvoice>Metadata Contact Voice Telephone</cntvoice>
+        <cntemail>Metadata_Contact@Electronic_Mail.Address</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>Metadata Standard Name</metstdn>
+    <metstdv>Metadata Standard Version</metstdv>
+  </metainfo>
+</metadata>

@@ -86,7 +86,7 @@ limitations under the License.​
         <!-- fees -->
         <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" LastChildFill="True">
           <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_STD_FEES}"/>
-          <ComboBox tu:MetadataStyle.OnlyProfiles="NAP" DockPanel.Dock="Right" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="resFees/@units" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+          <ComboBox tu:MetadataStyle.OnlyProfiles="NAP,ISO19115_3" DockPanel.Dock="Right" Loaded="PostProcessComboBoxValues" p:EditorPage.SourceXPath="resFees/@units" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
               ToolTip="{x:Static r:Definitions.MD_StandardOrderProcess_feesCurrency}"
               v:Nav.AnchorName="role,role"
               ItemsSource="{Binding Source={StaticResource MonetaryUnits}, Path=List}"

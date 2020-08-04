@@ -1,0 +1,1785 @@
+<metadata xml:lang="en">
+	<Esri>
+		<CreaDate>20111012</CreaDate>
+		<CreaTime>13502900</CreaTime>
+		<ArcGISFormat>1.0</ArcGISFormat>
+		<ArcGISstyle>Custom Metadata Editor</ArcGISstyle>
+		<SyncOnce>FALSE</SyncOnce>
+		<SyncDate>20111018</SyncDate>
+		<SyncTime>15514900</SyncTime>
+		<ModDate>20121019</ModDate>
+		<ModTime>10465300</ModTime>
+		<ArcGISProfile>ISO19139</ArcGISProfile>
+		<locales>
+			<locale language="fre" country="FR" xmlns="">
+				<resTitle>Overview &gt; Locales &gt; Locale &gt; Title</resTitle>
+				<idAbs>Overview &gt; Locales &gt; Locale &gt; Abstract</idAbs>
+			</locale>
+		</locales>
+		<scaleRange>
+			<minScale>150000000</minScale>
+			<maxScale>5000</maxScale>
+		</scaleRange>
+		<DataProperties>
+			<itemProps>
+				<imsContentType export="True">001</imsContentType>
+			</itemProps>
+		</DataProperties>
+	</Esri>
+	<mdChar>
+		<CharSetCd value="004"/>
+	</mdChar>
+	<mdHrLv>
+		<ScopeCd value="014"/>
+	</mdHrLv>
+	<mdContact xmlns="">
+		<rpIndName>Metadata &gt; Contacts &gt; Contact &gt; Name</rpIndName>
+		<rpCntInfo xmlns="">
+			<cntAddress addressType="both">
+				<delPoint>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Address</delPoint>
+				<city>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; City</city>
+				<adminArea>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; State</adminArea>
+				<postCode>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Postal Code</postCode>
+				<country>US</country>
+				<eMailAdd>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+			</cntAddress>
+			<cntPhone>
+				<voiceNum tddtty="">Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Phone</voiceNum>
+				<faxNum>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Fax</faxNum>
+				<voiceNum tddtty="True">Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Phone + TDD/TTY</voiceNum>
+			</cntPhone>
+			<cntHours>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Hours</cntHours>
+			<cntInstr>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Instructions</cntInstr>
+			<cntOnlineRes xmlns="">
+				<linkage>http://Metadata_Contacts_Contact_Contact_Information_Online_Resource_Linkage</linkage>
+				<protocol>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Online Resource &gt; Protocol</protocol>
+				<appProfile>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Online Resource &gt; Profile</appProfile>
+				<orName>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Online Resource &gt; Name</orName>
+				<orDesc>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Online Resource &gt; Description</orDesc>
+				<orFunct>
+					<OnFunctCd value="002"/>
+				</orFunct>
+			</cntOnlineRes>
+		</rpCntInfo>
+		<role>
+			<RoleCd value="007"/>
+		</role>
+		<rpOrgName>Metadata &gt; Contacts &gt; Contact &gt; Organization</rpOrgName>
+		<rpPosName>Metadata &gt; Contacts &gt; Contact &gt; Position</rpPosName>
+	</mdContact>
+	<distInfo xmlns="">
+		<distributor xmlns="">
+			<distorCont xmlns="">
+				<rpOrgName>Resource &gt; Distribution &gt; Distributor &gt; Organization</rpOrgName>
+				<rpCntInfo xmlns="">
+					<cntAddress addressType="physical">
+						<delPoint>Resource &gt; Distribution &gt; Distributor &gt; Contact Information &gt; Address</delPoint>
+						<city>Resource &gt; Distribution &gt; Distributor &gt; Contact Information &gt; City</city>
+						<adminArea>Resource &gt; Distribution &gt; Distributor &gt; Contact Information &gt; State</adminArea>
+						<postCode>Resource &gt; Distribution &gt; Distributor &gt; Contact Information &gt; Postal Code</postCode>
+						<country>US</country>
+						<eMailAdd>Resource &gt; Distribution &gt; Distributor &gt; Contact Information &gt; Email</eMailAdd>
+					</cntAddress>
+					<cntPhone>
+						<voiceNum tddtty="">Resource &gt; Distribution &gt; Distributor &gt; Contact Information &gt; Phone</voiceNum>
+					</cntPhone>
+				</rpCntInfo>
+				<role>
+					<RoleCd value="005"/>
+				</role>
+			</distorCont>
+			<distorFormat xmlns="">
+				<formatName>Resource &gt; Distribution &gt; Distributor &gt; Distribution Format &gt; Format Name</formatName>
+				<formatVer>Resource &gt; Distribution &gt; Distributor &gt; Distribution Format &gt; Format Version</formatVer>
+				<formatSpec>Resource &gt; Distribution &gt; Distributor &gt; Distribution Format &gt; Specification</formatSpec>
+				<fileDecmTech>Resource &gt; Distribution &gt; Distributor &gt; Distribution Format &gt; Decompression Technique</fileDecmTech>
+				<formatInfo>Resource &gt; Distribution &gt; Distributor &gt; Distribution Format &gt; Information Content</formatInfo>
+				<formatAmdNum>Resource &gt; Distribution &gt; Distributor &gt; Distribution Format &gt; Amendment Number</formatAmdNum>
+			</distorFormat>
+			<distorTran xmlns="">
+				<transSize>1.000</transSize>
+				<offLineMed xmlns="">
+					<medName>
+						<MedNameCd value="003"/>
+					</medName>
+					<medFormat>
+						<MedFormCd value="004"/>
+					</medFormat>
+					<medDensity>1.0</medDensity>
+					<medDenUnits>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Offline Medium &gt; Density Units (dvdRom Medium Name)</medDenUnits>
+					<medNote>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Offline Medium &gt; Medium Note (dvdRom Medium Name)</medNote>
+					<medVol>1</medVol>
+				</offLineMed>
+				<onLineSrc xmlns="">
+					<linkage>http://Resource_Distribution_Distributor_Digital_Transfer_Options_Online_Resource_Linkage</linkage>
+					<orDesc>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Online Resource &gt; Description (not a geoportal content type, e.g. Offline Data)</orDesc>
+					<protocol>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Online Resource &gt; Protocol</protocol>
+					<appProfile>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Online Resource &gt; Profile</appProfile>
+					<orName>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Online Resource &gt; Name</orName>
+					<orFunct>
+						<OnFunctCd value="001"/>
+					</orFunct>
+				</onLineSrc>
+				<unitsODist>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Units of Distribution</unitsODist>
+			</distorTran>
+			<distorOrdPrc xmlns="">
+				<resFees units="USD">Resource &gt; Distribution &gt; Distributor &gt; Ordering Process &gt; Fees</resFees>
+				<planAvDtTm>2011-10-15T13:00:00</planAvDtTm>
+				<ordInstr>Resource &gt; Distribution &gt; Distributor &gt; Ordering Process &gt; Ordering Instructions</ordInstr>
+				<ordTurn>Resource &gt; Distribution &gt; Distributor &gt; Ordering Process &gt; Turnaround</ordTurn>
+				<planAvTmPd xmlns="">
+					<tmBegin>2011-10-01T06:00:00</tmBegin>
+					<tmEnd>2011-10-31T18:00:00</tmEnd>
+				</planAvTmPd>
+			</distorOrdPrc>
+			<distorTran xmlns="">
+				<offLineMed xmlns="">
+					<medName>
+						<MedNameCd value="018"/>
+					</medName>
+					<medNote>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Offline Medium &gt; Medium Note (hardcopy Medium Name)</medNote>
+				</offLineMed>
+			</distorTran>
+			<distorTran xmlns="">
+				<offLineMed xmlns="">
+					<medName>
+						<MedNameCd value="032"/>
+					</medName>
+					<medFormat>
+						<MedFormCd value="007"/>
+					</medFormat>
+					<medNote>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Offline Medium &gt; Medium Note (NAP USBFlashDrive Medium Name + UDF Format Code)</medNote>
+				</offLineMed>
+			</distorTran>
+		</distributor>
+		<distFormat xmlns="">
+			<formatName>Resource &gt; Distribution &gt; Distribution Format &gt; Format Name</formatName>
+			<formatVer>Resource &gt; Distribution &gt; Distribution Format &gt; Format Version</formatVer>
+		</distFormat>
+		<distTranOps xmlns="">
+			<transSize>2.12</transSize>
+			<onLineSrc xmlns="">
+				<linkage>http://Resource_Distribution_Digital_Transfer_Options_Online_Resource_Linkage</linkage>
+				<protocol>Resource &gt; Distribution &gt; Digital Transfer Options &gt; Online Resource &gt; Protocol</protocol>
+			</onLineSrc>
+		</distTranOps>
+	</distInfo>
+	<dataIdInfo>
+		<idCitation xmlns="">
+			<resTitle>Overview &gt; Item Description &gt; Title + Overview &gt; Citation &gt; Titles &gt; Title</resTitle>
+			<date>
+				<pubDate>1994-01-01T06:00:00</pubDate>
+				<createDate>1993-01-01T23:59:59</createDate>
+				<reviseDate>1995-01-01T18:30:59</reviseDate>
+				<notavailDate>2011-09-01T00:00:00</notavailDate>
+				<adoptDate>2011-09-03T00:00:00</adoptDate>
+				<inforceDate>2011-09-02T00:00:00</inforceDate>
+				<deprecDate>2011-09-04T00:00:00</deprecDate>
+				<supersDate>2011-09-05T00:00:00</supersDate>
+			</date>
+			<resEd>Overview &gt; Citation &gt; Edition &gt; Edition</resEd>
+			<datasetSeries>
+				<seriesName>Overview &gt; Citation &gt; Series &gt; Name</seriesName>
+				<issId>Overview &gt; Citation &gt; Series &gt; Issue</issId>
+				<artPage>Overview &gt; Citation &gt; Series &gt; Page</artPage>
+			</datasetSeries>
+			<otherCitDet>Overview &gt; Citation &gt; Other Details</otherCitDet>
+			<presForm xmlns="">
+				<PresFormCd value="005"/>
+				<fgdcGeoform>vector digital data</fgdcGeoform>
+			</presForm>
+			<citRespParty xmlns="">
+				<rpIndName>Overview &gt; Citation Contacts &gt; Contact &gt; Name (Role=Originator)</rpIndName>
+				<rpOrgName>Overview &gt; Citation Contacts &gt; Contact &gt; Organization (Role=Originator)</rpOrgName>
+				<role>
+					<RoleCd value="006"/>
+				</role>
+				<rpPosName>Overview &gt; Citation Contacts &gt; Contact &gt; Position (Role=Originator)</rpPosName>
+				<rpCntInfo xmlns="">
+					<cntAddress addressType="physical">
+						<delPoint>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Address (Role=Originator)</delPoint>
+						<city>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; City (Role=Originator)</city>
+						<adminArea>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; State (Role=Originator)</adminArea>
+						<postCode>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Postal Code (Role=Originator)</postCode>
+						<eMailAdd>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Email (Role=Originator)</eMailAdd>
+						<country>US</country>
+					</cntAddress>
+					<cntPhone>
+						<voiceNum tddtty="">Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Phone (Role=Originator)</voiceNum>
+					</cntPhone>
+				</rpCntInfo>
+			</citRespParty>
+			<collTitle>Overview &gt; Citation &gt; Titles &gt; Collective Title</collTitle>
+			<resAltTitle>Overview &gt; Citation &gt; Titles &gt; Alternate Title</resAltTitle>
+			<resEdDate>20110101</resEdDate>
+			<citId xmlns="">
+				<identCode>Overview &gt; Citation &gt; Identifier &gt; Code</identCode>
+				<identAuth xmlns="">
+					<resTitle>Overview &gt; Citation &gt; Identifier &gt; Authority Citation &gt; Titles &gt; Title</resTitle>
+					<date>
+						<pubDate>2010-01-01T00:00:00</pubDate>
+					</date>
+					<citRespParty xmlns="">
+						<rpCntInfo xmlns="">
+							<cntAddress xmlns="" addressType="">
+								<eMailAdd>Overview &gt; Citation &gt; Identifier &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+							</cntAddress>
+						</rpCntInfo>
+						<rpOrgName>Overview &gt; Citation &gt; Identifier &gt; Authority Citation &gt; Contact &gt; Organization</rpOrgName>
+						<role>
+							<RoleCd value="010"/>
+						</role>
+					</citRespParty>
+					<citOnlineRes xmlns="">
+						<linkage>http://Overview_Citation_Identifier_Authority_Citation_Online_Resource_Linkage</linkage>
+						<protocol>Overview &gt; Citation &gt; Identifier &gt; Authority Citation &gt; Online Resource &gt; Protocol</protocol>
+					</citOnlineRes>
+				</identAuth>
+			</citId>
+			<isbn>Overview &gt; Citation &gt; ISBN</isbn>
+			<issn>Overview &gt; Citation &gt; ISSN</issn>
+			<citRespParty xmlns="">
+				<rpOrgName>Overview &gt; Citation Contacts &gt; Contact &gt; Organization (Role=Publisher)</rpOrgName>
+				<rpCntInfo xmlns="">
+					<cntAddress addressType="both">
+						<delPoint>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Address (Role=Publisher)</delPoint>
+						<city>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; City (Role=Publisher)</city>
+						<adminArea>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; State (Role=Publisher)</adminArea>
+						<postCode>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Postal Code (Role=Publisher)</postCode>
+						<eMailAdd>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Email (Role=Publisher)</eMailAdd>
+						<country>US</country>
+					</cntAddress>
+				</rpCntInfo>
+				<role>
+					<RoleCd value="010"/>
+				</role>
+				<rpIndName>Overview &gt; Citation Contacts &gt; Contact &gt; Name (Role=Publisher)</rpIndName>
+				<rpPosName>Overview &gt; Citation Contacts &gt; Contact &gt; Position (Role=Publisher)</rpPosName>
+			</citRespParty>
+			<citRespParty xmlns="">
+				<rpIndName>Overview &gt; Citation Contacts &gt; Contact &gt; Name (NAP Role=Rights Holder)</rpIndName>
+				<rpOrgName>Overview &gt; Citation Contacts &gt; Contact &gt; Organization (NAP Role=Rights Holder)</rpOrgName>
+				<role>
+					<RoleCd value="015"/>
+				</role>
+				<rpPosName>Overview &gt; Citation Contacts &gt; Contact &gt; Position (NAP Role=Rights Holder)</rpPosName>
+				<rpCntInfo xmlns="">
+					<cntAddress addressType="postal">
+						<delPoint>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Address (NAP Role=Rights Holder)</delPoint>
+						<city>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; City (NAP Role=Rights Holder)</city>
+						<adminArea>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; State (NAP Role=Rights Holder)</adminArea>
+						<postCode>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Postal Code (NAP Role=Rights Holder)</postCode>
+						<eMailAdd>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Email (NAP Role=Rights Holder)</eMailAdd>
+						<country>US</country>
+					</cntAddress>
+					<cntPhone>
+						<voiceNum tddtty="">Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Phone (NAP Role=Rights Holder)</voiceNum>
+					</cntPhone>
+				</rpCntInfo>
+				<displayName>Overview &gt; Citation Contacts &gt; Contact &gt; Name (Role=Originator)</displayName>
+			</citRespParty>
+		</idCitation>
+		<idAbs>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Overview &amp;gt; Item Description &amp;gt; Description/Abstract&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs>
+		<idPurp>Overview &gt; Item Description &gt; Summary/Purpose</idPurp>
+		<idCredit>Overview &gt; Item Description &gt; Credits + Resource &gt; Details &gt; Credit</idCredit>
+		<idStatus>
+			<ProgCd value="004"/>
+		</idStatus>
+		<idPoC xmlns="">
+			<rpIndName>Resource &gt; Points of Contact &gt; Contact &gt; Name</rpIndName>
+			<rpCntInfo xmlns="">
+				<cntAddress addressType="postal">
+					<delPoint>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; Address</delPoint>
+					<city>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; City</city>
+					<adminArea>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; State</adminArea>
+					<postCode>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; Zip</postCode>
+					<country>US</country>
+					<eMailAdd>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+				</cntAddress>
+				<cntOnlineRes xmlns="">
+					<linkage>http://Resource_Points_of_Contact_Contact_Contact_Information_Online_Resource_Linkage</linkage>
+					<protocol>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; Online Resource &gt; Protocol</protocol>
+				</cntOnlineRes>
+				<cntPhone>
+					<voiceNum tddtty="">Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; Phone</voiceNum>
+				</cntPhone>
+			</rpCntInfo>
+			<role>
+				<RoleCd value="007"/>
+			</role>
+		</idPoC>
+		<graphOver xmlns="">
+			<bgFileName>Resource &gt; Details &gt; Browse Graphic &gt; File Name</bgFileName>
+			<bgFileType>Resource &gt; Details &gt; Browse Graphic &gt; File Type</bgFileType>
+			<bgFileDesc>Resource &gt; Details &gt; Browse Graphic &gt; Description</bgFileDesc>
+		</graphOver>
+		<placeKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>Overview &gt; Topics &amp; Keywords &gt; Place Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</resTitle>
+				<date>
+					<pubDate>2010-01-01T00:00:00</pubDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>Overview &gt; Topics &amp; Keywords &gt; Place Keywords &gt; Thesaurus Citation &gt; Contact &gt; Organization</rpOrgName>
+					<role>
+						<RoleCd value="010"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress xmlns="" addressType="">
+							<eMailAdd>Overview &gt; Topics &amp; Keywords &gt; Place Keywords &gt; Thesaurus Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+				<citOnlineRes xmlns="">
+					<linkage>http://Overview_Topics_Keywords_Place_Keywords_Thesaurus_Citation_Online_Resource_Linkage</linkage>
+					<protocol>Overview &gt; Topics &amp; Keywords &gt; Place Keywords &gt; Thesaurus Citation &gt; Online Resource &gt; Protocol</protocol>
+				</citOnlineRes>
+			</thesaName>
+			<thesaLang>
+				<languageCode value="spa"/>
+				<countryCode value="MX"/>
+			</thesaLang>
+			<keyword>Overview &gt; Topics &amp; Keywords &gt; Place Keywords &gt; Keyword1</keyword>
+			<keyword>Overview &gt; Topics &amp; Keywords &gt; Place Keywords &gt; Keyword2</keyword>
+		</placeKeys>
+		<stratKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>Overview &gt; Topics &amp; Keywords &gt; Stratum Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</resTitle>
+				<date>
+					<reviseDate>1988-08-26T00:00:00</reviseDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>Overview &gt; Topics &amp; Keywords &gt; Stratum Keywords &gt; Thesaurus Citation &gt; Contact &gt; Organization</rpOrgName>
+					<role>
+						<RoleCd value="010"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress xmlns="" addressType="">
+							<eMailAdd>Overview &gt; Topics &amp; Keywords &gt; Stratum Keywords &gt; Thesaurus Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+			</thesaName>
+			<thesaLang>
+				<languageCode value="eng"/>
+				<countryCode value="GB"/>
+			</thesaLang>
+			<keyword>Overview &gt; Topics &amp; Keywords &gt; Stratum Keywords &gt; Keyword1</keyword>
+			<keyword>Overview &gt; Topics &amp; Keywords &gt; Stratum Keywords &gt; Keyword2</keyword>
+		</stratKeys>
+		<tempKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>Overview &gt; Topics &amp; Keywords &gt; Temporal Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</resTitle>
+				<date>
+					<reviseDate>1996-08-22T00:00:00</reviseDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>Overview &gt; Topics &amp; Keywords &gt; Temporal Keywords &gt; Thesaurus Citation &gt; Contact &gt; Organization</rpOrgName>
+					<role>
+						<RoleCd value="010"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress xmlns="" addressType="">
+							<eMailAdd>Overview &gt; Topics &amp; Keywords &gt; Temporal Keywords &gt; Thesaurus Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+				<citOnlineRes xmlns="">
+					<linkage>http://Overview_Topics_Keywords_Temporal_Keywords_Thesaurus_Citation_Online_Resource_Linkage</linkage>
+					<protocol>Overview &gt; Topics &amp; Keywords &gt; Temporal Keywords &gt; Thesaurus Citation &gt; Online Resource &gt; Protocol</protocol>
+				</citOnlineRes>
+			</thesaName>
+			<thesaLang>
+				<languageCode value="ger"/>
+				<countryCode value="DE"/>
+			</thesaLang>
+			<keyword>Overview &gt; Topics &amp; Keywords &gt; Temporal Keywords &gt; Keyword1</keyword>
+			<keyword>Overview &gt; Topics &amp; Keywords &gt; Temporal Keywords &gt; Keyword2</keyword>
+		</tempKeys>
+		<themeKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>Overview &gt; Topics &amp; Keywords &gt; Theme Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</resTitle>
+				<date>
+					<pubDate>2010-01-01T00:00:00</pubDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>Overview &gt; Topics &amp; Keywords &gt; Theme Keywords &gt; Thesaurus Citation &gt; Contact &gt; Organization</rpOrgName>
+					<role>
+						<RoleCd value="010"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress xmlns="" addressType="">
+							<eMailAdd>Overview &gt; Topics &amp; Keywords &gt; Theme Keywords &gt; Thesaurus Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+				<citOnlineRes xmlns="">
+					<linkage>http://Overview_Topics_Keywords_Theme_Keywords_Thesaurus_Citation_Online_Resource_Linkage</linkage>
+					<protocol>Overview &gt; Topics &amp; Keywords &gt; Theme Keywords &gt; Thesaurus Citation &gt; Online Resource &gt; Protocol</protocol>
+				</citOnlineRes>
+			</thesaName>
+			<thesaLang>
+				<languageCode value="spa"/>
+				<countryCode value="ES"/>
+			</thesaLang>
+			<keyword>Overview &gt; Topics &amp; Keywords &gt; Theme Keywords &gt; Keyword1</keyword>
+			<keyword>Overview &gt; Topics &amp; Keywords &gt; Theme Keywords &gt; Keyword2</keyword>
+		</themeKeys>
+		<resConst xmlns="">
+			<Consts xmlns="">
+				<useLimit>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Overview &amp;gt; Item Description &amp;gt; Use Limitation + Resource &amp;gt; Constraints &amp;gt; General Constraints &amp;gt; Use Limitation&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</useLimit>
+			</Consts>
+		</resConst>
+		<resConst xmlns="">
+			<LegConsts xmlns="">
+				<useLimit>Resource &gt; Constraints &gt; Legal Constraints &gt; Use Limitation</useLimit>
+				<othConsts>Resource &gt; Constraints &gt; Legal Constraints &gt; Other Constraints</othConsts>
+				<accessConsts>
+					<RestrictCd value="005"/>
+				</accessConsts>
+				<useConsts>
+					<RestrictCd value="008"/>
+				</useConsts>
+			</LegConsts>
+		</resConst>
+		<resConst xmlns="">
+			<SecConsts xmlns="">
+				<class>
+					<ClasscationCd value="002"/>
+				</class>
+				<classSys>Resource &gt; Constraints &gt; Security Constraints &gt; Classification System</classSys>
+				<handDesc>Resource &gt; Constraints &gt; Security Constraints &gt; Handling Description</handDesc>
+				<userNote>Resource &gt; Constraints &gt; Security Constraints &gt; User Note</userNote>
+				<useLimit>Resource &gt; Constraints &gt; Security Constraints &gt; Use Limitation</useLimit>
+			</SecConsts>
+		</resConst>
+		<spatRpType>
+			<SpatRepTypCd value="001"/>
+		</spatRpType>
+		<dataLang>
+			<languageCode value="ita"/>
+			<countryCode value="US"/>
+		</dataLang>
+		<envirDesc>Resource &gt; Details &gt; Processing Environment</envirDesc>
+		<dataExt xmlns="">
+			<geoEle xmlns="">
+				<GeoBndBox>
+					<westBL>-155</westBL>
+					<eastBL>-135</eastBL>
+					<southBL>35</southBL>
+					<northBL>42</northBL>
+					<exTypeCode>1</exTypeCode>
+				</GeoBndBox>
+			</geoEle>
+			<exDesc>Resource &gt; Extents &gt; Extent &gt; Description
+
+Bounding boxes created on the Extents page do not have the esriExtentType attribute.</exDesc>
+			<vertEle xmlns="">
+				<vertMinVal>0.01</vertMinVal>
+				<vertMaxVal>599.99</vertMaxVal>
+			</vertEle>
+			<geoEle xmlns="">
+				<GeoDesc>
+					<exTypeCode>1</exTypeCode>
+					<geoId xmlns="">
+						<identCode>Resource &gt; Extents &gt; Extent &gt; Geographic Description &gt; Code</identCode>
+						<identAuth xmlns="">
+							<resTitle>Resource &gt; Extents &gt; Extent &gt; Geographic Description &gt; Authority Citation &gt; Titles &gt; Title</resTitle>
+							<date>
+								<pubDate>2011-01-01T00:00:00</pubDate>
+							</date>
+							<citRespParty xmlns="">
+								<rpOrgName>Resource &gt; Extents &gt; Extent &gt; Geographic Description &gt; Authority Citation &gt; Contact &gt; Organization</rpOrgName>
+								<role>
+									<RoleCd value="010"/>
+								</role>
+								<rpCntInfo xmlns="">
+									<cntAddress xmlns="" addressType="">
+										<eMailAdd>Resource &gt; Extents &gt; Extent &gt; Geographic Description &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+									</cntAddress>
+								</rpCntInfo>
+							</citRespParty>
+							<citOnlineRes xmlns="">
+								<linkage>http://Resource_Extents_Extent_Geographic_Description_Authority_Citation_Online_Resource_Linkage</linkage>
+								<protocol>Resource &gt; Extents &gt; Extent &gt; Geographic Description &gt; Authority Citation &gt; Online Resource &gt; Protocol</protocol>
+							</citOnlineRes>
+						</identAuth>
+					</geoId>
+				</GeoDesc>
+			</geoEle>
+			<tempEle>
+				<TempExtent>
+					<exTemp>
+						<TM_Period xmlns="">
+							<tmBegin>2011-01-01T00:00:01</tmBegin>
+							<tmEnd>2011-12-31T23:59:59</tmEnd>
+						</TM_Period>
+					</exTemp>
+				</TempExtent>
+			</tempEle>
+		</dataExt>
+		<suppInfo>Resource &gt; Details &gt; Supplemental Information</suppInfo>
+		<dataChar>
+			<CharSetCd value="005"/>
+		</dataChar>
+		<resMaint xmlns="">
+			<maintFreq>
+				<MaintFreqCd value="009"/>
+			</maintFreq>
+			<dateNext>2012-01-01T00:00:00</dateNext>
+			<usrDefFreq>
+				<duration>P36DT12H</duration>
+			</usrDefFreq>
+			<maintScp>
+				<ScopeCd value="014"/>
+			</maintScp>
+			<upScpDesc xmlns="">
+				<datasetSet>Resource &gt; Maintenance &gt; Scope Description &gt; Dataset</datasetSet>
+			</upScpDesc>
+			<maintCont xmlns="">
+				<rpIndName>Resource &gt; Maintenance &gt; Contact &gt; Name</rpIndName>
+				<role>
+					<RoleCd value="002"/>
+				</role>
+				<rpCntInfo xmlns="">
+					<cntAddress addressType="">
+						<eMailAdd>Resource &gt; Maintenance &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+					</cntAddress>
+				</rpCntInfo>
+			</maintCont>
+			<maintNote>Resource &gt; Maintenance &gt; Maintenance Note</maintNote>
+		</resMaint>
+		<aggrInfo xmlns="">
+			<aggrDSName xmlns="">
+				<resTitle>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Titles &gt; Title (Association=Cross Reference)</resTitle>
+				<date>
+					<pubDate>2006-06-01T00:00:00</pubDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpIndName>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Contact &gt; Name (Association=Cross Reference)</rpIndName>
+					<rpOrgName>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Contact &gt; Organization (Association=Cross Reference)</rpOrgName>
+					<role>
+						<RoleCd value="006"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress xmlns="" addressType="">
+							<eMailAdd>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Contact &gt; Contact Information &gt; Email (Association=Cross Reference)</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+				<citOnlineRes xmlns="">
+					<linkage>http://Resource_References_Aggregate_Information_Dataset_Citation_Online_Resource_Linkage_Association=Cross_Reference</linkage>
+					<protocol>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Online Resource &gt; Protocol (Association=Cross Reference)</protocol>
+				</citOnlineRes>
+			</aggrDSName>
+			<assocType>
+				<AscTypeCd value="001"/>
+			</assocType>
+			<aggrDSIdent xmlns="">
+				<identCode>Resource &gt; References &gt; Aggregate Information &gt; Identifier &gt; Code (Association=Cross Reference)</identCode>
+				<identAuth xmlns="">
+					<resTitle>Resource &gt; References &gt; Aggregate Information &gt; Identifier &gt; Authority Citation &gt; Titles &gt; Title (Association=Cross Reference)</resTitle>
+					<date>
+						<createDate>2009-05-15T00:00:00</createDate>
+					</date>
+					<citRespParty xmlns="">
+						<rpOrgName>Resource &gt; References &gt; Aggregate Information &gt; Identifier &gt; Authority Citation &gt; Contact &gt; Organization (Association=Cross Reference)</rpOrgName>
+						<role>
+							<RoleCd value="010"/>
+						</role>
+						<rpCntInfo xmlns="">
+							<cntAddress xmlns="" addressType="">
+								<eMailAdd>Resource &gt; References &gt; Aggregate Information &gt; Identifier &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email (Association=Cross Reference)</eMailAdd>
+							</cntAddress>
+						</rpCntInfo>
+					</citRespParty>
+					<citOnlineRes xmlns="">
+						<linkage>http://Resource_References_Aggregate_Information_Identifier_Authority_Citation_Online_Resource_Linkage_Association=Cross_Reference</linkage>
+						<protocol>Resource &gt; References &gt; Aggregate Information &gt; Identifier &gt; Authority Citation &gt; Online Resource &gt; Protocol (Association=Cross Reference)</protocol>
+					</citOnlineRes>
+				</identAuth>
+			</aggrDSIdent>
+			<initType>
+				<InitTypCd value="005"/>
+			</initType>
+		</aggrInfo>
+		<aggrInfo xmlns="">
+			<aggrDSName xmlns="">
+				<resTitle>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Titles &gt; Title (Association=Larger Work)</resTitle>
+				<date>
+					<pubDate>2003-09-18T00:00:00</pubDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpIndName>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Contact &gt; Name (Association=Larger Work)</rpIndName>
+					<rpOrgName>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Contact &gt; Organization (Association=Larger Work)</rpOrgName>
+					<role>
+						<RoleCd value="006"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress xmlns="" addressType="">
+							<eMailAdd>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Contact &gt; Contact Information &gt; Email (Association=Larger Work)</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+				<citOnlineRes xmlns="">
+					<linkage>http://Resource_References_Aggregate_Information_Dataset_Citation_Online_Resource_Linkage_Association=Larger_Work</linkage>
+					<protocol>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Online Resource &gt; Protocol (Association=Larger Work)</protocol>
+				</citOnlineRes>
+			</aggrDSName>
+			<assocType>
+				<AscTypeCd value="002"/>
+			</assocType>
+		</aggrInfo>
+		<searchKeys>
+			<keyword>Overview &gt; Item Description &gt; Tags &gt; Tag1</keyword>
+			<keyword>Overview &gt; Item Description &gt; Tags &gt; Tag2</keyword>
+			<keyword>(for ArcGIS search: no type</keyword>
+			<keyword>no thesaurus</keyword>
+			<keyword>only exported if no keywords)</keyword>
+		</searchKeys>
+		<discKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>Overview &gt; Topics &amp; Keywords &gt; Discipline Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</resTitle>
+				<date>
+					<reviseDate>2007-02-12T00:00:00</reviseDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>Overview &gt; Topics &amp; Keywords &gt; Discipline Keywords &gt; Thesaurus Citation &gt; Contact &gt; Organization</rpOrgName>
+					<role>
+						<RoleCd value="010"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress xmlns="" addressType="">
+							<eMailAdd>Overview &gt; Topics &amp; Keywords &gt; Discipline Keywords &gt; Thesaurus Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+			</thesaName>
+			<thesaLang>
+				<languageCode value="gsw"/>
+				<countryCode value="CH"/>
+			</thesaLang>
+			<keyword>Overview &gt; Topics &amp; Keywords &gt; Discipline Keywords &gt; Keyword1</keyword>
+			<keyword>Overview &gt; Topics &amp; Keywords &gt; Discipline Keywords &gt; Keyword2</keyword>
+		</discKeys>
+		<otherKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>Overview &gt; Topics &amp; Keywords &gt; Other Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</resTitle>
+				<date>
+					<reviseDate>2010-05-10T00:00:00</reviseDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>Overview &gt; Topics &amp; Keywords &gt; Other Keywords &gt; Thesaurus Citation &gt; Contact &gt; Organization</rpOrgName>
+					<role>
+						<RoleCd value="010"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress xmlns="" addressType="">
+							<eMailAdd>Overview &gt; Topics &amp; Keywords &gt; Other Keywords &gt; Thesaurus Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+				<citOnlineRes xmlns="">
+					<linkage>http://Overview_Topics_Keywords_Other_Keywords_Thesaurus_Citation_Online_Resource_Linkage</linkage>
+					<protocol>Overview &gt; Topics &amp; Keywords &gt; Other Keywords &gt; Thesaurus Citation &gt; Online Resource &gt; Protocol</protocol>
+				</citOnlineRes>
+			</thesaName>
+			<thesaLang>
+				<languageCode value="eng"/>
+				<countryCode value="AU"/>
+			</thesaLang>
+			<keyword>Overview &gt; Topics &amp; Keywords &gt; Other Keywords &gt; Keyword1</keyword>
+			<keyword>Overview &gt; Topics &amp; Keywords &gt; Other Keywords &gt; Keyword2</keyword>
+		</otherKeys>
+		<dataScale xmlns="">
+			<equScale>
+				<rfDenom>24000</rfDenom>
+			</equScale>
+			<scaleDist>
+				<value uom="m">0.001</value>
+			</scaleDist>
+		</dataScale>
+		<idSpecUse xmlns="">
+			<specUsage>Resource &gt; Details &gt; Usage &gt; Specific Usage</specUsage>
+			<usageDate>2011-10-01T10:00:00</usageDate>
+			<usrDetLim>Resource &gt; Details &gt; Usage &gt; Limitations</usrDetLim>
+			<usrCntInfo xmlns="">
+				<rpPosName>Resource &gt; Details &gt; Usage &gt; Contact &gt; Position</rpPosName>
+				<role>
+					<RoleCd value="004"/>
+				</role>
+				<rpOrgName>Resource &gt; Details &gt; Usage &gt; Contact &gt; Organization</rpOrgName>
+				<rpCntInfo xmlns="">
+					<cntAddress addressType="">
+						<eMailAdd>Resource &gt; Details &gt; Usage &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+					</cntAddress>
+				</rpCntInfo>
+			</usrCntInfo>
+		</idSpecUse>
+		<dsFormat xmlns="">
+			<formatName>Resource &gt; Details &gt; Distribution Format &gt; Format Name</formatName>
+			<formatVer>Resource &gt; Details &gt; Distribution Format &gt; Format Version</formatVer>
+			<formatAmdNum>Resource &gt; Details &gt; Distribution Format &gt; Amendment Number</formatAmdNum>
+			<formatSpec>Resource &gt; Details &gt; Distribution Format &gt; Specification</formatSpec>
+			<fileDecmTech>Resource &gt; Details &gt; Distribution Format &gt; Decompression Technique</fileDecmTech>
+			<formatInfo>Resource &gt; Details &gt; Distribution Format &gt; Information Content</formatInfo>
+		</dsFormat>
+		<subTopicCatKeys xmlns="">
+			<thesaLang>
+				<languageCode value="eng"/>
+				<countryCode value="US"/>
+			</thesaLang>
+			<thesaName xmlns="">
+				<resTitle>Overview &gt; Topics &amp; Keywords &gt; Subtopic Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</resTitle>
+				<date>
+					<createDate>2011-10-14T00:00:00</createDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>Overview &gt; Topics &amp; Keywords &gt; Subtopic Keywords &gt; Thesaurus Citation &gt; Contact &gt; Organization</rpOrgName>
+					<rpCntInfo xmlns="">
+						<cntAddress xmlns="" addressType="">
+							<eMailAdd>Overview &gt; Topics &amp; Keywords &gt; Subtopic Keywords &gt; Thesaurus Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+					<role>
+						<RoleCd value="010"/>
+					</role>
+				</citRespParty>
+			</thesaName>
+			<keyword>Overview &gt; Topics &amp; Keywords &gt; Subtopic Keywords &gt; Keyword1</keyword>
+			<keyword>Overview &gt; Topics &amp; Keywords &gt; Subtopic Keywords &gt; Keyword2</keyword>
+		</subTopicCatKeys>
+		<productKeys xmlns="">
+			<thesaLang>
+				<languageCode value="eng"/>
+				<countryCode value="CA"/>
+			</thesaLang>
+			<thesaName xmlns="">
+				<resTitle>Overview &gt; Topics &amp; Keywords &gt; Product Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</resTitle>
+				<date>
+					<createDate>2011-10-13T00:00:00</createDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>Overview &gt; Topics &amp; Keywords &gt; Product Keywords &gt; Thesaurus Citation &gt; Contact &gt; Organization</rpOrgName>
+					<rpCntInfo xmlns="">
+						<cntAddress xmlns="" addressType="">
+							<eMailAdd>Overview &gt; Topics &amp; Keywords &gt; Product Keywords &gt; Thesaurus Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+					<role>
+						<RoleCd value="010"/>
+					</role>
+				</citRespParty>
+			</thesaName>
+			<keyword>Overview &gt; Topics &amp; Keywords &gt; Product Keywords &gt; Keyword1</keyword>
+			<keyword>Overview &gt; Topics &amp; Keywords &gt; Product Keywords &gt; Keyword2</keyword>
+		</productKeys>
+		<spatRpType>
+			<SpatRepTypCd value="002"/>
+		</spatRpType>
+		<svType xmlns="">
+			<genericName codeSpace="Resource &gt; Service Details &gt; Service Type &gt; Codespace">Resource &gt; Service Details &gt; Service Type &gt; Name</genericName>
+		</svType>
+		<svAccProps xmlns="">
+			<resFees units="EUR">Resource &gt; Service Details &gt; Access Properties &gt; Fees</resFees>
+			<planAvDtTm>2011-11-01T06:00:00</planAvDtTm>
+			<ordInstr>Resource &gt; Service Details &gt; Access Properties &gt; Ordering Instructions</ordInstr>
+			<ordTurn>Resource &gt; Service Details &gt; Access Properties &gt; Turnaround</ordTurn>
+		</svAccProps>
+		<svCouplType>
+			<CouplTypCd value="001"/>
+		</svCouplType>
+		<svTypeVer>Resource &gt; Service Details &gt; Service Type Version</svTypeVer>
+		<svCouplRes xmlns="">
+			<svOpName>Resource &gt; Service Details &gt; Coupled Resource &gt; Operation Name</svOpName>
+			<svResCitId>
+				<identCode code="">Resource &gt; Service Details &gt; Coupled Resource &gt; Identifier</identCode>
+			</svResCitId>
+		</svCouplRes>
+		<dataExt xmlns="">
+			<geoEle xmlns="">
+				<GeoBndBox esriExtentType="search">
+					<westBL>-180</westBL>
+					<eastBL>180</eastBL>
+					<northBL>90</northBL>
+					<southBL>-90</southBL>
+					<exTypeCode>1</exTypeCode>
+				</GeoBndBox>
+			</geoEle>
+			<exDesc>A bounding box created on the Item Description page has the esriExtentType attribute set with the value "search". The Item Description page only supports editing a bounding box with that attribute. The bounding box added by the synchronization process has the esriExtentType attribute set with the value "search". This bounding box is preferred when exporting to a standard that only allows one bounding box, such as the FGDC CSDGM.</exDesc>
+		</dataExt>
+		<tpCat>
+			<TopicCatCd value="008"/>
+		</tpCat>
+		<tpCat>
+			<TopicCatCd value="010"/>
+		</tpCat>
+	</dataIdInfo>
+	<mdMaint xmlns="">
+		<dateNext>2012-11-01T12:00:00</dateNext>
+		<maintNote>Last metadata review date: 20111014</maintNote>
+		<maintFreq>
+			<MaintFreqCd value="012"/>
+		</maintFreq>
+		<usrDefFreq>
+			<duration>P1Y2M3DT4H5M6S</duration>
+		</usrDefFreq>
+		<maintScp>
+			<ScopeCd value="014"/>
+		</maintScp>
+		<upScpDesc xmlns="">
+			<attribSet>Metadata &gt; Maintenance &gt; Scope Description &gt; Attributes</attribSet>
+			<featSet>Metadata &gt; Maintenance &gt; Scope Description &gt; Features</featSet>
+			<featIntSet>Metadata &gt; Maintenance &gt; Scope Description &gt; Feature Instances</featIntSet>
+			<attribIntSet>Metadata &gt; Maintenance &gt; Scope Description &gt; Attribute Instances</attribIntSet>
+			<datasetSet>Metadata &gt; Maintenance &gt; Scope Description &gt; Dataset</datasetSet>
+			<other>Metadata &gt; Maintenance &gt; Scope Description &gt; Other Instances</other>
+		</upScpDesc>
+		<maintCont xmlns="">
+			<rpOrgName>Metadata &gt; Maintenance &gt; Contact &gt; Organization</rpOrgName>
+			<role>
+				<RoleCd value="002"/>
+			</role>
+			<rpCntInfo xmlns="">
+				<cntAddress addressType="">
+					<eMailAdd>Metadata &gt; Maintenance &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+				</cntAddress>
+			</rpCntInfo>
+		</maintCont>
+		<maintNote>Metadata &gt; Maintenance &gt; Maintenance Note</maintNote>
+	</mdMaint>
+	<mdConst xmlns="">
+		<Consts xmlns="">
+			<useLimit>Metadata &gt; Constraints &gt; General Constraints &gt; Use Limitation</useLimit>
+		</Consts>
+	</mdConst>
+	<mdConst xmlns="">
+		<LegConsts xmlns="">
+			<othConsts>Metadata &gt; Constraints &gt; Legal Constraints &gt; Other Constraints</othConsts>
+			<accessConsts>
+				<RestrictCd value="008"/>
+			</accessConsts>
+			<useConsts>
+				<RestrictCd value="007"/>
+			</useConsts>
+			<useLimit>Metadata &gt; Constraints &gt; Legal Constraints &gt; Use Limitation</useLimit>
+		</LegConsts>
+	</mdConst>
+	<mdConst xmlns="">
+		<SecConsts xmlns="">
+			<class>
+				<ClasscationCd value="001"/>
+			</class>
+			<classSys>Metadata &gt; Constraints &gt; Security Constraints &gt; Classification System</classSys>
+			<handDesc>Metadata &gt; Constraints &gt; Security Constraints &gt; Handling Description</handDesc>
+			<userNote>Metadata &gt; Constraints &gt; Security Constraints &gt; User Note</userNote>
+			<useLimit>Metadata &gt; Constraints &gt; Security Constraints &gt; Use Limitation</useLimit>
+		</SecConsts>
+	</mdConst>
+	<dqInfo xmlns="">
+		<dqScope>
+			<scpLvl>
+				<ScopeCd value="014"/>
+			</scpLvl>
+			<scpLvlDesc xmlns="">
+				<datasetSet>Resource &gt; Data Quality &gt; Level Description &gt; Dataset</datasetSet>
+			</scpLvlDesc>
+			<scpExt xmlns="">
+				<exDesc>Resource &gt; Data Quality &gt; Extent &gt; Description</exDesc>
+				<tempEle>
+					<TempExtent>
+						<exTemp>
+							<TM_Instant>
+								<tmPosition>2011-10-12T00:00:00</tmPosition>
+							</TM_Instant>
+						</exTemp>
+					</TempExtent>
+				</tempEle>
+			</scpExt>
+		</dqScope>
+		<dataLineage>
+			<dataSource type="" xmlns="">
+				<srcDesc>Resource &gt; Lineage &gt; Data Source &gt; Source Description</srcDesc>
+				<srcMedName>
+					<MedNameCd value="003"/>
+				</srcMedName>
+				<srcScale>
+					<rfDenom>250000</rfDenom>
+				</srcScale>
+				<srcCitatn xmlns="">
+					<resTitle>Resource &gt; Lineage &gt; Data Source &gt; Source Citation &gt; Titles &gt; Title</resTitle>
+					<date>
+						<pubDate>2011-07-15T00:00:00</pubDate>
+					</date>
+					<citRespParty xmlns="">
+						<rpOrgName>Resource &gt; Lineage &gt; Data Source &gt; Source Citation &gt; Contact &gt; Organization</rpOrgName>
+						<role>
+							<RoleCd value="006"/>
+						</role>
+						<rpCntInfo xmlns="">
+							<cntAddress xmlns="" addressType="">
+								<eMailAdd>Resource &gt; Lineage &gt; Data Source &gt; Source Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+							</cntAddress>
+						</rpCntInfo>
+					</citRespParty>
+					<resAltTitle>Resource &gt; Lineage &gt; Data Source &gt; Source Citation &gt; Titles &gt; Alternate Title</resAltTitle>
+					<citOnlineRes xmlns="">
+						<linkage>http://Resource_Lineage_Data_Source_Source_Citation_Online_Resource_Linkage</linkage>
+						<protocol>Resource &gt; Lineage &gt; Data Source &gt; Source Citation &gt; Online Resource &gt; Protocol</protocol>
+					</citOnlineRes>
+				</srcCitatn>
+				<srcExt xmlns="">
+					<exDesc>Resource &gt; Lineage &gt; Data Source &gt; Source Extent &gt; Description</exDesc>
+					<tempEle>
+						<TempExtent>
+							<exTemp>
+								<TM_Instant>
+									<tmPosition>2011-06-06T00:00:00</tmPosition>
+								</TM_Instant>
+							</exTemp>
+						</TempExtent>
+					</tempEle>
+					<tempEle>
+						<TempExtent>
+							<exTemp>
+								<TM_Instant>
+									<tmPosition>2011-07-14T14:20:00</tmPosition>
+								</TM_Instant>
+							</exTemp>
+						</TempExtent>
+					</tempEle>
+					<tempEle>
+						<TempExtent>
+							<exTemp>
+								<TM_Instant>
+									<tmPosition>2011-08-05T06:05:00</tmPosition>
+								</TM_Instant>
+							</exTemp>
+						</TempExtent>
+					</tempEle>
+				</srcExt>
+				<srcRefSys xmlns="">
+					<identCode code="Resource &gt; Lineage &gt; Data Source &gt; Reference System &gt; Code"/>
+					<idCodeSpace>Resource &gt; Lineage &gt; Data Source &gt; Reference System &gt; Code Space</idCodeSpace>
+					<idVersion>Resource &gt; Lineage &gt; Data Source &gt; Reference System &gt; Version</idVersion>
+					<identAuth xmlns="">
+						<resTitle>Resource &gt; Lineage &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Titles &gt; Title</resTitle>
+						<date>
+							<reviseDate>2011-06-15T00:00:00</reviseDate>
+						</date>
+						<citOnlineRes xmlns="">
+							<linkage>http://Resource_Lineage_Data_Source_Reference_System_Authority_Citation_Online_Resource_Linkage</linkage>
+							<protocol>Resource &gt; Lineage &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Online Resource &gt; Protocol</protocol>
+						</citOnlineRes>
+						<citRespParty xmlns="">
+							<rpOrgName>Resource &gt; Lineage &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Contact &gt; Organization</rpOrgName>
+							<role>
+								<RoleCd value="002"/>
+							</role>
+							<rpCntInfo xmlns="">
+								<cntAddress addressType="">
+									<eMailAdd>Resource &gt; Lineage &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+								</cntAddress>
+							</rpCntInfo>
+						</citRespParty>
+					</identAuth>
+				</srcRefSys>
+			</dataSource>
+			<statement>Resource &gt; Lineage &gt; Statement</statement>
+			<prcStep xmlns="">
+				<stepDesc>Resource &gt; Lineage &gt; Process Step &gt; Process Description</stepDesc>
+				<stepDateTm>2011-10-01T16:10:32</stepDateTm>
+				<stepProc xmlns="">
+					<rpIndName>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Name</rpIndName>
+					<rpCntInfo xmlns="">
+						<cntAddress addressType="postal">
+							<delPoint>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Contact Information &gt; Address</delPoint>
+							<city>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Contact Information &gt; City</city>
+							<adminArea>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Contact Information &gt; State</adminArea>
+							<postCode>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Contact Information &gt; Postal Code</postCode>
+							<country>US</country>
+							<eMailAdd>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Contact Information &gt; Email</eMailAdd>
+						</cntAddress>
+						<cntPhone>
+							<voiceNum tddtty="">Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Contact Information &gt; Phone</voiceNum>
+						</cntPhone>
+					</rpCntInfo>
+					<role>
+						<RoleCd value="009"/>
+					</role>
+					<rpOrgName>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Organization</rpOrgName>
+				</stepProc>
+				<stepSrc type="used" xmlns="">
+					<srcCitatn xmlns="">
+						<resTitle>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Titles &gt; Title (Source Type=Used)</resTitle>
+						<date>
+							<reviseDate>2011-09-14T00:00:00</reviseDate>
+						</date>
+						<resAltTitle>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Titles &gt; Alternate Title (Source Type=Used)</resAltTitle>
+						<citRespParty xmlns="">
+							<rpOrgName>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Organization (Source Type=Used Role=Publisher)</rpOrgName>
+							<role>
+								<RoleCd value="010"/>
+							</role>
+							<rpCntInfo xmlns="">
+								<cntAddress xmlns="" addressType="physical">
+									<eMailAdd>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Contact Information &gt; Email (Source Type=Used Role=Publisher)</eMailAdd>
+									<city>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Contact Information &gt; City (Source Type=Used Role=Publisher)</city>
+									<adminArea>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Contact Information &gt; State (Source Type=Used Role=Publisher)</adminArea>
+									<country>US</country>
+								</cntAddress>
+							</rpCntInfo>
+						</citRespParty>
+						<citOnlineRes xmlns="">
+							<linkage>http://Resource_Lineage_Process_Step_Data_Source_Source_Citation_Online_Resource_Linkage_Source_Type=Used</linkage>
+							<protocol>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Online Resource &gt; Protocol (Source Type=Used)</protocol>
+						</citOnlineRes>
+						<citRespParty xmlns="">
+							<rpOrgName>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Organization (Source Type=Used Role=Originator)</rpOrgName>
+							<role>
+								<RoleCd value="006"/>
+							</role>
+							<rpCntInfo xmlns="">
+								<cntAddress addressType="">
+									<eMailAdd>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Contact Information &gt; Email (Source Type=Used Role=Originator)</eMailAdd>
+								</cntAddress>
+							</rpCntInfo>
+						</citRespParty>
+					</srcCitatn>
+					<srcDesc>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Description (Source Type=Used)</srcDesc>
+					<srcExt xmlns="">
+						<geoEle xmlns="">
+							<GeoBndBox>
+								<exTypeCode>1</exTypeCode>
+								<westBL>-100.0</westBL>
+								<eastBL>-80.0</eastBL>
+								<southBL>21.5</southBL>
+								<northBL>42.5</northBL>
+							</GeoBndBox>
+						</geoEle>
+					</srcExt>
+					<srcRefSys xmlns="">
+						<identCode code="Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Reference System &gt; Code (Source Type=Used)"/>
+						<idCodeSpace>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Reference System &gt; Code Space (Source Type=Used)</idCodeSpace>
+						<idVersion>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Reference System &gt; Version (Source Type=Used)</idVersion>
+						<identAuth xmlns="">
+							<resTitle>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Titles &gt; Title (Source Type=Used)</resTitle>
+							<citOnlineRes xmlns="">
+								<linkage>http://Resource_Lineage_Process_Step_Data_Source_Reference_System_Authority_Citation_Online_Resource_Linkage_Source_Type=Used</linkage>
+								<protocol>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Online Resource &gt; Protocol (Source Type=Used)</protocol>
+							</citOnlineRes>
+							<citRespParty xmlns="">
+								<rpOrgName>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Contact &gt; Organization (Source Type=Used)</rpOrgName>
+								<role>
+									<RoleCd value="001"/>
+								</role>
+								<rpCntInfo xmlns="">
+									<cntAddress addressType="">
+										<eMailAdd>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email (Source Type=Used)</eMailAdd>
+									</cntAddress>
+								</rpCntInfo>
+							</citRespParty>
+							<date>
+								<pubDate>2012-07-20T00:00:00</pubDate>
+							</date>
+						</identAuth>
+					</srcRefSys>
+				</stepSrc>
+				<stepRat>Resource &gt; Lineage &gt; Process Step &gt; Rationale</stepRat>
+				<stepSrc type="produced" xmlns="">
+					<srcDesc>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Description (Source Type=Produced)</srcDesc>
+					<srcCitatn xmlns="">
+						<resTitle>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Titles &gt; Title (Source Type=Produced)</resTitle>
+						<resAltTitle>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Titles &gt; Alternate Title (Source Type=Produced)</resAltTitle>
+						<date>
+							<createDate>2011-10-14T00:00:00</createDate>
+						</date>
+						<citRespParty xmlns="">
+							<rpOrgName>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Organization (Source Type=Produced Role=Originator)</rpOrgName>
+							<role>
+								<RoleCd value="006"/>
+							</role>
+							<rpCntInfo xmlns="">
+								<cntAddress addressType="">
+									<eMailAdd>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Contact Information &gt; Email (Source Type=Produced Role=Originator)</eMailAdd>
+								</cntAddress>
+							</rpCntInfo>
+						</citRespParty>
+					</srcCitatn>
+				</stepSrc>
+			</prcStep>
+		</dataLineage>
+		<report type="DQAbsExtPosAcc" dimension="horizontal" xmlns="">
+			<measDesc>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Description (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</measDesc>
+			<measId xmlns="">
+				<identCode>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Identifier &gt; Code (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</identCode>
+				<identAuth xmlns="">
+					<resTitle>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Identifier &gt; Authority Citation &gt; Titles &gt; Title (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</resTitle>
+					<date>
+						<reviseDate>2011-08-31T00:00:00</reviseDate>
+					</date>
+					<citRespParty xmlns="">
+						<rpOrgName>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Identifier &gt; Authority Citation &gt; Contact &gt; Organization (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</rpOrgName>
+						<role>
+							<RoleCd value="010"/>
+						</role>
+						<rpCntInfo xmlns="">
+							<cntAddress xmlns="" addressType="">
+								<eMailAdd>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Identifier &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</eMailAdd>
+							</cntAddress>
+						</rpCntInfo>
+					</citRespParty>
+					<citOnlineRes xmlns="">
+						<linkage>http://Resource_Data_Quality_Report_Measure_Identifier_Authority_Citation_Online_Resource_Linkage_Type=Absolute_External_Positional_Accuracy_Dimension=Horizontal</linkage>
+						<protocol>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Identifier &gt; Authority Citation &gt; Online Resource &gt; Protocol (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</protocol>
+					</citOnlineRes>
+				</identAuth>
+			</measId>
+			<evalMethDesc>Resource &gt; Data Quality &gt; Report &gt; Evaluation Method &gt; Description (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</evalMethDesc>
+			<evalMethType>
+				<EvalMethTypeCd value="003"/>
+			</evalMethType>
+			<evalProc xmlns="">
+				<resTitle>Resource &gt; Data Quality &gt; Report &gt; Evaluation Method &gt; Procedure Citation &gt; Titles &gt; Title (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</resTitle>
+				<date>
+					<reviseDate>2011-08-01T00:00:00</reviseDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>Resource &gt; Data Quality &gt; Report &gt; Evaluation Method &gt; Procedure Citation &gt; Contact &gt; Organization (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</rpOrgName>
+					<role>
+						<RoleCd value="010"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress xmlns="" addressType="">
+							<eMailAdd>Resource &gt; Data Quality &gt; Report &gt; Evaluation Method &gt; Procedure Citation &gt; Contact &gt; Contact Information &gt; Email (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+				<citOnlineRes xmlns="">
+					<linkage>http://Resource_Data_Quality_Report_Evaluation_Method_Procedure_Citation_Online_Resource_Linkage_Type=Absolute_External_Positional_Accuracy_Dimension=Horizontal</linkage>
+					<protocol>Resource &gt; Data Quality &gt; Report &gt; Evaluation Method &gt; Procedure Citation &gt; Online Resource &gt; Protocol (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</protocol>
+				</citOnlineRes>
+			</evalProc>
+			<measResult>
+				<ConResult xmlns="">
+					<conSpec xmlns="">
+						<resTitle>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Titles &gt; Title (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</resTitle>
+						<date>
+							<createDate>2009-06-20T00:00:00</createDate>
+						</date>
+						<citRespParty xmlns="">
+							<rpOrgName>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Contact &gt; Organization (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</rpOrgName>
+							<role>
+								<RoleCd value="010"/>
+							</role>
+							<rpCntInfo xmlns="">
+								<cntAddress xmlns="" addressType="">
+									<eMailAdd>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Contact &gt; Contact Information &gt; Email (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</eMailAdd>
+								</cntAddress>
+							</rpCntInfo>
+						</citRespParty>
+						<citOnlineRes xmlns="">
+							<linkage>http://Resource_Data_Quality_Report_Conformance_Result_Specification_Online_Resource_Linkage_Type=Absolute_External_Positional_Accuracy_Dimension=Horizontal</linkage>
+							<protocol>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Online Resource &gt; Protocol (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</protocol>
+						</citOnlineRes>
+					</conSpec>
+					<conExpl>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Explanation (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</conExpl>
+					<conPass>True</conPass>
+				</ConResult>
+				<QuanResult xmlns="">
+					<quanValType>Resource &gt; Data Quality &gt; Report &gt; Quantitative Result &gt; Value Type (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</quanValType>
+					<quanValUnit>
+						<UOM gmlID="" type="">
+							<unitSymbol>m</unitSymbol>
+						</UOM>
+					</quanValUnit>
+					<errStat>Resource &gt; Data Quality &gt; Report &gt; Quantitative Result &gt; Error Statistic (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</errStat>
+					<quanVal>Resource &gt; Data Quality &gt; Report &gt; Quantitative Result &gt; Value (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</quanVal>
+				</QuanResult>
+			</measResult>
+			<measDateTm>2011-10-12T00:00:00</measDateTm>
+			<measName>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Name (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</measName>
+		</report>
+		<report type="DQAbsExtPosAcc" dimension="vertical" xmlns="">
+			<measDesc>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Description (Type=Absolute External Positional Accuracy + Dimension=Vertical)</measDesc>
+			<evalMethDesc>Resource &gt; Data Quality &gt; Report &gt; Evaluation Method &gt; Description (Type=Absolute External Positional Accuracy + Dimension=Vertical)</evalMethDesc>
+			<measResult>
+				<QuanResult xmlns="">
+					<quanValUnit>
+						<UOM gmlID="" type="">
+							<unitSymbol>m</unitSymbol>
+						</UOM>
+					</quanValUnit>
+					<quanVal>Resource &gt; Data Quality &gt; Report &gt; Quantitative Result &gt; Value (Type=Absolute External Positional Accuracy + Dimension=Vertical)</quanVal>
+				</QuanResult>
+			</measResult>
+		</report>
+		<report type="DQCompOm" dimension="" xmlns="">
+			<measDesc>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Description (Type=Completeness Omission)</measDesc>
+			<measResult>
+				<QuanResult xmlns="">
+					<quanVal>Resource &gt; Data Quality &gt; Report &gt; Quantitative Result &gt; Value (Type=Completeness Omission)</quanVal>
+					<quanValUnit>
+						<UOM gmlID="" type="">
+							<unitSymbol>m</unitSymbol>
+						</UOM>
+					</quanValUnit>
+				</QuanResult>
+			</measResult>
+		</report>
+		<report type="DQConcConsis" dimension="" xmlns="">
+			<measDesc>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Description (Type=Conceptual Consistency)</measDesc>
+			<measResult>
+				<QuanResult xmlns="">
+					<quanVal>Resource &gt; Data Quality &gt; Report &gt; Quantitative Result &gt; Value (Type=Conceptual Consistency)</quanVal>
+					<quanValUnit>
+						<UOM gmlID="" type="">
+							<unitSymbol>m</unitSymbol>
+						</UOM>
+					</quanValUnit>
+				</QuanResult>
+			</measResult>
+		</report>
+		<report type="DQQuanAttAcc" dimension="" xmlns="">
+			<measDesc>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Description (Type=Quantitative Attribute Accuracy)</measDesc>
+			<evalMethDesc>Resource &gt; Data Quality &gt; Report &gt; Evaluation Method &gt; Description (Type=Quantitative Attribute Accuracy)</evalMethDesc>
+			<measResult>
+				<QuanResult xmlns="">
+					<quanVal>Resource &gt; Data Quality &gt; Report &gt; Quantitative Result &gt; Value (Type=Quantitative Attribute Accuracy)</quanVal>
+					<quanValUnit>
+						<UOM gmlID="" type="">
+							<unitSymbol>Cel</unitSymbol>
+						</UOM>
+					</quanValUnit>
+				</QuanResult>
+			</measResult>
+		</report>
+		<report type="DQDomConsis" dimension="" xmlns="">
+			<measResult>
+				<ConResult xmlns="">
+					<conSpec xmlns="">
+						<resTitle>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Titles &gt; Title (Type=Domain Consistency)</resTitle>
+						<date>
+							<createDate>2010-07-01T00:00:00</createDate>
+						</date>
+						<citRespParty xmlns="">
+							<rpOrgName>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Contact &gt; Organization (Type=Domain Consistency)</rpOrgName>
+							<role>
+								<RoleCd value="010"/>
+							</role>
+							<rpCntInfo xmlns="">
+								<cntAddress xmlns="" addressType="">
+									<eMailAdd>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Contact &gt; Contact Information &gt; Email (Type=Domain Consistency)</eMailAdd>
+								</cntAddress>
+							</rpCntInfo>
+						</citRespParty>
+						<citOnlineRes xmlns="">
+							<linkage>http://Resource_Data_Quality_Report_Conformance_Result_Specification_Online_Resource_Linkage_Type=Domain_Consistency</linkage>
+							<protocol>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Online Resource &gt; Protocol (Type=Domain Consistency)</protocol>
+						</citOnlineRes>
+					</conSpec>
+					<conExpl>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Explanation (Type=Domain Consistency)</conExpl>
+					<conPass>True</conPass>
+				</ConResult>
+			</measResult>
+		</report>
+	</dqInfo>
+	<spatRepInfo>
+		<Indref>Resource &gt; Spatial Data Representation &gt; Indirect Spatial Representation</Indref>
+	</spatRepInfo>
+	<spatRepInfo>
+		<VectSpatRep xmlns="">
+			<geometObjs>
+				<geoObjTyp>
+					<GeoObjTypCd value="001"/>
+				</geoObjTyp>
+				<geoObjCnt>27249</geoObjCnt>
+			</geometObjs>
+			<topLvl>
+				<TopoLevCd value="006"/>
+			</topLvl>
+		</VectSpatRep>
+	</spatRepInfo>
+	<spatRepInfo>
+		<GridSpatRep xmlns="">
+			<numDims>1</numDims>
+			<axisDimension type="004" xmlns="">
+				<dimSize>35</dimSize>
+				<dimResol>
+					<value uom="[ft_i]">1.0</value>
+				</dimResol>
+			</axisDimension>
+			<cellGeo>
+				<CellGeoCd value="001"/>
+			</cellGeo>
+			<tranParaAv>1</tranParaAv>
+		</GridSpatRep>
+	</spatRepInfo>
+	<spatRepInfo>
+		<Georect xmlns="">
+			<numDims>3</numDims>
+			<axisDimension type="001" xmlns="">
+				<dimSize>150</dimSize>
+				<dimResol>
+					<value uom="m">5.0</value>
+				</dimResol>
+			</axisDimension>
+			<cellGeo>
+				<CellGeoCd value="002"/>
+			</cellGeo>
+			<tranParaAv>1</tranParaAv>
+			<chkPtAv>1</chkPtAv>
+			<chkPtDesc>Resource &gt; Spatial Data Representation &gt; Georectified &gt; Check Point Description</chkPtDesc>
+			<cornerPts xmlns="">
+				<gmlDesc>Resource &gt; Spatial Data Representation &gt; Georectified &gt; Corner Point &gt; Description</gmlDesc>
+				<gmlDescRef>Resource &gt; Spatial Data Representation &gt; Georectified &gt; Corner Point &gt; Reference</gmlDescRef>
+				<gmlIdent codeSpace="Resource &gt; Spatial Data Representation &gt; Georectified &gt; Corner Point &gt; Identifier Codespace">Resource &gt; Spatial Data Representation &gt; Georectified &gt; Corner Point &gt; Identifier</gmlIdent>
+				<pos>1.0 1.0</pos>
+			</cornerPts>
+			<centerPt xmlns="">
+				<gmlDesc>Resource &gt; Spatial Data Representation &gt; Georectified &gt; Center Point &gt; Description</gmlDesc>
+				<gmlDescRef>Resource &gt; Spatial Data Representation &gt; Georectified &gt; Center Point &gt; Reference</gmlDescRef>
+				<gmlIdent codeSpace="Resource &gt; Spatial Data Representation &gt; Georectified &gt; Center Point &gt; Identifier Codespace">Resource &gt; Spatial Data Representation &gt; Georectified &gt; Center Point &gt; Identifier</gmlIdent>
+				<pos>4.0 4.0</pos>
+			</centerPt>
+			<ptInPixel>
+				<PixOrientCd value="005"/>
+			</ptInPixel>
+			<transDimDesc>Resource &gt; Spatial Data Representation &gt; Georectified &gt; Transformation Dimension Description</transDimDesc>
+			<transDimMap>Resource &gt; Spatial Data Representation &gt; Georectified &gt; Transformation Dimension Mapping</transDimMap>
+			<axisDimension type="002" xmlns="">
+				<dimSize>259</dimSize>
+				<dimResol>
+					<value uom="m">10.0</value>
+				</dimResol>
+			</axisDimension>
+			<axisDimension type="003" xmlns="">
+				<dimSize>20</dimSize>
+				<dimResol>
+					<value uom="m">0.1</value>
+				</dimResol>
+			</axisDimension>
+			<cornerPts xmlns="">
+				<gmlDesc>Resource &gt; Spatial Data Representation &gt; Georectified &gt; Corner Point &gt; Description</gmlDesc>
+				<gmlDescRef>Resource &gt; Spatial Data Representation &gt; Georectified &gt; Corner Point &gt; Reference</gmlDescRef>
+				<gmlIdent codeSpace="Resource &gt; Spatial Data Representation &gt; Georectified &gt; Corner Point &gt; Identifier Codespace">Resource &gt; Spatial Data Representation &gt; Georectified &gt; Corner Point &gt; Identifier</gmlIdent>
+				<pos>7.0 7.0</pos>
+			</cornerPts>
+		</Georect>
+	</spatRepInfo>
+	<spatRepInfo>
+		<Georef xmlns="">
+			<numDims>1</numDims>
+			<axisDimension type="008" xmlns="">
+				<dimSize>140</dimSize>
+				<dimResol>
+					<value uom="h">1</value>
+				</dimResol>
+			</axisDimension>
+			<cellGeo>
+				<CellGeoCd value="001"/>
+			</cellGeo>
+			<tranParaAv>True</tranParaAv>
+			<ctrlPtAv>True</ctrlPtAv>
+			<orieParaAv>True</orieParaAv>
+			<orieParaDs>Resource &gt; Spatial Data Representation &gt; Georeferenceable &gt; Orientation Parameter Description</orieParaDs>
+			<georefPars>Resource &gt; Spatial Data Representation &gt; Georeferenceable &gt; Georeferenced Parameters</georefPars>
+			<paraCit xmlns="">
+				<resTitle>Resource &gt; Spatial Data Representation &gt; Georeferenceable &gt; Parameter Citation &gt; Titles &gt; Title</resTitle>
+				<date>
+					<reviseDate>2011-01-01T00:00:00</reviseDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>Resource &gt; Spatial Data Representation &gt; Georeferenceable &gt; Parameter Citation &gt; Contact &gt; Organization</rpOrgName>
+					<role>
+						<RoleCd value="010"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress xmlns="" addressType="">
+							<eMailAdd>Resource &gt; Spatial Data Representation &gt; Georeferenceable &gt; Parameter Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+				<citOnlineRes xmlns="">
+					<linkage>http://Resource_Spatial_Data_Representation_Georeferenceable_Parameter_Citation_Online_Resource_Linkage</linkage>
+					<protocol>Resource &gt; Spatial Data Representation &gt; Georeferenceable &gt; Parameter Citation &gt; Online Resource &gt; Protocol</protocol>
+				</citOnlineRes>
+			</paraCit>
+		</Georef>
+	</spatRepInfo>
+	<eainfo>
+		<detailed xmlns="">
+			<enttyp>
+				<enttypl>Resource &gt; Fields &gt; Details &gt; Label</enttypl>
+				<enttypd>Resource &gt; Fields &gt; Details &gt; Entity Type &gt; Definition
+</enttypd>
+				<enttypds>Resource &gt; Fields &gt; Details &gt; Entity Type &gt; Definition Source</enttypds>
+				<enttypt>Resource &gt; Fields &gt; Details &gt; Entity Type &gt; Object</enttypt>
+				<enttypc>1269</enttypc>
+			</enttyp>
+			<attr xmlns="">
+				<attrlabl>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Label</attrlabl>
+				<attalias>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Alias</attalias>
+				<attrtype>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Type</attrtype>
+				<attwidth>4</attwidth>
+				<atprecis>0</atprecis>
+				<attscale>0</attscale>
+				<attrdef>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Definition</attrdef>
+				<attrdefs>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Definition Source</attrdefs>
+				<attrdomv>
+					<udom>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Unrepresentable Domain</udom>
+				</attrdomv>
+			</attr>
+			<attr xmlns="">
+				<attrlabl>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Label</attrlabl>
+				<attalias>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Alias</attalias>
+				<attrtype>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Type</attrtype>
+				<attwidth>6</attwidth>
+				<atprecis>6</atprecis>
+				<attscale>3</attscale>
+				<attrdef>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Definition</attrdef>
+				<attrdefs>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Definition Source</attrdefs>
+				<attrvai>
+					<attrva>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Value Accuracy</attrva>
+					<attrvae>1</attrvae>
+				</attrvai>
+				<attrmfrq>009</attrmfrq>
+				<begdatea>20110901</begdatea>
+				<enddatea>20110930</enddatea>
+				<attrdomv>
+					<rdom xmlns="">
+						<rdommin>1.000</rdommin>
+						<rdommax>10.000</rdommax>
+						<attrunit>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Range Domain &gt; Units</attrunit>
+						<attrmres>1</attrmres>
+						<rdommean>6.000</rdommean>
+						<rdomstdv>1.600</rdomstdv>
+					</rdom>
+				</attrdomv>
+				<atindex>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Indexed</atindex>
+			</attr>
+			<attr xmlns="">
+				<attrlabl>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Label</attrlabl>
+				<attrdef>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Definition</attrdef>
+				<attrdefs>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Definition Source</attrdefs>
+				<attrdomv>
+					<edom xmlns="">
+						<edomv>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Enumerated Domain &gt; Value</edomv>
+						<edomvd>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Enumerated Domain &gt; Definition</edomvd>
+						<edomvds>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Enumerated Domain &gt; Definition Source</edomvds>
+					</edom>
+				</attrdomv>
+				<attrtype>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Type</attrtype>
+				<attwidth>1</attwidth>
+				<atprecis>0</atprecis>
+				<attscale>0</attscale>
+			</attr>
+			<attr xmlns="">
+				<attrlabl>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Label</attrlabl>
+				<attrdef>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Definition</attrdef>
+				<attrdefs>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Definition Source</attrdefs>
+				<attrdomv>
+					<codesetd xmlns="">
+						<codesetn>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Codeset Domain &gt; Name</codesetn>
+						<codesets>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Codeset Domain &gt; Source</codesets>
+					</codesetd>
+				</attrdomv>
+				<attrtype>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Type</attrtype>
+				<attwidth>2</attwidth>
+				<atprecis>0</atprecis>
+				<attscale>0</attscale>
+			</attr>
+		</detailed>
+		<overview xmlns="">
+			<eaover>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Fields &gt; Details &gt; Overview Description &gt; Summary</eaover>
+			<eadetcit>Resource &gt; Fields &gt; Details &gt; Attribute &gt; Fields &gt; Details &gt; Overview Description &gt; Citation</eadetcit>
+		</overview>
+	</eainfo>
+	<mdLang>
+		<languageCode value="eng"/>
+		<countryCode value="US"/>
+	</mdLang>
+	<mdHrLvName>Metadata &gt; Details &gt; Hierarchy Level Name</mdHrLvName>
+	<mdDateSt>20111017</mdDateSt>
+	<Binary>
+		<Thumbnail>
+			<Data EsriPropertyType="PictureX">/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsK
+CwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQU
+FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAARAA8DASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD4g1bV
+rzVTfTQaDp+hQXd7BEttY6dFG0McMboqW8hUybNj7JC0khkLRvO7ttcz+FY7i5b7Jp8jBHj81bS2
+eRGlj3dVAZZOoQ45wqA5bkj0/wCJ37PmsWOn6lJYvYaubLV7jTLmytHLyaesSWuWuAjOkKxC6iWa
+T7TMqSTbGkJUl/Ix4NvJ/Ct9cmLR5yl1AxFzqEVvLH8sis6q5VmgdjgupCJIioeWQN/S2BxWXZpg
+1VwlfnjKLTjG396Cu7u6ld8r1T95X0dvscox9P2/Pg6Tap6tO6kr6pOMU7cziltK/u3Xus+3v+Ct
+H/H38Kf+vfXf/RVrXh/w7/5Jf4O/7HXxL/6btIoor8L8CP8Ak3mTf9fJf+n8Qe1wv/yUOF/6+r/0
+hH//2Q==</Data>
+		</Thumbnail>
+		<Enclosure>
+			<Descript>ArcCatalog &gt; Metadata toolbar &gt; Metadata Properties button</Descript>
+			<Data EsriPropertyType="Base64" OriginalFileName="smallText.txt">c21hbGwgdGV4dA==</Data>
+		</Enclosure>
+		<Enclosure>
+			<Descript>ArcCatalog &gt; Metadata toolbar &gt; Metadata Properties button (Image checked and graphic file provided)</Descript>
+			<Data EsriPropertyType="Image" OriginalFileName="smallCircles.bmp">Qk0mBAAAAAAAADYAAAAoAAAAEgAAABIAAAABABgAAAAAAPADAAAAAAAAAAAAAAAAAAAAAAAAAP//
+AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AAAA//8A
+//8A//8A//8A//8A//8A/wAA/wAA/wAA/wAA/wAA/wAA//8A//8A//8A//8A//8A//8AAAD//wD/
+/wD//wD//wD//wD/AID/AID/AID/AID/AID/AID/AAD/AAD//wD//wD//wD//wD//wAAAP//AP//
+AP//AP8AAP8AgP8AAP//AP////8A//8AAP//AP//gP8AAP8AAP8AAP//AP//AP//AAAA//8A//8A
+//8A/wCA/wD//wD//wD//wD//4D//4D//wD//wD//wCA/wAA/wAA//8A//8A//8AAAD//wD//wD/
+AID/AP//AAD/////gP//gP8AAP8AAP//gP//gAD/////AID/AAD/AAD//wD//wAAAP//AP8AAP//
+gP8A//8A//+A/wAA/wAA/4AA/4AA/wAA/wAA//+A//8AgP8AAP//AP8AAP//AAAA//8A/wCA/wAA
+/////wD//4D/AAD/gAD/gAD/gAD/gAD/AAD//4D//wAA//+A/wAA/wAA//8AAAD//wD/AID/AP//
+AP//gP8AAP+AAP+AAP////////+AAP+AAP8AAP//gP//AID/AAD/AAD//wAAAP//AP8AgP8A//8A
+//+A/wAA/4AA/4AA/////////4AA/4AA/wAA//+A//8AgP8AAP8AAP//AAAA//8A/wCA/wAA////
+/wD//4D/AAD/gAD/gAD/gAD/gAD/AAD//4D//wAA//+A/wAA/wAA//8AAAD//wD/AAD//4D/AP//
+AP//gP8AAP8AAP+AAP+AAP8AAP8AAP//gP//AID/AAD//wD/AAD//wAAAP//AP//AP8AgP8A//8A
+AP////+A//+A/wAA/wAA//+A//+AAP////8AgP8AAP8AAP//AP//AAAA//8A//8A//8A/wCA/wD/
+/wD//wD//wD//4D//4D//wD//wD//wCA/wAA/wAA//8A//8A//8AAAD//wD//wD//wD/AAD/AID/
+AAD//wD/////AP//AAD//wD//4D/AAD/AAD/AAD//wD//wD//wAAAP//AP//AP//AP//AP//AP8A
+gP8AgP8AgP8AgP8AgP8AgP8AAP8AAP//AP//AP//AP//AP//AAAA//8A//8A//8A//8A//8A//8A
+/wAA/wAA/wAA/wAA/wAA/wAA//8A//8A//8A//8A//8A//8AAAD//wD//wD//wD//wD//wD//wD/
+/wD//wD//wD//wD//wD//wD//wD//wD//wD//wD//wD//wAA</Data>
+		</Enclosure>
+	</Binary>
+	<mdFileID>Metadata &gt; Details &gt; File Identifier</mdFileID>
+	<mdParentID>Metadata &gt; Details &gt; Parent Identifier</mdParentID>
+	<dataSetURI>Metadata &gt; Details &gt; Dataset URI (NAP Function Code=Web Map Service)</dataSetURI>
+	<contInfo>
+		<FetCatDesc xmlns="">
+			<compCode>True</compCode>
+			<catLang>
+				<languageCode value="fre"/>
+				<countryCode value="CA"/>
+				<CharSetCd value="004"/>
+			</catLang>
+			<incWithDS>True</incWithDS>
+			<catCitation xmlns="">
+				<resTitle>Resource &gt; Content &gt; Feature Catalogue &gt; Feature Catalogue Citation &gt; Titles &gt; Title</resTitle>
+				<date>
+					<createDate>2011-03-15T00:00:00</createDate>
+				</date>
+				<citRespParty xmlns="">
+					<rpOrgName>Resource &gt; Content &gt; Feature Catalogue &gt; Feature Catalogue Citation &gt; Contact &gt; Organization</rpOrgName>
+					<role>
+						<RoleCd value="010"/>
+					</role>
+					<rpCntInfo xmlns="">
+						<cntAddress xmlns="" addressType="">
+							<eMailAdd>Resource &gt; Content &gt; Feature Catalogue &gt; Feature Catalogue Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+						</cntAddress>
+					</rpCntInfo>
+				</citRespParty>
+				<citOnlineRes xmlns="">
+					<linkage>http://Resource_Content_Feature_Catalogue_Feature_Catalogue_Citation_Online_Resource_Linkage</linkage>
+					<protocol>Resource &gt; Content &gt; Feature Catalogue &gt; Feature Catalogue Citation &gt; Online Resource &gt; Protocol</protocol>
+				</citOnlineRes>
+			</catCitation>
+			<catFetTyps xmlns="">
+				<genericName codeSpace="Resource &gt; Content &gt; Feature Catalogue &gt; Feature Type &gt; Codespace">Resource &gt; Content &gt; Feature Catalogue &gt; Feature Type &gt; Name</genericName>
+			</catFetTyps>
+		</FetCatDesc>
+	</contInfo>
+	<contInfo>
+		<CovDesc xmlns="">
+			<attDesc>Resource &gt; Content &gt; Coverage Description &gt; Attribute Description</attDesc>
+			<contentTyp>
+				<ContentTypCd value="003"/>
+			</contentTyp>
+			<covDim>
+				<RangeDim xmlns="">
+					<seqID>
+						<aName>Resource &gt; Content &gt; Coverage Description &gt; Range Dimension &gt; Sequence Identifier</aName>
+						<attributeType>
+							<aName>Resource &gt; Content &gt; Coverage Description &gt; Range Dimension &gt; Sequence Identifier &gt; Type</aName>
+						</attributeType>
+					</seqID>
+					<dimDescrp>Resource &gt; Content &gt; Coverage Description &gt; Range Dimension &gt; Descriptor</dimDescrp>
+				</RangeDim>
+			</covDim>
+		</CovDesc>
+	</contInfo>
+	<contInfo>
+		<ImgDesc xmlns="">
+			<attDesc>Resource &gt; Content &gt; Image Description &gt; Attribute Description</attDesc>
+			<contentTyp>
+				<ContentTypCd value="001"/>
+			</contentTyp>
+			<illElevAng>78.5</illElevAng>
+			<illAziAng>135.5</illAziAng>
+			<imagCond>
+				<ImgCondCd value="009"/>
+			</imagCond>
+			<imagQuCode xmlns="">
+				<identCode>Resource &gt; Content &gt; Image Description &gt; Quality Code &gt; Code</identCode>
+				<identAuth xmlns="">
+					<resTitle>Resource &gt; Content &gt; Image Description &gt; Quality Code &gt; Authority Citation &gt; Titles &gt; Title</resTitle>
+					<date>
+						<reviseDate>2008-09-18T00:00:00</reviseDate>
+					</date>
+					<citRespParty xmlns="">
+						<rpOrgName>Resource &gt; Content &gt; Image Description &gt; Quality Code &gt; Authority Citation &gt; Contact &gt; Organization</rpOrgName>
+						<role>
+							<RoleCd value="010"/>
+						</role>
+						<rpCntInfo xmlns="">
+							<cntAddress xmlns="" addressType="">
+								<eMailAdd>Resource &gt; Content &gt; Image Description &gt; Quality Code &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+							</cntAddress>
+						</rpCntInfo>
+					</citRespParty>
+					<citOnlineRes xmlns="">
+						<linkage>http://Resource_Content_Image_Description_Quality_Code_Authority_Citation_Online_Resource_Linkage</linkage>
+						<protocol>Resource &gt; Content &gt; Image Description &gt; Quality Code &gt; Authority Citation &gt; Online Resource &gt; Protocol</protocol>
+					</citOnlineRes>
+				</identAuth>
+			</imagQuCode>
+			<cloudCovPer>6.5</cloudCovPer>
+			<prcTypCde xmlns="">
+				<identCode>Resource &gt; Content &gt; Image Description &gt; Processing Level Code &gt; Code</identCode>
+				<identAuth xmlns="">
+					<resTitle>Resource &gt; Content &gt; Image Description &gt; Processing Level Code &gt; Authority Citation &gt; Titles &gt; Title</resTitle>
+					<date>
+						<reviseDate>2008-09-18T00:00:00</reviseDate>
+					</date>
+					<citRespParty xmlns="">
+						<rpOrgName>Resource &gt; Content &gt; Image Description &gt; Processing Level Code &gt; Authority Citation &gt; Contact &gt; Organization</rpOrgName>
+						<role>
+							<RoleCd value="010"/>
+						</role>
+						<rpCntInfo xmlns="">
+							<cntAddress xmlns="" addressType="">
+								<eMailAdd>Resource &gt; Content &gt; Image Description &gt; Processing Level Code &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+							</cntAddress>
+						</rpCntInfo>
+					</citRespParty>
+					<citOnlineRes xmlns="">
+						<linkage>http://Resource_Content_Image_Description_Processing_Level_Code_Authority_Citation_Online_Resource_Linkage</linkage>
+						<protocol>Resource &gt; Content &gt; Image Description &gt; Processing Level Code &gt; Authority Citation &gt; Online Resource &gt; Protocol</protocol>
+					</citOnlineRes>
+				</identAuth>
+			</prcTypCde>
+			<cmpGenQuan>2</cmpGenQuan>
+			<trianInd>True</trianInd>
+			<radCalDatAv>True</radCalDatAv>
+			<camCalInAv>True</camCalInAv>
+			<filmDistInAv>True</filmDistInAv>
+			<lensDistInAv>True</lensDistInAv>
+			<covDim>
+				<Band xmlns="">
+					<seqID>
+						<aName>Resource &gt; Content &gt; Image Description &gt; Band &gt; Sequence Identifier</aName>
+						<attributeType>
+							<aName>Resource &gt; Content &gt; Image Description &gt; Band &gt; Sequence Identifier &gt; Type</aName>
+						</attributeType>
+					</seqID>
+					<dimDescrp>Resource &gt; Content &gt; Image Description &gt; Band &gt; Descriptor</dimDescrp>
+					<maxVal>255.99</maxVal>
+					<minVal>0.01</minVal>
+					<valUnit>
+						<UOM gmlID="" type="">
+							<unitSymbol>m</unitSymbol>
+						</UOM>
+					</valUnit>
+					<pkResp>225.4</pkResp>
+					<bitsPerVal>8</bitsPerVal>
+					<toneGrad>4</toneGrad>
+					<sclFac>0.98</sclFac>
+					<offset>19.3</offset>
+				</Band>
+			</covDim>
+		</ImgDesc>
+	</contInfo>
+	<appSchInfo xmlns="">
+		<asName xmlns="">
+			<resTitle>Resource &gt; References &gt; Application Schema Information &gt; Citation &gt; Titles &gt; Title</resTitle>
+			<date>
+				<createDate>2011-04-08T00:00:00</createDate>
+			</date>
+			<citRespParty xmlns="">
+				<rpOrgName>Resource &gt; References &gt; Application Schema Information &gt; Citation &gt; Contact &gt; Organization</rpOrgName>
+				<role>
+					<RoleCd value="010"/>
+				</role>
+				<rpCntInfo xmlns="">
+					<cntAddress xmlns="" addressType="">
+						<eMailAdd>Resource &gt; References &gt; Application Schema Information &gt; Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+					</cntAddress>
+				</rpCntInfo>
+			</citRespParty>
+			<citOnlineRes xmlns="">
+				<linkage>http://Resource_References_Application_Schema_Information_Citation_Online_Resource_Linkage</linkage>
+				<protocol>Resource &gt; References &gt; Application Schema Information &gt; Citation &gt; Online Resource &gt; Protocol</protocol>
+			</citOnlineRes>
+		</asName>
+		<asSchLang>Resource &gt; References &gt; Application Schema Information &gt; Schema Language</asSchLang>
+		<asCstLang>Resource &gt; References &gt; Application Schema Information &gt; Constraint Language</asCstLang>
+		<asAscii>Resource &gt; References &gt; Application Schema Information &gt; ASCII</asAscii>
+		<asGraFile src="Resource &gt; References &gt; Application Schema Information &gt; Graphics File Source">Resource &gt; References &gt; Application Schema Information &gt; Graphics File</asGraFile>
+		<asSwDevFile src="Resource &gt; References &gt; Application Schema Information &gt; Software Development File Source">Resource &gt; References &gt; Application Schema Information &gt; Software Development File</asSwDevFile>
+		<asSwDevFiFt>Resource &gt; References &gt; Application Schema Information &gt; Software Development File Format</asSwDevFiFt>
+	</appSchInfo>
+	<refSysInfo>
+		<RefSystem dimension="horizontal">
+			<refSysID xmlns="">
+				<identAuth xmlns="">
+					<resTitle>Resource &gt; Spatial Reference &gt; Reference System &gt; Authority Citation &gt; Titles &gt; Title</resTitle>
+					<date>
+						<pubDate>2011-07-01T00:00:00</pubDate>
+					</date>
+					<citRespParty xmlns="">
+						<rpOrgName>Resource &gt; Spatial Reference &gt; Reference System &gt; Authority Citation &gt; Contact &gt; Organization</rpOrgName>
+						<role>
+							<RoleCd value="010"/>
+						</role>
+						<rpCntInfo xmlns="">
+							<cntAddress xmlns="" addressType="">
+								<eMailAdd>Resource &gt; Spatial Reference &gt; Reference System &gt; Authority Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+							</cntAddress>
+						</rpCntInfo>
+					</citRespParty>
+					<citOnlineRes xmlns="">
+						<linkage>http://Resource_Spatial_Reference_Reference_System_Authority_Citation_Online_Resource_Linkage</linkage>
+						<protocol>Resource &gt; Spatial Reference &gt; Reference System &gt; Authority Citation &gt; Online Resource &gt; Protocol</protocol>
+					</citOnlineRes>
+				</identAuth>
+				<identCode code="Resource &gt; Spatial Reference &gt; Reference System &gt; Code"/>
+				<idCodeSpace>Resource &gt; Spatial Reference &gt; Reference System &gt; Code Space</idCodeSpace>
+				<idVersion>Resource &gt; Spatial Reference &gt; Reference System &gt; Version</idVersion>
+			</refSysID>
+		</RefSystem>
+	</refSysInfo>
+	<porCatInfo>
+		<portCatCit xmlns="">
+			<resTitle>Resource &gt; References &gt; Portrayal Citation &gt; Titles &gt; Title</resTitle>
+			<citOnlineRes xmlns="">
+				<linkage>http://Resource_References_Portrayal_Citation_Online_Resource_Linkage</linkage>
+				<protocol>Resource &gt; References &gt; Portrayal Citation &gt; Online Resource &gt; Protocol</protocol>
+			</citOnlineRes>
+			<citRespParty xmlns="">
+				<rpOrgName>Resource &gt; References &gt; Portrayal Citation &gt; Contact &gt; Organization</rpOrgName>
+				<rpPosName>Resource &gt; References &gt; Portrayal Citation &gt; Contact &gt; Position</rpPosName>
+				<role>
+					<RoleCd value="002"/>
+				</role>
+				<rpCntInfo xmlns="">
+					<cntAddress addressType="">
+						<eMailAdd>Resource &gt; References &gt; Portrayal Citation &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+					</cntAddress>
+				</rpCntInfo>
+			</citRespParty>
+			<date>
+				<reviseDate>2008-01-01T00:00:00</reviseDate>
+			</date>
+		</portCatCit>
+	</porCatInfo>
+	<dataSetFn>
+		<OnFunctCd value="011"/>
+	</dataSetFn>
+</metadata>

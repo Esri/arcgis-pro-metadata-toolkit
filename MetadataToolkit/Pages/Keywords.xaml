@@ -394,7 +394,7 @@ limitations under the License.​
               </Border>
 
               <!-- discipline keywords -->
-              <Border Style="{DynamicResource EditorBorder2Style}" tu:MetadataStyle.OnlyProfiles="ISO19139,NAP,INSPIRE">
+              <Border Style="{DynamicResource EditorBorder2Style}" tu:MetadataStyle.OnlyProfiles="ISO19139,NAP,INSPIRE,ISO19115_3">
                 <StackPanel>
                   <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=discKeys}">
                     <ListBox.ItemsPanel>
@@ -484,7 +484,7 @@ limitations under the License.​
               </Border>
 
               <!-- other keywords -->
-              <Border Style="{DynamicResource EditorBorder2Style}" tu:MetadataStyle.OnlyProfiles="ISO19139,NAP,INSPIRE">
+              <Border Style="{DynamicResource EditorBorder2Style}" tu:MetadataStyle.OnlyProfiles="ISO19139,NAP,INSPIRE,ISO19115_3">
                 <StackPanel>
                   <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=otherKeys}">
                     <ListBox.ItemsPanel>
@@ -529,7 +529,7 @@ limitations under the License.​
               </Border>
 
               <!-- product keys -->
-              <Border Style="{DynamicResource EditorBorder2Style}" tu:MetadataStyle.OnlyProfiles="NAP" >
+              <Border Style="{DynamicResource EditorBorder2Style}" tu:MetadataStyle.OnlyProfiles="NAP,ISO19115_3" >
                 <StackPanel>
                   <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=productKeys}">
                     <ListBox.ItemsPanel>
@@ -574,7 +574,7 @@ limitations under the License.​
               </Border>
 
               <!-- sub topic keys -->
-              <Border Style="{DynamicResource EditorBorder2Style}" tu:MetadataStyle.OnlyProfiles="NAP" >
+              <Border Style="{DynamicResource EditorBorder2Style}" tu:MetadataStyle.OnlyProfiles="NAP,ISO19115_3" >
                 <StackPanel>
                   <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=subTopicCatKeys}">
                     <ListBox.ItemsPanel>

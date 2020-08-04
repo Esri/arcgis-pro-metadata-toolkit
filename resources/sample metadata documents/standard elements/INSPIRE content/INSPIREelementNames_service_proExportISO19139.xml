@@ -1,0 +1,356 @@
+<?xml version="1.0"?>
+<MD_Metadata xmlns="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<language>
+		<LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="eng" codeSpace="ISO639-2">eng</LanguageCode>
+	</language>
+	<characterSet>
+		<MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8" codeSpace="ISOTC211/19115">utf8</MD_CharacterSetCode>
+	</characterSet>
+	<hierarchyLevel>
+		<MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="service" codeSpace="ISOTC211/19115">service</MD_ScopeCode>
+	</hierarchyLevel>
+	<hierarchyLevelName>
+		<gco:CharacterString>Hierarchy Level: 2.2.3 Resource Type; Date Stamp: 2.11.2 Metadata date; Language: 2.11.3 Metadata language</gco:CharacterString>
+	</hierarchyLevelName>
+	<contact>
+		<CI_ResponsibleParty>
+			<organisationName>
+				<gco:CharacterString>2.11.1 Metadata point of contact</gco:CharacterString>
+			</organisationName>
+			<contactInfo>
+				<CI_Contact>
+					<address>
+						<CI_Address>
+							<electronicMailAddress>
+								<gco:CharacterString>Metadata Contact &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+							</electronicMailAddress>
+						</CI_Address>
+					</address>
+				</CI_Contact>
+			</contactInfo>
+			<role>
+				<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact" codeSpace="ISOTC211/19115">pointOfContact</CI_RoleCode>
+			</role>
+		</CI_ResponsibleParty>
+	</contact>
+	<dateStamp>
+		<gco:Date>2011-10-17</gco:Date>
+	</dateStamp>
+	<metadataStandardName>
+		<gco:CharacterString>INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119</gco:CharacterString>
+	</metadataStandardName>
+	<metadataStandardVersion>
+		<gco:CharacterString>V. 1.2</gco:CharacterString>
+	</metadataStandardVersion>
+	<identificationInfo>
+		<srv:SV_ServiceIdentification>
+			<citation>
+				<CI_Citation>
+					<title>
+						<gco:CharacterString>2.2.1 Resource title</gco:CharacterString>
+					</title>
+					<date>
+						<CI_Date>
+							<date>
+								<gco:DateTime>2011-10-17T16:30:00</gco:DateTime>
+							</date>
+							<dateType>
+								<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation" codeSpace="ISOTC211/19115">creation</CI_DateTypeCode>
+							</dateType>
+						</CI_Date>
+					</date>
+					<date>
+						<CI_Date>
+							<date>
+								<gco:Date>2011-11-01</gco:Date>
+							</date>
+							<dateType>
+								<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" codeSpace="ISOTC211/19115">publication</CI_DateTypeCode>
+							</dateType>
+						</CI_Date>
+					</date>
+					<date>
+						<CI_Date>
+							<date>
+								<gco:DateTime>2012-10-17T19:42:00</gco:DateTime>
+							</date>
+							<dateType>
+								<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision" codeSpace="ISOTC211/19115">revision</CI_DateTypeCode>
+							</dateType>
+						</CI_Date>
+					</date>
+					<identifier>
+						<MD_Identifier>
+							<code>
+								<gco:CharacterString>http://2.2.5_Unique_resource_identifier</gco:CharacterString>
+							</code>
+						</MD_Identifier>
+					</identifier>
+					<otherCitationDetails>
+						<gco:CharacterString>Date Published: 2.6.2 Date of publication
+Date Revised: 2.6.3 Date of last revision
+Date Created: 2.6.4 Date of creation</gco:CharacterString>
+					</otherCitationDetails>
+				</CI_Citation>
+			</citation>
+			<abstract>
+				<gco:CharacterString>2.2.2 Resource abstract</gco:CharacterString>
+			</abstract>
+			<pointOfContact>
+				<CI_ResponsibleParty>
+					<organisationName>
+						<gco:CharacterString>2.10.1 Responsible party</gco:CharacterString>
+					</organisationName>
+					<positionName>
+						<gco:CharacterString>Role: 2.10.2 Responsible party role</gco:CharacterString>
+					</positionName>
+					<contactInfo>
+						<CI_Contact>
+							<address>
+								<CI_Address>
+									<electronicMailAddress>
+										<gco:CharacterString>Points of Contact &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
+									</electronicMailAddress>
+								</CI_Address>
+							</address>
+						</CI_Contact>
+					</contactInfo>
+					<role>
+						<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian" codeSpace="ISOTC211/19115">custodian</CI_RoleCode>
+					</role>
+				</CI_ResponsibleParty>
+			</pointOfContact>
+			<descriptiveKeywords>
+				<MD_Keywords>
+					<keyword>
+						<gco:CharacterString>infoMapAccessService (2.4.1 Keyword value)</gco:CharacterString>
+					</keyword>
+					<type>
+						<MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme" codeSpace="ISOTC211/19115">theme</MD_KeywordTypeCode>
+					</type>
+					<thesaurusName>
+						<CI_Citation>
+							<title>
+								<gco:CharacterString>INSPIRE Classification of Spatial Data Services  (2.4.2 Originating controlled vocabulary)</gco:CharacterString>
+							</title>
+							<date>
+								<CI_Date>
+									<date>
+										<gco:Date>2009-02-13</gco:Date>
+									</date>
+									<dateType>
+										<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" codeSpace="ISOTC211/19115">publication</CI_DateTypeCode>
+									</dateType>
+								</CI_Date>
+							</date>
+							<otherCitationDetails>
+								<gco:CharacterString>http://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY/items/184;jsessionid=23867F8AABA4DE08237EF7A868CB16AA</gco:CharacterString>
+							</otherCitationDetails>
+						</CI_Citation>
+					</thesaurusName>
+				</MD_Keywords>
+			</descriptiveKeywords>
+			<resourceConstraints>
+				<MD_Constraints>
+					<useLimitation>
+						<gco:CharacterString>2.9.2 Conditions applying to access and use</gco:CharacterString>
+					</useLimitation>
+				</MD_Constraints>
+			</resourceConstraints>
+			<resourceConstraints>
+				<MD_LegalConstraints>
+					<accessConstraints>
+						<MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="restricted" codeSpace="ISOTC211/19115">restricted</MD_RestrictionCode>
+					</accessConstraints>
+					<otherConstraints>
+						<gco:CharacterString>Access Constraints OR Other Constraints: 2.9.1 Limitations on public access</gco:CharacterString>
+					</otherConstraints>
+				</MD_LegalConstraints>
+			</resourceConstraints>
+			<resourceConstraints>
+				<MD_SecurityConstraints>
+					<classification>
+						<MD_ClassificationCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ClassificationCode" codeListValue="restricted" codeSpace="ISOTC211/19115">restricted</MD_ClassificationCode>
+					</classification>
+					<classificationSystem>
+						<gco:CharacterString>Classification: 2.9.1 Limitations on public access</gco:CharacterString>
+					</classificationSystem>
+				</MD_SecurityConstraints>
+			</resourceConstraints>
+			<aggregationInfo>
+				<MD_AggregateInformation>
+					<aggregateDataSetName>
+						<CI_Citation>
+							<title>
+								<gco:CharacterString>INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119</gco:CharacterString>
+							</title>
+							<date>
+								<CI_Date>
+									<date>
+										<gco:Date>2007-10-26</gco:Date>
+									</date>
+									<dateType>
+										<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation" codeSpace="ISOTC211/19115">creation</CI_DateTypeCode>
+									</dateType>
+								</CI_Date>
+							</date>
+							<date>
+								<CI_Date>
+									<date>
+										<gco:Date>2010-06-16</gco:Date>
+									</date>
+									<dateType>
+										<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision" codeSpace="ISOTC211/19115">revision</CI_DateTypeCode>
+									</dateType>
+								</CI_Date>
+							</date>
+							<edition>
+								<gco:CharacterString>V. 1.2</gco:CharacterString>
+							</edition>
+							<identifier>
+								<MD_Identifier>
+									<code>
+										<gco:CharacterString>MD_IR_and_ISO_v1_2_20100616</gco:CharacterString>
+									</code>
+								</MD_Identifier>
+							</identifier>
+							<citedResponsibleParty>
+								<CI_ResponsibleParty>
+									<organisationName>
+										<gco:CharacterString>European Commission Joint Research Centre</gco:CharacterString>
+									</organisationName>
+									<role>
+										<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+									</role>
+								</CI_ResponsibleParty>
+							</citedResponsibleParty>
+						</CI_Citation>
+					</aggregateDataSetName>
+					<associationType>
+						<DS_AssociationTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DS_AssociationTypeCode" codeListValue="crossReference" codeSpace="ISOTC211/19115">crossReference</DS_AssociationTypeCode>
+					</associationType>
+				</MD_AggregateInformation>
+			</aggregationInfo>
+			<srv:serviceType>
+				<gco:LocalName>view (2.3.2 Spatial data service type)</gco:LocalName>
+			</srv:serviceType>
+			<srv:extent>
+				<EX_Extent>
+					<description>
+						<gco:CharacterString>2.5.1 Geographic bounding box</gco:CharacterString>
+					</description>
+					<geographicElement>
+						<EX_GeographicBoundingBox>
+							<extentTypeCode>
+								<gco:Boolean>false</gco:Boolean>
+							</extentTypeCode>
+							<westBoundLongitude>
+								<gco:Decimal>-180</gco:Decimal>
+							</westBoundLongitude>
+							<eastBoundLongitude>
+								<gco:Decimal>180</gco:Decimal>
+							</eastBoundLongitude>
+							<southBoundLatitude>
+								<gco:Decimal>-90</gco:Decimal>
+							</southBoundLatitude>
+							<northBoundLatitude>
+								<gco:Decimal>90</gco:Decimal>
+							</northBoundLatitude>
+						</EX_GeographicBoundingBox>
+					</geographicElement>
+				</EX_Extent>
+			</srv:extent>
+			<srv:extent>
+				<EX_Extent>
+					<description>
+						<gco:CharacterString>2.6.1 Temporal extent</gco:CharacterString>
+					</description>
+					<temporalElement>
+						<EX_TemporalExtent>
+							<extent>
+								<gml:TimeInstant gml:id="IDPE5V11EPFF3KKSXW5VQWIHKNWKVTWCYBJTDDRALRXXJRTXEJMHVF">
+									<gml:timePosition>2012-10-17T00:00:00</gml:timePosition>
+								</gml:TimeInstant>
+							</extent>
+						</EX_TemporalExtent>
+					</temporalElement>
+				</EX_Extent>
+			</srv:extent>
+			<srv:couplingType gco:nilReason="missing"/>
+			<srv:containsOperations gco:nilReason="missing"/>
+		</srv:SV_ServiceIdentification>
+	</identificationInfo>
+	<distributionInfo>
+		<MD_Distribution>
+			<transferOptions>
+				<MD_DigitalTransferOptions>
+					<onLine>
+						<CI_OnlineResource>
+							<linkage>
+								<URL>http://www.jrc.it (2.2.4 Resource locator)</URL>
+							</linkage>
+						</CI_OnlineResource>
+					</onLine>
+				</MD_DigitalTransferOptions>
+			</transferOptions>
+		</MD_Distribution>
+	</distributionInfo>
+	<dataQualityInfo>
+		<DQ_DataQuality>
+			<scope>
+				<DQ_Scope>
+					<level>
+						<MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset" codeSpace="ISOTC211/19115">dataset</MD_ScopeCode>
+					</level>
+				</DQ_Scope>
+			</scope>
+			<report>
+				<DQ_DomainConsistency>
+					<measureDescription>
+						<gco:CharacterString>Conformance Result Pass + Explanation: 2.8.1 Degree</gco:CharacterString>
+					</measureDescription>
+					<result>
+						<DQ_ConformanceResult>
+							<specification>
+								<CI_Citation>
+									<title>
+										<gco:CharacterString>INSPIRE Data Specification on Geographical Names - Guidelines (2.8.2 Specification)</gco:CharacterString>
+									</title>
+									<date>
+										<CI_Date>
+											<date>
+												<gco:Date>2010-03-05</gco:Date>
+											</date>
+											<dateType>
+												<CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" codeSpace="ISOTC211/19115">publication</CI_DateTypeCode>
+											</dateType>
+										</CI_Date>
+									</date>
+									<edition>
+										<gco:CharacterString>3.0.1</gco:CharacterString>
+									</edition>
+									<citedResponsibleParty>
+										<CI_ResponsibleParty>
+											<individualName>
+												<gco:CharacterString>INSPIRE Thematic Working Group Geographical Names</gco:CharacterString>
+											</individualName>
+											<role>
+												<CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="publisher" codeSpace="ISOTC211/19115">publisher</CI_RoleCode>
+											</role>
+										</CI_ResponsibleParty>
+									</citedResponsibleParty>
+								</CI_Citation>
+							</specification>
+							<explanation>
+								<gco:CharacterString>See the referenced specification</gco:CharacterString>
+							</explanation>
+							<pass>
+								<gco:Boolean>false</gco:Boolean>
+							</pass>
+						</DQ_ConformanceResult>
+					</result>
+				</DQ_DomainConsistency>
+			</report>
+		</DQ_DataQuality>
+	</dataQualityInfo>
+</MD_Metadata>

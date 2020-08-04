@@ -1,0 +1,197 @@
+<metadata xml:lang="en">
+	<Esri>
+		<CreaDate>20111017</CreaDate>
+		<CreaTime>16083900</CreaTime>
+		<ArcGISFormat>1.0</ArcGISFormat>
+		<ArcGISstyle>INSPIRE Metadata Directive</ArcGISstyle>
+		<SyncOnce>TRUE</SyncOnce>
+		<ArcGISProfile>INSPIRE</ArcGISProfile>
+		<scaleRange>
+			<minScale>150000000</minScale>
+			<maxScale>5000</maxScale>
+		</scaleRange>
+		<DataProperties>
+			<itemProps>
+				<imsContentType export="False"/>
+			</itemProps>
+		</DataProperties>
+		<ModDate>20121019</ModDate>
+		<ModTime>11304000</ModTime>
+	</Esri>
+	<mdLang>
+		<languageCode value="eng" Sync="FALSE"/>
+	</mdLang>
+	<mdContact xmlns="">
+		<rpOrgName>2.11.1 Metadata point of contact</rpOrgName>
+		<rpCntInfo xmlns="">
+			<cntAddress addressType="">
+				<eMailAdd>Metadata Contact &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+			</cntAddress>
+		</rpCntInfo>
+		<role>
+			<RoleCd value="007"/>
+		</role>
+	</mdContact>
+	<distInfo xmlns="">
+		<distTranOps xmlns="">
+			<onLineSrc xmlns="">
+				<linkage>http://www.jrc.it (2.2.4 Resource locator)</linkage>
+			</onLineSrc>
+		</distTranOps>
+	</distInfo>
+	<dataIdInfo>
+		<idCitation xmlns="">
+			<resTitle Sync="FALSE">2.2.1 Resource title</resTitle>
+			<date>
+				<createDate>2011-10-17T16:30:00</createDate>
+				<pubDate>2011-11-01T00:00:00</pubDate>
+				<reviseDate>2012-10-17T19:42:00</reviseDate>
+			</date>
+			<otherCitDet>Date Published: 2.6.2 Date of publication
+Date Revised: 2.6.3 Date of last revision
+Date Created: 2.6.4 Date of creation</otherCitDet>
+			<citId xmlns="">
+				<identCode>http://2.2.5_Unique_resource_identifier</identCode>
+			</citId>
+		</idCitation>
+		<dataChar>
+			<CharSetCd value="004"/>
+		</dataChar>
+		<resConst xmlns="">
+			<SecConsts xmlns="">
+				<class>
+					<ClasscationCd value="002"/>
+				</class>
+				<classSys>Classification: 2.9.1 Limitations on public access</classSys>
+			</SecConsts>
+		</resConst>
+		<idPoC xmlns="">
+			<rpOrgName>2.10.1 Responsible party</rpOrgName>
+			<rpCntInfo xmlns="">
+				<cntAddress addressType="">
+					<eMailAdd>Points of Contact &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+				</cntAddress>
+			</rpCntInfo>
+			<role>
+				<RoleCd value="002"/>
+			</role>
+			<rpPosName>Role: 2.10.2 Responsible party role</rpPosName>
+		</idPoC>
+		<themeKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>INSPIRE Classification of Spatial Data Services  (2.4.2 Originating controlled vocabulary)</resTitle>
+				<date>
+					<pubDate>2009-02-13T00:00:00</pubDate>
+				</date>
+				<otherCitDet>http://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY/items/184;jsessionid=23867F8AABA4DE08237EF7A868CB16AA</otherCitDet>
+			</thesaName>
+			<keyword>infoMapAccessService (2.4.1 Keyword value)</keyword>
+		</themeKeys>
+		<idAbs>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;2.2.2 Resource abstract&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs>
+		<dataExt xmlns="">
+			<geoEle xmlns="">
+				<GeoBndBox>
+					<exTypeCode>0</exTypeCode>
+					<westBL>-180</westBL>
+					<eastBL>180</eastBL>
+					<southBL>-90</southBL>
+					<northBL>90</northBL>
+				</GeoBndBox>
+			</geoEle>
+			<exDesc>2.5.1 Geographic bounding box</exDesc>
+		</dataExt>
+		<aggrInfo>
+			<aggrDSName>
+				<resTitle>INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119</resTitle>
+				<date>
+					<createDate>2007-10-26T00:00:00</createDate>
+					<reviseDate>2010-06-16T00:00:00</reviseDate>
+				</date>
+				<resEd>V. 1.2</resEd>
+				<citId>
+					<identCode>MD_IR_and_ISO_v1_2_20100616</identCode>
+				</citId>
+				<citRespParty>
+					<rpOrgName>European Commission Joint Research Centre</rpOrgName>
+					<role>
+						<RoleCd value="010"/>
+					</role>
+				</citRespParty>
+			</aggrDSName>
+			<assocType>
+				<AscTypeCd value="001"/>
+			</assocType>
+		</aggrInfo>
+		<svType xmlns="">
+			<genericName codeSpace="">view (2.3.2 Spatial data service type)</genericName>
+		</svType>
+		<dataExt xmlns="">
+			<exDesc>2.6.1 Temporal extent</exDesc>
+			<tempEle>
+				<TempExtent>
+					<exTemp>
+						<TM_Instant>
+							<tmPosition>2012-10-17T00:00:00</tmPosition>
+						</TM_Instant>
+					</exTemp>
+				</TempExtent>
+			</tempEle>
+		</dataExt>
+		<dataScale xmlns="">
+			<equScale>
+				<rfDenom>1250000</rfDenom>
+			</equScale>
+		</dataScale>
+		<suppInfo>Scale Resolution OR Distance Resolution: 2.7.2 Spatial resolution</suppInfo>
+		<resConst>
+			<LegConsts xmlns="">
+				<accessConsts>
+					<RestrictCd value="007"/>
+				</accessConsts>
+				<othConsts>Access Constraints OR Other Constraints: 2.9.1 Limitations on public access</othConsts>
+			</LegConsts>
+		</resConst>
+		<resConst>
+			<Consts>
+				<useLimit>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;2.9.2 Conditions applying to access and use&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</useLimit>
+			</Consts>
+		</resConst>
+	</dataIdInfo>
+	<dqInfo xmlns="">
+		<dqScope>
+			<scpLvl>
+				<ScopeCd value="005"/>
+			</scpLvl>
+		</dqScope>
+		<report type="DQDomConsis" dimension="" xmlns="">
+			<measResult>
+				<ConResult xmlns="">
+					<conSpec xmlns="">
+						<resTitle>INSPIRE Data Specification on Geographical Names - Guidelines (2.8.2 Specification)</resTitle>
+						<date>
+							<pubDate>2010-03-05T00:00:00</pubDate>
+						</date>
+						<resEd>3.0.1</resEd>
+						<citRespParty xmlns="">
+							<rpIndName>INSPIRE Thematic Working Group Geographical Names</rpIndName>
+							<role>
+								<RoleCd value="010"/>
+							</role>
+						</citRespParty>
+					</conSpec>
+					<conExpl>See the referenced specification</conExpl>
+					<conPass>False</conPass>
+				</ConResult>
+			</measResult>
+			<measDesc>Conformance Result Pass + Explanation: 2.8.1 Degree</measDesc>
+		</report>
+	</dqInfo>
+	<mdChar>
+		<CharSetCd value="004"/>
+	</mdChar>
+	<mdHrLv>
+		<ScopeCd value="014"/>
+	</mdHrLv>
+	<mdDateSt>20111017</mdDateSt>
+	<mdHrLvName>Hierarchy Level: 2.2.3 Resource Type; Date Stamp: 2.11.2 Metadata date; Language: 2.11.3 Metadata language</mdHrLvName>
+</metadata>
