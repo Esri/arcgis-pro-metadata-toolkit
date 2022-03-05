@@ -15,79 +15,72 @@
 				<imsContentType export="False"/>
 			</itemProps>
 		</DataProperties>
-		<ModDate>20121019</ModDate>
-		<ModTime>11304000</ModTime>
+		<ModDate>20211207</ModDate>
+		<ModTime>11054400</ModTime>
 	</Esri>
 	<mdLang>
 		<languageCode value="eng" Sync="FALSE"/>
 	</mdLang>
 	<mdContact xmlns="">
-		<rpOrgName>2.11.1 Metadata point of contact</rpOrgName>
+		<rpOrgName>2.2.3 Metadata point of contact (C.2.25)</rpOrgName>
 		<rpCntInfo xmlns="">
 			<cntAddress addressType="">
-				<eMailAdd>Metadata Contact &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+				<eMailAdd>info@jrc.it [email must be provided for 2.2.3 Metadata point of contact (C.2.25)]</eMailAdd>
 			</cntAddress>
 		</rpCntInfo>
 		<role>
 			<RoleCd value="007"/>
 		</role>
+		<rpPosName>Role: Point of Contact code (C.2.24)</rpPosName>
 	</mdContact>
 	<distInfo xmlns="">
 		<distTranOps xmlns="">
 			<onLineSrc xmlns="">
-				<linkage>http://www.jrc.it (2.2.4 Resource locator)</linkage>
+				<linkage>http://www.jrc.it [3.1.3.1 Resource locator (C.2.4)]</linkage>
 			</onLineSrc>
 		</distTranOps>
 	</distInfo>
 	<dataIdInfo>
 		<idCitation xmlns="">
-			<resTitle Sync="FALSE">2.2.1 Resource title</resTitle>
+			<resTitle Sync="FALSE">2.3.1 Resource title (C.2.1)</resTitle>
 			<date>
 				<createDate>2011-10-17T16:30:00</createDate>
 				<pubDate>2011-11-01T00:00:00</pubDate>
 				<reviseDate>2012-10-17T19:42:00</reviseDate>
 			</date>
-			<otherCitDet>Date Published: 2.6.2 Date of publication
-Date Revised: 2.6.3 Date of last revision
-Date Created: 2.6.4 Date of creation</otherCitDet>
+			<otherCitDet>Published Date: 2.3.4 Temporal references (C.2.14)
+Revised Date: 2.3.4 Temporal references (C.2.15)
+Creation Date: 2.3.4 Temporal references (C.2.16)</otherCitDet>
 			<citId xmlns="">
-				<identCode>http://2.2.5_Unique_resource_identifier</identCode>
+				<identCode>http://3.1.2.1_Unique_resource_identifier_(C.2.5)</identCode>
 			</citId>
 		</idCitation>
 		<dataChar>
 			<CharSetCd value="004"/>
 		</dataChar>
-		<resConst xmlns="">
-			<SecConsts xmlns="">
-				<class>
-					<ClasscationCd value="002"/>
-				</class>
-				<classSys>Classification: 2.9.1 Limitations on public access</classSys>
-			</SecConsts>
-		</resConst>
 		<idPoC xmlns="">
-			<rpOrgName>2.10.1 Responsible party</rpOrgName>
+			<rpOrgName>2.3.3 Responsible organization (C.2.23)</rpOrgName>
 			<rpCntInfo xmlns="">
 				<cntAddress addressType="">
-					<eMailAdd>Points of Contact &gt; Contact &gt; Contact Information &gt; Email</eMailAdd>
+					<eMailAdd>info@jrc.it [email must be provided for 2.2.3 Metadata point of contact (C.2.23)]</eMailAdd>
 				</cntAddress>
 			</rpCntInfo>
 			<role>
 				<RoleCd value="002"/>
 			</role>
-			<rpPosName>Role: 2.10.2 Responsible party role</rpPosName>
+			<rpPosName>Role: select appropriate code (C.2.24)</rpPosName>
 		</idPoC>
 		<themeKeys xmlns="">
 			<thesaName xmlns="">
-				<resTitle>INSPIRE Classification of Spatial Data Services  (2.4.2 Originating controlled vocabulary)</resTitle>
+				<resTitle>INSPIRE Classification of Spatial Data Services  [2.3.5 Using keywords (C.2.11)]</resTitle>
 				<date>
 					<pubDate>2009-02-13T00:00:00</pubDate>
 				</date>
 				<otherCitDet>http://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY/items/184;jsessionid=23867F8AABA4DE08237EF7A868CB16AA</otherCitDet>
 			</thesaName>
-			<keyword>infoMapAccessService (2.4.1 Keyword value)</keyword>
+			<keyword>infoMapAccessService [3.1.2.2 Keywords for Spatial Data Theme(s) (C.2.10)]</keyword>
 		</themeKeys>
-		<idAbs>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;2.2.2 Resource abstract&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs>
+		<idAbs>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;2.3.2 Resource abstract (C.2.2)&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs>
 		<dataExt xmlns="">
 			<geoEle xmlns="">
 				<GeoBndBox>
@@ -98,35 +91,13 @@ Date Created: 2.6.4 Date of creation</otherCitDet>
 					<northBL>90</northBL>
 				</GeoBndBox>
 			</geoEle>
-			<exDesc>2.5.1 Geographic bounding box</exDesc>
+			<exDesc>2.3.8 Geographic bounding box (C.2.12)</exDesc>
 		</dataExt>
-		<aggrInfo>
-			<aggrDSName>
-				<resTitle>INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119</resTitle>
-				<date>
-					<createDate>2007-10-26T00:00:00</createDate>
-					<reviseDate>2010-06-16T00:00:00</reviseDate>
-				</date>
-				<resEd>V. 1.2</resEd>
-				<citId>
-					<identCode>MD_IR_and_ISO_v1_2_20100616</identCode>
-				</citId>
-				<citRespParty>
-					<rpOrgName>European Commission Joint Research Centre</rpOrgName>
-					<role>
-						<RoleCd value="010"/>
-					</role>
-				</citRespParty>
-			</aggrDSName>
-			<assocType>
-				<AscTypeCd value="001"/>
-			</assocType>
-		</aggrInfo>
 		<svType xmlns="">
-			<genericName codeSpace="">view (2.3.2 Spatial data service type)</genericName>
+			<genericName codeSpace="">view [4.1.2.3 Spatial data service type (C.2.9)]</genericName>
 		</svType>
 		<dataExt xmlns="">
-			<exDesc>2.6.1 Temporal extent</exDesc>
+			<exDesc>2.3.4 Temporal references (C.2.13)</exDesc>
 			<tempEle>
 				<TempExtent>
 					<exTemp>
@@ -142,20 +113,60 @@ Date Created: 2.6.4 Date of creation</otherCitDet>
 				<rfDenom>1250000</rfDenom>
 			</equScale>
 		</dataScale>
-		<suppInfo>Scale Resolution OR Distance Resolution: 2.7.2 Spatial resolution</suppInfo>
+		<suppInfo>Language: 3.1.2.4 Resource language (C.2.7)
+Character Set: 3.2.2.2 Character encoding (C.3.4)
+Spatial Representation Type: 3.2.2.1 Spatial representation type (C.3.5)
+Scale Resolution OR Distance Resolution: 3.1.2.3 Spatial resolution (C.2.18)</suppInfo>
+		<themeKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>GEMET - INSPIRE themes, version 1.0</resTitle>
+				<date>
+					<pubDate>2008-06-01T00:00:00</pubDate>
+				</date>
+				<citOnlineRes xmlns="">
+					<linkage>http://www.eionet.europa.eu/gemet/inspire_themes</linkage>
+				</citOnlineRes>
+			</thesaName>
+			<keyword>Administrative units</keyword>
+		</themeKeys>
+		<dataLang>
+			<languageCode value="eng"/>
+		</dataLang>
+		<spatRpType>
+			<SpatRepTypCd value="001"/>
+		</spatRpType>
+		<svCouplType>
+			<CouplTypCd value="001"/>
+		</svCouplType>
 		<resConst>
 			<LegConsts xmlns="">
-				<accessConsts>
-					<RestrictCd value="007"/>
-				</accessConsts>
-				<othConsts>Access Constraints OR Other Constraints: 2.9.1 Limitations on public access</othConsts>
+				<inspireAccessUseConditions>
+					<ConditionsAccUseCd value="001"/>
+				</inspireAccessUseConditions>
 			</LegConsts>
 		</resConst>
 		<resConst>
-			<Consts>
-				<useLimit>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;2.9.2 Conditions applying to access and use&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</useLimit>
-			</Consts>
+			<LegConsts xmlns="">
+				<inspirePublicAccessLimits>
+					<PublicAccessCd value="001"/>
+				</inspirePublicAccessLimits>
+			</LegConsts>
 		</resConst>
+		<resConst>
+			<LegConsts xmlns="">
+				<accessConsts>
+					<RestrictCd value="008"/>
+				</accessConsts>
+				<useConsts>
+					<RestrictCd value="008"/>
+				</useConsts>
+				<useLimit>2.3.6 Limitations on public access (C.2.22): When INSPIRE Limitations On Public Access identifies that limitations exist, describe them here</useLimit>
+				<othConsts>2.3.7 Conditions applying to access and use (C.2.21): When there are conditions that apply to accessing and using the resource, don't select a value in INSPIRE Conditions On Access And Use and describe the conditions here</othConsts>
+			</LegConsts>
+		</resConst>
+		<tpCat>
+			<TopicCatCd value="008"/>
+		</tpCat>
 	</dataIdInfo>
 	<dqInfo xmlns="">
 		<dqScope>
@@ -167,24 +178,21 @@ Date Created: 2.6.4 Date of creation</otherCitDet>
 			<measResult>
 				<ConResult xmlns="">
 					<conSpec xmlns="">
-						<resTitle>INSPIRE Data Specification on Geographical Names - Guidelines (2.8.2 Specification)</resTitle>
+						<resTitle>COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</resTitle>
 						<date>
-							<pubDate>2010-03-05T00:00:00</pubDate>
+							<pubDate>2010-12-08T00:00:00</pubDate>
 						</date>
-						<resEd>3.0.1</resEd>
-						<citRespParty xmlns="">
-							<rpIndName>INSPIRE Thematic Working Group Geographical Names</rpIndName>
-							<role>
-								<RoleCd value="010"/>
-							</role>
-						</citRespParty>
+						<otherCitDet>Add additional domain consistency reports for other data standards followed: http://inspire.jrc.ec.europa.eu/index.cfm/pageid/2</otherCitDet>
 					</conSpec>
-					<conExpl>See the referenced specification</conExpl>
-					<conPass>False</conPass>
+					<conExpl>3.1.4.2 Conformity (C.2.19): If the resources passes the conformance test, check Pass. Otherwise, provide a conformity statement here.</conExpl>
+					<conPass>True</conPass>
 				</ConResult>
 			</measResult>
-			<measDesc>Conformance Result Pass + Explanation: 2.8.1 Degree</measDesc>
+			<measDesc>Specification: 3.1.4.2 Conformity (C.2.19); Pass and Explanation: 2.4.1 Conformity (C.2.20)</measDesc>
 		</report>
+		<dataLineage>
+			<statement>3.1.4.3 Lineage (C.2.17)</statement>
+		</dataLineage>
 	</dqInfo>
 	<mdChar>
 		<CharSetCd value="004"/>
@@ -193,5 +201,14 @@ Date Created: 2.6.4 Date of creation</otherCitDet>
 		<ScopeCd value="014"/>
 	</mdHrLv>
 	<mdDateSt>20111017</mdDateSt>
-	<mdHrLvName>Hierarchy Level: 2.2.3 Resource Type; Date Stamp: 2.11.2 Metadata date; Language: 2.11.3 Metadata language</mdHrLvName>
+	<mdHrLvName>Hierarchy Level: 3.1.1.1 Resource type (C.2.3); Date Stamp: 2.2.4 Metadata date (C.2.26); Language: 2.2.2 Metadata language (C.2.27)</mdHrLvName>
+	<mdFileID>259D7684-7D20-47EE-81F1-9BFF6BEA3491 [2.2.1 File identifier]</mdFileID>
+	<refSysInfo>
+		<RefSystem dimension="">
+			<refSysID xmlns="">
+				<identCode code="4326"/>
+				<idCodeSpace>EPSG</idCodeSpace>
+			</refSysID>
+		</RefSystem>
+	</refSysInfo>
 </metadata>

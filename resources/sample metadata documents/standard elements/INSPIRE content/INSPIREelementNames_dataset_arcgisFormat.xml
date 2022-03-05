@@ -8,7 +8,7 @@
 		<DataProperties>
 			<itemProps>
 				<itemName Sync="TRUE">INSPIREcontent</itemName>
-				<imsContentType Sync="FALSE" export="False">003</imsContentType>
+				<imsContentType Sync="FALSE" export="False"></imsContentType>
 				<nativeExtBox>
 					<westBL Sync="TRUE">209394.355626</westBL>
 					<eastBL Sync="TRUE">363953.161903</eastBL>
@@ -32,8 +32,8 @@
 		</DataProperties>
 		<SyncDate>20121019</SyncDate>
 		<SyncTime>11292700</SyncTime>
-		<ModDate>20121019</ModDate>
-		<ModTime>11292700</ModTime>
+		<ModDate>20211207</ModDate>
+		<ModTime>11004000</ModTime>
 		<ArcGISProfile>INSPIRE</ArcGISProfile>
 		<scaleRange>
 			<minScale>150000000</minScale>
@@ -41,27 +41,27 @@
 		</scaleRange>
 	</Esri>
 	<dataIdInfo>
-		<envirDesc Sync="TRUE">Microsoft Windows 7 Version 6.1 (Build 7601) Service Pack 1; Esri ArcGIS 10.1.1.3143</envirDesc>
+		<envirDesc Sync="TRUE">Microsoft Windows 10 Version 10.0 (Build 18363) ; Esri ArcGIS 12.9.0.32739</envirDesc>
 		<dataLang>
 			<languageCode value="eng" Sync="FALSE"/>
 			<countryCode value="USA" Sync="TRUE"/>
 		</dataLang>
 		<idCitation xmlns="">
-			<resTitle Sync="FALSE">2.2.1 Resource title</resTitle>
+			<resTitle Sync="FALSE">2.3.1 Resource title (C.2.1)</resTitle>
 			<presForm xmlns="">
 				<PresFormCd value="005" Sync="TRUE"/>
 			</presForm>
 			<date>
 				<createDate>2011-10-17T14:56:00</createDate>
 				<pubDate>2011-11-01T00:00:00</pubDate>
-				<reviseDate>2012-10-17T18:02:00</reviseDate>
+				<reviseDate>2021-12-07T18:02:00</reviseDate>
 			</date>
 			<citId xmlns="">
-				<identCode>E349C468-50EC-4B08-BE4F-7372175A195A (2.2.5 Unique resource identifier)</identCode>
+				<identCode>3.1.2.1 Unique resource identifier (C.2.5)</identCode>
 			</citId>
-			<otherCitDet>Published Date: 2.6.2 Date of publication
-Revised Date: 2.6.2 Date of last revision
-Creation Date: 2.6.4 Date of creation</otherCitDet>
+			<otherCitDet>Published Date: 2.3.4 Temporal references (C.2.14)
+Revised Date: 2.3.4 Temporal references (C.2.15)
+Creation Date: 2.3.4 Temporal references (C.2.16)</otherCitDet>
 		</idCitation>
 		<spatRpType>
 			<SpatRepTypCd value="001" Sync="TRUE"/>
@@ -76,47 +76,25 @@ Creation Date: 2.6.4 Date of creation</otherCitDet>
 					<southBL Sync="TRUE">33.684469</southBL>
 				</GeoBndBox>
 			</geoEle>
-			<exDesc>2.5.1 Geographic bounding box</exDesc>
+			<exDesc>2.3.8 Geographic bounding box (C.2.12)</exDesc>
 		</dataExt>
 		<dataChar>
 			<CharSetCd value="004"/>
 		</dataChar>
-		<resConst>
-			<LegConsts xmlns="">
-				<accessConsts>
-					<RestrictCd value="008"/>
-				</accessConsts>
-				<othConsts>2.9.1 Limitations on public access
-
-OR Access Constraints: 2.9.1 Limitations on public access</othConsts>
-			</LegConsts>
-			<Consts xmlns="">
-				<useLimit>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;2.9.2 Conditions applying to access and use&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</useLimit>
-			</Consts>
-		</resConst>
 		<idPoC xmlns="">
-			<rpOrgName>2.10.1 Responsible party</rpOrgName>
+			<rpOrgName>2.3.3 Responsible organization (C.2.23)</rpOrgName>
 			<rpCntInfo xmlns="">
 				<cntAddress addressType="">
-					<eMailAdd>contactInfo &gt; address &gt; electronicMailAddress: info@jrc.it</eMailAdd>
+					<eMailAdd>info@jrc.it</eMailAdd>
 				</cntAddress>
+				<cntInstr>Email must be provided for 2.3.3 Responsible organization (C.2.23)</cntInstr>
 			</rpCntInfo>
 			<role>
 				<RoleCd value="002"/>
 			</role>
-			<rpPosName>Role: 2.10.2 Responsible party role</rpPosName>
+			<rpPosName>Role: select appropriate code (C.2.24)</rpPosName>
 		</idPoC>
-		<themeKeys xmlns="">
-			<thesaName xmlns="">
-				<resTitle>GEMET - INSPIRE Spatial Data Themes (2.4.2 Originating controlled vocabulary)</resTitle>
-				<date>
-					<pubDate>2008-12-05T00:00:00</pubDate>
-				</date>
-				<otherCitDet>http://www.eionet.europa.eu/gemet/inspire_themes?langcode=en</otherCitDet>
-			</thesaName>
-			<keyword>Administrative units (2.4.1 Keyword value)</keyword>
-		</themeKeys>
-		<idAbs>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;2.2.2 Resource abstract&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs>
+		<idAbs>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;2.3.2 Resource abstract (C.2.2)&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs>
 		<dataExt xmlns="">
 			<tempEle>
 				<TempExtent>
@@ -128,7 +106,7 @@ OR Access Constraints: 2.9.1 Limitations on public access</othConsts>
 					</exTemp>
 				</TempExtent>
 			</tempEle>
-			<exDesc>2.6.1 Temporal extent</exDesc>
+			<exDesc>2.3.4 Temporal references (C.2.13)</exDesc>
 		</dataExt>
 		<dataScale xmlns="">
 			<equScale>
@@ -138,37 +116,56 @@ OR Access Constraints: 2.9.1 Limitations on public access</othConsts>
 				<value uom="m">0.0001</value>
 			</scaleDist>
 		</dataScale>
-		<aggrInfo>
-			<aggrDSName>
-				<resTitle>INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119</resTitle>
-				<date>
-					<createDate>2007-10-26T00:00:00</createDate>
-					<reviseDate>2010-06-16T00:00:00</reviseDate>
-				</date>
-				<resEd>V. 1.2</resEd>
-				<citId>
-					<identCode>MD_IR_and_ISO_v1_2_20100616</identCode>
-				</citId>
-				<citRespParty>
-					<rpOrgName>European Commission Joint Research Centre</rpOrgName>
-					<role>
-						<RoleCd value="010"/>
-					</role>
-				</citRespParty>
-			</aggrDSName>
-			<assocType>
-				<AscTypeCd value="001"/>
-			</assocType>
-		</aggrInfo>
-		<suppInfo>Language: 2.2.7 Resource language
-Scale Resolution OR Distance Resolution: 2.7.2 Spatial resolution</suppInfo>
+		<suppInfo>Language: 3.1.2.4 Resource language (C.2.7)
+Character Set: 3.2.2.2 Character encoding (C.3.4)
+Spatial Representation Type: 3.2.2.1 Spatial representation type (C.3.5)
+Scale Resolution OR Distance Resolution: 3.1.2.3 Spatial resolution (C.2.18)</suppInfo>
 		<resConst>
-			<SecConsts xmlns="">
-				<class>
-					<ClasscationCd value="001"/>
-				</class>
-				<classSys>Classification: 2.9.1 Limitations on public access</classSys>
-			</SecConsts>
+			<LegConsts xmlns="">
+				<inspireAccessUseConditions>
+					<ConditionsAccUseCd value="001"/>
+				</inspireAccessUseConditions>
+			</LegConsts>
+		</resConst>
+		<resConst>
+			<LegConsts xmlns="">
+				<inspirePublicAccessLimits>
+					<PublicAccessCd value="002"/>
+				</inspirePublicAccessLimits>
+			</LegConsts>
+		</resConst>
+		<themeKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>GEMET - INSPIRE themes, version 1.0</resTitle>
+				<date>
+					<pubDate>2008-06-01T00:00:00</pubDate>
+				</date>
+				<citOnlineRes xmlns="">
+					<linkage>http://www.eionet.europa.eu/gemet/inspire_themes</linkage>
+				</citOnlineRes>
+			</thesaName>
+			<keyword>Administrative units</keyword>
+		</themeKeys>
+		<themeKeys xmlns="">
+			<thesaName xmlns="">
+				<resTitle>Thesaurus title [2.3.5 Using keywords (C.2.11)]</resTitle>
+				<date>
+					<pubDate>2021-12-07T00:00:00</pubDate>
+				</date>
+			</thesaName>
+			<keyword>Keyword value [3.1.2.2 Keywords for Spatial Data Theme(s) (C.2.10)]</keyword>
+		</themeKeys>
+		<resConst>
+			<LegConsts xmlns="">
+				<useLimit>2.3.6 Limitations on public access (C.2.22): When INSPIRE Limitations On Public Access identifies that limitations exist, describe them here</useLimit>
+				<othConsts>2.3.7 Conditions applying to access and use (C.2.21): When there are conditions that apply to accessing and using the resource, don't select a value in INSPIRE Conditions On Access And Use and describe the conditions here</othConsts>
+				<accessConsts>
+					<RestrictCd value="008"/>
+				</accessConsts>
+				<useConsts>
+					<RestrictCd value="008"/>
+				</useConsts>
+			</LegConsts>
 		</resConst>
 		<tpCat>
 			<TopicCatCd value="008"/>
@@ -184,18 +181,19 @@ Scale Resolution OR Distance Resolution: 2.7.2 Spatial resolution</suppInfo>
 	<distInfo xmlns="">
 		<distFormat xmlns="">
 			<formatName Sync="TRUE">Shapefile</formatName>
+			<formatVer>3.2.3.1 Data encoding (C.3.3)</formatVer>
 		</distFormat>
 		<distTranOps xmlns="">
 			<transSize Sync="TRUE">0.001</transSize>
 			<onLineSrc xmlns="">
-				<linkage>http://www.jrc.it (2.2.4 Resource locator)</linkage>
+				<linkage>http://www.jrc.it [3.1.3.1 Resource locator (C.2.4)]</linkage>
 			</onLineSrc>
 		</distTranOps>
 	</distInfo>
 	<mdHrLv>
 		<ScopeCd value="005" Sync="TRUE"/>
 	</mdHrLv>
-	<mdHrLvName Sync="FALSE">Hierarchy Level: 2.2.3 Resource Type; Date Stamp: 2.11.2 Metadata date; Language: 2.11.3 Metadata language</mdHrLvName>
+	<mdHrLvName Sync="FALSE">Hierarchy Level: 3.1.1.1 Resource type (C.2.3); Date Stamp: 2.2.4 Metadata date (C.2.26); Language: 2.2.2 Metadata language (C.2.27)</mdHrLvName>
 	<refSysInfo>
 		<RefSystem>
 			<refSysID>
@@ -206,9 +204,30 @@ Scale Resolution OR Distance Resolution: 2.7.2 Spatial resolution</suppInfo>
 		</RefSystem>
 	</refSysInfo>
 	<spatRepInfo>
-		<VectSpatRep><geometObjs Name="INSPIREcontent"><geoObjTyp><GeoObjTypCd value="004" Sync="TRUE"></GeoObjTypCd></geoObjTyp><geoObjCnt Sync="TRUE">37</geoObjCnt></geometObjs><topLvl><TopoLevCd value="001" Sync="TRUE"></TopoLevCd></topLvl></VectSpatRep></spatRepInfo>
+		<VectSpatRep>
+			<geometObjs Name="INSPIREcontent">
+				<geoObjTyp>
+					<GeoObjTypCd value="004" Sync="TRUE"/>
+				</geoObjTyp>
+				<geoObjCnt Sync="TRUE">37</geoObjCnt>
+			</geometObjs>
+			<topLvl>
+				<TopoLevCd value="001" Sync="TRUE"/>
+			</topLvl>
+		</VectSpatRep>
+	</spatRepInfo>
 	<spdoinfo>
-		<ptvctinf><esriterm Name="INSPIREcontent"><efeatyp Sync="TRUE">Simple</efeatyp><efeageom code="1" Sync="TRUE"></efeageom><esritopo Sync="TRUE">FALSE</esritopo><efeacnt Sync="TRUE">37</efeacnt><spindex Sync="TRUE">TRUE</spindex><linrefer Sync="TRUE">FALSE</linrefer></esriterm></ptvctinf></spdoinfo>
+		<ptvctinf>
+			<esriterm Name="INSPIREcontent">
+				<efeatyp Sync="TRUE">Simple</efeatyp>
+				<efeageom code="1" Sync="TRUE"></efeageom>
+				<esritopo Sync="TRUE">FALSE</esritopo>
+				<efeacnt Sync="TRUE">37</efeacnt>
+				<spindex Sync="TRUE">TRUE</spindex>
+				<linrefer Sync="TRUE">FALSE</linrefer>
+			</esriterm>
+		</ptvctinf>
+	</spdoinfo>
 	<eainfo>
 		<detailed Name="INSPIREcontent">
 			<enttyp>
@@ -268,7 +287,7 @@ Scale Resolution OR Distance Resolution: 2.7.2 Spatial resolution</suppInfo>
 			</attr>
 		</detailed>
 	</eainfo>
-	<mdDateSt Sync="TRUE">20121019</mdDateSt>
+	<mdDateSt Sync="TRUE">20211207</mdDateSt>
 	<dqInfo xmlns="">
 		<dqScope>
 			<scpLvl>
@@ -276,41 +295,37 @@ Scale Resolution OR Distance Resolution: 2.7.2 Spatial resolution</suppInfo>
 			</scpLvl>
 		</dqScope>
 		<dataLineage>
-			<statement>2.7.1 Lineage</statement>
+			<statement>3.1.4.3 Lineage (C.2.17)</statement>
 		</dataLineage>
 		<report type="DQDomConsis" dimension="" xmlns="">
 			<measResult>
 				<ConResult xmlns="">
 					<conSpec xmlns="">
-						<resTitle>INSPIRE Data Specification on Administrative Units – Guidelines (2.8.2 Specification)</resTitle>
+						<resTitle>COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</resTitle>
 						<date>
-							<pubDate>2010-03-05T00:00:00</pubDate>
+							<pubDate>2010-12-08T00:00:00</pubDate>
 						</date>
-						<resEd>3.0.1</resEd>
-						<otherCitDet>http://inspire.jrc.ec.europa.eu/index.cfm/pageid/2</otherCitDet>
-						<citRespParty xmlns="">
-							<rpOrgName>INSPIRE Thematic Working Group Administrative Units</rpOrgName>
-							<role>
-								<RoleCd value="010"/>
-							</role>
-						</citRespParty>
+						<otherCitDet>Add additional domain consistency reports for other data standards followed: http://inspire.jrc.ec.europa.eu/index.cfm/pageid/2</otherCitDet>
 					</conSpec>
-					<conExpl>See the referenced specification</conExpl>
-					<conPass>False</conPass>
+					<conExpl>If the resource fails the conformance test, provide a conformity statement.</conExpl>
+					<conPass>True</conPass>
 				</ConResult>
 			</measResult>
-			<measDesc>Conformance Result Pass AND Explanation: 2.8.1 Degree</measDesc>
+			<measDesc>Specification: 3.1.4.2 Conformity (C.2.19); Pass and Explanation: 2.4.1 Conformity (C.2.20)</measDesc>
 		</report>
 	</dqInfo>
 	<mdContact xmlns="">
-		<rpOrgName>2.11.1 Metadata point of contact</rpOrgName>
+		<rpOrgName>2.2.3 Metadata point of contact (C.2.25)</rpOrgName>
 		<rpCntInfo xmlns="">
 			<cntAddress addressType="">
-				<eMailAdd>contactInfo &gt; address &gt; electronicMailAddress: info@jrc.it</eMailAdd>
+				<eMailAdd>info@jrc.it</eMailAdd>
 			</cntAddress>
+			<cntInstr>Email must be provided for 2.2.3 Metadata point of contact (C.2.25)</cntInstr>
 		</rpCntInfo>
 		<role>
 			<RoleCd value="007"/>
 		</role>
+		<rpPosName>Role: Point of Contact code (C.2.24)</rpPosName>
 	</mdContact>
+	<mdFileID>CA90B3E0-0996-4278-8E02-411B23785647 [2.2.1 File identifier]</mdFileID>
 </metadata>

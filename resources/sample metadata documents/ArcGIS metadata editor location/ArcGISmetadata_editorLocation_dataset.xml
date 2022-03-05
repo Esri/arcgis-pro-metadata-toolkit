@@ -7,8 +7,8 @@
 		<SyncOnce>FALSE</SyncOnce>
 		<SyncDate>20111018</SyncDate>
 		<SyncTime>15514900</SyncTime>
-		<ModDate>20121019</ModDate>
-		<ModTime>10343100</ModTime>
+		<ModDate>20211207</ModDate>
+		<ModTime>13444500</ModTime>
 		<ArcGISProfile>ISO19139</ArcGISProfile>
 		<locales>
 			<locale language="fre" country="FR" xmlns="">
@@ -797,6 +797,20 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 			</geoEle>
 			<exDesc>A bounding box created on the Item Description page has the esriExtentType attribute set with the value "search". The Item Description page only supports editing a bounding box with that attribute. The bounding box added by the synchronization process has the esriExtentType attribute set with the value "search". This bounding box is preferred when exporting to a standard that only allows one bounding box, such as the FGDC CSDGM.</exDesc>
 		</dataExt>
+		<resConst>
+			<LegConsts xmlns="">
+				<inspireAccessUseConditions>
+					<ConditionsAccUseCd value="001"/>
+				</inspireAccessUseConditions>
+			</LegConsts>
+		</resConst>
+		<resConst>
+			<LegConsts xmlns="">
+				<inspirePublicAccessLimits>
+					<PublicAccessCd value="001"/>
+				</inspirePublicAccessLimits>
+			</LegConsts>
+		</resConst>
 		<tpCat>
 			<TopicCatCd value="008"/>
 		</tpCat>
@@ -806,7 +820,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 	</dataIdInfo>
 	<mdMaint xmlns="">
 		<dateNext>2012-11-01T12:00:00</dateNext>
-		<maintNote>Last metadata review date: 20111014</maintNote>
+		<maintNote>Last metadata review date: 20211207</maintNote>
 		<maintFreq>
 			<MaintFreqCd value="012"/>
 		</maintFreq>
@@ -839,7 +853,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 	</mdMaint>
 	<mdConst xmlns="">
 		<Consts xmlns="">
-			<useLimit>Metadata &gt; Constraints &gt; General Constraints &gt; Use Limitation</useLimit>
+			<useLimit>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Metadata &gt; Constraints &gt; General Constraints &gt; Use Limitation&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</useLimit>
 		</Consts>
 	</mdConst>
 	<mdConst xmlns="">
@@ -1485,7 +1499,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 		<countryCode value="US"/>
 	</mdLang>
 	<mdHrLvName>Metadata &gt; Details &gt; Hierarchy Level Name</mdHrLvName>
-	<mdDateSt>20111017</mdDateSt>
+	<mdDateSt>20211207</mdDateSt>
 	<Binary>
 		<Thumbnail>
 			<Data EsriPropertyType="PictureX">/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsK

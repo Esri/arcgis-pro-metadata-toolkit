@@ -86,7 +86,7 @@ limitations under the License.​
               </Expander.Header>
               <!-- citation -->
               <Border Style="{DynamicResource EditorBorderSubStyle}">
-                <t:MTK_CI_Citation v:Nav.AnchorName="conSpec" />
+                <t:MTK_CI_Citation v:Nav.AnchorName="conSpec" UseDropdown="True" />
               </Border>
             </Expander>
           </DataTemplate>

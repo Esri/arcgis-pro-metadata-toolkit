@@ -25,7 +25,7 @@ limitations under the License.​
     <updateCategory refID="esri_metadata_metadataEditors">
       <insertComponent id="esri_metadata_metadataEditor_toolkit" className="ToolkitMetadataEditor">
         <content type="ToolkitEditor" id="My_Metadata_Toolkit_Editor" displayName="My Metadata Toolkit Editor">
-          <metadataConfig ArcGISProfile="ISO19139" ValidatePages="True">
+          <metadataConfig ArcGISProfile="MyMetadataToolkit" ValidatePages="True">
             <validationNamespaceURI>http://www.isotc211.org/2005/gmd</validationNamespaceURI>
             <validationSchemaURL>http://www.isotc211.org/schemas/2005/gmd/metadataEntity.xsd</validationSchemaURL>
             <tranformStyle>ISO19139</tranformStyle>

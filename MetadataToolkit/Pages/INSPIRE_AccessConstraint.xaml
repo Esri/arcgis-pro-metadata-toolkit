@@ -1,0 +1,50 @@
+﻿<p:EditorPage x:Class="MetadataToolkit.Pages.MTK_INSPIRE_AccessConstraint" x:ClassModifier="internal" 
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              xmlns:r="clr-namespace:MetadataToolkit.Properties"
+              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
+              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
+              xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"
+              mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <XmlDataProvider x:Key="MD_AccessConstraintCodes"              
+            XPath="/"            
+            IsAsynchronous="False" IsInitialLoadEnabled="True">
+            <x:XData>
+                <ANY xmlns="">
+                    <codelist>
+                        <code value="" source="ArcGIS">Empty</code>
+                        <code value="001" source="Inspire">no limitations to public access</code>
+                        <code value="002" source="Inspire">public access limited according to Article 13(1)(a) of the INSPIRE Directive</code>
+                        <code value="003" source="Inspire">public access limited according to Article 13(1)(b) of the INSPIRE Directive</code>
+                        <code value="004" source="Inspire">public access limited according to Article 13(1)(c) of the INSPIRE Directive</code>
+                        <code value="005" source="Inspire">public access limited according to Article 13(1)(d) of the INSPIRE Directive</code>
+                        <code value="006" source="Inspire">public access limited according to Article 13(1)(e) of the INSPIRE Directive</code>
+                        <code value="007" source="Inspire">public access limited according to Article 13(1)(f) of the INSPIRE Directive</code>
+                        <code value="008" source="Inspire">public access limited according to Article 13(1)(g) of the INSPIRE Directive</code>
+                        <code value="009" source="Inspire">public access limited according to Article 13(1)(h) of the INSPIRE Directive</code>
+                    </codelist>
+                </ANY>
+            </x:XData>
+        </XmlDataProvider>
+    </UserControl.Resources>
+
+    <Grid>
+        <StackPanel>
+            <ComboBox Loaded="PostProcessComboBoxValues" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
+                      ItemsSource="{Binding Source={StaticResource MD_AccessConstraintCodes}, XPath=//code}" DisplayMemberPath="."
+                      SelectedValuePath="@value" v:Nav.AnchorName="PublicAccessCd">
+                <ComboBox.SelectedValue>
+                    <e:MetadataBinding XPath="/metadata/dataIdInfo/resConst/LegConsts/inspirePublicAccessLimits/PublicAccessCd/@value" />
+                </ComboBox.SelectedValue>
+            </ComboBox>
+
+            <!-- validate after all anchors are loaded -->
+            <v:PageValidateControl/>
+
+        </StackPanel>
+    </Grid>
+</p:EditorPage>

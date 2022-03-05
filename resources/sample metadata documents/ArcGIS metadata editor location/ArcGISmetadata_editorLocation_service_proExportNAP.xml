@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<MD_Metadata xmlns="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<MD_Metadata xmlns="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<fileIdentifier>
 		<gco:CharacterString>Metadata &gt; Details &gt; File Identifier</gco:CharacterString>
 	</fileIdentifier>
@@ -56,7 +56,7 @@
 								<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Postal Code</gco:CharacterString>
 							</postalCode>
 							<country>
-								<gco:CharacterString>US</gco:CharacterString>
+								<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="US" codeSpace="ISO3166-1">US</Country>
 							</country>
 							<electronicMailAddress>
 								<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
@@ -99,7 +99,7 @@
 		</CI_ResponsibleParty>
 	</contact>
 	<dateStamp>
-		<gco:Date>2011-10-17</gco:Date>
+		<gco:Date>2021-12-07</gco:Date>
 	</dateStamp>
 	<metadataStandardName>
 		<gco:CharacterString>NAP - Metadata</gco:CharacterString>
@@ -116,7 +116,7 @@
 				<LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="fre" codeSpace="ISO639-2">fre</LanguageCode>
 			</languageCode>
 			<country>
-				<Country gco:nilReason="unknown"/>
+				<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="FR" codeSpace="ISO3166-1">FR</Country>
 			</country>
 			<characterEncoding>
 				<MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8" codeSpace="ISOTC211/19115">utf8</MD_CharacterSetCode>
@@ -569,7 +569,7 @@
 												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Postal Code (Role=Originator)</gco:CharacterString>
 											</postalCode>
 											<country>
-												<gco:CharacterString>US</gco:CharacterString>
+												<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="US" codeSpace="ISO3166-1">US</Country>
 											</country>
 											<electronicMailAddress>
 												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Email (Role=Originator)</gco:CharacterString>
@@ -611,7 +611,7 @@
 												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Postal Code (Role=Publisher)</gco:CharacterString>
 											</postalCode>
 											<country>
-												<gco:CharacterString>US</gco:CharacterString>
+												<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="US" codeSpace="ISO3166-1">US</Country>
 											</country>
 											<electronicMailAddress>
 												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Email (Role=Publisher)</gco:CharacterString>
@@ -660,7 +660,7 @@
 												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Postal Code (NAP Role=Rights Holder)</gco:CharacterString>
 											</postalCode>
 											<country>
-												<gco:CharacterString>US</gco:CharacterString>
+												<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="US" codeSpace="ISO3166-1">US</Country>
 											</country>
 											<electronicMailAddress>
 												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Email (NAP Role=Rights Holder)</gco:CharacterString>
@@ -750,7 +750,7 @@
 										<gco:CharacterString>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; Zip</gco:CharacterString>
 									</postalCode>
 									<country>
-										<gco:CharacterString>US</gco:CharacterString>
+										<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="US" codeSpace="ISO3166-1">US</Country>
 									</country>
 									<electronicMailAddress>
 										<gco:CharacterString>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
@@ -1923,7 +1923,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 												<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Contact Information &gt; Postal Code</gco:CharacterString>
 											</postalCode>
 											<country>
-												<gco:CharacterString>US</gco:CharacterString>
+												<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="US" codeSpace="ISO3166-1">US</Country>
 											</country>
 											<electronicMailAddress>
 												<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Contact Information &gt; Email</gco:CharacterString>
@@ -2446,7 +2446,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 														<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Contact Information &gt; Postal Code</gco:CharacterString>
 													</postalCode>
 													<country>
-														<gco:CharacterString>US</gco:CharacterString>
+														<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="US" codeSpace="ISO3166-1">US</Country>
 													</country>
 													<electronicMailAddress>
 														<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Contact Information &gt; Email</gco:CharacterString>
@@ -2806,7 +2806,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 				</MD_ScopeDescription>
 			</updateScopeDescription>
 			<maintenanceNote>
-				<gco:CharacterString>Last metadata review date: 20111014</gco:CharacterString>
+				<gco:CharacterString>Last metadata review date: 20211207</gco:CharacterString>
 			</maintenanceNote>
 			<maintenanceNote>
 				<gco:CharacterString>Metadata &gt; Maintenance &gt; Maintenance Note</gco:CharacterString>

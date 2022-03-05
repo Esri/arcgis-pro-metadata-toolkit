@@ -372,9 +372,9 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 		</availabl>
 	</distinfo>
 	<metainfo>
-		<metd>20111017</metd>
-		<metrd>20111014</metrd>
-		<metfrd>20121101</metfrd>
+		<metd>20211207</metd>
+		<metrd>20211207</metrd>
+		<metfrd>20220401</metfrd>
 		<metc>
 			<cntinfo>
 				<cntorgp>
@@ -402,7 +402,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 		<metstdv>FGDC-STD-001-1998</metstdv>
 		<mettc>local time</mettc>
 		<metac>Metadata &gt; Constraints &gt; Legal Constraints &gt; Other Constraints</metac>
-		<metuc>Metadata &gt; Constraints &gt; General Constraints &gt; Use Limitation</metuc>
+		<metuc>Metadata &amp;gt; Constraints &amp;gt; General Constraints &amp;gt; Use Limitation</metuc>
 		<metsi>
 			<metscs>Metadata &gt; Constraints &gt; Security Constraints &gt; Classification System</metscs>
 			<metsc>Unclassified</metsc>

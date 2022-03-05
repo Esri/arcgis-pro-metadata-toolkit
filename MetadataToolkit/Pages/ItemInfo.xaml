@@ -145,6 +145,7 @@ limitations under the License.​
     <v:MetadataIssueInfo x:Key="searchKeys" Message="{x:Static r:Issues.searchKeys_REQ}" />
     <v:MetadataIssueInfo x:Key="tagTopicKeyword" Message="{x:Static r:Issues.tagTopicKeyword_REQ}" />
 
+    <v:MetadataIssueInfo x:Key="dataExtGeoBndBoxReq" Message="{x:Static r:Issues.extent_dataExtGeoBndBoxReq}" />
     <v:MetadataIssueInfo x:Key="dataExtBBoxReq_FGDC" Message="{x:Static r:Issues.dataExtBBoxReq_FGDC}" />
     <v:MetadataIssueInfo x:Key="west_exists" Name="westBL" Message="{x:Static r:Issues.extent_coord_REQ}" />
     <v:MetadataIssueInfo x:Key="north_exists" Name="northBL" Message="{x:Static r:Issues.extent_coord_REQ}" />

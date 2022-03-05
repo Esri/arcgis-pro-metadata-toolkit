@@ -104,7 +104,7 @@ limitations under the License.​
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
           <DataTemplate>
-            <Border Style="{DynamicResource EditorBorder2Style}">
+            <Border x:Name="legalConstraintsContent" Style="{DynamicResource EditorBorder2Style}">
               <Expander Style="{DynamicResource EditorExpander2Style}" 
                         AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MetadataConstraints_LegalConstraintsGroup}">
                 <Expander.Header>
@@ -123,6 +123,14 @@ limitations under the License.​
                 <t:MTK_MD_LegalConstraints/>
               </Expander>
             </Border>
+            <DataTemplate.Triggers>
+              <DataTrigger Binding="{Binding XPath=inspireAccessUseConditions/ConditionsAccUseCd}" Value="">
+                <Setter TargetName="legalConstraintsContent" Property="Visibility" Value="Collapsed" />
+              </DataTrigger>
+              <DataTrigger Binding="{Binding XPath=inspirePublicAccessLimits/PublicAccessCd}" Value="">
+                <Setter TargetName="legalConstraintsContent" Property="Visibility" Value="Collapsed" />
+              </DataTrigger>
+            </DataTemplate.Triggers>
           </DataTemplate>
         </ListBox.ItemTemplate>
       </ListBox>

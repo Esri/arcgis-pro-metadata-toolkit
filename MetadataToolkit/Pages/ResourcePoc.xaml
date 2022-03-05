@@ -43,6 +43,7 @@ limitations under the License.​
     </XmlDataProvider>
 
     <!-- validation issues -->
+    <v:MetadataIssueInfo x:Key="contact" Message="{x:Static r:Issues.resource_POC_REQ}" />
     <v:MetadataIssueInfo x:Key="OrgName" Message="{x:Static r:Issues.OrgName_REQ}" />
     <v:MetadataIssueInfo x:Key="eMailAdd" Message="{x:Static r:Issues.eMailAdd_REQ}" />
     <v:MetadataIssueInfo x:Key="party" Message="{x:Static r:Issues.party_REQ}" />

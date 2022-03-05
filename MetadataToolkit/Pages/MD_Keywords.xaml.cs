@@ -11,6 +11,13 @@ See the License for the specific language governing permissions and
 limitations under the License.​
 */
 
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows;
+using System.Xml;
+using ArcGIS.Desktop.Framework;
+using Newtonsoft.Json.Linq;
+
 using ArcGIS.Desktop.Metadata.Editor.Pages;
 
 namespace MetadataToolkit.Pages
@@ -23,6 +30,92 @@ namespace MetadataToolkit.Pages
     public MTK_MD_Keywords()
     {
       InitializeComponent();
+
+      Loaded += MD_Keywords_Loaded;
+    }
+
+    public static readonly DependencyProperty DefaultTitleProperty = DependencyProperty.Register(
+      "DefaultTitle",
+      typeof(string),
+      typeof(MTK_MD_Keywords));
+
+    public static readonly DependencyProperty DefaultLinkageProperty = DependencyProperty.Register(
+      "DefaultLinkage",
+      typeof(string),
+      typeof(MTK_MD_Keywords));
+
+    public string DefaultTitle
+    {
+      get { return (string)this.GetValue(DefaultTitleProperty); }
+      set { this.SetValue(DefaultTitleProperty, value); }
+    }
+
+    public string DefaultLinkage
+    {
+      get { return (string)this.GetValue(DefaultLinkageProperty); }
+      set { this.SetValue(DefaultLinkageProperty, value); }
+    }
+
+    private void MD_Keywords_Loaded(object sender, RoutedEventArgs e)
+    {
+      DefaultTitle = string.Empty;
+      DefaultLinkage = string.Empty;
+    }
+
+    private MTK_MD_ThemeKeywords _themekeywords = null;
+
+    private void Lookup_Click(object sender, System.Windows.RoutedEventArgs e)
+    {
+      //already open?
+      if (_themekeywords != null)
+        return;
+      _themekeywords = new MTK_MD_ThemeKeywords();
+      _themekeywords.Owner = FrameworkApplication.Current.MainWindow;
+      _themekeywords.Closed += (o, args) => { KeywordsWindowClosed(); };
+      _themekeywords.Show();
+    }
+
+    private void KeywordsWindowClosed()
+    {
+      var selectedKeywords = _themekeywords.SelectedKeywords;
+      if (selectedKeywords != null && selectedKeywords.Count > 0)
+      {
+        var keywords = selectedKeywords.Select((k) => k.Label).ToList();
+        object context = Utils.Utils.GetDataContext(this);
+        IEnumerable<XmlNode> nodes = Utils.Utils.GetXmlDataContext(context);
+        if (nodes != null)
+        {
+          var node = nodes.First();
+          var bag = node.SelectSingleNode("bag");
+
+          if (string.IsNullOrWhiteSpace(bag.InnerText))
+          {
+            string newKeywords = string.Join("\n", keywords);
+            bag.InnerText = newKeywords;
+            return;
+          }
+
+          string newText = bag.InnerText;
+          var originalTextList = newText.Split('\n').ToList();
+          foreach (string kw in keywords)             
+          {
+            if (originalTextList.Contains(kw))
+              continue;
+
+            newText += $"\n" + kw;
+          }
+
+          bag.InnerText = newText;
+        }
+      }
+
+      _themekeywords = null;
+    }
+
+    private string GetQualifiedKeywords(string innerText, List<string> candiates)
+    {
+      //string.Join("\n", keywords);
+      return string.Empty;
     }
   }
 }
