@@ -65,6 +65,7 @@ limitations under the License.​
     <!-- validation issues -->
     <v:MetadataIssueInfo x:Key="refSysID" Message="{x:Static r:Issues.refSysID_REQ}" />
     <v:MetadataIssueInfo x:Key="RefSystem_REQ" Message="{x:Static r:Issues.RefSystem_REQ}" />
+    <v:MetadataIssueInfo x:Key="InspireRefSystem_REQ" Message="{x:Static r:Issues.InspireRefSystem_REQ}" />
     <v:MetadataIssueInfo x:Key="RefSystem" Message="{x:Static r:Issues.RefSystem_dimension_REQ}" />
 
     <v:MetadataIssueInfo x:Key="party" Message="{x:Static r:Issues.party_REQ}" />

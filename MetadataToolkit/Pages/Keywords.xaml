@@ -165,6 +165,9 @@ limitations under the License.​
     <v:MetadataIssueInfo x:Key="stratumKeywords" Name="stratumKeywords" Message="{x:Static r:Issues.stratumKeywords_REQ}" />
     <v:MetadataIssueInfo x:Key="otherKeywords" Name="otherKeywords" Message="{x:Static r:Issues.otherKeywords_REQ}" />
     <v:MetadataIssueInfo x:Key="productKeywords" Name="productKeywords" Message="{x:Static r:Issues.productKeywords_REQ}" />
+    <v:MetadataIssueInfo x:Key="InspireThemeKeywords_REQ" Message="{x:Static r:Issues.InspireThemeKeywords_REQ}" />
+    <v:MetadataIssueInfo x:Key="InspireGemetDate_REQ" Message="{x:Static r:Issues.InspireGemetDate_REQ}" />
+    <v:MetadataIssueInfo x:Key="InspireGemetLinkage_REQ" Message="{x:Static r:Issues.InspireGemetLinkage_REQ}" />
 
     <v:MetadataIssueInfo x:Key="party" Message="{x:Static r:Issues.party_REQ}" />
     <v:MetadataIssueInfo x:Key="partyFgdc" Message="{x:Static r:Issues.partyFgdc_FGDC_REQ}" />
@@ -285,7 +288,7 @@ limitations under the License.​
                             </DockPanel>
                           </Expander.Header>
                           <StackPanel Style="{DynamicResource ExpanderBodyStyle}">
-                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_theme}"/>
+                            <tp:MTK_MD_Keywords ToolTip="{x:Static r:Definitions.MD_Keywords_theme}" />
                             <Border Style="{DynamicResource EditorBorderHRuleStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
                           </StackPanel>
                         </Expander>

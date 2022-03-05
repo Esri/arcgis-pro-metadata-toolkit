@@ -520,6 +520,15 @@ namespace MetadataToolkit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to at least one distribution format is required.
+        /// </summary>
+        public static string distFormat_REQ {
+            get {
+                return ResourceManager.GetString("distFormat_REQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to a list of double values is required.
         /// </summary>
         public static string doubleList_REQ {
@@ -889,6 +898,78 @@ namespace MetadataToolkit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to INSPIRE limitations on public access are required.
+        /// </summary>
+        public static string inspireAccessConst_REQ {
+            get {
+                return ResourceManager.GetString("inspireAccessConst_REQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSPIRE restrictions for access and use must be defined.
+        /// </summary>
+        public static string InspireConst_REQ {
+            get {
+                return ResourceManager.GetString("InspireConst_REQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to the GEMET thesaurus must have a publication date of 2008-06-01.
+        /// </summary>
+        public static string InspireGemetDate_REQ {
+            get {
+                return ResourceManager.GetString("InspireGemetDate_REQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to the GEMET thesaurus requires an online resource linkage.
+        /// </summary>
+        public static string InspireGemetLinkage_REQ {
+            get {
+                return ResourceManager.GetString("InspireGemetLinkage_REQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to at least one reference system is required.
+        /// </summary>
+        public static string InspireRefSystem_REQ {
+            get {
+                return ResourceManager.GetString("InspireRefSystem_REQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to the specification identifying the INSPIRE regulations must have a publication date of 2010-12-08.
+        /// </summary>
+        public static string InspireSpecification_REQ {
+            get {
+                return ResourceManager.GetString("InspireSpecification_REQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to a keyword from the GEMET thesaurus and a citation for the GEMET thesaurus are required.
+        /// </summary>
+        public static string InspireThemeKeywords_REQ {
+            get {
+                return ResourceManager.GetString("InspireThemeKeywords_REQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to select an INSPIRE condition for access and use, or describe the conditions as other legal constraints.
+        /// </summary>
+        public static string inspireUseLimit_REQ {
+            get {
+                return ResourceManager.GetString("inspireUseLimit_REQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to integer value is required.
         /// </summary>
         public static string INTEGER_REQ {
@@ -907,7 +988,7 @@ namespace MetadataToolkit.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to language must be one of the 23 EU official languages.
+        ///   Looks up a localized string similar to language must be one of the 24 EU official languages.
         /// </summary>
         public static string languageCode_EU_REQ {
             get {
@@ -1380,6 +1461,15 @@ namespace MetadataToolkit.Properties {
         public static string resConst_REQ {
             get {
                 return ResourceManager.GetString("resConst_REQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to at least one point of contact is required.
+        /// </summary>
+        public static string resource_POC_REQ {
+            get {
+                return ResourceManager.GetString("resource_POC_REQ", resourceCulture);
             }
         }
         

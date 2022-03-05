@@ -18,6 +18,7 @@ limitations under the License.​
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:t="clr-namespace:MetadataToolkit.Pages"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"
+             xmlns:tu="clr-namespace:MetadataToolkit.Utils"
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
              xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"
@@ -35,6 +36,9 @@ limitations under the License.​
     <!ENTITY % SecConsts '(useLimit*, class, userNote?, classSys?, handDesc?)'>
     
     -->
+
+    <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    
     <XmlDataProvider x:Key="XmlRecord" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
       <x:XData>
         <ANY xmlns="">
@@ -86,7 +90,11 @@ limitations under the License.​
     <v:MetadataIssueInfo x:Key="othConsts" Message="{x:Static r:Issues.othConsts_REQ}" />
     <v:MetadataIssueInfo x:Key="resConst" Message="{x:Static r:Issues.resConst_REQ}" />
     <v:MetadataIssueInfo x:Key="useLimit" Message="{x:Static r:Issues.useLimit_REQ}" />
+    <v:MetadataIssueInfo x:Key="inspireUseLimit" Message="{x:Static r:Issues.inspireUseLimit_REQ}" />
+    <v:MetadataIssueInfo x:Key="inspireAccessConst" Message="{x:Static r:Issues.inspireAccessConst_REQ}" />
     <v:MetadataIssueInfo x:Key="useLimitDist" Name="useLimitDist" Message="{x:Static r:Issues.useLimitDist_REQ}" />
+
+    <v:MetadataIssueInfo x:Key="InspireConst_REQ" Message="{x:Static r:Issues.InspireConst_REQ}" />
 
   </UserControl.Resources>
 
@@ -135,13 +143,17 @@ limitations under the License.​
                   <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_CONSTS_NEW_SECURITY}"/>
                 </StackPanel>
               </Button>
-
-
+              
             </StackPanel>
           </DataTemplate>
         </ListBox.ItemTemplate>
       </ListBox>
 
+      <!-- INSPIRE Legal Constraint -->
+      <tu:MetadataStyle Only="INSPIRE">
+        <t:MTK_INSPIRE_LegalConstraints />
+      </tu:MetadataStyle>
+      
       <!-- validate after all anchors are loaded -->
       <v:PageValidateControl/>
 

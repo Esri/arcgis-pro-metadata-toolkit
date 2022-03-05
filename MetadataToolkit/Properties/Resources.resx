@@ -2381,4 +2381,100 @@ Do you want to upgrade the FGDC metadata content to the ArcGIS metadata format?<
   <data name="MDSaveAsFailureTitle" xml:space="preserve">
     <value>Save Metadata As Failure</value>
   </data>
+  <data name="LangName_Bulgarian" xml:space="preserve">
+    <value>Bulgarian</value>
+  </data>
+  <data name="LangName_Czech" xml:space="preserve">
+    <value>Czech</value>
+  </data>
+  <data name="LangName_Danish" xml:space="preserve">
+    <value>Danish</value>
+  </data>
+  <data name="LangName_German" xml:space="preserve">
+    <value>German</value>
+  </data>
+  <data name="LangName_Greek" xml:space="preserve">
+    <value>Greek</value>
+  </data>
+  <data name="LangName_English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="LangName_Spanish" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="LangName_Estonian" xml:space="preserve">
+    <value>Estonian</value>
+  </data>
+  <data name="LangName_Finnish" xml:space="preserve">
+    <value>Finnish</value>
+  </data>
+  <data name="LangName_French" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="LangName_Croatian" xml:space="preserve">
+    <value>Croatian</value>
+  </data>
+  <data name="LangName_Hungarian" xml:space="preserve">
+    <value>Hungarian</value>
+  </data>
+  <data name="LangName_Italian" xml:space="preserve">
+    <value>Italian</value>
+  </data>
+  <data name="LangName_Latvian" xml:space="preserve">
+    <value>Latvian</value>
+  </data>
+  <data name="LangName_Lithuanian" xml:space="preserve">
+    <value>Lithuanian</value>
+  </data>
+  <data name="LangName_Maltese" xml:space="preserve">
+    <value>Maltese</value>
+  </data>
+  <data name="LangName_Dutch" xml:space="preserve">
+    <value>Dutch</value>
+  </data>
+  <data name="LangName_Polish" xml:space="preserve">
+    <value>Polish</value>
+  </data>
+  <data name="LangName_Portuguese" xml:space="preserve">
+    <value>Portuguese</value>
+  </data>
+  <data name="LangName_Romanian" xml:space="preserve">
+    <value>Romanian</value>
+  </data>
+  <data name="LangName_Slovak" xml:space="preserve">
+    <value>Slovak</value>
+  </data>
+  <data name="LangName_Slovenian" xml:space="preserve">
+    <value>Slovenian</value>
+  </data>
+  <data name="LangName_Swedish" xml:space="preserve">
+    <value>Swedish</value>
+  </data>
+  <data name="THEME_KEYWORD_SEARCHING_TEXT" xml:space="preserve">
+    <value>Searching GEMET...</value>
+  </data>
+  <data name="UNABLETO_RETRIEVE_THEME_KEYWORD" xml:space="preserve">
+    <value>Unable to retrieve theme keyword list. Please check your internet connection and try again.</value>
+  </data>
+  <data name="BTN_CANCEL_CAPTION" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="BTN_LOOKUP_CAPTION" xml:space="preserve">
+    <value>Lookup</value>
+  </data>
+  <data name="BTN_OK_CAPTION" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="GEMET_INSPIRE_DIALOG_TITLE" xml:space="preserve">
+    <value>GEMET - INSPIRE Data Theme</value>
+  </data>
+  <data name="LBL_INSPIRE_ACCESS_CONSTRAINTS" xml:space="preserve">
+    <value>INSPIRE Limitations On Public Access</value>
+  </data>
+  <data name="LBL_INSPIRE_DLG_SEL_MSG" xml:space="preserve">
+    <value>Select a language and click a keyword in the list</value>
+  </data>
+  <data name="LBL_INSPIRE_USE_LIMITATIONS" xml:space="preserve">
+    <value>INSPIRE Conditions Applying To Access And Use</value>
+  </data>
 </root>

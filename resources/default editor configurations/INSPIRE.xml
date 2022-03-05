@@ -29,6 +29,9 @@
             </for>
 
             <!-- extent -->
+            <!-- INSPIRE: at least one geographic bounding box must always be provided, except for service-specific rules -->
+            <exists xpath="//dataExt//GeoBndBox[*]" ref="dataExtGeoBndBoxReq"/>
+            <!-- applies to any extent; must be defined correctly -->
             <for xpath="//dataExt//GeoBndBox[@esriExtentType = 'search' AND * != '']">
               <exists xpath="westBL[. != '']" ref="westBL,.,westBL"/>
               <exists xpath="eastBL[. != '']" ref="eastBL,.,eastBL"/>
@@ -38,10 +41,10 @@
               <exists xpath=".[southBL &lt; northBL]" ref="northBL,northBL,northBL_range"/>
             </for>
 
-            <!-- INSPIRE: one type of use limitation is required -->
-            <for xpath="/metadata/dataIdInfo[not(resConst//useLimit)]">
+            <!-- INSPIRE: one type of use limitation is required; no longer relevant for v2.0.1 -->
+            <!--<for xpath="/metadata/dataIdInfo[not(resConst//useLimit)]">
               <exists xpath="resConst//useLimit[. != '']" ref="useLimit"/>
-            </for>
+            </for>-->
 
           </validation>
         </page>
@@ -54,29 +57,40 @@
             </for>
 
             <!-- theme keywords -->
+            <!-- INSPIRE: a keyword from the GEMET thesaurus is required, need at least one themeKeys section -->
+            <for xpath="//dataIdInfo[not(.//themeKeys/thesaName) or (.//themeKeys/thesaName/resTitle != 'GEMET - INSPIRE themes, version 1.0')]">
+              <exists xpath="themeKeys/thesaName[resTitle = 'GEMET - INSPIRE themes, version 1.0']" ref="InspireThemeKeywords_REQ" />
+            </for>
+            <!--  applies to all theme keywords section, not just GEMET -->
             <for xpath="/metadata/dataIdInfo/themeKeys">
               <exists xpath="bag[. != '']" ref="bag,.,themeKeywords"/>
             </for>
+            
             <!-- place keywords -->
             <for xpath="/metadata/dataIdInfo/placeKeys">
               <exists xpath="bag[. != '']" ref="bag,.,placeKeywords"/>
             </for>
+            
             <!-- temporal keywords -->
             <for xpath="/metadata/dataIdInfo/tempKeys">
               <exists xpath="bag[. != '']" ref="bag,.,temporalKeywords"/>
             </for>
+            
             <!-- discipline keywords -->
             <for xpath="/metadata/dataIdInfo/discKeys">
               <exists xpath="bag[. != '']" ref="bag,.,disciplineKeywords"/>
             </for>
+            
             <!-- stratum keywords -->
             <for xpath="/metadata/dataIdInfo/stratKeys">
               <exists xpath="bag[. != '']" ref="bag,.,stratumKeywords"/>
             </for>
+            
             <!-- other keywords -->
             <for xpath="/metadata/dataIdInfo/otherKeys">
               <exists xpath="bag[. != '']" ref="bag,.,otherKeywords"/>
             </for>
+            
             <!-- product keywords -->
             <for xpath="/metadata/dataIdInfo/productKeys">
               <exists xpath="bag[. != '']" ref="bag,.,productKeywords"/>
@@ -93,18 +107,27 @@
               <exists xpath="linkage[. != '']" ref="linkage"/>
             </for>
 
-            <!-- citation -->
+            <!-- thesaurus citation -->
+            <!-- INSPIRE: the GEMET thesaurus must have a publication date of 2008-06-01 + an online resource linkage -->
+            <for xpath="/metadata/dataIdInfo/themeKeys/thesaName[resTitle = 'GEMET - INSPIRE themes, version 1.0']">
+              <exists xpath="date[starts-with(pubDate, '2008-06-01')]" ref="InspireGemetDate_REQ" />
+              <exists xpath="citOnlineRes[linkage != '']" ref="InspireGemetLinkage_REQ" />
+            </for>
+                      
+            <!--  applies to all thesauri, not just GEMET -->
+            <for xpath="//thesaName[resTitle | date]">
+              <exists xpath="resTitle[. != '']" ref="resTitle" />
+              <exists xpath="date[* != '']" ref="dates createDate,createDate pubDate,pubDate reviseDate,reviseDate" />
+            </for>
+            <for xpath="//thesaName//citOnlineRes">
+              <exists xpath="linkage[. != '']" ref="linkage" />
+            </for>
+            
+            <!-- thesaurus citation resource identifier authority citation rules -->
             <for xpath="//thesaName//*[identCode]">
               <exists xpath="identCode[. != '']" ref="identCode"/>
             </for>
             <for xpath="//thesaName[resTitle | date]">
-              <exists xpath="resTitle[. != '']" ref="resTitle"/>
-              <exists xpath="date[* != '']" ref="dates createDate,createDate pubDate,pubDate reviseDate,reviseDate"/>
-            </for>
-            <for xpath="//thesaName//citOnlineRes">
-              <exists xpath="linkage[. != '']" ref="linkage"/>
-            </for>
-            <for xpath="//thesaName//*[resTitle | date]">
               <exists xpath="resTitle[. != '']" ref="resTitle"/>
               <exists xpath="date[* != '']" ref="dates createDate,createDate pubDate,pubDate reviseDate,reviseDate"/>
             </for>
@@ -114,7 +137,6 @@
           <validation>
 
             <!-- citation -->
-
             <!-- title and date required for main citation and identifier citation -->
             <for xpath="//idCitation[resTitle | date]">
               <exists xpath="resTitle[. != '']" ref="resTitle"/>
@@ -135,6 +157,7 @@
               <exists xpath="resTitle[. != '']" ref="resTitle"/>
               <exists xpath="date[* != '']" ref="dates createDate,createDate pubDate,pubDate reviseDate,reviseDate"/>
             </for>
+            
             <!-- identifier citation contacts -->
             <!-- contact name, org or role -->
             <for xpath="//idCitation/citId/identAuth/citRespParty">
@@ -192,9 +215,9 @@
             <!-- date stamp is required -->
             <exists xpath="/metadata/mdDateSt[. != '']" ref="mdDateSt"/>
 
-            <!-- INSPIRE: languages must be from the set of 23 official EU languages -->
+            <!-- INSPIRE: languages must be from the set of 24 official EU languages -->
             <for xpath="/metadata/mdLang/languageCode[@value !='']">
-              <exists xpath=".[@value='bul' or @value='cze' or @value='dan' or @value='eng' or @value='dut' or @value='est' or @value='fin' or @value='fre' or @value='ger' or @value='gre' or @value='hun' or @value='gle' or @value='ita' or @value='lav' or @value='lit' or @value='mlt' or @value='pol' or @value='por'  or @value='rum' or @value='slo' or @value='slv' or @value='spa' or @value='swe']" ref="languageCode,.,languageCode_EU"/>
+              <exists xpath=".[@value='bul' or @value='cze' or @value='dan' or @value='eng' or @value='dut' or @value='est' or @value='fin' or @value='fre' or @value='ger' or @value='gre' or @value='hun' or @value='gle' or @value='hrv' or @value='ita' or @value='lav' or @value='lit' or @value='mlt' or @value='pol' or @value='por'  or @value='rum' or @value='slo' or @value='slv' or @value='spa' or @value='swe']" ref="languageCode,.,languageCode_EU" />
             </for>
 
           </validation>
@@ -205,18 +228,12 @@
             <!-- one contact requried -->
             <exists xpath="/metadata[mdContact]" ref="mdContact"/>
 
-            <!-- contact name, org or role -->
-            <for xpath="//mdContact">
-              <exists xpath="(rpIndName | rpOrgName | rpPosName)[. != '']/.." ref="party IndName,rpIndName OrgName,rpOrgName PosName,rpPosName"/>
-              <exists xpath="role[RoleCd/@value != '']" ref="role"/>
-            </for>
-
-            <!-- INSPIRE: organization -->
+            <!-- INSPIRE: organization name required -->
             <for xpath="//mdContact">
               <exists xpath="rpOrgName[. != '']" ref="OrgName"/>
             </for>
 
-            <!-- INSPIRE: email -->
+            <!-- INSPIRE: email required -->
             <for xpath="//mdContact">
               <exists xpath="rpCntInfo/cntAddress/eMailAdd[. != '']" ref="eMailAdd"/>
             </for>
@@ -288,6 +305,9 @@
               <exists xpath="//dataIdInfo/dataLang/languageCode[@value != '']" ref="languageCode"/>
             </for>
 
+            <!-- at least one spatial reference type -->
+            <exists xpath="//dataIdInfo/spatRpType/SpatRepTypCd[@value != '']" ref="SpatRepTypCd" />
+
             <!-- scale -->
             <for xpath="//dataIdInfo//scaleDist[value != '']">
               <exists xpath="value[@uom != '']" ref="uom,@uom"/>
@@ -340,13 +360,6 @@
           <validation>
 
             <!-- either a bounding box or a geographic description (identifier) must be provided if the item's hierarchy level is "dataset" -->
-            <for xpath="/metadata[mdHrLv/ScopeCd/@value = '005']">
-              <or ref="dataExtReq">
-                <exists xpath="//dataExt//GeoBndBox[*]"/>
-                <exists xpath="//dataExt//GeoDesc/geoId/identCode[ . != '']"/>
-              </or>
-            </for>
-
             <for xpath="//dataExt//GeoBndBox[*]">
               <exists xpath="westBL[. != '']" ref="westBL,.,westBL"/>
               <exists xpath="eastBL[. != '']" ref="eastBL,.,eastBL"/>
@@ -396,11 +409,7 @@
         <page class="ArcGIS.Desktop.Metadata.Editor.Pages.ResourcePoc">
           <validation>
 
-            <!-- contact name, org or role -->
-            <for xpath="//dataIdInfo/idPoC">
-              <exists xpath="(rpIndName | rpOrgName | rpPosName)[. != '']/.." ref="party IndName,rpIndName OrgName,rpOrgName PosName,rpPosName"/>
-              <exists xpath="role[RoleCd/@value != '']" ref="role"/>
-            </for>
+            <exists xpath="//dataIdInfo/idPoC" ref="contact"/>
 
             <!-- linkage -->
             <for xpath="//dataIdInfo/idPoC/rpCntInfo/cntOnlineRes">
@@ -455,17 +464,32 @@
             <for xpath="//resConst/LegConsts[*/RestrictCd/@value = '008']">
               <exists xpath="othConsts[. != '']" ref="othConsts"/>
             </for>
-            <!-- INSPIRE: at lease one is required -->
-            <for xpath="//dataIdInfo">
-              <or ref="resConst">
-                <exists xpath="resConst/LegConsts[accessConsts/RestrictCd/@value != '']"/>
-                <exists xpath="resConst/SecConsts[class/ClasscationCd/@value != '']"/>
+            
+            <!-- INSPIRE: INSPIRE-specific access and use restrictions must be defined -->
+            <for xpath="//dataIdInfo[not(resConst/LegConsts)]">
+              <or ref="InspireConst_REQ">
+                <exists xpath="resConst//LegConsts/inspirePublicAccessLimits/PublicAccessCd[@value != '']" />
+                <exists xpath="resConst//LegConsts/inspireAccessUseConditions/ConditionsAccUseCd[@value != '']" />
+                <exists xpath="resConst//LegConsts/othConsts[. != '']" />
               </or>
             </for>
-            <!-- INSPIRE: one type of use limitation is required -->
-            <for xpath="//dataIdInfo[not(resConst//useLimit)]">
-              <exists xpath="resConst//useLimit[. != '']" ref="useLimit"/>
+                      
+            <!-- INSPIRE: INSPIRE limitations on public access must be defined if restricted -->
+            <for xpath="//resConst/LegConsts/inspirePublicAccessLimits">
+              <exists xpath="PublicAccessCd[@value !='']" ref="inspireAccessConst" />
             </for>
+            <for xpath="//dataIdInfo[(.//inspirePublicAccessLimits/PublicAccessCd/@value = '002') or (.//inspirePublicAccessLimits/PublicAccessCd/@value = '003') or (.//inspirePublicAccessLimits/PublicAccessCd/@value = '004') or (.//inspirePublicAccessLimits/PublicAccessCd/@value = '005') or (.//inspirePublicAccessLimits/PublicAccessCd/@value = '006') or (.//inspirePublicAccessLimits/PublicAccessCd/@value = '007') or (.//inspirePublicAccessLimits/PublicAccessCd/@value = '008') or (.//inspirePublicAccessLimits/PublicAccessCd/@value = '009')]">
+              <exists xpath="resConst/LegConsts/useLimit[. != '']" ref="inspireArticle13" />
+            </for>
+                      
+            <!-- INSPIRE: INSPIRE conditions for access and use must be defined if restricted -->
+            <for xpath="//dataIdInfo[.//inspireAccessUseConditions]">
+              <or ref="inspireUseLimit">
+                <exists xpath="resConst/LegConsts/inspireAccessUseConditions/ConditionsAccUseCd[@value !='']" />
+                <exists xpath="resConst/LegConsts/othConsts[. != '']" />
+              </or>
+            </for>
+            
           </validation>
         </page>
         <page class="ArcGIS.Desktop.Metadata.Editor.Pages.ReferenceSystem">
@@ -484,16 +508,19 @@
             <for xpath="//refSysInfo//citOnlineRes">
               <exists xpath="linkage[. != '']" ref="linkage"/>
             </for>
+            
             <!-- identifier authority citation identifier -->
             <for xpath="//refSysInfo//identAuth/citId">
               <exists xpath="identCode[. != '']" ref="identCode"/>
             </for>
+            
             <!-- identifier authority citation contacts -->
             <!-- contact name, org or role -->
             <for xpath="//refSysInfo//identAuth//citRespParty">
               <exists xpath="(rpIndName | rpOrgName | rpPosName)[. != '']/.." ref="party IndName,rpIndName OrgName,rpOrgName PosName,rpPosName"/>
               <exists xpath="role[RoleCd/@value != '']" ref="role"/>
             </for>
+            
             <!-- linkage -->
             <for xpath="//refSysInfo//identAuth//citRespParty/rpCntInfo/cntOnlineRes">
               <exists xpath="linkage[. != '']" ref="linkage"/>
@@ -590,10 +617,12 @@
               <exists xpath="resTitle[. != '']" ref="resTitle"/>
               <exists xpath="date[* != '']" ref="dates createDate,createDate pubDate,pubDate reviseDate,reviseDate"/>
             </for>
+            
             <!--  linkage required for online resources -->
             <for xpath="//contInfo//citOnlineRes">
               <exists xpath="linkage[. != '']" ref="linkage"/>
             </for>
+            
             <!--  code required for identifiers -->
             <for xpath="//contInfo//*[identCode]">
               <exists xpath="identCode[. != '']" ref="identCode"/>
@@ -685,15 +714,6 @@
               <exists xpath="scpLvlDesc[.//* != '']" ref="scpLvlDesc"/>
             </for>
 
-            <!-- either lineage information or a data quality report must be provided for datasets -->
-            <for xpath="//dqInfo[dqScope/scpLvl/ScopeCd/@value = '005']">
-              <or ref="datasetReq">
-                <exists xpath="dataLineage[.//* !='']"/>
-                <exists xpath="report[.//*  !='']"/>
-                <exists xpath="report[descendant-or-self::*/@code !='' or descendant-or-self::*/@value !='' or descendant-or-self::*/@type !='']"/>
-              </or>
-            </for>
-
             <!-- within the report section, either a conformance result or a quantitative result must be provided -->
             <for xpath="//dqInfo/report">
               <or ref="reportReq">
@@ -704,13 +724,105 @@
 
             <!-- within the conformance result section, all of its elements are mandatory -->
             <for xpath="//dqInfo/report/measResult/ConResult">
-              <!-- INSPIRE: not required
-    <exists xpath="conExpl[ . != '']" ref="conExpl"/>
-    -->
+              <exists xpath="conExpl[ . != '']" ref="conExpl"/>
               <exists xpath="conSpec[ descendant::* != '']" ref="conSpec"/>
               <exists xpath="conPass[ . != '']" ref="conPass"/>
             </for>
 
+            <!-- INSPIRE: the data quality report conformance specification that identifies the INSPIRE regulations must have a publication date of 2010-12-08 -->
+            <!-- English -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Bulgarian -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'РЕГЛАМЕНТ (ЕС) № 1089/2010 НА КОМИСИЯТА от 23 ноември 2010 година за прилагане на Директива 2007/2/ЕО на Европейския парламент и на Съвета по отношение на оперативната съвместимост на масиви от пространствени данни и услуги за пространствени данни']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Czech -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'NAŘÍZENÍ KOMISE (EU) č. 1089/2010 ze dne 23. listopadu 2010, kterým se provádí směrnice Evropského parlamentu a Rady 2007/2/ES, pokud jde o interoperabilitu sad prostorových dat a služeb prostorových dat']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Danish -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'KOMMISSIONENS FORORDNING (EU) Nr. 1089/2010 af 23. november 2010 om gennemførelse af Europa-Parlamentets og Rådets direktiv 2007/2/EF for så vidt angår interoperabilitet for geodatasæt og -tjenester']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- German -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'VERORDNUNG (EG) Nr. 1089/2010 DER KOMMISSION vom 23. November 2010 zur Durchführung der Richtlinie 2007/2/EG des Europäischen Parlaments und des Rates hinsichtlich der Interoperabilität von Geodatensätzen und -diensten']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Greek -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'ΚΑΝΟΝΙΣΜΟΣ (ΕΕ) αριθ. 1089/2010 ΤΗΣ ΕΠΙΤΡΟΠΗΣ της 23ης Νοεμβρίου 2010 σχετικά με την εφαρμογή της οδηγίας 2007/2/ΕΚ του Ευρωπαϊκού Κοινοβουλίου και του Συμβουλίου όσον αφορά τη διαλειτουργικότητα των συνόλων και των υπηρεσιών χωρικών δεδομένων']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Spanish -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'REGLAMENTO (UE) N o 1089/2010 DE LA COMISIÓN de 23 de noviembre de 2010 por el que se aplica la Directiva 2007/2/CE del Parlamento Europeo y del Consejo en lo que se refiere a la interoperabilidad de los conjuntos y los servicios de datos espaciales']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Estonian -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'KOMISJONI MÄÄRUS (EL) nr 1089/2010, 23. november 2010, millega rakendatakse Euroopa Parlamendi ja nõukogu direktiivi 2007/2/EÜ seoses ruumiandmekogumite ja -teenuste ristkasutatavusega']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Finnish -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'KOMISSION ASETUS (EU) N:o 1089/2010, annettu 23 päivänä marraskuuta 2010, Euroopan parlamentin ja neuvoston direktiivin 2007/2/EY täytäntöönpanosta paikkatietoaineistojen ja -palvelujen yhteentoimivuuden osalta']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- French -->
+            <for xpath='/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = "RÈGLEMENT (UE) No 1089/2010 DE LA COMMISSION du 23 novembre 2010 portant modalités d&apos;application de la directive 2007/2/CE du Parlement européen et du Conseil en ce qui concerne l&apos;interopérabilité des séries et des services de données géographiques"]'>
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Croatian -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'UREDBA KOMISIJE (EU) br. 1089/2010 od 23. studenoga 2010 o provedbi Direktive 2007/2/EZ Europskog parlamenta i Vijeca o meduoperativnosti skupova prostornih podataka i usluga u vezi s prostornim podacima']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Hungarian -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'A BIZOTTSÁG 1089/2010/EU RENDELETE (2010. november 23.) a 2007/2/EK európai parlamenti és tanácsi irányelv téradatkészletek és -szolgáltatások interoperabilitására vonatkozó rendelkezéseinek végrehajtásáról']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Italian -->
+            <for xpath='/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = "REGOLAMENTO (UE) N. 1089/2010 DELLA COMMISSIONE del 23 novembre 2010 recante attuazione della direttiva 2007/2/CE del Parlamento europeo e del Consiglio per quanto riguarda l&apos;interoperabilità dei set di dati territoriali e dei servizi di dati territoriali"]'>
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Lithuanian -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'KOMISIJOS REGLAMENTAS (ES) Nr. 1089/2010 2010 m. lapkričio 23 d. kuriuo įgyvendinamos Europos Parlamento ir Tarybos direktyvos 2007/2/EB nuostatos dėl erdvinių duomenų rinkinių ir paslaugų sąveikumo']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Latvian -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'KOMISIJAS REGULA (ES) Nr. 1089/2010 (2010. gada 23. novembris), ar kuru īsteno Eiropas Parlamenta un Padomes Direktīvu 2007/2/EK attiecībā uz telpisko datu kopu un telpisko datu pakalpojumu savstarpējo izmantojamību']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Maltese -->
+            <for xpath='/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = "REGOLAMENT TAL-KUMMISSJONI (UE) Nru 1089/2010 tat-23 ta&apos; Novembru 2010 li jimplimenta d-Direttiva 2007/2/KE tal-Parlament Ewropew u tal-Kunsill fir-rigward tal- interoperabbiltà tas-settijiet ta’ dejta u servizzi ġeografiċi"]'>
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Dutch -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'VERORDENING (EU) Nr. 1089/2010 VAN DE COMMISSIE van 23 november 2010 ter uitvoering van Richtlijn 2007/2/EG van het Europees Parlement en de Raad betreffende de interoperabiliteit van verzamelingen ruimtelijke gegevens en van diensten met betrekking tot ruimtelijke gegevens']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Polish -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'ROZPORZĄDZENIE KOMISJI (UE) NR 1089/2010 z dnia 23 listopada 2010 r. w sprawie wykonania dyrektywy 2007/2/WE Parlamentu Europejskiego i Rady w zakresie interoperacyjności zbiorów i usług danych przestrzennych']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Portuguese -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'REGULAMENTO (UE) N. o 1089/2010 DA COMISSÃO de 23 de Novembro de 2010 que estabelece as disposições de execução da Directiva 2007/2/CE do Parlamento Europeu e do Conselho relativamente à interoperabilidade dos conjuntos e serviços de dados geográficos']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Romanian -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'REGULAMENTUL (UE) NR. 1089/2010 AL COMISIEI din 23 noiembrie 2010 de punere în aplicare a Directivei 2007/2/CE a Parlamentului European şi a Consiliului în ceea ce priveşte interoperabilitatea seturilor şi serviciilor de date spaţiale']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Slovak -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'NARIADENIE KOMISIE (EÚ) č. 1089/2010 z 23. novembra 2010, ktorým sa vykonáva smernica Európskeho parlamentu a Rady 2007/2/ES, pokiaľ ide o interoperabilitu súborov a služieb priestorových údajov']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Slovenian -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'UREDBA KOMISIJE (EU) št. 1089/2010 z dne 23. novembra 2010 o izvajanju Direktive 2007/2/ES Evropskega parlamenta in Sveta glede medopravilnosti zbirk prostorskih podatkov in storitev v zvezi s prostorskimi podatki']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            <!-- Swedish -->
+            <for xpath="/metadata/dqInfo/report/measResult/ConResult/conSpec[resTitle = 'KOMMISSIONENS FÖRORDNING (EU) nr 1089/2010 av den 23 november 2010 om genomförande av Europaparlamentets och rådets direktiv 2007/2/EG vad gäller interoperabilitet för rumsliga datamängder och datatjänster']">
+              <exists xpath="date[contains(pubDate, '2010-12-08')]" ref="InspireSpecification_REQ" />
+            </for>
+            
             <!-- within the Quantitative Result section, a value and a unit of measure are required. -->
             <for xpath="//dqInfo/report/measResult/QuanResult">
               <exists xpath="quanValUnit/UOM/unitSymbol[ .!= '']" ref="uom"/>
@@ -794,15 +906,6 @@
             <for xpath="//dqInfo[dqScope/scpLvl/ScopeCd/@value = '005' or dqScope/scpLvl/ScopeCd/@value = '006']">
               <exists xpath=".//*[ . != '']" ref="dqInfo"/>
             </for>
-            <for xpath="//dqInfo[dqScope/scpLvl/ScopeCd/@value = '005' or dqScope/scpLvl/ScopeCd/@value = '006']">
-              <for xpath="dataLineage">
-                <or ref="dataLineage">
-                  <exists xpath="statement[. != '']"/>
-                  <exists xpath="dataSource/*[. != '']"/>
-                  <exists xpath="prcStep/*[. != '']"/>
-                </or>
-              </for>
-            </for>
 
             <!-- either lineage information or a data quality report must be provided for datasets -->
             <for xpath="//dqInfo[dqScope/scpLvl/ScopeCd/@value = '005']">
@@ -869,7 +972,7 @@
               <exists xpath="vertMaxVal[. != '']" ref="vertMaxVal"/>
             </for>
 
-            <!-- data source referense system -->
+            <!-- data source reference system -->
             <for xpath="//dataLineage//srcRefSys[identCode]">
               <exists xpath="identCode[@code != '']" ref="identCode"/>
             </for>
@@ -923,6 +1026,7 @@
             <for xpath="//distorTran/onLineSrc">
               <exists xpath="linkage[. != '']" ref="linkage"/>
             </for>
+            
             <!-- INSPIRE: requires one digital transfer linkage -->
             <for xpath="/metadata">
               <exists xpath="distInfo/distTranOps/onLineSrc/linkage[. != '']" ref="linkage"/>
@@ -991,6 +1095,7 @@
             <for xpath="//aggrInfo/assocType">
               <exists xpath="AscTypeCd[@value != '']" ref="AscTypeCd"/>
             </for>
+            
             <!-- either a citation or an identifier for the aggregate resource must be provided -->
             <for xpath="//aggrInfo">
               <or ref="aggrInfo">
@@ -998,20 +1103,24 @@
                 <exists xpath="aggrDSName//*[.!='']"/>
               </or>
             </for>
+            
             <!-- title and date required for citation and identifier citations -->
             <for xpath="//aggrInfo//*[resTitle | date]">
               <exists xpath="resTitle[. != '']" ref="resTitle"/>
               <exists xpath="date[* != '']" ref="dates createDate,createDate pubDate,pubDate reviseDate,reviseDate"/>
             </for>
+            
             <!--  linkage required for online resources for main citation and identifier citation -->
             <for xpath="//aggrInfo//citOnlineRes">
               <exists xpath="linkage[. != '']" ref="linkage"/>
             </for>
+            
             <!-- citation identifier -->
             <!--  code required for identifiers -->
             <for xpath="//aggrInfo//*[identCode]">
               <exists xpath="identCode[. != '']" ref="identCode"/>
             </for>
+            
             <!-- citation or identifier citation cited responsible party  -->
             <!-- contact name, org or role -->
             <for xpath="//aggrInfo//citRespParty">
@@ -1033,11 +1142,13 @@
             <for xpath="//porCatInfo//citOnlineRes">
               <exists xpath="linkage[. != '']" ref="linkage"/>
             </for>
+            
             <!-- citation identifier -->
             <!--  code required for identifiers -->
             <for xpath="//porCatInfo//*[identCode]">
               <exists xpath="identCode[. != '']" ref="identCode"/>
             </for>
+            
             <!-- citation or identifier citation cited responsible party  -->
             <!-- contact name, org or role -->
             <for xpath="//porCatInfo//citRespParty">
@@ -1059,11 +1170,13 @@
             <for xpath="//appSchInfo//citOnlineRes">
               <exists xpath="linkage[. != '']" ref="linkage"/>
             </for>
+            
             <!-- citation identifier -->
             <!--  code required for identifiers -->
             <for xpath="//appSchInfo//*[identCode]">
               <exists xpath="identCode[. != '']" ref="identCode"/>
             </for>
+            
             <!-- citation or identifier citation cited responsible party  -->
             <!-- contact name, org or role -->
             <for xpath="//appSchInfo//citRespParty">

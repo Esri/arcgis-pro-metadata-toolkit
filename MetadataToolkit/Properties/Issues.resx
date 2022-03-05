@@ -457,7 +457,7 @@
     <value>country code is required</value>
   </data>
   <data name="languageCode_EU_REQ" xml:space="preserve">
-    <value>language must be one of the 23 EU official languages</value>
+    <value>language must be one of the 24 EU official languages</value>
   </data>
   <data name="languageCode_REQ" xml:space="preserve">
     <value>language is required</value>
@@ -683,5 +683,35 @@
   </data>
   <data name="schemaLanguage_191153_REQ" xml:space="preserve">
     <value>schema language is required</value>
+  </data>
+  <data name="distFormat_REQ" xml:space="preserve">
+    <value>at least one distribution format is required</value>
+  </data>
+  <data name="inspireAccessConst_REQ" xml:space="preserve">
+    <value>INSPIRE limitations on public access are required</value>
+  </data>
+  <data name="InspireRefSystem_REQ" xml:space="preserve">
+    <value>at least one reference system is required</value>
+  </data>
+  <data name="inspireUseLimit_REQ" xml:space="preserve">
+    <value>select an INSPIRE condition for access and use, or describe the conditions as other legal constraints</value>
+  </data>
+  <data name="InspireConst_REQ" xml:space="preserve">
+    <value>INSPIRE restrictions for access and use must be defined</value>
+  </data>
+  <data name="InspireGemetDate_REQ" xml:space="preserve">
+    <value>the GEMET thesaurus must have a publication date of 2008-06-01</value>
+  </data>
+  <data name="InspireGemetLinkage_REQ" xml:space="preserve">
+    <value>the GEMET thesaurus requires an online resource linkage</value>
+  </data>
+  <data name="InspireSpecification_REQ" xml:space="preserve">
+    <value>the specification identifying the INSPIRE regulations must have a publication date of 2010-12-08</value>
+  </data>
+  <data name="InspireThemeKeywords_REQ" xml:space="preserve">
+    <value>a keyword from the GEMET thesaurus and a citation for the GEMET thesaurus are required</value>
+  </data>
+  <data name="resource_POC_REQ" xml:space="preserve">
+    <value>at least one point of contact is required</value>
   </data>
 </root>

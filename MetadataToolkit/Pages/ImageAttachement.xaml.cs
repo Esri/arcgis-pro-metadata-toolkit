@@ -42,7 +42,9 @@ namespace MetadataToolkit.Pages
   /// </summary>
   internal partial class MTK_ImageAttachement : EditorPage
   {
-    private Image _thumbnailImage = null;
+    private static Image _thumbnailImage = null;
+    private static object _dataContext = null;
+    private bool _isDefault = false;
 
     public string XPath { get; set; }
     public string Rel { get; set; }
@@ -55,11 +57,14 @@ namespace MetadataToolkit.Pages
 
     public void DeleteThumbnail(object sender, EventArgs e)
     {
-      _thumbnailImage.Source = null;
+      UseDefaultImage();
 
       var mdModule = FrameworkApplication.FindModule("esri_metadata_module") as IMetadataEditorHost;
       if (mdModule != null)
+      {
+        CommitChanges();
         mdModule.OnUpdateThumbnail(this);
+      }
     }
 
     public void UpdateThumbnail(object sender, EventArgs e)
@@ -83,10 +88,14 @@ namespace MetadataToolkit.Pages
 
             // set the source
             _thumbnailImage.Source = bmd.Frames[0];
+            _isDefault = false;
 
             var mdModule = FrameworkApplication.FindModule("esri_metadata_module") as IMetadataEditorHost;
             if (mdModule != null)
+            {
+              CommitChanges();
               mdModule.OnUpdateThumbnail(this);
+            }
           }
           catch (Exception) { /* noop */ }
         }
@@ -95,8 +104,10 @@ namespace MetadataToolkit.Pages
 
     private void CreateThumbnailNode()
     {
-      object context = Utils.Utils.GetDataContext(this);
-      IEnumerable<XmlNode> nodes = Utils.Utils.GetXmlDataContext(context);
+      if (_dataContext == null)
+        _dataContext = Utils.Utils.GetDataContext(this);
+
+      IEnumerable<XmlNode> nodes = Utils.Utils.GetXmlDataContext(_dataContext);
       if (null != nodes)
       {
         var node = nodes.First().OwnerDocument;
@@ -109,25 +120,27 @@ namespace MetadataToolkit.Pages
         newDoc.LoadXml(xmlString);
 
         // copy new XML into document
-        XmlDocument owner = (null == node.OwnerDocument) ? node : node.OwnerDocument;
-        Utils.Utils.CopyElements(owner, newDoc.FirstChild, true, false);
-
+        XmlDocument owner = (null == node?.OwnerDocument) ? node : node.OwnerDocument;
+        if (owner != null)
+          Utils.Utils.CopyElements(owner, newDoc.FirstChild, true, false);
       }
     }
 
     private XmlNode GetBinaryThumbnailNode(object sender, bool is_empty_ok)
     {
-      object context = Utils.Utils.GetDataContext(sender);
-      var nodes = Utils.Utils.GetXmlDataContext(context);
+      if (_dataContext == null)
+        _dataContext = Utils.Utils.GetDataContext(this);
+
+      var nodes = Utils.Utils.GetXmlDataContext(_dataContext);
 
       if (null != nodes)
       {
-         var node = nodes.First().OwnerDocument;
-          // fetch base64 image
-          //  <Binary><Thumbnail><Data EsriPropertyType="Picture">... 
-          XmlNode dataNode = node.SelectSingleNode(XPath);
-          if (null != dataNode && (is_empty_ok || 0 < dataNode.InnerText.Trim().Length))
-            return dataNode;        
+        var node = nodes.First().OwnerDocument;
+        // fetch base64 image
+        //  <Binary><Thumbnail><Data EsriPropertyType="Picture">... 
+        XmlNode dataNode = node?.SelectSingleNode(XPath);
+        if (null != dataNode && (is_empty_ok || 0 < dataNode.InnerText.Trim().Length))
+          return dataNode;        
       }
 
       return null;
@@ -135,8 +148,10 @@ namespace MetadataToolkit.Pages
 
     private void CleanThumbnailNodes(bool cleanAll)
     {
-      object context = Utils.Utils.GetDataContext(this);
-      var nodes = Utils.Utils.GetXmlDataContext(context);
+      if (_dataContext == null)
+        _dataContext = Utils.Utils.GetDataContext(this);
+
+      var nodes = Utils.Utils.GetXmlDataContext(_dataContext);
 
       if (null != nodes)
       {
@@ -144,13 +159,13 @@ namespace MetadataToolkit.Pages
 
         // fetch base64 image
         //  <Binary><Thumbnail><Data EsriPropertyType="Picture">... 
-        XmlNode dataNode = node.SelectSingleNode(XPath);
+        XmlNode dataNode = node?.SelectSingleNode(XPath);
         if (null != dataNode)
           dataNode.ParentNode.RemoveChild(dataNode);
 
         if (cleanAll)
         {
-          dataNode = node.SelectSingleNode(XPath);
+          dataNode = node?.SelectSingleNode(XPath);
           if (null != dataNode)
             dataNode.ParentNode.RemoveChild(dataNode);
         }
@@ -175,7 +190,10 @@ namespace MetadataToolkit.Pages
           BitmapDecoder bmd = BitmapDecoder.Create(ms, BitmapCreateOptions.None, BitmapCacheOption.None);
 
           if (null != _thumbnailImage)
+          {
             _thumbnailImage.Source = bmd.Frames[0];
+            _isDefault = false;
+          }
         }
         catch (Exception)
         {
@@ -184,9 +202,27 @@ namespace MetadataToolkit.Pages
       }
     }
 
+    private void UseDefaultImage()
+    {
+      var obj = this.Resources["EmptyImage"];
+      if (null != obj)
+      {
+        BitmapImage emptyImage = obj as BitmapImage;
+        _thumbnailImage.Source = emptyImage;
+        ThumbnailImage.Width = 32;
+      }
+      else
+      {
+        _thumbnailImage.Source = null;
+      }
+
+      // now using default
+      _isDefault = true;
+    }
+
     override public void CommitChanges()
     {
-      if (null == _thumbnailImage.Source)
+      if (null == _thumbnailImage?.Source || _isDefault)
       {
         CleanThumbnailNodes(true);
         return;

@@ -142,7 +142,7 @@
 	<mdb:dateInfo>
 		<cit:CI_Date>
 			<cit:date>
-				<gco:DateTime>2011-10-17T00:00:00</gco:DateTime>
+				<gco:DateTime>2021-12-07T00:00:00</gco:DateTime>
 			</cit:date>
 			<cit:dateType>
 				<cit:CI_DateTypeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_DateTypeCode" codeListValue="revision">revision</cit:CI_DateTypeCode>
@@ -837,7 +837,6 @@
 							<cit:linkage>
 								<gco:CharacterString>Resource &gt; Distribution &gt; Digital Transfer Options &gt; Online Resource &gt; Linkage</gco:CharacterString>
 							</cit:linkage>
-							<cit:protocol gco:nilReason="missing"/>
 						</cit:CI_OnlineResource>
 					</cit:onlineResource>
 					<cit:onlineResource>
@@ -845,7 +844,6 @@
 							<cit:linkage>
 								<gco:CharacterString>\\networkServer\sharedFolder\Resource_Distribution_Digital_Transfer_Options_Online_Resource_Linkage</gco:CharacterString>
 							</cit:linkage>
-							<cit:protocol gco:nilReason="missing"/>
 						</cit:CI_OnlineResource>
 					</cit:onlineResource>
 					<cit:onlineResource>
@@ -853,7 +851,6 @@
 							<cit:linkage>
 								<gco:CharacterString>c:\folder\Resource_Distribution_Digital_Transfer_Options_Online_Resource_Linkage</gco:CharacterString>
 							</cit:linkage>
-							<cit:protocol gco:nilReason="missing"/>
 						</cit:CI_OnlineResource>
 					</cit:onlineResource>
 				</cit:CI_Citation>
@@ -2367,6 +2364,126 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 							</mrd:turnaround>
 						</mrd:MD_StandardOrderProcess>
 					</mrd:distributionOrderProcess>
+					<mrd:distributorFormat>
+						<mrd:MD_Format>
+							<mrd:formatSpecificationCitation>
+								<cit:CI_Citation>
+									<cit:title>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Distribution Format &gt; Format Name</gco:CharacterString>
+									</cit:title>
+									<cit:alternateTitle>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Distribution Format &gt; Specification</gco:CharacterString>
+									</cit:alternateTitle>
+									<cit:edition>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Distribution Format &gt; Format Version</gco:CharacterString>
+									</cit:edition>
+								</cit:CI_Citation>
+							</mrd:formatSpecificationCitation>
+							<mrd:amendmentNumber>
+								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Distribution Format &gt; Amendment Number</gco:CharacterString>
+							</mrd:amendmentNumber>
+							<mrd:fileDecompressionTechnique>
+								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Distribution Format &gt; Decompression Technique</gco:CharacterString>
+							</mrd:fileDecompressionTechnique>
+						</mrd:MD_Format>
+					</mrd:distributorFormat>
+					<mrd:distributorTransferOptions>
+						<mrd:MD_DigitalTransferOptions>
+							<mrd:unitsOfDistribution>
+								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Units of Distribution</gco:CharacterString>
+							</mrd:unitsOfDistribution>
+							<mrd:transferSize>
+								<gco:Real>1</gco:Real>
+							</mrd:transferSize>
+							<mrd:onLine>
+								<cit:CI_OnlineResource>
+									<cit:linkage>
+										<gco:CharacterString>http://Resource_Distribution_Digital_Transfer_Options_Online_Resource_Linkage</gco:CharacterString>
+									</cit:linkage>
+									<cit:protocol>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Online Resource &gt; Protocol</gco:CharacterString>
+									</cit:protocol>
+									<cit:applicationProfile>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Online Resource &gt; Profile</gco:CharacterString>
+									</cit:applicationProfile>
+									<cit:name>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Online Resource &gt; Name</gco:CharacterString>
+									</cit:name>
+									<cit:description>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Online Resource &gt; Description (not a geoportal content type, e.g. Offline Data)</gco:CharacterString>
+									</cit:description>
+									<cit:function>
+										<cit:CI_OnLineFunctionCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_OnLineFunctionCode" codeListValue="download">download</cit:CI_OnLineFunctionCode>
+									</cit:function>
+								</cit:CI_OnlineResource>
+							</mrd:onLine>
+							<mrd:offLine>
+								<mrd:MD_Medium>
+									<mrd:name>
+										<cit:CI_Citation>
+											<cit:title>
+												<gco:CharacterString>dvdRom</gco:CharacterString>
+											</cit:title>
+										</cit:CI_Citation>
+									</mrd:name>
+									<mrd:density>
+										<gco:Real>1</gco:Real>
+									</mrd:density>
+									<mrd:densityUnits>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Offline Medium &gt; Density Units (dvdRom Medium Name)</gco:CharacterString>
+									</mrd:densityUnits>
+									<mrd:volumes>
+										<gco:Integer>1</gco:Integer>
+									</mrd:volumes>
+									<mrd:mediumFormat>
+										<mrd:MD_MediumFormatCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#MD_MediumFormatCode" codeListValue="iso9660">iso9660</mrd:MD_MediumFormatCode>
+									</mrd:mediumFormat>
+									<mrd:mediumNote>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Offline Medium &gt; Medium Note (dvdRom Medium Name)</gco:CharacterString>
+									</mrd:mediumNote>
+								</mrd:MD_Medium>
+							</mrd:offLine>
+						</mrd:MD_DigitalTransferOptions>
+					</mrd:distributorTransferOptions>
+					<mrd:distributorTransferOptions>
+						<mrd:MD_DigitalTransferOptions>
+							<mrd:offLine>
+								<mrd:MD_Medium>
+									<mrd:name>
+										<cit:CI_Citation>
+											<cit:title>
+												<gco:CharacterString>hardcopy</gco:CharacterString>
+											</cit:title>
+										</cit:CI_Citation>
+									</mrd:name>
+									<mrd:mediumNote>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Offline Medium &gt; Medium Note (hardcopy Medium Name)</gco:CharacterString>
+									</mrd:mediumNote>
+								</mrd:MD_Medium>
+							</mrd:offLine>
+						</mrd:MD_DigitalTransferOptions>
+					</mrd:distributorTransferOptions>
+					<mrd:distributorTransferOptions>
+						<mrd:MD_DigitalTransferOptions>
+							<mrd:offLine>
+								<mrd:MD_Medium>
+									<mrd:name>
+										<cit:CI_Citation>
+											<cit:title>
+												<gco:CharacterString>USBFlashDrive</gco:CharacterString>
+											</cit:title>
+										</cit:CI_Citation>
+									</mrd:name>
+									<mrd:mediumFormat>
+										<mrd:MD_MediumFormatCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#MD_MediumFormatCode" codeListValue="UDF">UDF</mrd:MD_MediumFormatCode>
+									</mrd:mediumFormat>
+									<mrd:mediumNote>
+										<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Offline Medium &gt; Medium Note (NAP USBFlashDrive Medium Name + UDF Format Code)</gco:CharacterString>
+									</mrd:mediumNote>
+								</mrd:MD_Medium>
+							</mrd:offLine>
+						</mrd:MD_DigitalTransferOptions>
+					</mrd:distributorTransferOptions>
 				</mrd:MD_Distributor>
 			</mrd:distributor>
 			<mrd:transferOptions>
@@ -2384,103 +2501,6 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 							</cit:protocol>
 						</cit:CI_OnlineResource>
 					</mrd:onLine>
-				</mrd:MD_DigitalTransferOptions>
-			</mrd:transferOptions>
-			<mrd:transferOptions>
-				<mrd:MD_DigitalTransferOptions>
-					<mrd:unitsOfDistribution>
-						<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Units of Distribution</gco:CharacterString>
-					</mrd:unitsOfDistribution>
-					<mrd:transferSize>
-						<gco:Real>1</gco:Real>
-					</mrd:transferSize>
-					<mrd:onLine>
-						<cit:CI_OnlineResource>
-							<cit:linkage>
-								<gco:CharacterString>http://Resource_Distribution_Digital_Transfer_Options_Online_Resource_Linkage</gco:CharacterString>
-							</cit:linkage>
-							<cit:protocol>
-								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Online Resource &gt; Protocol</gco:CharacterString>
-							</cit:protocol>
-							<cit:applicationProfile>
-								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Online Resource &gt; Profile</gco:CharacterString>
-							</cit:applicationProfile>
-							<cit:name>
-								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Online Resource &gt; Name</gco:CharacterString>
-							</cit:name>
-							<cit:description>
-								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Online Resource &gt; Description (not a geoportal content type, e.g. Offline Data)</gco:CharacterString>
-							</cit:description>
-							<cit:function>
-								<cit:CI_OnLineFunctionCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_OnLineFunctionCode" codeListValue="download">download</cit:CI_OnLineFunctionCode>
-							</cit:function>
-						</cit:CI_OnlineResource>
-					</mrd:onLine>
-					<mrd:offLine>
-						<mrd:MD_Medium>
-							<mrd:name>
-								<cit:CI_Citation>
-									<cit:title>
-										<gco:CharacterString>dvdRom</gco:CharacterString>
-									</cit:title>
-								</cit:CI_Citation>
-							</mrd:name>
-							<mrd:density>
-								<gco:Real>1</gco:Real>
-							</mrd:density>
-							<mrd:densityUnits>
-								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Offline Medium &gt; Density Units (dvdRom Medium Name)</gco:CharacterString>
-							</mrd:densityUnits>
-							<mrd:volumes>
-								<gco:Integer>1</gco:Integer>
-							</mrd:volumes>
-							<mrd:mediumFormat>
-								<mrd:MD_MediumFormatCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#MD_MediumFormatCode" codeListValue="iso9660">iso9660</mrd:MD_MediumFormatCode>
-							</mrd:mediumFormat>
-							<mrd:mediumNote>
-								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Offline Medium &gt; Medium Note (dvdRom Medium Name)</gco:CharacterString>
-							</mrd:mediumNote>
-						</mrd:MD_Medium>
-					</mrd:offLine>
-				</mrd:MD_DigitalTransferOptions>
-			</mrd:transferOptions>
-			<mrd:transferOptions>
-				<mrd:MD_DigitalTransferOptions>
-					<mrd:offLine>
-						<mrd:MD_Medium>
-							<mrd:name>
-								<cit:CI_Citation>
-									<cit:title>
-										<gco:CharacterString>hardcopy</gco:CharacterString>
-									</cit:title>
-								</cit:CI_Citation>
-							</mrd:name>
-							<mrd:mediumNote>
-								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Offline Medium &gt; Medium Note (hardcopy Medium Name)</gco:CharacterString>
-							</mrd:mediumNote>
-						</mrd:MD_Medium>
-					</mrd:offLine>
-				</mrd:MD_DigitalTransferOptions>
-			</mrd:transferOptions>
-			<mrd:transferOptions>
-				<mrd:MD_DigitalTransferOptions>
-					<mrd:offLine>
-						<mrd:MD_Medium>
-							<mrd:name>
-								<cit:CI_Citation>
-									<cit:title>
-										<gco:CharacterString>USBFlashDrive</gco:CharacterString>
-									</cit:title>
-								</cit:CI_Citation>
-							</mrd:name>
-							<mrd:mediumFormat>
-								<mrd:MD_MediumFormatCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#MD_MediumFormatCode" codeListValue="UDF">UDF</mrd:MD_MediumFormatCode>
-							</mrd:mediumFormat>
-							<mrd:mediumNote>
-								<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Digital Transfer Options &gt; Offline Medium &gt; Medium Note (NAP USBFlashDrive Medium Name + UDF Format Code)</gco:CharacterString>
-							</mrd:mediumNote>
-						</mrd:MD_Medium>
-					</mrd:offLine>
 				</mrd:MD_DigitalTransferOptions>
 			</mrd:transferOptions>
 		</mrd:MD_Distribution>
@@ -3492,7 +3512,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 	<mdb:metadataConstraints>
 		<mco:MD_Constraints>
 			<mco:useLimitation>
-				<gco:CharacterString>Metadata &gt; Constraints &gt; General Constraints &gt; Use Limitation</gco:CharacterString>
+				<gco:CharacterString>Metadata &amp;gt; Constraints &amp;gt; General Constraints &amp;gt; Use Limitation</gco:CharacterString>
 			</mco:useLimitation>
 		</mco:MD_Constraints>
 	</mdb:metadataConstraints>
@@ -3687,7 +3707,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 				</mcc:MD_Scope>
 			</mmi:maintenanceScope>
 			<mmi:maintenanceNote>
-				<gco:CharacterString>Last metadata review date: 20111014</gco:CharacterString>
+				<gco:CharacterString>Last metadata review date: 20211207</gco:CharacterString>
 			</mmi:maintenanceNote>
 			<mmi:maintenanceNote>
 				<gco:CharacterString>Metadata &gt; Maintenance &gt; Maintenance Note</gco:CharacterString>

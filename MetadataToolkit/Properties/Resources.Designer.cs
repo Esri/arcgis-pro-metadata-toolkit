@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MetadataToolkit.Properties {
+namespace $safeprojectname$.Properties {
     using System;
     
     
@@ -246,6 +246,15 @@ namespace MetadataToolkit.Properties {
         public static string BTN_CANCEL {
             get {
                 return ResourceManager.GetString("BTN_CANCEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string BTN_CANCEL_CAPTION {
+            get {
+                return ResourceManager.GetString("BTN_CANCEL_CAPTION", resourceCulture);
             }
         }
         
@@ -826,6 +835,15 @@ namespace MetadataToolkit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lookup.
+        /// </summary>
+        public static string BTN_LOOKUP_CAPTION {
+            get {
+                return ResourceManager.GetString("BTN_LOOKUP_CAPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New Maintenance Contact.
         /// </summary>
         public static string BTN_MAIN_NEW_CONTACT {
@@ -1020,6 +1038,15 @@ namespace MetadataToolkit.Properties {
         public static string BTN_NEW_USAGE {
             get {
                 return ResourceManager.GetString("BTN_NEW_USAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string BTN_OK_CAPTION {
+            get {
+                return ResourceManager.GetString("BTN_OK_CAPTION", resourceCulture);
             }
         }
         
@@ -1519,6 +1546,15 @@ namespace MetadataToolkit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GEMET - INSPIRE Data Theme.
+        /// </summary>
+        public static string GEMET_INSPIRE_DIALOG_TITLE {
+            get {
+                return ResourceManager.GetString("GEMET_INSPIRE_DIALOG_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Import Metadata.
         /// </summary>
         public static string IMPORT_MD_TITLE {
@@ -1542,6 +1578,213 @@ namespace MetadataToolkit.Properties {
         public static string ITEM_INFO_TYPE {
             get {
                 return ResourceManager.GetString("ITEM_INFO_TYPE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bulgarian.
+        /// </summary>
+        public static string LangName_Bulgarian {
+            get {
+                return ResourceManager.GetString("LangName_Bulgarian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Croatian.
+        /// </summary>
+        public static string LangName_Croatian {
+            get {
+                return ResourceManager.GetString("LangName_Croatian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Czech.
+        /// </summary>
+        public static string LangName_Czech {
+            get {
+                return ResourceManager.GetString("LangName_Czech", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Danish.
+        /// </summary>
+        public static string LangName_Danish {
+            get {
+                return ResourceManager.GetString("LangName_Danish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dutch.
+        /// </summary>
+        public static string LangName_Dutch {
+            get {
+                return ResourceManager.GetString("LangName_Dutch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to English.
+        /// </summary>
+        public static string LangName_English {
+            get {
+                return ResourceManager.GetString("LangName_English", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Estonian.
+        /// </summary>
+        public static string LangName_Estonian {
+            get {
+                return ResourceManager.GetString("LangName_Estonian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finnish.
+        /// </summary>
+        public static string LangName_Finnish {
+            get {
+                return ResourceManager.GetString("LangName_Finnish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to French.
+        /// </summary>
+        public static string LangName_French {
+            get {
+                return ResourceManager.GetString("LangName_French", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to German.
+        /// </summary>
+        public static string LangName_German {
+            get {
+                return ResourceManager.GetString("LangName_German", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Greek.
+        /// </summary>
+        public static string LangName_Greek {
+            get {
+                return ResourceManager.GetString("LangName_Greek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hungarian.
+        /// </summary>
+        public static string LangName_Hungarian {
+            get {
+                return ResourceManager.GetString("LangName_Hungarian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Italian.
+        /// </summary>
+        public static string LangName_Italian {
+            get {
+                return ResourceManager.GetString("LangName_Italian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latvian.
+        /// </summary>
+        public static string LangName_Latvian {
+            get {
+                return ResourceManager.GetString("LangName_Latvian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lithuanian.
+        /// </summary>
+        public static string LangName_Lithuanian {
+            get {
+                return ResourceManager.GetString("LangName_Lithuanian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maltese.
+        /// </summary>
+        public static string LangName_Maltese {
+            get {
+                return ResourceManager.GetString("LangName_Maltese", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Polish.
+        /// </summary>
+        public static string LangName_Polish {
+            get {
+                return ResourceManager.GetString("LangName_Polish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Portuguese.
+        /// </summary>
+        public static string LangName_Portuguese {
+            get {
+                return ResourceManager.GetString("LangName_Portuguese", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Romanian.
+        /// </summary>
+        public static string LangName_Romanian {
+            get {
+                return ResourceManager.GetString("LangName_Romanian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Slovak.
+        /// </summary>
+        public static string LangName_Slovak {
+            get {
+                return ResourceManager.GetString("LangName_Slovak", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Slovenian.
+        /// </summary>
+        public static string LangName_Slovenian {
+            get {
+                return ResourceManager.GetString("LangName_Slovenian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spanish.
+        /// </summary>
+        public static string LangName_Spanish {
+            get {
+                return ResourceManager.GetString("LangName_Spanish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Swedish.
+        /// </summary>
+        public static string LangName_Swedish {
+            get {
+                return ResourceManager.GetString("LangName_Swedish", resourceCulture);
             }
         }
         
@@ -3873,6 +4116,33 @@ namespace MetadataToolkit.Properties {
         public static string LBL_IMS_CONTENT_TYPE_EXPORT {
             get {
                 return ResourceManager.GetString("LBL_IMS_CONTENT_TYPE_EXPORT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSPIRE Limitations On Public Access.
+        /// </summary>
+        public static string LBL_INSPIRE_ACCESS_CONSTRAINTS {
+            get {
+                return ResourceManager.GetString("LBL_INSPIRE_ACCESS_CONSTRAINTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a language and click a keyword in the list.
+        /// </summary>
+        public static string LBL_INSPIRE_DLG_SEL_MSG {
+            get {
+                return ResourceManager.GetString("LBL_INSPIRE_DLG_SEL_MSG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSPIRE Conditions Applying To Access And Use.
+        /// </summary>
+        public static string LBL_INSPIRE_USE_LIMITATIONS {
+            get {
+                return ResourceManager.GetString("LBL_INSPIRE_USE_LIMITATIONS", resourceCulture);
             }
         }
         
@@ -6534,6 +6804,15 @@ namespace MetadataToolkit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Searching GEMET....
+        /// </summary>
+        public static string THEME_KEYWORD_SEARCHING_TEXT {
+            get {
+                return ResourceManager.GetString("THEME_KEYWORD_SEARCHING_TEXT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to brief narrative summary of the content of the resource(s).
         /// </summary>
         public static string TT_NAP_abstract {
@@ -6764,6 +7043,15 @@ namespace MetadataToolkit.Properties {
         public static string TT_RTB_UNDO {
             get {
                 return ResourceManager.GetString("TT_RTB_UNDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to retrieve theme keyword list. Please check your internet connection and try again..
+        /// </summary>
+        public static string UNABLETO_RETRIEVE_THEME_KEYWORD {
+            get {
+                return ResourceManager.GetString("UNABLETO_RETRIEVE_THEME_KEYWORD", resourceCulture);
             }
         }
         

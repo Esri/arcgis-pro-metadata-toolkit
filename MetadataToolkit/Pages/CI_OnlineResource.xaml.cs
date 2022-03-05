@@ -11,6 +11,11 @@ See the License for the specific language governing permissions and
 limitations under the License.​
 */
 
+using System.Collections.Generic;
+using System.Windows;
+using System.Linq;
+using System.Xml;
+
 using ArcGIS.Desktop.Metadata.Editor.Pages;
 
 namespace MetadataToolkit.Pages
@@ -23,6 +28,38 @@ namespace MetadataToolkit.Pages
     public MTK_CI_OnlineResource()
     {
       InitializeComponent();
+      Loaded += CI_OnlineResource_Loaded;
+    }
+
+    private void CI_OnlineResource_Loaded(object sender, RoutedEventArgs e)
+    {
+      SetDefaults();
+    }
+
+    private void SetDefaults()
+    {
+      object context = Utils.Utils.GetDataContext(this);
+      IEnumerable<XmlNode> nodes = Utils.Utils.GetXmlDataContext(context);
+      if (null != nodes)
+      {
+        var node = nodes.First();
+        XmlNode linkageNode = node.SelectSingleNode("linkage");
+        if (linkageNode != null && !string.IsNullOrWhiteSpace(DefaultLinkage) && string.IsNullOrWhiteSpace(linkageNode.InnerText))
+        {
+          linkageNode.InnerText = DefaultLinkage;
+        }
+      }
+    }
+
+    public static readonly DependencyProperty DefaultLinkageProperty = DependencyProperty.Register(
+       "DefaultLinkage",
+       typeof(string),
+       typeof(MTK_CI_OnlineResource));
+
+    public string DefaultLinkage
+    {
+      get { return (string)this.GetValue(DefaultLinkageProperty); }
+      set { this.SetValue(DefaultLinkageProperty, value); }
     }
   }
 }

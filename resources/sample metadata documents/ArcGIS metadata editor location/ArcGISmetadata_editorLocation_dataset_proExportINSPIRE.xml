@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<MD_Metadata xmlns="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<MD_Metadata xmlns="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<fileIdentifier>
 		<gco:CharacterString>Metadata &gt; Details &gt; File Identifier</gco:CharacterString>
 	</fileIdentifier>
 	<language>
-		<LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="eng" codeSpace="ISO639-2">eng</LanguageCode>
+		<LanguageCode codeList="http://www.loc.gov/standards/iso639-2" codeListValue="eng" codeSpace="ISO639-2">eng</LanguageCode>
 	</language>
 	<characterSet>
 		<MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8" codeSpace="ISOTC211/19115">utf8</MD_CharacterSetCode>
@@ -59,7 +59,7 @@
 								<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Postal Code</gco:CharacterString>
 							</postalCode>
 							<country>
-								<gco:CharacterString>US</gco:CharacterString>
+								<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="US" codeSpace="ISO3166-1">US</Country>
 							</country>
 							<electronicMailAddress>
 								<gco:CharacterString>Metadata &gt; Contacts &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
@@ -102,13 +102,13 @@
 		</CI_ResponsibleParty>
 	</contact>
 	<dateStamp>
-		<gco:Date>2011-10-17</gco:Date>
+		<gco:Date>2021-12-07</gco:Date>
 	</dateStamp>
 	<metadataStandardName>
 		<gco:CharacterString>INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119</gco:CharacterString>
 	</metadataStandardName>
 	<metadataStandardVersion>
-		<gco:CharacterString>V. 1.2</gco:CharacterString>
+		<gco:CharacterString>V. 2.0.1</gco:CharacterString>
 	</metadataStandardVersion>
 	<dataSetURI>
 		<gco:CharacterString>Metadata &gt; Details &gt; Dataset URI (NAP Function Code=Web Map Service)</gco:CharacterString>
@@ -116,10 +116,10 @@
 	<locale>
 		<PT_Locale>
 			<languageCode>
-				<LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="fre" codeSpace="ISO639-2">fre</LanguageCode>
+				<LanguageCode codeList="http://www.loc.gov/standards/iso639-2" codeListValue="fre" codeSpace="ISO639-2">fre</LanguageCode>
 			</languageCode>
 			<country>
-				<Country gco:nilReason="unknown"/>
+				<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="FR" codeSpace="ISO3166-1">FR</Country>
 			</country>
 			<characterEncoding>
 				<MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8" codeSpace="ISOTC211/19115">utf8</MD_CharacterSetCode>
@@ -299,7 +299,7 @@
 			<parameterCitation>
 				<CI_Citation>
 					<title>
-						<gco:CharacterString>Resource &gt; Spatial Data Representation &gt; Georeferenceable &gt; Parameter Citation &gt; Titles &gt; Title</gco:CharacterString>
+						<gmx:Anchor xlink:href="http://Resource_Spatial_Data_Representation_Georeferenceable_Parameter_Citation_Online_Resource_Linkage">Resource &gt; Spatial Data Representation &gt; Georeferenceable &gt; Parameter Citation &gt; Titles &gt; Title</gmx:Anchor>
 					</title>
 					<date>
 						<CI_Date>
@@ -343,7 +343,7 @@
 					<authority>
 						<CI_Citation>
 							<title>
-								<gco:CharacterString>Resource &gt; Spatial Reference &gt; Reference System &gt; Authority Citation &gt; Titles &gt; Title</gco:CharacterString>
+								<gmx:Anchor xlink:href="http://Resource_Spatial_Reference_Reference_System_Authority_Citation_Online_Resource_Linkage">Resource &gt; Spatial Reference &gt; Reference System &gt; Authority Citation &gt; Titles &gt; Title</gmx:Anchor>
 							</title>
 							<date>
 								<CI_Date>
@@ -395,13 +395,8 @@
 		<MD_DataIdentification>
 			<citation>
 				<CI_Citation>
-					<title xsi:type="PT_FreeText_PropertyType">
-						<gco:CharacterString>Overview &gt; Item Description &gt; Title + Overview &gt; Citation &gt; Titles &gt; Title</gco:CharacterString>
-						<PT_FreeText>
-							<textGroup>
-								<LocalisedCharacterString locale="fre-FR">Overview &gt; Locales &gt; Locale &gt; Title</LocalisedCharacterString>
-							</textGroup>
-						</PT_FreeText>
+					<title>
+						<gmx:Anchor xlink:href="http://Resource_Distribution_Digital_Transfer_Options_Online_Resource_Linkage">Overview &gt; Item Description &gt; Title + Overview &gt; Citation &gt; Titles &gt; Title</gmx:Anchor>
 					</title>
 					<alternateTitle>
 						<gco:CharacterString>Overview &gt; Citation &gt; Titles &gt; Alternate Title</gco:CharacterString>
@@ -447,7 +442,7 @@
 							<authority>
 								<CI_Citation>
 									<title>
-										<gco:CharacterString>Overview &gt; Citation &gt; Identifier &gt; Authority Citation &gt; Titles &gt; Title</gco:CharacterString>
+										<gmx:Anchor xlink:href="http://Overview_Citation_Identifier_Authority_Citation_Online_Resource_Linkage">Overview &gt; Citation &gt; Identifier &gt; Authority Citation &gt; Titles &gt; Title</gmx:Anchor>
 									</title>
 									<date>
 										<CI_Date>
@@ -522,7 +517,7 @@
 												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Postal Code (Role=Originator)</gco:CharacterString>
 											</postalCode>
 											<country>
-												<gco:CharacterString>US</gco:CharacterString>
+												<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="US" codeSpace="ISO3166-1">US</Country>
 											</country>
 											<electronicMailAddress>
 												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Email (Role=Originator)</gco:CharacterString>
@@ -564,7 +559,7 @@
 												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Postal Code (Role=Publisher)</gco:CharacterString>
 											</postalCode>
 											<country>
-												<gco:CharacterString>US</gco:CharacterString>
+												<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="US" codeSpace="ISO3166-1">US</Country>
 											</country>
 											<electronicMailAddress>
 												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Email (Role=Publisher)</gco:CharacterString>
@@ -613,7 +608,7 @@
 												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Postal Code (NAP Role=Rights Holder)</gco:CharacterString>
 											</postalCode>
 											<country>
-												<gco:CharacterString>US</gco:CharacterString>
+												<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="US" codeSpace="ISO3166-1">US</Country>
 											</country>
 											<electronicMailAddress>
 												<gco:CharacterString>Overview &gt; Citation Contacts &gt; Contact &gt; Contact Information &gt; Email (NAP Role=Rights Holder)</gco:CharacterString>
@@ -703,7 +698,7 @@
 										<gco:CharacterString>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; Zip</gco:CharacterString>
 									</postalCode>
 									<country>
-										<gco:CharacterString>US</gco:CharacterString>
+										<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="US" codeSpace="ISO3166-1">US</Country>
 									</country>
 									<electronicMailAddress>
 										<gco:CharacterString>Resource &gt; Points of Contact &gt; Contact &gt; Contact Information &gt; Email</gco:CharacterString>
@@ -871,7 +866,7 @@
 					<thesaurusName>
 						<CI_Citation>
 							<title>
-								<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Place Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</gco:CharacterString>
+								<gmx:Anchor xlink:href="http://Overview_Topics_Keywords_Place_Keywords_Thesaurus_Citation_Online_Resource_Linkage">Overview &gt; Topics &amp; Keywords &gt; Place Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</gmx:Anchor>
 							</title>
 							<date>
 								<CI_Date>
@@ -973,7 +968,7 @@
 					<thesaurusName>
 						<CI_Citation>
 							<title>
-								<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Temporal Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</gco:CharacterString>
+								<gmx:Anchor xlink:href="http://Overview_Topics_Keywords_Temporal_Keywords_Thesaurus_Citation_Online_Resource_Linkage">Overview &gt; Topics &amp; Keywords &gt; Temporal Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</gmx:Anchor>
 							</title>
 							<date>
 								<CI_Date>
@@ -1024,7 +1019,7 @@
 					<thesaurusName>
 						<CI_Citation>
 							<title>
-								<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Theme Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</gco:CharacterString>
+								<gmx:Anchor xlink:href="http://Overview_Topics_Keywords_Theme_Keywords_Thesaurus_Citation_Online_Resource_Linkage">Overview &gt; Topics &amp; Keywords &gt; Theme Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</gmx:Anchor>
 							</title>
 							<date>
 								<CI_Date>
@@ -1072,7 +1067,7 @@
 					<thesaurusName>
 						<CI_Citation>
 							<title>
-								<gco:CharacterString>Overview &gt; Topics &amp; Keywords &gt; Other Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</gco:CharacterString>
+								<gmx:Anchor xlink:href="http://Overview_Topics_Keywords_Other_Keywords_Thesaurus_Citation_Online_Resource_Linkage">Overview &gt; Topics &amp; Keywords &gt; Other Keywords &gt; Thesaurus Citation &gt; Titles &gt; Title</gmx:Anchor>
 							</title>
 							<date>
 								<CI_Date>
@@ -1107,14 +1102,6 @@
 							</citedResponsibleParty>
 						</CI_Citation>
 					</thesaurusName>
-				</MD_Keywords>
-			</descriptiveKeywords>
-			<descriptiveKeywords>
-				<MD_Keywords>
-					<keyword>
-						<gco:CharacterString>Offline Data</gco:CharacterString>
-					</keyword>
-					<thesaurusName uuidref="723f6998-058e-11dc-8314-0800200c9a66"/>
 				</MD_Keywords>
 			</descriptiveKeywords>
 			<resourceSpecificUsage>
@@ -1163,6 +1150,16 @@
 			</resourceConstraints>
 			<resourceConstraints>
 				<MD_LegalConstraints>
+					<useConstraints>
+						<MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</MD_RestrictionCode>
+					</useConstraints>
+					<otherConstraints>
+						<gco:CharacterString>Resource &gt; Constraints &gt; Legal Constraints &gt; Other Constraints</gco:CharacterString>
+					</otherConstraints>
+				</MD_LegalConstraints>
+			</resourceConstraints>
+			<resourceConstraints>
+				<MD_LegalConstraints>
 					<useLimitation>
 						<gco:CharacterString>Resource &gt; Constraints &gt; Legal Constraints &gt; Use Limitation</gco:CharacterString>
 					</useLimitation>
@@ -1174,6 +1171,26 @@
 					</useConstraints>
 					<otherConstraints>
 						<gco:CharacterString>Resource &gt; Constraints &gt; Legal Constraints &gt; Other Constraints</gco:CharacterString>
+					</otherConstraints>
+				</MD_LegalConstraints>
+			</resourceConstraints>
+			<resourceConstraints>
+				<MD_LegalConstraints>
+					<useConstraints>
+						<MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</MD_RestrictionCode>
+					</useConstraints>
+					<otherConstraints>
+						<gmx:Anchor xlink:href="http://inspire.ec.europa.eu/metadata-codelist/ConditionsApplyingToAccessAndUse/noConditionsApply">no conditions to access and use</gmx:Anchor>
+					</otherConstraints>
+				</MD_LegalConstraints>
+			</resourceConstraints>
+			<resourceConstraints>
+				<MD_LegalConstraints>
+					<accessConstraints>
+						<MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</MD_RestrictionCode>
+					</accessConstraints>
+					<otherConstraints>
+						<gmx:Anchor xlink:href="http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations">no limitations to public access</gmx:Anchor>
 					</otherConstraints>
 				</MD_LegalConstraints>
 			</resourceConstraints>
@@ -1201,7 +1218,7 @@
 					<aggregateDataSetName>
 						<CI_Citation>
 							<title>
-								<gco:CharacterString>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Titles &gt; Title (Association=Cross Reference)</gco:CharacterString>
+								<gmx:Anchor xlink:href="http://Resource_References_Aggregate_Information_Dataset_Citation_Online_Resource_Linkage_Association=Cross_Reference">Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Titles &gt; Title (Association=Cross Reference)</gmx:Anchor>
 							</title>
 							<date>
 								<CI_Date>
@@ -1244,7 +1261,7 @@
 							<authority>
 								<CI_Citation>
 									<title>
-										<gco:CharacterString>Resource &gt; References &gt; Aggregate Information &gt; Identifier &gt; Authority Citation &gt; Titles &gt; Title (Association=Cross Reference)</gco:CharacterString>
+										<gmx:Anchor xlink:href="http://Resource_References_Aggregate_Information_Identifier_Authority_Citation_Online_Resource_Linkage_Association=Cross_Reference">Resource &gt; References &gt; Aggregate Information &gt; Identifier &gt; Authority Citation &gt; Titles &gt; Title (Association=Cross Reference)</gmx:Anchor>
 									</title>
 									<date>
 										<CI_Date>
@@ -1297,7 +1314,7 @@
 					<aggregateDataSetName>
 						<CI_Citation>
 							<title>
-								<gco:CharacterString>Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Titles &gt; Title (Association=Larger Work)</gco:CharacterString>
+								<gmx:Anchor xlink:href="http://Resource_References_Aggregate_Information_Dataset_Citation_Online_Resource_Linkage_Association=Larger_Work">Resource &gt; References &gt; Aggregate Information &gt; Dataset Citation &gt; Titles &gt; Title (Association=Larger Work)</gmx:Anchor>
 							</title>
 							<date>
 								<CI_Date>
@@ -1365,7 +1382,7 @@
 				</MD_Resolution>
 			</spatialResolution>
 			<language>
-				<LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="spa" codeSpace="ISO639-2">spa</LanguageCode>
+				<LanguageCode codeList="http://www.loc.gov/standards/iso639-2" codeListValue="spa" codeSpace="ISO639-2">spa</LanguageCode>
 			</language>
 			<characterSet>
 				<MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf16" codeSpace="ISOTC211/19115">utf16</MD_CharacterSetCode>
@@ -1392,16 +1409,16 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 								<gco:Boolean>true</gco:Boolean>
 							</extentTypeCode>
 							<westBoundLongitude>
-								<gco:Decimal>-155</gco:Decimal>
+								<gco:Decimal>-155.00</gco:Decimal>
 							</westBoundLongitude>
 							<eastBoundLongitude>
-								<gco:Decimal>-135</gco:Decimal>
+								<gco:Decimal>-135.00</gco:Decimal>
 							</eastBoundLongitude>
 							<southBoundLatitude>
-								<gco:Decimal>35</gco:Decimal>
+								<gco:Decimal>35.00</gco:Decimal>
 							</southBoundLatitude>
 							<northBoundLatitude>
-								<gco:Decimal>42</gco:Decimal>
+								<gco:Decimal>42.00</gco:Decimal>
 							</northBoundLatitude>
 						</EX_GeographicBoundingBox>
 					</geographicElement>
@@ -1415,7 +1432,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 									<authority>
 										<CI_Citation>
 											<title>
-												<gco:CharacterString>Resource &gt; Extents &gt; Extent &gt; Geographic Description &gt; Authority Citation &gt; Titles &gt; Title</gco:CharacterString>
+												<gmx:Anchor xlink:href="http://Resource_Extents_Extent_Geographic_Description_Authority_Citation_Online_Resource_Linkage">Resource &gt; Extents &gt; Extent &gt; Geographic Description &gt; Authority Citation &gt; Titles &gt; Title</gmx:Anchor>
 											</title>
 											<date>
 												<CI_Date>
@@ -1491,16 +1508,16 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 								<gco:Boolean>true</gco:Boolean>
 							</extentTypeCode>
 							<westBoundLongitude>
-								<gco:Decimal>-180</gco:Decimal>
+								<gco:Decimal>-180.00</gco:Decimal>
 							</westBoundLongitude>
 							<eastBoundLongitude>
-								<gco:Decimal>180</gco:Decimal>
+								<gco:Decimal>180.00</gco:Decimal>
 							</eastBoundLongitude>
 							<southBoundLatitude>
-								<gco:Decimal>-90</gco:Decimal>
+								<gco:Decimal>-90.00</gco:Decimal>
 							</southBoundLatitude>
 							<northBoundLatitude>
-								<gco:Decimal>90</gco:Decimal>
+								<gco:Decimal>90.00</gco:Decimal>
 							</northBoundLatitude>
 						</EX_GeographicBoundingBox>
 					</geographicElement>
@@ -1517,7 +1534,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 				<gco:Boolean>true</gco:Boolean>
 			</complianceCode>
 			<language>
-				<LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="fre" codeSpace="ISO639-2">fre</LanguageCode>
+				<LanguageCode codeList="http://www.loc.gov/standards/iso639-2" codeListValue="fre" codeSpace="ISO639-2">fre</LanguageCode>
 			</language>
 			<includedWithDataset>
 				<gco:Boolean>true</gco:Boolean>
@@ -1528,7 +1545,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 			<featureCatalogueCitation>
 				<CI_Citation>
 					<title>
-						<gco:CharacterString>Resource &gt; Content &gt; Feature Catalogue &gt; Feature Catalogue Citation &gt; Titles &gt; Title</gco:CharacterString>
+						<gmx:Anchor xlink:href="http://Resource_Content_Feature_Catalogue_Feature_Catalogue_Citation_Online_Resource_Linkage">Resource &gt; Content &gt; Feature Catalogue &gt; Feature Catalogue Citation &gt; Titles &gt; Title</gmx:Anchor>
 					</title>
 					<date>
 						<CI_Date>
@@ -1666,7 +1683,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 					<authority>
 						<CI_Citation>
 							<title>
-								<gco:CharacterString>Resource &gt; Content &gt; Image Description &gt; Quality Code &gt; Authority Citation &gt; Titles &gt; Title</gco:CharacterString>
+								<gmx:Anchor xlink:href="http://Resource_Content_Image_Description_Quality_Code_Authority_Citation_Online_Resource_Linkage">Resource &gt; Content &gt; Image Description &gt; Quality Code &gt; Authority Citation &gt; Titles &gt; Title</gmx:Anchor>
 							</title>
 							<date>
 								<CI_Date>
@@ -1817,7 +1834,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 												<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Contact Information &gt; Postal Code</gco:CharacterString>
 											</postalCode>
 											<country>
-												<gco:CharacterString>US</gco:CharacterString>
+												<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="US" codeSpace="ISO3166-1">US</Country>
 											</country>
 											<electronicMailAddress>
 												<gco:CharacterString>Resource &gt; Distribution &gt; Distributor &gt; Contact Information &gt; Email</gco:CharacterString>
@@ -2014,7 +2031,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 							<authority>
 								<CI_Citation>
 									<title>
-										<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Identifier &gt; Authority Citation &gt; Titles &gt; Title (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+										<gmx:Anchor xlink:href="http://Resource_Data_Quality_Report_Measure_Identifier_Authority_Citation_Online_Resource_Linkage_Type=Absolute_External_Positional_Accuracy_Dimension=Horizontal">Resource &gt; Data Quality &gt; Report &gt; Measure &gt; Identifier &gt; Authority Citation &gt; Titles &gt; Title (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gmx:Anchor>
 									</title>
 									<date>
 										<CI_Date>
@@ -2109,7 +2126,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 							<specification>
 								<CI_Citation>
 									<title>
-										<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Titles &gt; Title (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gco:CharacterString>
+										<gmx:Anchor xlink:href="http://Resource_Data_Quality_Report_Conformance_Result_Specification_Online_Resource_Linkage_Type=Absolute_External_Positional_Accuracy_Dimension=Horizontal">Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Titles &gt; Title (Type=Absolute External Positional Accuracy + Dimension=Horizontal)</gmx:Anchor>
 									</title>
 									<date>
 										<CI_Date>
@@ -2266,7 +2283,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 							<specification>
 								<CI_Citation>
 									<title>
-										<gco:CharacterString>Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Titles &gt; Title (Type=Domain Consistency)</gco:CharacterString>
+										<gmx:Anchor xlink:href="http://Resource_Data_Quality_Report_Conformance_Result_Specification_Online_Resource_Linkage_Type=Domain_Consistency">Resource &gt; Data Quality &gt; Report &gt; Conformance Result &gt; Specification &gt; Titles &gt; Title (Type=Domain Consistency)</gmx:Anchor>
 									</title>
 									<date>
 										<CI_Date>
@@ -2359,7 +2376,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 														<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Contact Information &gt; Postal Code</gco:CharacterString>
 													</postalCode>
 													<country>
-														<gco:CharacterString>US</gco:CharacterString>
+														<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="US" codeSpace="ISO3166-1">US</Country>
 													</country>
 													<electronicMailAddress>
 														<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Processor &gt; Contact Information &gt; Email</gco:CharacterString>
@@ -2385,7 +2402,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 													<authority>
 														<CI_Citation>
 															<title>
-																<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Titles &gt; Title (Source Type=Used)</gco:CharacterString>
+																<gmx:Anchor xlink:href="http://Resource_Lineage_Process_Step_Data_Source_Reference_System_Authority_Citation_Online_Resource_Linkage_Source_Type=Used">Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Titles &gt; Title (Source Type=Used)</gmx:Anchor>
 															</title>
 															<date>
 																<CI_Date>
@@ -2436,7 +2453,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 									<sourceCitation>
 										<CI_Citation>
 											<title>
-												<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Titles &gt; Title (Source Type=Used)</gco:CharacterString>
+												<gmx:Anchor xlink:href="http://Resource_Lineage_Process_Step_Data_Source_Source_Citation_Online_Resource_Linkage_Source_Type=Used">Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Titles &gt; Title (Source Type=Used)</gmx:Anchor>
 											</title>
 											<alternateTitle>
 												<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Titles &gt; Alternate Title (Source Type=Used)</gco:CharacterString>
@@ -2467,7 +2484,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 																		<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Contact Information &gt; State (Source Type=Used Role=Publisher)</gco:CharacterString>
 																	</administrativeArea>
 																	<country>
-																		<gco:CharacterString>US</gco:CharacterString>
+																		<Country codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="US" codeSpace="ISO3166-1">US</Country>
 																	</country>
 																	<electronicMailAddress>
 																		<gco:CharacterString>Resource &gt; Lineage &gt; Process Step &gt; Data Source &gt; Source Citation &gt; Contact &gt; Contact Information &gt; Email (Source Type=Used Role=Publisher)</gco:CharacterString>
@@ -2512,16 +2529,16 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 														<gco:Boolean>true</gco:Boolean>
 													</extentTypeCode>
 													<westBoundLongitude>
-														<gco:Decimal>-100</gco:Decimal>
+														<gco:Decimal>-100.00</gco:Decimal>
 													</westBoundLongitude>
 													<eastBoundLongitude>
-														<gco:Decimal>-80</gco:Decimal>
+														<gco:Decimal>-80.00</gco:Decimal>
 													</eastBoundLongitude>
 													<southBoundLatitude>
-														<gco:Decimal>21.5</gco:Decimal>
+														<gco:Decimal>21.50</gco:Decimal>
 													</southBoundLatitude>
 													<northBoundLatitude>
-														<gco:Decimal>42.5</gco:Decimal>
+														<gco:Decimal>42.50</gco:Decimal>
 													</northBoundLatitude>
 												</EX_GeographicBoundingBox>
 											</geographicElement>
@@ -2598,7 +2615,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 											<authority>
 												<CI_Citation>
 													<title>
-														<gco:CharacterString>Resource &gt; Lineage &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Titles &gt; Title</gco:CharacterString>
+														<gmx:Anchor xlink:href="http://Resource_Lineage_Data_Source_Reference_System_Authority_Citation_Online_Resource_Linkage">Resource &gt; Lineage &gt; Data Source &gt; Reference System &gt; Authority Citation &gt; Titles &gt; Title</gmx:Anchor>
 													</title>
 													<date>
 														<CI_Date>
@@ -2649,7 +2666,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 							<sourceCitation>
 								<CI_Citation>
 									<title>
-										<gco:CharacterString>Resource &gt; Lineage &gt; Data Source &gt; Source Citation &gt; Titles &gt; Title</gco:CharacterString>
+										<gmx:Anchor xlink:href="http://Resource_Lineage_Data_Source_Source_Citation_Online_Resource_Linkage">Resource &gt; Lineage &gt; Data Source &gt; Source Citation &gt; Titles &gt; Title</gmx:Anchor>
 									</title>
 									<alternateTitle>
 										<gco:CharacterString>Resource &gt; Lineage &gt; Data Source &gt; Source Citation &gt; Titles &gt; Alternate Title</gco:CharacterString>
@@ -2732,7 +2749,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 			<portrayalCatalogueCitation>
 				<CI_Citation>
 					<title>
-						<gco:CharacterString>Resource &gt; References &gt; Portrayal Citation &gt; Titles &gt; Title</gco:CharacterString>
+						<gmx:Anchor xlink:href="http://Resource_References_Portrayal_Citation_Online_Resource_Linkage">Resource &gt; References &gt; Portrayal Citation &gt; Titles &gt; Title</gmx:Anchor>
 					</title>
 					<date>
 						<CI_Date>
@@ -2819,7 +2836,7 @@ Bounding boxes created on the Extents page do not have the esriExtentType attrib
 			<name>
 				<CI_Citation>
 					<title>
-						<gco:CharacterString>Resource &gt; References &gt; Application Schema Information &gt; Citation &gt; Titles &gt; Title</gco:CharacterString>
+						<gmx:Anchor xlink:href="http://Resource_References_Application_Schema_Information_Citation_Online_Resource_Linkage">Resource &gt; References &gt; Application Schema Information &gt; Citation &gt; Titles &gt; Title</gmx:Anchor>
 					</title>
 					<date>
 						<CI_Date>

@@ -1,0 +1,2231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- PART 1 - ISO 19103 and GML DECLARATIONS-->
+<!ENTITY % CharacterString '(#PCDATA)'> <!-- references the XML schema string data type with attribute nilReason -->
+<!-- gco:Date_Property type a choice of gco:Date or gco:DateTime with attribute nilReason; DateTime_PropertyType is gco:DateTime only with nilReason attribute; individual Date and DateTime elements do not have nilReason -->
+<!ENTITY % Date '(#PCDATA)'> <!-- Date uses Date_Type, simple type, a union of XML schema types xs:date xs:gYearMonth, xs:gYear -->
+<!--Formatted as - CCYYMMDD-->
+<!ENTITY % DateTime '(#PCDATA)'>  <!-- DateTime is XML Schema type xs:dateTime -->
+<!--Formatted as - CCYYMMDDTHHMMSS-->
+<!ENTITY % Time '(#PCDATA)'>
+<!--Formatted as - THHMMSS-->
+<!ENTITY % Boolean '(#PCDATA)'> <!-- preferred values: "True" or "False". Editor and translator will work with values "1" and "0" to support metadata created with previous versions of ArcGIS. References the XML Schema boolean data type with attribute nilReason. -->
+
+<!ENTITY % Record '(#PCDATA)'> 
+<!-- Record element theoretically doesn't have any content according to XML Schemas, only attributes nilReason, uuidref, and xlink:simpleLink. This doesn't make sense. DQ_QuantitativeResult.value has data type Record. If you can't have a value, how can you record the results of a quantitative data quality test? Allowing text in elements of type Record. These elements should have the following attribute declarations, but they are not currently supported in ArcGIS:
+<!ATTLIST Record
+	nilReason (inapplicable | missing | template | unknown | withheld) #IMPLIED
+	uuidref CDATA #IMPLIED
+	href CDATA #IMPLIED
+	title CDATA #IMPLIED
+> --> 
+<!ENTITY % RecordType '(#PCDATA)'>
+<!-- elements with this data type should have the following attribute declarations, but they are not currently supported in ArcGIS:
+<!ATTLIST RecordType
+	nilReason (inapplicable | missing | template | unknown | withheld) #IMPLIED
+	href CDATA #IMPLIED
+	title CDATA #IMPLIED
+> --> 
+
+<!ENTITY % ObjectRef '(#PCDATA)'>
+<!-- ObjectRef element theoretically don't have any content, just attributes. This doesn't make sense. How do you describe the set of attributes and features affected when defining the scope of an operation? Allowing text in these elements. Elements with this data type should have the following attributes declared, but they are not currently supported in ArcGIS:
+<!ATTLIST ObjectRef
+	nilReason (inapplicable | missing | template | unknown | withheld) #IMPLIED
+	uuidref CDATA #IMPLIED
+	href CDATA #IMPLIED
+	title CDATA #IMPLIED
+> -->
+
+<!-- 19139 Binary has simple string content with attribute src that is anyURI type -->
+<!ENTITY % BinaryFile '(#PCDATA)'> 
+
+<!ENTITY % Decimal '(#PCDATA)'>
+<!ENTITY % Real '(#PCDATA)'>
+<!ENTITY % Integer '(#PCDATA)'>
+<!ENTITY % DoubleList '(#PCDATA)'>
+<!ENTITY % Angle '(#PCDATA)'> <!-- needed for ISO 19115-1 -->
+<!ENTITY % GenericName '(#PCDATA)'>
+<!-- GenericName is abstract, with identical types LocalName and ScopedName. All have the type gml:CodeType. Elements with this data type should have the following attribute declared, where the codeSpace attribute has the anyURI type:
+<!ATTLIST GenericName
+	codeSpace CDATA #IMPLIED
+> -->
+<!ENTITY % TypeName '(aName)'>
+<!ENTITY % MemberName '(aName, attributeType)'>
+<!ELEMENT aName (#PCDATA)>
+<!ELEMENT attributeType %TypeName;>
+
+<!ELEMENT gmlDesc (#PCDATA)> <!-- gml:StringOrRefType, but use of this element to store a reference is deprecated -->
+<!ELEMENT gmlDescRef (#PCDATA)>  <!-- gml:ReferenceType, value is a remote text description referenced by xlink:href; put title associated with href in element -->
+<!ATTLIST gmlDescRef
+	href CDATA #IMPLIED
+>
+<!ELEMENT gmlIdent (#PCDATA)> <!-- gml:CodeWithAuthorityType, special identifier assigned by maintaining authority, intending it to be used when referring to the object, in which case the codeSpace shall be provided; a pre-defined property for such identifiers -->
+<!ATTLIST gmlIdent
+	codeSpace CDATA #REQUIRED
+>
+<!ELEMENT gmlName (#PCDATA)> <!-- gml:CodeType, descriptive name for the object, with codeSpace to identify the authority for a name -->
+<!ATTLIST gmlName
+	codeSpace CDATA #IMPLIED
+>
+<!ELEMENT gmlRemarks (#PCDATA)> 
+
+<!ENTITY % UnitDefinition '(gmlDesc?, gmlDescRef?, gmlIdent?, gmlName*, gmlRemarks?, unitQuanType?, unitQuanRef?, unitSymbol?)'>
+<!ELEMENT unitQuanType (#PCDATA)> <!-- gml:StringOrRefType; indicates the phenomenon or type of physical quantity measured or observed, to which the units apply. Should not be used as a reference -->
+<!ELEMENT unitQuanRef (#PCDATA)> <!-- gml:ReferenceType; same as quantityType but a reference to a remote value; put title associated with href in element -->
+<!ATTLIST unitQuanRef
+	href CDATA #IMPLIED
+>
+<!ELEMENT unitSymbol (#PCDATA)> <!-- gml:CodeType; the preferred lexical symbol for this unit of measure, codeSpace is the namespace for the value of type anyURI  --> 
+<!ATTLIST unitSymbol
+	codeSpace CDATA #IMPLIED
+>
+<!-- Individual units of measure types in gco:basicTypes all reference gml:UnitDefinition, which references gml:Definition -->
+<!ENTITY % UOM '(UOM)'> 
+<!ELEMENT UOM %UnitDefinition;>
+<!ATTLIST UOM
+	gmlID CDATA #REQUIRED
+>
+
+<!ENTITY % GM_Polygon '(gmlDesc?, gmlDescRef?, gmlIdent?, gmlName*, exterior?, interior*)'>
+<!-- The following attributes are defined in XML schemas, but are not being used currently in ArcGIS except for gmlID. GML shapes must be provided in the same projection as defined in the metadata's reference system section.
+<!ATTLIST GM_Polygon
+	gmlID CDATA #REQUIRED
+	srsName CDATA #IMPLIED 
+	srsDimension CDATA #IMPLIED
+	axisLabels CDATA #IMPLIED
+	uomLabels CDATA #IMPLIED
+> 
+...where srsName is type anyURI, srsDimension is type positiveInteger, axisLabels and uomLabels are type NCNameList. axisLabels and uomLabels are optional, and must be provided together and only when srsName is also provided. srsDimension may only be used with srsName. srsName generally missing assuming the position is part of a larger object where a CRS is defined, and if so the CRS is implicitly assumed to take on the value of the cotnaining object's CRS. --> 
+<!-- GM_Point can contain either the pos or coordinates elements, but coordinates is deprecated -->
+<!ENTITY % GM_Point '(gmlDesc?, gmlDescRef?, gmlIdent?, gmlName*, pos)'>
+<!-- Elements with this data type should declare the gmlID attribute as follows. Other attributes are not currently used in ArcGIS as described above.
+<!ATTLIST GM_Point
+	gmlID CDATA #REQUIRED
+	srsName CDATA #IMPLIED 
+	srsDimension CDATA #IMPLIED
+	axisLabels CDATA #IMPLIED
+	uomLabels CDATA #IMPLIED
+>-->
+<!ELEMENT pos %DoubleList;> 
+<!ATTLIST pos
+	Sync CDATA #IMPLIED
+><!-- only synchronized in cornerPts and centerPt -->
+<!ELEMENT posList %DoubleList;> 
+<!-- extends gml:doubleList, a simpleType that is a list of doubles; from XML schema this is a space-separated list. The entire point or polygon needs to be in the same spatial reference, therefore, not supporting srsName, srsDimension, axisLabels, and uomLabels attributes on the pos element; would be supported on the containing element - the entire shape. -->
+<!ELEMENT exterior (pos+ | posList)>
+<!ELEMENT interior (pos+ | posList)>
+<!-- Polygon rings must have four or more gmlPos or one gmlPosList.Prefer not using posList method of defining a ring. With a space-separated list of coordinates there is no way to know how many dimensions are provided for each one - x,y or x,y,z or x,y,time? Safest practice is to define each point separately. However, when split into individual points, they may not retain original order depending if old-style or new-style translators are used. -->
+
+<!--PART 3: TEMPORAL DECLARATIONS-->
+<!ENTITY % TM_Primitive '(TM_Instant | TM_Period)'> 
+<!ENTITY % TM_Instant '(gmlDesc?, gmlDescRef?, gmlIdent?, gmlName*, tmPosition)'> 
+<!ENTITY % TM_Period '(gmlDesc?, gmlDescRef?, gmlIdent?, gmlName*, tmBegin, tmEnd)'> 
+<!ENTITY % TM_Duration '(intervalLength | duration)'> <!--  added by ISO 19115-1 -->
+<!ELEMENT TM_Instant %TM_Instant;> 
+<!ATTLIST TM_Instant
+	gmlID CDATA #REQUIRED
+> 
+<!ELEMENT TM_Period %TM_Period;> 
+<!ATTLIST TM_Period
+	gmlID CDATA #REQUIRED
+>
+<!ENTITY % TM_GML '(gmlDesc?, gmlDescRef?, gmlIdent?, gmlName*)'> <!-- used to transition an existing DateTime to a time instant for ISO 19115-1 -->
+<!ELEMENT intervalLength (#PCDATA)> <!--  added by ISO 19115-1 -->
+<!ATTLIST intervalLength 
+	unit CDATA #REQUIRED
+	radix CDATA #REQUIRED
+	factor CDATA #REQUIRED
+>  <!--  added by ISO 19115-1 -->
+<!-- ArcGIS is not currently supporting the frame attribute for TM_Instant and TM_Period. The frame URI reference by default is ISO 19108, the Gregorian calendar with UTC. Can optionally use GPS calendar, Unix time, and so on; may refer to anything that can be identified by URI. To be implemented as follows:
+<!ATTLIST TM_Instant
+	gmlID CDATA #REQUIRED
+	frame CDATA '#ISO-8601' 
+> -->
+<!-- Time position elements have simple content. gml:TimePositionUnion union supports many types of values, including: gml:CalDate, time, dateTime, anyURI, and decimal. In turn, gml:CalDate is a union of date, gYearMonth, and gYear. Values based on calendars and clocks should use ISO 8601 formatting. Use decimal values for GPS or UNIX time, representing a distance from the scale origin. Use a URI to reference an era. Use a time alone for a position that recurs daily. -->
+<!ELEMENT tmPosition (#PCDATA)> <!-- value stored as ISO 8601 dateTime -->
+<!ATTLIST tmPosition
+	date (now | unknown | after | before) #IMPLIED 
+	time (now | unknown) #IMPLIED 
+>
+<!ELEMENT tmBegin (#PCDATA)> <!-- value stored as ISO 8601 dateTime -->
+<!ATTLIST tmBegin
+	date (unknown | after | before) #IMPLIED 
+	time (unknown) #IMPLIED 
+>
+<!ELEMENT tmEnd (#PCDATA)> <!-- value stored as ISO 8601 dateTime -->
+<!ATTLIST tmEnd
+	date (now | unknown | after | before) #IMPLIED 
+	time (now | unknown) #IMPLIED 
+><!-- ArcGIS is not currently supporting the calendarEraName and indeterminatePosition attributes for tmPosition, tmBegin, and tmEnd. calendarEraName to be used for values from a calendar containing more than one era. indeterminatePosition to be used for inexact positions; use alone or with a temporal position. unknown: no value provided, now: value is always current position, before or after: actual position unknown but known to be before or after the specified value. To be implemented as follows:
+<!ATTLIST tmEnd
+	calendarEraName CDATA #IMPLIED 
+	indeterminatePosition (after | before | now | unknown) #IMPLIED 
+> --> 
+<!-- gml:AbstractTimePrimitiveType extends AbstractGMLType by adding element relatedTime with attribute relativePosition (Before | After | Begins | Ends | During | Equals | Contains | Overlaps | Meets | OverlappedBy | MetBy | BegunBy | EndedBy). Not using this element because it conflicts with the indeterminatePosition attribute, which seems more relevant and appropriate with now and unknown options. -->
+
+<!-- PART 5 - METADATA DECLARATIONS from ISO 19115 incl. corrigendum, 19139, 19119, 19115-2, NAP -->
+<!--Metadata Entity-->
+<!ENTITY % Metadata '(Esri?, mdFileID?, metadataID?, mdLang?, mdChar?, mdParentID?, parentMdCit?, mdHrLv?, mdHrLvName?, mdContact+, mdDateSt, mdTimeSt, dateInfo?, dataSetURI?, dataSetFn?, altMdReference*, mdLinkage*, spatRepInfo*, refSysInfo*, dataIdInfo, contInfo*, distInfo?, dqInfo?, porCatInfo*, mdConst*, appSchInfo*, mdMaint?, spdoinfo?, eainfo?, Binary?, (tool? | toolbox?), miAcquInfo*)'> <!-- ISO 19115-1 adds metadataID, parentMdCit, mdTimeSt, dateInfo, altMdReference, mdLinkage (not importing metadataStandard and metadataProfile citations and otherLocale) -->
+<!-- not currently editing or translating ISO 19115-2 image extension (miAcquInfo) elements; just placeholders -->
+<!ENTITY % PTLocale '(languageCode, countryCode, CharSetCd)'> <!-- needed for ISO 19115-1 -->
+<!-- Data Identification Entities -->
+<!ENTITY % DataIdent '(idCitation, idAbs, idPurp?, idCredit*, idStatus*, idPoC*, resMaint*, graphOver*, dsFormat*, discKeys*, otherKeys*, placeKeys*, searchKeys, stratKeys*, tempKeys*, themeKeys*, productKeys*, subTopicCatKeys*, taxonKeys*, dataCentreKeys*, featureTypeKeys*, instrumentKeys*, platformKeys*, processKeys*, projectKeys*, serviceKeys*, idSpecUse*, resConst*, aggrInfo*, spatRpType*, dataScale*, temporalRes*, dataLang*, dataChar*, tpCat*, envirDesc?, dataExt*, additionalDoc*, processingLevel?, suppInfo?, svType, svTypeVer*, svAccProps?, svCouplRes*, svCouplType?, svOper*, svOperDataset*, svProfile*, svStandard*, svOperChain*)'> <!-- ISO 19115-1 adds taxonKeys, dataCentreKeys, featureTypeKeys, instrumentKeys, platformKeys, processKeys, projectKeys, serviceKeys, temporalRes, additionalDoc, processingLevel, svOperDataset, svProfile, svStandard, svOperChain; not supporting operatesOn from SV_ServiceIdentification, can only document the full service not it and its resource, reference it via operatedDataset or coupledResource -->
+<!-- not currently editing or translating taxonomy (taxonKeys) elements; just placeholders -->
+<!ENTITY % BrowGraph '(bgFileName, bgFileDesc?, bgFileType?, bgConsts*, bgLinkage*)'> <!-- ISO 19115-1 adds bgConsts, bgLinkage -->
+<!ENTITY % Resol '(equScale*, scaleDist*, verticalDist*, angularDist*, levelOfDetail*)'> <!-- ISO 19115-1 adds the last three options to this Union class; can only use one in one instance of the class -->
+<!ENTITY % ResolTransition '(scaleDist*, verticalDist*, angularDist*, levelOfDetail*)'> <!-- ISO 19115-1 MD_Resolution but without equScale because paired with srcScale -->
+<!ENTITY % RepFract '(rfDenom)'>
+<!ENTITY % Usage '(specUsage, usageDate?, usageDateGml?, usageDateTime*, usrDetLim?, usrCntInfo*, usrResponse*, additionalDoc*, usrIssues?)'> <!-- ISO 19115-1 adds usrResponse, additionalDoc, usrIssues; usrCntInfo 0 to many; usageDate data type changed from DateTime to TM_Primitive - first dateTime instant in usageDate, with GML properties stored in usageDateGml, add usageDateTime for additional time instant or time period values -->
+<!ENTITY % Keywords '(keyword+, thesaName?, thesaLang?, keywordClass?)'> <!-- ISO 19115-1 adds keywordClass -->
+<!ENTITY % KeywordClass '(className, conceptId?, ontology)'> <!-- from ISO 19115-1 -->
+<!ENTITY % AggregateInfo '(aggrDSName?, aggrDSIdent?, assocType, initType?, metadataRef?)'> <!-- ISO 19115-1 adds metadataRef -->
+<!-- Constraint Entities -->
+<!ENTITY % ConstsTypes '(Consts | LegConsts | SecConsts)'>
+<!ENTITY % Consts '(useLimit*, applicationScope?, constsGraphic*, referenceDoc*, releasability?, responsibleParty*)'> <!-- ISO 19115-1 adds applicationScope, constsGraphic, referenceDoc, releasability, responsibleParty -->
+<!ENTITY % Releasability '(addressee*, statement?, disseminationConsts*)'> <!-- from ISO 19115-1 -->
+<!ENTITY % LegConsts '(useLimit*, accessConsts*, useConsts*, othConsts*, applicationScope?, constsGraphic*, referenceDoc*, releasability?, responsibleParty*, inspirePublicAccessLimits, inspireAccessUseConditions)'> <!-- ISO 19115-1 adds applicationScope, constsGraphic, referenceDoc, releasability, responsibleParty -->
+<!-- INSPIRE 2.0.1 adds inspirePublicAccessLimits, inspireAccessUseConditions - export to individual legal constraints sections separate from general legal constraints -->
+<!ENTITY % SecConsts '(useLimit*, class, userNote?, classSys?, handDesc?, applicationScope?, constsGraphic*, referenceDoc*, releasability?, responsibleParty*)'> <!-- ISO 19115-1 adds applicationScope, constsGraphic, referenceDoc, releasability, responsibleParty -->
+<!-- Data Quality Entities -->
+<!ENTITY % DataQual '(dqScope, report*, dataLineage?, standaloneReport?)'> <!-- from ISO 19115-1 many instances of data quality and lineage are possible, but ArcGIS metadata only allows one of each; 19157-2 adds standaloneReport -->
+<!ENTITY % DQScope '(scpLvl, scpExt?, scpLvlDesc*)'>
+<!ENTITY % DQScopeTransition '(scpLvl, scpLvlDesc*)'>
+<!ENTITY % Lineage '(statement?, prcStep*, dataSource*, infoScope?, additionalDoc*, lePrcStep*, leSource*)'> <!-- ISO 19115-1 adds infoScope, additionalDoc -->
+<!-- not currently editing or translating ISO 19115-2 image extension (lePrcStep, leSource) elements; just placeholders -->
+<!ENTITY % PrcessStep '(stepDesc, stepRat?, stepDateTm?, stepDateTmGml?, stepDateTimePeriod?, stepProc*, stepSrc*, referenceDoc*, infoScope?)'> <!-- ISO 19115-1 adds referenceDoc, infoScope; stepDateTm data type changed from DateTime to TM_Primitive - dateTime instant stored in stepDateTm, with GML properties stored in stepDateTmGml, add stepDateTimePeriod for optional time period values, since stepDateTime can only occur once -->
+<!ENTITY % Source '(srcDesc?, srcMedName?, srcScale?, srcResol?, srcRefSys?, srcRefSysType?, srcCitatn?, srcExt*, srcStep*, srcMetadata*, lvlScope?)'> <!-- ISO 19115-1 adds srcMetadata, lvlScope, srcResol, srcRefSysType to capture code within reference system identification -->
+<!-- may be 1-2 instances of measResult element in DQ_Element_Type objects; can only say 1 or more in DTD, not limit the number to a max of 2 -->
+<!ENTITY % DQElement '(reportDateTime, measName*, measId?, measDesc?, evalMethType?, evalMethDesc?, evalProc?, evalReferenceDoc*, measDateTm*, inspectionType?, sampleInspection?, indirectInfo?, measResult*, derivedElement*, relatedElement*, standaloneQualityReportDetails?)'> <!-- ISO 19157-2 adds evalReferenceDoc, inspectionType (identifies DQ_EvaluationMethod subclass, if appropriate), sampleInspection (only when inspectionType is DQSampleBasedInspection), indirectInfo (only when type inspectionType is DQIndirectEvaluation), derivedElement, standaloneQualityReportDetails; relatedElement for metaquality subclasses only (DQ_Confidence, DQ_Representativity, DQ_Homogeneity); need measure result to be optional to support FGDC, where logical consistency doesn't have a measure, only a description -->
+<!-- ISO 19157 XML schemas add dqc:dateTime in DQ_Element to abstract class, add reportDateTime for this -->
+<!-- standard implies a metaquality report can reference another existing DQ_Element and not list out the entire contents of the class, but no way to do this in practice, and schema allows this element to include all subclasses including other metaquality subclasses, so we need to allow that content -->
+<!ENTITY % ResultTypes '(ConResult | QuanResult | CoverageResult | DescriptiveResult)'> <!-- ISO 19157-2 adds CoverageResult, DescriptiveResult -->
+<!-- not currently editing or translating ISO 19115-2 image extension (QeCovResult) elements; just placeholders -->
+<!ENTITY % ConResult '(resultDateTime?, resultScope?, conSpec, conExpl?, conPass)'> <!-- ISO 19157-2 adds resultDateTime, resultScope -->
+<!ENTITY % QuanResult '(resultDateTime?, resultScope?, quanValType?, quanValUnit?, errStat?, quanVal+)'> <!-- ISO 19157-2 adds resultDateTime, resultScope, removes errStat -->
+<!ENTITY % DescriptiveResult '(resultDateTime?, resultScope?, statement)'> <!-- from ISO 19157-2 -->
+<!ENTITY % CoverageResult '(resultDateTime?, resultScope?, spatRpType, spatRepInfo, contInfo, resultFile?, resultFormat?)'> <!-- from 19157-2 Amd1; omitting resultFormat since it is required in resultFile ###importing resultFormat anyway### -->
+<!-- Maintenance Entities -->
+<!ENTITY % MaintInfo '(maintFreq?, dateNext?, maintDate*, usrDefFreq?, maintScp*, upScpDesc*, maintScpExt*, maintNote*, maintCont*)'> <!-- ISO 19115-1 adds maintDate, maintScpExt -->
+<!ENTITY % ScpDesc '(attribSet?, featSet?, featIntSet?, attribIntSet?, datasetSet?, other?)'>
+<!-- Spatial Representation Entities -->
+<!ENTITY % SpatRepTypes '(GridSpatRep | Georect | Georef | VectSpatRep | Indref | MiGeorect | MiGeoref)'> 
+<!-- not currently editing or translating ISO 19115-2 image extension (MiGeorect, MiGeoref) elements; just placeholders -->
+<!-- ArcGIS 10 synchronization provides full Georect content based on the ArcGIS model for handling rasters. Previous releases synchronized properties to GridSpatRep; Georect will be preferred for translation of synchronized content. -->
+<!ENTITY % GridSpatRep '(numDims, axisDimension*, cellGeo, tranParaAv, infoScope?)'> <!-- ISO 19115-1 amendment adds infoScope -->
+<!ENTITY % Georect '(numDims, axisDimension*, cellGeo, tranParaAv, chkPtAv, chkPtDesc?, cornerPts*, centerPt?, ptInPixel, transDimDesc?, transDimMap*, infoScope?)'> <!-- transDimMap can occur 0 to 2 times, ISO 19115-1 specifies cornerPts should occur 2 or 4 times; ISO 19115-1 amendment adds infoScope -->
+<!ENTITY % Georef '(numDims, axisDimension*, cellGeo, tranParaAv, ctrlPtAv, orieParaAv, orieParaDs?, georefPars, paraCit*, infoScope?)'> <!-- ISO 19115-1 amendment adds infoScope --> 
+<!ENTITY % VectSpatRep '(topLvl?, geometObjs*, infoScope)'> <!-- ISO 19115-1 amendment adds infoScope -->
+<!ENTITY % Dimension '(dimSize, dimResol?, dimTitle?, dimDescription?)'> <!-- ISO 19115-1 adds dimTitle, dimDescription -->
+<!ENTITY % GeometObjs '(geoObjTyp, geoObjCnt?)'>
+<!-- Reference System Entities -->
+<!-- MD_ReferenceSystem UML has note to refer to ISO 19111 when coordinate reference not given through identifier; how would that work? GML SC_CRS instructions impossible to figure out RS_ReferenceSystem is abstract only, no ability to use that class -->
+<!ENTITY % RefSystemTypes '(RefSystem)'>
+<!ENTITY % RefSystem '(refSysID?, refSysType?)'>
+<!ATTLIST RefSystem
+	dimension (horizontal | vertical | temporal) #IMPLIED
+> <!-- ISO 19115-1 adds reference system types via a codelist -->
+<!ENTITY % MdIdent '(identAuth?, identCode, idCodeSpace?, idVersion?, idDescription?)'> <!-- ISO 19115-1 adds description, makes MD_Identifier the same as RS_Identifier -->
+<!ENTITY % MdIdentTransition '(identAuth?, idCodeSpace?, idVersion?, idDescription?)'> <!-- ISO 19115-1 MD_Identifier but without identCode because paired with mdFileID -->
+<!ENTITY % RS_Identifier '(identAuth?, identCode, idCodeSpace?, idVersion?, idDescription?)'> <!-- ISO 19115-1 adds idDescription -->
+<!-- Content Entities -->
+<!ENTITY % ContInfoTypes '(CovDesc | ImgDesc | FetCatDesc | FeatCatalog | MiCovDesc | MiImgDesc)'> <!-- ISO 19115-1 adds FeatCatalog - feature catalog info stored directly in the metadata vs referenced by FetCatDesc -->
+<!-- not currently editing or translating ISO 19115-2 image extension (MiCovDesc, MiImgDesc) elements; just placeholders -->
+<!ENTITY % FetCatDesc '(compCode?, catLang*, incWithDS?, catFetTyps*, catCitation+)'>
+<!ENTITY % FeatureCatalogue '(producer?, featCatId?, definitionSource*, featureType+)'> <!-- from ISO 19110; did not include from ISO 19139 CT_Catalogue base class elements that do not apply in the context in which this feature class is being used: name (the resource name), scope (the dataset or service being described), fieldOfApplication (the theme keywords of the resource), version number and version date (the edition of the resource or edition or metadata/synchronization date), locale (metadata in ArcGIS can only be provided in one language and locale of metadata is already defined), subCatalog (there will only be the one); from FC_FeatureCatalogue: producer - should be able to reference another contact or optionally specify a separate contact for this info but keeping this in as optional to be completed from metadata contact if not provided, functionalLanguage (feature operations are managed by the database and the application, are not documented here) -->
+<!-- NOAA transformation from eainfo to 19110: catalog name to be populated from resource citation title; scope, version, and version date are all required, set to nilReason unknown (could be set to date of the data); language set to US english; characterSet set to UTF-8; producer set to metadata contact; omits feature catalog identifier and other optional relationships;  -->
+<!ENTITY % DefinitionSource '(srcCitatn)'> <!-- from ISO 19110 -->
+<!ENTITY % DefinitionReference '(sourceIdCode?, definitionSource)'> <!-- from ISO 19110; not including translation for the sourceIdentifier, need reference to alternate metadata document with the entire thing in another language -->
+<!ENTITY % FeatType '(definitionRef?, featTypeCode?, aliases*, featureAttribute*)'> <!-- from ISO 19110; from FC_FeatureType omit isAbstract (always an instance document, not an abstract class), featureCatalogue (a reference back to this same info, by node ID in uuidref or by nilReason), designation because unclear what the intention is for this element, inheritsFrom, inheritsTo, constrainedBy; support full citation vs name only, code, aliases -->
+<!-- NOAA transformation from eainfo to 19110: one feature type for each detailed element; featTypeName populated from enttypl; definition populated from enttypd; NO translation of enttypds to definitionSource; static ID specified on gfc:FC_FeatureCatalogue and referenced by uuidref on featureCatalog element, omits: code, aliases, designation and all other properties/relationships on this class except featureAttribute -->
+<!ENTITY % FeatureAttribute '(definitionRef?, attributeCode?, featValueUnit?)'> <!-- from ISO 19110; not including cardinality because there will only be one instance of an attribute in a feature class, can add the default value on export; designation because unclear what the intention is for this element; populate feature value type from synchronized data type content, support full citation vs name only -->
+<!-- NOAA transformation from eainfo to 19110: one feature attribute for each attr element; memberName populated from attrlabl; definition populated from attrdef; cardinality set to nilReason unknown; definitionRef set from attrdefs with mandatory citation elements set to nilReason unknown and value of attrdefs placed in citedRespPary organization name; for attrdomv/rdom, specifies constrainedBy/FC_Constraint/description by concatenating info, e.g. 'Range Domain Min: ' + rdommin (if available) + 'Range Domain Max:' + rdommax (if available) + 'Smallest unit increment:' + attrmres (if available); valueMeasurementUnit populated from rdom/attrunit if available; listedValue label populated from edomv OR codesetn BUT this is wrong, definition populated from edomvd, definition reference source from edomvds OR codesets with value in organization name and other mandatory citation elements nilReason unknown; omits: code, designation, and all other properties/relationships -->
+
+<!-- ArcGIS 10 synchronization provides ImgDesc content for rasters. -->
+<!ENTITY % CovDesc '(attDesc, contentTyp+, covDim*, prcTypCde?)'> <!-- ISO 19115-1 adds prcTypCde, multiple content types allowed -->
+<!ENTITY % ImgDesc '(attDesc, contentTyp+, covDim*, illElevAng?, illAziAng?, imagCond?, imagQuCode?, cloudCovPer?, prcTypCde?, cmpGenQuan?, trianInd?, radCalDatAv?, camCalInAv?, filmDistInAv?, lensDistInAv?)'>
+<!ENTITY % RangeDimTypes '(RangeDim | Sample | Band | MiBand)'> <!-- ISO 19115-1 adds Sample -->
+<!-- not currently editing or translating ISO 19115-2 image extension (MiBand) elements; just placeholders -->
+<!-- ArcGIS 10 synchronization provides Band content for rasters. -->
+<!ENTITY % RangeDim '(seqID?, dimDescrp?, dimName*)'> <!-- ISO 19115-1 adds name -->
+<!ENTITY % Sample '(seqID?, dimDescrp?, dimName*, maxVal?, minVal?, valUnit?, bitsPerVal?, sclFac?, offset?, meanVal?, stdDeviation?, numberOfValues?, otherPropertyType?, otherProperty?, rangeElementDesc*)'> <!-- ISO 19115-1 adds name, meanVal, stdDeviation, numberOfValues, otherPropertyType, otherProperty, ISO 19115-1 Amd.1 adds rangeElementDesc -->
+<!ENTITY % Band '(seqID?, dimDescrp?, dimName*, maxVal?, minVal?, valUnit?, pkResp?, bitsPerVal?, toneGrad?, sclFac?, offset?, meanVal?, stdDeviation?, numberOfValues?, otherPropertyType?, otherProperty?, boundMaxVal?, boundMinVal?, boundValUnit?)'> <!-- ISO 19115-1 adds name, meanVal, stdDeviation, numberOfValues, otherPropertyType, otherProperty, boundMaxVal, boundMinVal, boundValUnit -->
+<!ENTITY % MiRangeElementDescription '(rangeEleName, rangeEleDef, rangeElement+)'> <!-- from ISO 19115-2 MI_RangeElementDescription -->
+<!-- Portrayal Catalogue Entity -->
+<!ENTITY % PortCatRef '(portCatCit+)'>
+<!-- Distribution Entities -->
+<!ENTITY % Distrib '(distDescription?, distFormat*, distributor*, distTranOps*)'> <!-- ISO 19115-1 adds distDescription -->
+<!ENTITY % Format '(formatName, formatVer?, formatAmdNum?, formatSpec?, fmtSpecCitation?, fileDecmTech?, formatInfo?, formatTech?, medium*, formatDist*)'> <!-- ISO 19115-1 adds fmtSpecCitation, medium -->
+<!ENTITY % Distributor '(distorCont, distorOrdPrc*, distorFormat*, distorTran*)'>
+<!ENTITY % StanOrdProc '(resFees?, planAvDtTm?, ordInstr?, ordTurn?, planAvTmPd?, ordOptionsType?, ordOptions?)'> <!-- ISO 19115-1 adds ordOptionsType, ordOptions -->
+<!ENTITY % DigTranOps '(unitsODist?, transSize?, onLineSrc*, offLineMed*, transFreq?, distFormat*)'> <!-- ISO 19115-1 adds transFreq, distFormat, changes cardinality of offline medium to many -->
+<!ENTITY % Medium '(medName?, medCitation?, medDensity?, medDenUnits?, medVol?, medFormat*, medNote?, medId?)'> <!-- ISO 19115-1 adds medCitation, medId -->
+<!-- Application Schema Entities -->
+<!ENTITY % AppSchInfo '(asName, asSchLang, asCstLang, asAscii?, asGraFile?, graFileOnline?, asSwDevFile?, asSwDevFiFt?, swFileOnline?)'> <!-- ISO 19115-1 adds graFileOnline, swFileOnline -->
+<!-- Extent Entities -->
+<!ENTITY % Extent '(exDesc?, geoEle*, tempEle*, vertEle*)'>
+<!ENTITY % GeoExtentTypes '(BoundPoly | GeoBndBox | GeoDesc )'>
+<!ENTITY % BoundPoly '(exTypeCode?, polygon+)'>
+<!ENTITY % GeoBndBox '(exTypeCode?, westBL, eastBL, southBL, northBL)'>
+<!ENTITY % GeoDesc '(exTypeCode?, geoId)'>
+<!ENTITY % TempExtentTypes '(TempExtent | SpatTempEx)'>
+<!ENTITY % TempExtent '(exTemp)'>
+<!ENTITY % SpatTempEx '(exTemp, exSpat+, exVert?)'> <!-- ISO 19115-1 adds exVert -->
+<!ENTITY % VertExtent '(vertMinVal, vertMaxVal)'> <!-- vertCRS not used. GML SC_CRS classes are impossible to use. Record vertical spatial reference details in the main reference system information section following the same rules as for other reference systems. -->
+<!-- Citation Entities -->
+<!ENTITY % Citation '(resTitle, resAltTitle*, date?, resEd?, resEdDate?, resEdTime?, citId*, citRespParty*, presForm*, datasetSeries?, otherCitDet*, collTitle?, isbn?, issn?, citOnlineRes*, graphic*)'>
+<!ENTITY % CitationTransition '(resAltTitle*, date?, resEd?, resEdDate?, resEdTime?, citId*, citRespParty*, presForm*, datasetSeries?, otherCitDet*, collTitle?, isbn?, issn?, citOnlineRes*, graphic*)'> <!-- ISO 19115-1 CI_Citation without resTitle because paired with another element -->
+<!ENTITY % ParentCitTransition '(resTitle, resAltTitle*, date?, resEd?, resEdDate?, resEdTime?, citRespParty*, presForm*, datasetSeries?, otherCitDet*, collTitle?, isbn?, issn?, citOnlineRes*, graphic*)'> <!-- ISO 19115-1 CI_Citation for parentMdCit without citation identifier because paired with mdParentID -->
+<!ENTITY % FmtCitationTransition '(date?, resEdDate?, resEdTime?, citId*, citRespParty*, presForm*, datasetSeries?, otherCitDet*, collTitle?, isbn?, issn?, citOnlineRes*, graphic*)'> <!-- ISO 19115-1 CI_Citation for MD_Format specification but without resTitle, resAltTitle and resEd because paired with formatName, formatSpec and formatVer -->
+<!ENTITY % RespParty '(rpIndName?, rpOrgName?, rpPosName?, rpCntInfo?, role, partyExt*, partyId*, logo*, extraCntInfo*, extraOrg*, extraIndividual*)'> <!-- ISO 19115-1 adds partyExt, partyId, logo, extraCntInfo, extraOrg, extraIndividual -->
+<!ENTITY % Organization '(orgName?, contactInfo*, partyId*, logo*, individual*)'> <!-- from ISO 19115-1 -->
+<!ENTITY % Individual '(indName?, posName?, contactInfo*, partyId*)'> <!-- from ISO 19115-1 -->
+<!ENTITY % Contact '(cntPhone?, cntAddress?, extraAddress*, cntOnlineRes*, cntHours*, cntInstr?, contactType?)'> <!-- ISO 19115-1 adds extraAddress, contactType -->
+<!ENTITY % Telephone '(voiceNum*, faxNum*, smsNum*)'> <!-- ISO 19115-1 adds smsNum -->
+<!ENTITY % Address '(delPoint*, city?, adminArea?, postCode?, country?, eMailAdd*)'>
+<!ENTITY % OnlineRes '(linkage, protocol?, appProfile?, orName?, orDesc?, orFunct?, protocolRequest?)'> <!-- ISO 19115-1 adds protocolRequest -->
+<!ENTITY % OnlineResTransition '(protocol?, appProfile?, orDesc?, orFunct?, protocolRequest?)'> <!-- ISO 19115-1 CI_OnlineRes but without linkage or orName because paired with elements in Application Schema that were formerly Binary type with @src attribute; adds protocolRequest -->
+<!ENTITY % URL '(#PCDATA)'> <!-- gmd:URL contains simple content of type xs:anyURI -->
+<!ENTITY % URI '(#PCDATA)'> <!-- needed for ISO 19115-1 keyword concept -->
+<!ENTITY % DateRef '(createDate | pubDate | reviseDate | notavailDate | inforceDate | adoptDate | deprecDate | supersDate | expiryDate | lastUpdateDate | lastRevisionDate | nextUpdateDate | validityBeginsDate | validityExpiresDate | releasedDate | distributionDate)+'>
+<!-- ISO 19115-1 adds expiryDate, lastUpdateDate, lastRevisionDate, nextUpdateDate, validityBeginsDate, validityExpiresDate, releasedDate, distributionDate -->
+<!ENTITY % MdDateRefTransition '(createDate | pubDate | notavailDate | inforceDate | adoptDate | deprecDate | supersDate | expiryDate | lastUpdateDate | lastRevisionDate | nextUpdateDate | validityBeginsDate | validityExpiresDate | releasedDate | distributionDate)+'> <!-- ISO 19115-1 CI_Date but without reviseDate because paired with mdDateSt that is either created (first time only) and later the revised date -->
+<!ENTITY % MaintDateTransition '(createDate | pubDate | reviseDate | notavailDate | inforceDate | adoptDate | deprecDate | supersDate | expiryDate | lastUpdateDate | lastRevisionDate | validityBeginsDate | validityExpiresDate | releasedDate | distributionDate)+'> <!-- ISO 19115-1 CI_Date but without nextUpdateDate because paired with dateNext -->
+<!ENTITY % DatasetSeries '(seriesName?, issId?, artPage?)'>
+
+<!-- Service Identification  Entities -->
+<!ENTITY % SvOperMD '(svOpName, svDCP+, svDesc?, svInvocName?, svParams*, svConPt+, svOper*)'>
+<!ENTITY % SvOperTransition '(svDCP+, svDesc?, svInvocName?, svParams*, svConPt+, svOper*)'> <!-- ISO 19115-1 used together with svOpName in SvCouplRes -->
+<!ENTITY % SvParam '(svParName, svParDir, svDesc?, svParOpt, svRepeat, svValType)'>
+<!ENTITY % SvCouplRes '(svOpName, svResCitId?, svResourceRef*, svOperDefinition?)'> <!-- ISO 19115-1 changes data type for resource identifier from CharacterSet to Scoped name to capture identifier and its codespace; adds svResourceRef to reference resource citations which are provided in addition to svResCitId; adds svOperDefinition for fully defining an operation using SVOperTransition to support the detailed info coupled with the existing svOpName that captures the operation name; not supporting import of full data identification of the related resource via resource -->
+<!ENTITY % SvOperChainMD '(svChainName, svChainDesc?, svOperOrdered+)'> <!-- from ISO 19115-1 -->
+<!-- OGC\20060504\srv\serviceMetadata.xsd includes xs:element ref="gco:ScopedName" minOccurs="0" maxOccurs="1" in SV_CoupledResource, which is not present in 19119 document text or UML diagrams; not including it here -->
+
+<!ENTITY % MxSuppFile '(mxFileName, mxFileDesc, mxFileType)'> <!-- from ISO 119115-1 -->
+<!ENTITY % MxDataFile '(mxFileName, mxFileDesc, mxFileType, mxFeatType*, mxFileFormat)'> <!-- from ISO 19115-1 -->
+
+<!-- PART 6 - ELEMENT DECLARATIONS -->
+<!--Metadata Entity Set Elements-->
+<!ELEMENT metadata %Metadata;>
+<!ATTLIST metadata
+	xml:lang CDATA #IMPLIED
+> 
+<!ELEMENT mdFileID (#PCDATA)>
+<!ELEMENT metadataID %MdIdentTransition;> <!-- MD_Identifier but without identCode because paired with mdFileID -->
+<!ELEMENT mdLang (languageCode, countryCode)> <!-- added countryCode for NAP -->
+<!ELEMENT mdChar (CharSetCd)>
+<!-- MD_CharacterSetCode -->
+<!ELEMENT CharSetCd EMPTY>
+<!ATTLIST CharSetCd
+	Sync CDATA #IMPLIED
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009 | 010 | 011 | 012 | 013 | 014 | 015 | 016 | 018 | 019 | 020 | 021 | 022 | 023 | 024 | 025 | 026 | 027 | 028 | 029) #REQUIRED><!-- synchronized in mdChar only -->
+<!-- 001-029 (ucs2 | ucs4 | utf7 | utf8 | utf16 | 8859part1 | 8859part2 | 8859part3 | 8859part4 | 8859part5 | 8859part6 | 8859part7 | 8859part8 | 8859part9 | 8859part10 | 8859part11 | 8859part13 | 8859part14 | 8859part15 | 8859part16 | jis | shiftJIS | eucJP | usAscii | ebcdic | eucKR | big5 | GB2312) from ISO 19115 -->
+
+<!ELEMENT mdParentID (#PCDATA)>
+<!ELEMENT parentMdCit %ParentCitTransition;> <!-- ISO 19115-1 CI_Citation for parentMdCit but without citation identifier because paired with mdParentID -->
+<!ELEMENT mdHrLv (ScopeCd)>
+<!-- MX_ScopeCode: ISO 19139 extends MD_ScopeCode as MX_ScopeCode -->
+<!-- using MX_ScopeCode in place of MD_ScopeCode -->
+<!ELEMENT ScopeCd EMPTY>
+<!ATTLIST ScopeCd
+	Sync CDATA #IMPLIED
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009 | 010 | 011 | 012 | 013 | 014 | 015 | 016 | 017 | 018 | 019 | 020 | 021 | 022 | 023 | 024 | 025 | 026 | 027 | 028 | 029 | 030 | 031 | 032 | 033) #REQUIRED><!-- only synchronized in mdHrLv -->
+<!-- 001-016 (attribute | attributeType | collectionHardware | collectionSession | dataset | series | nonGeographicDataset | dimensionGroup | feature | featureType | propertyType | fieldSession | software | service | model | tile) from ISO 19115 -->
+<!-- 017 (initiative) from ISO 19139 + ISO 19115-1 -->
+<!-- 018-024 (initiative | stereomate | sensor | platformSeries | sensorSeries | productionSeries | transferAggregate | otherAggregate) from ISO 19139 -->
+<!-- 025-033 (metadata | sample | document | repository | aggregate | product | collection | coverage | application) from ISO 19115-1 -->
+
+<!ELEMENT mdHrLvName (#PCDATA)>
+<!ATTLIST mdHrLvName
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT mdContact %RespParty;>
+<!ELEMENT mdDateSt %Date;> <!-- will only store value in yyyyMMdd for 9.3.1 compatibility; in 19139 can be gco:Date or gco:DateTime -->
+<!ATTLIST mdDateSt
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT mdTimeSt %Time;> <!-- will only store time to support ISO 19139/ISO 19115-1 gco:DateTime -->
+<!ATTLIST mdTimeSt
+	Sync CDATA #IMPLIED
+> <!-- not yet synchronized; improvement to come later -->
+<!ELEMENT dateInfo %MdDateRefTransition;> <!-- ISO 19115-1 CI_Date but without reviseDate because paired with mdDateSt that is initially the creation date, and later the revised date; FGDC specifies it as date created or revised, and this is what we do; ISO 19115 defines it as the creation date; ISO 19115-1 requires a creation date, can get this from the Esri\CreaDate element, if present -->
+<!ELEMENT dataSetURI (#PCDATA)>
+<!ELEMENT dataSetFn (OnFunctCd)> <!-- added dataSetFn for NAP, to combine with dataSetURI -->
+<!ELEMENT altMdReference %Citation;> <!-- ISO 19115-1 --> 
+<!ELEMENT mdLinkage %OnlineRes;> <!-- ISO 19115-1 --> 
+<!ELEMENT spatRepInfo %SpatRepTypes;>
+<!ELEMENT refSysInfo %RefSystemTypes;>
+<!ELEMENT dataIdInfo %DataIdent;>
+<!ELEMENT contInfo %ContInfoTypes;>
+<!ELEMENT distInfo %Distrib;>
+<!ELEMENT dqInfo %DataQual;>
+<!ELEMENT porCatInfo %PortCatRef;>
+<!ELEMENT mdConst %ConstsTypes;>
+<!ELEMENT appSchInfo %AppSchInfo;>
+<!ELEMENT mdMaint %MaintInfo;>
+<!--Data Identification Elements-->
+<!ELEMENT idCitation %Citation;>
+<!ELEMENT idAbs (#PCDATA)>
+<!ELEMENT idPurp (#PCDATA)>
+<!ELEMENT idCredit (#PCDATA)>
+<!ELEMENT idStatus (ProgCd)>
+<!-- MD_ProgressCode -->
+<!ELEMENT ProgCd EMPTY>
+<!ATTLIST ProgCd
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009 | 010 | 011 | 012 | 013 | 014 | 015 | 016 | 017 | 018) #REQUIRED>
+<!-- 001-007 (completed | historicalArchive | obsolete | onGoing | planned | required | underDevelopment) from ISO 19115 -->
+<!-- 008 (proposed) from NAP and ISO 19115-1 -->
+<!-- 009-018 (final | pending | retired | superseded | tentative | valid | accepted | notAccepted | withdrawn | deprecated) from ISO 19115-1 -->
+<!ELEMENT idPoC %RespParty;>
+<!ELEMENT resConst %ConstsTypes;>
+<!ELEMENT aggrInfo %AggregateInfo;>
+<!ELEMENT dsFormat %Format;>
+<!ELEMENT idSpecUse %Usage;>
+<!ELEMENT resMaint %MaintInfo;>
+<!ELEMENT discKeys %Keywords;>
+<!ELEMENT otherKeys %Keywords;>
+<!ELEMENT placeKeys %Keywords;>
+<!ELEMENT searchKeys (keyword+)> <!-- must not have a thesaurus -->
+<!ELEMENT stratKeys %Keywords;>
+<!ELEMENT tempKeys %Keywords;>
+<!ELEMENT themeKeys %Keywords;>
+<!ELEMENT productKeys %Keywords;> <!-- from NAP -->
+<!ELEMENT subTopicCatKeys %Keywords;> <!-- from NAP -->
+<!ELEMENT dataCentreKeys %Keywords;> <!-- from ISO 19115-1 -->
+<!ELEMENT featureTypeKeys %Keywords;> <!-- from ISO 19115-1 -->
+<!ELEMENT instrumentKeys %Keywords;> <!-- from ISO 19115-1 -->
+<!ELEMENT platformKeys %Keywords;> <!-- from ISO 19115-1 -->
+<!ELEMENT processKeys %Keywords;> <!-- from ISO 19115-1 -->
+<!ELEMENT projectKeys %Keywords;> <!-- from ISO 19115-1 -->
+<!ELEMENT serviceKeys %Keywords;> <!-- from ISO 19115-1 -->
+<!-- MD_KeywordTypeCode -->
+<!-- ArcGIS metadata (discKeys = discipline | placeKeys = place | stratKeys = stratum | tempKeys = temporal | themeKeys = theme) from ISO 19115 -->
+<!-- ESRI-ISO (001 = discipline | 002 = place | 003 = stratum | 004 = temporal | 005 = theme) from ISO 19115 -->
+<!-- otherKeys = keyword type is optional in ISO, use this one if non-typed keywords are imported -->
+<!-- searchKeys = like otherKeys but more restrictive because no thesaurus allowed; supports item description tags indexed for ArcGIS Desktop search -->
+<!-- ArcGIS metadata (productKeys = product | subTopicCatKeys = subTopicCategory) from NAP and ISO 19115-1 -->
+<!-- ArcGIS metadata (dataCentreKeys = dataCentre | featureTypeKeys = featureType | instrumentKeys = instrument | platformKeys = platform | processKeys = process | projectKeys = project | serviceKeys = service) from ISO 19115-1 -->
+<!ELEMENT graphOver %BrowGraph;>
+<!ELEMENT spatRpType (SpatRepTypCd)>
+<!-- MD_SpatialRepresentationTypeCode -->
+<!ELEMENT SpatRepTypCd EMPTY>
+<!ATTLIST SpatRepTypCd
+	Sync CDATA #IMPLIED
+	value (001 | 002 | 003 | 004 | 005 | 006) #REQUIRED>
+<!-- 001-006 (vector | grid | textTable | tin | stereoModel | video) from ISO 19115 -->
+<!ELEMENT dataScale %Resol;>
+<!ELEMENT temporalRes (duration)> <!-- from ISO 19115-1; make sure this is the same duration we are already using -->
+<!ELEMENT dataLang (languageCode, countryCode?)>  <!-- added countryCode for NAP -->
+<!ELEMENT dataChar (CharSetCd)>
+<!ELEMENT tpCat (TopicCatCd)>
+<!-- MD_TopicCategoryCode -->
+<!ELEMENT TopicCatCd EMPTY>
+<!ATTLIST TopicCatCd
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009 | 010 | 011 | 012 | 013 | 014 | 015 | 016 | 017 | 018 | 019 | 020 | 021) #REQUIRED
+>
+<!-- 001-019 (farming | biota | boundaries | climatologyMeteorologyAtmosphere | economy | elevation | environment | geoscientificInformation | health | imageryBaseMapsEarthCover | intelligenceMilitary | inlandWaters | location | oceans | planningCadastre | society | structure | transportation | utilitiesCommunication) from ISO 19115, an enumeration, not a codelist -->
+<!-- 020-021 (extraTerrestrial | disaster) from ISO 19115-1 -->
+<!ELEMENT envirDesc (#PCDATA)>
+<!ATTLIST envirDesc
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT dataExt %Extent;>
+<!ELEMENT processingLevel %MdIdent;> <!-- ISO 19115-1 -->
+<!ELEMENT suppInfo (#PCDATA)>
+<!ELEMENT bgFileName (#PCDATA)>
+<!ELEMENT bgFileDesc (#PCDATA)>
+<!ELEMENT bgFileType (#PCDATA)>
+<!ELEMENT bgConsts %ConstsTypes;> <!-- from ISO 19115-1 -->
+<!ELEMENT bgLinkage %OnlineRes;> <!-- from ISO 19115-1 -->
+<!-- ISO 19139 2007 includes extensions for the Web environment with specific examples of how these can be used particularly to improve the usefulness of ISO 19115 information, with specific reference to the MD_BrowseGraphic class. However, these extensions are not included in the ISO 19139 XML Schemas provided at http://www.isotc211.org/2005/gmd/ and newer schemas haven't been provided to guide in their use. FileName extends CharacterString and may optionally be used to provide both a readable file name and an absolute path/address to the file via a src element. Also, MimeFileType extends CharacterString and may optionally be used to provide a Mime-type expression such as image/jpeg instead of "JPEG"  -->
+<!-- NAP has a File Format codelist identifying well-known file types, but it doesn't give clear guidance as to how this list should be used, e.g. suggests graphic overview file type only must be specified if it is not a file type included in this list, but not that you should pick the file type from the list. napMD_FileFormatCode: bil, bmp, bsq, bzip2, cdr, cgm, cover, csv, dbf, dgn, doc, dwg, dxf, e00, ecw, eps, ers, gdb, geotiff, gif, gml, grid, gzip, html, jpg, mdb, mif, pbm, pdf, png, ps, rtf, sdc, shp, sid, svg, tab, tar, tiff, txt, xhtml, xls, xml, xwd, zip, wpd-->
+<!ELEMENT rfDenom %Integer;>
+<!ELEMENT equScale %RepFract;>
+<!ELEMENT scaleDist (value)>
+<!ELEMENT value %Real;>
+<!ATTLIST value
+	uom CDATA #REQUIRED
+	Sync CDATA #IMPLIED
+><!-- only synchronized in dimResol under Georect -->
+<!ELEMENT verticalDist (value)> <!-- ISO 19115-1 -->
+<!--<!ATTLIST verticalDist
+	uom CDATA #REQUIRED
+>-->
+<!ELEMENT angularDist (value)> <!-- ISO 19115-1 -->
+<!ELEMENT levelOfDetail (#PCDATA)> <!-- ISO 19115-1 -->
+<!ELEMENT specUsage (#PCDATA)>
+<!ELEMENT usageDate %DateTime;> <!-- value stored as ISO 8601 dateTime; must be gco:DateTime in 19139 -->
+<!ELEMENT usageDateGml %TM_GML;> <!-- ISO 19115-1 changes usageDateTime data type from DateTime to TM_Primitive; usageDate can only occur once, and will contain the DateTime for the first TM_Instant value if one is provided, with this element containing the associated GML time properties, if provided -->
+<!ATTLIST usageDateGml
+	gmlID CDATA #REQUIRED
+> 
+<!ELEMENT usageDateTime %TM_Primitive;> <!-- ISO 19115-1 changes usageDateTime data type from DateTime to TM_Primitive; usageDate can only occur once and any subsequent TM_Instant or TM_Period values will be stored here -->
+<!ELEMENT usrDetLim (#PCDATA)>
+<!ELEMENT usrCntInfo %RespParty;>
+<!ELEMENT usrResponse (#PCDATA)> <!-- ISO 19115-1 -->
+<!ELEMENT additionalDoc %Citation;> <!-- ISO 19115-1 -->
+<!ELEMENT usrIssues %Citation;> <!-- ISO 19115-1 -->
+<!ELEMENT keyword (#PCDATA)>
+<!ELEMENT thesaName %Citation;>
+<!ATTLIST thesaName
+	uuidref CDATA #IMPLIED
+> <!-- may also reference external thesauri using xlink:simpleLink attributes, but currently not supported for editing or translation -->
+<!ELEMENT thesaLang (languageCode, countryCode?)>  <!-- from NAP -->
+<!ELEMENT keywordClass %KeywordClass;> <!-- from ISO 19115-1 -->
+<!ELEMENT className (#PCDATA)> <!-- from ISO 19115-1 -->
+<!ELEMENT conceptId %URI;> <!-- from ISO 19115-1 -->
+<!ELEMENT ontology %Citation;> <!-- from ISO 19115-1 -->
+<!ELEMENT aggrDSName %Citation;>
+<!ELEMENT aggrDSIdent %MdIdent;>
+<!ELEMENT assocType (AscTypeCd)>
+<!-- DS_AssociationTypeCode -->
+<!ELEMENT AscTypeCd EMPTY>
+<!ATTLIST AscTypeCd
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009 | 010) #REQUIRED>
+<!-- 001-005 (crossReference | largerWorkCitation | partOfSeamlessDatabase | source | stereoMate) from ISO 19115 -->
+<!-- 006 (isComposedOf) from NAP and ISO 19115-1 -->
+<!-- 007-010 (collectiveTitle | series | dependency | revisionOf) from ISO 19115-1 -->
+<!ELEMENT initType (InitTypCd)>
+<!-- DS_InitiativeTypeCode -->
+<!ELEMENT InitTypCd EMPTY>
+<!ATTLIST InitTypCd
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009 | 010 | 011 | 012 | 013 | 014 | 015) #REQUIRED>
+<!-- 001-015 (campaign | collection | exercise | experiment | investigation | mission | sensor | operation | platform | process | program | project | study | task | trial) from ISO 19115 -->
+<!ELEMENT metadataRef %Citation;> <!-- from ISO 19115-1 -->
+<!--Constraint Elements-->
+<!ELEMENT Consts %Consts;>
+<!ELEMENT LegConsts %LegConsts;>
+<!ELEMENT useLimit (#PCDATA)>
+<!ELEMENT applicationScope %DQScope;> <!-- from ISO 19115-1 -->
+<!ELEMENT constsGraphic %BrowGraph;> <!-- from ISO 19115-1 -->
+<!ELEMENT referenceDoc %Citation;> <!-- from ISO 19115-1 -->
+<!ELEMENT releasability %Releasability;> <!-- from ISO 19115-1 -->
+<!ELEMENT responsibleParty %RespParty;> <!-- from ISO 19115-1 -->
+<!ELEMENT addressee %RespParty;> <!-- from ISO 19115-1 -->
+<!ELEMENT disseminationConsts (RestrictCd)> <!-- from ISO 19115-1 -->
+<!ELEMENT accessConsts (RestrictCd)>
+<!ELEMENT useConsts (RestrictCd)>
+<!-- MD_RestrictionCode -->
+<!ELEMENT RestrictCd EMPTY>
+<!ATTLIST RestrictCd
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009 | 010 | 011 | 012 | 013 | 014 | 015 | 016 | 017) #REQUIRED>
+<!-- 001-008 (copyright | patent | patentPending | trademark | license | intellectualPropertyRights | restricted | otherRestrictions) from ISO 19115 -->
+<!-- 009-014 (licenseUnrestricted | licenseEndUser | licenseDistributor | privacy | statutory | confidential) from NAP and ISO 19115-1 -->
+<!-- 015 (sensitivity) from NAP = sensitiveButUnclassified from ISO 19115-1 -->
+<!-- 016-017 (unrestricted | in-confidence) from ISO 19115-1 -->
+<!ELEMENT othConsts (#PCDATA)>
+<!-- INSPIRE 2.0.1 LimitationsOnPublicAccess -->
+<!ELEMENT inspirePublicAccessLimits (PublicAccessCd)>
+<!ELEMENT PublicAccessCd EMPTY>
+<!ATTLIST PublicAccessCd
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009) #REQUIRED>
+<!-- 001-009 (noLimitations | sectionA | sectionB | sectionC | sectionD | sectionE | sectionF | sectionG | sectionH) from INSPIRE 2.0.1 -->
+<!-- INSPIRE 2.0.1 ConditionsApplyingToAccessAndUse -->
+<!ELEMENT inspireAccessUseConditions (ConditionsAccUseCd)>
+<!ELEMENT ConditionsAccUseCd EMPTY>
+<!ATTLIST ConditionsAccUseCd
+	value (001 | 002) #REQUIRED>
+<!-- 001-002 (noConditionsApply | conditionsUnknown) from INSPIRE 2.0.1 -->
+<!ELEMENT SecConsts %SecConsts;>
+<!ELEMENT class (ClasscationCd)>
+<!-- MD_ClassificationCode -->
+<!ELEMENT ClasscationCd EMPTY>
+<!ATTLIST ClasscationCd
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009) #REQUIRED>
+<!-- 001-005 (unclassified | restricted | confidential | secret | topSecret) from ISO 19115 -->
+<!-- 006 (sensitive) from NAP = sensitiveButUnclassified from ISO 19115-1 -->
+<!-- 007 (forOfficialUseOnly) from NAP and ISO 19115-1 -->
+<!-- 008-009 (protected | limitedDistribution) from ISO 19115-1 -->
+<!ELEMENT userNote (#PCDATA)>
+<!ELEMENT classSys (#PCDATA)>
+<!ELEMENT handDesc (#PCDATA)>
+<!--Data Quality Elements-->
+<!ELEMENT stepDesc (#PCDATA)>
+<!ELEMENT stepRat (#PCDATA)>
+<!ELEMENT stepDateTm %DateTime;> <!-- value stored as ISO 8601 dateTime; must be gco:DateTime in 19139 -->
+<!ATTLIST stepDateTm
+	date (unknown | inapplicable) #IMPLIED 
+	time (unknown) #IMPLIED 
+>
+<!ELEMENT stepDateTmGml %TM_GML;> <!-- ISO 19115-1 changes stepDateTime data type from DateTime to TM_Primitive; stepDateTime can only occur once, and will contain the DateTime for the TM_Instant value if one is provided, with this element containing the associated GML time properties, if provided -->
+<!ATTLIST stepDateTmGml
+	gmlID CDATA #REQUIRED
+> 
+<!ELEMENT stepDateTimePeriod %TM_Period;> <!-- ISO 19115-1 changes stepDateTime data type from DateTime to TM_Primitive; stepDateTm can only occur once and will contain the time instant, if provided, where this element will contain the time period, if provided -->
+<!ATTLIST stepDateTimePeriod
+	gmlID CDATA #IMPLIED
+>
+<!ELEMENT stepProc %RespParty;>
+<!ELEMENT stepSrc %Source;>
+<!ATTLIST stepSrc
+	type (used | produced) #IMPLIED 
+>
+<!ELEMENT srcDesc (#PCDATA)>
+<!ELEMENT srcMedName (MedNameCd)> <!-- from NAP, to combine with srcDesc -->
+<!ELEMENT srcScale %RepFract;>
+<!ELEMENT srcResol %ResolTransition;> <!-- from ISO 19115-1 -->
+<!ELEMENT srcRefSys %RS_Identifier;>
+<!ATTLIST srcRefSys
+	dimension (horizontal | vertical | temporal) #IMPLIED
+>
+<!ELEMENT srcRefSysType (RefSysTypeCd)> <!-- from ISO 19115-1 -->
+<!ELEMENT srcCitatn %Citation;>
+<!ELEMENT srcExt %Extent;>
+<!ELEMENT srcStep %PrcessStep;>
+<!ELEMENT srcMetadata %Citation;> <!-- from ISO 19115-1 -->
+<!ELEMENT lvlScope %DQScopeTransition;> <!-- from ISO 19115-1 -->
+<!ELEMENT statement (#PCDATA)>
+<!ELEMENT dataSource %Source;>
+<!ELEMENT prcStep %PrcessStep;>
+<!ELEMENT ConResult %ConResult;>
+<!ELEMENT conSpec %Citation;>
+<!ELEMENT conExpl (#PCDATA)>
+<!ELEMENT conPass %Boolean;>
+<!ELEMENT QuanResult %QuanResult;>
+<!ELEMENT quanValType %RecordType;>
+<!-- attributes not currently supported in ArcGIS
+<!ATTLIST quanValType
+	nilReason (inapplicable | missing | template | unknown | withheld) #IMPLIED
+	href CDATA #IMPLIED
+	title CDATA #IMPLIED
+> -->
+<!ELEMENT quanValUnit %UOM;>
+<!ELEMENT errStat (#PCDATA)>
+<!ELEMENT quanVal %Record;>
+<!-- attributes not currently supported in ArcGIS
+<!ATTLIST quanVal
+	nilReason (inapplicable | missing | template | unknown | withheld) #IMPLIED
+	uuidref CDATA #IMPLIED
+	href CDATA #IMPLIED
+	title CDATA #IMPLIED
+> -->
+<!ELEMENT resultDateTime %DateTime;> <!-- from ISO 19157-2 -->
+<!ELEMENT resultScope %DQScope;> <!-- from ISO 19157-2 -->
+<!ELEMENT DescriptiveResult %DescriptiveResult;> <!-- from ISO 19157-2 -->
+<!ELEMENT CoverageResult %CoverageResult;> <!-- from ISO 19157-2 -->
+<!ELEMENT resultFile %MxDataFile;> <!-- from ISO 19157-2 -->
+<!ELEMENT resultFormat %Format;> <!-- from ISO 19157-2 -->
+<!ELEMENT reportDateTime %DateTime;> <!-- from ISO 19157-2 --> 
+<!ELEMENT measName (#PCDATA)>
+<!ELEMENT measId %MdIdent;>
+<!ELEMENT measDesc (#PCDATA)>
+<!ELEMENT evalMethType (EvalMethTypeCd)>
+<!-- DQ_EvaluationMethodTypeCode -->
+<!ELEMENT EvalMethTypeCd EMPTY>
+<!ATTLIST EvalMethTypeCd
+	value (001 | 002 | 003) #REQUIRED>
+<!-- 001-003 (directInternal | directExternal | indirect) from ISO 19115 -->
+<!ELEMENT evalMethDesc (#PCDATA)>
+<!ELEMENT evalProc %Citation;>
+<!ELEMENT evalReferenceDoc %Citation;> <!-- from ISO 19157-2 -->
+<!ELEMENT measDateTm %DateTime;> <!-- value stored as ISO 8601 dateTime; must be gco:DateTime in 19139 -->
+<!ELEMENT measResult %ResultTypes;>
+<!ELEMENT inspectionType EMPTY> <!-- from ISO 19157-2 -->
+<!ATTLIST inspectionType
+	type (DQFullInspection | DQSampleBasedInspection | DQIndirectEvaluation | DQAggregationDerivation | DQEvaluationMethod) #REQUIRED
+><!-- DQFullInspection, DQSampleBasedInspection, DQIndirectEvaluation, DQAggregationDerivation from ISO 19157-2 -->
+<!ELEMENT sampleInspection (samplingScheme, lotDescription, samplingRatio)> <!-- from ISO 19157-2 --> 
+<!ELEMENT samplingScheme (#PCDATA)> <!-- from ISO 19157-2 -->
+<!ELEMENT lotDescription (#PCDATA)> <!-- from ISO 19157-2 -->
+<!ELEMENT samplingRatio (#PCDATA)> <!-- from ISO 19157-2 -->
+<!ELEMENT indirectInfo (deductiveSource)> <!-- from ISO 19157-2 -->
+<!ELEMENT deductiveSource (#PCDATA)> <!-- from ISO 19157-2 -->
+<!ELEMENT derivedElement %DQElement;> <!-- from ISO 19157-2 -->
+<!ATTLIST derivedElement
+	type (DQCompComm | DQCompOm | DQConcConsis | DQDomConsis | DQFormConsis | DQTopConsis | DQAbsExtPosAcc | DQGridDataPosAcc | DQRelIntPosAcc | DQThemClassCor | DQNonQuanAttAcc | DQQuanAttAcc | DQAccTimeMeas | DQTempConsis | DQTempValid | DQUsability | QeUsability) #REQUIRED
+>
+<!ELEMENT relatedElement %DQElement;> <!-- from ISO 19157-2 -->
+<!ATTLIST relatedElement
+	type (DQCompComm | DQCompOm | DQConcConsis | DQDomConsis | DQFormConsis | DQTopConsis | DQAbsExtPosAcc | DQGridDataPosAcc | DQRelIntPosAcc | DQThemClassCor | DQNonQuanAttAcc | DQQuanAttAcc | DQAccTimeMeas | DQTempConsis | DQTempValid | DQUsability | QeUsability) #REQUIRED
+>
+<!ELEMENT standaloneQualityReportDetails (#PCDATA)> <!-- from ISO 19157-2 -->
+<!ELEMENT standaloneReport (reportReference, abstract, elementReport*)> <!-- from ISO 19157-2 -->
+<!ELEMENT reportReference %Citation;> <!-- from ISO 19157-2 -->
+<!ELEMENT abstract (#PCDATA)> <!-- from ISO 19157-2 -->
+<!ELEMENT elementReport %DQElement;> <!-- from ISO 19157-2 -->
+<!ATTLIST elementReport
+	type (DQCompComm | DQCompOm | DQConcConsis | DQDomConsis | DQFormConsis | DQTopConsis | DQAbsExtPosAcc | DQGridDataPosAcc | DQRelIntPosAcc | DQThemClassCor | DQNonQuanAttAcc | DQQuanAttAcc | DQAccTimeMeas | DQTempConsis | DQTempValid | DQUsability | DQConfidence | DQRepresentativity | DQHomogeneity | QeUsability) #REQUIRED
+>
+<!ELEMENT dqScope %DQScope;>
+<!ELEMENT dataLineage %Lineage;>
+<!ELEMENT report %DQElement;>
+<!ATTLIST report
+	type (DQCompComm | DQCompOm | DQConcConsis | DQDomConsis | DQFormConsis | DQTopConsis | DQAbsExtPosAcc | DQGridDataPosAcc | DQRelIntPosAcc | DQThemClassCor | DQNonQuanAttAcc | DQQuanAttAcc | DQAccTimeMeas | DQTempConsis | DQTempValid | DQUsability | DQConfidence | DQRepresentativity | DQHomogeneity | QeUsability) #REQUIRED
+	dimension (horizontal | vertical) #IMPLIED
+	reportID ID #IMPLIED
+>
+<!-- DQCompComm, DQCompOm, DQConcConsis, DQDomConsis, DQFormConsis, DQTopConsis, DQAbsExtPosAcc, DQGridDataPosAcc, DQRelIntPosAcc, DQThemClassCor, DQNonQuanAttAcc, DQQuanAttAcc, DQAccTimeMeas, DQTempConsis, DQTempValid from ISO 19115 -->
+<!-- QeUsability from ISO 19115-2 (original version) -->
+<!-- DQUsability (duplicate of QeUsability?), DQConfidence, DQRepresentativity, DQHomogeneity from ISO 19157-2 -->
+<!-- dimension added for FGDC horizontal vs vertical positional accuracy -->
+<!ELEMENT scpLvl (ScopeCd)>
+<!ELEMENT scpExt %Extent;>
+<!ELEMENT scpLvlDesc %ScpDesc;>
+<!--Maintenance Elements-->
+<!ELEMENT maintFreq (MaintFreqCd)>
+<!-- MD_MaintenanceFrequencyCode -->
+<!ELEMENT MaintFreqCd EMPTY>
+<!ATTLIST MaintFreqCd
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009 | 010 | 011 | 012 | 013 | 014 | 015) #REQUIRED>
+<!-- 001-012 (continual | daily | weekly | fortnightly | monthly | quarterly | biannually | annually | asNeeded | irregular | notPlanned | unknown) from ISO 19115 -->
+<!-- 013 (semimonthly) from NAP + ISO 19115-1 -->
+<!-- 014-015 (periodic | biennially) from ISO 19115-1 -->
+<!ELEMENT dateNext %Date;> <!-- value stored as ISO 8601 dateTime; in 19139 can be gco:Date or gco:DateTime -->
+<!ELEMENT maintDate %MaintDateTransition;> <!-- from ISO 19115-1 -->
+<!ELEMENT usrDefFreq (duration)> 
+<!ELEMENT duration (#PCDATA)> 
+<!-- usrDefFreq data type is gts:TM_PeriodDuration whose data type is simple xs:duration: duration is ISO 8601 syntax for temporal length as implemented for XML schema type duration: PnYn MnDTnH nMnS, where nY number of years, nM number of months, nD number of days, 'T' date/time separator, nH number of hours, nM number of minutes, nS number of seconds, second can include decimal digits to arbitrary precision -->
+<!ELEMENT maintScp (ScopeCd)>
+<!ELEMENT upScpDesc %ScpDesc;>
+<!ELEMENT maintScpExt %Extent;>
+<!ELEMENT maintNote (#PCDATA)>
+<!ELEMENT maintCont %RespParty;>
+<!-- ObjectReference attributes not currently supported in ArcGIS for attribSet, featSet, featIntSet, and attribIntSet. describes the attributes/features, or instances of attributes/features that were updated or processed or for which the source or quality of the data is described.
+<!ATTLIST attribSet
+	nilReason (inapplicable | missing | template | unknown | withheld) #IMPLIED
+	uuidref CDATA #IMPLIED
+	href CDATA #IMPLIED
+	title CDATA #IMPLIED
+> -->
+<!ELEMENT attribSet (#PCDATA)> <!-- from ISO 19115-1, content changes from object reference to Character String, no change to how data is stored here -->
+<!ELEMENT featSet (#PCDATA)> <!-- from ISO 19115-1, content changes from object reference to Character String, no change to how data is stored here --> 
+<!ELEMENT featIntSet (#PCDATA)> <!-- from ISO 19115-1, content changes from object reference to Character String, no change to how data is stored here --> 
+<!ELEMENT attribIntSet (#PCDATA)> <!-- from ISO 19115-1, content changes from object reference to Character String, no change to how data is stored here --> 
+<!ELEMENT datasetSet (#PCDATA)>
+<!ELEMENT other (#PCDATA)>
+<!--Spatial Representation Elements-->
+<!ELEMENT GridSpatRep %GridSpatRep;>
+<!ELEMENT numDims %Integer;>
+<!ATTLIST numDims
+	Sync CDATA #IMPLIED
+><!-- only synchronized in Georect at 10; previously synchronized at GridSpatRep -->
+<!ELEMENT axisDimension %Dimension;>
+<!-- MD_DimensionNameTypeCode -->
+<!ATTLIST axisDimension
+	type (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008) #REQUIRED>
+<!-- 001-008 (row | column | vertical | track | crossTrack | line | sample | time) from ISO 19115 -->
+<!ELEMENT dimSize %Integer;>
+<!ATTLIST dimSize
+	Sync CDATA #IMPLIED
+><!-- only synchronized under Georect -->
+<!ELEMENT dimResol (value)>
+<!ELEMENT dimTitle (#PCDATA)> <!-- from ISO 19115-1 -->
+<!ELEMENT dimDescription (#PCDATA)> <!-- from ISO 19115-1 -->
+<!ELEMENT cellGeo (CellGeoCd)>
+<!-- MD_CellGeometryCode -->
+<!ELEMENT CellGeoCd EMPTY>
+<!ATTLIST CellGeoCd
+	Sync CDATA #IMPLIED
+	value (001 | 002 | 003 | 004) #REQUIRED><!-- only synchronized in Georect at 10; previously synchronized at GridSpatRep -->
+<!-- 001-002 (point | area) from ISO 19115 -->
+<!-- 003 (voxel) from NAP and ISO 19115-1 -->
+<!-- 004 (stratum) from ISO 19115-1 -->
+<!ELEMENT tranParaAv %Boolean;>
+<!ATTLIST tranParaAv
+	Sync CDATA #IMPLIED
+><!-- only synchronized in Georect at 10; previously synchronized at GridSpatRep -->
+<!ELEMENT infoScope %DQScope;> <!-- from ISO 19115-1 amendment -->
+<!ELEMENT Georef %Georef;>
+<!ELEMENT ctrlPtAv %Boolean;>
+<!ELEMENT orieParaAv %Boolean;>
+<!ELEMENT orieParaDs (#PCDATA)>
+<!ELEMENT georefPars %Record;>
+<!-- attributes not currently supported in ArcGIS
+<!ATTLIST georefPars
+	nilReason (inapplicable | missing | template | unknown | withheld) #IMPLIED
+	uuidref CDATA #IMPLIED
+	href CDATA #IMPLIED
+	title CDATA #IMPLIED
+> -->
+<!ELEMENT paraCit %Citation;>
+<!ELEMENT Georect %Georect;>
+<!ELEMENT chkPtAv %Boolean;>
+<!ATTLIST chkPtAv
+	Sync CDATA #IMPLIED
+><!-- only synchronized in Georect at 10; previously synchronized at GridSpatRep -->
+<!ELEMENT chkPtDesc (#PCDATA)>
+<!ELEMENT cornerPts %GM_Point;>
+<!ATTLIST cornerPts
+	gmlID CDATA #IMPLIED
+>
+<!ELEMENT centerPt %GM_Point;>
+<!ATTLIST centerPt
+	gmlID CDATA #IMPLIED
+><!-- ID attributes are required by GML; one is added automatically on export if not defined -->
+<!ELEMENT ptInPixel (PixOrientCd)>
+<!-- MD_PixelOrientationCode - from ISO 19115, an enumeration, not a codelist -->
+<!ELEMENT PixOrientCd EMPTY>
+<!ATTLIST PixOrientCd
+	Sync CDATA #IMPLIED
+	value (001 | 002 | 003 | 004 | 005) #REQUIRED><!-- only synchronized under Georect -->
+<!-- 001-005 (center | lowerLeft | lowerRight |upperRight | upperLeft) from ISO 19115 -->
+<!ELEMENT transDimDesc (#PCDATA)>
+<!ELEMENT transDimMap (#PCDATA)>
+<!ELEMENT VectSpatRep %VectSpatRep;>
+<!ELEMENT Indref (#PCDATA)> <!-- for FGDC -->
+<!ELEMENT topLvl (TopoLevCd)>
+<!-- MD_TopologyLevelCode -->
+<!ELEMENT TopoLevCd EMPTY>
+<!ATTLIST TopoLevCd
+	Sync CDATA #IMPLIED
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009) #REQUIRED>
+<!-- 001-009 (geometryOnly | topology1D | planarGraph | fullPlanarGraph | surfaceGraph | fullSurfaceGraph | topology3D | fullTopology3D | abstract) from ISO 19115 -->
+<!ELEMENT geometObjs %GeometObjs;>
+<!ATTLIST geometObjs
+	Name CDATA #IMPLIED
+>
+<!ELEMENT geoObjTyp (GeoObjTypCd)>
+<!-- MD_GeometricObjectTypeCode -->
+<!ELEMENT GeoObjTypCd EMPTY>
+<!ATTLIST GeoObjTypCd
+	Sync CDATA #IMPLIED
+	value (001 | 002 | 003 | 004 | 005 | 006) #REQUIRED>
+<!-- 001-006 (complex | composite | curve | point | solid | surface) from ISO 19115 -->
+<!ELEMENT geoObjCnt %Integer;>
+<!ATTLIST geoObjCnt
+	Sync CDATA #IMPLIED
+>
+<!--Reference System Elements-->
+<!ELEMENT RefSystem %RefSystem;>
+<!ATTLIST RefSystem
+	dimension (horizontal | vertical | temporal) #IMPLIED
+>
+<!ELEMENT refSysID %RS_Identifier;>
+<!ELEMENT refSysType (RefSysTypeCd)>
+<!-- MD_ReferenceSystemTypeCode -->
+<!ELEMENT RefSysTypeCd EMPTY>
+<!ATTLIST RefSysTypeCd
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009 | 010 | 011 | 012 | 013 | 014 | 015 | 016 | 017 | 018 | 019 | 020 | 021 | 022 | 023 | 024 | 025 | 026 | 027 | 028) #REQUIRED>
+<!-- 001-028 (compoundEngineeringParametric | compoundEngineeringParametricTemporal | compoundEngineeringTemporal | compoundEngineeringVertical | compoundEngineeringVerticalTemporal | compoundGeographic2DParametric | compoundGeographic2DParametricTemporal | compoundGeographic2DTemporal | compoundGeographic2DVertical | compoundGeographic2DVerticalTemporal | compoundGeographic3DTemporal | compoundProjected2DParametric | compoundProjected2DParametricTemporal | compoundProjected2DTemporal | compoundProjected2DVertical | compoundProjected2DVerticalTemporal | engineering | engineeringDesign | engineeringImage | geodeticGeocentric | geodeticGeographic2D | geodeticGeographic3D | geographicIdentifier | linear | parametric | projected | temporal | vertical) from ISO 19115-1 -->
+<!ELEMENT identAuth %Citation;>
+<!-- Use the identCode/@code attribute under refSysID to store the ESRI or EPSG number code for the spatial reference. Otherwise, store information in the element's value. The number code can't be stored as the element's value because ArcGIS 9.3.1 and earlier synchronize the name of the spatial reference to the same location and will overwrite a synchronized code. -->
+<!ELEMENT identCode (#PCDATA)>
+<!ATTLIST identCode
+	code CDATA #REQUIRED
+	Sync CDATA #IMPLIED
+> <!-- only synchronized in refSysInfo/RefSystem/refSysID -->
+<!ELEMENT idCodeSpace (#PCDATA)>
+<!ATTLIST idCodeSpace
+	Sync CDATA #IMPLIED
+><!-- only synchronized in refSysInfo/RefSystem/refSysID -->
+<!ELEMENT idVersion (#PCDATA)>
+<!ATTLIST idVersion
+	Sync CDATA #IMPLIED
+><!-- only synchronized in refSysInfo/RefSystem/refSysID -->
+<!ELEMENT idDescription (#PCDATA)> <!-- from ISO 19115-1 -->
+<!--Content Elements-->
+<!ELEMENT FetCatDesc %FetCatDesc;>
+<!ELEMENT compCode %Boolean;>
+<!ELEMENT catLang (languageCode, countryCode?, CharSetCd?)>  <!-- added countryCode and CharSetCd for NAP -->
+<!ELEMENT incWithDS %Boolean;>
+<!ELEMENT catFetTyps (genericName, featInstanceCount?)> <!-- ISO 19115-1 adds featInstanceCount-->
+<!ELEMENT genericName (#PCDATA)>
+<!ATTLIST genericName
+	codeSpace CDATA #IMPLIED
+> <!-- codeSpace is type anyURI; it is optional -->
+<!ELEMENT featInstanceCount %Integer;> <!-- from ISO 19110 -->
+<!ELEMENT catCitation %Citation;>
+
+<!-- ISO 19110 content -->
+<!ELEMENT FeatCatalog %FeatureCatalogue;> <!-- from ISO 19110 -->
+<!ELEMENT producer %RespParty;> <!-- from ISO 19110 -->
+<!ELEMENT featCatId %MdIdent;> <!-- from ISO 19110 -->
+<!ELEMENT featureType %FeatType;> <!-- from ISO 19110 -->
+<!ATTLIST featureType
+	Name CDATA #IMPLIED
+> <!-- has to match the @Name value for the associated eainfo/detailed element -->
+<!ELEMENT definitionSource %DefinitionSource;> <!-- from ISO 19110 -->
+<!ELEMENT definitionRef %DefinitionReference;> <!-- from ISO 19110 -->
+<!ELEMENT featureAttribute %FeatureAttribute;> <!-- from ISO 19110 -->
+<!ELEMENT sourceIdCode (#PCDATA)> <!-- from ISO 19110 -->
+<!ELEMENT featTypeCode (#PCDATA)> <!-- from ISO 19110 -->
+<!ELEMENT aliases (genericName)> <!-- from ISO 19110 -->
+<!ELEMENT attributeCode (#PCDATA)> <!-- from ISO 19110 -->
+<!ELEMENT featValueUnit %UOM;> <!-- from ISO 19110 -->
+
+<!ELEMENT CovDesc %CovDesc;>
+<!ELEMENT attDesc %RecordType;>
+<!-- attributes not currently supported in ArcGIS
+<!ATTLIST attDesc
+	nilReason (inapplicable | missing | template | unknown | withheld) #IMPLIED
+	href CDATA #IMPLIED
+	title CDATA #IMPLIED
+> -->
+<!ELEMENT contentTyp (ContentTypCd)>
+<!-- MD_CoverageContentTypeCode -->
+<!ELEMENT ContentTypCd EMPTY>
+<!ATTLIST ContentTypCd
+	Sync CDATA #IMPLIED
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008) #REQUIRED><!-- only synchronized in ImgDesc -->
+<!-- 001-003 (image | thematicClassification | physicalMeasurement) from ISO 19115 -->
+<!-- 004-008 (auxilliaryInformation | qualityInformation | referenceInformation | modelResult | coordinate) from ISO 19115-1 -->
+<!ELEMENT covDim %RangeDimTypes;>
+<!ELEMENT ImgDesc %ImgDesc;>
+<!ELEMENT illElevAng %Real;>
+<!ELEMENT illAziAng %Real;>
+<!ELEMENT imagCond (ImgCondCd)>
+<!-- MD_ImagingConditionCode -->
+<!ELEMENT ImgCondCd EMPTY>
+<!ATTLIST ImgCondCd
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009 | 010 | 011) #REQUIRED>
+<!-- 001-011 (blurredImage | cloud | degradingObliquity | fog | heavySmokeOrDust | night | rain | semiDarkness | shadow | snow | terrainMasking) from ISO 19115 -->
+<!ELEMENT imagQuCode %MdIdent;>
+<!ELEMENT cloudCovPer %Real;>
+<!ELEMENT prcTypCde %MdIdent;>
+<!ELEMENT cmpGenQuan %Integer;>
+<!ELEMENT trianInd %Boolean;>
+<!ELEMENT radCalDatAv %Boolean;>
+<!ELEMENT camCalInAv %Boolean;>
+<!ELEMENT filmDistInAv %Boolean;>
+<!ELEMENT lensDistInAv %Boolean;>
+<!ELEMENT RangeDim %RangeDim;>
+<!ELEMENT seqID %MemberName;>
+<!ELEMENT dimDescrp (#PCDATA)>
+<!ATTLIST dimDescrp
+	Sync CDATA #IMPLIED
+><!-- only synchronized in ImgDesc/covDim/Band added automatically -->
+<!ELEMENT dimName %MdIdent;><!-- from ISO 19115-1 -->
+<!ELEMENT Sample %Sample;>
+<!ELEMENT Band %Band;>
+<!ELEMENT maxVal %Real;>
+<!ATTLIST maxVal
+	Sync CDATA #IMPLIED
+><!-- only synchronized in ImgDesc/covDim/Band added automatically -->
+<!ELEMENT minVal %Real;>
+<!ATTLIST minVal
+	Sync CDATA #IMPLIED
+><!-- only synchronized in ImgDesc/covDim/Band added automatically -->
+<!ELEMENT valUnit %UOM;>
+<!ELEMENT pkResp %Real;>
+<!ELEMENT bitsPerVal %Integer;>
+<!ATTLIST bitsPerVal
+	Sync CDATA #IMPLIED
+><!-- only synchronized in ImgDesc/covDim/Band added automatically -->
+<!ELEMENT toneGrad %Integer;>
+<!ELEMENT sclFac %Real;>
+<!ELEMENT offset %Real;>
+<!ELEMENT meanVal %Real;> <!-- from ISO 19115-1 -->
+<!ELEMENT stdDeviation %Real;> <!-- from ISO 19115-1 -->
+<!ELEMENT numberOfValues %Integer;> <!-- from ISO 19115-1 -->
+<!ELEMENT otherPropertyType %RecordType;> <!-- from ISO 19115-1 -->
+<!ELEMENT otherProperty %Record;> <!-- from ISO 19115-1 -->
+<!ELEMENT boundMaxVal %Real;> <!-- from ISO 19115-1 -->
+<!ELEMENT boundMinVal %Real;> <!-- from ISO 19115-1 -->
+<!ELEMENT boundValUnit %UOM;> <!-- from ISO 19115-1, must be UomLength -->
+<!ELEMENT rangeElementDesc %MiRangeElementDescription;> <!-- from ISO 19115-1 Amd1, references MI_RangeElementDescription from ISO 19115-2 -->
+<!ELEMENT rangeEleName (#PCDATA)> <!-- from ISO 19115-2 -->
+<!ELEMENT rangeEleDef (#PCDATA)> <!-- from ISO 19115-2 -->
+<!ELEMENT rangeElement %Record;> <!-- from ISO 19115-2 -->
+<!--Portrayal Catalogue Element-->
+<!ELEMENT portCatCit %Citation;>
+<!--Distribution Elements-->
+<!ELEMENT distributor %Distributor;>
+<!ELEMENT distFormat %Format;>
+<!ELEMENT distTranOps %DigTranOps;>
+<!ELEMENT distDescription (#PCDATA)> <!-- from ISO 19115-1 -->
+<!ELEMENT unitsODist (#PCDATA)>
+<!ELEMENT transSize %Real;>
+<!ATTLIST transSize
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT onLineSrc %OnlineRes;>
+<!ELEMENT offLineMed %Medium;>
+<!ELEMENT transFreq (duration)> <!-- from ISO 19115-1 -->
+<!ELEMENT medName (MedNameCd)>
+<!-- MD_MediumNameCode -->
+<!ELEMENT MedNameCd EMPTY>
+<!ATTLIST MedNameCd
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009 | 010 | 011 | 012 | 013 | 014 | 015 | 016 | 017 | 018 | 019 | 020 | 021 | 022 | 023 | 024 | 025 | 026 | 027 | 028 | 029 | 030 | 031 | 032) #REQUIRED>
+<!-- 001-018 (cdRom | dvd | dvdRom | 3halfInchFloppy | 5quarterInchFloppy | 7trackTape | 9trackTape | 3480Cartridge | 3490Cartridge | 3580Cartridge | 4mmCartridgeTape | 8mmCartridgeTape | 1quarterInchCartridgeTape | digitalLinearTape | onLine | satellite | telephoneLink | hardcopy) from ISO 19115 -->
+<!-- 019-032 (hardcopyDiazoPolyester08 | hardcopyCardMicrofilm | hardcopyMicrofilm240 | hardcopyMicrofilm35 | hardcopyMicrofilm70 | hardcopyMicrofilmGeneral | hardcopyMicrofilmMicrofiche | hardcopyNegativePhoto | hardcopyPaper | hardcopyDiazo | hardcopyPhoto | hardcopyTracedPaper | hardDisk | USBFlashDrive) from NAP -->
+<!ELEMENT medCitation %Citation;> <!-- from ISO 19115-1 -->
+<!ELEMENT medDensity %Real;>
+<!ELEMENT medDenUnits (#PCDATA)>
+<!ELEMENT medVol %Integer;>
+<!ELEMENT medFormat (MedFormCd)>
+<!-- MD_MediumFormatCode -->
+<!ELEMENT MedFormCd EMPTY>
+<!ATTLIST MedFormCd
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007) #REQUIRED>
+<!-- 001-006 (cpio | tar | highSierra | iso9660 | iso9660RockRidge | iso9660AppleHFS) from ISO 19115 -->
+<!-- 007 (UDF) from NAP + ISO 19115-1 -->
+<!ELEMENT medNote (#PCDATA)>
+<!ELEMENT medId %MdIdent;> <!-- from ISO 19115-1 -->
+<!ELEMENT distorCont %RespParty;>
+<!ELEMENT distorFormat %Format;>
+<!ELEMENT distorOrdPrc %StanOrdProc;>
+<!ELEMENT distorTran %DigTranOps;>
+<!ELEMENT resFees (#PCDATA)>
+<!ATTLIST resFees
+	units CDATA #IMPLIED> <!-- for NAP -->
+<!ELEMENT planAvDtTm %DateTime;> <!-- value stored as ISO 8601 dateTime; must be gco:DateTime in 19139 -->
+<!ELEMENT planAvTmPd (tmBegin, tmEnd)> <!-- value stored as ISO 8601 dateTime; must be gco:DateTime in 19139 -->
+<!ELEMENT ordInstr (#PCDATA)>
+<!ELEMENT ordTurn (#PCDATA)>
+<!ELEMENT ordOptionsType %RecordType;> <!-- from ISO 19115-1 -->
+<!ELEMENT ordOptions %Record;> <!-- from ISO 19115-1 -->
+<!ELEMENT formatName (#PCDATA)>
+<!ATTLIST formatName
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT formatVer (#PCDATA)>
+<!ELEMENT fmtSpecCitation %FmtCitationTransition;> <!-- from ISO 19115-1 -->
+<!ELEMENT formatAmdNum (#PCDATA)>
+<!ELEMENT formatSpec (#PCDATA)>
+<!ELEMENT fileDecmTech (#PCDATA)>
+<!ELEMENT formatInfo (#PCDATA)> <!-- for FGDC -->
+<!ELEMENT formatTech (#PCDATA)> <!-- for FGDC -->
+<!ELEMENT formatDist %Distributor;>
+<!ELEMENT medium %Medium;> <!-- from ISO 19115-1 -->
+<!--Application Schema Elements-->
+<!ELEMENT asName %Citation;>
+<!ELEMENT asSchLang (#PCDATA)>
+<!ELEMENT asCstLang (#PCDATA)>
+<!ELEMENT asAscii (#PCDATA)>
+<!ELEMENT asGraFile %BinaryFile;>
+<!ATTLIST asGraFile
+	src CDATA #IMPLIED
+> <!-- nilReason attribute should be supported -->
+<!ELEMENT graFileOnline %OnlineResTransition;> <!-- from ISO 19115-1 -->
+<!ELEMENT asSwDevFile %BinaryFile;>
+<!ATTLIST asSwDevFile
+	src CDATA #IMPLIED
+> <!-- nilReason attribute should be supported -->
+<!ELEMENT swFileOnline %OnlineResTransition;> <!-- from ISO 19115-1 -->
+<!ELEMENT asSwDevFiFt (#PCDATA)>
+<!--Extent Elements-->
+<!ELEMENT exDesc (#PCDATA)>
+<!ELEMENT vertEle %VertExtent;>
+<!ELEMENT vertMinVal %Real;>
+<!ELEMENT vertMaxVal %Real;>
+<!ELEMENT geoEle %GeoExtentTypes;>
+<!ELEMENT exTypeCode %Boolean;>
+<!ATTLIST exTypeCode
+	Sync CDATA #IMPLIED
+> <!--  -->
+<!ELEMENT BoundPoly %BoundPoly;>
+<!ELEMENT polygon %GM_Polygon;>
+<!ATTLIST polygon
+	gmlID CDATA #REQUIRED
+>
+<!ELEMENT GeoBndBox %GeoBndBox;>
+<!ATTLIST GeoBndBox
+	esriExtentType (search | native) #IMPLIED
+> <!-- identifies bounding box in decimal degrees added by ArcGIS; should be preferred for use in searching when content is published to metadata catalogs if multiple boxes are present -->
+<!ELEMENT westBL %Real;>
+<!ATTLIST westBL
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT eastBL %Real;>
+<!ATTLIST eastBL
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT southBL %Real;>
+<!ATTLIST southBL
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT northBL %Real;>
+<!ATTLIST northBL
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT GeoDesc %GeoDesc;>
+<!ELEMENT geoId %MdIdent;>
+<!ELEMENT tempEle %TempExtentTypes;>
+<!ELEMENT TempExtent %TempExtent;>
+<!ELEMENT exTemp %TM_Primitive;>
+<!ELEMENT SpatTempEx %SpatTempEx;>
+<!ELEMENT exSpat %GeoExtentTypes;>
+<!ELEMENT exVert %VertExtent;> <!-- from ISO 19115-1 -->
+<!--Citation Elements-->
+<!ELEMENT resTitle (#PCDATA)>
+<!ATTLIST resTitle
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT resAltTitle (#PCDATA)>
+<!ELEMENT date %DateRef;>
+<!ELEMENT createDate %Date;> <!-- value stored as ISO 8601 dateTime; in 19139 can be gco:Date or gco:DateTime -->
+<!ELEMENT pubDate %Date;> <!-- value stored as ISO 8601 dateTime; in 19139 can be gco:Date or gco:DateTime -->
+<!ATTLIST pubDate
+	date (unknown | inapplicable) #IMPLIED 
+	time (unknown) #IMPLIED 
+>
+<!ELEMENT reviseDate %Date;> <!-- value stored as ISO 8601 dateTime; in 19139 can be gco:Date or gco:DateTime -->
+<!ELEMENT notavailDate %Date;> <!-- value stored as ISO 8601 dateTime; in 19139 can be gco:Date or gco:DateTime -->
+<!ELEMENT inforceDate %Date;> <!-- value stored as ISO 8601 dateTime; in 19139 can be gco:Date or gco:DateTime -->
+<!ELEMENT adoptDate %Date;> <!-- value stored as ISO 8601 dateTime; in 19139 can be gco:Date or gco:DateTime -->
+<!ELEMENT deprecDate %Date;> <!-- value stored as ISO 8601 dateTime; in 19139 can be gco:Date or gco:DateTime -->
+<!ELEMENT supersDate %Date;> <!-- value stored as ISO 8601 dateTime; in 19139 can be gco:Date or gco:DateTime -->
+<!ELEMENT expiryDate %Date;> <!-- from ISO 19115-1 -->
+<!ELEMENT lastUpdateDate %Date;> <!-- from ISO 19115-1 -->
+<!ELEMENT lastRevisionDate %Date;> <!-- from ISO 19115-1 -->
+<!ELEMENT nextUpdateDate %Date;> <!-- from ISO 19115-1 -->
+<!ELEMENT validityBeginsDate %Date;> <!-- from ISO 19115-1 -->
+<!ELEMENT validityExpiresDate %Date;> <!-- from ISO 19115-1 -->
+<!ELEMENT releasedDate %Date;> <!-- from ISO 19115-1 -->
+<!ELEMENT distributionDate %Date;> <!-- from ISO 19115-1 -->
+<!-- CI_DateTypeCode -->
+<!-- (createDate | pubDate | reviseDate) ISO 19115 -->
+<!-- (001 = creation | 002 = publication | 003 = revision) from ISO 19115 -->
+<!-- (notavailDate | inforceDate | adoptDate | deprecDate | supersDate) from NAP + ISO 19115-1 -->
+<!-- (004 = notAvailable | 005 = inForce | 006 = adopted | 007 = deprecated | 008 = superseded) from NAP + ISO 19115-1 notAvailable = unavailable -->
+<!-- (expiryDate = expiry | lastUpdateDate = lastUpdate | lastRevisionDate = lastRevision | nextUpdateDate = nextUpdate | validityBeginsDate = validityBegins | validityExpiresDate = validityExpires | releasedDate = released | distributionDate = distribution) ISO 19115-1 -->
+<!ELEMENT resEd (#PCDATA)>
+<!ELEMENT resEdDate %Date;> <!-- will only store value in yyyyMMdd for 9.3.1 compatibility; in 19139 can be gco:Date or gco:DateTime -->
+<!ELEMENT resEdTime %Time;> <!-- will only store value in hhmmss -->
+<!ELEMENT citId %MdIdent;>
+<!ELEMENT citRespParty %RespParty;>
+<!ELEMENT presForm (PresFormCd, fgdcGeoform?)> <!-- fgdcGeoform for FGDC -->
+<!-- CI_PresentationFormCode -->
+<!ELEMENT PresFormCd EMPTY>
+<!ATTLIST PresFormCd
+	Sync CDATA #IMPLIED
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009 | 010 | 011 | 012 | 013 | 014 | 015 | 016 | 017 | 018 | 019 | 020 | 021) #REQUIRED>
+<!-- 001-014 (documentDigital | documentHardcopy | imageDigital | imageHardcopy | mapDigital | mapHardcopy | modelDigital | modelHardcopy | profileDigital | profileHardcopy | tableDigital | tableHardcopy | videoDigital | videoHardcopy) from ISO 19115 -->
+<!-- 015-020 (audioDigital | audioHardcopy | multimediaDigital | multimediaHardcopy | diagramDigital | diagramHardcopy) from NAP + ISO 19115-1 -->
+<!-- 021 (physicalObject) from ISO 19115-1 -->
+<!ELEMENT fgdcGeoform (#PCDATA)> <!-- for FGDC -->
+<!-- preserve original FGDC geospatial data presentation form value, since correspondence to ISO is not 1:1 and geoform may be more specific about the type of digital or hardcopy map than the generic ISO terms -->
+<!ELEMENT datasetSeries %DatasetSeries;>
+<!ELEMENT seriesName (#PCDATA)>
+<!ELEMENT issId (#PCDATA)>
+<!ELEMENT artPage (#PCDATA)>
+<!ELEMENT otherCitDet (#PCDATA)>
+<!ELEMENT collTitle (#PCDATA)>
+<!ELEMENT isbn (#PCDATA)>
+<!ELEMENT issn (#PCDATA)>
+<!ELEMENT citOnlineRes %OnlineRes;> <!-- for FGDC + ISO 19115-1 -->
+<!ELEMENT graphic %BrowGraph;> <!-- from ISO 19115-1 -->
+<!ELEMENT rpIndName (#PCDATA)>
+<!ELEMENT rpOrgName (#PCDATA)>
+<!ELEMENT rpPosName (#PCDATA)>
+<!ELEMENT rpCntInfo %Contact;>
+<!ELEMENT role (RoleCd)>
+<!-- CI_RoleCode -->
+<!ELEMENT RoleCd EMPTY>
+<!ATTLIST RoleCd
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009 | 010 | 011 | 012 | 013 | 014 | 015 | 016 | 017 | 018 | 019 | 020) #REQUIRED>
+<!-- 001-011 (resourceProvider | custodian | owner | user | distributor | originator | pointOfContact | principalInvestigator | processor | publisher | author) from ISO 19115 -->
+<!-- 012-015 (collaborator | editor | mediator | rightsHolder) from NAP + ISO 19115-1 -->
+<!-- 016-020 (sponsor | coAuthor | contributor | funder | stakeholder) from ISO 19115-1 -->
+<!ELEMENT partyExt %Extent;> <!-- from ISO 19115-1 -->
+<!ELEMENT partyId %MdIdent;> <!-- from ISO 19115-1 -->
+<!ELEMENT logo %BrowGraph;> <!-- from ISO 19115-1 -->
+<!ELEMENT extraCntInfo %Contact;> <!-- from ISO 19115-1 -->
+<!ELEMENT extraOrg %Organization;> <!-- from ISO 19115-1 -->
+<!ELEMENT extraIndividual %Individual;> <!-- from ISO 19115-1 -->
+<!ELEMENT individual %Individual;> <!-- from ISO 19115-1 -->
+<!ELEMENT orgName (#PCDATA)> <!-- from ISO 19115-1 -->
+<!ELEMENT indName (#PCDATA)> <!-- from ISO 19115-1 -->
+<!ELEMENT posName (#PCDATA)> <!-- from ISO 19115-1 -->
+<!ELEMENT contactInfo %Contact;> <!-- from ISO 19115-1 -->
+<!ELEMENT cntPhone %Telephone;>
+<!ELEMENT voiceNum (#PCDATA)> <!-- added tddtty attribute for FGDC and NAP -->
+<!ATTLIST voiceNum
+	tddtty (True | False) #IMPLIED > <!-- FGDC and NAP -->
+<!ELEMENT faxNum (#PCDATA)>
+<!ELEMENT smsNum (#PCDATA)> <!-- from ISO 19115-1 -->
+<!ELEMENT cntAddress %Address;> <!-- added addressType attribute for FGDC and NAP -->
+<!ATTLIST cntAddress
+	addressType (postal | physical | both) #IMPLIED
+>
+<!ELEMENT extraAddress %Address;>
+<!ATTLIST extraAddress
+	addressType (postal | physical | both) #IMPLIED
+>
+<!ELEMENT delPoint (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT adminArea (#PCDATA)>
+<!ELEMENT postCode (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT eMailAdd (#PCDATA)>
+<!ELEMENT cntOnlineRes %OnlineRes;>
+<!ELEMENT extraOnlineRes %OnlineRes;>
+<!ELEMENT linkage %URL;>
+<!ATTLIST linkage
+	Sync CDATA #IMPLIED
+> <!-- only synchronized under Esri/DataProperties/itemProps/itemLocation -->
+<!ELEMENT protocol (#PCDATA)>
+<!ATTLIST protocol
+	Sync CDATA #IMPLIED
+> <!-- only synchronized under Esri/DataProperties/itemProps/itemLocation -->
+<!ELEMENT appProfile (#PCDATA)>
+<!ELEMENT orName (#PCDATA)>
+<!ELEMENT orDesc (#PCDATA)><!-- ArcGIS 9.3.1 synchronizes content here, but not with 10 -->
+<!ATTLIST orDesc
+	Sync CDATA #IMPLIED
+> <!-- only synchronized in ArcGIS 9.x and earlier -->
+<!ELEMENT orFunct (OnFunctCd)>
+<!-- CI_OnLineFunctionCode -->
+<!ELEMENT OnFunctCd EMPTY>
+<!ATTLIST OnFunctCd
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009 | 010 | 011 | 012 | 013) #REQUIRED>
+<!-- 001-005 (download | information | offlineAccess | order | search) from ISO 19115 -->
+<!-- 006-011 (upload 006 | webService 007 | emailService 008 | browsing 009 | fileAccess 010 | webMapService 011) from NAP + 006, 008, 009, 010 from ISO 19115-1 -->
+<!-- 012-013 (completeMetadata | browseGraphic) from ISO 19115-1 -->
+<!ELEMENT protocolRequest (#PCDATA)> <!-- from ISO 19115-1 -->
+<!ELEMENT cntHours (#PCDATA)>
+<!ELEMENT extraHours (#PCDATA)>
+<!ELEMENT cntInstr (#PCDATA)>
+<!ELEMENT contactType (#PCDATA)> <!-- from ISO 19115-1 -->
+
+<!--Service Identification Elements-->
+<!ELEMENT svType (genericName)>
+<!ELEMENT svTypeVer (#PCDATA)> 
+<!ELEMENT svAccProps %StanOrdProc;> 
+<!ELEMENT svCouplRes %SvCouplRes;> 
+<!ELEMENT svCouplType (CouplTypCd)> 
+<!-- SV_CouplingType -->
+<!ELEMENT CouplTypCd EMPTY> <!-- CouplingTypeCd = CouplTypCd -->
+<!ATTLIST CouplTypCd
+	value (001 | 002 | 003) #REQUIRED>
+<!-- 001-003 (loose | mixed | tight) from ISO 19119 -->
+<!ELEMENT svOper %SvOperMD;> 
+<!ELEMENT svOperDefinition %SvOperTransition;> <!-- from ISO 19115-1 -->
+<!ELEMENT svOperDataset %Citation;> <!-- from ISO 19115-1 -->
+<!ELEMENT svProfile %Citation;> <!-- from ISO 19115-1 -->
+<!ELEMENT svStandard %Citation;> <!-- from ISO 19115-1 -->
+<!ELEMENT svOperChain %SvOperChainMD;> <!-- from ISO 19115-1 -->
+<!ELEMENT svOpName (#PCDATA)> 
+<!ELEMENT svResCitId (identCode, idCodeSpace?)> <!-- idCodeSpace from ISO 19115-1 -->
+<!ELEMENT svResCit %ParentCitTransition;> <!-- from ISO 19115-1 -->
+<!ELEMENT svResourceRef %Citation;> <!-- from ISO 19115-1 -->
+<!ELEMENT svDCP (DCPListCd)> 
+<!-- DCPList -->
+<!ELEMENT DCPListCd EMPTY>
+<!ATTLIST DCPListCd
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009 | 010) #REQUIRED>
+<!-- 001-006 (XML | CORBA | JAVA | COM | SQL | WebServices) from ISO 19119 -->
+<!-- 007-010 (SOAP | Z3950 | HTTP | FTP) from ISO 19115-1 -->
+<!ELEMENT svDesc (#PCDATA)> 
+<!ELEMENT svInvocName (#PCDATA)> 
+<!ELEMENT svParams %SvParam;> 
+<!ELEMENT svConPt %OnlineRes;> 
+<!ELEMENT svParName %MemberName;> 
+<!ELEMENT svParDir (ParamDirCd)> 
+<!-- SV_ParameterDirection Enumeration -->
+<!ELEMENT ParamDirCd EMPTY> <!-- ParameterDirectionCd = ParamDirCd -->
+<!ATTLIST ParamDirCd
+	value (001 | 002 | 003) #REQUIRED>
+<!-- 001-003 (in | out | in/out) from ISO 19119, an enumeration, not a codelist -->
+<!ELEMENT svParOpt %Boolean;> <!-- from ISO 19115-1, value changes from character string to boolean -->
+<!ELEMENT svRepeat %Boolean;> 
+<!ELEMENT svValType %TypeName;> 
+<!ELEMENT svChainName (#PCDATA)> <!-- from ISO 19115-1 --> 
+<!ELEMENT svChainDesc (#PCDATA)> <!-- from ISO 19115-1 --> 
+<!ELEMENT svOperOrdered %SvOperMD;> <!-- from ISO 19115-1 --> 
+<!ATTLIST svOperOrdered
+	order CDATA #REQUIRED>
+
+<!-- Aggregate Datasets and Transfer Datasets from ISO 19139 2007, 7.4 Extensions for metadata-based transfers of geospatial information -->
+<!ELEMENT mxFileName (#PCDATA)>
+<!ELEMENT mxFileDesc (#PCDATA)>
+<!ELEMENT mxFileType (#PCDATA)>
+<!ELEMENT mxFeatType (#PCDATA)>
+<!ATTLIST mxFeatType
+	codeSpace CDATA #IMPLIED
+	nilReason (inapplicable | missing | template | unknown | withheld) #IMPLIED
+> <!-- codeSpace is type anyURI -->
+<!ELEMENT mxFileFormat %Format;>
+
+<!-- Imagery and Gridded Data Elements from ISO 19115-2 -->
+<!-- not currently editing or translating these elements, just placeholders -->
+<!ENTITY % MiAcquisitionInfo '(miPlatform*, miInstrument*, miObjective*, miEnvConditns?, miAcquReq*, miOperation*, miAcquPlan*)'>
+<!ENTITY % MiPlatform '(miPlatCit*, miPlatID, miPlatDesc, miPlatSponsor*, miPlatInst*)'>
+<!ENTITY % MiInstrumnt '(miInstCit*, miInstID, miInstType, miInstDesc?, miInstPlat?)'>
+<!ENTITY % MiEnvRecord '(miAvgTemp, miRelHumid, miAlt, miMetConditns)'>
+<!ENTITY % MiRequirmnt '(miReqCit?, miReqID, miRequestor+, miRecipient+, miReqPriority, miReqDate, miReqExpDt, miReqPlan*)'>
+<!ENTITY % MiPlan '(miPlnType?, miPlnStatus, miPlnCit, miPlnReq*, miPlnOper*)'>
+<!ENTITY % MiOperatn '(miOpDesc?, miOpCit?, miOpID, miOpStatus, miOpType?, miOpChild*, miOpParent?, miOpPlan?, miOpEvent*, miOpObj*, miOpPlat*)'>
+<!ENTITY % MiObjective '(miObjID+, miObjPriority?, miObjType*, miObjFn*, miObjExt*, miObjPass*, miObjOccur*, miObjInst*)'>
+<!ENTITY % MiEvent '(miEvtID, miEvtTrig, miEvtCtxt, miEvtSeq, miEvtTime, miEvtPass?, miEvtObj*, miEvtSensor*)'>
+<!ENTITY % MiPlatPass '(miPassID, miPassExt?, miPassEvt*)'>
+<!ENTITY % MiReqDate '(miCollectDate, miLatestDate)'>
+<!ENTITY % QeCovResult '(spatRpType, qeRsltFile, dsFormat, spatRepInfo, qeContInfo)'>
+<!ENTITY % LePrcessStep '(stepDesc, stepRat?, stepDateTm?, stepProc*, stepSrc*, lePrcInfo?, leReport*, leOutput*)'>
+<!ENTITY % LeSource '(srcDesc?, srcMedName?, srcScale?, srcRefSys?, srcCitatn?, srcExt*, srcStep*, lePrcLevel?, leResol)'>
+<!ENTITY % LeProcessing '(lePrcID, leSwRef*, leDesc?, leDoc*, leParams?, leAlgorithm*)'>
+<!ENTITY % LePrcStepReport '(leName, leDesc?, leFileType?)'>
+<!ENTITY % LeAlgorithm '(leCitation, leDesc)'>
+<!ENTITY % LeNominalResol '(leScanResol?, leGrndResol?)'>
+<!ENTITY % QeUsability '(measName*, measId?, measDesc?, evalMethType?, evalMethDesc?, evalProc?, measDateTm*, measResult+)'>
+<!ENTITY % MiGeorect '(numDims, axDimProps, cellGeo, tranParaAv, chkPtAv, chkPtDesc?, cornerPts*, centerPt?, ptInPixel, transDimDesc?, transDimMap*, miChkPt*)'> 
+<!ENTITY % MiGeoref '(numDims, axDimProps, cellGeo, tranParaAv, ctrlPtAv, orieParaAv, orieParaDs?, georefPars, paraCit*, miGeolocInfo+)'>
+<!ENTITY % MiGCP '(miGeoCoords, miAccuracyRpt*)'>
+<!ENTITY % MiGCPCol '(miColID, miColName, refSysInfo, miGCP+, dqInfo*)'>
+<!ENTITY % MiCovDesc '(attDesc, contentTyp, covDim*, miRngEleDesc*)'>
+<!ENTITY % MiImgDesc '(attDesc, contentTyp, covDim*, illElevAng?, illAziAng?, imagCond?, imagQuCode?, cloudCovPer?, prcTypCde?, cmpGenQuan?, trianInd?, radCalDatAv?, camCalInAv?, filmDistInAv?, lensDistInAv?, miRngEleDesc*)'>
+<!ENTITY % MiBand '(seqID?, dimDescrp?, maxVal?, minVal?, valUnit?, pkResp?, bitsPerVal?, toneGrad?, sclFac?, offset?, miBndDef?, miNmSpatRes?, miTranFnTyp?, miTranPolar?, miDtctPolar?)'>
+<!ENTITY % MiRngEleDesc '(miRngEleName, miRngEleDesc, miRngElement+)'>
+<!ELEMENT miAcquInfo %MiAcquisitionInfo;>
+<!ELEMENT miPlatform %MiPlatform;>
+<!ELEMENT miInstrument %MiInstrumnt;>
+<!ELEMENT miObjective %MiObjective;>
+<!ELEMENT miEnvConditns %MiEnvRecord;>
+<!ELEMENT miAcquReq %MiRequirmnt;>
+<!ELEMENT miOperation %MiOperatn;>
+<!ELEMENT miAcquPlan %MiPlan;>
+<!ELEMENT qeRsltFile %MxDataFile;>
+<!ELEMENT qeContInfo %CovDesc;>
+<!ELEMENT lePrcStep %LePrcessStep;>
+<!ELEMENT leSource %LeSource;>
+<!ELEMENT lePrcInfo %LeProcessing;>
+<!ELEMENT leReport %LePrcStepReport;>
+<!ELEMENT leOutput %LeSource;>
+<!ELEMENT lePrcLevel %MdIdent;>
+<!ELEMENT leResol %LeNominalResol;>
+<!ELEMENT lePrcID %MdIdent;>
+<!ELEMENT leSwRef %Citation;>
+<!ELEMENT leDesc (#PCDATA)>
+<!ELEMENT leDoc %Citation;>
+<!ELEMENT leParams (#PCDATA)>
+<!ELEMENT leAlgorithm %LeAlgorithm;>
+<!ELEMENT leName (#PCDATA)>
+<!ELEMENT leFileType (#PCDATA)>
+<!ELEMENT leCitation %Citation;>
+<!ELEMENT miChkPt %MiGCP;>
+<!ELEMENT miGeoCoords (#PCDATA)> <!-- data type is DirectPosition -->
+<!ELEMENT miAccuracyRpt %DQElement;> 
+<!ELEMENT miGeolocInfo %MiGCPCol;>
+<!ELEMENT miColID %Integer;>
+<!ELEMENT miColName (#PCDATA)>
+<!ELEMENT miGCP %MiGCP;>
+<!ELEMENT miRngEleDesc %MiRngEleDesc;>
+<!ELEMENT miBndDef (miBndDefCd)>
+<!-- MI_BandDefinition -->
+<!ELEMENT miBndDefCd EMPTY>
+<!ATTLIST miBndDefCd
+	value (001 | 002 | 003 | 004 | 005) #REQUIRED>
+<!-- 001-005 (3dB | halfMaximum | fiftyPercent | oneOverE | equivalentWidth) from ISO 19115-2 -->
+<!ELEMENT miNomResol %Real;>
+<!ATTLIST miNomResol
+	uom CDATA #REQUIRED
+>
+<!ELEMENT miTranFnTyp (miTranFnTypCd)>
+<!-- MI_TransferFunctionTypeCode -->
+<!ELEMENT miTranFnTypCd EMPTY>
+<!ATTLIST miTranFnTypCd
+	value (001 | 002 | 003) #REQUIRED>
+<!-- 001-003 (linear | logarithmic | exponential) from ISO 19115-2 -->
+<!ELEMENT miTranPolar (miPolOrientCd)>
+<!-- MI_PolarisationOrientationCode -->
+<!ELEMENT miPolOrientCd EMPTY>
+<!ATTLIST miPolOrientCd
+	value (001 | 002 | 003 | 004 | 005 | 006) #REQUIRED>
+<!-- 001-006 (horizontal | vertical | leftCircular | rightCircular | theta | phi) from ISO 19115-2 -->
+<!ELEMENT miDtctPolar (miPolOrientCd)>
+<!ELEMENT miRngEleName (#PCDATA)>
+<!ELEMENT miRngEleDef (#PCDATA)>
+<!ELEMENT miRngElement %Record;>
+<!ELEMENT miAvgTemp %Real;>
+<!ELEMENT miRelHumid %Real;>
+<!ELEMENT miAlt %Real;>
+<!ELEMENT miMetConditns (#PCDATA)>
+<!ELEMENT miPlatCit %Citation;>
+<!ELEMENT miPlatID %MdIdent;>
+<!ELEMENT miPlatDesc (#PCDATA)>
+<!ELEMENT miPlatSponsor %RespParty;>
+<!ELEMENT miPlatInst %MiInstrumnt;>
+<!ELEMENT miInstCit %Citation;>
+<!ELEMENT miInstID %MdIdent;>
+<!ELEMENT miInstType (#PCDATA)>
+<!ELEMENT miInstDesc (#PCDATA)>
+<!ELEMENT miInstPlat %MiPlatform;>
+<!ELEMENT miObjID %MdIdent;>
+<!ELEMENT miObjPriority (#PCDATA)>
+<!ELEMENT miObjType (miObjTypCd)>
+<!-- MI_ObjectiveTypeCode -->
+<!ELEMENT miObjTypCd EMPTY>
+<!ATTLIST miObjTypCd
+	value (001 | 002 | 003) #REQUIRED>
+<!-- 001-003 (instantaneousCollection | persistentView | survey) from ISO 19115-2 -->
+<!ELEMENT miObjFn (#PCDATA)>
+<!ELEMENT miObjExt %Extent;>
+<!ELEMENT miObjPass %MiPlatPass;>
+<!ELEMENT miObjOccur %MiEvent;>
+<!ELEMENT miObjInst %MiInstrumnt;>
+<!ELEMENT miReqCit %Citation;>
+<!ELEMENT miReqID %MdIdent;>
+<!ELEMENT miRequestor %RespParty;>
+<!ELEMENT miRecipient %RespParty;>
+<!ELEMENT miReqPriority (miPriorityCd)>
+<!-- MI_PriorityCode -->
+<!ELEMENT miPriorityCd EMPTY>
+<!ATTLIST miPriorityCd
+	value (001 | 002 | 003 | 004) #REQUIRED>
+<!-- 001-004 (critical | highImportance | mediumImportance | lowImportance) from ISO 19115-2 -->
+<!ELEMENT miReqDate %DateTime;>
+<!ELEMENT miReqExpDt %DateTime;>
+<!ELEMENT miReqPlan %MiPlan;>
+<!ELEMENT miPlnType (miGeomTypCd)>
+<!-- MI_GeometryTypeCode -->
+<!ELEMENT miGeomTypCd EMPTY>
+<!ATTLIST miGeomTypCd
+	value (001 | 002 | 003 | 004) #REQUIRED>
+<!-- 001-004 (point | linear | areal | strip) from ISO 19115-2 -->
+<!ELEMENT miPlnStatus (ProgCd)>
+<!ELEMENT miPlnCit %Citation;>
+<!ELEMENT miPlnReq %MiRequirmnt;>
+<!ELEMENT miPlnOper %MiOperatn;>
+<!ELEMENT miOpDesc (#PCDATA)>
+<!ELEMENT miOpCit %Citation;>
+<!ELEMENT miOpID %MdIdent;>
+<!ELEMENT miOpStatus (ProgCd)>
+<!ELEMENT miOpType (miOperTypCd)>
+<!-- MI_OperationTypeCode -->
+<!ELEMENT miOperTypCd EMPTY>
+<!ATTLIST miOperTypCd
+	value (001 | 002 | 003) #REQUIRED>
+<!-- 001-003 (real | simulated | synthetic) from ISO 19115-2 -->
+<!ELEMENT miOpChild %MiOperatn;>
+<!ELEMENT miOpParent %MiOperatn;>
+<!ELEMENT miOpPlan %MiPlan;>
+<!ELEMENT miOpEvent %MiEvent;>
+<!ELEMENT miOpObj %MiObjective;>
+<!ELEMENT miOpPlat %MiPlatform;>
+<!ELEMENT miEvtID %MdIdent;>
+<!ELEMENT miEvtTrig (miTrigCd)>
+<!-- MI_TriggerCode -->
+<!ELEMENT miTrigCd EMPTY>
+<!ATTLIST miTrigCd
+	value (001 | 002 | 003) #REQUIRED>
+<!-- 001-003 (automatic | manual | preProgrammed) from ISO 19115-2 -->
+<!ELEMENT miEvtCtxt (miCntxtCd)>
+<!-- MI_ContextCode -->
+<!ELEMENT miCntxtCd EMPTY>
+<!ATTLIST miCntxtCd
+	value (001 | 002 | 003) #REQUIRED>
+<!-- 001-003 (acquisition | pass | wayPoint) from ISO 19115-2 -->
+<!ELEMENT miEvtSeq (miSeqCd)>
+<!-- MI_SequenceCode -->
+<!ELEMENT miSeqCd EMPTY>
+<!ATTLIST miSeqCd
+	value (001 | 002 | 003) #REQUIRED>
+<!-- 001-003 (start | end | instantaneous) from ISO 19115-2 -->
+<!ELEMENT miEvtTime %DateTime;>
+<!ELEMENT miEvtPass %MiPlatPass;>
+<!ELEMENT miEvtObj %MiObjective;>
+<!ELEMENT miEvtSensor %MiInstrumnt;>
+<!ELEMENT miPassID %MdIdent;>
+<!ELEMENT miPassExt %Extent;>
+<!ELEMENT miPassEvt %MiEvent;>
+<!ELEMENT miCollectDate %DateTime;>
+<!ELEMENT miLatestDate %DateTime;>
+
+<!--PART 7: OTHER CODELIST and ENUMERATION DECLARATIONS-->
+
+<!-- Language codelist to be derived from ISO 639-2. 19115 prefers the three-letter language codes despite the W3C standardization on a hybrid list of two- and three- letter codes, using the two-letter code if one exists and the three-letter code if a two-letter code does not exist. -->
+<!ELEMENT languageCode EMPTY>
+<!ATTLIST languageCode
+	Sync CDATA #IMPLIED
+	value CDATA  "eng"
+><!-- only synchronized in mdLang and dataLang -->
+
+<!-- Country codelist to be derived from ISO 3166-1. NAP specifies using two-letter country code. Should be capital letters instead of lower-case letters used in ArcGIS 9.3.1 and earlier. -->
+<!ELEMENT countryCode EMPTY>
+<!ATTLIST countryCode
+	Sync CDATA #IMPLIED
+	value CDATA "USA"
+><!-- only synchronized in mdLang and dataLang -->
+
+<!-- nilReason attribute defined in ISO 19139 as a union of NilReasonEnumeration and anyURI. An attribute supporting nilReason may have coded values as defined below. Or, the attribute may have a user-specified value defined in the schemas as a restriction of string with pattern value="other:\w{2,}". 
+<!ELEMENT elementWithNilReason (#PCDATA)> 
+<!ATTLIST elementWithNilReason
+	nilReason (001 | 002 | 003 | 004 | 005) "001"
+>
+001-005 (inapplicable | missing | template | unknown | withheld) from ISO 19139 -->
+
+
+<!--PART 8: ESRI DECLARATIONS-->
+<!ENTITY % Esri '(CreaDate?, CreaTime?, SyncOnce?, SyncDate?, SyncTime?, ModDate?, ModTime?, PublishStatus?, PublishedDocID?, ArcGISFormat, ArcGISstyle, ArcGISProfile, MapLyrSync, DataProperties?, locales?, scaleRange?, Locator?, Server?, Service?, ServiceType?, ServiceFCType?, ServiceFCName?)'><!-- Locator only appears in metadata for old 9.x locators; now metadata appears in the locator definition instead of the other way around -->
+<!ENTITY % DataProperties '(lineage, itemProps?, copyHistory?, coordRef?, RasterProperties?, Terrain?, topoinfo?, GeoStats?)'>
+
+<!ELEMENT Esri %Esri;>
+<!ELEMENT ArcGISFormat (#PCDATA)>
+<!ELEMENT ArcGISstyle (#PCDATA)>
+<!ELEMENT ArcGISProfile (#PCDATA)><!-- values: ItemDescription, ISO19139, NAP, INSPIRE, FGDC -->
+<!ELEMENT MapLyrSync %Boolean;>
+
+<!ELEMENT CreaDate %Date;> <!-- will only store value in yyyyMMdd -->
+<!ELEMENT CreaTime %Time;> <!-- will only store value in hhmmss -->
+<!ELEMENT SyncOnce %Boolean;>
+<!ELEMENT ModDate %Date;> <!-- will only store value in yyyyMMdd -->
+<!ELEMENT ModTime %Time;> <!-- will only store value in hhmmss -->
+<!ELEMENT SyncDate %Date;> <!-- will only store value in yyyyMMdd -->
+<!ELEMENT SyncTime %Time;> <!-- will only store value in hhmmss -->
+
+<!ELEMENT PublishedDocID (#PCDATA)> <!-- A GUID -->
+<!ELEMENT PublishStatus (#PCDATA)>
+
+<!ELEMENT Server (#PCDATA)>
+<!ATTLIST Server 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT Service (#PCDATA)>
+<!ATTLIST Service 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT ServiceType (#PCDATA)>
+<!ATTLIST ServiceType 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT ServiceFCType (#PCDATA)>
+<!ATTLIST ServiceFCType 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT ServiceFCName (#PCDATA)>
+<!ATTLIST ServiceFCName 
+	Sync CDATA #IMPLIED
+>
+
+<!ENTITY % ESRIlocales '(locale*)'>
+<!ELEMENT locales %ESRIlocales;>
+<!ENTITY % ESRIlocale '(resTitle?, idAbs?)'>
+<!ELEMENT locale %ESRIlocale;>
+<!ATTLIST locale
+	language CDATA #REQUIRED
+	country CDATA #IMPLIED
+>
+<!-- @language is a language code - mandatory, @country is a country code - optional, encoding is mandatory but all metadata is utf-8 -->
+
+<!ENTITY % ScaleRange '(minScale?, maxScale?)'>
+<!ELEMENT scaleRange %ScaleRange;>
+<!ELEMENT minScale %Integer;>
+<!ELEMENT maxScale %Integer;>
+
+<!ELEMENT DataProperties %DataProperties;>
+<!-- Information used to define and manage locator may be stored inside the Locator element. DO NOT MODIFY THIS CONTENT. Older versions of ArcGIS used RematchLocator element instead. -->
+<!ELEMENT Locator ANY>
+<!ELEMENT RematchLocator ANY>
+<!-- An Identifier element may exist for documents published to a metadata catalog where a separate identifier for the published record is needed that isn't a GUID and is not automatically generated, e.g. a URL based on the server from which the document was harvested. If present, do not modify this content.
+<!ELEMENT Identifier (#PCDATA)> -->
+
+<!ENTITY % ItemProps '(itemName?, imsContentType?, nativeExtBox?, itemSize?, itemLocation?, relatedItems?)'>
+<!ENTITY % ItemLocation '(linkage, protocol)'>
+<!ELEMENT itemProps %ItemProps;>
+<!ELEMENT itemName (#PCDATA)>
+<!ATTLIST itemName 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT itemSize %Real;>
+<!ATTLIST itemSize 
+	Sync CDATA #IMPLIED
+>
+<!-- Content Type Code, originally designed for use with the Geography Network and ArcIMS Metadata Services. Intended to classify resources that are described in a metadata catalog. -->
+<!ELEMENT imsContentType (#PCDATA)>
+<!ATTLIST imsContentType 
+	export (True | False) #IMPLIED
+	Sync CDATA #IMPLIED
+>
+<!-- values: (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009 | 010) codes have the following meanings: (Live Data and Maps | Downloadable Data | Offline Data | Static Map Images | Other Documents | Applications | Geographic Services | Clearinghouses | Map Files | Geographic Activities) from esri -->
+<!ELEMENT nativeExtBox (exTypeCode?, westBL, eastBL, southBL, northBL)>
+<!-- the feature classes that participate in a topology, network, relationship class, etc. are related items. synchronized to eainfo/detailed/enttyp section with no attribute details in previous releases -->
+<!ENTITY % RelatedItems '(item+)'>
+<!ENTITY % RelItem '(itemName, itemType?, objCount?)'>
+<!ELEMENT relatedItems %RelatedItems;>
+<!ELEMENT item %RelItem;>
+<!ELEMENT itemType (#PCDATA)>
+<!ATTLIST itemType 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT objCount %Integer;>
+<!ATTLIST objCount 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT itemLocation %ItemLocation;>
+<!-- concept of optionally including item location in exported metadata not yet supported for editing or translation; not currently included in export:
+<!ATTLIST itemLocation 
+	export CDATA #IMPLIED
+> -->
+
+<!ENTITY % CoordRef '(type?, geogcsn?, projcsn?, csUnits?, peXml?)'>
+<!ELEMENT coordRef %CoordRef;>
+<!ELEMENT type (#PCDATA)> <!-- values: (projected | geographic | unknown) -->
+<!ATTLIST type 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT geogcsn (#PCDATA)>
+<!ATTLIST geogcsn 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT projcsn (#PCDATA)>
+<!ATTLIST projcsn 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT csUnits (#PCDATA)>
+<!ELEMENT peXml (#PCDATA)>
+<!ATTLIST peXml 
+	Sync CDATA #IMPLIED
+>
+
+<!ENTITY % lineage '(Process*)'>
+<!ELEMENT lineage %lineage;>
+<!ELEMENT Process (#PCDATA)>
+<!ATTLIST Process
+	Name CDATA #IMPLIED
+	ToolSource CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Time CDATA #REQUIRED
+	export CDATA #IMPLIED
+>
+
+<!ENTITY % CopyHistory '(copy*)'>
+<!ELEMENT copyHistory %CopyHistory;>
+<!ELEMENT copy EMPTY>
+<!ATTLIST copy
+	source CDATA #REQUIRED
+	dest CDATA #REQUIRED
+	date CDATA #REQUIRED
+	time CDATA #REQUIRED
+>
+
+<!ENTITY % topoinfo '(topoProps?, topoRule*)'>
+<!ENTITY % topoProps '(topoName?, clusterTol?, zClusterTol?, maxErrors?)'>
+<!ENTITY % topoRule '(topoRuleName?, topoRuleID?, rulehelp?, topoRuleType?, topoRuleOrigin?,  topoRuleDest?)'>
+<!ENTITY % topoRuleOrigin '(fcname?, stcode?, stname?, allOriginSubtypes?)'>
+<!ENTITY % topoRuleDest '(fcname?, stcode?, stname?, allDestSubtypes?)'>
+<!ELEMENT topoinfo %topoinfo;>
+<!ELEMENT topoProps %topoProps;>
+<!ELEMENT topoName (#PCDATA)>
+<!ATTLIST topoName 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT clusterTol %Real;>
+<!ATTLIST clusterTol 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT zClusterTol %Real;>
+<!ATTLIST zClusterTol 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT maxErrors %Integer;>
+<!ATTLIST maxErrors 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT topoRule %topoRule;>
+<!ELEMENT topoRuleName (#PCDATA)> <!-- never gets a synchronized value -->
+<!ATTLIST topoRuleName 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT topoRuleID %Integer;>
+<!ATTLIST topoRuleID 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT rulehelp (#PCDATA)> <!-- never gets a synchronized value -->
+<!ATTLIST rulehelp 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT topoRuleType %Integer;>
+<!ATTLIST topoRuleType 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT topoRuleOrigin %topoRuleOrigin;>
+<!ELEMENT fcname (#PCDATA)>
+<!ATTLIST fcname 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT stcode %Integer;>
+<!ATTLIST stcode 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT stname (#PCDATA)>
+<!ATTLIST stname 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT allOriginSubtypes %Boolean;>
+<!ATTLIST allOriginSubtypes 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT topoRuleDest %topoRuleDest;>
+<!ELEMENT allDestSubtypes %Boolean;>
+<!ATTLIST allDestSubtypes 
+	Sync CDATA #IMPLIED
+>
+
+<!ENTITY % Terrain '(totalPts*)'>
+<!ELEMENT Terrain %Terrain;>
+<!ELEMENT totalPts %Integer;>
+<!ATTLIST totalPts 
+	Sync CDATA #IMPLIED
+>
+
+<!ENTITY % RasterProperties '(General?, Properties?, Functions?)'>
+<!ENTITY % General '(PixelDepth?, HasColormap?, CompressionType?, NumBands?, Format?, HasPyramids?, SourceType?, PixelType?, NoDataValue?)'>
+<!ENTITY % Properties '(MaxImageHeight?, MaxImageWidth?, MaxRecordCount?, MaxDownloadImageCount?, MaxMosaicImageCount?, DefaultCompressionQuality?, ViewpointSpacingX?, ViewpointSpacingY?, AllowedItemMetadata?, DefaultResamplingMethod?, AllowedMosaicMethods?, AllowedCompressions?, AvailableVisibleFields?, AvailableMosaicMethods?, AvailableCompressionMethods?, AvailableItemMetadataLevels?, ConfigKeyword?, AllowedFields?)'>
+<!ENTITY % Functions '(Function+)'>
+<!ENTITY % Function '(Arguments?)'>
+<!ELEMENT RasterProperties %RasterProperties;>
+<!ELEMENT General %General;>
+<!ELEMENT Properties %Properties;>
+<!ELEMENT Format (#PCDATA)>
+<!ATTLIST Format 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT HasPyramids %Boolean;>
+<!ATTLIST HasPyramids 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT SourceType (#PCDATA)>
+<!ATTLIST SourceType 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT PixelType (#PCDATA)>
+<!ATTLIST PixelType 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT PixelDepth %Integer;>
+<!ATTLIST PixelDepth 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT NoDataValue (#PCDATA)>
+<!ATTLIST NoDataValue 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT HasColormap %Boolean;>
+<!ATTLIST HasColormap 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT NumBands %Integer;>
+<!ATTLIST NumBands 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT CompressionType (#PCDATA)>
+<!ATTLIST CompressionType 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT MaxImageHeight %Integer;>
+<!ATTLIST MaxImageHeight 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT MaxImageWidth %Integer;>
+<!ATTLIST MaxImageWidth 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT MaxRecordCount %Integer;>
+<!ATTLIST MaxRecordCount 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT MaxDownloadImageCount %Integer;>
+<!ATTLIST MaxDownloadImageCount 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT MaxMosaicImageCount %Integer;>
+<!ATTLIST MaxMosaicImageCount 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT DefaultCompressionQuality %Integer;>
+<!ATTLIST DefaultCompressionQuality 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT ViewpointSpacingX %Integer;>
+<!ATTLIST ViewpointSpacingX 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT ViewpointSpacingY %Integer;>
+<!ATTLIST ViewpointSpacingY 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT AllowedItemMetadata (#PCDATA)>
+<!ATTLIST AllowedItemMetadata 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT DefaultResamplingMethod %Integer;>
+<!ATTLIST DefaultResamplingMethod 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT AllowedMosaicMethods (#PCDATA)>
+<!ATTLIST AllowedMosaicMethods 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT AllowedCompressions (#PCDATA)>
+<!ATTLIST AllowedCompressions 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT AvailableMosaicMethods (#PCDATA)>
+<!ATTLIST AvailableMosaicMethods 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT AvailableCompressionMethods (#PCDATA)>
+<!ATTLIST AvailableCompressionMethods 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT AvailableItemMetadataLevels (#PCDATA)>
+<!ATTLIST AvailableItemMetadataLevels 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT ConfigKeyword (#PCDATA)>
+<!ATTLIST ConfigKeyword 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT AllowedFields (#PCDATA)>
+<!ATTLIST AllowedFields 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT AvailableVisibleFields (#PCDATA)>
+<!ATTLIST AvailableVisibleFields 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT Functions %Functions;>
+<!ATTLIST Functions 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT Function %Function;>
+<!ATTLIST Function
+	Name CDATA #IMPLIED
+	Description CDATA #IMPLIED
+>
+<!ELEMENT Arguments ANY>
+
+<!ENTITY % GeoStats '(OutputType)'>
+<!ELEMENT OutputType (#PCDATA)>
+
+<!ELEMENT spdoinfo (ptvctinf?, netinfo?)>
+<!ELEMENT ptvctinf (esriterm*)>
+<!ELEMENT esriterm (efeatyp, efeageom, esritopo, efeacnt, spindex, linrefer, featdesc?, (netwrole? | (XYRank?, ZRank?, topoWeight?, validateEvents?, partTopoRules?)))>
+<!ATTLIST esriterm 
+	Name CDATA #IMPLIED
+>
+<!ELEMENT efeatyp (#PCDATA)>
+<!ATTLIST efeatyp 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT efeageom (#PCDATA)>
+<!ATTLIST efeageom
+	Sync CDATA #IMPLIED
+	code CDATA #IMPLIED
+> <!-- an integer derived from the geometry type enumeration -->
+<!ELEMENT esritopo %Boolean;>
+<!ATTLIST esritopo 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT efeacnt %Integer;>
+<!ATTLIST efeacnt 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT spindex %Boolean;>
+<!ATTLIST spindex 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT linrefer %Boolean;>
+<!ATTLIST linrefer 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT featdesc (#PCDATA)>
+<!ELEMENT netwrole (#PCDATA)>
+<!ATTLIST netwrole 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT XYRank %Integer;>
+<!ATTLIST XYRank 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT ZRank %Integer;>
+<!ATTLIST ZRank 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT topoWeight %Real;>
+<!ATTLIST topoWeight 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT validateEvents %Boolean;>
+<!ATTLIST validateEvents 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT partTopoRules (topoRuleID*)>
+
+<!ELEMENT netinfo (nettype, elemcls*, connrule*)>
+<!ELEMENT nettype (#PCDATA)>
+<!ATTLIST nettype 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT elemcls (roletype, enabfld, rolefld?)>
+<!ELEMENT roletype (#PCDATA)>
+<!ATTLIST roletype 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT enabfld (#PCDATA)>
+<!ATTLIST enabfld 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT rolefld (#PCDATA)>
+<!ATTLIST rolefld 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT connrule (rulecat?, rulehelp?, ruletype, ((ruledjid?, ruledjst?, rulefeid?, rulefest?, ruleteid?, ruletest?, rulejunc*) | (ruleeid?, ruleest?, ruleemnc?, ruleemxc?, rulejid?, rulejst?, rulejmnc?, rulejmxc?)))>
+<!ELEMENT rulecat %Integer;>
+<!ATTLIST rulecat 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT ruletype (#PCDATA)>
+<!ATTLIST ruletype 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT ruledjid (#PCDATA)>
+<!ATTLIST ruledjid 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT ruledjst %Integer;>
+<!ATTLIST ruledjst 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT rulefeid (#PCDATA)>
+<!ATTLIST rulefeid 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT rulefest %Integer;>
+<!ATTLIST rulefest 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT ruleteid (#PCDATA)>
+<!ATTLIST ruleteid 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT ruletest %Integer;>
+<!ATTLIST ruletest 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT rulejunc (junctid, junctst)>
+<!ELEMENT junctid (#PCDATA)>
+<!ATTLIST junctid 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT junctst %Integer;>
+<!ATTLIST junctst 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT ruleeid (#PCDATA)>
+<!ATTLIST ruleeid 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT ruleest %Integer;>
+<!ATTLIST ruleest 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT ruleemnc %Integer;>
+<!ATTLIST ruleemnc 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT ruleemxc %Integer;>
+<!ATTLIST ruleemxc 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT rulejid (#PCDATA)>
+<!ATTLIST rulejid 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT rulejst %Integer;>
+<!ATTLIST rulejst 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT rulejmnc %Integer;>
+<!ATTLIST rulejmnc 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT rulejmxc %Integer;>
+<!ATTLIST rulejmxc 
+	Sync CDATA #IMPLIED
+>
+
+<!ELEMENT eainfo (detailed*, overview*)>
+<!ELEMENT detailed (enttyp, attr*, relinfo?, subtype*)>
+<!ATTLIST detailed 
+	Name CDATA #IMPLIED
+>
+<!ELEMENT enttyp (enttypl, enttypt?, enttypc?, enttypd, enttypds)>
+<!ELEMENT enttypl (#PCDATA)>
+<!ATTLIST enttypl 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT enttypt (#PCDATA)>
+<!ATTLIST enttypt 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT enttypc %Integer;>
+<!ATTLIST enttypc 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT enttypd (#PCDATA)>
+<!ELEMENT enttypds (#PCDATA)>
+
+<!ELEMENT attr (attrlabl, attalias?, attrdef, attrdefs, attrtype, attwidth, atprecis?, attscale?, atoutwid?, atnumdec?, atindex?, attrdomv+, (begdatea, enddatea?)*, attrvai?, attrmfrq?)>
+<!ELEMENT attrlabl (#PCDATA)>
+<!ATTLIST attrlabl 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT attalias (#PCDATA)>
+<!ATTLIST attalias 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT attrdef (#PCDATA)>
+<!ATTLIST attrdef 
+	Sync CDATA #IMPLIED
+><!-- only synchronized for attributes required and added by ArcGIS software -->
+<!ELEMENT attrdefs (#PCDATA)>
+<!ATTLIST attrdefs 
+	Sync CDATA #IMPLIED
+><!-- only synchronized for attributes required and added by ArcGIS software -->
+<!ELEMENT attrtype (#PCDATA)>
+<!ATTLIST attrtype 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT attwidth %Integer;>
+<!ATTLIST attwidth 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT atprecis %Integer;>
+<!ATTLIST atprecis 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT attscale %Integer;>
+<!ATTLIST attscale 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT atoutwid %Integer;><!-- only used for coverages -->
+<!ATTLIST atoutwid 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT atnumdec %Integer;><!-- only used for coverages -->
+<!ATTLIST atnumdec 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT atindex (#PCDATA)>
+<!ELEMENT attrdomv ((edom+ | rdom | codesetd | udom))>
+<!ELEMENT edom (edomv, edomvd, edomvds)>
+<!ELEMENT edomv (#PCDATA)>
+<!ELEMENT edomvd (#PCDATA)>
+<!ELEMENT edomvds (#PCDATA)>
+<!ELEMENT rdom (rdommin, rdommax, rdommean?, rdomstdv?, attrunit?, attrmres?)>
+<!ELEMENT rdommax (#PCDATA)>
+<!ELEMENT rdommin (#PCDATA)>
+<!ELEMENT rdommean (#PCDATA)>
+<!ELEMENT rdomstdv (#PCDATA)>
+<!ELEMENT attrunit (#PCDATA)>
+<!ELEMENT attrmres %Real;>
+<!ELEMENT codesetd (codesetn, codesets)>
+<!ELEMENT codesetn (#PCDATA)>
+<!ELEMENT codesets (#PCDATA)>
+<!ELEMENT udom (#PCDATA)>
+<!ATTLIST udom 
+	Sync CDATA #IMPLIED
+><!-- only synchronized for attributes required and added by ArcGIS software -->
+<!ELEMENT begdatea %Date;> <!-- will only store value in yyyyMMdd for FGDC compatibility -->
+<!ELEMENT enddatea %Date;> <!-- will only store value in yyyyMMdd for FGDC compatibility -->
+<!ELEMENT attrvai (attrva, attrvae)>
+<!ELEMENT attrva   %Real;>
+<!ELEMENT attrvae  (#PCDATA)>
+<!ELEMENT attrmfrq (#PCDATA)>
+<!ELEMENT overview (eaover, eadetcit+)>
+<!ELEMENT eaover (#PCDATA)>
+<!ELEMENT eadetcit (#PCDATA)>
+
+<!-- ArcGIS content -->
+<!ELEMENT subtype (stname, stcode, stfield*)>
+<!ELEMENT stfield (stfldnm, stflddv?, stflddd?)>
+<!ELEMENT stfldnm (#PCDATA)>
+<!ATTLIST stfldnm 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT stflddv (#PCDATA)>
+<!ATTLIST stflddv 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT stflddd (domname, domdesc?, domtype, mrgtype, splttype, domowner?, domfldtp)>
+<!ELEMENT domname (#PCDATA)>
+<!ATTLIST domname 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT domdesc (#PCDATA)>
+<!ATTLIST domdesc 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT domtype (#PCDATA)>
+<!ATTLIST domtype 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT mrgtype (#PCDATA)>
+<!ATTLIST mrgtype 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT splttype (#PCDATA)>
+<!ATTLIST splttype 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT domowner (#PCDATA)>
+<!ATTLIST domowner 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT domfldtp (#PCDATA)>
+<!ATTLIST domfldtp 
+	Sync CDATA #IMPLIED
+>
+
+<!ELEMENT relinfo (otfcname, dtfcname, otfcpkey, dtfcpkey, otfcfkey, dtfcfkey, relflab, relblab, relcard, relnodir, relattr, relcomp, reldesc?)>
+<!ELEMENT otfcname (#PCDATA)>
+<!ATTLIST otfcname 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT dtfcname (#PCDATA)>
+<!ATTLIST dtfcname 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT otfcpkey (#PCDATA)>
+<!ATTLIST otfcpkey 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT dtfcpkey (#PCDATA)>
+<!ATTLIST dtfcpkey 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT otfcfkey (#PCDATA)>
+<!ATTLIST otfcfkey 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT dtfcfkey (#PCDATA)>
+<!ATTLIST dtfcfkey 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT relflab (#PCDATA)>
+<!ATTLIST relflab 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT relblab (#PCDATA)>
+<!ATTLIST relblab 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT relcard (#PCDATA)>
+<!ATTLIST relcard 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT relnodir (#PCDATA)>
+<!ATTLIST relnodir 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT relattr (#PCDATA)>
+<!ATTLIST relattr 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT relcomp (#PCDATA)>
+<!ATTLIST relcomp 
+	Sync CDATA #IMPLIED
+>
+<!ELEMENT reldesc (#PCDATA)>
+<!ATTLIST reldesc 
+	Sync CDATA #IMPLIED
+>
+
+<!ENTITY % Binary '(Thumbnail?, Enclosure*)'>
+<!ENTITY % Thumbnail '(Data)'>
+<!ENTITY % Enclosure '(Descript, Data)'>
+<!ELEMENT Binary %Binary;>
+<!ELEMENT Thumbnail %Thumbnail;>
+<!ELEMENT Enclosure %Enclosure;>
+<!ATTLIST Enclosure 
+	rel CDATA #IMPLIED
+><!-- for custom tools only, identifies an image enclosure as being the side-panel image with the value: side-panel-help -->
+<!ELEMENT Descript (#PCDATA)>
+<!ELEMENT Data (#PCDATA)> <!-- contains a base-64 encoded file, like an email attachment -->
+<!ATTLIST Data
+	EsriPropertyType (Picture | PictureX | Base64 | Image) #REQUIRED
+	OriginalFileName CDATA #IMPLIED
+	SourceMetadata (yes) #IMPLIED
+	SourceMetadataDigest CDATA #IMPLIED
+	SourceMetadataSchema (fgdc | iso19139) #IMPLIED
+	SourceMetadataDocId ID #IMPLIED
+>
+<!-- Elements can have different attributes by location, content, and ArcGIS version -->
+<!-- if you view the XML in ArcGIS, any enclosed images are first extracted and saved to Temp as graphic file, and XML is modified replacing Data element with img tag, @src = file path, and @OriginalName = Data -->
+<!-- For thumbnails created by ArcGIS Desktop, 
+- Binary/Thubmnail/Data/@EsriPropertyType = PictureX: 10, a JPG thumbnail 
+- Binary/Thubmnail/Data/@EsriPropertyType = Picture: 9.3.1, a BMP thumbnail
+-->
+<!-- For enclosures added using Metadata Properties dialog box, 
+- Binary/Enclosure/Data/@EsriPropertyType = Base64: non-image enclosure
+- Binary/Enclosure/Data/@EsriPropertyType = Image: image enclosure 
+- Binary/Enclosure/Data/@OriginalFileName = name of source file, including file extension 
+-->
+<!-- For XMLs exported from ArcIMS Metadata Service:
+- Binary/Thubmnail/Data/@EsriPropertyType = Image: JPG thumbnail 
+- Binary/Thubmnail/Data/@OriginalFileName = "thumbnail.jpg"
+-->
+<!-- For tools with side-panel help illustrations added using 10.1 in Description tab:
+- Binary/Enclosure/@rel = side-panel-help 
+- Binary/Enclosure/Data/@EsriPropertyType = Image: JPG thumbnail 
+- Binary/Enclosure/Data/@OriginalFileName = "thumbnail.jpg"
+-->
+<!-- Translate metadata to ArcGIS format from ISO 19139 with ISO19139_2ESRI_ISO.xml or from FGDC with FGDC2ESRI_ISO.xml, source XML document is added as an enclosure to the resulting metadata. 
+- Binary/Enclosure/Descript = "original metadata"
+- Binary/Enclosure/Data/@EsriPropertyType = Base64
+- Binary/Enclosure/Data/@OriginalFileName = "source_metadata.xml"
+- Binary/Enclosure/Data/@SourceMetadata = yes 
+- Binary/Enclosure/Data/@SourceMetadataSchema = identifies the translation performed
+- Binary/Enclosure/Data/@SourceMetadataDocId = the original metadata's PublishedDocID, if present
+- Binary/Enclosure/Data/@SourceMetadataDigest =  -->
+
+<!ENTITY % Tool '(summary, toolIllust*, usage?, parameters?, environments?, scriptExamples?)'>
+<!ELEMENT tool %Tool;>
+<!ATTLIST tool
+	name CDATA #IMPLIED
+	displayname CDATA #IMPLIED
+	toolboxalias CDATA #IMPLIED
+> <!-- Do not edit attributes. Values are saved automatically as changes are made in the model/script tool's Properties dialog box or in Model Builder. @softwarerestriction exists for system tools only, but is not used. -->
+
+<!ELEMENT summary (#PCDATA)> <!-- For editing. Custom tools: stores HTML. System tools: contains child elements para, bold, etc. -->
+
+<!ELEMENT toolIllust EMPTY> 
+<!ATTLIST toolIllust
+	type (dialog | illustration) #IMPLIED
+	src CDATA #IMPLIED
+	alt CDATA #IMPLIED
+> <!-- Not currently available for editing. Only used in system tools. Custom tools use embedded Thumbnail. When @type=dialog, @src=ARCTOOLBOXHELP/<file name>. When @type=illustration, @src=<file name>. @alt = ALT text for graphic when included in HTML display. -->
+
+<!-- <!ELEMENT alink_name (#PCDATA)> -->
+<!-- Do not edit. Present for system tools only. value = tool/@name + "_" + tool/@toolboxalias. -->
+
+<!ELEMENT usage (#PCDATA)> <!-- For editing. Custom tools: stores HTML. System tools: contains child elements bullet_item, para, bold, etc. -->
+
+<!ELEMENT parameters (param*)>
+<!ELEMENT param (pythonReference, dialogReference)> 
+<!ATTLIST param
+	name CDATA #IMPLIED
+	displayname CDATA #IMPLIED
+	type (Required | Optional | Choice) #IMPLIED
+	direction (input | output) #IMPLIED
+	datatype CDATA #IMPLIED
+	expression CDATA #IMPLIED
+> 
+<!ELEMENT pythonReference (#PCDATA)> 
+<!ELEMENT dialogReference (#PCDATA)> 
+<!-- For custom tools, param elements are saved automatically with appropriate values as changes are made in the model/script tool's Properties dialog box or in Model Builder. For each parameter, @datatype, pythonReference, and dialogReference are for editing; do not edit other attributes. Typically pythonReference=dialogReference. They may be different for boolean values that are checked/unchecked in dialog but are a string such as "ENABLED" or "DISABLED" in Python. pythonReference is used for display; dialogReference is for the dialog box only. @name = parameter name in Python. @displayname = parameter name in dialog box. -->
+
+<!-- <!ELEMENT returnValues EMPTY> --> 
+<!-- Do not edit. Present for system tools only, but with no value. -->
+
+<!ELEMENT environments (environment*)>
+<!ELEMENT environment EMPTY> 
+<!ATTLIST environment
+	name CDATA #IMPLIED
+	label CDATA #IMPLIED
+> <!-- Not currently available for editing. Present for system tools only. Identifies the environments that are relevant for the tool. @name = environment name. @displayname = nice name for display. -->
+
+<!ELEMENT scriptExamples (scriptExample+)>
+<!ELEMENT scriptExample (title, para, code)>
+<!ELEMENT title (#PCDATA)> 
+<!ELEMENT para (#PCDATA)> 
+<!ELEMENT code (#PCDATA)> 
+<!-- For editing - all elements. Title and Code contain plain text. Para - custom tools: stores HTML. Para - system tools: contains child elements bullet_item, para, bold, etc. For system tools only, code has @xml:space="preserve"; not needed for custom tools. -->
+
+<!-- <!ELEMENT arcToolboxHelpPath (#PCDATA)> -->
+<!-- Do not edit. Present for all tools and toolboxes. Identifies fully-qualified path to location where files describing system tools have been installed. -->
+
+<!ENTITY % Toolbox '(summary, arcToolboxHelpPath?, toolsets?)'>
+<!ELEMENT toolbox %Toolbox;>
+<!ATTLIST toolbox
+	name CDATA #IMPLIED
+	alias CDATA #IMPLIED
+> <!-- Do not edit. Values are saved automatically as changes are made to custom toolboxes. @softwarerestriction exists for system toolboxes only, but is not used. -->
+
+<!ELEMENT toolsets (toolset+)>
+<!ELEMENT toolset (#PCDATA)> 
+<!ATTLIST toolset
+	name CDATA #IMPLIED
+> <!-- Do not edit. Values are saved automatically as changes are made to custom toolboxes. -->
+
+<!-- No longer including old ESRI FGDC profile content data frame count and name, cross reference association description, lineage process step software and version, or sde connection info in distinfo -->

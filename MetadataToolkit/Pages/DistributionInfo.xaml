@@ -42,6 +42,7 @@ limitations under the License.​
     </XmlDataProvider>
 
     <!-- validation issues -->
+    <v:MetadataIssueInfo x:Key="distFormat" Message="{x:Static r:Issues.distFormat_REQ}" />
     <v:MetadataIssueInfo x:Key="formatName" Message="{x:Static r:Issues.formatName_REQ}" />
     <v:MetadataIssueInfo x:Key="formatVer" Message="{x:Static r:Issues.formatVer_REQ}" />
     <v:MetadataIssueInfo x:Key="medDenUnits" Message="{x:Static r:Issues.medDenUnits_REQ}" />
