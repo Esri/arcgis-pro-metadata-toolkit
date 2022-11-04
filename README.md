@@ -109,8 +109,6 @@ A new page was added to the wiki that describes how to [customize validation rul
 #### Bug fixes
 The metadata toolkit was also updated to include bug fixes for the following items:
 - A crash scenario when switching the localized langauge to Czech when editing metadata.
-- Scale range logic was updated to display the appropriate scale when editing metadata.
-- Labels for scale slider controls now display proper number formating for CZ/FR/TR/IT localized languages.
 - Saving thumbnail images for multiple toolbox models now save the appropriate thumbnail image for their corresponding toolbox model.
 - The namespace ```MetadataTookKit``` was updated to ```MetadataToolkit``` for naming consistency.
 
