@@ -48,7 +48,7 @@ namespace MetadataToolkit.Pages
         {
             { "bg", Properties.Resources.LangName_Bulgarian },
             { "hr", Properties.Resources.LangName_Croatian },
-            { "cz", Properties.Resources.LangName_Czech},
+            { "cs", Properties.Resources.LangName_Czech},
             { "da", Properties.Resources.LangName_Danish },
             { "nl", Properties.Resources.LangName_Dutch },
             { "en", Properties.Resources.LangName_English },
@@ -81,10 +81,10 @@ namespace MetadataToolkit.Pages
 
     private async Task Lookup(string selectedLanguageCode)
     {
-      if (CachedKeywords.ContainsKey(selectedLanguageCode))
-      {
-        Keywords.Clear();
+      Keywords.Clear();
 
+      if (CachedKeywords.ContainsKey(selectedLanguageCode))
+      {      
         foreach (var keyword in CachedKeywords[selectedLanguageCode])
           Keywords.Add(keyword);
 
@@ -98,31 +98,30 @@ namespace MetadataToolkit.Pages
       try
       {
         response = await _client.GetAsync(url);
+
+        if (response == null)
+          return;
+
+        var responseText = await response.Content.ReadAsStringAsync();
+        var jsonArr = JArray.Parse(responseText);
+        var keywords = new List<GemetKeyword>();
+
+        foreach (var item in jsonArr.Children())
+        {
+          var def = item.Value<JToken>("definition").Value<string>("string");
+          var label = item.Value<JToken>("preferredLabel").Value<string>("string");
+          var gemetKeyword = new GemetKeyword(label, def);
+          keywords.Add(gemetKeyword);
+          Keywords.Add(gemetKeyword);
+        }
+
+        CachedKeywords.Add(selectedLanguageCode, keywords);
       }
       catch
       {
         MessageBox.Show(Properties.Resources.UNABLETO_RETRIEVE_THEME_KEYWORD);
         return;
       }
-
-      if (response == null)
-        return;
-
-      var responseText = await response.Content.ReadAsStringAsync();
-      var jsonArr = JArray.Parse(responseText);
-      var keywords = new List<GemetKeyword>();
-
-      Keywords.Clear();
-      foreach (var item in jsonArr.Children())
-      {
-        var def = item.Value<JToken>("definition").Value<string>("string");
-        var label = item.Value<JToken>("preferredLabel").Value<string>("string");
-        var gemetKeyword = new GemetKeyword(label, def);
-        keywords.Add(gemetKeyword);
-        Keywords.Add(gemetKeyword);
-      }
-
-      CachedKeywords.Add(selectedLanguageCode, keywords);
 
       searchingText.Text = "";
     }

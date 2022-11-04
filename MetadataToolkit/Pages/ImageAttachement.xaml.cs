@@ -53,6 +53,19 @@ namespace MetadataToolkit.Pages
     public MTK_ImageAttachement()
     {
       InitializeComponent();
+
+      this.LostFocus += OnLostFocus;
+      this.Unloaded += OnUnloaded;
+    }
+
+    private void OnLostFocus(object sender, RoutedEventArgs e)
+    {
+      _dataContext = null;
+    }
+
+    private void OnUnloaded(object sender, RoutedEventArgs e)
+    {
+      _dataContext = null;
     }
 
     public void DeleteThumbnail(object sender, EventArgs e)

@@ -22,7 +22,7 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Metadata;
 
-namespace MetadataTookKit
+namespace MetadataToolkit
 {
   public class ToolkitMetadataEditor : MetadataEditorBase
   {

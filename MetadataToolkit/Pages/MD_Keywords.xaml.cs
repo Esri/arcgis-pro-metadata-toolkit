@@ -19,6 +19,8 @@ using ArcGIS.Desktop.Framework;
 using Newtonsoft.Json.Linq;
 
 using ArcGIS.Desktop.Metadata.Editor.Pages;
+using System.Windows.Controls;
+using ArcGIS.Desktop.Metadata.Editor.Validation;
 
 namespace MetadataToolkit.Pages
 {
@@ -92,6 +94,9 @@ namespace MetadataToolkit.Pages
           {
             string newKeywords = string.Join("\n", keywords);
             bag.InnerText = newKeywords;
+
+            _themekeywords = null;
+
             return;
           }
 
@@ -112,10 +117,14 @@ namespace MetadataToolkit.Pages
       _themekeywords = null;
     }
 
-    private string GetQualifiedKeywords(string innerText, List<string> candiates)
+    private void OnKeywordsChanged(object sender, TextChangedEventArgs args)
     {
-      //string.Join("\n", keywords);
-      return string.Empty;
+      TextBox tb = sender as TextBox;
+      if (tb is null)
+        return;
+
+      bool hasIssue = string.IsNullOrEmpty(tb.Text);
+      tb.SetValue(MetadataRules.HasIssueProperty, hasIssue);
     }
   }
 }

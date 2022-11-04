@@ -95,6 +95,7 @@ limitations under the License.​
       <TextBox Style="{DynamicResource EditorTextAreaResizeStyle}"
             v:Nav.AnchorName="bag,bag" v:MetadataRules.HasIssue="{Binding Path=(v:MetadataRules.HasIssue), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type p:EditorPage}}}"
             Text="{e:MetadataBinding XPath=bag}"
+            TextChanged="OnKeywordsChanged"
             x:Name="MD_Keywords_Keywords"/>
       </controls:Resizer>
 
