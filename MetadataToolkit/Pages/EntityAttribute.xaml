@@ -349,7 +349,7 @@ limitations under the License.​
                               RelativeSource={RelativeSource FindAncestor,
                               AncestorType={x:Type ContentPresenter}},
                               Mode=OneWayToSource}" LastChildFill="True">
-                            <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Style="{DynamicResource DeleteButton}"
+                            <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                     Name="EntityAttribute_EnumeratedDomainDelete">
                               <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
                             </Button>
