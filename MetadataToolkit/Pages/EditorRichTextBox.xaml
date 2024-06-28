@@ -84,7 +84,7 @@ limitations under the License.​
       <StackPanel Visibility="Collapsed" x:Name="linkEditor" Width="{Binding ElementName=XAMLRichBox, Path=ActualWidth}">     
         <DockPanel LastChildFill="True">
           <Button DockPanel.Dock="Right"  Click="OnClickHyperlinkCancel" Style="{DynamicResource DeleteButton}">
-            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+            <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
           </Button>
           <Button DockPanel.Dock="Right" IsDefault="True" Name="primaryActionButton" Click="OnClickHyperlinkOk" Style="{DynamicResource TopButton}" Content="{x:Static r:Resources.BTN_RICHTEXT_APPLY}"/>
           <Label VerticalAlignment="Center" DockPanel.Dock="Left" Content="{x:Static r:Resources.BTN_RICHTEXT_URL}"/>

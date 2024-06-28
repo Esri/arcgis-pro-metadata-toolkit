@@ -31,26 +31,26 @@ limitations under the License.​
     <controls:DoubleSliderConverter x:Key="sliderConverter">
       <controls:DoubleSliderConverter.ImageArrayList>
         <coll:ArrayList>
-          <controls:ScaleImage ScaleName="{x:Static r:Resources.SCALE_GLOBE_LABEL}" ScaleDenom="150000000" ScaleDenomLabel="{x:Static r:Resources.SCALE_GLOBE_NUM}">
-            <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/VectorLOD_0_64.png"></Image>
+          <controls:ScaleImage ScaleName="{x:Static r:Resources.SCALE_GLOBE_LABEL}" ScaleDenom="150000000">
+            <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="{DynamicResource VectorLOD_0_64}"></Image>
           </controls:ScaleImage>
-          <controls:ScaleImage ScaleName="{x:Static r:Resources.SCALE_CONTINENT_LABEL}" ScaleDenom="50000000" ScaleDenomLabel="{x:Static r:Resources.SCALE_CONTINENT_NUM}">
-            <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/VectorLOD_1_64.png"></Image>
+          <controls:ScaleImage ScaleName="{x:Static r:Resources.SCALE_CONTINENT_LABEL}" ScaleDenom="50000000">
+            <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="{DynamicResource VectorLOD_1_64}"></Image>
           </controls:ScaleImage>
-          <controls:ScaleImage ScaleName="{x:Static r:Resources.SCALE_COUNTRY_LABEL}" ScaleDenom="20000000" ScaleDenomLabel="{x:Static r:Resources.SCALE_COUNTRY_NUM}">
-            <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/VectorLOD_3_64.png"></Image>
+          <controls:ScaleImage ScaleName="{x:Static r:Resources.SCALE_COUNTRY_LABEL}" ScaleDenom="20000000">
+            <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="{DynamicResource VectorLOD_3_64}"></Image>
           </controls:ScaleImage>
-          <controls:ScaleImage ScaleName="{x:Static r:Resources.SCALE_STATE_LABEL}" ScaleDenom="625000" ScaleDenomLabel="{x:Static r:Resources.SCALE_STATE_NUM}">
-            <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/VectorLOD_5_64.png"></Image>
+          <controls:ScaleImage ScaleName="{x:Static r:Resources.SCALE_STATE_LABEL}" ScaleDenom="5000000">
+            <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="{DynamicResource VectorLOD_5_64}"></Image>
           </controls:ScaleImage>
-          <controls:ScaleImage ScaleName="{x:Static r:Resources.SCALE_COUNTY_LABEL}" ScaleDenom="500000" ScaleDenomLabel="{x:Static r:Resources.SCALE_COUNTY_NUM}">
-            <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/VectorLOD_7_64.png"></Image>
+          <controls:ScaleImage ScaleName="{x:Static r:Resources.SCALE_COUNTY_LABEL}" ScaleDenom="500000">
+            <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="{DynamicResource VectorLOD_7_64}"></Image>
           </controls:ScaleImage>
-          <controls:ScaleImage ScaleName="{x:Static r:Resources.SCALE_CITY_LABEL}" ScaleDenom="50000" ScaleDenomLabel="{x:Static r:Resources.SCALE_CITY_NUM}">
-            <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/VectorLOD_10_64.png"></Image>
+          <controls:ScaleImage ScaleName="{x:Static r:Resources.SCALE_CITY_LABEL}" ScaleDenom="50000">
+            <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="{DynamicResource VectorLOD_10_64}"></Image>
           </controls:ScaleImage>
-          <controls:ScaleImage ScaleName="{x:Static r:Resources.SCALE_BUILDINGS_LABEL}" ScaleDenom="5000" ScaleDenomLabel="{x:Static r:Resources.SCALE_BUILDINGS_NUM}">
-            <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/VectorLOD_15_64.png"></Image>
+          <controls:ScaleImage ScaleName="{x:Static r:Resources.SCALE_BUILDINGS_LABEL}" ScaleDenom="5000">
+            <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="{DynamicResource VectorLOD_15_64}"></Image>
           </controls:ScaleImage>
         </coll:ArrayList >
       </controls:DoubleSliderConverter.ImageArrayList>     
@@ -133,7 +133,7 @@ limitations under the License.​
       </x:XData>
     </XmlDataProvider>
 
-    <BitmapImage x:Key="EmptyImage" UriSource="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Imagery32.png" />
+    <Image x:Key="EmptyImage" Source="{DynamicResource Imagery32}" />
     
     <!-- validation issues -->
     <v:MetadataIssueInfo x:Key="resTitle" Message="{x:Static r:Issues.resTitle_REQ}" />
@@ -206,14 +206,14 @@ limitations under the License.​
             <Button Click="DeleteThumbnail" Style="{DynamicResource TopButton}"
                     Name="ItemInfoPage_ThumbnailDelete">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource TopButtonImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                <Image Style="{DynamicResource TopButtonImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                 <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_THUMB_DELETE}"/>
               </StackPanel>
             </Button>
             <Button Click="UpdateThumbnail" Style="{DynamicResource TopButton}"
                     Name="ItemInfoPage_ThumbnailUpdate">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource TopButtonImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/FolderOpenState16.png"/>
+                <Image Style="{DynamicResource TopButtonImageStyle}" Source="{DynamicResource FolderOpenState16}"/>
                 <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_THUMB_REPLACE}"/>
               </StackPanel>
             </Button>
@@ -336,7 +336,7 @@ limitations under the License.​
                     <Button Tag="useLimit" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}" 
                             Name="ItemInfoPage_UseLimitationAdd">
                       <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                        <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                        <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                         <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_CONSTS_NEW_USELIMIT}" />
                       </StackPanel>
                     </Button>
@@ -416,7 +416,7 @@ limitations under the License.​
                             AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=AddBoundingBox}" 
                             Name="ItemInfoPage_BoundingBoxAdd">
                       <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                        <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                        <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                         <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EXTENTS_NEW_BBOX}"/>
                       </StackPanel>
                     </Button>

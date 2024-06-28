@@ -82,7 +82,7 @@ limitations under the License.​
                         Mode=OneWayToSource}" LastChildFill="True">
                     <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Style="{DynamicResource DeleteButton}"
                             Name="MetadataConstraints_GeneralConstraintsDelete">
-                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                     </Button>
                     <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_CONSTS_GENERAL}"/>
                   </DockPanel>
@@ -115,7 +115,7 @@ limitations under the License.​
                     <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Style="{DynamicResource DeleteButton}"
                             AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MetadataConstraints_LegalConstraintsDelete}"
                             Name="MetadataConstraints_LegalConstraintsDelete">
-                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                     </Button>
                     <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_CONSTS_LEGAL}"/>
                   </DockPanel>
@@ -154,7 +154,7 @@ limitations under the License.​
                         Mode=OneWayToSource}" LastChildFill="True">
                     <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Style="{DynamicResource DeleteButton}"
                             Name="MetadataConstraints_SecurityConstraintsDelete">
-                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                     </Button>
                     <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_CONSTS_SECURITY}"/>
                   </DockPanel>

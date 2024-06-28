@@ -132,7 +132,7 @@ limitations under the License.​
                             Mode=OneWayToSource}" LastChildFill="True">
                           <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                   Name="ResourceContent_CoverageDescriptionDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_COV_DESC}"/>
                         </DockPanel>
@@ -170,7 +170,7 @@ limitations under the License.​
                             Mode=OneWayToSource}" LastChildFill="True">
                           <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                   Name="ResourceContent_ImageDescriptionDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_COV_IMGDESC}"/>
                         </DockPanel>
@@ -208,7 +208,7 @@ limitations under the License.​
                             Mode=OneWayToSource}" LastChildFill="True">
                           <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                   Name="ResourceContent_FeatureCatalogDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_COV_FEATCAT}"/>
                         </DockPanel>
@@ -231,7 +231,7 @@ limitations under the License.​
             <Button Tag="CovDesc" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                     Name="ResourceContent_CoverageDescriptionAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                 <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_COV_NEW_COVDESC}"/>
               </StackPanel>
             </Button>
@@ -240,7 +240,7 @@ limitations under the License.​
             <Button Tag="ImgDesc" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                     Name="ResourceContent_ImageDescriptionAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                 <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_COV_NEW_IMGDESC}"/>
               </StackPanel>
             </Button>
@@ -249,7 +249,7 @@ limitations under the License.​
             <Button Tag="FetCatDesc" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                     Name="ResourceContent_FeatureCatalogAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                 <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_COV_NEW_FEATCAT}"/>
               </StackPanel>
             </Button>

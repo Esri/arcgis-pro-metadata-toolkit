@@ -74,7 +74,7 @@ limitations under the License.​
                 <StackPanel DockPanel.Dock="Right">
                   <Button Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                           AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=EntityAttributeOverview_CitationDelete}">
-                    <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                    <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                   </Button>
                 </StackPanel>
                 <!-- citation -->
@@ -92,7 +92,7 @@ limitations under the License.​
         <Button Tag="eadetcit" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                 Name="EntityAttributeOverview_CitationAdd">
           <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-            <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+            <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
             <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EAINFO_NEW_CIT}"/>
           </StackPanel>
         </Button>

@@ -2264,15 +2264,6 @@ Do you want to upgrade the FGDC metadata content to the ArcGIS metadata format?<
   <data name="LBL_CM_Save" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="LBL_CI_PARTY_ADD_FORMAT" xml:space="preserve">
-    <value>%LABEL%</value>
-  </data>
-  <data name="LBL_CI_PARTY_FORMAT" xml:space="preserve">
-    <value>%LABEL% (%ROLE%)</value>
-  </data>
-  <data name="LBL_CI_PARTY_READONLY_FORMAT" xml:space="preserve">
-    <value>%LABEL%</value>
-  </data>
   <data name="LBL_CI_PARTY_ROLE_UNKNOWN" xml:space="preserve">
     <value>Unknown</value>
   </data>

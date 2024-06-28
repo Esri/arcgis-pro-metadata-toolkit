@@ -119,7 +119,7 @@ limitations under the License.​
                     <DataTemplate>
                       <Button Tag="Value_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
                               Name="DQ_QuantitativeResult_ValueAdd">
-                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       </Button>
                     </DataTemplate>
                   </ListBox.ItemTemplate>
@@ -127,7 +127,7 @@ limitations under the License.​
                 <!-- delete -->
                 <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
                   AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_QuantitativeResult_ValueDelete}">
-                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                 </Button>
                 <!-- value -->
                 <TextBox Style="{DynamicResource EditorTextBoxStyle}"

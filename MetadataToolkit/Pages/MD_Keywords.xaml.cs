@@ -21,6 +21,7 @@ using Newtonsoft.Json.Linq;
 using ArcGIS.Desktop.Metadata.Editor.Pages;
 using System.Windows.Controls;
 using ArcGIS.Desktop.Metadata.Editor.Validation;
+using ArcGIS.Desktop.Metadata;
 
 namespace MetadataToolkit.Pages
 {
@@ -60,8 +61,18 @@ namespace MetadataToolkit.Pages
 
     private void MD_Keywords_Loaded(object sender, RoutedEventArgs e)
     {
-      DefaultTitle = string.Empty;
-      DefaultLinkage = string.Empty;
+      string profile = null;
+
+      var mdModule = FrameworkApplication.FindModule("esri_metadata_module") as IMetadataEditorHost;
+      if (mdModule != null)
+        profile = mdModule.GetCurrentProfile(this);
+
+      if (profile == null)
+        return;
+
+      bool bINSPIRE = profile.Equals("INSPIRE", System.StringComparison.InvariantCultureIgnoreCase);
+      DefaultTitle = bINSPIRE ? "GEMET - INSPIRE themes, version 1.0" : string.Empty;
+      DefaultLinkage = bINSPIRE ? "http://www.eionet.europa.eu/gemet/inspire_themes" : string.Empty;
     }
 
     private MTK_MD_ThemeKeywords _themekeywords = null;
@@ -102,7 +113,7 @@ namespace MetadataToolkit.Pages
 
           string newText = bag.InnerText;
           var originalTextList = newText.Split('\n').ToList();
-          foreach (string kw in keywords)             
+          foreach (string kw in keywords)
           {
             if (originalTextList.Contains(kw))
               continue;

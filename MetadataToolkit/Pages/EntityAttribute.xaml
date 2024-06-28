@@ -351,7 +351,7 @@ limitations under the License.​
                               Mode=OneWayToSource}" LastChildFill="True">
                             <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Style="{DynamicResource DeleteButton}"
                                     Name="EntityAttribute_EnumeratedDomainDelete">
-                              <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                              <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                             </Button>
                             <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_EAINFO_ENUM_DOMAIN}"/>
                           </DockPanel>
@@ -368,7 +368,7 @@ limitations under the License.​
                           <Button Tag="EnumDomValueInside_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                                   Name="EntityAttribute_EnumeratedDomainAdd">
                             <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                              <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                              <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                               <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EAINFO_NEW_ENUM_DOMAIN}"/>
                             </StackPanel>
                           </Button>
@@ -391,7 +391,7 @@ limitations under the License.​
             <Button Tag="EnumDomValue" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                     Name="EntityAttribute_EnumeratedDomainAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                 <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EAINFO_NEW_ENUM_DOMAIN}"/>
               </StackPanel>
             </Button>
@@ -418,7 +418,7 @@ limitations under the License.​
                         Mode=OneWayToSource}" LastChildFill="True">
                     <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Style="{DynamicResource DeleteButton}"
                             Name="EntityAttribute_RangeDomainDelete">
-                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                     </Button>
                     <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_EAINFO_RANGE_DOMAIN}"/>
                   </DockPanel>
@@ -436,7 +436,7 @@ limitations under the License.​
       <Button Tag="RangeDomain" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
               Name="EntityAttribute_RangeDomainAdd">
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
           <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EAINFO_NEW_RANGE}"/>
         </StackPanel>
       </Button>
@@ -460,7 +460,7 @@ limitations under the License.​
                         Mode=OneWayToSource}" LastChildFill="True">
                     <Button DockPanel.Dock="Right" Click="DeleteItem" Tag="deleteParent" Style="{DynamicResource DeleteButton}"
                             Name="EntityAttribute_CodesetDomainDelete">
-                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                     </Button>
                     <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_EAINFO_CODESET}"/>
                   </DockPanel>
@@ -478,7 +478,7 @@ limitations under the License.​
       <Button Tag="CodesetDomain" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
               Name="EntityAttribute_CodesetDomainAdd">
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
           <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EAINFO_NEW_CODESET}"/>
         </StackPanel>
       </Button>
@@ -510,7 +510,7 @@ limitations under the License.​
           ToolTip="{x:Static r:Definitions.FGDC_EntityAndAttribute_udom}"
           Name="EntityAttribute_UnpresentableDomainAdd">
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
           <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EAINFO_NEW_UDOM}"/>
         </StackPanel>
       </Button>

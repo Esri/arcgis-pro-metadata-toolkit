@@ -18,7 +18,8 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Xml;
-
+using ArcGIS.Desktop.Framework;
+using ArcGIS.Desktop.Metadata;
 using ArcGIS.Desktop.Metadata.Editor.Pages;
 
 namespace MetadataToolkit.Pages
@@ -152,6 +153,7 @@ namespace MetadataToolkit.Pages
       SetDefaults();
     }
 
+    private bool _bINSPIRE = false;
     private void SetDefaults()
     {
       var titleNode = GetTitleNode();
@@ -160,19 +162,29 @@ namespace MetadataToolkit.Pages
         titleNode.InnerText = DefaultTitle;
       }
 
-      UseDropdown = false;
+      string profile = null;
+
+      var mdModule = FrameworkApplication.FindModule("esri_metadata_module") as IMetadataEditorHost;
+      if (mdModule != null)
+        profile = mdModule.GetCurrentProfile(this);
+
+      if (profile != null)
+      {
+        _bINSPIRE = profile.Equals("INSPIRE", System.StringComparison.InvariantCultureIgnoreCase);
+        if (!_bINSPIRE)
+          UseDropdown = false;
+      }
     }
 
     private void CI_Citation_title_combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
       if (!UseDropdown)
-      {
         return;
-      }
 
       var cb = (ComboBox)sender;
       var selectedVal = (string)cb.SelectedValue;
       OtherSelected = selectedVal == "Other";
+
       if (!OtherSelected)
       {
         var titleNode = GetTitleNode();
@@ -185,10 +197,8 @@ namespace MetadataToolkit.Pages
 
     private void CI_Citation_title_combobox_Loaded(object sender, RoutedEventArgs e)
     {
-      if (!UseDropdown)
-      {
+      if (!UseDropdown || !_bINSPIRE)
         return;
-      }
 
       var titleNode = GetTitleNode();
       if (titleNode != null)

@@ -100,7 +100,7 @@ limitations under the License.​
                   <DataTemplate>
                     <Button Tag="Scale_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
                             Name="MD_Resolution_ScaleResolutionAdd">
-                      <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                     </Button>
                   </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -109,7 +109,7 @@ limitations under the License.​
               <!-- delete -->
               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
                       AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Resolution_ScaleResolutionDelete}">
-                <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
               </Button>
 
               <!-- scale resolution -->
@@ -136,7 +136,7 @@ limitations under the License.​
                   <DataTemplate>
                     <Button Tag="Distance_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
                             Name="MD_Resolution_DistanceResolutionAdd">
-                      <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                     </Button>
                   </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -145,7 +145,7 @@ limitations under the License.​
               <!-- delete -->
               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
                       AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Resolution_DistanceResolutionDelete}">
-                <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
               </Button>
 
               <StackPanel Orientation="Horizontal">

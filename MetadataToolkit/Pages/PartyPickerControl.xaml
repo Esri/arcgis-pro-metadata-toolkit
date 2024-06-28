@@ -37,7 +37,7 @@ limitations under the License.​
       <Button Click="LoadParty" DockPanel.Dock="Right" Style="{DynamicResource AddButton}"
               Name="PartyPickerControl_Load">
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
           <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_LOAD_CONTACT}"/>
         </StackPanel>
       </Button>

@@ -189,7 +189,7 @@ limitations under the License.​
                           <DataTemplate>
                             <Button Tag="ScopeCode_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
                                     Name="MD_MaintenanceInformation_UpdateScopeAdd">
-                              <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                              <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                             </Button>
                           </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -197,7 +197,7 @@ limitations under the License.​
                       <!-- delete -->
                       <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
                               Name="MD_MaintenanceInformation_UpdateScopeDelete">
-                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                       </Button>
                       <!-- scope code -->
                       <t:MTK_MD_ScopeCode ToolTip="{x:Static r:Definitions.MD_MaintenanceInformation_updateScope}"/>
@@ -213,7 +213,7 @@ limitations under the License.​
                     <Button Tag="ScopeCode" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                             Name="MD_MaintenanceInformation_UpdateScopeAdd">
                       <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                        <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                        <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                         <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_MAINT_NEW_SCOPE}"/>
                       </StackPanel>
                     </Button>
@@ -243,7 +243,7 @@ limitations under the License.​
                           Mode=OneWayToSource}" LastChildFill="True">
                             <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                     Name="MD_MaintenanceInformation_ScopeDescriptionDelete">
-                              <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                              <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                             </Button>
                             <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_MAINT_UPDATEDESC}"/>
                           </DockPanel>
@@ -260,7 +260,7 @@ limitations under the License.​
               <Button Tag="ScopeDesc" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                       Name="MD_MaintenanceInformation_ScopeDescriptionAdd">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                  <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                  <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                   <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_MAIN_NEW_SCOPEDESC}"/>
                 </StackPanel>
               </Button>
@@ -289,7 +289,7 @@ limitations under the License.​
                     Mode=OneWayToSource}" LastChildFill="True">
                         <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                 Name="MD_MaintenanceInformation_ContactDelete">
-                          <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                          <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                         </Button>
                         <Label Style="{DynamicResource EditorHExpanderSimpleLabel}"  Content="{x:Static r:Resources.LBL_MAIN_CONTACT}"/>
                         <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding ElementName=responsibleParty, Path=DefaultValue, Mode=TwoWay}"/>
@@ -314,7 +314,7 @@ limitations under the License.​
             <Button Tag="Contact" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                     Name="MD_MaintenanceInformation_ContactAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                 <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_MAIN_NEW_CONTACT}"/>
               </StackPanel>
             </Button>
@@ -334,7 +334,7 @@ limitations under the License.​
                 Mode=OneWayToSource}" LastChildFill="True">
                       <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                               AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_MaintenanceInformation_MaintenanceNoteDelete}">
-                        <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                        <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                       </Button>
                       <Label Style="{DynamicResource EditorHLabelNoIdentStyle}"  Content="{x:Static r:Resources.LBL_MAINT_NOTE}"/>
                     </DockPanel>
@@ -353,7 +353,7 @@ limitations under the License.​
             <Button Tag="Note" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                     Name="MD_MaintenanceInformation_MaintenanceNoteAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                 <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_MAIN_NEW_NOTE}"/>
               </StackPanel>
             </Button>

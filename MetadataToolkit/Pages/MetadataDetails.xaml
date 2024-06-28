@@ -181,7 +181,7 @@ limitations under the License.​
                         <DockPanel LastChildFill="True">
                           <Button Visibility="{Binding XPath=., Converter={StaticResource VisibleEmptyConverter}}" DockPanel.Dock="Right" Click="ClearItem" Style="{DynamicResource DeleteButton}"
                                   Name="MD_Metadata_dateStampDelete">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                             </Button>
                           <controls:DateTimePicker
                               DisplayTime="False"
@@ -258,7 +258,7 @@ limitations under the License.​
                               <DataTemplate>
                                 <Button Tag="HierarchyLevel_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
                                         Name="MD_Metadata_hierarchyLevelAdd">
-                                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                                 </Button>
                               </DataTemplate>
                             </ListBox.ItemTemplate>
@@ -266,7 +266,7 @@ limitations under the License.​
                           <!-- delete -->
                           <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
                                   AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Metadata_hierarchyLevelDelete}">
-                            <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <!-- scope code -->
                           <tp:MTK_MD_ScopeCode_MD_Metadata/>
@@ -291,7 +291,7 @@ limitations under the License.​
                                   <DataTemplate>
                                     <Button Tag="HierarchyLevelName_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
                                             Name="MD_Metadata_hierarchyLevelNameAdd">
-                                      <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                                      <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                                     </Button>
                                   </DataTemplate>
                                 </ListBox.ItemTemplate>
@@ -299,7 +299,7 @@ limitations under the License.​
                               <!-- delete -->
                               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
                                       AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_Metadata_hierarchyLevelNameDelete}">
-                                <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                               </Button>
                               <!-- hierarchy level name -->
                               <TextBox Style="{DynamicResource EditorTextBoxStyle}"
@@ -319,7 +319,7 @@ limitations under the License.​
                             <Button Tag="HierarchyLevelName" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                                     Name="MD_Metadata_hierarchyLevelNameAdd">
                               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                                <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                                 <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_META_NEW_HIERNAME}"/>
                               </StackPanel>
                             </Button>

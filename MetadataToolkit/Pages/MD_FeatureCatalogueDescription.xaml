@@ -133,7 +133,7 @@ limitations under the License.​
                   <DataTemplate>
                     <Button Tag="Lang_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                             Name="MD_FeatureCatalogueDescription_LanguageAdd">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                     </Button>
                   </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -141,7 +141,7 @@ limitations under the License.​
               <!-- delete -->
               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                       AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_FeatureCatalogueDescription_LanguageDelete}">
-                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
               </Button>
 
               <tp:MTK_MD_CharacterSetCode DockPanel.Dock="Right" tu:MetadataStyle.OnlyProfiles="NAP,ISO19115_3" 
@@ -188,7 +188,7 @@ limitations under the License.​
                   <!-- delete -->
                   <Button Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                           AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=MD_FeatureCatalogueDescription_FeaturetypeDelete}">
-                    <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                    <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                   </Button>
                 </StackPanel>
                 <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_FEAT_FEATURE}"/>
@@ -206,7 +206,7 @@ limitations under the License.​
       <Button Tag="FeatureType" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
               Name="MD_FeatureCatalogueDescription_FeaturetypeAdd">
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
           <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_NEW_FEATURE_TYPE}"/>
         </StackPanel>
       </Button>
@@ -230,7 +230,7 @@ limitations under the License.​
                       Mode=OneWayToSource}" LastChildFill="True">
                     <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                             Name="MD_FeatureCatalogueDescription_FeatureCatalogCitationDelete">
-                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                     </Button>
                     <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_FEAT_CITATION}"/>
                     <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding XPath=resTitle, Mode=TwoWay}"/>
@@ -249,7 +249,7 @@ limitations under the License.​
         <Button Tag="Citation" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                 Name="MD_FeatureCatalogueDescription_FeatureCatalogCitationAdd">
           <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-            <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+            <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
             <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_FEAT_NEW_CITATION}"/>
           </StackPanel>
         </Button>

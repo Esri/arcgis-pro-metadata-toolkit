@@ -41,14 +41,14 @@ The ArcGIS Pro Metadata Toolkit has the same requirements as the ArcGIS Pro SDK 
 * [Requirements](https://github.com/Esri/arcgis-pro-sdk/wiki#requirements)
 
 ### Supported .NET framework
-As indicated in the [ArcGIS Pro SDK Requirements](https://github.com/Esri/arcgis-pro-sdk#requirements), ArcGIS Pro 3.0 introduces support for .NET 6.0, Microsoft's latest edition of .NET. Support for .NET 6.0 replaces support for .NET Framework 4.8. With 3.0, .NET Framework 4.8 is no longer be supported. This is a breaking change.
+As indicated in the [ArcGIS Pro SDK Requirements](https://github.com/Esri/arcgis-pro-sdk#requirements), ArcGIS Pro 3.3 introduces support for .NET 8.0, Microsoft's latest edition of .NET.
 
 ### Supported IDEs
-As indicated in the [ArcGIS Pro SDK Requirements](https://github.com/Esri/arcgis-pro-sdk#requirements),  ArcGIS Pro 3.0 SDK introduces support for Visual Studio 2022, Microsoft's latest edition of its IDE. With 3.0, Visual Studio 2017 and 2019 will no longer be supported.
+As indicated in the [ArcGIS Pro SDK Requirements](https://github.com/Esri/arcgis-pro-sdk#requirements),  ArcGIS Pro 3.3 SDK introduces support for Visual Studio 2022, Microsoft's latest edition of its IDE.
 
 ### Third party assemblies
 _Newtonsoft Json_
-At 3.0, ArcGIS Pro is using version 13.0.1.25517 of the Newtonsoft Json NuGet. It is recommended to use the same version for your ArcGIS Pro Metadata add-in.
+At 3.3, ArcGIS Pro is using version 13.0.3.27908 of the Newtonsoft Json NuGet. It is recommended to use the same version for your ArcGIS Pro Metadata add-in.
 
 ## Installing ArcGIS Pro Metadata Toolkit[](#installing-arcgis-pro-metadata-toolkit)
 After the ArcGIS Pro SDK for .NET, and ArcGIS Pro SDK for .NET (Utilities), have been downloaded and installed, the ArcGIS Pro Metadata Toolkit can also be downloaded and installed from within Visual Studio.
@@ -60,7 +60,7 @@ The following table summarizes the functionality of each .vsix file included in 
 
 | Name	| File	| Functionality	|
 | ----- | -----	| -------------	|
-|ArcGIS Pro Metadata Toolkit	| proapp-sdk-metadata-templates.vsix	| A collection of project templates to customize existing pages in the ArcGIS Pro metadata editor, or add a new custom page to the editor |
+| ArcGIS Pro Metadata Toolkit	| proapp-sdk-metadata-templates.vsix	| A collection of project templates to customize existing pages in the ArcGIS Pro metadata editor, or add a new custom page to the editor |
 
 ## ArcGIS Pro Metadata Toolkit templates[](#arcgis-pro-metadata-toolkit-templates)
 Package: proapp-sdk-metadata-templates.vsix
@@ -69,54 +69,32 @@ ArcGIS Pro Metadata Toolkit provides the following project templates:
 
 | C#	| Name	|
 | ----- | -----	|
-| ![ArcGIS Pro Add-in C#](https://camo.githubusercontent.com/fa0bb62d6c13e36c08fecaee3f61558e40b8ba16/687474703a2f2f457372692e6769746875622e696f2f6172636769732d70726f2d73646b2f696d616765732f56697375616c53747564696f54656d706c617465732f41726347495350726f4d6f64756c654333322e706e67 "ArcGIS Pro Add-in C#") | ArcGIS Pro Custom Metadata Editor Source Project template |
+| ![ArcGIS Pro Add-in C#](resources/metadata-toolkit-template-icon.png "ArcGIS Pro Add-in C#") | ArcGIS Pro Custom Metadata Editor Source Project template |
 
 ## Release notes[](#release-notes)
 
-### ArcGIS Pro Metadata Toolkit 3.0.0.36056
-
-These release notes describe details of the ArcGIS Pro Metadata Toolkit 3.0.0.36056 release. Here you will find information about available functionality as well as known issues and limitations.
+### ArcGIS Pro Metadata Toolkit 3.3.0.52636
+These release notes describe details of the ArcGIS Pro Metadata Toolkit 3.3.0.52636 release. Here you will find information about available functionality as well as known issues and limitations.
 
 #### What’s new
 This release of the ArcGIS Pro Metadata Toolkit is not significantly different from the previous release. 
-
-								   
-																																	
-
-											  
-																																																																																																																																																																																 
-
-																																			  
-																																																																																																												 
-
-													
-																																																																																																																																																																										
-
-																																																																																																																													
-
-																													 
-
-					   
-																																																																																																					   
-
-																																																																																																																				   
-
-																																																																																																															
 
 #### New topic in the wiki
 A new page was added to the wiki that describes how to [customize validation rules](https://github.com/Esri/arcgis-pro-metadata-toolkit/wiki/Customize-the-validation-rules-for-a-page) for pages in the metadata editor.
 
 #### Bug fixes
 The metadata toolkit was also updated to include bug fixes for the following items:
+- Update xaml source for GenericAddGreen16 & GenericDeleteRed16 images to their respective DynamicResource.
+- Update to Editor Rich Textboxes so they no longer include the URI port in their tooltips.
+- Update metadata save value for Scale State Label from ```625000``` to ```5000000```.
 - A crash scenario when switching the localized langauge to Czech when editing metadata.
-- Saving thumbnail images for multiple toolbox models now save the appropriate thumbnail image for their corresponding toolbox model.
-- The namespace ```MetadataTookKit``` was updated to ```MetadataToolkit``` for naming consistency.
+- Support deletion for metadata geoprocessing history page for all or individual entries.
 
 #### Leverage administrator settings
 When you develop a custom metadata editor for your organization, you can work with the GIS administrator to [manage ArcGIS Pro application settings](https://pro.arcgis.com/en/pro-app/latest/get-started/application-setting-management.htm). People in the organization who use ArcGIS Pro can be required to use the custom metadata editor add-in by setting the ```MetadataStyle``` setting to the same value as the ```displayName``` property specified in your editor’s ```Config.daml``` file.
 
 #### Known limitations
-There are no changes to the existing list of known limitations at ArcGIS Pro version 3.0.
+There are no changes to the existing list of known limitations at ArcGIS Pro version 3.3.
 
 - When a custom metadata style is used, the importers and exporters defined for the custom style are not automatically selected when the Import Metadata and Export Metadata dialog boxes are opened. All of the importers and exporters provided with ArcGIS Pro are listed. If a custom importer and exporter are defined they will also be included in the list. The appropriate importer or exporter must be selected manually.
 - The ArcGIS Pro metadata editor doesn't yet have a central location in which to display guidance for the content that should be provided in a metadata element.
@@ -125,6 +103,7 @@ There are no changes to the existing list of known limitations at ArcGIS Pro ver
 
 ### Previous releases
 
+- [ArcGIS Pro 3.0 Metadata Toolkit](https://github.com/Esri/arcgis-pro-metadata-toolkit/releases/tag/3.0.0.36056)
 - [ArcGIS Pro 2.9 Metadata Toolkit](https://github.com/Esri/arcgis-pro-metadata-toolkit/releases/tag/2.9.0.32739)
 - [ArcGIS Pro 2.6 Metadata Toolkit](https://github.com/Esri/arcgis-pro-metadata-toolkit/releases/tag/v2.6.0.24783)
 - [ArcGIS Pro 2.4 Metadata Toolkit](https://github.com/Esri/arcgis-pro-metadata-toolkit/releases/tag/2.4.0.18895)
@@ -138,7 +117,7 @@ Esri welcomes contributions from anyone and everyone. For more information, see 
 Find a bug or want to request a new feature? Let us know by submitting an issue.
 
 ## Licensing
-Copyright 2022 Esri
+Copyright 2024 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
 

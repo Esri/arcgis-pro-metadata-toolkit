@@ -100,7 +100,7 @@ limitations under the License.​
                         Mode=OneWayToSource}" LastChildFill="True">
                       <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                               Name="MD_Distribution_DistributionFormatDelete">
-                        <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                        <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                       </Button>
                       <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DIST_FORMAT}"/>
                     </DockPanel>
@@ -116,7 +116,7 @@ limitations under the License.​
           <Button Tag="Format" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                   Name="MD_Distribution_DistributionFormatAdd">
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-              <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+              <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
               <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DIST_NEW_FORMAT}"/>
             </StackPanel>
           </Button>
@@ -143,7 +143,7 @@ limitations under the License.​
                         Mode=OneWayToSource}" LastChildFill="True">
                       <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                               Name="MD_Distribution_DistributorDelete">
-                        <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                        <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                       </Button>
                       <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DIST_DISTOR}"/>
                     </DockPanel>
@@ -159,7 +159,7 @@ limitations under the License.​
           <Button Tag="Distributor" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                   Name="MD_Distribution_DistributorAdd">
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-              <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+              <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
               <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DIST_NEW_DISTOR}"/>
             </StackPanel>
           </Button>
@@ -186,7 +186,7 @@ limitations under the License.​
                         Mode=OneWayToSource}" LastChildFill="True">
                       <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                               Name="MD_Distribution_DigitalTransferDelete">
-                        <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                        <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                       </Button>
                       <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DIST_TRANS}"/>
                     </DockPanel>
@@ -202,7 +202,7 @@ limitations under the License.​
           <Button Tag="Transfer" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                   Name="MD_Distribution_DigitalTransferAdd">
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-              <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+              <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
               <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DIST_NEW_TRANS}"/>
             </StackPanel>
           </Button>

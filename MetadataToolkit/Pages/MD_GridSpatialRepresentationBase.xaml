@@ -143,7 +143,7 @@ limitations under the License.​
                     Mode=OneWayToSource}" LastChildFill="True">
                       <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                               Name="MD_GridSpatialRepresentation_DimensionDelete">
-                        <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                        <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                       </Button>
                       <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DIMENSION}"/>
                     </DockPanel>
@@ -159,7 +159,7 @@ limitations under the License.​
           <Button Tag="Dimension" Click="AddRecordByTag" Style="{DynamicResource AddButton}"
                   Name="MD_GridSpatialRepresentation_DimensionAdd">
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-              <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+              <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
               <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_CONSTS_NEW_DIM}"/>
             </StackPanel>
           </Button>

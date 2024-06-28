@@ -150,7 +150,7 @@ limitations under the License.​
                     <DataTemplate>
                       <Button Tag="Email_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
                               AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Contact_EmailAdd}">
-                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       </Button>
                     </DataTemplate>
                   </ListBox.ItemTemplate>
@@ -158,7 +158,7 @@ limitations under the License.​
                 <!-- delete -->
                 <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
                         AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Contact_EmailDelete}">
-                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                 </Button>
                 <!-- email -->
                 <TextBox Style="{DynamicResource EditorTextBoxStyle}" ToolTip="{x:Static r:Definitions.CI_Address_electronicMailAddress}"
@@ -203,7 +203,7 @@ limitations under the License.​
                 <Button Tag="OnlineRes" Click="AddRecordByTag" Style="{DynamicResource AddButton}"
                         Name="CI_OnlineResourceAdd">
                   <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                    <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                     <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_ONLINE_RES}"/>
                   </StackPanel>
                 </Button>
@@ -243,7 +243,7 @@ limitations under the License.​
                     <DataTemplate>
                       <Button Tag="Address_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
                               Name="CI_Contact_AddressAdd">
-                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       </Button>
                     </DataTemplate>
                   </ListBox.ItemTemplate>
@@ -251,7 +251,7 @@ limitations under the License.​
                 <!-- delete -->
                 <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
                         AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Contact_AddressDelete}">
-                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                 </Button>
                 <!-- address / delpoint -->
                 <TextBox Style="{DynamicResource EditorTextBoxStyle}"
@@ -319,7 +319,7 @@ limitations under the License.​
                     <DataTemplate>
                       <Button Tag="Phone_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}" 
                               Name="CI_Contact_PhoneAdd">
-                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       </Button>
                     </DataTemplate>
                   </ListBox.ItemTemplate>
@@ -327,7 +327,7 @@ limitations under the License.​
                 <!-- delete -->
                 <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
                         AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Contact_PhoneDelete}">
-                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                 </Button>
 
                 <!-- phone -->
@@ -361,7 +361,7 @@ limitations under the License.​
                     <DataTemplate>
                       <Button Tag="Fax_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
                               Name="CI_Contact_FaxAdd">
-                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       </Button>
                     </DataTemplate>
                   </ListBox.ItemTemplate>
@@ -373,7 +373,7 @@ limitations under the License.​
                     <DataTemplate>
                       <Button Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
                               AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Contact_FaxDelete}">
-                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                        <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                       </Button>
                     </DataTemplate>
                   </ListBox.ItemTemplate>

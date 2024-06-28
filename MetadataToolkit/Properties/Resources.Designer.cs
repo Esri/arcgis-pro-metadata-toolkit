@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace $safeprojectname$.Properties {
+namespace MetadataToolkit.Properties {
     using System;
     
     
@@ -2156,25 +2156,7 @@ namespace $safeprojectname$.Properties {
                 return ResourceManager.GetString("LBL_CI_PARTY", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to %LABEL%.
-        /// </summary>
-        public static string LBL_CI_PARTY_ADD_FORMAT {
-            get {
-                return ResourceManager.GetString("LBL_CI_PARTY_ADD_FORMAT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to %LABEL% (%ROLE%).
-        /// </summary>
-        public static string LBL_CI_PARTY_FORMAT {
-            get {
-                return ResourceManager.GetString("LBL_CI_PARTY_FORMAT", resourceCulture);
-            }
-        }
-        
+               
         /// <summary>
         ///   Looks up a localized string similar to Load a contact:.
         /// </summary>
@@ -2183,16 +2165,7 @@ namespace $safeprojectname$.Properties {
                 return ResourceManager.GetString("LBL_CI_PARTY_PICK", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to %LABEL%.
-        /// </summary>
-        public static string LBL_CI_PARTY_READONLY_FORMAT {
-            get {
-                return ResourceManager.GetString("LBL_CI_PARTY_READONLY_FORMAT", resourceCulture);
-            }
-        }
-        
+               
         /// <summary>
         ///   Looks up a localized string similar to Unknown.
         /// </summary>

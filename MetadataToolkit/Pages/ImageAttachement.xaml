@@ -49,14 +49,14 @@ limitations under the License.​
         <Button Click="DeleteThumbnail" Style="{DynamicResource TopButton}"
                 Name="ImageAttachement_ThumbnailDelete">
           <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-            <Image Style="{DynamicResource TopButtonImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+            <Image Style="{DynamicResource TopButtonImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
             <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_THUMB_DELETE}"/>
           </StackPanel>
         </Button>
         <Button Click="UpdateThumbnail" Style="{DynamicResource TopButton}"
                 Name="ImageAttachement_ThumbnailUpdate">
           <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-            <Image Style="{DynamicResource TopButtonImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/FolderOpenState16.png"/>
+            <Image Style="{DynamicResource TopButtonImageStyle}" Source="{DynamicResource FolderOpenState16}"/>
             <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_THUMB_REPLACE}"/>
           </StackPanel>
         </Button>

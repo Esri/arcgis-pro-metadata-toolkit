@@ -113,7 +113,7 @@ limitations under the License.​
                     Mode=OneWayToSource}" LastChildFill="True">
                     <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                             Name="LI_ProcessStep_ProcessorDelete">
-                      <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                      <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                     </Button>
                     <Label Style="{DynamicResource EditorHExpanderSimpleLabel}"  Content="{x:Static r:Resources.LBL_LI_PROCESS_PROCESSOR}"/>
                     <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding ElementName=responsibleParty, Path=DefaultValue, Mode=TwoWay}"/>
@@ -140,7 +140,7 @@ limitations under the License.​
         <Button Tag="Processor" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                 Name="LI_ProcessStep_ProcessorAdd">
           <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-            <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+            <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
             <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_LI_PROCESS_STEP_NEW_PROC}"/>
           </StackPanel>
         </Button>
@@ -166,7 +166,7 @@ limitations under the License.​
                         Mode=OneWayToSource}" LastChildFill="True">
                       <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                               Name="LI_ProcessStep_DataSourceDelete">
-                        <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                        <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                       </Button>
                       <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_LI_SOURCE}"/>
                     </DockPanel>
@@ -184,7 +184,7 @@ limitations under the License.​
       <Button Tag="Source" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
               Name="LI_ProcessStep_DataSourceAdd">
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+          <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
           <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_LI_NEW_SOURCE}"/>
         </StackPanel>
       </Button>

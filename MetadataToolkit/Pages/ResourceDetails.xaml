@@ -235,7 +235,7 @@ limitations under the License.​
                               <DataTemplate>
                                 <Button Tag="Status_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
                                         Name="ResourceDetailsPage_StatusAdd">
-                                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                                 </Button>
                               </DataTemplate>
                             </ListBox.ItemTemplate>
@@ -243,7 +243,7 @@ limitations under the License.​
                           <!-- delete -->
                           <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
                                   AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ResourceDetailsPage_StatusDelete}">
-                            <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <!-- progress code -->
                           <tp:MTK_MD_ProgressCode/>
@@ -259,7 +259,7 @@ limitations under the License.​
                         <Button Tag="Status" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                                 Name="ResourceDetailsPage_StatusAdd">
                           <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                            <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                            <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                             <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ABSTRACT_NEW_STATUS}"/>
                           </StackPanel>
                         </Button>
@@ -284,7 +284,7 @@ limitations under the License.​
                                 Mode=OneWayToSource}" LastChildFill="True">
                             <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                     AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ResourceDetailsPage_CreditDelete}">
-                              <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                              <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                             </Button>
                             <Label Style="{DynamicResource EditorHLabelNoIdentStyle}"  Content="{x:Static r:Resources.LBL_DESC_CREDIT}"/>
                           </DockPanel>
@@ -304,7 +304,7 @@ limitations under the License.​
                   <Button Tag="Credit" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                           Name="ResourceDetailsPage_CreditAdd">
                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ABSTRACT_NEW_CREDIT}"/>
                     </StackPanel>
                   </Button>
@@ -325,7 +325,7 @@ limitations under the License.​
                                 <DataTemplate>
                                   <Button Tag="Lang_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
                                           Name="ResourceDetailsPage_LanguageAdd">
-                                    <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                                    <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                                   </Button>
                                 </DataTemplate>
                               </ListBox.ItemTemplate>
@@ -333,7 +333,7 @@ limitations under the License.​
                             <!-- delete -->
                             <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
                                     AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ResourceDetailsPage_LanguageDelete}">
-                              <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                              <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                             </Button>
                             <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHLabelNoIdentStyle}" Content="{x:Static r:Resources.LBL_RES_LANGS}"/>
                           </DockPanel>
@@ -373,7 +373,7 @@ limitations under the License.​
                               <DataTemplate>
                                 <Button Tag="Char_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
                                         Name="ResourceDetailsPage_CharacterSetAdd">
-                                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                                 </Button>
                               </DataTemplate>
                             </ListBox.ItemTemplate>
@@ -381,7 +381,7 @@ limitations under the License.​
                           <!-- delete -->
                           <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
                                   AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ResourceDetailsPage_CharacterSetDelete}">
-                            <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <!-- character set -->
                           <tp:MTK_MD_CharacterSetCode ToolTip="{x:Static r:Definitions.MD_DataIdentification_characterSet}"/>
@@ -406,7 +406,7 @@ limitations under the License.​
                               <DataTemplate>
                                 <Button Tag="SpatType_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
                                         Name="ResourceDetailsPage_SpatialRepresentationTypeAdd">
-                                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                                  <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                                 </Button>
                               </DataTemplate>
                             </ListBox.ItemTemplate>
@@ -414,7 +414,7 @@ limitations under the License.​
                           <!-- delete -->
                           <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
                                   AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ResourceDetailsPage_SpatialRepresentationTypeDelete}">
-                            <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <!-- spatial rep type -->
                           <ComboBox Loaded="PostProcessComboBoxValues" SelectionChanged="ComboBoxSyncSelectionChanged" Style="{DynamicResource EditorHComboBoxStyle}" IsEditable="False"
@@ -465,7 +465,7 @@ limitations under the License.​
                                 Mode=OneWayToSource}" LastChildFill="True">
                               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                       AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ResourceDetailsPage_BrowseGraphicDelete}">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                               </Button>
                               <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_BROWSE_GRAPHIC}"/>
                             </DockPanel>
@@ -481,7 +481,7 @@ limitations under the License.​
                   <Button Tag="Browse" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                           Name="ResourceDetailsPage_BrowseGraphicAdd">
                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_NEW_BROWSE}"/>
                     </StackPanel>
                   </Button>
@@ -518,7 +518,7 @@ limitations under the License.​
                                 Mode=OneWayToSource}" LastChildFill="True">
                               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                       AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ResourceDetailsPage_UsageDelete}">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                               </Button>
                               <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_USAGE}"/>
                             </DockPanel>
@@ -534,7 +534,7 @@ limitations under the License.​
                   <Button Tag="Usage" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                           Name="ResourceDetailsPage_UsageAdd">
                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_NEW_USAGE}"/>
                     </StackPanel>
                   </Button>
@@ -573,7 +573,7 @@ limitations under the License.​
                                 Mode=OneWayToSource}" LastChildFill="True">
                               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                       AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=ResourceDetailsPage_DistributionFormatDelete}">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                               </Button>
                               <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DIST_FORMAT}"/>
                             </DockPanel>
@@ -589,7 +589,7 @@ limitations under the License.​
                   <Button Tag="Format" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                           Name="ResourceDetailsPage_DistributionFormatAdd">
                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_RES_NEW_FORMAT}"/>
                     </StackPanel>
                   </Button>

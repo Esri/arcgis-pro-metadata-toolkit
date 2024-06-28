@@ -282,7 +282,7 @@ limitations under the License.​
                               Mode=OneWayToSource}" LastChildFill="True">
                               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                       Name="TopicsAndKeywordsPage_ThemeKeywordDelete">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                               </Button>
                               <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DESC_THEMEKEY}"/>
                             </DockPanel>
@@ -299,7 +299,7 @@ limitations under the License.​
                   <Button Tag="ThemeKey" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                           Name="TopicsAndKeywordsPage_ThemeKeywordAdd">
                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_KEY_NEW_THEME}"/>
                     </StackPanel>
                   </Button>
@@ -326,7 +326,7 @@ limitations under the License.​
                               Mode=OneWayToSource}" LastChildFill="True">
                               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                       Name="TopicsAndKeywordsPage_PlaceKeywordDelete">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                               </Button>
                               <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DESC_PLACEKEY}"/>
                             </DockPanel>
@@ -344,7 +344,7 @@ limitations under the License.​
                   <Button Tag="PlaceKey" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                           Name="TopicsAndKeywordsPage_PlaceKeywordAdd">
                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_KEY_NEW_PLACE}"/>
                     </StackPanel>
                   </Button>
@@ -371,7 +371,7 @@ limitations under the License.​
                               Mode=OneWayToSource}" LastChildFill="True">
                               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                       Name="TopicsAndKeywordsPage_TemporalKeywordDelete">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                               </Button>
                               <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DESC_TEMPKEY}"/>
                             </DockPanel>
@@ -389,7 +389,7 @@ limitations under the License.​
                   <Button Tag="TempKey" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                           Name="TopicsAndKeywordsPage_TemporalKeywordAdd">
                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_KEY_NEW_TEMP}"/>
                     </StackPanel>
                   </Button>
@@ -416,7 +416,7 @@ limitations under the License.​
                               Mode=OneWayToSource}" LastChildFill="True">
                               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                       Name="TopicsAndKeywordsPage_DisciplineKeywordDelete">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                               </Button>
                               <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DESC_DISKEY}"/>
                             </DockPanel>
@@ -434,7 +434,7 @@ limitations under the License.​
                   <Button Tag="DisKey" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                           Name="TopicsAndKeywordsPage_DiscilineKeywordAdd">
                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_KEY_NEW_DIS}"/>
                     </StackPanel>
                   </Button>
@@ -461,7 +461,7 @@ limitations under the License.​
                               Mode=OneWayToSource}" LastChildFill="True">
                               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                       Name="TopicsAndKeywordsPage_StratumKeywordDelete">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                               </Button>
                               <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DESC_STRATKEY}"/>
                             </DockPanel>
@@ -479,7 +479,7 @@ limitations under the License.​
                       <Button Tag="StratKey" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                               Name="TopicsAndKeywordsPage_StratumKeywordAdd">
                         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_KEY_NEW_STRAT}"/>
                     </StackPanel>
                   </Button>
@@ -506,7 +506,7 @@ limitations under the License.​
                               Mode=OneWayToSource}" LastChildFill="True">
                               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                       Name="TopicsAndKeywordsPage_OtherKeywordDelete">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                               </Button>
                               <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DESC_OTHERKEY}"/>
                             </DockPanel>
@@ -524,7 +524,7 @@ limitations under the License.​
                   <Button Tag="OtherKey" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                           Name="TopicsAndKeywordsPage_OtherKeywordAdd">
                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_KEY_NEW_OTHER}"/>
                     </StackPanel>
                   </Button>
@@ -551,7 +551,7 @@ limitations under the License.​
                               Mode=OneWayToSource}" LastChildFill="True">
                               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                       Name="TopicsAndKeywordsPage_ProductKeywordDelete">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                               </Button>
                               <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DESC_PRODUCTKEY}"/>
                             </DockPanel>
@@ -569,7 +569,7 @@ limitations under the License.​
                   <Button Tag="ProductKey" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                           Name="TopicsAndKeywordsPage_ProductKeywordAdd">
                       <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_KEY_NEW_PRODUCT}"/>
                     </StackPanel>
                   </Button>
@@ -596,7 +596,7 @@ limitations under the License.​
                               Mode=OneWayToSource}" LastChildFill="True">
                               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                       Name="TopicsAndKeywordsPage_SubTopicKeywordDelete">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                               </Button>
                               <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_DESC_SUBTOPICKEY}"/>
                             </DockPanel>
@@ -614,7 +614,7 @@ limitations under the License.​
                   <Button Tag="SubTopicKey" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                           Name="TopicsAndKeywordsPage_SubTopicKeywordAdd">
                       <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_KEY_NEW_SUBTOPIC}"/>
                     </StackPanel>
                   </Button>

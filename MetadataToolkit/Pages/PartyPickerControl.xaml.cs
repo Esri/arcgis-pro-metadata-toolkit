@@ -47,7 +47,7 @@ namespace MetadataToolkit.Pages
         //  nameString = nameNode.InnerText;
         //}
 
-        var nameString = Utils.Utils.ExtractResponsiblePartyLabel(node, MetadataToolkit.Properties.Resources.LBL_CI_PARTY_ADD_FORMAT);
+        var nameString = Utils.Utils.ExtractResponsiblePartyLabel(node, Utils.Utils.LBL_CI_PARTY_ADD_FORMAT);
 
         // create new node for display in the list control
         var newNode = _contactsDoc.CreateElement("displayName");

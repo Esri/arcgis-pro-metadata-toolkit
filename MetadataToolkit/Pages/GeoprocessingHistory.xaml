@@ -1,34 +1,23 @@
-<!--
-Copyright 2019 Esri
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-    http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.​
--->
-
 <p:EditorPage x:Class="MetadataToolkit.Pages.MTK_GeoprocessingHistory" x:ClassModifier="internal" 
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:t="clr-namespace:MetadataToolkit.Pages"
-             xmlns:r="clr-namespace:MetadataToolkit.Properties"             
-             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"             
-             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:controls="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Controls;assembly=ArcGIS.Desktop.Metadata"
-             mc:Ignorable="d" 
-             Loaded="FillXml">
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
+              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
+              xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"
+              xmlns:r="clr-namespace:ArcGIS.Desktop.Internal.Metadata.Properties;assembly=ArcGIS.Desktop.Metadata"
+              xmlns:controls="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Controls;assembly=ArcGIS.Desktop.Metadata"
+              xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
+              xmlns:controlsPrimitives="http://schemas.actiprosoftware.com/winfx/xaml/shared"
+              xmlns:themes="http://schemas.actiprosoftware.com/winfx/xaml/themes"
+              xmlns:frameworkControls="clr-namespace:ArcGIS.Desktop.Internal.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
+              xmlns:frameworkBehaviors="clr-namespace:ArcGIS.Desktop.Internal.Framework.Behaviors;assembly=ArcGIS.Desktop.Framework"
+              mc:Ignorable="d" 
+              Loaded="GeoprocessingHistory_Loaded">
   <UserControl.Resources>
     <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter"/>
-    <!--
-    
+    <!--    
       For each lineage process, show a checkbox, setting a flag that indicates if the entry should be exported.
 
       The checkbox is bound to: /metadata/Esri/DataProperties/lineage/Process/@export
@@ -49,7 +38,6 @@ limitations under the License.​
       <Process Name="Metadata Importer FGDC" 
       ToolSource="C:\ArcGIS\Desktop9.4\ArcToolbox\Toolboxes\Conversion Tools.tbx\MetadataImporter" 
       Date="20091012" Time="133518">MetadataImporter c:\ArcGIS\ArcTutor\Metadata\yellowstone\states_xsltt1.xml c:\arcgis\arctutor\metadata\yellowstone\states c:\arcgis\arctutor\metadata\yellowstone\states</Process>
-
     -->
 
     <XmlDataProvider x:Key="XmlRecord" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
@@ -58,108 +46,358 @@ limitations under the License.​
           <metadata>
             <Esri>
               <DataProperties>
-                <lineage editorFillOnly="True">
-                  <Process export="False" editorExpand="False"></Process>
-                </lineage>
+                <lineage/>
               </DataProperties>
             </Esri>
           </metadata>
         </ANY>
       </x:XData>
     </XmlDataProvider>
+
+    <!--ListView styles-->
+    <converters:GeoprocessingHistoryToolSourceToNameConverter x:Key="GeoprocessingHistoryToolSourceToNameConverter"/>
+    <converters:GeoprocessingHistoryDatetimeConverter x:Key="GeoprocessingHistoryDatetimeConverter"/>
+    <converters:GeoprocessingHistoryLastColumnWidthConverter x:Key="GeoprocessingHistoryLastColumnWidthConverter"/>
+    <p:VisibleBoolNotConverter x:Key="VisibleBoolNotConverter"/>
+
+    <Style TargetType="Grid" x:Key="HeaderGridStyle">
+      <Setter Property="Height" Value="20" />
+    </Style>
+
+    <Style x:Key="HeaderContainerDefaultStyle"
+           TargetType="{x:Type GridViewColumnHeader}" 
+           BasedOn="{StaticResource {x:Type GridViewColumnHeader}}">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="BorderThickness" Value="0,0,1,0"/>
+      <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="HeaderTextBlockStyle">
+      <Setter Property="Margin" Value="5,0,0,0" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+      <Setter Property="HorizontalAlignment" Value="Left"/>
+      <Setter Property="Foreground" Value="{DynamicResource Esri_Gray220_Brush}"/>
+    </Style>
+
+    <Style TargetType="Path" x:Key="HeaderPathStyle">
+      <Setter Property="StrokeThickness" Value="1" />
+      <Setter Property="Fill" Value="Gray" />
+      <Setter Property="Width" Value="20" />
+      <Setter Property="HorizontalAlignment" Value="Center" />
+      <Setter Property="Margin" Value="5,0,5,0" />
+      <Setter Property="SnapsToDevicePixels" Value="True" />
+    </Style>
+
+    <DataTemplate x:Key="HeaderTemplateDefault">
+      <Grid Style="{StaticResource HeaderGridStyle}">
+        <TextBlock Text="{Binding Path=Tag, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type GridViewColumnHeader}}}"
+                   Style="{StaticResource HeaderTextBlockStyle}"/>
+      </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="HeaderTemplateArrowUp">
+      <Grid Style="{StaticResource HeaderGridStyle}">
+        <Path Data="M 7,3 L 13,3 L 10,0 L 7,3" Style="{StaticResource HeaderPathStyle}" />
+        <TextBlock Text="{Binding Path=Tag, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type GridViewColumnHeader}}}"
+                   Style="{StaticResource HeaderTextBlockStyle}" />
+      </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="HeaderTemplateArrowDown">
+      <Grid Style="{StaticResource HeaderGridStyle}">
+        <Path Data="M 7,0 L 10,3 L 13,0 L 7,0"  Style="{StaticResource HeaderPathStyle}" />
+        <TextBlock Text="{Binding Path=Tag, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type GridViewColumnHeader}}}" 
+                   Style="{StaticResource HeaderTextBlockStyle}" />
+      </Grid>
+    </DataTemplate>
+
+    <!-- This style is a modified version of the style with key "themes:SharedResourceKeys.ListViewItemStyleKey" found in actipro List.xaml file in UIFramework. It
+    has been modified to look like the style used for the Catalog pane (CatalogListView.xaml in Core). The style in Core could not be used because of binding to
+    view models which are not available for this scenario.-->
+    <Style x:Key="CustomListViewItemStyle" TargetType="{x:Type ListViewItem}">
+      <Setter Property="Background" Value="{DynamicResource {x:Static themes:AssetResourceKeys.ListItemBackgroundNormalBrushKey}}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource {x:Static themes:AssetResourceKeys.ListItemBorderNormalBrushKey}}" />
+      <Setter Property="BorderThickness" Value="{DynamicResource {x:Static themes:AssetResourceKeys.ListItemBorderNormalThicknessKey}}" />
+      <Setter Property="Foreground" Value="{DynamicResource Esri_Gray160_Brush}" />
+      <Setter Property="themes:ThemeProperties.CornerRadius" Value="{DynamicResource {x:Static themes:AssetResourceKeys.ListItemBorderNormalCornerRadiusKey}}" />
+      <Setter Property="themes:ThemeProperties.IsGlassEnabled" Value="false" />
+      <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="Margin" Value="0,0,0,1" />
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ListViewItem}">
+            <controlsPrimitives:ElementChrome x:Name="chrome" Background="{TemplateBinding Background}"
+							BackgroundDisabled="{DynamicResource {x:Static themes:AssetResourceKeys.ListItemBackgroundDisabledBrushKey}}"
+							BackgroundHover="{DynamicResource EsriLightBrushKey}"
+							BackgroundFocused="{DynamicResource EsriHighlightBrushKey}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderBrushDisabled="{DynamicResource {x:Static themes:AssetResourceKeys.ListItemBorderDisabledBrushKey}}"
+							BorderBrushHover="{DynamicResource EsriLightBrushKey}"
+							BorderBrushFocused="{DynamicResource esriBlueBrushKey}"
+							BorderThickness="1"
+							InnerBorderBrush="Transparent"
+							InnerBorderBrushDisabled="Transparent"
+							InnerBorderBrushHover="Transparent"
+							InnerBorderBrushFocused="Transparent"
+							InnerBorderThickness="0"
+							CornerRadius="{TemplateBinding themes:ThemeProperties.CornerRadius}"
+							SnapsToDevicePixels="true">
+              <controlsPrimitives:PixelSnapper VerticalRoundMode="CeilingToEven">
+                <Grid>
+                  <Grid.RowDefinitions>
+                    <RowDefinition MaxHeight="11" />
+                    <RowDefinition />
+                  </Grid.RowDefinitions>
+                  <Rectangle x:Name="highlight"
+										Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(themes:ThemeProperties.IsGlassEnabled), Converter={StaticResource BooleanToVisibilityConverter}}" />
+                  <GridViewRowPresenter Grid.RowSpan="2" Margin="{TemplateBinding Padding}"
+										VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+										SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                </Grid>
+              </controlsPrimitives:PixelSnapper>
+            </controlsPrimitives:ElementChrome>
+
+            <ControlTemplate.Triggers>
+              <MultiTrigger>
+                <MultiTrigger.Conditions>
+                  <Condition Property="IsMouseOver" Value="true" />
+                  <Condition Property="IsSelected" Value="false" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="chrome" Property="State" Value="Hover" />
+              </MultiTrigger>
+              <MultiTrigger>
+                <MultiTrigger.Conditions>
+                  <Condition Property="IsMouseOver" Value="true" />
+                  <Condition Property="IsSelected" Value="true" />
+                  <Condition Property="Selector.IsSelectionActive" Value="true" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="chrome" Property="State" Value="Hover" />
+                <Setter TargetName="chrome" Property="BorderBrushHover" Value="{DynamicResource esriBlueBrushKey}"/>
+              </MultiTrigger>
+              <MultiTrigger>
+                <MultiTrigger.Conditions>
+                  <Condition Property="IsMouseOver" Value="false" />
+                  <Condition Property="IsSelected" Value="true" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="chrome" Property="State" Value="Focused" />
+                <Setter TargetName="highlight" Property="Fill" Value="#40FFFFFF" />
+              </MultiTrigger>
+              <MultiTrigger>
+                <MultiTrigger.Conditions>
+                  <Condition Property="IsSelected" Value="true" />
+                  <Condition Property="Selector.IsSelectionActive" Value="false" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="chrome" Property="BackgroundFocused" Value="{DynamicResource Esri_Gray125}" />
+                <Setter TargetName="chrome" Property="BorderBrushFocused" Value="{DynamicResource Esri_Gray135}" />
+                <Setter TargetName="chrome" Property="BackgroundHover" Value="{DynamicResource Esri_Gray125}" />
+                <Setter TargetName="chrome" Property="BorderBrushHover" Value="{DynamicResource Esri_Gray135}" />
+                <Setter TargetName="chrome" Property="Background" Value="{DynamicResource Esri_Gray125}" />
+                <Setter TargetName="chrome" Property="BorderBrush" Value="{DynamicResource Esri_Gray135}" />
+              </MultiTrigger>
+              <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                <Setter TargetName="chrome" Property="State" Value="Disabled" />
+                <Setter TargetName="highlight" Property="Fill" Value="{x:Null}" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style TargetType="ToolTip">
+      <Setter Property="MaxWidth" Value="400" />
+      <Setter Property="ContentTemplate">
+        <Setter.Value>
+          <DataTemplate>
+            <ContentPresenter Content="{TemplateBinding Content}"  >
+              <ContentPresenter.Resources>
+                <Style TargetType="{x:Type TextBlock}">
+                  <Setter Property="TextWrapping" Value="Wrap" />
+                </Style>
+              </ContentPresenter.Resources>
+            </ContentPresenter>
+          </DataTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
   </UserControl.Resources>
 
   <Grid Style="{DynamicResource EditorFrontPageStyle}">
-    <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=/metadata}">
-      <ListBox.ItemTemplate>
-        <DataTemplate>
-          <StackPanel>
 
-            <!-- heading -->
-            <Label Style="{DynamicResource EditorPageTitle}" Content="{x:Static r:Resources.SEC_PROCESSHISTORY}"/>
-            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=Esri[not(DataProperties/lineage/Process)]}">
-              <ListBox.ItemTemplate>
-                <DataTemplate>
-                  <Label Style="{DynamicResource EditorHMessageLabel}"  Content="{x:Static r:Resources.LBL_NO_GEO_PROCESS}"/>
-                </DataTemplate>
-              </ListBox.ItemTemplate>
-            </ListBox>
-            <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=Esri/DataProperties/lineage/Process}">
-              <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                  <StackPanel/>
-                </ItemsPanelTemplate>
-              </ListBox.ItemsPanel>
-              <ListBox.ItemTemplate>
-                <DataTemplate>
-                  <Expander Style="{DynamicResource EditorExpander2Style}"
-                            AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=GeoprocessingHistory_ProcessItemGroup}">
-                    <Expander.Header>
-                      <StackPanel Orientation="Horizontal">
-                        <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_PROCESS}"/>
-                        <Label Content="{Binding XPath=@Name}"/>
-                      </StackPanel>
-                    </Expander.Header>
-                    <!-- process -->
-                    <StackPanel>
-                      <Grid>
-                        <Grid.RowDefinitions>
-                          <RowDefinition />
-                          <RowDefinition />
-                          <RowDefinition />
-                          <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                          <ColumnDefinition Width="Auto"/>
-                          <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
 
-                        <!-- export -->
-                        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="0" Grid.Column="0"
-                            Content="{x:Static r:Resources.LBL_GEOPROCESSING_EXPORT}"/>
-                        <CheckBox Style="{DynamicResource EditorCheckBoxStyle}"
-                            ToolTip="{x:Static r:Definitions.ESRI_geoprocessingHistory_export}"
-                            Grid.Row="0" Grid.Column="1" Content=""
+    <Label Style="{DynamicResource EditorPageTitle}"
+           Content="{x:Static r:Resources.SEC_PROCESSHISTORY}"
+           Margin="0"
+           Grid.Row="0"/>
+
+    <!-- buttons -->
+    <Grid Margin="0,10,0,0"
+          Grid.Row="1">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+
+      <Button Style="{StaticResource Esri_CommandLinkButtonSmall}"
+              Background="{DynamicResource Esri_White}"
+              Tag="{StaticResource GenericDiscard16}"
+              Content="{x:Static r:Resources.GeoprocessingHistory_ButtonDelete}"
+              Command="{Binding DeleteCommand, RelativeSource={RelativeSource AncestorType={x:Type p:EditorPage}}}"
+              x:Name="DeleteButton" AutomationProperties.AutomationId="GeoprocessingHistory_DeleteButton"/>
+
+      <Button Style="{StaticResource Esri_CommandLinkButtonSmall}"
+              Background="{DynamicResource Esri_White}"
+              Tag="{StaticResource TableClearSelection16}"
+              Content="{x:Static r:Resources.GeoprocessingHistory_ButtonClearSelection}"
+              Command="{Binding ClearSelectionCommand, RelativeSource={RelativeSource AncestorType={x:Type p:EditorPage}}}"
+              Grid.Column="1"
+              x:Name="ClearSelectionButton"
+              AutomationProperties.AutomationId="GeoprocessingHistory_ClearSelectionButton"/>
+
+      <Button Style="{StaticResource Esri_CommandLinkButtonSmall}"
+              Background="{DynamicResource Esri_White}"
+              Tag="{StaticResource TableSelectAll16}"
+              Content="{x:Static r:Resources.GeoprocessingHistory_SelectAll}"
+              Command="{Binding SelectAllCommand, RelativeSource={RelativeSource AncestorType={x:Type p:EditorPage}}}"
+              Grid.Column="2"
+              x:Name="SelectAllButton"
+              AutomationProperties.AutomationId="GeoprocessingHistory_SelectAllButton"/>
+
+    </Grid>
+
+    <ListView ItemsSource="{Binding XPath=/metadata/Esri/DataProperties/lineage/Process}"
+              ItemContainerStyle="{StaticResource CustomListViewItemStyle}"
+              Margin="0,10,0,0"
+              x:Name="ProcessListView"
+              AutomationProperties.AutomationId="GeoprocessingHistory_ProcessListView"
+              Grid.Row="2"
+              Visibility="{Binding ProcessListViewVisibility, RelativeSource={RelativeSource AncestorType={x:Type p:EditorPage}}}"
+              ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+      <ListView.View>
+        <GridView ColumnHeaderContainerStyle="{StaticResource HeaderContainerDefaultStyle}">
+
+          <!--Name-->
+          <GridViewColumn x:Name="NameColumn"
+                          DisplayMemberBinding="{Binding XPath=@ToolSource, Converter={StaticResource GeoprocessingHistoryToolSourceToNameConverter}}">
+            <GridViewColumnHeader x:Name="NameGridViewColumnHeader"
+                                  AutomationProperties.AutomationId="GeoprocessingHistory_NameGridViewColumnHeader"
+                                  Click="GridViewColumnHeader_Click"
+                                  Tag="{x:Static r:Resources.GeoprocessingHistory_NameColumn}"/>
+          </GridViewColumn>
+
+          <!--Date-->
+          <GridViewColumn x:Name="DatetimeColumn">
+            <GridViewColumn.DisplayMemberBinding>
+              <MultiBinding Converter="{StaticResource GeoprocessingHistoryDatetimeConverter}">
+                <MultiBinding.Bindings>
+                  <Binding XPath="@Date"/>
+                  <Binding XPath="@Time"/>
+                </MultiBinding.Bindings>
+              </MultiBinding>
+            </GridViewColumn.DisplayMemberBinding>
+            <GridViewColumnHeader x:Name="DatetimeGridViewColumnHeader"
+                                  AutomationProperties.AutomationId="GeoprocessingHistory_DatetimeGridViewColumnHeader"
+                                  Click="GridViewColumnHeader_Click"
+                                  Tag="{x:Static r:Resources.GeoprocessingHistory_DatetimeColumn}"/>
+          </GridViewColumn>
+
+          <!--Export-->
+          <GridViewColumn x:Name="ExportColumn">
+            <GridViewColumnHeader x:Name="ExportGridViewColumnHeader"
+                                  AutomationProperties.AutomationId="GeoprocessingHistory_ExportGridViewColumnHeader"
+                                  Click="GridViewColumnHeader_Click"
+                                  Tag="{x:Static r:Resources.GeoprocessingHistory_ExportColumn}"/>
+            <GridViewColumn.CellTemplate>
+              <DataTemplate>
+                <Grid Height="22">
+                  <CheckBox ToolTip="{x:Static r:Definitions.ESRI_geoprocessingHistory_export}"
                             IsChecked="{Binding XPath=@export}"
-                            Name="ESRI_geoprocessingHistory_export"/>
+                            Name="ESRI_geoprocessingHistory_export"
+                            Content="{x:Static r:Resources.LBL_GEOPROCESSING_EXPORT}"/>
+                </Grid>
+              </DataTemplate>
+            </GridViewColumn.CellTemplate>
+          </GridViewColumn>
 
-                        <!-- tool source -->
-                        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="1" Grid.Column="0"
-                           Content="{x:Static r:Resources.LBL_TOOLSOURCE}"/>
-                        <TextBox IsReadOnly="True" Grid.Row="1" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}"
-                            Text="{e:MetadataBinding XPath=@ToolSource}"
-                            Name="ESRI_geoprocessingHistory_toolSource"/>
+          <!--Tool Execution-->
+          <GridViewColumn x:Name="ToolExecutionColumn">
+            <GridViewColumn.Width>
+              <MultiBinding Converter="{StaticResource GeoprocessingHistoryLastColumnWidthConverter}">
+                <MultiBinding.Bindings>
+                  <Binding Path="ActualWidth" ElementName="NameColumn"/>
+                  <Binding Path="ActualWidth" ElementName="DatetimeColumn"/>
+                  <Binding Path="ActualWidth" ElementName="ExportColumn"/>
+                  <Binding Path="ActualWidth" ElementName="ProcessListView"/>
+                </MultiBinding.Bindings>
+              </MultiBinding>
+            </GridViewColumn.Width>
+            <GridViewColumnHeader x:Name="ToolExecutionGridViewColumnHeader"
+                                  AutomationProperties.AutomationId="GeoprocessingHistory_ToolExecutionGridViewColumnHeader"
+                                  Click="GridViewColumnHeader_Click"
+                                  Tag="{x:Static r:Resources.GeoprocessingHistory_ToolExecutionColumn}"/>
+            <GridViewColumn.CellTemplate>
+              <DataTemplate>
+                <Grid HorizontalAlignment="Left">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
 
-                        <!-- date -->
-                        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="2" Grid.Column="0"
-                            Content="{x:Static r:Resources.LBL_TOOLDATE}"/>
-                        <TextBox IsReadOnly="True" Grid.Row="2" Grid.Column="1" Style="{DynamicResource EditorTextBoxStyle}"
-                            Text="{e:MetadataBinding XPath=@Date}"
-                            Name="ESRI_geoprocessingHistory_date"/>
+                  <frameworkControls:Button_16 x:Name="CopyToolExecutionButton"
+                                               AutomationProperties.AutomationId="GeoprocessingHistory_CopyToolExecutionButton"
+                                               BitmapSource="{DynamicResource EditCopy16}"
+                                               VerticalAlignment="Center"
+                                               Click="CopyToolExecutionButton_Click"
+                                               ToolTip="{x:Static r:Resources.GeoprocessingHistory_ButtonCopy}"/>
 
-                        <!-- time -->
-                        <Label Style="{DynamicResource EditorHLabelStyle}" Grid.Row="3" Grid.Column="0"
-                            Content="{x:Static r:Resources.LBL_TOOLTIME}"/>
-                        <TextBox Grid.Row="3" Grid.Column="1" IsReadOnly="True" Style="{DynamicResource EditorTextBoxStyle}"
-                            Text="{e:MetadataBinding XPath=@Time}"
-                            Name="ESRI_geoprocessingHistory_time"/>
-                      </Grid>
 
-                      <Label Style="{DynamicResource EditorVLabelStyle}" Content="{x:Static r:Resources.LBL_GEOPROCESSING_CMD}"/>
-                      <controls:Resizer>
-                        <TextBox IsReadOnly="True" Style="{DynamicResource EditorTextAreaShortResizeStyle}" 
-                            Text="{e:MetadataBinding XPath=.}"
-                            Name="ESRI_geoprocessingHistory_toolExecution"/>
-                      </controls:Resizer>
+                  <TextBlock Text="{Binding XPath=.}"
+                             TextTrimming="CharacterEllipsis"
+                             TextWrapping="NoWrap"
+                             HorizontalAlignment="Left"
+                             Grid.Column="1"
+                             Margin="4,0,0,0"
+                             VerticalAlignment="Center"
+                             ToolTip="{Binding XPath=.}"/>
+                </Grid>
+              </DataTemplate>
+            </GridViewColumn.CellTemplate>
+          </GridViewColumn>
 
-                    </StackPanel>
-                  </Expander>
-                </DataTemplate>
-              </ListBox.ItemTemplate>
-            </ListBox>
-          </StackPanel>
-        </DataTemplate>
-      </ListBox.ItemTemplate>
-    </ListBox>
+        </GridView>
+      </ListView.View>
+
+
+    </ListView>
+
+    <Label Content="{x:Static r:Resources.LBL_NO_GEO_PROCESS}"
+           Grid.Row="2"
+           VerticalAlignment="Top"
+           FontStyle="Italic"
+           Margin="0,30,0,0"
+           x:Name="NoProcessesLabel"
+           AutomationProperties.AutomationId="GeoprocessingHistory_NoProcessesLabel">
+      <Label.Style>
+        <Style TargetType="Label">
+          <Style.Triggers>
+            <DataTrigger Binding="{Binding Visibility, ElementName=ProcessListView}" Value="Visible">
+              <Setter Property="Visibility" Value="Collapsed"/>
+            </DataTrigger>
+          </Style.Triggers>
+        </Style>
+      </Label.Style>
+    </Label>
   </Grid>
 </p:EditorPage>

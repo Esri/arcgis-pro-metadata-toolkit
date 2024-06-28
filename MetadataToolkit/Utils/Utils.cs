@@ -37,12 +37,17 @@ using System.Reflection;
 
 using ArcGIS.Desktop.Metadata.Editor.Convert;
 using ArcGIS.Desktop.Metadata.Editor;
+using ArcGIS.Desktop.Framework;
 
 namespace MetadataToolkit.Utils
 {
   internal class Utils
   {
     private static ResourceManager _resourceManager;
+
+    public const string LBL_CI_PARTY_ADD_FORMAT = "%LABEL%";
+    public const string LBL_CI_PARTY_FORMAT = "LBL_CI_PARTY_FORMAT";
+    public const string LBL_CI_PARTY_READONLY_FORMAT = "%LABEL%";
 
     /// <summary>
     /// Get an XML node from the current Data Context
@@ -693,6 +698,11 @@ namespace MetadataToolkit.Utils
           try
           {
             Section section = XamlReader.Load(xamlMemoryStream, parser) as Section;
+
+            //Set the FlowDirection property based on the framework's current setting. Block.FlowDirection is not set automatically according to its
+            //documentation.
+            section.FlowDirection = FrameworkApplication.FlowDirection;
+
             box.Document.Blocks.Add(section);
           }
           catch { }

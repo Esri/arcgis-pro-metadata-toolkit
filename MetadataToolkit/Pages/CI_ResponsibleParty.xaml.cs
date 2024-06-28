@@ -29,7 +29,7 @@ namespace MetadataToolkit.Pages
     {
       get
       {
-        return Utils.Utils.ExtractResponsiblePartyLabel(this, MetadataToolkit.Properties.Resources.LBL_CI_PARTY_FORMAT);
+        return Utils.Utils.ExtractResponsiblePartyLabel(this, Utils.Utils.LBL_CI_PARTY_FORMAT);
       }
 
       set

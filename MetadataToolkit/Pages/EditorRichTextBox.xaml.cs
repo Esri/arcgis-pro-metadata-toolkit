@@ -445,6 +445,16 @@ namespace MetadataToolkit.Pages
         try
         {
           var uri = new UriBuilder(hyperlinkURL).Uri;
+
+          //If the uri has the default port, recreate it using a UriBuilder where the Port is set
+          //to -1. That designates the default port, but will prevent the port from being part
+          //of the output of the ToString() method used below to set the tooltip.
+          if (uri.IsDefaultPort)
+          {
+            UriBuilder uriBuilder = new UriBuilder(hyperlinkURL) { Port = -1 };
+            uri = uriBuilder.Uri;
+          }
+
           if (null == hyperlink)
           {
             // creates the link

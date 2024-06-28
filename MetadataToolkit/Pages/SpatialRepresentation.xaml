@@ -167,7 +167,7 @@ limitations under the License.​
                             Mode=OneWayToSource}" LastChildFill="True">
                           <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                   Name="SpatialRepresentation_GridSpatialRepresentationDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_SPATREF_GRID}"/>
                         </DockPanel>
@@ -205,7 +205,7 @@ limitations under the License.​
                             Mode=OneWayToSource}" LastChildFill="True">
                           <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                   Name="SpatialRepresentation_GeorectifiedRepresentationDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_SPATREF_GEOREC}"/>
                         </DockPanel>
@@ -243,7 +243,7 @@ limitations under the License.​
                             Mode=OneWayToSource}" LastChildFill="True">
                           <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                   Name="SpatialRepresentation_GeoreferenceableRepresentationDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_SPATREF_GEOREF}"/>
                         </DockPanel>
@@ -281,7 +281,7 @@ limitations under the License.​
                             Mode=OneWayToSource}" LastChildFill="True">
                           <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                   Name="SpatialRepresentation_VectorRepresentationDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_SPATREF_VEC}"/>
                         </DockPanel>
@@ -319,7 +319,7 @@ limitations under the License.​
                             Mode=OneWayToSource}" LastChildFill="True">
                           <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                   Name="SpatialRepresentation_IndirectSpatialRepresentationDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_SPATREF_IND}"/>
                         </DockPanel>
@@ -344,7 +344,7 @@ limitations under the License.​
             <Button Tag="GridSpatRep" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                     Name="SpatialRepresentation_GridSpatialRepresentationAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                 <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_SPATREF_NEW_GRID}"/>
               </StackPanel>
             </Button>
@@ -353,7 +353,7 @@ limitations under the License.​
             <Button Tag="Georect" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                     Name="SpatialRepresentation_GeorectifiedRepresentationAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                 <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_SPATREF_NEW_GEOREC}"/>
               </StackPanel>
             </Button>
@@ -362,7 +362,7 @@ limitations under the License.​
             <Button Tag="Georef" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                     Name="SpatialRepresentation_GeoreferenceableRepresentationAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                 <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_SPATREF_NEW_GEOREF}"/>
               </StackPanel>
             </Button>
@@ -371,7 +371,7 @@ limitations under the License.​
             <Button Tag="VectSpatRep" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                     Name="SpatialRepresentation_VectorRepresentationAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                 <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_SPATREF_NEW_VEC}"/>
               </StackPanel>
             </Button>
@@ -380,7 +380,7 @@ limitations under the License.​
             <Button Tag="IndSpatRep" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                     Name="SpatialRepresentation_IndirectSpatialRepresentationAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                 <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_SPATREF_NEW_IND}"/>
               </StackPanel>
             </Button>

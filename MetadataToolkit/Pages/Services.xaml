@@ -151,7 +151,7 @@ limitations under the License.​
                           <!-- delete -->
                           <Button Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                   AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SV_IdentificationInfo_ServiceTypeDelete}">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <!-- add if the last sibling -->
                           <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=self::*[not(following-sibling::catFetTyps)]}">
@@ -159,7 +159,7 @@ limitations under the License.​
                               <DataTemplate>
                                 <Button Tag="ServiceTypeVersion_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                                         AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SV_IdentificationInfo_ServiceTypeAdd}">
-                                  <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                                  <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                                 </Button>
                               </DataTemplate>
                             </ListBox.ItemTemplate>
@@ -182,7 +182,7 @@ limitations under the License.​
                       <Button Tag="ServiceTypeVersion" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                               AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=SV_IdentificationInfo_ServiceTypeAdd}">
                         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                          <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                          <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                           <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_NEW_SERVICE_TYPEVERSION}"/>
                         </StackPanel>
                       </Button>
@@ -230,7 +230,7 @@ limitations under the License.​
                               Mode=OneWayToSource}" LastChildFill="True">
                             <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                     Name="SV_IdentificationInfo_CouplingResourceDelete">
-                              <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                              <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                             </Button>
                             <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_SERVICE_COUPLEDRES}"/>
                           </DockPanel>
@@ -248,7 +248,7 @@ limitations under the License.​
                 <Button Tag="CoupledResource" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                         Name="SV_IdentificationInfo_CouplingResourceAdd">
                   <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                    <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                     <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_SERVICE_NEW_COUPLEDRES}"/>
                   </StackPanel>
                 </Button>

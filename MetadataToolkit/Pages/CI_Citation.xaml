@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 Copyright 2019 Esri
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +23,7 @@ limitations under the License.​
              xmlns:tu="clr-namespace:MetadataToolkit.Utils"
              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"                
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"
              xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata" 
              xmlns:controls="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Controls;assembly=ArcGIS.Desktop.Metadata" 
              mc:Ignorable="d" 
@@ -158,7 +159,7 @@ limitations under the License.​
                       AncestorType={x:Type ContentPresenter}},
                       Mode=OneWayToSource}" LastChildFill="True">
                       <Label Style="{DynamicResource EditorHExpanderSimpleLabel}" Content="{x:Static r:Resources.LBL_CITATION_TITLES}"/>
-                            <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding XPath=resTitle, Mode=TwoWay}"/>
+                            <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{Binding XPath=resTitle, Mode=TwoWay}"/>
                     </DockPanel>
                   </Expander.Header>
 
@@ -226,7 +227,7 @@ limitations under the License.​
                             <DockPanel HorizontalAlignment="{Binding HorizontalAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContentPresenter}},
                                 Mode=OneWayToSource}" LastChildFill="True">
                               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}" Name="CI_Citaton_OnlineResourceDelete">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}" />
                               </Button>
                               <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{x:Static r:Resources.LBL_CONT_ONRES}"/>
                             </DockPanel>
@@ -246,8 +247,8 @@ limitations under the License.​
                       <DataTemplate>
                          <Button Tag="OnlineRes" Click="AddRecordByTag" Style="{DynamicResource AddButton}"
                                 Name="CI_Citaton_OnlineResourceAdd">
-                            <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                            <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                          <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                            <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                             <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_ONLINE_RES}"/>
                           </StackPanel>
                         </Button>
@@ -272,7 +273,7 @@ limitations under the License.​
                                 <DataTemplate>
                                   <Button Tag="PresForm_Parent" Click="AddRecordByTagToLocal" Style="{DynamicResource ImageOnlyButton}"
                                           Name="CI_Citaton_PresentationFormAdd">
-                                    <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                                    <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericAddGreen16}" />
                                   </Button>
                                 </DataTemplate>
                               </ListBox.ItemTemplate>
@@ -280,7 +281,7 @@ limitations under the License.​
                             <!-- delete -->
                             <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource ImageOnlyButton}"
                                     AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Citaton_PresentationFormDelete}">
-                              <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                              <Image Style="{DynamicResource ImageOnlyButtonStyle}" Source="{DynamicResource GenericDeleteRed16}" />
                             </Button>
                           </StackPanel>
 
@@ -298,8 +299,8 @@ limitations under the License.​
                       <DataTemplate>
                         <Button Tag="PresForm" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                                 Name="CI_Citaton_PresentationFormAdd">
-                            <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                            <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                          <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                            <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}" />
                             <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_CI_NEW_PRESFORM}"/>
                           </StackPanel>
                         </Button>
@@ -320,7 +321,7 @@ limitations under the License.​
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate>
                       <DataTemplate>
-                        <Expander Style="{DynamicResource EditorExpander2Style}"  
+                        <Expander Style="{DynamicResource EditorExpander2Style}"
                                   AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Citaton_IdentifierGroup}">
                           <Expander.Header>
                             <DockPanel HorizontalAlignment="{Binding HorizontalAlignment,
@@ -329,7 +330,7 @@ limitations under the License.​
                                 Mode=OneWayToSource}" LastChildFill="True">
                               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                       AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Citaton_IdentifierDelete}">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}" />
                               </Button>
                               <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_IDENTIFIERS}"/>
                             </DockPanel>
@@ -347,7 +348,7 @@ limitations under the License.​
                   <Button Tag="Identifier" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                           Name="CI_Citaton_IdentifierAdd">
                       <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}" />
                       <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_ID}"/>
                     </StackPanel>
                   </Button>
@@ -600,7 +601,7 @@ limitations under the License.​
                                 Mode=TwoWay}" LastChildFill="True">
                               <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                       AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CI_Citaton_ContactDelete}">
-                                <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                                <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}" />
                               </Button>
                               <Label Style="{DynamicResource EditorHExpanderSimpleLabel}" Content="{x:Static r:Resources.LBL_CI_PARTY}"/>
                               <Label Style="{DynamicResource EditorHExpanderLabel}"  Content="{Binding ElementName=responsibleParty, Path=DefaultValue, Mode=TwoWay}"/>
@@ -626,7 +627,7 @@ limitations under the License.​
               <Button Click="AddRecordByTagToLocal" Tag="Contact" Style="{DynamicResource AddButton}" Visibility="{Binding ElementName=Citation, Path=SupressParties, Converter={StaticResource VisibleBoolNotConverter}}"
                       Name="CI_Citaton_ContactAdd">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                  <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                  <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                   <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_CONTACT}"/>
                 </StackPanel>
               </Button>

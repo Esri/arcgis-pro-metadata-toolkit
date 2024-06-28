@@ -163,7 +163,7 @@ limitations under the License.​
               <DockPanel LastChildFill="True">
                 <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                   AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=DQ_Element_MeasureDateDelete}">
-                  <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                  <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                 </Button>
 
                 <!-- date time -->
@@ -181,7 +181,7 @@ limitations under the License.​
         <Button Tag="MeasDateTime" Click="AddRecordByTag" Style="{DynamicResource AddButton}"
                 Name="DQ_Element_MeasureDateAdd">
           <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-            <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+            <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
             <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DQ_NEW_MEASDATETIME}"/>
           </StackPanel>
         </Button>
@@ -213,7 +213,7 @@ limitations under the License.​
               <Button Tag="MeasName" Click="AddRecordByTag" Style="{DynamicResource AddButton}"
                       Name="DQ_Element_MeasureNameAdd">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                  <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                  <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                   <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DQ_NEW_MEASNAME}"/>
                 </StackPanel>
               </Button>
@@ -234,7 +234,7 @@ limitations under the License.​
                       <DockPanel HorizontalAlignment="{Binding HorizontalAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContentPresenter}}, Mode=OneWayToSource}" LastChildFill="True">
                         <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                 Name="DQ_Element_MeasureIdentifierDelete">
-                          <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                          <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                         </Button>
                         <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_DQ_MEASID}"/>
                       </DockPanel>
@@ -257,7 +257,7 @@ limitations under the License.​
                   <Button Tag="measId" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                           Name="DQ_Element_MeasureIdentifierAdd">
                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                      <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                      <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                       <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DQ_NEW_MEASID}"/>
                     </StackPanel>
                   </Button>
@@ -330,7 +330,7 @@ limitations under the License.​
                     <DockPanel HorizontalAlignment="{Binding HorizontalAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContentPresenter}}, Mode=OneWayToSource}" LastChildFill="True">
                       <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                           Name="DQ_Element_EvaluationProcedureDelete">
-                        <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                        <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                       </Button>
                       <Label DockPanel.Dock="Left" Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_DQ_EVALPROC}"/>
                     </DockPanel>
@@ -355,7 +355,7 @@ limitations under the License.​
                 <Button Tag="evalProc" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                         Name="DQ_Element_EvaluationProcedureAdd">
                   <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                    <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                     <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_DQ_NEW_EVALPROC}"/>
                   </StackPanel>
                 </Button>
@@ -389,7 +389,7 @@ limitations under the License.​
                             Mode=OneWayToSource}" LastChildFill="True">
                           <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                   Name="DQ_Element_ConformanceResultDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_DQ_CONFORMREPORT}"/>
                         </DockPanel>
@@ -409,7 +409,7 @@ limitations under the License.​
                     <Button Tag="ConfResult" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                             Name="DQ_Element_ConformanceResultAdd">
                       <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                        <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                        <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                         <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_DQ_CONF_RESULTS}"/>
                       </StackPanel>
                     </Button>
@@ -435,7 +435,7 @@ limitations under the License.​
                             Mode=OneWayToSource}" LastChildFill="True">
                           <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                   Name="DQ_Element_QualitativeResultsDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{x:Static r:Resources.LBL_DQ_QUANRESULT}"/>
                         </DockPanel>
@@ -455,7 +455,7 @@ limitations under the License.​
                     <Button Tag="QuanResult" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                             Name="DQ_Element_QualitativeResultsAdd">
                       <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                        <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                        <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                         <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_ADD_DQ_QUAN_RESULTS}"/>
                       </StackPanel>
                     </Button>

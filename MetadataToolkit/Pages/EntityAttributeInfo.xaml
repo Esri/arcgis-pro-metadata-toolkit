@@ -164,7 +164,7 @@ limitations under the License.​
                             Mode=OneWayToSource}" LastChildFill="True">
                           <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                   Name="EntityAttributeInfo_DetailsDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <Label Style="{DynamicResource EditorHExpanderSimpleLabel}" Content="{x:Static r:Resources.LBL_EAINFO_DETAILS}"/>
                           <Label Style="{DynamicResource EditorHExpanderLabel}" Content="{Binding XPath=enttyp/enttypl}"/>
@@ -182,7 +182,7 @@ limitations under the License.​
             <Button Tag="Details" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                     Name="EntityAttributeInfo_DetailsAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                 <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_EAINFO_NEW_DETAILS}"/>
               </StackPanel>
             </Button>
@@ -206,7 +206,7 @@ limitations under the License.​
                             Mode=OneWayToSource}" LastChildFill="True">
                           <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
                                   Name="EntityAttributeInfo_OverviewDelete">
-                            <Image Style="{DynamicResource DeleteImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"/>
+                            <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}"/>
                           </Button>
                           <Label Style="{DynamicResource EditorHExpanderSimpleLabel}" Content="{x:Static r:Resources.LBL_EAINFO_OVERVIEW}"/>
                         </DockPanel>
@@ -225,7 +225,7 @@ limitations under the License.​
             <Button Tag="Overview" Click="AddRecordByTagToLocal" Style="{DynamicResource AddButton}"
                     Name="EntityAttributeInfo_OverviewAdd">
               <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Image Style="{DynamicResource AddImageStyle}" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericAddGreen16.png"/>
+                <Image Style="{DynamicResource AddImageStyle}" Source="{DynamicResource GenericAddGreen16}"/>
                 <TextBlock Style="{DynamicResource ButtonTextStyle}" Text="{x:Static r:Resources.BTN_NEW_OVERVIEW}"/>
               </StackPanel>
             </Button>
