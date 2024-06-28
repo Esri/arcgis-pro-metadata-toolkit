@@ -79,8 +79,8 @@ These release notes describe details of the ArcGIS Pro Metadata Toolkit 3.3.0.52
 #### What’s new
 This release of the ArcGIS Pro Metadata Toolkit is not significantly different from the previous release. 
 
-#### New topic in the wiki
-A new page was added to the wiki that describes how to [customize validation rules](https://github.com/Esri/arcgis-pro-metadata-toolkit/wiki/Customize-the-validation-rules-for-a-page) for pages in the metadata editor.
+#### Edited topic in the wiki
+The [create a custom page](https://github.com/Esri/arcgis-pro-metadata-toolkit/wiki/Create-a-custom-page) has had steps added to reflect changes in ArcGIS Pro 3.3.0.53636.
 
 #### Bug fixes
 The metadata toolkit was also updated to include bug fixes for the following items:
