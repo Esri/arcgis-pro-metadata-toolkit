@@ -35,8 +35,8 @@ using System.Text.RegularExpressions;
 using System.Windows.Media;
 using System.Reflection;
 
-using ArcGIS.Desktop.Metadata.Editor.Convert;
-using ArcGIS.Desktop.Metadata.Editor;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Convert;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor;
 using ArcGIS.Desktop.Framework;
 
 namespace MetadataToolkit.Utils

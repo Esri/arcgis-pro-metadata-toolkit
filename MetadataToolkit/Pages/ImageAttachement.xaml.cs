@@ -31,9 +31,9 @@ using System.Windows.Markup;
 using System.Collections;
 
 using ArcGIS.Desktop.Framework;
-using ArcGIS.Desktop.Metadata;
-using ArcGIS.Desktop.Metadata.Editor.Pages;
-using ArcGIS.Desktop.Metadata.Editor.Convert;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Convert;
 
 namespace MetadataToolkit.Pages
 {

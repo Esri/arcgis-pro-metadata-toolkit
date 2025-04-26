@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 Copyright 2019 Esri
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,10 +18,10 @@ limitations under the License.​
               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
               xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
               xmlns:r="clr-namespace:MetadataToolkit.Properties" 
-              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata" 
-              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata" 
-              xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata" 
-              xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata" 
+              xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;assembly=ArcGIS.Desktop.Metadata" 
+              xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Validation;assembly=ArcGIS.Desktop.Metadata" 
+              xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor;assembly=ArcGIS.Desktop.Metadata" 
+              xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages.Converters;assembly=ArcGIS.Desktop.Metadata" 
               mc:Ignorable="d">
 
     <UserControl.Resources>
@@ -29,12 +30,10 @@ limitations under the License.​
     
     <Grid Style="{DynamicResource EditorSubSectionStyle}">
     <DockPanel LastChildFill="True">
-      <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
-        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CharacterStringDelete}">
+      <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}" AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CharacterStringDelete}">
         <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}" />
       </Button>
-      <TextBox Style="{DynamicResource EditorTextBoxStyle}" Text="{Binding XPath=.}" 
-             AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CharacterString}" />
+      <TextBox Style="{DynamicResource EditorTextBoxStyle}" Text="{Binding XPath=.}" AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CharacterString}" />
     </DockPanel>
   </Grid>
   

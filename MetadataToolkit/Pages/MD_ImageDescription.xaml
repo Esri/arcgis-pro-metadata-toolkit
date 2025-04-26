@@ -18,10 +18,10 @@ limitations under the License.​
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:t="clr-namespace:MetadataToolkit.Pages"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"
-             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"             
-             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Validation;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor;assembly=ArcGIS.Desktop.Metadata"             
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
              mc:Ignorable="d"
              Loaded="FillXml">
 
@@ -99,14 +99,14 @@ limitations under the License.​
       </x:XData>
     </XmlDataProvider>
 
-    <p:ExpandVisibleConverter x:Key="ExpandConverter"/>
+    <converters:ExpandVisibleConverter x:Key="ExpandConverter"/>
     <e:Codelists x:Key="MD_ImagingConditionCode" CodelistName="MD_ImagingConditionCode"/>
 
-    <p:StringToBoolConverter x:Key="StringToBoolConverter1"/>
-    <p:StringToBoolConverter x:Key="StringToBoolConverter2"/>
-    <p:StringToBoolConverter x:Key="StringToBoolConverter3"/>
-    <p:StringToBoolConverter x:Key="StringToBoolConverter4"/>
-    <p:StringToBoolConverter x:Key="StringToBoolConverter5"/>
+    <converters:StringToBoolConverter x:Key="StringToBoolConverter1"/>
+    <converters:StringToBoolConverter x:Key="StringToBoolConverter2"/>
+    <converters:StringToBoolConverter x:Key="StringToBoolConverter3"/>
+    <converters:StringToBoolConverter x:Key="StringToBoolConverter4"/>
+    <converters:StringToBoolConverter x:Key="StringToBoolConverter5"/>
 
     <v:MetadataRealRules x:Key="illElevAng" Msg="{x:Static r:Issues.ELEV_ANGLE_BND}" Min="-90.0" Max="90.0"/>
     <v:MetadataRealRules x:Key="illAziAng" Msg="{x:Static r:Issues.AZIM_ANGLE_BND}" Min="0" Max="360.0"/>

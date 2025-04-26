@@ -17,10 +17,10 @@ limitations under the License.​
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"
-             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"              
-             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata" 
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Validation;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor;assembly=ArcGIS.Desktop.Metadata"              
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages.Converters;assembly=ArcGIS.Desktop.Metadata" 
              mc:Ignorable="d">
   <UserControl.Resources>
     <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter" />

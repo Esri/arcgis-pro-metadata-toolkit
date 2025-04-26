@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 Copyright 2019 Esri
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +11,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.​
 -->
-
 <ArcGIS defaultAssembly="MetadataToolKit.dll" defaultNamespace="MetadataToolkit" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{FFE31C9F-A071-441E-91F2-4380EE48360A}" version="1.0" desktopVersion="3.0.0.34555">
     <Name>MetadataToolkit</Name>
@@ -177,8 +175,7 @@ limitations under the License.​
                     </validation>
                   </page>
                   <page class="MetadataToolkit.Pages.CustomPage">
-                    <validation>
-                    </validation>
+                    <validation></validation>
                   </page>
                 </section>
                 <section class="MetadataToolkit.Sections.Metadata">

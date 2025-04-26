@@ -17,12 +17,12 @@ limitations under the License.​
     xmlns:dg="http://schemas.microsoft.com/wpf/2008/toolkit"
     xmlns:t="clr-namespace:MetadataToolkit.Pages"
     xmlns:r="clr-namespace:MetadataToolkit.Properties"    
-    xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
-    xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"    
+    xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;assembly=ArcGIS.Desktop.Metadata"
+    xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Validation;assembly=ArcGIS.Desktop.Metadata"    
     xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib"
-    xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"
-    xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
-    xmlns:controls="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Controls;assembly=ArcGIS.Desktop.Metadata"
+    xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor;assembly=ArcGIS.Desktop.Metadata"
+    xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
+    xmlns:controls="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Controls;assembly=ArcGIS.Desktop.Metadata"
     xmlns:framework="clr-namespace:ArcGIS.Desktop.Framework;assembly=ArcGIS.Desktop.Framework"
     Loaded="FillXml">
 
@@ -155,7 +155,7 @@ limitations under the License.​
     <v:MetadataIssueInfo x:Key="lonBoundsError1" Name="westBL_range" Message="{x:Static r:Issues.extent_lonBoundsError}" />
     <v:MetadataIssueInfo x:Key="latBoundsError1" Name="northBL_range" Message="{x:Static r:Issues.extent_latBoundsError}" />
 
-    <p:StringToBoolConverter x:Key="StringToBoolConverter"/> 
+    <converters:StringToBoolConverter x:Key="StringToBoolConverter"/> 
     
   </UserControl.Resources>
 

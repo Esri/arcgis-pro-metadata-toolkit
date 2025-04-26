@@ -20,10 +20,11 @@ limitations under the License.​
              xmlns:tp="clr-namespace:MetadataToolkit.Pages"
              xmlns:tu="clr-namespace:MetadataToolkit.Utils"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"             
-             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"     
-             xmlns:controls="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Controls;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Validation;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor;assembly=ArcGIS.Desktop.Metadata"     
+             xmlns:controls="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Controls;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
              mc:Ignorable="d"
              Loaded="FillXml">
 
@@ -62,8 +63,8 @@ limitations under the License.​
     </XmlDataProvider>
 
     <e:Codelists x:Key="MonetaryUnits" CodelistName="MonetaryUnits"/>
-    <p:VisibleBoolConverter x:Key="VisibleBoolConverter"/>
-    <p:VisibleBoolConverter x:Key="VisibleBoolConverter2" Collapse="True"/>
+    <converters:VisibleBoolConverter x:Key="VisibleBoolConverter"/>
+    <converters:VisibleBoolConverter x:Key="VisibleBoolConverter2" Collapse="True"/>
 
   </UserControl.Resources>
 

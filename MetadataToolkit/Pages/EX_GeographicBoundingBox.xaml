@@ -16,10 +16,10 @@ limitations under the License.​
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:t="clr-namespace:MetadataToolkit.Pages"
     xmlns:r="clr-namespace:MetadataToolkit.Properties"
-    xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
-    xmlns:pages="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
-    xmlns:editor="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"
-    xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
+    xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Validation;assembly=ArcGIS.Desktop.Metadata"
+    xmlns:pages="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;assembly=ArcGIS.Desktop.Metadata"
+    xmlns:editor="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor;assembly=ArcGIS.Desktop.Metadata"
+    xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
     Loaded="FillXml">
 
   <!--xmlns:toolkit="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit"-->
@@ -52,7 +52,7 @@ limitations under the License.​
       </x:XData>
     </XmlDataProvider>
 
-    <pages:StringToBoolConverter x:Key="StringToBoolConverter"/>
+    <converters:StringToBoolConverter x:Key="StringToBoolConverter"/>
     
     <v:MetadataRealRules x:Key="LatCoordRule" Msg="{x:Static r:Issues.LAT_COORD_REQ}" Min="-90.0" Max="90.0"/>
     <v:MetadataRealRules x:Key="LonCoordRule" Msg="{x:Static r:Issues.LON_COORD_REQ}" Min="-180.0" Max="180.0"/>

@@ -22,8 +22,8 @@ using System.Xml;
 using Microsoft.Win32;
 
 using ArcGIS.Desktop.Framework;
-using ArcGIS.Desktop.Metadata;
-using ArcGIS.Desktop.Metadata.Editor.Pages;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;
 
 namespace MetadataToolkit.Pages
 {

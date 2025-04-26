@@ -11,7 +11,7 @@ See the License for the specific language governing permissions and
 limitations under the License.​
 */
 
-using ArcGIS.Desktop.Metadata.Editor.Pages;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;
 
 namespace MetadataToolkit.Pages
 {

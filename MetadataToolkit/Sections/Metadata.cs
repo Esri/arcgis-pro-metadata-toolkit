@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using ArcGIS.Desktop.Metadata;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor;
 
 namespace MetadataToolkit.Sections
 {

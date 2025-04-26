@@ -16,10 +16,10 @@ limitations under the License.​
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:dg="http://schemas.microsoft.com/wpf/2008/toolkit"
     xmlns:r="clr-namespace:MetadataToolkit.Properties"    
-    xmlns:pages="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
-    xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"    
+    xmlns:pages="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;assembly=ArcGIS.Desktop.Metadata"
+    xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Validation;assembly=ArcGIS.Desktop.Metadata"    
     xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib"
-    xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"
+    xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor;assembly=ArcGIS.Desktop.Metadata"
     Loaded="FillXml">
   <UserControl.Resources>
 

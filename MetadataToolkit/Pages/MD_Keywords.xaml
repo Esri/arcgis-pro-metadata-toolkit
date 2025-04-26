@@ -20,11 +20,11 @@ limitations under the License.​
              xmlns:tp="clr-namespace:MetadataToolkit.Pages"
              xmlns:tu="clr-namespace:MetadataToolkit.Utils"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"             
-             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"             
-             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:controls="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Controls;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Validation;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor;assembly=ArcGIS.Desktop.Metadata"             
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:controls="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Controls;assembly=ArcGIS.Desktop.Metadata"
              mc:Ignorable="d" 
              Loaded="FillXml">
   <UserControl.Resources>
@@ -64,7 +64,7 @@ limitations under the License.​
     -->
     <converters:ListBoxItemToAutomationIdConverter x:Key="_lbiToAutoIdConverter" />
     <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
-    
+
     <XmlDataProvider x:Key="XmlRecord" XPath="/" IsAsynchronous="False" IsInitialLoadEnabled="True">
       <x:XData>
         <ANY xmlns="" editorExpand="False">
@@ -92,7 +92,7 @@ limitations under the License.​
     <StackPanel>
       <!-- keywords -->
       <controls:Resizer>
-      <TextBox Style="{DynamicResource EditorTextAreaResizeStyle}"
+        <TextBox Style="{DynamicResource EditorTextAreaResizeStyle}"
             v:Nav.AnchorName="bag,bag" v:MetadataRules.HasIssue="{Binding Path=(v:MetadataRules.HasIssue), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type p:EditorPage}}}"
             Text="{e:MetadataBinding XPath=bag}"
             TextChanged="OnKeywordsChanged"
@@ -102,7 +102,7 @@ limitations under the License.​
       <tu:MetadataStyle Only="INSPIRE">
         <Button Style="{DynamicResource Esri_Button}" Click="Lookup_Click" Content="{x:Static r:Resources.BTN_LOOKUP_CAPTION}" HorizontalAlignment="Left" />
       </tu:MetadataStyle>
-      
+
       <!-- NAP style only -->
       <tu:MetadataStyle Only="NAP">
         <Grid>
@@ -135,9 +135,9 @@ limitations under the License.​
             </ListBox.ItemTemplate>
           </ListBox>
         </Grid>
-      </tu:MetadataStyle>
+        </tu:MetadataStyle>
 
-      <!-- thesaurus citation -->
+        <!-- thesaurus citation -->
       <ListBox Style="{DynamicResource EditorNoScrollListBoxStyle}" ItemsSource="{Binding XPath=thesaName}">
         <ListBox.ItemsPanel>
           <ItemsPanelTemplate>

@@ -20,10 +20,10 @@ limitations under the License.​
              xmlns:tp="clr-namespace:MetadataToolkit.Pages"
              xmlns:tu="clr-namespace:MetadataToolkit.Utils"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"
-             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"             
-             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Validation;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor;assembly=ArcGIS.Desktop.Metadata"             
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
              mc:Ignorable="d"
              Loaded="FillXml">
 
@@ -93,8 +93,8 @@ limitations under the License.​
       </x:XData>
     </XmlDataProvider>
 
-    <p:StringToBoolConverter x:Key="StringToBoolConverter1"/>
-    <p:StringToBoolConverter x:Key="StringToBoolConverter2"/>
+    <converters:StringToBoolConverter x:Key="StringToBoolConverter1"/>
+    <converters:StringToBoolConverter x:Key="StringToBoolConverter2"/>
 
     <e:Codelists x:Key="LanguageCode" CodelistName="LanguageCode"/>
     <e:Codelists x:Key="CountryCodes" CodelistName="CountryCodes"/>

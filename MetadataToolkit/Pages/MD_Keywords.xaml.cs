@@ -18,10 +18,10 @@ using System.Xml;
 using ArcGIS.Desktop.Framework;
 using Newtonsoft.Json.Linq;
 
-using ArcGIS.Desktop.Metadata.Editor.Pages;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;
 using System.Windows.Controls;
-using ArcGIS.Desktop.Metadata.Editor.Validation;
-using ArcGIS.Desktop.Metadata;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Validation;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor;
 
 namespace MetadataToolkit.Pages
 {
@@ -82,6 +82,7 @@ namespace MetadataToolkit.Pages
       //already open?
       if (_themekeywords != null)
         return;
+
       _themekeywords = new MTK_MD_ThemeKeywords();
       _themekeywords.Owner = FrameworkApplication.Current.MainWindow;
       _themekeywords.Closed += (o, args) => { KeywordsWindowClosed(); };

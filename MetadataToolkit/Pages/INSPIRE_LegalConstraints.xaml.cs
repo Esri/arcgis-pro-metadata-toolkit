@@ -1,4 +1,4 @@
-﻿using ArcGIS.Desktop.Metadata.Editor.Pages;
+﻿using ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Automation.Peers;

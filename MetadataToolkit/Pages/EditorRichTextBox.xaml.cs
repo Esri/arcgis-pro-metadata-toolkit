@@ -26,9 +26,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using ArcGIS.Desktop.Framework;
-using ArcGIS.Desktop.Metadata;
-using ArcGIS.Desktop.Metadata.Editor.Pages;
-using ArcGIS.Desktop.Metadata.Editor.Validation;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Validation;
 
 namespace MetadataToolkit.Pages
 {

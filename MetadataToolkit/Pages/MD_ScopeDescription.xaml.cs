@@ -12,7 +12,7 @@ limitations under the License.​
 */
 
 using System.Windows.Controls;
-using ArcGIS.Desktop.Metadata.Editor.Pages;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;
 
 namespace MetadataToolkit.Pages
 {

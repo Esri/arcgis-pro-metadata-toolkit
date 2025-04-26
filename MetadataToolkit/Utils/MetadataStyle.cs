@@ -19,7 +19,7 @@ using System.Windows;
 
 
 using ArcGIS.Desktop.Framework;
-using ArcGIS.Desktop.Metadata;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor;
 
 namespace MetadataToolkit.Utils
 {

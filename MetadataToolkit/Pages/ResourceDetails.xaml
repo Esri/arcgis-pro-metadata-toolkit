@@ -20,11 +20,11 @@ limitations under the License.​
              xmlns:tp="clr-namespace:MetadataToolkit.Pages"
              xmlns:tu="clr-namespace:MetadataToolkit.Utils"
              xmlns:r="clr-namespace:MetadataToolkit.Properties"             
-             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Pages;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Validation;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editor;assembly=ArcGIS.Desktop.Metadata"             
-             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
-             xmlns:controls="clr-namespace:ArcGIS.Desktop.Metadata.Editor.Controls;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:p="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:v="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Validation;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:e="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor;assembly=ArcGIS.Desktop.Metadata"             
+             xmlns:converters="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Pages.Converters;assembly=ArcGIS.Desktop.Metadata"
+             xmlns:controls="clr-namespace:ArcGIS.Desktop.Metadata.Editors.ClassicEditor.Controls;assembly=ArcGIS.Desktop.Metadata"
              mc:Ignorable="d" 
              Loaded="FillXml">
   <UserControl.Resources>
@@ -173,7 +173,7 @@ limitations under the License.​
       </x:XData>
     </XmlDataProvider>
 
-    <p:ExpandVisibleConverter x:Key="ExpandConverter"/>
+    <converters:ExpandVisibleConverter x:Key="ExpandConverter"/>
     <e:Codelists x:Key="MD_SpatialRepresentationTypeCode" CodelistName="MD_SpatialRepresentationTypeCode"/>
 
     <!-- validation issues -->

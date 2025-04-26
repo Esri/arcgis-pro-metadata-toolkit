@@ -20,7 +20,7 @@ using System.Threading.Tasks;
 
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
-using ArcGIS.Desktop.Metadata;
+using ArcGIS.Desktop.Metadata.Editors.ClassicEditor;
 
 namespace MetadataToolkit
 {
