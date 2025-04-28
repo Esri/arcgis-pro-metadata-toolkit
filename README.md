@@ -56,7 +56,7 @@ After the ArcGIS Pro SDK for .NET, and ArcGIS Pro SDK for .NET (Utilities), have
 * [Installing ArcGIS Pro Metadata Toolkit for ArcGIS Pro 3.4](https://github.com/Esri/arcgis-pro-metadata-toolkit/wiki/ArcGIS-Pro-Metadata-Toolkit-Installation#install-arcgis-pro-metadata-toolkit-34)
                                                             
 #### For ArcGIS Pro version 3.3 or earlier:
-* Download the [VSIX file](https://github.com/Esri/arcgis-pro-metadata-toolkit/archive/refs/tags/3.3.0.52636.vsix) for ArcGIS Pro Metadata Toolkit version 3.3.0.52636 and install it.
+* Download the [VSIX file](https://github.com/Esri/arcgis-pro-metadata-toolkit/archive/refs/tags/3.3.0.52636) for ArcGIS Pro Metadata Toolkit version 3.3.0.52636 and install it.
 * [Installing ArcGIS Pro Metadata Toolkit for ArcGIS Pro 3.3](https://github.com/Esri/arcgis-pro-metadata-toolkit/wiki/ArcGIS-Pro-Metadata-Toolkit-Installation#install-arcgis-pro-metadata-toolkit-33)
 
 ## ArcGIS Pro Metadata Toolkit components[](#arcgis-pro-metadata-toolkit-components)
