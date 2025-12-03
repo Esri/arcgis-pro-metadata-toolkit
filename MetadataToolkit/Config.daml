@@ -304,7 +304,7 @@ limitations under the License.​
                         <exists xpath="vertMaxVal[. != '']" ref="vertMaxVal" />
                       </for>
                       <for xpath="//dataExt//vertEle[* != '']">
-                        <exists xpath="self::*[vertMinVal &lt; vertMaxVal]" ref="vertMinMaxVal vertMinVal,vertMinVal vertMaxVal,vertMaxVal" />
+                        <exists xpath="self::*[vertMinVal &lt;= vertMaxVal]" ref="vertMinMaxVal vertMinVal,vertMinVal vertMaxVal,vertMaxVal"/>
                       </for>
                       <!-- contact name, org or role -->
                       <for xpath="//dataExt//GeoDesc//citRespParty">

@@ -46,7 +46,7 @@ namespace MetadataToolkit.Utils
     private static ResourceManager _resourceManager;
 
     public const string LBL_CI_PARTY_ADD_FORMAT = "%LABEL%";
-    public const string LBL_CI_PARTY_FORMAT = "LBL_CI_PARTY_FORMAT";
+    public const string LBL_CI_PARTY_FORMAT = "%LABEL% (%ROLE%)";
     public const string LBL_CI_PARTY_READONLY_FORMAT = "%LABEL%";
 
     /// <summary>

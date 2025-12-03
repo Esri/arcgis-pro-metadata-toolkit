@@ -30,10 +30,12 @@ limitations under the License.​
     
     <Grid Style="{DynamicResource EditorSubSectionStyle}">
     <DockPanel LastChildFill="True">
-      <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}" AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CharacterStringDelete}">
+      <Button DockPanel.Dock="Right" Click="DeleteItem" Style="{DynamicResource DeleteButton}"
+        AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CharacterStringDelete}">
         <Image Style="{DynamicResource DeleteImageStyle}" Source="{DynamicResource GenericDeleteRed16}" />
       </Button>
-      <TextBox Style="{DynamicResource EditorTextBoxStyle}" Text="{Binding XPath=.}" AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CharacterString}" />
+      <TextBox Style="{DynamicResource EditorTextBoxStyle}" Text="{Binding XPath=.}"
+               AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=CharacterString}" />
     </DockPanel>
   </Grid>
   

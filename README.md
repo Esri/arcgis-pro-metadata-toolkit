@@ -48,19 +48,23 @@ As indicated in the [ArcGIS Pro SDK Requirements](https://github.com/Esri/arcgis
 
 ### Third party assemblies
 _Newtonsoft Json_
-At 3.4, ArcGIS Pro is using version 13.0.3.27908 of the Newtonsoft Json NuGet. It is recommended to use the same version for your ArcGIS Pro Metadata add-in.
+At 3.6, ArcGIS Pro is using version 13.0.3.27908 of the Newtonsoft Json NuGet. It is recommended to use the same version for your ArcGIS Pro Metadata add-in.
+
+_WebView2_
+
+Add-in developers can use the new WebViewBrowser control based on Microsoft Edge WebView2. Microsoft Edge WebView2 Runtime version 132 or later is required.
 
 ## Installing ArcGIS Pro Metadata Toolkit[](#installing-arcgis-pro-metadata-toolkit)
 After the ArcGIS Pro SDK for .NET, and ArcGIS Pro SDK for .NET (Utilities), have been downloaded and installed, the ArcGIS Pro Metadata Toolkit can also be downloaded and installed from within Visual Studio.
 * [Installing ArcGIS Pro SDK for .NET, and ArcGIS Pro SDK for .NET (Utilities)](https://github.com/Esri/arcgis-pro-sdk/wiki/ProGuide-Installation-and-Upgrade)
-* [Installing ArcGIS Pro Metadata Toolkit for ArcGIS Pro 3.4](https://github.com/Esri/arcgis-pro-metadata-toolkit/wiki/ArcGIS-Pro-Metadata-Toolkit-Installation#install-arcgis-pro-metadata-toolkit-34)
+* [Installing ArcGIS Pro Metadata Toolkit for ArcGIS Pro 3.6](https://github.com/Esri/arcgis-pro-metadata-toolkit/wiki/ArcGIS-Pro-Metadata-Toolkit-Installation#install-arcgis-pro-metadata-toolkit-36)
                                                             
 #### For ArcGIS Pro version 3.3 or earlier:
 * Download the [VSIX file](https://github.com/Esri/arcgis-pro-metadata-toolkit/releases/tag/3.3.0.52636) for ArcGIS Pro Metadata Toolkit version 3.3.0.52636 and install it.
 * [Installing ArcGIS Pro Metadata Toolkit for ArcGIS Pro 3.3](https://github.com/Esri/arcgis-pro-metadata-toolkit/wiki/ArcGIS-Pro-Metadata-Toolkit-Installation#install-arcgis-pro-metadata-toolkit-33)
 
 ## ArcGIS Pro Metadata Toolkit components[](#arcgis-pro-metadata-toolkit-components)
-The following table summarizes the functionality of each .vsix file included in the SDK download:
+The following table summarizes the functionality of the .vsix file included in the ArcGIS Pro Metadata Toolkit download:
 
 | Name	| File	| Functionality	|
 | ----- | -----	| -------------	|
@@ -77,28 +81,30 @@ ArcGIS Pro Metadata Toolkit provides the following project templates:
 
 ## Release notes[](#release-notes)
 
-### ArcGIS Pro Metadata Toolkit 3.4.0.55405
-These release notes describe details of the ArcGIS Pro Metadata Toolkit 3.4.0.55405 release. Here you will find information about available functionality as well as known issues and limitations.
+### ArcGIS Pro Metadata Toolkit 3.6.0.59527
+These release notes describe details of the ArcGIS Pro Metadata Toolkit 3.6.0.59527 release. Here you will find information about available functionality as well as known issues and limitations.
 
 #### What’s new
-In ArcGIS Pro 3.4, a change was made to support the future integration of the new metadata editor. The namespace changes that were made impact the ability to load custom metadata editor add-ins. Add-ins built using the previously available ArcGIS Pro Metadata Toolkit will successfully extend ArcGIS Pro 3.0-3.3. This release of the ArcGIS Pro Metadata Toolkit supports ArcGIS Pro 3.4 and later versions. It will be necessary to use separate add-ins for versions 3.0-3.3.
+This release of the ArcGIS Pro Metadata Toolkit is not significantly different from the previous release.
 
-The version of the Visual Studio template for ArcGIS Pro 3.4 is available from Visual Studio Marketplace. The Visual Studio template for ArcGIS Pro 3.0-3.3 remains available from the Visual Studio Marketplace website. For convenience, the older Visual Studio template and the source code are available as a download from this repository from the 3.3 release.
+In ArcGIS Pro 3.5, a change was made to support the future integration of the new metadata editor. The namespace changes that were made impact the ability to load custom metadata editor add-ins. Add-ins built using the previously available ArcGIS Pro Metadata Toolkit will successfully extend ArcGIS Pro 3.0-3.3. This release of the ArcGIS Pro Metadata Toolkit supports ArcGIS Pro 3.6 and later versions. It will be necessary to use separate add-ins for versions 3.0-3.3.
+
+The version of the Visual Studio template for ArcGIS Pro 3.6 is available from Visual Studio Marketplace. The Visual Studio template for ArcGIS Pro 3.0-3.3 remains available from the Visual Studio Marketplace website. For convenience, the older Visual Studio template and the source code are available as a download from this repository from the 3.3 release.
 
 #### Bug fixes
 The metadata toolkit includes bug fixes for the following items:
-- A crash when expanding New Aggregate Information in the References section.
-- Support deletion of geoprocessing history entries in the geoprocessing history page.
+- Allowing minimum and maximum vertical extents to be the same value.
+- Visibility and contrast issues on the geoprocessing history page.
+- Displaying incorrect label for Metadata Contacts.
 
 #### Leverage administrator settings
 When you develop a custom metadata editor for your organization, you can work with the GIS administrator to [manage ArcGIS Pro application settings](https://pro.arcgis.com/en/pro-app/latest/get-started/application-setting-management.htm). People in the organization who use ArcGIS Pro can be required to use the custom metadata editor add-in by setting the ```MetadataStyle``` setting to the same value as the ```displayName``` property specified in your editor’s ```Config.daml``` file.
 
 #### Known limitations
-The metadata toolkit was updated to include namespace changes for the metadata editor incorporated into ArcGIS Pro 3.4.0.55405. There are no additional limitations in Pro 3.4 beyond those documented with earlier releases.
-
+There are no additional limitations in Pro 3.6 beyond those documented with earlier releases.
 
 ### Previous releases
-
+- [ArcGIS Pro 3.4 Metadata Toolkit](https://github.com/Esri/arcgis-pro-metadata-toolkit/releases/tag/3.4.0.55405)
 - [ArcGIS Pro 3.3 Metadata Toolkit](https://github.com/Esri/arcgis-pro-metadata-toolkit/releases/tag/3.3.0.52636)
 - [ArcGIS Pro 3.0 Metadata Toolkit](https://github.com/Esri/arcgis-pro-metadata-toolkit/releases/tag/3.0.0.36056)
 - [ArcGIS Pro 2.9 Metadata Toolkit](https://github.com/Esri/arcgis-pro-metadata-toolkit/releases/tag/2.9.0.32739)
@@ -107,7 +113,6 @@ The metadata toolkit was updated to include namespace changes for the metadata e
 - [ArcGIS Pro 2.3 Metadata Toolkit](https://github.com/Esri/arcgis-pro-metadata-toolkit/releases/tag/2.3.0.15769)
 
 ## Contributing
-
 Esri welcomes contributions from anyone and everyone. For more information, see our [guidelines for contributing](https://github.com/esri/contributing).
 
 ## Issues

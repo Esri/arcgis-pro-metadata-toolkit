@@ -34,7 +34,11 @@ limitations under the License.​
       </ListBox.ItemsPanel>
       <ListBox.ItemTemplate>
         <DataTemplate>
-          <CheckBox Style="{DynamicResource EditorCheckBoxStyle}" Content="{Binding ElementName=Page, Path=Label}" SourceUpdated="DefaultValueChanged" IsChecked="{Binding UpdateSourceTrigger=PropertyChanged,NotifyOnValidationError=True,NotifyOnSourceUpdated=True,ElementName=Page,Path=DefaultValue,Mode=TwoWay}" Name="BooleanValueSyncCheckbox" />
+          <CheckBox Style="{DynamicResource EditorCheckBoxStyle}"
+              Content="{Binding ElementName=Page, Path=Label}"
+              SourceUpdated="DefaultValueChanged"
+              IsChecked="{Binding UpdateSourceTrigger=PropertyChanged,NotifyOnValidationError=True,NotifyOnSourceUpdated=True,ElementName=Page,Path=DefaultValue,Mode=TwoWay}"
+              Name="BooleanValueSyncCheckbox" />
               <!-- AutomationProperties.AutomationId="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Converter={StaticResource _lbiToAutoIdConverter}, ConverterParameter=BooleanValueSyncCheckbox}" -->
 
         </DataTemplate>

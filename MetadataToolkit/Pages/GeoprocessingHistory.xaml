@@ -386,6 +386,7 @@
            Grid.Row="2"
            VerticalAlignment="Top"
            FontStyle="Italic"
+           Foreground="{StaticResource Esri_Gray170_Brush}"
            Margin="0,30,0,0"
            x:Name="NoProcessesLabel"
            AutomationProperties.AutomationId="GeoprocessingHistory_NoProcessesLabel">

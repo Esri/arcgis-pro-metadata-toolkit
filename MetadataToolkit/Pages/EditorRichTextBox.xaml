@@ -45,31 +45,31 @@ limitations under the License.​
           <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="{StaticResource TextSymbolDecreaseSize16}"></Image>
         </Button>
         <Button Style="{DynamicResource EditorRTBImageStyle}" CommandTarget="{Binding ElementName=XAMLRichBox}" Command="EditingCommands.ToggleBullets" ToolTip="{x:Static r:Resources.TT_RTB_BULLETS}">
-          <Image Style="{DynamicResource RichTextBoxToolbarImageNoFlowStyle}" Source="../Icons/RichTextEditor/listbullets.png"></Image>
+          <Image Style="{DynamicResource RichTextBoxToolbarImageNoFlowStyle}" Source="/MetadataToolkit;component/Icons/RichTextEditor/listbullets.png"></Image>
         </Button>
         <Button Style="{DynamicResource EditorRTBImageStyle}" CommandTarget="{Binding ElementName=XAMLRichBox}" Command="EditingCommands.ToggleNumbering" ToolTip="{x:Static r:Resources.TT_RTB_NUMBERING}">
-          <Image Style="{DynamicResource RichTextBoxToolbarImageNoFlowStyle}" Source="../Icons/RichTextEditor/numberbullets.png"></Image>
+          <Image Style="{DynamicResource RichTextBoxToolbarImageNoFlowStyle}" Source="/MetadataToolkit;component/Icons/RichTextEditor/numberbullets.png"></Image>
         </Button>
         <Button Style="{DynamicResource EditorRTBImageStyle}" CommandTarget="{Binding ElementName=XAMLRichBox}" Command="{x:Static t:MTK_EditorRichTextBox.HyperlinkCommand}" ToolTip="{x:Static r:Resources.TT_RTB_HYPERLINK}">
           <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="/ArcGIS.Desktop.Resources;component/Images/TextHyperlink16.png"></Image>
         </Button>
         <Button Style="{DynamicResource EditorRTBImageStyle}" CommandTarget="{Binding ElementName=XAMLRichBox}" Command="EditingCommands.AlignLeft" ToolTip="{x:Static r:Resources.TT_RTB_ALIGNLEFT}">
-          <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="../Icons/RichTextEditor/pleft.png"></Image>
+          <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="/MetadataToolkit;component/Icons/RichTextEditor/pleft.png"></Image>
         </Button>
         <Button Style="{DynamicResource EditorRTBImageStyle}" CommandTarget="{Binding ElementName=XAMLRichBox}" Command="EditingCommands.AlignCenter" ToolTip="{x:Static r:Resources.TT_RTB_ALIGNCENTER}">
-          <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="../Icons/RichTextEditor/pcenter.png"></Image>
+          <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="/MetadataToolkit;component/Icons/RichTextEditor/pcenter.png"></Image>
         </Button>
         <Button Style="{DynamicResource EditorRTBImageStyle}" CommandTarget="{Binding ElementName=XAMLRichBox}" Command="EditingCommands.AlignRight" ToolTip="{x:Static r:Resources.TT_RTB_ALIGNRIGHT}">
-          <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="../Icons/RichTextEditor/pright.png"></Image>
+          <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="/MetadataToolkit;component/Icons/RichTextEditor/pright.png"></Image>
         </Button>
         <Button Style="{DynamicResource EditorRTBImageStyle}" CommandTarget="{Binding ElementName=XAMLRichBox}" Command="EditingCommands.AlignJustify" ToolTip="{x:Static r:Resources.TT_RTB_ALIGNJUSTIFY}">
-          <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="../Icons/RichTextEditor/pjustify.png"></Image>
+          <Image Style="{DynamicResource RichTextBoxToolbarImageStyle}" Source="/MetadataToolkit;component/Icons/RichTextEditor/pjustify.png"></Image>
         </Button>
         <Button Style="{DynamicResource EditorRTBImageStyle}" CommandTarget="{Binding ElementName=XAMLRichBox}" Command="EditingCommands.IncreaseIndentation" ToolTip="{x:Static r:Resources.TT_RTB_INCINDENT}">
-          <Image Style="{DynamicResource RichTextBoxToolbarImageNoFlowStyle}" Source="../Icons/RichTextEditor/indentmore.png"></Image>
+          <Image Style="{DynamicResource RichTextBoxToolbarImageNoFlowStyle}" Source="/MetadataToolkit;component/Icons/RichTextEditor/indentmore.png"></Image>
         </Button>
         <Button Style="{DynamicResource EditorRTBImageStyle}" CommandTarget="{Binding ElementName=XAMLRichBox}" Command="EditingCommands.DecreaseIndentation" ToolTip="{x:Static r:Resources.TT_RTB_DECINDENT}">
-          <Image Style="{DynamicResource RichTextBoxToolbarImageNoFlowStyle}" Source="../Icons/RichTextEditor/indentless.png"></Image>
+          <Image Style="{DynamicResource RichTextBoxToolbarImageNoFlowStyle}" Source="/MetadataToolkit;component/Icons/RichTextEditor/indentless.png"></Image>
         </Button>        
         
         <!-- undo, redo -->
