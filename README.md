@@ -87,8 +87,6 @@ These release notes describe details of the ArcGIS Pro Metadata Toolkit 3.6.0.59
 #### What’s new
 This release of the ArcGIS Pro Metadata Toolkit is not significantly different from the previous release.
 
-In ArcGIS Pro 3.5, a change was made to support the future integration of the new metadata editor. The namespace changes that were made impact the ability to load custom metadata editor add-ins. Add-ins built using the previously available ArcGIS Pro Metadata Toolkit will successfully extend ArcGIS Pro 3.0-3.3. This release of the ArcGIS Pro Metadata Toolkit supports ArcGIS Pro 3.6 and later versions. It will be necessary to use separate add-ins for versions 3.0-3.3.
-
 The version of the Visual Studio template for ArcGIS Pro 3.6 is available from Visual Studio Marketplace. The Visual Studio template for ArcGIS Pro 3.0-3.3 remains available from the Visual Studio Marketplace website. For convenience, the older Visual Studio template and the source code are available as a download from this repository from the 3.3 release.
 
 #### Bug fixes
