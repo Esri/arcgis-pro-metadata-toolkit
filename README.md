@@ -41,10 +41,10 @@ The ArcGIS Pro Metadata Toolkit has the same requirements as the ArcGIS Pro SDK 
 * [Requirements](https://github.com/Esri/arcgis-pro-sdk/wiki#requirements)
 
 ### Supported .NET framework
-As indicated in the [ArcGIS Pro SDK Requirements](https://github.com/Esri/arcgis-pro-sdk#requirements), ArcGIS Pro 3.4 introduces support for .NET 8.0, Microsoft's latest edition of .NET.
+As indicated in the [ArcGIS Pro SDK Requirements](https://github.com/Esri/arcgis-pro-sdk#requirements), ArcGIS Pro 3.6 supports .NET 8.0, Microsoft's latest edition of .NET.
 
 ### Supported IDEs
-As indicated in the [ArcGIS Pro SDK Requirements](https://github.com/Esri/arcgis-pro-sdk#requirements),  ArcGIS Pro 3.4 SDK introduces support for Visual Studio 2022, Microsoft's latest edition of its IDE.
+As indicated in the [ArcGIS Pro SDK Requirements](https://github.com/Esri/arcgis-pro-sdk#requirements),  ArcGIS Pro 3.6 SDK supports Visual Studio 2022, Microsoft's latest edition of its IDE.
 
 ### Third party assemblies
 _Newtonsoft Json_
